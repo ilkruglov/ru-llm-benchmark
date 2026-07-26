@@ -31,6 +31,7 @@ THEME_FIX = """
 article.task table{min-width:660px;}
 /* VL cards have a narrow text column (page width minus the 290px image), so their score
    tables must FIT instead of scrolling: fixed layout, wrapping model names, tight numerics. */
+article.task.vl .scorewrap{grid-column:1/-1;min-width:0;}
 article.task.vl table{min-width:0;width:100%;table-layout:fixed;}
 article.task.vl table th:first-child,article.task.vl table td:first-child{width:23%;overflow-wrap:anywhere;}
 article.task.vl table th.num,article.task.vl table td.num{width:8.5%;padding-left:4px;padding-right:6px;}
@@ -362,6 +363,8 @@ def render(D, out_path, title, subtitle):
               f'<span class="win-badge">Победитель: {nm(winner) if winner else "—"} · {wtot:.1f}/10</span></div>')
             A(f'<details class="prompt-d"><summary><span class="pchev">▸</span>Промпт задачи</summary>'
               f'<div class="prompt">{esc(r["prompt"][:7000])}</div></details>')
+            if vl and r.get("image"):
+                A('</div><div class="scorewrap">')   # table spans the whole card, not the narrow column
             A('<div class="table-scroll"><table><thead><tr><th>Модель</th><th class="num">C</th><th class="num">F</th>'
               '<th class="num">Ru</th><th class="num">Σ</th><th>Комментарий судьи</th></tr></thead><tbody>')
 
