@@ -9,9 +9,9 @@ BI/данные, ВЭД и логистика, стройка, нефтегаз,
 | **Текст** | 187 | 20 | 22 |
 | **Компьютерное зрение (VL)** | 303 | 17 | 17 способностей × 8 отраслей |
 
-Готовые отчёты (самодостаточные HTML, открываются в браузере):
-* [`Master Benchmark standalone.html`](Master%20Benchmark%20standalone.html) — текстовый бенчмарк
-* [`Computer Vision Benchmark standalone.html`](Computer%20Vision%20Benchmark%20standalone.html) — VL-бенчмарк
+Готовые отчёты (самодостаточные HTML — открываются онлайн через GitHub Pages):
+* **[Текстовый бенчмарк](https://ilkruglov.github.io/ru-llm-benchmark/text-benchmark.html)** (или файл [`text-benchmark.html`](text-benchmark.html))
+* **[VL-бенчмарк](https://ilkruglov.github.io/ru-llm-benchmark/vl-benchmark.html)** (или файл [`vl-benchmark.html`](vl-benchmark.html))
 
 ---
 

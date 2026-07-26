@@ -35,8 +35,9 @@
 !vl-judging-scores-v4/*.json
 
 # ---- rendered reports ----
-!Master Benchmark standalone.html
-!Computer Vision Benchmark standalone.html
+!index.html
+!text-benchmark.html
+!vl-benchmark.html
 
 # ---- never, under any circumstance ----
 .env

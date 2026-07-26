@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RU LLM Benchmark — текст и компьютерное зрение</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0c1422; --text:#41505f; --muted:#71808f; --line:#e7ecf2; --bg:#fff; --bg-soft:#f7f9fc;
+  --accent:#0d9488; --accent-2:#14b8a6; --accent-soft:#effdf9; --accent-line:#a3ebdd;
+  --hero-bg:#080d17; --hero-bg2:#0e1626; --hero-card:#121b2d; --hero-ink:#f3f7fb;
+  --hero-dim:#9fb1c6; --hero-faint:#5a6a80; --hero-line:rgba(255,255,255,.09);
+  --mint:#2dd4bf; --gold:#b88a3e; --gold-2:#d9a94e;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Hanken Grotesk",-apple-system,"Segoe UI",Roboto,sans-serif;
+  color:var(--text);background:var(--bg);font-size:16px;line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{background:linear-gradient(160deg,var(--hero-bg) 0%,var(--hero-bg2) 100%);
+  color:var(--hero-ink);padding:70px 32px 60px}
+.inner{max-width:1060px;margin:0 auto}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--mint);margin-bottom:16px}
+h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(30px,5vw,46px);line-height:1.14;
+  margin:0 0 16px;color:#fff;font-weight:700;letter-spacing:-.02em}
+h1 .accent{color:var(--mint)}
+.lead{font-size:17px;color:var(--hero-dim);max-width:660px;margin:0 0 34px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;max-width:700px}
+.kpi{background:var(--hero-card);border:1px solid var(--hero-line);border-radius:12px;padding:16px 18px}
+.kpi .v{font-family:"Space Grotesk",sans-serif;font-size:26px;font-weight:700;color:#fff;line-height:1}
+.kpi .l{font-size:12px;color:var(--hero-faint);margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+main{max-width:1060px;margin:0 auto;padding:52px 32px 80px}
+h2{font-family:"Space Grotesk",sans-serif;font-size:24px;color:var(--ink);
+  margin:0 0 8px;font-weight:600;letter-spacing:-.01em}
+.sub{color:var(--muted);font-size:14.5px;margin:0 0 26px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:22px;margin-bottom:56px}
+.card{border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;background:#fff;
+  transition:border-color .18s,box-shadow .18s,transform .18s;display:block;color:inherit}
+.card:hover{border-color:var(--accent-line);box-shadow:0 10px 30px rgba(13,148,136,.10);
+  transform:translateY(-2px);text-decoration:none}
+.card .tag{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);
+  border:1px solid var(--accent-line);border-radius:5px;padding:3px 9px;margin-bottom:14px}
+.card h3{font-family:"Space Grotesk",sans-serif;font-size:20px;color:var(--ink);margin:0 0 8px;font-weight:600}
+.card p{margin:0 0 16px;font-size:14.5px;color:var(--text)}
+.card .win{display:flex;align-items:baseline;gap:9px;padding-top:14px;border-top:1px solid var(--line)}
+.card .win .rk{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--gold);font-weight:600}
+.card .win .nm{font-weight:600;color:var(--ink);font-size:14.5px}
+.card .win .sc{margin-left:auto;font-family:"Space Grotesk",sans-serif;font-weight:700;
+  color:var(--accent);font-size:17px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin-bottom:14px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line)}
+th{font-family:"JetBrains Mono",monospace;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--muted);font-weight:500}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.top td{background:#fffbeb}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:34px}
+.note{background:var(--bg-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;
+  padding:14px 18px;font-size:14px;color:var(--text);margin-top:34px}
+footer{border-top:1px solid var(--line);padding:26px 32px;color:var(--muted);font-size:13.5px}
+footer .inner{display:flex;gap:18px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="inner">
+    <div class="eyebrow">Открытый бенчмарк · русский язык</div>
+    <h1>Какие модели реально работают <span class="accent">на русском</span></h1>
+    <p class="lead">37 конфигураций моделей на 490 прикладных задачах российского бизнеса —
+      бухгалтерия, право, финансы, BI, логистика, стройка, нефтегаз, промышленность, банки.
+      Вендорские параметры инференса, единое судейство, полный разбор каждой задачи.</p>
+    <div class="kpis">
+      <div class="kpi"><div class="v">490</div><div class="l">задач</div></div>
+      <div class="kpi"><div class="v">20 / 17</div><div class="l">моделей текст / VL</div></div>
+      <div class="kpi"><div class="v">39</div><div class="l">категорий</div></div>
+      <div class="kpi"><div class="v">~15k</div><div class="l">оценок судьи</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h2>Отчёты</h2>
+  <p class="sub">Полные интерактивные отчёты: лидерборд, расход токенов, скорость,
+    тепловые карты по сегментам и разбор каждой задачи с комментариями судьи.</p>
+  <div class="cards">
+    <a class="card" href="text-benchmark.html">
+      <span class="tag">187 задач · 20 моделей</span>
+      <h3>Текстовый бенчмарк</h3>
+      <p>Рассуждение, код, RAG, агентские сценарии, отраслевые задачи РФ: налоги,
+         юр. комплаенс, корпфинансы, данные и логистика.</p>
+      <div class="win"><span class="rk">1&nbsp;место</span>
+        <span class="nm">GPT-5.6 Sol (medium)</span><span class="sc">9.03</span></div>
+    </a>
+    <a class="card" href="vl-benchmark.html">
+      <span class="tag">303 задачи · 17 моделей</span>
+      <h3>Компьютерное зрение</h3>
+      <p>OCR, таблицы, графики и дашборды, схемы и чертежи, подсчёт объектов,
+         дефектоскопия, охрана труда, карты, интерфейсы.</p>
+      <div class="win"><span class="rk">1&nbsp;место</span>
+        <span class="nm">Kimi K2.6</span><span class="sc">9.01</span></div>
+    </a>
+  </div>
+
+  <div class="two">
+    <div>
+      <h2>Текст · топ-8</h2>
+      <p class="sub">Взвешенный балл 0–10, нормированный по категориям</p>
+      <table>
+        <thead><tr><th>#</th><th>Модель</th><th class="num">Балл</th></tr></thead>
+        <tbody>
+          <tr class="top"><td>1</td><td>GPT-5.6 Sol (medium)</td><td class="num">9.03</td></tr>
+          <tr><td>2</td><td>GPT-5.6 Sol (low)</td><td class="num">8.87</td></tr>
+          <tr><td>3</td><td>GPT-5.5 (medium)</td><td class="num">8.86</td></tr>
+          <tr><td>4</td><td>GPT-5.6 Luna (high)</td><td class="num">8.84</td></tr>
+          <tr><td>5</td><td>GPT-5.6 Terra (high)</td><td class="num">8.76</td></tr>
+          <tr><td>6</td><td>GPT-5.6 Terra (medium)</td><td class="num">8.73</td></tr>
+          <tr><td>7</td><td>GPT-5.5 (low)</td><td class="num">8.73</td></tr>
+          <tr><td>8</td><td>GPT-5.6 Terra (low)</td><td class="num">8.62</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>Зрение · топ-8</h2>
+      <p class="sub">Взвешенный балл 0–10, нормированный по способностям</p>
+      <table>
+        <thead><tr><th>#</th><th>Модель</th><th class="num">Балл</th></tr></thead>
+        <tbody>
+          <tr class="top"><td>1</td><td>Kimi K2.6</td><td class="num">9.01</td></tr>
+          <tr><td>2</td><td>GPT-5.6 Sol (medium)</td><td class="num">8.99</td></tr>
+          <tr><td>3</td><td>GPT-5.5 (medium)</td><td class="num">8.95</td></tr>
+          <tr><td>4</td><td>GPT-5.6 Sol (low)</td><td class="num">8.94</td></tr>
+          <tr><td>5</td><td>GPT-5.5 (low)</td><td class="num">8.89</td></tr>
+          <tr><td>6</td><td>GPT-5.6 Terra (medium)</td><td class="num">8.86</td></tr>
+          <tr><td>7</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num">8.84</td></tr>
+          <tr><td>8</td><td>Qwen3.6-27B-FP8</td><td class="num">8.77</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Как читать.</b> Судья — Claude Opus, единым методом для всех моделей: один агент на задачу
+    видит эталон и ответы всех участников сразу. Разница меньше 0.15 балла — шум, а не превосходство.
+    Задачи и эталоны открыты, поэтому со временем они попадут в обучающие выборки —
+    датируйте выводы. Подробности методологии и оговорки —
+    <a href="https://github.com/ilkruglov/ru-llm-benchmark#методология">в README</a>.
+  </div>
+</main>
+
+<footer><div class="inner">
+  <a href="https://github.com/ilkruglov/ru-llm-benchmark">Репозиторий на GitHub</a>
+  <span>Код — MIT · данные и оценки — CC BY 4.0</span>
+</div></footer>
+
+</body>
+</html>
