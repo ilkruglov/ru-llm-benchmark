@@ -120,8 +120,9 @@ micro (среднее по задачам) показывается рядом.
   а не засчитаны как провал: поведение модели там неизмеримо.
 * **Одна выборка на задачу.** Прогон один, температура ненулевая → часть разброса
   (±0.1–0.2) — обычный шум сэмплинга.
-* **VL-изображения не входят в репозиторий** (объём). В отчёте они есть как встроенные
-  превью; для полного воспроизведения VL нужен исходный набор картинок.
+* **VL-изображения не входят в git** (объём) — они выложены отдельным
+  [релизом `vl-images-v1`](https://github.com/ilkruglov/ru-llm-benchmark/releases/tag/vl-images-v1)
+  (83 МБ, 374 файла). В отчёте они встроены как превью с зумом по клику.
 * **Сырые ответы моделей не публикуются** — только задачи, эталоны, оценки судьи и отчёты.
 
 ---
@@ -134,6 +135,9 @@ cp .env.example .env && chmod 600 .env   # заполнить ключи
 
 # 1. Инференс (resumable; повторный запуск добирает незавершённое)
 python3 rerun_vendor.py text 8
+
+# для VL сначала скачать изображения из релиза
+gh release download vl-images-v1 -p 'vl-ru-images.tar.gz' && tar xzf vl-ru-images.tar.gz
 python3 rerun_vendor.py vl 6
 
 # 2. Модели, доступные только через codex CLI (GPT-5.5 / GPT-5.6)
@@ -147,7 +151,7 @@ python3 build_unified_judge.py vl
 # 4. Отчёты
 python3 build_standalone.py text \
   --results master-benchmark-results-v3.json --scores-dir judging-scores-v4 \
-  --out "Master Benchmark standalone.html" --tags "<список тегов>" \
+  --out text-benchmark.html --tags "<список тегов>" \
   --title "Сравнение языковых моделей"
 ```
 

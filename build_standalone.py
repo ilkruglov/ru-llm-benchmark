@@ -16,6 +16,26 @@ from build_html_report_v2 import CATEGORY_LABEL, MODEL_NAMES_FALLBACK, get_segme
 from build_vl_report import CAP_LABEL, VERT_LABEL, thumb_data_url
 
 THEME = Path("_standalone_theme.css").read_text()
+
+# Fixes on top of the borrowed theme: it was authored for 12 models, so wide tables were
+# clipped (.table-scroll used overflow:hidden) and long unbroken tokens in prompts spilled
+# out of their container. The theme also styles images with cursor:zoom-in and ships
+# .lightbox rules, but the markup/JS for it has to be emitted here.
+THEME_FIX = """
+/* --- wide-content fixes (20 models) --- */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.heat-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:8px;}
+.prompt{overflow-wrap:anywhere;word-break:break-word;}
+.cmt-cell{overflow-wrap:anywhere;width:auto;min-width:220px;}
+article.task table{min-width:660px;}
+.bc-name{overflow-wrap:anywhere;}
+main,.wrap,article.task{max-width:100%;}
+@media (min-width:1500px){.wrap{max-width:1320px;}}
+/* VL card: never let the text column force the page wider */
+article.task.vl{grid-template-columns:290px minmax(0,1fr);}
+article.task.vl .body{min-width:0;}
+@media (max-width:900px){article.task.vl{grid-template-columns:1fr;}.task .imgcol{position:static;}}
+"""
 TEXT_W = {"correctness": 0.6, "format": 0.1, "russian": 0.3}
 VL_W = {"correctness": 0.8, "format": 0.1, "russian": 0.1}
 CRIT = ["correctness", "format", "russian"]
@@ -273,7 +293,9 @@ def render(D, out_path, title, subtitle):
     A('<div class="wrap"><h2 class="sec" id="segments">Результаты по сегментам</h2>')
     A('<div class="callout">Средний балл по группам задач × модели. Теплее = выше; золотая рамка — лидер сегмента.</div>')
     A('<div class="chart"><div class="chart-cap"><span class="ct">Сегмент × модель</span><span class="cs">0–10</span></div>')
-    A(f'<div class="heat" style="grid-template-columns:minmax(120px,1.3fr) repeat({len(order)},minmax(0,1fr))"><div></div>')
+    A('<div class="heat-scroll">')
+    A(f'<div class="heat" style="min-width:{150 + len(order) * 58}px;'
+      f'grid-template-columns:minmax(140px,1.3fr) repeat({len(order)},minmax(52px,1fr))"><div></div>')
     for t in order:
         parts = nm(t).replace(" (", "|(").split("|", 1)
         A(f'<div class="hh">{"<br>".join(parts)}</div>')
@@ -289,7 +311,7 @@ def render(D, out_path, title, subtitle):
             bg, fg = heat_color(v)
             ld = '<span class="ld"></span>' if t == lead else ''
             A(f'<div class="cell{" lead" if t==lead else ""}" style="background:{bg};color:{fg}">{ld}{v:.1f}</div>')
-    A('</div></div></div>')
+    A('</div></div></div></div>')
 
     # ---- categories heatmap ----
     A('<div class="wrap"><h2 class="sec" id="categories">Результаты по категориям</h2>')
@@ -317,8 +339,11 @@ def render(D, out_path, title, subtitle):
             winner = max(present, key=lambda t: wsum(sd["scores"][t], W), default=None)
             wtot = wsum(sd["scores"][winner], W) if winner else 0
             if vl and r.get("image"):
-                thumb = thumb_data_url(r["image"], w=420)
-                A(f'<article class="task vl" id="{r["id"]}"><div class="imgcol"><img src="{thumb}" alt="" loading="lazy"></div><div class="body">')
+                # 520px: shown at ~290px in the card, so the lightbox has real detail to zoom into
+                thumb = thumb_data_url(r["image"], w=520)
+                A(f'<article class="task vl" id="{r["id"]}"><div class="imgcol">'
+                  f'<img src="{thumb}" alt="{esc(r.get("title",""))}" loading="lazy" '
+                  f'data-cap="{esc(r["id"])} — {esc(r.get("title",""))}"></div><div class="body">')
             else:
                 A(f'<article class="task" id="{r["id"]}"><div class="body">')
             A(f'<h4>{esc(r["id"])} — {esc(r.get("title",""))}</h4>')
@@ -354,14 +379,27 @@ def render(D, out_path, title, subtitle):
         A('</div>')
 
     A('</main><a class="totop" href="#top">↑</a>')
+    if vl:
+        A('<div class="lightbox" id="lb"><span class="lb-close">&times;</span>'
+          '<img id="lb-img" src="" alt=""><div class="lb-cap" id="lb-cap"></div></div>')
     js = ("<script>document.querySelectorAll('[data-count]').forEach(e=>{const n=+e.dataset.count;let c=0;"
           "const st=Math.max(1,n/40);const t=setInterval(()=>{c+=st;if(c>=n){c=n;clearInterval(t)}"
-          "e.textContent=Math.round(c).toLocaleString('ru')},20)});</script>")
+          "e.textContent=Math.round(c).toLocaleString('ru')},20)});")
+    if vl:
+        js += ("const lb=document.getElementById('lb'),li=document.getElementById('lb-img'),"
+               "lc=document.getElementById('lb-cap');"
+               "document.querySelectorAll('.imgcol img').forEach(im=>im.addEventListener('click',()=>{"
+               "li.src=im.src;lc.textContent=im.dataset.cap||'';lb.classList.add('open');"
+               "document.body.style.overflow='hidden';}));"
+               "function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}"
+               "lb.addEventListener('click',closeLb);"
+               "document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});")
+    js += "</script>"
     html = (f"<!DOCTYPE html><html lang=ru><head><meta charset=utf-8>"
             f"<meta name=viewport content='width=device-width,initial-scale=1'><title>{esc(title)}</title>"
             f'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
             f'<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">'
-            f"<style>{THEME}</style></head><body>{''.join(H)}{js}</body></html>")
+            f"<style>{THEME}{THEME_FIX}</style></head><body>{''.join(H)}{js}</body></html>")
     Path(out_path).write_text(html)
     print(f"Wrote {out_path} ({len(html)//1024} KB), {n_tasks} tasks, {len(tags)} models")
 
