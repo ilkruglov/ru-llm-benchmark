@@ -120,9 +120,9 @@ micro (среднее по задачам) показывается рядом.
   а не засчитаны как провал: поведение модели там неизмеримо.
 * **Одна выборка на задачу.** Прогон один, температура ненулевая → часть разброса
   (±0.1–0.2) — обычный шум сэмплинга.
-* **VL-изображения не входят в git** (объём) — они выложены отдельным
-  [релизом `vl-images-v1`](https://github.com/ilkruglov/ru-llm-benchmark/releases/tag/vl-images-v1)
-  (83 МБ, 374 файла). В отчёте они встроены как превью с зумом по клику.
+* **VL-изображения включены** в `vl-ru-images/` (374 файла) — VL воспроизводится полностью.
+  Тот же набор одним архивом: [релиз `vl-images-v1`](https://github.com/ilkruglov/ru-llm-benchmark/releases/tag/vl-images-v1).
+  В отчёте — лёгкие превью, по клику открывается оригинал.
 * **Сырые ответы моделей не публикуются** — только задачи, эталоны, оценки судьи и отчёты.
 
 ---
@@ -136,9 +136,7 @@ cp .env.example .env && chmod 600 .env   # заполнить ключи
 # 1. Инференс (resumable; повторный запуск добирает незавершённое)
 python3 rerun_vendor.py text 8
 
-# для VL сначала скачать изображения из релиза
-gh release download vl-images-v1 -p 'vl-ru-images.tar.gz' && tar xzf vl-ru-images.tar.gz
-python3 rerun_vendor.py vl 6
+python3 rerun_vendor.py vl 6           # картинки уже в vl-ru-images/
 
 # 2. Модели, доступные только через codex CLI (GPT-5.5 / GPT-5.6)
 CODEX_MODEL=gpt-5.6-sol python3 codex_model.py text medium 2
@@ -174,6 +172,7 @@ build_vl_report.py         рабочий VL-отчёт (и превью изо�
 judging-scores-v4/         оценки судьи, текст (187 файлов)
 vl-judging-scores-v4/      оценки судьи, VL (303 файла)
 master-benchmark-tasks-v3.json   задачи + эталоны, текст
+vl-ru-images/              исходные изображения VL (374 файла)
 vl-ru-tasks.json                 задачи + эталоны, VL
 ```
 

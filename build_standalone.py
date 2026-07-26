@@ -7,6 +7,7 @@ Usage: python3 build_standalone.py text|vl --results ... --scores-dir ... --out 
 """
 import argparse
 import json
+import os
 import statistics
 from collections import defaultdict
 from pathlib import Path
@@ -28,6 +29,13 @@ THEME_FIX = """
 .prompt{overflow-wrap:anywhere;word-break:break-word;}
 .cmt-cell{overflow-wrap:anywhere;width:auto;min-width:220px;}
 article.task table{min-width:660px;}
+/* VL cards have a narrow text column (page width minus the 290px image), so their score
+   tables must FIT instead of scrolling: fixed layout, wrapping model names, tight numerics. */
+article.task.vl table{min-width:0;width:100%;table-layout:fixed;}
+article.task.vl table th:first-child,article.task.vl table td:first-child{width:23%;overflow-wrap:anywhere;}
+article.task.vl table th.num,article.task.vl table td.num{width:8.5%;padding-left:4px;padding-right:6px;}
+article.task.vl .cmt-cell{min-width:0;width:auto;}
+article.task.vl .table-scroll{overflow-x:visible;}
 .bc-name{overflow-wrap:anywhere;}
 main,.wrap,article.task{max-width:100%;}
 @media (min-width:1500px){.wrap{max-width:1320px;}}
@@ -339,10 +347,13 @@ def render(D, out_path, title, subtitle):
             winner = max(present, key=lambda t: wsum(sd["scores"][t], W), default=None)
             wtot = wsum(sd["scores"][winner], W) if winner else 0
             if vl and r.get("image"):
-                # 520px: shown at ~290px in the card, so the lightbox has real detail to zoom into
-                thumb = thumb_data_url(r["image"], w=520)
+                # Small inline thumbnail keeps the page self-contained; the lightbox opens the
+                # full-resolution file next to the report (repo/Pages) when it is available.
+                thumb = thumb_data_url(r["image"], w=420)
+                full = "vl-ru-images/" + os.path.basename(r["image"])
                 A(f'<article class="task vl" id="{r["id"]}"><div class="imgcol">'
                   f'<img src="{thumb}" alt="{esc(r.get("title",""))}" loading="lazy" '
+                  f'data-full="{esc(full)}" '
                   f'data-cap="{esc(r["id"])} — {esc(r.get("title",""))}"></div><div class="body">')
             else:
                 A(f'<article class="task" id="{r["id"]}"><div class="body">')
@@ -389,7 +400,7 @@ def render(D, out_path, title, subtitle):
         js += ("const lb=document.getElementById('lb'),li=document.getElementById('lb-img'),"
                "lc=document.getElementById('lb-cap');"
                "document.querySelectorAll('.imgcol img').forEach(im=>im.addEventListener('click',()=>{"
-               "li.src=im.src;lc.textContent=im.dataset.cap||'';lb.classList.add('open');"
+               "li.src=im.dataset.full||im.src;li.onerror=()=>{li.onerror=null;li.src=im.src;};lc.textContent=im.dataset.cap||'';lb.classList.add('open');"
                "document.body.style.overflow='hidden';}));"
                "function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}"
                "lb.addEventListener('click',closeLb);"

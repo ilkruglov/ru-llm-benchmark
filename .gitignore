@@ -34,6 +34,12 @@
 !vl-judging-scores-v4/
 !vl-judging-scores-v4/*.json
 
+# ---- VL source images (needed for full-res zoom + reproduction) ----
+!vl-ru-images/
+!vl-ru-images/*.jpg
+!vl-ru-images/*.jpeg
+!vl-ru-images/*.png
+
 # ---- rendered reports ----
 !index.html
 !text-benchmark.html
