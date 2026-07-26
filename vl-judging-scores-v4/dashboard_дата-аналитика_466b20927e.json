@@ -1,0 +1,19 @@
+{"task_id":"dashboard_дата-аналитика_466b20927e","category":"dashboard","scores":{
+"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три факта верны (79K, 1 692 000, Total Cost -391 080), аккуратно оформлено."},
+"35b-a3b":{"correctness":10,"reasoning":6,"format":7,"russian":6,"comment":"Все верно, но предельно телеграфно, почти без русского текста."},
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три факта верны, хорошо структурировано с заголовками."},
+"gemma-4-31b":{"correctness":10,"reasoning":6,"format":7,"russian":7,"comment":"Все верно, но очень кратко и без пояснений."},
+"diffusion-gemma":{"correctness":10,"reasoning":7,"format":8,"russian":7,"comment":"Все три факта верны; мелкая опечатка в начале ('сновываясь')."},
+"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Все факты верны, компактно и по делу."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Все факты верны, аккуратно оформлено."},
+"nemotron-omni":{"correctness":4,"reasoning":5,"format":7,"russian":6,"comment":"Total Revenue назван как 1 692 000 000 — ошибка в тысячу раз; Q1 и Q3 верны."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все верно, отмечено что Total Cost — единственная отрицательная строка; хорошая полнота."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Все три факта верны, лаконично."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Все три факта верны, лаконично."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Все три факта верны, лаконично."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все верно, подписаны названия плиток/строк, ясно."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все верно, подписаны названия плиток/строк, ясно."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три факта верны, чисто оформлено."},
+"gpt-5.6-terra-low":{"correctness":4,"reasoning":4,"format":7,"russian":7,"comment":"Выдумал Other Expenses как -73 520 (на деле положительное) — ложная отрицательная строка."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Все три факта верны, кратко и точно."}
+},"winner":"kimi-k2.6","notes":"Большинство моделей дали все три верных факта; kimi-k2.6 выделяется полнотой (отметил единственность отрицательной строки). Ошиблись nemotron-omni (Q2 в 1000 раз больше) и terra-low (ложная отрицательная строка)."}

@@ -1,0 +1,22 @@
+{"task_id":"m-math-02","category":"math_business","scores":{
+"gpt-oss-120b":{"correctness":9,"reasoning":9,"format":9,"russian":8,"comment":"MRR, клиенты, ARR, NRR 78.5%, GRR 61.4% — всё верно и подробно; NRR-таблица местами путаная, немного англ. вкраплений."},
+"deepseek-flash":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все ключевые метрики точны (MRR, клиенты 262.5..806, NRR 78.5%, GRR 61.3%), чёткое обоснование упрощения."},
+"deepseek-pro":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Полностью корректно, детальный помесячный вывод и аккуратная итоговая таблица, верный NRR/GRR."},
+"35b-a3b":{"correctness":4,"reasoning":7,"format":8,"russian":9,"comment":"MRR M3 (5.94 vs 5.96 млн) и весь столбец клиентов (350 вместо 449 к 12 мес) посчитаны неверно; NRR верен."},
+"27b-v2":{"correctness":6,"reasoning":8,"format":8,"russian":9,"comment":"Ряд MRR неточен (M6 7.05, M18 14.13 млн), клиенты слегка плывут; NRR 78.5% и логика GRR/NRR верны."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все метрики точны (MRR, клиенты, ARR, NRR 78.5%, GRR 61.2%), сильные пояснения и вывод про 'беличье колесо'."},
+"diffusion-gemma":{"correctness":4,"reasoning":6,"format":7,"russian":7,"comment":"Столбец клиентов полностью неверен (355 вместо 449 к 12 мес), MRR к M18/M24 дрейфует; NRR 78.4% верен. Опечатки."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все метрики точны, детальные примеры расчёта M1 и M12, верный NRR 78.5% и GRR."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью корректно, две таблицы (итог + покомпонентная проверка), кумулятивная проверка NRR."},
+"nemotron-super":{"correctness":9,"reasoning":9,"format":9,"russian":1,"comment":"Расчёты верны (MRR, клиенты, NRR 78.5%, GRR), но ответ целиком на английском при русской задаче."},
+"nemotron-omni":{"correctness":0,"reasoning":1,"format":1,"russian":5,"comment":"Ответ оборван на вводной таблице — расчётов MRR/NRR нет, задача не решена."},
+"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":9,"comment":"Всё точно, подробная разборка M1, степенные формулы, кумулятивная проверка NRR и GRR, отличная структура."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все метрики точны, покомпонентная таблица и кумулятивная проверка NRR 78.47%, GRR 61.27%."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Полностью корректно и аккуратно: MRR, клиенты, NRR 78.5%, GRR 61.3%."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все метрики верны, кумулятивная проверка NRR; мелкая опечатка в подписи NRR_monthly не влияет на результат."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Точно и глубоко: траектория NRR по месяцам, вывод о необходимом expansion ~4.8%/мес для NRR 110%."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью верно, MRR-bridge когорты, годовой logo churn 30.6%, чёткий вывод."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все метрики точны, компактно но полно, верный NRR 78.5% и GRR 96% мес."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Корректно и лаконично: MRR, клиенты, NRR 78.47%, кумулятивная проверка."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все ключевые метрики верны, аккуратный вывод churned_MRR=3% и NRR 78.5%."}
+},"winner":"kimi-k2.6","notes":"Большинство моделей дали точные MRR/клиенты/NRR 78.5%/GRR 61.3%; kimi-k2.6 выделяется полнотой и оформлением. Слабее всех: nemotron-omni (оборван), 35b-a3b и diffusion-gemma (неверные клиенты), nemotron-super (верно, но на английском)."}

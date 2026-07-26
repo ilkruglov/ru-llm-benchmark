@@ -1,0 +1,28 @@
+{
+  "task_id": "m-harness-07",
+  "category": "harness",
+  "scores": {
+    "gpt-oss-120b": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 3, "comment": "Корректно остановился на Final Answer без лишних вызовов, факты точны, но нет блока Thought и ответ полностью на английском."},
+    "deepseek-flash": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 10, "comment": "Правильная остановка, все факты (сумма, дата, тикет) на месте; отсутствует Thought."},
+    "deepseek-pro": {"correctness": 10, "reasoning": 8, "format": 8, "russian": 10, "comment": "Точный финал с явным указанием, что дополнительные шаги не требуются; нет отдельного Thought."},
+    "35b-a3b": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 10, "comment": "Полный клиентоориентированный финальный ответ по реальным Observation; без Thought и с лишними пустыми строками."},
+    "27b-v2": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Есть Thought с обоснованием остановки и корректный Final Answer со всеми фактами из транскрипта."},
+    "gemma-4-31b": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Thought + корректная остановка, но финальный ответ путает адресата (обращается к клиенту и одновременно говорит 'мы сообщили клиенту')."},
+    "diffusion-gemma": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 10, "comment": "Верная остановка и точные факты, но без Thought и без рассуждения."},
+    "gpt-5.5-low": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 10, "comment": "Лаконичный корректный финал по данным транскрипта; отсутствует Thought."},
+    "gpt-5.5-medium": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 10, "comment": "Идентично low: правильная остановка, точные сумма и дата, нет Thought."},
+    "nemotron-super": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 10, "comment": "Корректная остановка со всеми фактами, но без Thought и с лишними пустыми строками."},
+    "nemotron-omni": {"correctness": 6, "reasoning": 3, "format": 7, "russian": 10, "comment": "Остановился вовремя, но финальный ответ выхолощен: нет ни суммы, ни даты возврата, требуемых целью."},
+    "kimi-k2.6": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Явный Thought с проверкой каждого пункта цели и полный, точный финальный ответ клиенту без единого лишнего вызова."},
+    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Thought + краткий точный Final Answer со всеми ключевыми фактами."},
+    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 10, "comment": "Правильная остановка и полные факты, но без Thought."},
+    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 10, "comment": "Корректный компактный финал по реальным Observation; Thought отсутствует."},
+    "gpt-5.6-sol-low": {"correctness": 8, "reasoning": 6, "format": 8, "russian": 10, "comment": "Остановка верна, но не указан номер заказа и нет Thought."},
+    "gpt-5.6-sol-medium": {"correctness": 8, "reasoning": 6, "format": 8, "russian": 10, "comment": "Верная остановка, но опущен ORD-4471 и отсутствует блок Thought."},
+    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Thought + точный финальный ответ с суммой, датой, заказом и закрытием тикета."},
+    "gpt-5.6-terra-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Thought с проверкой достижения цели и полный корректный Final Answer."},
+    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 10, "comment": "Есть Thought и корректная остановка, но в финале не упомянуто закрытие тикета #58213."}
+  },
+  "winner": "kimi-k2.6",
+  "notes": "Задача-ловушка на условие остановки: все модели корректно распознали, что цель достигнута, и ни одна не выдала лишних вызовов инструментов или галлюцинаций. Дифференциация только по наличию блока Thought и полноте фактов в финальном ответе; слабейший — nemotron-omni (нет суммы и даты)."
+}

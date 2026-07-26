@@ -1,0 +1,19 @@
+{"task_id":"count_стройка_f73a28b983","category":"count","scores":{
+"llama-scout":{"correctness":1,"reasoning":1,"format":6,"russian":8,"comment":"Насчитал 9 поддонов — сильно завышено, эталон 4."},
+"27b-v2":{"correctness":0,"reasoning":1,"format":6,"russian":8,"comment":"30 поддонов — грубейшая галлюцинация, диапазон 28-32 не имеет отношения к картинке."},
+"35b-a3b":{"correctness":1,"reasoning":1,"format":6,"russian":8,"comment":"12 поддонов — сильно завышено."},
+"gemma-4-31b":{"correctness":1,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 12 — неверно."},
+"diffusion-gemma":{"correctness":3,"reasoning":2,"format":6,"russian":8,"comment":"5 — близко, но всё же завышено относительно эталона 4."},
+"gpt-5.5-low":{"correctness":8,"reasoning":3,"format":5,"russian":5,"comment":"3 — в пределах допустимого, но без обоснования."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":3,"format":5,"russian":5,"comment":"4 — точный ответ, голое число."},
+"nemotron-omni":{"correctness":2,"reasoning":1,"format":4,"russian":5,"comment":"6 — завышено."},
+"kimi-k2.6":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"6 отводов на нижнем ярусе — завышено, эталон 4."},
+"gpt-5.6-luna-high":{"correctness":8,"reasoning":4,"format":7,"russian":8,"comment":"3 поддона — допустимо, аккуратный ответ."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":3,"format":6,"russian":8,"comment":"4 паллеты — точный ответ."},
+"gpt-5.6-luna-medium":{"correctness":8,"reasoning":3,"format":6,"russian":8,"comment":"3 паллеты — в пределах допустимого."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":3,"format":5,"russian":5,"comment":"4 — точный ответ."},
+"gpt-5.6-sol-medium":{"correctness":8,"reasoning":3,"format":5,"russian":5,"comment":"3 — допустимо."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":3,"format":5,"russian":5,"comment":"4 — точный ответ."},
+"gpt-5.6-terra-low":{"correctness":8,"reasoning":3,"format":5,"russian":5,"comment":"3 — допустимо."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":3,"format":5,"russian":5,"comment":"4 — точный ответ."}
+},"winner":"gpt-5.6-luna-low","notes":"Эталон — 4 поддона (3 допустимо). Модели GPT-5.5/5.6 дали 3-4; luna-low объединяет точность и естественную формулировку. Остальные (5-30) грубо завысили."}

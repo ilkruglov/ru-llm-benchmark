@@ -1,0 +1,19 @@
+{"task_id":"chart_дата-аналитика_349553cc27","category":"chart","scores":{
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все три ответа верны: 2009/29, 11, 9. Чёткая структура и корректные вычисления."},
+"35b-a3b":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Все ответы верны с пояснениями по каждой точке. Хорошая аргументация."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все три ответа верны, аккуратная структура и разбор."},
+"gemma-4-31b":{"correctness":2,"reasoning":2,"format":7,"russian":8,"comment":"Выдумал максимум Дохода 47 в 2011 и разницу 29; верен только Расход 2009=11."},
+"diffusion-gemma":{"correctness":5,"reasoning":5,"format":8,"russian":9,"comment":"Пункты 2 и 3 верны (11 и 9), но максимум Дохода указан ошибочно (2013/28 вместо 2009/29)."},
+"gpt-5.5-low":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Выдумал Доход 37 в 2011 и разницу 19; верен только Расход 2009=11."},
+"gpt-5.5-medium":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Ошибочно 37 и разница 19; верен лишь Расход 11."},
+"nemotron-omni":{"correctness":10,"reasoning":4,"format":5,"russian":5,"comment":"Все три числа верны (2009/29, 11, 9), но ответ голый, без анализа и прозы."},
+"kimi-k2.6":{"correctness":2,"reasoning":2,"format":7,"russian":9,"comment":"Выдумал максимум 47 в 2011 и разницу 29; верен только Расход 11."},
+"gpt-5.6-luna-high":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Ошибочный максимум 47/2011 и разница 29; верен только Расход 11."},
+"gpt-5.6-luna-low":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Выдумал 42 в 2011 и разницу 24; верен лишь Расход 11."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все три ответа верны: 2009/29, 11, 9. Кратко и корректно."},
+"gpt-5.6-sol-low":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Ошибочный Доход 37 и разница 19; верен только Расход 11."},
+"gpt-5.6-sol-medium":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Тот же промах: 37 и 19; верен лишь Расход 11."},
+"gpt-5.6-terra-high":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Выдумал 47/2011 и разницу 29; верен только Расход 11."},
+"gpt-5.6-terra-low":{"correctness":2,"reasoning":2,"format":6,"russian":8,"comment":"Ошибочный 45 и разница 27; верен лишь Расход 11."},
+"gpt-5.6-terra-medium":{"correctness":2,"reasoning":2,"format":5,"russian":7,"comment":"Выдумал 47 и разницу 29; верен только Расход 11."}
+},"winner":"llama-scout","notes":"Полностью верны llama-scout, 35b-a3b, 27b-v2, nemotron-omni и gpt-5.6-luna-medium. Большинство GPT-5.6 и Gemma/Kimi галлюцинировали максимум Дохода (37-47) и разницу; побеждает llama-scout за точность плюс лучшую структуру."}

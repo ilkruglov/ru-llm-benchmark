@@ -1,0 +1,19 @@
+{"task_id":"detect_нефтегаз_03edd93be7","category":"detect","scores":{
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Факел справа вверху, наклон влево, мачта под ним, строение слева — всё верно."},
+"27b-v2":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Всё правильно; наклон описан как 'вертикально с небольшим отклонением влево' — чуть занижен, но верно, строение слева внизу."},
+"llama-scout":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Факел справа, наклон влево, строение слева — верно, но не уточнена верхняя часть кадра для факела."},
+"gemma-4-31b":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Факел справа вверху с наклоном влево, мачта под ним; строение слева, но 'средний план' менее точен, чем низ."},
+"diffusion-gemma":{"correctness":10,"reasoning":7,"format":9,"russian":8,"comment":"Всё верно: факел справа вверху, наклон влево, строение слева внизу; мелкая опечатка 'в влево'."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Факел справа вверху, наклон влево-вверх, труба под ним, строение слева внизу у деревьев — точно."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верное и точное описание всех четырёх элементов."},
+"nemotron-omni":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Факел справа вверху, слегка влево, мачта под ним, строение слева внизу — верно."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Детально и точно: факел справа вверху, наклон влево, мачта, строение слева внизу у кромки леса."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Факел справа вверху, наклон влево к верхнему углу, труба под ним, строение слева внизу — точно."},
+"gpt-5.6-luna-low":{"correctness":4,"reasoning":5,"format":9,"russian":10,"comment":"Ошибка: пламя отклоняется 'вправо', тогда как оно наклонено влево; остальное верно."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Факел справа вверху, наклон влево, металлическая труба, строение слева внизу — верно."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Факел справа вверху, наклон влево, труба под ним, строение слева внизу — точно."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Наклон влево и строение слева внизу верны; факел назван 'правее центра' вместо явно правого верха."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Факел справа вверху, наклон влево, труба под ним, строение слева внизу — верно."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все элементы указаны точно: факел справа вверху, наклон влево, мачта, строение слева внизу."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Факел справа вверху, наклон влево-вверх, труба под ним, строение слева внизу — верно."}
+},"winner":"gpt-5.5-medium","notes":"Большинство моделей ответили верно; выделяются gpt-5.5-medium и kimi-k2.6 точностью и детализацией. luna-low ошиблась в направлении наклона пламени."}

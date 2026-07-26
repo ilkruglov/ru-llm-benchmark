@@ -1,0 +1,19 @@
+{"task_id":"chart_банки_2165e202ff","category":"chart","scores":{
+"llama-scout":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Текущее значение верно, минимум ~июнь 2022 правильно, но уровень занижен до ~50 (реально 52-53); рост угадан."},
+"35b-a3b":{"correctness":5,"reasoning":6,"format":8,"russian":9,"comment":"Значение и рост верны, но период минимума ошибочно указан как начало 2022 (февраль-март) вместо лета 2022."},
+"27b-v2":{"correctness":5,"reasoning":6,"format":8,"russian":9,"comment":"Значение верно, но минимум ошибочно отнесён к началу 2022; уровень ~53-55 приемлем, период неверен."},
+"gemma-4-31b":{"correctness":8,"reasoning":6,"format":8,"russian":9,"comment":"Период (июль 2022) верен, рост верен, но уровень минимума завышен до ~55 (реально 52-53)."},
+"diffusion-gemma":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Значение и рост верны, но минимум ошибочно отнесён к началу 2023; уровень 52 близок, но период грубо неверен."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Все три пункта точны: значение, минимум ~июль 2022 на 52-53, устойчивый рост до ~101."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Идеально точный и лаконичный ответ по всем пунктам: минимум июнь-июль 2022 на 52-53, рост до 101,4."},
+"nemotron-omni":{"correctness":9,"reasoning":7,"format":7,"russian":2,"comment":"Факты верны (июль 2022, 53-54, рост до 101), но ответ дан на английском вместо русского."},
+"kimi-k2.6":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"Факты верны (июль 2022, 53-54, рост), но минимум ошибочно назван 'пиком' и есть английская вставка."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно по всем пунктам: минимум июнь 2022 ~52, рост с колебаниями до 101,4."},
+"gpt-5.6-luna-low":{"correctness":7,"reasoning":7,"format":9,"russian":10,"comment":"Значение и рост верны, но минимум смещён на октябрь 2022 вместо лета; уровень 52 верен."},
+"gpt-5.6-luna-medium":{"correctness":7,"reasoning":7,"format":9,"russian":10,"comment":"Значение и рост верны, но минимум отнесён к осени (октябрь) 2022, а не к лету; уровень 52-53 верен."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Точно: минимум июнь 2022 ~51-52, рост до 101,4; всё корректно."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Верно по всем пунктам: минимум май-июнь 2022 ~52, рост до 101,4."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Точно: минимум май-июнь 2022 ~52, рост с колебаниями до 101,4."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты точны: минимум июнь-июль 2022 на 52-53, рост до 101,4."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Верно и лаконично: минимум июнь 2022 ~52, рост до 101,4."}
+},"winner":"gpt-5.5-medium","notes":"Большинство моделей верно прочитали 101,4171; ключевым различием стал период минимума — сильнейшие (gpt-5.5-medium, terra-low, luna-high) точно назвали лето 2022 и уровень 52-53, тогда как gemma-27b/35b/diffusion промахнулись с датой."}

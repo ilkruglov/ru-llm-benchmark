@@ -1,0 +1,22 @@
+{"task_id":"m-harness-08","category":"harness","scores":{
+"gpt-oss-120b":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Верный следующий шаг — diff e7c1a9; обоснование опирается на реальные наблюдения (HMAC mismatch, регрессия)."},
+"deepseek-flash":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Корректно локализует регрессию в e7c1a9 и запрашивает diff; рассуждение чуть короче."},
+"deepseek-pro":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Точный шаг с гипотезой про логику подписи или секреты, опора на транскрипт."},
+"27b-v2":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Верно сравнивает passed b3f0d2 и failed e7c1a9, запрашивает diff; ведущие пустые строки не критичны."},
+"35b-a3b":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Хорошее обоснование с версиями причин (крипто/секреты/фикстуры), корректный шаг."},
+"gemma-4-31b":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Правильный diff-шаг, разумные гипотезы о логике подписи и конфиге секретов."},
+"diffusion-gemma":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верный шаг, опора на успешный b3f0d2; лёгкая небрежность формулировок."},
+"gpt-5.5-low":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Минимальный корректный шаг с чёткой гипотезой про подпись/секреты/фикстуры."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Точная локализация регрессии и запрос diff с проверкой HMAC/секретов/фикстур."},
+"nemotron-super":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Корректный diff-шаг, но обоснование чуть беднее без ссылки на passed-прогон."},
+"nemotron-omni":{"correctness":0,"reasoning":1,"format":4,"russian":8,"comment":"Галлюцинация: выдумал изменение compute_hmac на SHA-1 без diff и советует перезапуск без доказательства флака."},
+"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Верно сопоставляет 1841/1842 и запрашивает diff e7c1a9."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Корректный шаг, но рассуждение слишком короткое без конкретных гипотез."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Правильный diff-шаг, опора на успешность прошлых прогонов."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Верный шаг, сравнивает passed b3f0d2 и текущий коммит."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":9,"russian":10,"comment":"Корректный diff-шаг с перечнем зон проверки: HMAC, вебхуки, тесты, секрет."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Верный шаг с фокусом на расчёт HMAC и тестовые секреты."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Правильный diff-шаг, опора на успешный предыдущий прогон."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Корректно указывает регрессию в e7c1a9 и запрашивает diff."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Верный шаг между b3f0d2 и e7c1a9 с проверкой вебхуков/HMAC/секретов."}
+},"winner":"gpt-5.5-medium","notes":"Почти все модели верно делают единственный правильный шаг — get_commit_diff(e7c1a9); лучшие дают точное обоснование. nemotron-omni провалился: выдумал содержимое diff и посоветовал перезапуск без доказательства флака."}

@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────────────────────
+# Whitelist policy: ignore EVERYTHING, then explicitly allow the
+# files that belong in the public repo. Keeps secrets, raw model
+# outputs, backups and ~900 MB of working data out by default.
+# ─────────────────────────────────────────────────────────────
+*
+!.gitignore
+!.env.example
+!LICENSE
+!README.md
+
+# ---- pipeline code ----
+!endpoints.py
+!neuraldeep.py
+!rerun_vendor.py
+!codex_model.py
+!merge_codex_contestants.py
+!build_unified_judge.py
+!build_standalone.py
+!build_html_report_v2.py
+!build_vl_report.py
+!category_focus_master.py
+
+# ---- judge configuration (per-category focus) ----
+!judge-args-v3.json
+
+# ---- dataset: tasks + reference answers ----
+!master-benchmark-tasks-v3.json
+!vl-ru-tasks.json
+
+# ---- judge scores (v4, unified method) ----
+!judging-scores-v4/
+!judging-scores-v4/*.json
+!vl-judging-scores-v4/
+!vl-judging-scores-v4/*.json
+
+# ---- rendered reports ----
+!Master Benchmark standalone.html
+!Computer Vision Benchmark standalone.html
+
+# ---- never, under any circumstance ----
+.env
+.env.local
+*.key
+__pycache__/
+*.pyc

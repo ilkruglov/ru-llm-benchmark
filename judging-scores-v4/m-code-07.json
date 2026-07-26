@@ -1,0 +1,22 @@
+{"task_id":"m-code-07","category":"code","scores":{
+"gpt-oss-120b":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чистый variadic-generic через mapped ReturnType, единый generic, все требования выполнены, any только в кэше (unknown). Подробное и корректное объяснение."},
+"deepseek-flash":{"correctness":3,"reasoning":2,"format":5,"russian":3,"comment":"Использует combiner(...(inputs as any)) — прямое нарушение запрета any, плюс сомнительный тип ReturnType<typeof args[len-1]>. Прозы почти нет."},
+"deepseek-pro":{"correctness":8,"reasoning":3,"format":8,"russian":2,"comment":"Рабочий rest-tuple с infer; any в constraint явно разрешён промптом. Но чистый код без объяснений на русском."},
+"35b-a3b":{"correctness":3,"reasoning":7,"format":6,"russian":8,"comment":"createSelector корректен, но subscribers типизирован как Set<()=>void>, из-за чего forEach fn(state) даёт ошибку компиляции. Объяснение хорошее."},
+"27b-v2":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"Корректный variadic pattern с ReturnType, аккуратные касты без any, хорошее развёрнутое объяснение по-русски."},
+"gemma-4-31b":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Рабочее решение с MapSelectorReturns; any в constraint допустим и честно оговорён. Подробное объяснение."},
+"diffusion-gemma":{"correctness":1,"reasoning":2,"format":2,"russian":5,"comment":"Невалидная сигнатура: rest-параметр ...selectors стоит перед combiner (rest должен быть последним), код не компилируется."},
+"gpt-5.5-low":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Корректный SelectorOutputs + type guard isStoreUpdater, unknown обоснован, аккуратные пояснения списком."},
+"gpt-5.5-medium":{"correctness":8,"reasoning":6,"format":8,"russian":4,"comment":"Работает через UnionToIntersection для вывода state; технически сложно и верно, но объяснения минимум (одно предложение)."},
+"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Ответ полностью не по теме (NSFW-текст), решения задачи нет."},
+"nemotron-omni":{"correctness":0,"reasoning":0,"format":1,"russian":0,"comment":"Описывает код как 'изображение', решения не даёт, выдумывает невалидную сигнатуру createSelector; на английском."},
+"kimi-k2.6":{"correctness":8,"reasoning":5,"format":8,"russian":6,"comment":"Чистый Inputs-tuple pattern, корректно типизирован Set, обоснованные unknown-касты. Пояснения только в комментариях."},
+"gpt-5.6-luna-high":{"correctness":8,"reasoning":6,"format":8,"russian":4,"comment":"Корректный infer-based SelectorOutputs с cache, unknown обоснован; объяснение краткое."},
+"gpt-5.6-luna-low":{"correctness":8,"reasoning":6,"format":8,"russian":5,"comment":"Чистое рабочее решение с SelectorOutputs; краткое пояснение про unknown."},
+"gpt-5.6-luna-medium":{"correctness":8,"reasoning":5,"format":8,"russian":4,"comment":"Корректный variadic pattern, всё type-check; объяснение минимальное."},
+"gpt-5.6-sol-low":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Store-тип + SelectorOutputs через infer, хорошие комментарии и пояснение про slice/map."},
+"gpt-5.6-sol-medium":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Отдельный firstSelector + rest — поддержка от 1 селектора, корректный вывод типов, понятное объяснение."},
+"gpt-5.6-terra-high":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Values-tuple с проверкой длины и cache-флагом, корректно; хорошее объяснение S extends object."},
+"gpt-5.6-terra-low":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Чистый SelectorOutputs + cache, обоснованный unknown; ясное пояснение."},
+"gpt-5.6-terra-medium":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Корректный variadic pattern с cache, комментарии про потерю tuple в map/slice; аккуратно."}
+},"winner":"gpt-oss-120b","notes":"Большинство GPT-5.6/oss/terra/sol дают корректный variadic-generic; gpt-oss-120b лидирует чистотой кода и лучшим русским объяснением. Провалы: nemotron-super (не по теме), nemotron-omni (нет решения), diffusion-gemma (невалидная сигнатура), deepseek-flash (as any)."}

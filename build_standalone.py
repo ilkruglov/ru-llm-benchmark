@@ -1,0 +1,382 @@
+"""Premium standalone report generator (dark-hero dashboard) — faithful to the
+'Master Benchmark v2 standalone' structure: .wrap sections, hero+rankcard(+rc-foot),
+lead-finding + finding-grid, criteria-legend, chart barcharts with bc-meta chips,
+collapsible detail tables, segment heatmap, per-task cards. One self-contained HTML.
+
+Usage: python3 build_standalone.py text|vl --results ... --scores-dir ... --out ... --tags ... --title ... [--subtitle ...]
+"""
+import argparse
+import json
+import statistics
+from collections import defaultdict
+from pathlib import Path
+
+from category_focus_master import SEGMENTS
+from build_html_report_v2 import CATEGORY_LABEL, MODEL_NAMES_FALLBACK, get_segment, esc
+from build_vl_report import CAP_LABEL, VERT_LABEL, thumb_data_url
+
+THEME = Path("_standalone_theme.css").read_text()
+TEXT_W = {"correctness": 0.6, "format": 0.1, "russian": 0.3}
+VL_W = {"correctness": 0.8, "format": 0.1, "russian": 0.1}
+CRIT = ["correctness", "format", "russian"]
+
+
+def wsum(s, W):
+    return sum(W[c] * s[c] for c in CRIT)
+
+
+def avg(xs):
+    xs = [x for x in xs if x is not None]
+    return statistics.mean(xs) if xs else 0.0
+
+
+def med(xs):
+    return statistics.median(xs) if xs else 0.0
+
+
+def compute(results_path, scores_dir, tags, W, vl):
+    data = json.load(open(results_path))
+    results = data["results"]
+    names = {e["tag"]: e["model"] for e in data.get("endpoints", [])}
+    for t in tags:
+        names.setdefault(t, MODEL_NAMES_FALLBACK.get(t, t))
+    cat_key = "capability" if vl else "category"
+    scores = {}
+    for fp in Path(scores_dir).glob("*.json"):
+        try:
+            sd = json.load(open(fp)); scores[sd["task_id"]] = sd
+        except Exception:
+            pass
+
+    def blk(t, r):
+        return bool((r["responses"].get(t) or {}).get("cyber_blocked"))
+
+    def emp(t, r):
+        rr = r["responses"].get(t) or {}
+        return bool(rr.get("ok")) and not (rr.get("content") or "").strip()
+
+    by_cat = defaultdict(lambda: {t: [] for t in tags})
+    by_seg = defaultdict(lambda: {t: {c: [] for c in CRIT} for t in tags})
+    by_tag = {t: {c: [] for c in CRIT} for t in tags}
+    cat_wins = defaultdict(lambda: defaultdict(int))
+    wins = defaultdict(int)
+    perf = defaultdict(lambda: {"lat": [], "ct": [], "tps": [], "alen": [], "ok": 0})
+    blocked = defaultdict(int)
+
+    for r in results:
+        sd = scores.get(r["id"])
+        seg = r.get("vertical", "?") if vl else get_segment(r.get(cat_key, "?"))
+        for t in tags:
+            resp = r["responses"].get(t, {})
+            if blk(t, r):
+                blocked[t] += 1; continue
+            if resp.get("ok"):
+                perf[t]["ok"] += 1
+                lat = resp.get("latency_ms") or 0; ct = resp.get("completion_tokens") or 0
+                perf[t]["lat"].append(lat); perf[t]["ct"].append(ct)
+                perf[t]["alen"].append(len(resp.get("content") or ""))
+                if ct and lat:
+                    perf[t]["tps"].append(ct / (lat / 1000))
+            if sd and emp(t, r):
+                continue
+            if sd and t in sd["scores"]:
+                s = sd["scores"][t]
+                by_cat[r.get(cat_key, "?")][t].append(wsum(s, W))
+                for c in CRIT:
+                    by_tag[t][c].append(s[c]); by_seg[seg][t][c].append(s[c])
+        if sd:
+            w = max((t for t in tags if t in sd["scores"] and not emp(t, r) and not blk(t, r)),
+                    key=lambda t: wsum(sd["scores"][t], W), default=None)
+            if w:
+                wins[w] += 1; cat_wins[r.get(cat_key, "?")][w] += 1
+
+    judged_cats = [c for c in by_cat if any(by_cat[c][t] for t in tags)]
+    micro = {t: sum(W[c] * avg(by_tag[t][c]) for c in CRIT) for t in tags}
+    macro = {t: avg([avg(by_cat[c][t]) for c in judged_cats if by_cat[c][t]]) for t in tags}
+    cat_n = {c: max((len(by_cat[c][t]) for t in tags), default=0) for c in judged_cats}
+    winrate = {t: 100 * avg([cat_wins[c][t] / cat_n[c] for c in judged_cats if cat_n[c]]) for t in tags}
+    cats_led = {t: sum(1 for c in judged_cats if max(tags, key=lambda x: avg(by_cat[c][x])) == t) for t in tags}
+    crit_avg = {t: {c: avg(by_tag[t][c]) for c in CRIT} for t in tags}
+    return dict(results=results, scores=scores, names=names, tags=tags, W=W, vl=vl, cat_key=cat_key,
+                macro=macro, micro=micro, winrate=winrate, cats_led=cats_led, wins=wins,
+                by_cat=by_cat, by_seg=by_seg, judged_cats=judged_cats, crit_avg=crit_avg,
+                perf=perf, blocked=blocked, n_cats=len(judged_cats), cat_wins=cat_wins,
+                blk=blk, emp=emp)
+
+
+def render(D, out_path, title, subtitle):
+    tags, names = D["tags"], D["names"]
+    macro, micro, ca = D["macro"], D["micro"], D["crit_avg"]
+    order = sorted(tags, key=lambda t: -macro[t])
+    n_tasks = len(D["scores"]); vl = D["vl"]; W = D["W"]; cat_key = D["cat_key"]
+    H = []; A = H.append
+
+    def nm(t):
+        return esc(names.get(t, t))
+
+    LBL = CAP_LABEL if vl else CATEGORY_LABEL
+
+    def clbl(c):
+        return LBL.get(c, c)
+
+    def seglbl(sg):
+        return (VERT_LABEL.get(sg, sg) if vl else sg.split("(")[0].strip())
+
+    by_cat_tasks = defaultdict(list)
+    for r in D["results"]:
+        by_cat_tasks[r.get(cat_key, "?")].append(r)
+    cat_order = ([c for seg, cats in SEGMENTS.items() for c in cats if c in by_cat_tasks]
+                 if not vl else sorted(by_cat_tasks))
+
+    # ---- sidebar ----
+    A(f'<aside class="sidebar"><h1>{esc(title)}</h1><div class="sub">{esc(subtitle)}</div>')
+    A('<a href="#exec">Обзор</a><a href="#findings">Ключевые выводы</a><a href="#leaderboard">Лидерборд</a>'
+      '<a href="#tokens">Расход токенов</a><a href="#perf">Производительность</a>'
+      '<a href="#segments">Сегменты</a><a href="#categories">Категории</a>')
+    for c in cat_order:
+        A(f'<div class="grp">{esc(clbl(c))}</div>')
+        for r in by_cat_tasks[c]:
+            A(f'<a class="tlink" href="#{r["id"]}" title="{esc(r.get("title",""))}"><span class="tid">{r["id"]}</span> {esc(r.get("title",""))}</a>')
+    A('</aside>')
+
+    # ---- hero ----
+    A('<main id="top"><header class="hero" id="exec"><div class="hero-grid"><div class="hero-main">')
+    A(f'<div class="hero-eyebrow">Сравнительная оценка · {len(tags)} моделей</div>')
+    words = title.split("—")[0].strip()
+    A(f'<h1>{esc(words)} <span class="accent">— бенчмарк</span></h1>')
+    A(f'<p class="hero-lead">{len(tags)} моделей в равных условиях: <b>{n_tasks} задач</b> и независимый судья '
+      f'Opus (единый метод). Один средний балл (0–10) по трём критериям — корректность, формат, русский — решает, кто лучше.</p>')
+    A('<div class="hero-kpis">')
+    for val, lab in [(n_tasks, "задач"), (D["n_cats"], "категорий"), (len(tags), "моделей"),
+                     (32768 if vl else 65536, "бюджет, ток.")]:
+        A(f'<div class="hero-kpi"><div class="v"><span data-count="{val}">{val:,}</span></div><div class="l">{lab}</div></div>')
+    A('</div></div>')
+    # rankcard — all models + rc-foot
+    A('<div class="hero-aside"><div class="rankcard"><div class="rc-head"><div class="rc-title">Лидерборд</div>'
+      '<div class="rc-sub">средний балл · 0–10</div></div>')
+    for i, t in enumerate(order, 1):
+        champ = " champ" if i == 1 else ""
+        w = round(100 * macro[t] / 10)
+        A(f'<div class="rank-row{champ}"><span class="rk">{i}</span><div class="rm"><div class="nm">{nm(t)}</div>'
+          f'<div class="track"><span class="fill" data-w="{w}" style="width:{w}%"></span></div></div>'
+          f'<span class="rv">{macro[t]:.2f}</span></div>')
+    A(f'<div class="rc-foot"><span class="dot"></span>Чемпион — {nm(order[0])} · '
+      f'{D["cats_led"][order[0]]} / {D["n_cats"]} категорий</div>')
+    A('</div></div></div></header>')
+
+    # ---- findings ----
+    A('<div class="wrap findings-sec"><h2 class="sec" id="findings">Ключевые выводы</h2>')
+    ch = order[0]
+    ru_lead = max(tags, key=lambda t: ca[t]["russian"])
+    A('<div class="lead-finding"><div class="badge">1</div><div class="lf-body">')
+    A(f'<div class="lf-k">Лидер — {nm(ch)}</div>')
+    lead_txt = (f'<b>{nm(ch)}</b> возглавляет таблицу с <b>{macro[ch]:.2f} / 10</b> и берёт '
+                f'<b>{D["cats_led"][ch]} / {D["n_cats"]}</b> категорий.')
+    if len(order) > 2:
+        lead_txt += (f' Следом — <b>{nm(order[1])}</b> ({macro[order[1]]:.2f}) и <b>{nm(order[2])}</b> '
+                     f'({macro[order[2]]:.2f}).')
+    A(f'<div class="lf-t">{lead_txt}</div></div></div>')
+    A('<div class="finding-grid">')
+    mid = order[3:6]
+    if mid:
+        A(f'<div class="finding"><h4><span class="ic"></span>Плотная середина</h4><p>' +
+          ", ".join(f'<b>{nm(t)}</b> ({macro[t]:.2f})' for t in mid) +
+          f' — разброс {macro[mid[0]]-macro[mid[-1]]:.2f} балла; выбор зависит от задачи.</p></div>')
+    A(f'<div class="finding"><h4><span class="ic"></span>Аутсайдеры</h4><p>Замыкают поле '
+      f'<b>{nm(order[-1])}</b> ({macro[order[-1]]:.2f}) и <b>{nm(order[-2])}</b> ({macro[order[-2]]:.2f}).</p></div>')
+    A(f'<div class="finding"><h4><span class="ic"></span>Русский язык</h4><p>Лучший русский у '
+      f'<b>{nm(ru_lead)}</b> ({ca[ru_lead]["russian"]:.2f}). Критерий russian весит '
+      f'{W["russian"]:.0%} в итоговом Σ.</p></div>')
+    blk_note = [f"{nm(t)}: {D['blocked'][t]}" for t in tags if D["blocked"].get(t)]
+    if blk_note:
+        A(f'<div class="finding"><h4><span class="ic"></span>Кибербез-блоки</h4><p>Фильтр OpenAI заблокировал '
+          f'(исключено из подсчёта): {"; ".join(blk_note)}.</p></div>')
+    A('</div></div>')
+
+    # ---- barchart helper ----
+    def barsection(sec_id, h2, callout, rows, legend=""):
+        # rows: list of (label_html, value_float, bar_pct, chips_html) sorted
+        A(f'<div class="wrap"><h2 class="sec" id="{sec_id}">{h2}</h2>')
+        if callout:
+            A(f'<div class="callout">{callout}</div>')
+        if legend:
+            A(legend)
+        A('<div class="chart"><div class="chart-cap"><span class="ct">' + h2 +
+          '</span><span class="cs">0–10 · нормировано</span></div><div class="barchart">')
+        for i, (lab, val, pct, chips, disp) in enumerate(rows):
+            champ = " champ" if i == 0 else ""
+            A(f'<div class="bc-row{champ}"><div class="bc-name">{lab}</div>'
+              f'<div class="bc-track"><span class="bc-fill" data-w="{pct}" style="width:{pct}%"></span></div>'
+              f'<div class="bc-val">{disp}</div>{chips}</div>')
+        A('</div></div>')
+
+    # ---- leaderboard ----
+    legend = ('<div class="criteria-legend"><span class="cl-title">Критерии судьи · 0–10</span>'
+              '<span class="cl-item"><b>C</b> correctness — корректность</span>'
+              '<span class="cl-item"><b>F</b> format — формат</span>'
+              '<span class="cl-item"><b>Ru</b> russian — русский</span>'
+              '<span class="cl-item cl-note">«Среднее» — взвешенная свёртка этих трёх</span></div>')
+    rows = []
+    for t in order:
+        chips = (f'<div class="bc-meta"><span class="bc-chip">за задачу <b>{micro[t]:.2f}</b></span>'
+                 f'<span class="bc-chip">лидер в кат. <b>{D["cats_led"][t]} / {D["n_cats"]}</b></span>'
+                 f'<span class="bc-chip">доля побед <b>{D["winrate"][t]:.1f}%</b></span></div>')
+        rows.append((nm(t), macro[t], round(100 * macro[t] / 10), chips, f'{macro[t]:.2f}<small>/10</small>'))
+    barsection("leaderboard", "Лидерборд",
+               "Средний балл по трём критериям, нормированный по категориям (крупные категории не перевешивают).",
+               rows, legend)
+    # collapsible full table
+    A('<details class="tbl-d"><summary>Полная таблица баллов</summary><div class="table-scroll"><table><thead><tr>'
+      '<th>#</th><th>Модель</th><th class="num">Средний балл</th><th class="num">За задачу</th>'
+      '<th class="num">Лидер в кат.</th><th class="num">Доля побед</th><th class="num">C</th>'
+      '<th class="num">F</th><th class="num">Ru</th></tr></thead><tbody>')
+    for i, t in enumerate(order, 1):
+        cls = ' class="gold-row"' if i == 1 else ""
+        A(f'<tr{cls}><td class="num">{i}</td><td><b>{nm(t)}</b></td><td class="num">{macro[t]:.2f}</td>'
+          f'<td class="num">{micro[t]:.2f}</td><td class="num">{D["cats_led"][t]} / {D["n_cats"]}</td>'
+          f'<td class="num">{D["winrate"][t]:.1f}%</td><td class="num">{ca[t]["correctness"]:.1f}</td>'
+          f'<td class="num">{ca[t]["format"]:.1f}</td><td class="num">{ca[t]["russian"]:.1f}</td></tr>')
+    A('</tbody></table></div></details></div>')
+
+    # ---- tokens ----
+    tok_order = sorted(tags, key=lambda t: -med(D["perf"][t]["ct"]))
+    mx = max((med(D["perf"][t]["ct"]) for t in tags), default=1) or 1
+    rows = [(nm(t), med(D["perf"][t]["ct"]), round(100 * med(D["perf"][t]["ct"]) / mx),
+             f'<div class="bc-meta"><span class="bc-chip">символов <b>{med(D["perf"][t]["alen"]):,.0f}</b></span></div>',
+             f'{med(D["perf"][t]["ct"]):,.0f}') for t in tok_order]
+    barsection("tokens", "Расход токенов на ответ",
+               "Медиана выходных токенов на задачу — «болтливость» модели (у reasoning-моделей включает рассуждение).", rows)
+    A('<details class="tbl-d"><summary>Таблица токенов</summary><div class="table-scroll"><table><thead><tr>'
+      '<th>Модель</th><th class="num">Медиана</th><th class="num">Среднее</th>'
+      '<th class="num">символов (медиана)</th></tr></thead><tbody>')
+    for t in tok_order:
+        p = D["perf"][t]
+        A(f'<tr><td><b>{nm(t)}</b></td><td class="num">{med(p["ct"]):,.0f}</td>'
+          f'<td class="num">{avg(p["ct"]):,.0f}</td><td class="num">{med(p["alen"]):,.0f}</td></tr>')
+    A('</tbody></table></div></details></div>')
+
+    # ---- performance ----
+    perf_order = sorted(tags, key=lambda t: -med(D["perf"][t]["tps"]))
+    mx = max((med(D["perf"][t]["tps"]) for t in tags), default=1) or 1
+    rows = [(nm(t), med(D["perf"][t]["tps"]), round(100 * med(D["perf"][t]["tps"]) / mx),
+             f'<div class="bc-meta"><span class="bc-chip">задержка <b>{med(D["perf"][t]["lat"])/1000:.1f}с</b></span></div>',
+             f'{med(D["perf"][t]["tps"]):.0f}<small> tok/s</small>') for t in perf_order]
+    barsection("perf", "Производительность",
+               "Скорость генерации (tok/s, медиана) и типовая задержка ответа.", rows)
+
+    # ---- segment heatmap ----
+    def heat_color(s):
+        d = 9.2 - s
+        R = min(238, max(12, 20 + 37.4 * d)); G = min(238, max(100, 112 + 24.2 * d)); B = min(238, max(92, 103 + 24.7 * d))
+        return f"rgb({R:.0f},{G:.0f},{B:.0f})", ("#fff" if R < 150 else "var(--ink)")
+    seg_order = [s for s in SEGMENTS if s in D["by_seg"]] + [s for s in D["by_seg"] if s not in SEGMENTS]
+    A('<div class="wrap"><h2 class="sec" id="segments">Результаты по сегментам</h2>')
+    A('<div class="callout">Средний балл по группам задач × модели. Теплее = выше; золотая рамка — лидер сегмента.</div>')
+    A('<div class="chart"><div class="chart-cap"><span class="ct">Сегмент × модель</span><span class="cs">0–10</span></div>')
+    A(f'<div class="heat" style="grid-template-columns:minmax(120px,1.3fr) repeat({len(order)},minmax(0,1fr))"><div></div>')
+    for t in order:
+        parts = nm(t).replace(" (", "|(").split("|", 1)
+        A(f'<div class="hh">{"<br>".join(parts)}</div>')
+    for seg in seg_order:
+        bs = D["by_seg"][seg]
+        ss = {t: (sum(W[c] * avg(bs[t][c]) for c in CRIT) if bs[t]["correctness"] else None) for t in order}
+        lead = max((t for t in order if ss[t] is not None), key=lambda t: ss[t], default=None)
+        A(f'<div class="hr">{esc(seglbl(seg))}</div>')
+        for t in order:
+            v = ss[t]
+            if v is None:
+                A('<div class="cell" style="background:var(--bg-soft);color:var(--faint)">—</div>'); continue
+            bg, fg = heat_color(v)
+            ld = '<span class="ld"></span>' if t == lead else ''
+            A(f'<div class="cell{" lead" if t==lead else ""}" style="background:{bg};color:{fg}">{ld}{v:.1f}</div>')
+    A('</div></div></div>')
+
+    # ---- categories heatmap ----
+    A('<div class="wrap"><h2 class="sec" id="categories">Результаты по категориям</h2>')
+    A('<div class="callout">Лидер и балл в каждой из категорий.</div>')
+    A('<div class="chart"><div class="chart-cap"><span class="ct">Категория × лидер</span><span class="cs">0–10</span></div>')
+    A('<div class="table-scroll"><table><thead><tr><th>Категория</th><th>Лидер</th>'
+      '<th class="num">Балл</th><th class="num">задач</th></tr></thead><tbody>')
+    for c in cat_order:
+        if c not in D["by_cat"]:
+            continue
+        lead = max(tags, key=lambda t: avg(D["by_cat"][c][t]))
+        A(f'<tr><td>{esc(clbl(c))}</td><td><b>{nm(lead)}</b></td>'
+          f'<td class="num">{avg(D["by_cat"][c][lead]):.2f}</td><td class="num">{len(by_cat_tasks[c])}</td></tr>')
+    A('</tbody></table></div></div></div>')
+
+    # ---- per-task ----
+    A('<div class="wrap"><h2 class="sec">Разбор по задачам</h2></div>')
+    for c in cat_order:
+        A(f'<div class="wrap"><h3 class="catsec" id="cat-{c}">{esc(clbl(c))}</h3>')
+        for r in by_cat_tasks[c]:
+            sd = D["scores"].get(r["id"])
+            if not sd:
+                continue
+            present = [t for t in tags if t in sd["scores"] and not D["blk"](t, r) and not D["emp"](t, r)]
+            winner = max(present, key=lambda t: wsum(sd["scores"][t], W), default=None)
+            wtot = wsum(sd["scores"][winner], W) if winner else 0
+            if vl and r.get("image"):
+                thumb = thumb_data_url(r["image"], w=420)
+                A(f'<article class="task vl" id="{r["id"]}"><div class="imgcol"><img src="{thumb}" alt="" loading="lazy"></div><div class="body">')
+            else:
+                A(f'<article class="task" id="{r["id"]}"><div class="body">')
+            A(f'<h4>{esc(r["id"])} — {esc(r.get("title",""))}</h4>')
+            A(f'<div class="meta"><span class="tag">{esc(r.get(cat_key,"?"))}</span> · промпт {len(r["prompt"]):,} симв. · '
+              f'<span class="win-badge">Победитель: {nm(winner) if winner else "—"} · {wtot:.1f}/10</span></div>')
+            A(f'<details class="prompt-d"><summary><span class="pchev">▸</span>Промпт задачи</summary>'
+              f'<div class="prompt">{esc(r["prompt"][:7000])}</div></details>')
+            A('<div class="table-scroll"><table><thead><tr><th>Модель</th><th class="num">C</th><th class="num">F</th>'
+              '<th class="num">Ru</th><th class="num">Σ</th><th>Комментарий судьи</th></tr></thead><tbody>')
+
+            def rk(t):
+                if D["blk"](t, r):
+                    return (2, 0)
+                if t not in sd["scores"] or D["emp"](t, r):
+                    return (3, 0)
+                return (0, -wsum(sd["scores"][t], W))
+            for t in sorted(tags, key=rk):
+                if D["blk"](t, r):
+                    A(f'<tr style="color:var(--faint)"><td>{nm(t)}</td><td class="num">—</td><td class="num">—</td>'
+                      f'<td class="num">—</td><td class="num">—</td><td class="cmt-cell">Заблокировано кибербез-фильтром OpenAI.</td></tr>')
+                    continue
+                if t not in sd["scores"] or D["emp"](t, r):
+                    continue
+                s = sd["scores"][t]; tot = wsum(s, W)
+                cls = ' class="win"' if t == winner else ""
+                A(f'<tr{cls}><td><b>{nm(t)}</b></td><td class="num">{s["correctness"]}</td>'
+                  f'<td class="num">{s["format"]}</td><td class="num">{s["russian"]}</td>'
+                  f'<td class="num"><b>{tot:.1f}</b></td><td class="cmt-cell">{esc(s.get("comment",""))}</td></tr>')
+            A('</tbody></table></div>')
+            if sd.get("notes"):
+                A(f'<div class="note">{esc(sd["notes"])}</div>')
+            A('</div></article>')
+        A('</div>')
+
+    A('</main><a class="totop" href="#top">↑</a>')
+    js = ("<script>document.querySelectorAll('[data-count]').forEach(e=>{const n=+e.dataset.count;let c=0;"
+          "const st=Math.max(1,n/40);const t=setInterval(()=>{c+=st;if(c>=n){c=n;clearInterval(t)}"
+          "e.textContent=Math.round(c).toLocaleString('ru')},20)});</script>")
+    html = (f"<!DOCTYPE html><html lang=ru><head><meta charset=utf-8>"
+            f"<meta name=viewport content='width=device-width,initial-scale=1'><title>{esc(title)}</title>"
+            f'<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+            f'<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">'
+            f"<style>{THEME}</style></head><body>{''.join(H)}{js}</body></html>")
+    Path(out_path).write_text(html)
+    print(f"Wrote {out_path} ({len(html)//1024} KB), {n_tasks} tasks, {len(tags)} models")
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("mode")
+    p.add_argument("--results"); p.add_argument("--scores-dir"); p.add_argument("--out")
+    p.add_argument("--tags"); p.add_argument("--title"); p.add_argument("--subtitle", default="")
+    a = p.parse_args()
+    vl = a.mode == "vl"
+    W = VL_W if vl else TEXT_W
+    D = compute(a.results, a.scores_dir, a.tags.split(","), W, vl)
+    render(D, a.out, a.title, a.subtitle)
+
+
+if __name__ == "__main__":
+    main()

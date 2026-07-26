@@ -1,0 +1,22 @@
+{"task_id":"m-summarization-05","category":"summarization","scores":{
+"gpt-oss-120b":{"correctness":8,"reasoning":7,"format":8,"russian":1,"comment":"Факты точны, 5 слайдов по 4 буллета, но ответ полностью на английском — провал по языку задачи."},
+"deepseek-flash":{"correctness":8,"reasoning":7,"format":9,"russian":7,"comment":"Русский, 5 слайдов по 5 буллетов, ключевые метрики сохранены; много англицизмов, ISO указан Q2 вместо Q1."},
+"deepseek-pro":{"correctness":8,"reasoning":8,"format":8,"russian":1,"comment":"Содержательно и аналитично, но целиком на английском — язык задачи не соблюдён."},
+"35b-a3b":{"correctness":7,"reasoning":7,"format":9,"russian":9,"comment":"Чистый литературный русский, ровно 5 слайдов по 4 буллета; часть цифр опущена, но суть сохранена."},
+"27b-v2":{"correctness":8,"reasoning":7,"format":9,"russian":8,"comment":"Сжато и корректно, 5 слайдов, ключевые факты на месте; умеренные англицизмы."},
+"gemma-4-31b":{"correctness":8,"reasoning":7,"format":7,"russian":8,"comment":"Хорошее покрытие фактов, но LaTeX-артефакты ($\\to$, $5M) портят формат слайдов."},
+"diffusion-gemma":{"correctness":8,"reasoning":7,"format":8,"russian":8,"comment":"Русский, факты сохранены; отдельные буллеты на грани лимита слов, слайд 2 с 5 буллетами."},
+"gpt-5.5-low":{"correctness":8,"reasoning":7,"format":8,"russian":1,"comment":"Аккуратные слайды и корректные факты, но ответ на английском — язык не соблюдён."},
+"gpt-5.5-medium":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Русский с сильной калькой и странным Title-Case заголовков; факты в целом верны."},
+"nemotron-super":{"correctness":9,"reasoning":8,"format":8,"russian":1,"comment":"Максимально полное сохранение фактов, но полностью на английском — провал по языку."},
+"nemotron-omni":{"correctness":8,"reasoning":7,"format":8,"russian":1,"comment":"Хорошая структура и факты, но ответ на английском."},
+"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":7,"comment":"Русский, 5 слайдов по 5 буллетов, богатое покрытие (конкуренты, go/no-go); опечатка «хайджин» и англицизмы."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":8,"russian":8,"comment":"Комплексно и точно; один буллет с gaps перегружен слэшами на грани лимита слов."},
+"gpt-5.6-luna-low":{"correctness":8,"reasoning":7,"format":9,"russian":8,"comment":"Русский, аккуратные слайды, ключевые метрики сохранены; сдержанные англицизмы."},
+"gpt-5.6-luna-medium":{"correctness":8,"reasoning":8,"format":9,"russian":8,"comment":"Хорошо сбалансированный русский, 5 слайдов, факты и таймлайн сохранены."},
+"gpt-5.6-sol-low":{"correctness":8,"reasoning":8,"format":9,"russian":8,"comment":"Чёткие слайды с осмысленными заголовками, факты верны; лёгкая калька."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":8,"comment":"Сильная структура с квартальной дорожной картой и рисками, факты точны, русский хорош."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":8,"comment":"Полное покрытие фактов, чистые заголовки, риски и KPI; аккуратный русский с уместными терминами."},
+"gpt-5.6-terra-low":{"correctness":8,"reasoning":7,"format":9,"russian":8,"comment":"Логичная разбивка слайдов, факты сохранены; чуть суше по анализу."},
+"gpt-5.6-terra-medium":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Очень чистый литературный русский (числа прописью), 5 слайдов, факты корректны."}
+},"winner":"gpt-5.6-terra-high","notes":"Русскоязычные ответы линейки 5.6 (terra-high, sol-medium, kimi) лидируют; terra-high даёт самое полное и аккуратное покрытие фактов, рисков и KPI. Английские ответы (gpt-oss, deepseek-pro, 5.5-low, nemotron) провалены по языку."}

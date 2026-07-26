@@ -1,0 +1,22 @@
+{"task_id":"m-format-04","category":"format_strict","scores":{
+"gpt-oss-120b":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Валидный YAML, все 7 ключей по порядку, теги snake_case, features 5 ключей с миксом true/false. Полное соответствие схеме."},
+"deepseek-pro":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Валидный YAML (последовательности на том же отступе допустимы), теги snake_case, все ограничения соблюдены."},
+"deepseek-flash":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Полное соответствие: 7 ключей, tls false с пустыми строками, теги snake_case, features корректны."},
+"35b-a3b":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Ведущие пустые строки допустимы в YAML, 4 тега snake_case, password_env валиден, всё по схеме."},
+"27b-v2":{"correctness":6,"reasoning":6,"format":9,"russian":8,"comment":"YAML валиден и полон, но теги payment-processing/staging-env в kebab-case, а не snake_case — нарушение схемы."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Все ограничения соблюдены, теги snake_case, features 5 ключей с миксом, cert/key заданы при tls false."},
+"diffusion-gemma":{"correctness":6,"reasoning":6,"format":9,"russian":8,"comment":"YAML валиден, но теги staging-environment/order-management в kebab-case вместо snake_case — нарушение."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Полное соответствие схеме: tls true с путями, теги snake_case, features корректны."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Валидный YAML, все ключи и типы верны, теги snake_case, features с миксом true/false."},
+"nemotron-omni":{"correctness":6,"reasoning":6,"format":9,"russian":8,"comment":"YAML валиден, но тег order-service в kebab-case, а не snake_case — нарушение требования к тегам."},
+"nemotron-super":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Все ограничения соблюдены, теги snake_case; имена feature-флагов generic, но валидны."},
+"kimi-k2.6":{"correctness":6,"reasoning":6,"format":9,"russian":8,"comment":"YAML валиден, но тег order-processing в kebab-case, а не snake_case — нарушение схемы."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Полное соответствие: теги snake_case, features 5 ключей с миксом, все типы верны."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Валидный YAML, tls true с путями, теги snake_case, sinks из допустимого набора."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Все ограничения соблюдены, теги snake_case, features корректны с миксом true/false."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Полное соответствие схеме, теги snake_case, все enum и типы верны."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Валидный YAML, теги snake_case, features 5 ключей с миксом, pool корректен."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Все ограничения соблюдены, теги snake_case, sinks минимум один элемент — валидно."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Полное соответствие: теги snake_case, features корректны, все типы верны."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Валидный YAML, теги snake_case, features 5 ключей с миксом, всё по схеме."}
+},"winner":"gpt-5.5-medium","notes":"Большинство моделей дали идеально валидный YAML по строгой схеме; проигравшие (27b-v2, diffusion-gemma, nemotron-omni, kimi-k2.6) нарушили требование snake_case в тегах, использовав kebab-case."}

@@ -1,0 +1,22 @@
+{"task_id":"m-rag-04","category":"rag","scores":{
+"gpt-oss-120b":{"correctness":5,"reasoning":9,"format":7,"russian":9,"comment":"Верно закрывает п.3 и честно отказывает по 1,2,4,5, но выдумывает несуществующие URL и телефоны — галлюцинация ресурсов вне chunks."},
+"deepseek-flash":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Явные ссылки на chunk_fin_1/2/3, точный вывод по ИИС, честные отказы с рекомендациями ресурсов."},
+"deepseek-pro":{"correctness":9,"reasoning":9,"format":6,"russian":10,"comment":"Строго по фрагментам, глубоко и честно, но маркеры атрибуции менее явные."},
+"35b-a3b":{"correctness":9,"reasoning":8,"format":6,"russian":9,"comment":"Корректно цитирует тарифы и вывод по ИИС, честные отказы; атрибуция умеренная."},
+"27b-v2":{"correctness":9,"reasoning":7,"format":6,"russian":9,"comment":"Все пункты верны и честны, но короче и без явных ссылок на фрагменты."},
+"gemma-4-31b":{"correctness":8,"reasoning":6,"format":5,"russian":6,"comment":"Ответы верны, но приветствие обрезано ('йте!'), сжато и без явных маркеров."},
+"diffusion-gemma":{"correctness":9,"reasoning":7,"format":6,"russian":9,"comment":"Корректно приводит тарифы и вывод по ИИС, честные отказы; атрибуция средняя."},
+"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Детальный разбор тарифов и честные отказы с указанием разделов регламента."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":7,"russian":9,"comment":"Полный и аккуратный ответ, все 5 пунктов строго по chunks с рекомендациями."},
+"nemotron-super":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Цитирует chunk_fin_3 дословно, честные отказы, хорошие маркеры атрибуции."},
+"nemotron-omni":{"correctness":8,"reasoning":6,"format":7,"russian":5,"comment":"Верно по сути и ссылается на разделы, но вставлено немецкое слово 'Kauf' — дефект русского."},
+"kimi-k2.6":{"correctness":9,"reasoning":9,"format":7,"russian":9,"comment":"Строго по фрагментам, добавляет корректную деталь про 3-летний срок ИИС, честные отказы."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":6,"russian":9,"comment":"Верно, честно, добавляет корректный факт про закрытие ИИС не ранее 3 лет."},
+"gpt-5.6-luna-low":{"correctness":8,"reasoning":6,"format":5,"russian":9,"comment":"Все пункты верны и честны, но сжато и без явных ссылок на фрагменты."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":7,"format":6,"russian":9,"comment":"Корректно и честно по всем пунктам, атрибуция умеренная."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Приводит тарифы, честно отказывает по остальным, указывает конкретные службы."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Полный, честный, с корректными ссылками на тарифы и рекомендациями ресурсов."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":6,"format":5,"russian":9,"comment":"Верно и честно, но кратко и с минимальной атрибуцией."},
+"gpt-5.6-terra-low":{"correctness":7,"reasoning":7,"format":5,"russian":9,"comment":"Считает комиссию 1000+200₽ по тарифам Мосбиржи для сделки, хоть и с оговоркой — потенциально вводит в заблуждение."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":7,"format":6,"russian":9,"comment":"Верно, отмечает нюанс СПБ Биржи (только росс. инструменты), честные отказы."}
+},"winner":"deepseek-flash","notes":"Победитель — deepseek-flash: явные ссылки на chunk_fin_1/2/3, глубокий и полностью честный разбор всех 5 пунктов. gpt-oss-120b оштрафован за выдуманные URL/телефоны."}

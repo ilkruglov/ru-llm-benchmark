@@ -1,0 +1,19 @@
+{"task_id":"map_нефтегаз_3944a26f69","category":"map","scores":{
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно: стрелка=Порты, Приморск, Одесса и Баку, с корректными дополнениями. Всё соответствует карте."},
+"llama-scout":{"correctness":3,"reasoning":4,"format":8,"russian":9,"comment":"Q1 верно (Порты, Приморск), но в Q2 обе подписи выдуманы: Новороссийск не подписан явно, Махачкала на карте не видна."},
+"27b-v2":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Q1 верно, но добавлен несуществующий Усть-Луга; в Q2 ведёт Новороссийск (не подписан), хотя корректно перечисляет Батуми/Одесса/Херсон/Баку/Атырау."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верно: Порты, Приморск, Батуми и Баку плюс корректные Одесса/Херсон/Красноводск."},
+"diffusion-gemma":{"correctness":9,"reasoning":7,"format":8,"russian":5,"comment":"Ответы по сути верны (Порты, Приморск, Батуми, Атырау/Красноводск), но много опечаток: 'сновываясь', 'част', 'Красноводок'."},
+"gpt-5.5-low":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Верно: Порты, Приморск, Одесса/Батум, Баку/Красноводск. Незначительно 'Батум'."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":9,"russian":9,"comment":"Верно: Порты, Приморск, Батум, Баку. Форма 'Батум' мелкая условность."},
+"nemotron-omni":{"correctness":2,"reasoning":3,"format":7,"russian":7,"comment":"Балтийский порт назван бессмысленно 'Пулонч' вместо Приморска; в Q2 'Кемгуг' — искажённый Кемчуг (внутренний), выдумка."},
+"kimi-k2.6":{"correctness":5,"reasoning":6,"format":8,"russian":9,"comment":"Q1 верно, Одесса верно, но каспийский порт назван Актау (на карте нет); упомянутые Туапсе/Новороссийск/Махачкала также не подписаны."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верно: Порты, Приморск, Одесса, Баку."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Верно: Порты, Приморск, Одесса, Баку. Кратко."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верно: Порты, Приморск, Одесса, Херсон, Баку."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верно: Порты, Приморск, Батуми, Баку."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верно: Порты, Приморск, Одесса, Баку."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Верно: Порты, Приморск, Батум, Баку. Очень лаконично."},
+"gpt-5.6-terra-low":{"correctness":6,"reasoning":6,"format":8,"russian":10,"comment":"Q1 верно, Баку верно, но Новороссийск как черноморский порт не подписан на карте — выдумка."},
+"gpt-5.6-terra-medium":{"correctness":6,"reasoning":6,"format":8,"russian":10,"comment":"Q1 верно, Красноводск верно, но Новороссийск не подписан на карте — выдумка."}
+},"winner":"gemma-4-31b","notes":"Полностью верный и наиболее полный ответ дал gemma-4-31b; серию правильных дали и gpt-5.6-luna/sol и 35b-a3b. Провалы у nemotron-omni ('Пулонч'/'Кемгуг') и llama-scout (Новороссийск/Махачкала)."}

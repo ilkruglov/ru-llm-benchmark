@@ -1,0 +1,19 @@
+{"task_id":"table_стройка_2825673eab","category":"table","scores":{
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все четыре значения графы 10 прочитаны верно, сумма 27580,40 корректна, разбор подробный."},
+"35b-a3b":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все значения и итог верны, оформление краткое но ясное."},
+"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения и сумма 27580,40 верны, аккуратная структура."},
+"gemma-4-31b":{"correctness":3,"reasoning":4,"format":8,"russian":8,"comment":"Три из четырёх значений искажены (1351,94; 5529,58; 20508,96), итог неверный."},
+"diffusion-gemma":{"correctness":5,"reasoning":5,"format":8,"russian":8,"comment":"Строка 1 неверна (1381,94 вместо 1361,94), из-за чего итог 27600,40 ошибочен."},
+"gpt-5.5-low":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Две ошибки чтения (1381,94 и 20508,88), итог 27600,42 неверен."},
+"gpt-5.5-medium":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Те же две ошибки (1381,94 и 20508,88), итог 27600,42 неверен."},
+"nemotron-omni":{"correctness":2,"reasoning":1,"format":2,"russian":3,"comment":"Только число 27600,40 без значений и разбора, итог неверен."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все четыре значения и сумма 27580,40 верны, чёткое оформление."},
+"gpt-5.6-luna-high":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Две ошибки (1381,94 и 20508,88), итог 27600,42 неверен."},
+"gpt-5.6-luna-low":{"correctness":4,"reasoning":5,"format":7,"russian":9,"comment":"Те же две ошибки, итог 27600,42 неверен."},
+"gpt-5.6-luna-medium":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Две ошибки (1381,94 и 20508,88), итог 27600,42 неверен."},
+"gpt-5.6-sol-low":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Две ошибки чтения, итог 27600,42 неверен."},
+"gpt-5.6-sol-medium":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Две ошибки чтения, итог 27600,42 неверен."},
+"gpt-5.6-terra-high":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верны три значения, лишь 20508,88 вместо 20508,86, итог 27580,42 почти точен."},
+"gpt-5.6-terra-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Только строка 4 (20508,88) чуть искажена, итог 27580,42 почти верен."},
+"gpt-5.6-terra-medium":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Две ошибки (1381,94 и 20508,88), итог 27600,42 неверен."}
+},"winner":"llama-scout","notes":"llama-scout, 35b-a3b, 27b-v2 и kimi-k2.6 полностью верны; у llama-scout самый подробный разбор. Многие gpt-5.6/5.5 систематически читают 1361→1381 и 86→88."}

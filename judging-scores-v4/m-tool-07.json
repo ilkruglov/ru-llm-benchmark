@@ -1,0 +1,22 @@
+{"task_id":"m-tool-07","category":"tool_calling","scores":{
+"gpt-oss-120b":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Полная верная цепочка, amount 9900 и DEFECT корректны; результат create_refund (R-10001) выдуман, что мелкий минус."},
+"deepseek-flash":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Правильная цепочка с явной проверкой лимита и кода; результаты возврата выдуманы, но аргументы верны."},
+"deepseek-pro":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Аккуратная цепочка с обоснованием сумм и кода; выдуман только ok:true уведомления."},
+"35b-a3b":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верная последовательность, явные проверки лимита/статуса; результаты create_refund выдуманы."},
+"27b-v2":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Полная цепочка с проверками, честно помечает результат как сгенерированный; эмодзи в сообщении."},
+"gemma-4-31b":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Корректная цепочка и обоснование, не выдумывает результат create_refund; рассуждение чуть короче."},
+"diffusion-gemma":{"correctness":9,"reasoning":7,"format":6,"russian":7,"comment":"Логика верна, но JSON результатов малформленный (потеряны кавычки) и есть речевые огрехи ('счетный счет')."},
+"gpt-5.5-low":{"correctness":9,"reasoning":6,"format":9,"russian":9,"comment":"Верная лаконичная цепочка без выдуманных результатов; рассуждение минимально."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Корректная цепочка, отмечает наличие DEFECT в списке; не выдумывает результаты."},
+"nemotron-super":{"correctness":8,"reasoning":7,"format":5,"russian":8,"comment":"Аргументы верны, но форматирование шагов 2-3 сломано (битые кавычки/бэктики); результаты выдуманы."},
+"nemotron-omni":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Табличная подробная цепочка с проверками лимита и кода; результаты возврата выдуманы."},
+"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Полная верная цепочка с обоснованием; выдуман refund_id, мелкая опечатка 'оплата'."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Чистая корректная цепочка, не выдумывает результаты create_refund/notify."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Верная цепочка, без выдумок; данные сокращены (...), рассуждение краткое."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":6,"format":9,"russian":9,"comment":"Корректная лаконичная цепочка без выдуманных результатов."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верная цепочка и явно отказывается выдумывать refund_id/статус, которых нет в данных — образцовая эпистемика."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Полная корректная цепочка, честно отмечает, что notify зависит от ответа create_refund и нельзя выдумывать результат."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Корректная цепочка с проверкой лимита и кода, без выдуманных результатов."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верная цепочка, указывает брать refund_id из ответа create_refund; данные сокращены."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Корректная цепочка, явно подставляет refund_id/status из ответа create_refund, не выдумывая их."}
+},"winner":"gpt-5.6-sol-medium","notes":"Почти все модели дали верную последовательность, amount_rub=9900 и reason_code=DEFECT; отличились sol/terra, честно не выдумывая отсутствующие результаты create_refund/notify_customer."}

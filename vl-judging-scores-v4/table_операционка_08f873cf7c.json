@@ -1,0 +1,19 @@
+{"task_id":"table_операционка_08f873cf7c","category":"table","scores":{
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно прочитаны 60892 и 56544, разница 4348. Ясная структура, хотя запись в долларовых формулах ($) выглядит инородно."},
+"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Оба значения и разница 4348 верны, чёткая структура и корректный русский."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные значения, разница 4348, ссылка на код 1600, отличное оформление."},
+"gemma-4-31b":{"correctness":1,"reasoning":3,"format":8,"russian":9,"comment":"Ошибочно прочитано 56 644 вместо 56 544, итог 4 248 неверен — выдумка данных."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":8,"russian":8,"comment":"Значения и разница 4348 верны, но опечатка «Рас разницы» портит текст."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и разница 4348, аккуратная подача."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный ответ 4348 с указанием кода и ясной структурой."},
+"nemotron-omni":{"correctness":9,"reasoning":2,"format":2,"russian":3,"comment":"Результат 4348 верен, но приведён голым числом без исходных значений и рассуждения."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верные значения, разница 4348, ссылка на код 1600, отличное оформление."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Значения и разница 4348 верны, лаконично и ясно."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точный ответ 4348 с обоими значениями и выводом."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и разница 4348, кратко и чисто."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Значения и результат 4348 верны, компактное оформление."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точный ответ 4348, ясный вывод про превышение за 2023 год."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и разница 4348, лаконично."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точные значения и результат 4348."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения с указанием кода 1600 и разница 4348."}
+},"winner":"27b-v2","notes":"Почти все модели верно дали 60892−56544=4348; gemma-4-31b ошиблась в чтении (56644→4248), nemotron дал только число. 27b-v2 и kimi-k2.6 — образцовое оформление."}

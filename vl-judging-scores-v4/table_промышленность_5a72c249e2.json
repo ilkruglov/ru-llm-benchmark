@@ -1,0 +1,19 @@
+{"task_id":"table_промышленность_5a72c249e2","category":"table","scores":{
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три значения верны (2; 132,60; 132,60), ясная нумерованная структура, хороший русский."},
+"llama-scout":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Значения верны, но избыточное LaTeX-оформление ($...$) слегка мешает читаемости."},
+"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чёткая структура и грамотный русский."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения, аккуратная нумерация, качественный русский."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три числа верны, структура и русский на высоком уровне."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения, компактная и ясная подача."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чёткое оформление."},
+"nemotron-omni":{"correctness":3,"reasoning":1,"format":2,"russian":2,"comment":"Столбец 4 в «Итого» указан как 1 вместо 2 (взято значение строки данных); ответ голыми числами без структуры."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три значения верны, чёткая структура и хороший русский."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Значения верны, но подача слегка урезана без явной привязки к строке «Итого» в первом пункте."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, ясная структура."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения, аккуратное оформление."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три числа верны, чёткая подача."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения, ясная структура и грамотный русский."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, компактно и ясно."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения, аккуратное оформление."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три числа верны, чёткая структура."}
+},"winner":"kimi-k2.6","notes":"Почти все модели дали верные 2; 132,60; 132,60; лидеры близки по качеству. Только nemotron-omni ошибся в столбце 4 («Итого» = 1 вместо 2)."}

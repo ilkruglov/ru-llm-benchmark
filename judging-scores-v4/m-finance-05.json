@@ -1,0 +1,28 @@
+{
+  "task_id": "m-finance-05",
+  "category": "ru_finance",
+  "scores": {
+    "gpt-oss-120b": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "NPV 778 216 против эталонных 773 822 из-за неточных коэффициентов дисконтирования (годы 3-5); IRR 20,6%, PP 3,11, DPP 4,66, PI 1,065 верны."},
+    "deepseek-flash": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Все метрики точны: NPV 773 822, IRR 20,6%, PP 3,11, DPP 4,66, PI 1,064; корректная интерполяция 20/21%."},
+    "deepseek-pro": {"correctness": 10, "reasoning": 9, "format": 8, "russian": 9, "comment": "Числа совпадают с эталоном; таблица дисконтирования есть, но кумулятивные потоки даны текстом без таблиц."},
+    "35b-a3b": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "NPV 773 714 (отклонение ~100 руб. от округления коэффициентов), остальные метрики верны; хороший разбор запаса прочности."},
+    "27b-v2": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "NPV 773 792 (мелкое расхождение округления), IRR/PP/DPP/PI верны; вывод корректный, но сжатый."},
+    "gemma-4-31b": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "NPV 773 774 (округление), IRR 20,6% через интерполяцию 18/21%, PP/DPP/PI верны; сильный блок рисков."},
+    "diffusion-gemma": {"correctness": 1, "reasoning": 2, "format": 7, "russian": 8, "comment": "Грубая ошибка: NPV 3 773 839 вместо 773 822 (сумма PV не совпадает с собственной таблицей), отсюда IRR 25,5% и PI 1,31 — ключевые метрики неверны."},
+    "gpt-5.5-low": {"correctness": 3, "reasoning": 5, "format": 8, "russian": 8, "comment": "NPV близок (773 285), но NPV(21%) посчитан неверно (-33 906 вместо -115 680), из-за чего IRR = 20,9% вместо 20,6% — ошибка на ключевом шаге."},
+    "gpt-5.5-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Все метрики точны, IRR уточнён подбором 20,5/20,6%; аккуратный вывод про запас прочности 2,6 п.п."},
+    "nemotron-super": {"correctness": 8, "reasoning": 4, "format": 2, "russian": 1, "comment": "Числа почти верны (NPV 773 005), но в ответ вылился служебный черновик с посторонним текстом о запрещённом контенте, а итоговый разбор дан на английском языке."},
+    "nemotron-omni": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 4, "comment": "NPV 769 966 из-за неточных коэффициентов, прочие метрики верны; язык испорчен вставками ('Сейчасщая', 'всё-равноgreater', 'modest-positive')."},
+    "kimi-k2.6": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 9, "comment": "Точные NPV 773 830, IRR 20,6% (подбор 20,0/20,5/20,6%), PP 3,11, DPP 4,66, PI 1,065 плюс лучший содержательный анализ: пограничная привлекательность, стресс-тест, чувствительность FCF."},
+    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Все метрики совпадают с эталоном; чёткая структура и выделенные итоги."},
+    "gpt-5.6-luna-low": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 9, "comment": "Итоговые NPV/IRR/PP/DPP/PI верны, но PV притоков дважды указан как 14 773 822 вместо 12 773 822, что противоречит собственным расчётам NPV и PI."},
+    "gpt-5.6-luna-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Точные значения всех пяти показателей, корректная интерполяция и внятный вывод."},
+    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Все метрики верны; отдельно оговорено допущение о равномерном поступлении потока внутри года."},
+    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Точные расчёты и качественный комментарий про узкий запас (2,6 п.п.) и чувствительность к WACC."},
+    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Все показатели совпадают с эталоном, формулы и промежуточные суммы приведены."},
+    "gpt-5.6-terra-low": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Числа верны, но кумулятивный дисконтированный поток по годам не раскрыт, вывод лаконичен."},
+    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Все метрики точны, расчёты прозрачны, итоги выделены."}
+  },
+  "winner": "kimi-k2.6",
+  "notes": "Эталон: NPV 773 822 руб., IRR 20,6%, PP 3,11 г., DPP 4,66 г., PI 1,064. Провалы: diffusion-gemma (NPV завышен на 3 млн), gpt-5.5-low (IRR 20,9%), nemotron-super (утечка черновика и ответ на английском)."
+}

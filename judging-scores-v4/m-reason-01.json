@@ -1,0 +1,22 @@
+{"task_id":"m-reason-01","category":"reasoning","scores":{
+"gpt-oss-120b":{"correctness":8,"reasoning":7,"format":8,"russian":7,"comment":"Верный вывод и валидный путь, полный trace и проверка 7 пунктов, но финальная фраза о 'непротиворечивой системе' противоречит собственному выводу, язык местами коряв ('пропаганда ограничений')."},
+"deepseek-pro":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Чистый корректный путь: Борис=CRM=Q3, конфликт с условием 1. Сжато, с проверкой всех пунктов."},
+"deepseek-flash":{"correctness":9,"reasoning":8,"format":8,"russian":8,"comment":"Альтернативный валидный путь (Вика=Q4, Борис=Q1, Mobile вынужденно у Бориса — нарушение 7). Финальная формулировка коллизии слегка неточна, но вывод верен."},
+"35b-a3b":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Корректный путь с формальным списком импликаций и таблицей проверки, глубоко и аккуратно."},
+"27b-v2":{"correctness":9,"reasoning":8,"format":8,"russian":8,"comment":"Верный путь с trace-таблицей и вторичным противоречием по условию 4; в проверке спорно помечает п.2 как нарушение."},
+"gemma-4-31b":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чёткое разделение проекты/кварталы, формальное доказательство через противоречие и проверка по пунктам."},
+"diffusion-gemma":{"correctness":8,"reasoning":7,"format":7,"russian":8,"comment":"Приходит к верному противоречию через разбор случаев, но в первом проходе пропущен один шаблон кварталов; изложение сумбурное, спасает повторный вывод."},
+"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Корректный канонический путь, аккуратный trace и таблица проверки всех 7 условий."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верный путь, сжато и ясно, с проверкой всех условий."},
+"nemotron-omni":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Ответ оборван на заголовке ('Parse the entities'), содержательного вывода нет."},
+"nemotron-super":{"correctness":9,"reasoning":9,"format":9,"russian":1,"comment":"Полностью корректный и глубокий разбор с таблицами и проверкой, но ответ целиком на английском."},
+"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Исчерпывающий перебор ветвей с корректным исключением каждой, чистое доказательство и полная проверка — образцово."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Корректный канонический путь и проверка по пунктам; отмечено усиление противоречия условием 4."},
+"gpt-5.6-luna-low":{"correctness":3,"reasoning":4,"format":7,"russian":8,"comment":"Верный ответ, но неверный путь: ошибочно утверждает, что условие 1 однозначно фиксирует Q1/Q2/Q3, откуда и выводит противоречие."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Чистый корректный путь с явным отбрасыванием альтернатив и проверкой."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Исчерпывающий строгий разбор всех квартальных вариантов, формальная цепочка и полная проверка."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Валидный путь: доводит до полной вынужденной таблицы (Q3<Q1<Q2 ложно), с проверкой всех условий."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Корректный канонический путь, промежуточная таблица и проверка по пунктам."},
+"gpt-5.6-terra-low":{"correctness":3,"reasoning":4,"format":7,"russian":8,"comment":"Верный ответ, неверный путь: ошибочно объявляет единственным распределение Q1/Q2/Q3 ('альтернатив нет')."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Валидный путь: исключает Бориса в Q2 через условие 3, затем Q1 vs Q3 противоречие; с проверкой."}
+},"winner":"kimi-k2.6","notes":"Правильный ответ у всех — 'решения нет'. Лучшие строгие полные разборы: kimi-k2.6 и gpt-5.6-sol-low; luna-low и terra-low получили верный ответ ошибочным путём (correctness 3), nemotron-omni оборван (0), nemotron-super глубок, но на английском."}

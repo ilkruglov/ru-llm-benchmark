@@ -1,0 +1,19 @@
+{"task_id":"chart_нефтегаз_9abc0bd2c0","category":"chart","scores":{
+"llama-scout":{"correctness":1,"reasoning":1,"format":6,"russian":8,"comment":"И максимум (назвал 2011, ~160), и минимум (2016, ~50) определены неверно — обе ключевые величины ошибочны."},
+"35b-a3b":{"correctness":5,"reasoning":6,"format":8,"russian":9,"comment":"Максимум 2012 ~180 верно, но минимум назван 2016 вместо 2020 (хотя оговорился, что 2020 почти такой же)."},
+"27b-v2":{"correctness":5,"reasoning":7,"format":8,"russian":9,"comment":"Максимум 2012 ~180-185 верно, минимум ошибочно 2016; подробно, но ключевой минимум неверен."},
+"gemma-4-31b":{"correctness":4,"reasoning":5,"format":8,"russian":9,"comment":"Максимум 2012 ~180 верно, но минимум твёрдо назван 2016 вместо 2020, без оговорок."},
+"diffusion-gemma":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Максимум 2012 ~180 и минимум 2020 определены верно; кратко, но всё по делу."},
+"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Оба показателя верны: максимум 2012 ~180, минимум 2020 ~70."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Максимум 2012 ~180 и минимум 2020 ~70-75 определены точно."},
+"nemotron-omni":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью верно: 2012 ~180, 2020 ~70-75, с корректной оговоркой о близости 2016."},
+"kimi-k2.6":{"correctness":5,"reasoning":7,"format":8,"russian":9,"comment":"Максимум 2012 ~180 верно, но минимум назван 2016 вместо 2020 (хотя признал близость 2020)."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Оба значения верны: 2012 ~180, 2020 ~70."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Максимум 2012 ~180 и минимум 2020 ~70 верны; лаконично."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Максимум 2012 ~180 и минимум 2020 ~70 определены верно."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Оба показателя верны: 2012 ~180, 2020 ~72."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Максимум 2012 ~180 и минимум 2020 ~70 определены точно."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Оба значения верны: 2012 ~180, 2020 ~70."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Максимум 2012 ~180 и минимум 2020 ~70-75 определены верно."},
+"gpt-5.6-terra-medium":{"correctness":5,"reasoning":6,"format":8,"russian":9,"comment":"Максимум 2012 ~180 верно, но минимум ошибочно назван 2016 вместо 2020."}
+},"winner":"nemotron-omni","notes":"Nemotron-omni дал полностью верный ответ (2012 ~180, 2020 ~70-75) с корректной оговоркой про близость 2016; линейка gpt-5.5/5.6 и diffusion-gemma тоже верны, а модели, назвавшие минимум 2016, ошиблись."}

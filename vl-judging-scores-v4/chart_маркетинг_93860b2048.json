@@ -1,0 +1,19 @@
+{"task_id":"chart_маркетинг_93860b2048","category":"chart","scores":{
+"llama-scout":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Все 5 этапов и «покупка» как узкий сегмент верны, деньги упомянуты, но мишень не названа."},
+"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полный верный ответ: этапы, узкий сегмент, мишень и мешок с деньгами; отмечены и правые пояснения."},
+"27b-v2":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Этапы и узкий сегмент верны, деньги названы, но мишень не упомянута."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные этапы и сегмент, деньги под мишенью упомянуты корректно."},
+"diffusion-gemma":{"correctness":9,"reasoning":9,"format":9,"russian":8,"comment":"Полный ответ с правыми подписями, но мишень не названа и есть опечатки («долларами», «заинтереванные»)."},
+"gpt-5.5-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Этапы и сегмент верны, деньги названы; кратко, мишень опущена."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верно и кратко, мешок с деньгами назван, мишень не упомянута."},
+"nemotron-omni":{"correctness":9,"reasoning":8,"format":9,"russian":6,"comment":"Факты верны и подробны, но русский искажён («пенни», «манилка»)."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полный точный ответ с мишенью, мешком доллара и купюрами."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Все этапы и узкий сегмент верны, деньги названы; мишень опущена."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верно и кратко, мешок с долларом и банкноты названы."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Этапы и сегмент верны, деньги упомянуты; без мишени."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верно, мешок с символом доллара и купюры названы; мишень опущена."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Точные этапы и узкий сегмент, деньги названы."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верно и кратко, мешок с долларом назван; мишень опущена."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Этапы и сегмент верны, деньги упомянуты."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верно и кратко, мешок с деньгами и купюры названы."}
+},"winner":"kimi-k2.6","notes":"Почти все модели верно распознали все 5 этапов и «покупку» как узкий сегмент; kimi-k2.6, 35b-a3b и gemma-4-31b дали наиболее полный ответ, упомянув и мишень."}

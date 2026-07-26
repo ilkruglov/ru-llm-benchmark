@@ -1,0 +1,19 @@
+{"task_id":"table_банки_1800a08500","category":"table","scores":{
+"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Оба значения и разница верны, показан расчёт, чёткая структура."},
+"llama-scout":{"correctness":10,"reasoning":9,"format":7,"russian":9,"comment":"Все значения верны, но LaTeX-разметка ($...$) выглядит неуместно в русском тексте."},
+"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и разница, аккуратная структура с расчётом."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильный ответ, показан расчёт, ясное оформление."},
+"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно, указал крайний правый столбец; мелкий повтор слова 'следующие'."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все значения и разница верны, компактно и ясно."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верный ответ с расчётом, аккуратная структура."},
+"nemotron-omni":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Значения верны, но без показа вычитания и минимум структуры."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильно, показан расчёт, ясная нумерованная структура."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный ответ, кратко; расчёт явно не показан."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения и разница верны, лаконично."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно, добавлено уточнение какое значение меньше."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верно, аккуратное форматирование чисел с разрядами и явный расчёт."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильные значения и разница, показан расчёт."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верный ответ с расчётом, чёткая структура."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения и разница верны, лаконично."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильно, показан расчёт, ясное оформление."}
+},"winner":"gpt-5.6-sol-low","notes":"Все 17 моделей дали верный ответ (9900 ₽, 7425 ₽, разница 2475 ₽); sol-low лучше всех по оформлению чисел и явному расчёту."}

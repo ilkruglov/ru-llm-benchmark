@@ -1,0 +1,22 @@
+{"task_id":"m-math-03","category":"math_business","scores":{
+"gpt-oss-120b":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Все метрики верны: CM М1, GP LTV 3,55 млн у 1490, payback 11,6 у 1990. Корректный trade-off 1490 vs 1990, обоснованная рекомендация."},
+"deepseek-flash":{"correctness":5,"reasoning":6,"format":7,"russian":8,"comment":"CM М1 и payback верны, но GP LTV посчитан без вычета cost to serve, из-за чего критерий (a) ошибочно указан как 990 вместо 1490."},
+"deepseek-pro":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Все ключевые метрики верны, (a)=1490, (b)=1990, глубокий анализ; мелкая погрешность округления (-2 646 654)."},
+"35b-a3b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верные расчёты, (a)=1490, (b)=1990, чёткая рекомендация 1990 с акцентом на runway и unit-экономику."},
+"27b-v2":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Корректные метрики, верный trade-off и гипотезы, рекомендация 1990 обоснована cash-flow приоритетом."},
+"gemma-4-31b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верные расчёты, (a)=1490, (b)=1990, рекомендует 1490 с адекватным обоснованием и предупреждением LTV<CAC."},
+"diffusion-gemma":{"correctness":2,"reasoning":3,"format":3,"russian":5,"comment":"Множество ошибочных чисел: CM М1 неверны, GP LTV искажены/битые, payback-колонки нонсенс, (a)=1990 ошибочно; опечатки."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Точные метрики, ясный trade-off, рекомендация 1490 с грамотным обоснованием и красным флагом по CAC."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верные расчёты, (a)=1490, (b)=1990, рекомендует 1490, качественные гипотезы."},
+"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Ответ полностью не по теме — сгенерирован посторонний художественный текст, задача проигнорирована."},
+"nemotron-omni":{"correctness":5,"reasoning":6,"format":7,"russian":6,"comment":"CM М1 и payback верны, но GP LTV без cost to serve дал 990 как лучший по LTV-профиту; вставки битого текста (Hebrew chars)."},
+"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":9,"comment":"Полностью корректно, GP с вычетом CTS, чёткая сравнительная таблица trade-off, глубокие 3 гипотезы, обоснованная рекомендация 1490."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Точные метрики, (a)=1490, (b)=1990, рекомендация 1990 с явным стоп-сигналом по CAC."},
+"gpt-5.6-luna-low":{"correctness":2,"reasoning":5,"format":7,"russian":8,"comment":"Грубая ошибка: CAC когорты взят 600 000 вместо 6 000 000, поэтому CM М1 и прибыль после CAC неверны (ложно положительны), хотя ранжирование сохранено."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верные расчёты, (a)=1490, (b)=1990, рекомендует 1990, компактно и корректно."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Точные метрики, детальный trade-off с расчётом безубыточного CAC, рекомендация 1990 с оговорками."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все метрики верны, (a)=1490, (b)=1990, рекомендует 1490 с сильной аргументацией про шум и base."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Верные расчёты, отмечает механический эффект цены в LTV, рекомендует 1990, качественные гипотезы."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Корректные метрики, (a)=1490, (b)=1990, рекомендует 1990, компактный анализ с красным флагом payback."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верные расчёты, (a)=1490, (b)=1990, рекомендация 1990, адекватные гипотезы включая статистический шум."}
+},"winner":"kimi-k2.6","notes":"Верный ответ: (a) макс GP LTV = 1490, (b) лучший cash М1 = 1990, кратчайший payback 11,6 у 1990. kimi-k2.6 лучший по полноте, точности и структуре trade-off; провалы: nemotron-super (не по теме), luna-low и diffusion-gemma (грубые арифметические ошибки)."}

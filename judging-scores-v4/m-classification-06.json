@@ -1,0 +1,28 @@
+{
+  "task_id": "m-classification-06",
+  "category": "classification",
+  "scores": {
+    "gpt-oss-120b": {"correctness": 8, "reasoning": 6, "format": 9, "russian": 1, "comment": "Разметка в целом корректна (S1/P0 для #1 и #4, S4 для #2 и #5), но #3 без хотфикса при пятничной публикации и #6 занижен до S2/P1. Все justification на английском."},
+    "deepseek-flash": {"correctness": 8, "reasoning": 7, "format": 9, "russian": 9, "comment": "Хорошее покрытие, но #2 завышен до S3 при sla 720 (внутренне противоречиво), #6 отнесён к payment_flow вместо data_integrity."},
+    "deepseek-pro": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 9, "comment": "Чистый JSON без обёртки, все шесть меток согласованы, #6 верно классифицирован как data_integrity с идемпотентностью в обосновании."},
+    "35b-a3b": {"correctness": 7, "reasoning": 6, "format": 9, "russian": 1, "comment": "#2 завышен до S3, #4 получил sla 4 вместо более жёсткого срока для CRITICAL IDOR. Обоснования полностью на английском."},
+    "27b-v2": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Аккуратные русские обоснования, но #2 завышен до S3/P2, а по #3 hotfix_required=false плохо согласуется с sla 24 и дедлайном публикации."},
+    "gemma-4-31b": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Практически эталонная разметка, #6 верно как data_integrity; лёгкое преувеличение про 'утечку данных миллионов' в #4."},
+    "diffusion-gemma": {"correctness": 7, "reasoning": 7, "format": 9, "russian": 7, "comment": "Ложное назначение владельца #3 на mobile_android вместо copy при hotfix=false; опечатка 'Ктическая' и преувеличение масштаба утечки."},
+    "gpt-5.5-low": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 8, "comment": "Чистый JSON, явная опора на ICE (impact/confidence), корректная эскалация #6 до S1/P0; много непереведённых английских терминов."},
+    "gpt-5.5-medium": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 8, "comment": "Согласованная разметка с сильными обоснованиями и верной трактовкой #5 как 'other'; в тексте заметен англицизм-микс."},
+    "nemotron-super": {"correctness": 0, "reasoning": 0, "format": 0, "russian": 0, "comment": "Полный провал: вместо triage выдан посторонний художественный текст, не имеющий отношения к задаче."},
+    "nemotron-omni": {"correctness": 3, "reasoning": 3, "format": 8, "russian": 1, "comment": "Грубые противоречия: #4 помечен S4 при P0, #2 завышен до S2, #5 до S3, #6 занижен до S3; ответ на английском."},
+    "kimi-k2.6": {"correctness": 8, "reasoning": 9, "format": 9, "russian": 9, "comment": "Развёрнутые ICE-обоснования на русском, но #3 переоценён до P0/sla 2, а #2 завышен до S3/P2."},
+    "gpt-5.6-luna-high": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Полностью согласованная разметка всех шести багов с верными владельцами и категориями, чистый JSON, грамотный русский."},
+    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 9, "comment": "Корректная разметка по всем пунктам; #4 с sla 4 чуть мягче ожидаемого для CRITICAL IDOR."},
+    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 9, "comment": "Согласованные метки и сжатые точные обоснования; sla 4 для #4 несколько мягче нормы для критической уязвимости."},
+    "gpt-5.6-sol-low": {"correctness": 8, "reasoning": 8, "format": 10, "russian": 9, "comment": "#3 помечен S4 при P1 и hotfix=true — внутреннее несоответствие; #2 отдан mobile_android вместо copy."},
+    "gpt-5.6-sol-medium": {"correctness": 8, "reasoning": 8, "format": 10, "russian": 9, "comment": "Аккуратный JSON и обоснования, но #3 занижен до S4 при P1/hotfix=true, что противоречиво."},
+    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Наиболее согласованный ответ: верные severity/priority/владельцы по всем шести, жёсткий sla для IDOR, чистый JSON и грамотный русский."},
+    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 9, "comment": "Корректная разметка, #6 верно эскалирован до S1/P0 с идемпотентностью; #2 отдан mobile_android, sla 4 для #4 мягковат."},
+    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Точная и внутренне непротиворечивая разметка всех шести багов, лаконичные обоснования, корректный русский."}
+  },
+  "winner": "gpt-5.6-terra-high",
+  "notes": "Большинство моделей сошлись на S1/P0 для #1 и #4 и S4/P3 для #5; расхождения в основном по severity #2, #3 и #6. Провалы: nemotron-super (посторонний текст) и nemotron-omni (S4 при P0 для критической уязвимости); англоязычные ответы (gpt-oss-120b, 35b-a3b) наказаны по критерию russian."
+}

@@ -1,0 +1,19 @@
+{"task_id":"table_промышленность_b5252b4420","category":"table","scores":{
+"27b-v2":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Верно названо число 391 и позиция 1.14. Название изделия выдумано, но это не запрошено."},
+"llama-scout":{"correctness":1,"reasoning":3,"format":7,"russian":8,"comment":"Названо 591 у поз.12 — неверно, значения прочитаны с ошибками."},
+"35b-a3b":{"correctness":9,"reasoning":5,"format":8,"russian":9,"comment":"Верно 391 и позиция 114 (=1.14). Название изделия выдумано."},
+"gemma-4-31b":{"correctness":1,"reasoning":2,"format":7,"russian":9,"comment":"395 у поз.24 — неверно и число, и позиция."},
+"diffusion-gemma":{"correctness":5,"reasoning":4,"format":8,"russian":8,"comment":"Число 391 верное, но позиция 19 неверна."},
+"gpt-5.5-low":{"correctness":2,"reasoning":4,"format":7,"russian":9,"comment":"Названо 378 — неверно, максимум 391."},
+"gpt-5.5-medium":{"correctness":2,"reasoning":4,"format":7,"russian":9,"comment":"Названо 378 — неверно, максимум 391."},
+"nemotron-omni":{"correctness":0,"reasoning":0,"format":1,"russian":1,"comment":"Бессмысленный обрывок '3000, 16', ответа нет."},
+"kimi-k2.6":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Число 391 верное, но позиция 24 неверна."},
+"gpt-5.6-luna-high":{"correctness":6,"reasoning":4,"format":8,"russian":9,"comment":"391 верно, позиция 1.13 близка, но неверна (нужно 1.14)."},
+"gpt-5.6-luna-low":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Названо 378 — неверно, хотя позиция 1.14 указана."},
+"gpt-5.6-luna-medium":{"correctness":6,"reasoning":4,"format":8,"russian":9,"comment":"391 верно, позиция 1.12 неверна."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":9,"russian":9,"comment":"Полностью верно: 391 и позиция 1.14."},
+"gpt-5.6-sol-medium":{"correctness":1,"reasoning":2,"format":8,"russian":9,"comment":"714 у поз.1.9 — выдумка."},
+"gpt-5.6-terra-high":{"correctness":1,"reasoning":2,"format":8,"russian":9,"comment":"1000 у поз.1.7 — выдумка, такого значения нет."},
+"gpt-5.6-terra-low":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"991 — неверно, хотя позиция 1.14 указана."},
+"gpt-5.6-terra-medium":{"correctness":1,"reasoning":2,"format":8,"russian":9,"comment":"1000 у поз.18 — выдумка."}
+},"winner":"gpt-5.6-sol-low","notes":"Верный ответ 391 у позиции 1.14 дали sol-low (идеально), 27b-v2 и 35b-a3b. Многие модели верно прочитали 391, но ошиблись с позицией; часть выдала галлюцинации (378/591/714/991/1000)."}

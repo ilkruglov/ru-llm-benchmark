@@ -1,0 +1,22 @@
+{"task_id":"m-harness-10","category":"harness","scores":{
+"gpt-oss-120b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верный следующий шаг issue_refund с корректными аргументами; явно проверены все три условия политики и упомянут последующий шаг отмены."},
+"deepseek-pro":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Корректный вызов issue_refund с ch_77a2/990/auto_renew_unused, обоснование сжатое, но опирается на реальные Observation."},
+"deepseek-flash":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Правильный шаг и аргументы, рассуждение минимальное, без разбора всех условий политики."},
+"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верный вызов возврата, проверены условия и указан план последующей отмены подписки."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три условия политики разобраны, корректный issue_refund с нужным reason_code."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Правильный шаг, полная сверка с политикой и упоминание отмены как следующего шага."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Корректный issue_refund с валидным JSON; обоснование чуть менее полное (без явного упоминания отмены)."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точный следующий шаг с корректными аргументами и опорой на данные check_status и политику."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Верный вызов возврата, аккуратное обоснование по окну возврата и подтверждению неиспользования."},
+"nemotron-super":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Корректный issue_refund с нужным reason_code, обоснование по всем условиям кроме упоминания отмены."},
+"nemotron-omni":{"correctness":0,"reasoning":1,"format":2,"russian":8,"comment":"Галлюцинация: выдуман refund_id и факт отмены, которых не было в Observation; вдобавок отмена описана как at_period_end, что противоречит политике."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полная сверка условий политики и корректный вызов issue_refund с валидным JSON."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Правильный шаг с корректными аргументами и обоснованием по окну возврата."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Верный вызов возврата, рассуждение краткое, но фактически опирается на Observation."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Корректный issue_refund, обоснование по политике автопродления без ошибок."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Правильный следующий шаг и валидные аргументы, условия политики перечислены."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный вызов возврата; формат слегка размыт лишними пустыми строками между Action и Action Input."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Корректный issue_refund с нужным reason_code и опорой на реальные наблюдения."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Правильный шаг и аргументы, обоснование лаконичное."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный вызов возврата; небольшое отклонение формата — разрыв между Action и Action Input."}
+},"winner":"gpt-oss-120b","notes":"Почти все модели сделали единственно верный шаг issue_refund(ch_77a2, 990, auto_renew_unused) и остановились до Observation; лидеры дополнительно отметили последующую отмену с at_period_end=false. Единственный провал — nemotron-omni, выдумавший refund_id и факт отмены."}

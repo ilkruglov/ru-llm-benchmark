@@ -1,0 +1,28 @@
+{
+"task_id": "m-harness-01",
+"category": "harness",
+"scores": {
+"gpt-oss-120b": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 10, "comment": "Верный минимальный фикс с обеими ветками в old, но первая строка old дана без ведущих отступов — подстрока всё же уникальна, риск минимален."},
+"deepseek-pro": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 10, "comment": "Точная и однозначная замена строки 21 с сохранением отступов; Thought с переносом строки после метки — мелкое отклонение от формата."},
+"deepseek-flash": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Идеальный шаг: old включает обе строки, что делает замену полностью однозначной, ветка без VAT-ID сохранена."},
+"35b-a3b": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 10, "comment": "Правка верная и уникальная за счёт 12-пробельного отступа, но old без контекста условия — хрупко; лишние пустые строки перед Thought."},
+"27b-v2": {"correctness": 9, "reasoning": 10, "format": 8, "russian": 10, "comment": "Явно обосновал уникальность подстроки по отступу — лучшее рассуждение; формат чуть замусорен пустыми строками."},
+"gemma-4-31b": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Корректный минимальный фикс с однозначным old и точной локализацией бага на строке 21."},
+"diffusion-gemma": {"correctness": 2, "reasoning": 4, "format": 7, "russian": 7, "comment": "old-строка неоднозначна (встречается на строках 16, 21, 22) — замена попадёт не туда и сломает другие тесты; текст Thought местами искажён."},
+"gpt-5.5-low": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Однозначный old из двух веток, корректная минимальная правка, чистый формат."},
+"gpt-5.5-medium": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Верная точечная замена с сохранением отступов; рассуждение сжатое, но по существу."},
+"nemotron-omni": {"correctness": 3, "reasoning": 7, "format": 4, "russian": 10, "comment": "Диагноз верный, но в old/new искажены отступы (9 и 13 пробелов) — точная замена не применится, шаг фактически провален."},
+"nemotron-super": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 4, "comment": "Правка корректна и уникальна по отступу, но ответ на английском и с лишними пустыми строками."},
+"kimi-k2.6": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 10, "comment": "Точная локализация строки 21, явно оговорено сохранение ветки строки 22, замена однозначна."},
+"gpt-5.6-luna-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Корректная минимальная правка с однозначным old; рассуждение очень краткое."},
+"gpt-5.6-luna-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Верный фикс reverse charge, аргументы валидны, формат чистый."},
+"gpt-5.6-luna-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Правильная точечная замена; Thought предельно лаконичен."},
+"gpt-5.6-sol-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Корректный минимальный фикс с явным указанием на минимальность замены."},
+"gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Верная замена возврата на 0.0 в ветке валидного VAT-ID, формат безупречен."},
+"gpt-5.6-terra-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Корректный однозначный edit, рассуждение краткое, но опирается на реальные Observation."},
+"gpt-5.6-terra-low": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Правильная точечная правка ветки reverse charge, валидный JSON."},
+"gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Верный минимальный фикс, формат корректен, рассуждение сжатое."}
+},
+"winner": "deepseek-flash",
+"notes": "Подавляющее большинство моделей верно нашло баг на строке 21 и сделало минимальную правку на return 0.0; различия сводятся к однозначности подстроки old. Провалились nemotron-omni (сломанные отступы в аргументах) и diffusion-gemma (неоднозначный old, попадающий в строку 16)."
+}

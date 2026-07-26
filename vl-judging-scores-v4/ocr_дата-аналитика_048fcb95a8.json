@@ -1,0 +1,19 @@
+{"task_id":"ocr_дата-аналитика_048fcb95a8","category":"ocr","scores":{
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре пункта прочитаны и сопоставлены верно, аккуратный список."},
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точное распознавание всех сумм и категорий, чёткий нумерованный список."},
+"27b-v2":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Всё верно, тире-разделители делают сопоставление максимально ясным."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Полностью корректно, аккуратный список с тире."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все данные прочитаны верно и правильно сопоставлены."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно, лаконичный список без лишнего текста."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты корректны, ясное сопоставление сумм и категорий."},
+"nemotron-omni":{"correctness":10,"reasoning":7,"format":6,"russian":9,"comment":"Содержание верное, но сплошная строка через точку с запятой и перенос 'надругатель-ство' снижают ясность."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все суммы и категории прочитаны верно, чистый нумерованный список."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Полностью корректно, ясное оформление с тире."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Всё верно и аккуратно оформлено."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точное распознавание, ясный список."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все четыре пункта верны, чёткое сопоставление."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Полностью корректно и аккуратно."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Всё верно, ясное оформление."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точное распознавание всех пунктов."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Полностью корректно, ясный список."}
+},"winner":"27b-v2","notes":"Все модели прочитали все четыре пункта абсолютно верно; отличаются лишь оформлением. Nemotron-omni слабее по формату (сплошная строка). Победитель условный среди равных."}

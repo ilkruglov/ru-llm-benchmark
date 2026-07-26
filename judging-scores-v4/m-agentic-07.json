@@ -1,0 +1,148 @@
+{
+  "task_id": "m-agentic-07",
+  "category": "agentic",
+  "scores": {
+    "gpt-oss-120b": {
+      "correctness": 8,
+      "reasoning": 8,
+      "format": 9,
+      "russian": 9,
+      "comment": "Полный постмортем с датами, canary, circuit-breaker, dedup-store 24ч и измеримыми критериями; разделяет trigger/root/contributing. Чуть менее глубоко по exactly-once идемпотентности, чем топ-ответы."
+    },
+    "deepseek-flash": {
+      "correctness": 7,
+      "reasoning": 7,
+      "format": 8,
+      "russian": 9,
+      "comment": "Все разделы на месте, чёткая цепочка 5 почему и хороший дизайн ключа идемпотентности; глубина плана и критериев средняя относительно лидеров."
+    },
+    "deepseek-pro": {
+      "correctness": 8,
+      "reasoning": 8,
+      "format": 9,
+      "russian": 9,
+      "comment": "Сильный ответ: dead man's switch, persistent store exactly-once, еженедельный аудит PagerDuty, reconciliation дублей. Практичен и хорошо структурирован."
+    },
+    "35b-a3b": {
+      "correctness": 7,
+      "reasoning": 7,
+      "format": 8,
+      "russian": 9,
+      "comment": "Аккуратный постмортем с MTTD/MTTR-разбивкой и полным планом; идемпотентность ограничена TTL 24ч без durable-инварианта, глубина ниже топа."
+    },
+    "27b-v2": {
+      "correctness": 8,
+      "reasoning": 8,
+      "format": 9,
+      "russian": 9,
+      "comment": "Тщательно: PgBouncer, Redis SETNX, PromQL-критерии, валидатор конфигов. Разделяет симптомы/root/contributing. Эмодзи-заголовки — мелкая косметика."
+    },
+    "gemma-4-31b": {
+      "correctness": 7,
+      "reasoning": 7,
+      "format": 7,
+      "russian": 8,
+      "comment": "Все требования покрыты, есть колонки трудозатрат/зависимостей; атомарных задач мало, а LaTeX-символы в русском тексте мешают читаемости."
+    },
+    "diffusion-gemma": {
+      "correctness": 6,
+      "reasoning": 6,
+      "format": 6,
+      "russian": 8,
+      "comment": "Компактно охватывает все разделы, но в плане нет оценок трудозатрат и зависимостей (нарушение требования 4), TTL 30мин слаб для платежей."
+    },
+    "gpt-5.5-low": {
+      "correctness": 9,
+      "reasoning": 9,
+      "format": 10,
+      "russian": 10,
+      "comment": "Очень глубоко: capacity baseline, canary с auto-rollback, стабильный ключ идемпотентности, reconciliation, детальные измеримые критерии. Практично и полно."
+    },
+    "gpt-5.5-medium": {
+      "correctness": 9,
+      "reasoning": 9,
+      "format": 10,
+      "russian": 10,
+      "comment": "Отличный ответ: ledger-инвариант, unique constraint, durable storage, fast/slow-burn алерты, retry storm-тест на 280k. Всё исполнимо и измеримо."
+    },
+    "nemotron-super": {
+      "correctness": 7,
+      "reasoning": 7,
+      "format": 8,
+      "russian": 6,
+      "comment": "Хорошее содержание (OPA admission webhook, k6, SLO), но повреждённые символы (krytyческой, вручке, dietro) портят русский, а TTL 5мин слаб."
+    },
+    "nemotron-omni": {
+      "correctness": 5,
+      "reasoning": 5,
+      "format": 6,
+      "russian": 6,
+      "comment": "Фактическая ошибка длительности (3ч26мин вместо 3ч46мин), выдуманный расчёт дублей, раздутый план с дублями и самоссылочными зависимостями, битые символы."
+    },
+    "kimi-k2.6": {
+      "correctness": 7,
+      "reasoning": 7,
+      "format": 9,
+      "russian": 7,
+      "comment": "Полный и наглядный (чек-листы, статусы, ProxySQL); TTL 300с слабее пиров, есть вкрапления битых иероглифов и англицизмов в русском тексте."
+    },
+    "gpt-5.6-luna-high": {
+      "correctness": 10,
+      "reasoning": 10,
+      "format": 10,
+      "russian": 10,
+      "comment": "Образцово: четыре отдельные цепочки 5 почему, durable-идемпотентность как бизнес-инвариант, action items относительно T0, глубокие измеримые критерии."
+    },
+    "gpt-5.6-luna-low": {
+      "correctness": 9,
+      "reasoning": 9,
+      "format": 10,
+      "russian": 10,
+      "comment": "Очень сильно: reconciliation, DLQ, bounded retries, durable idempotency, зависимости по ID. Чуть менее исчерпывающе, чем high/medium-варианты."
+    },
+    "gpt-5.6-luna-medium": {
+      "correctness": 10,
+      "reasoning": 10,
+      "format": 10,
+      "russian": 10,
+      "comment": "Отлично: явное разделение симптомов/причин, несколько 5-почему, durable payment-operation record, reconciliation worker, полные критерии приёмки."
+    },
+    "gpt-5.6-sol-low": {
+      "correctness": 10,
+      "reasoning": 10,
+      "format": 10,
+      "russian": 10,
+      "comment": "Исключительно полно и практично: владельцы-роли по доменам, зависимости I/S/L, status inquiry к эквайеру перед повтором, тест на 1млн конкурентных ретраев."
+    },
+    "gpt-5.6-sol-medium": {
+      "correctness": 10,
+      "reasoning": 10,
+      "format": 10,
+      "russian": 10,
+      "comment": "Топ: точные показатели реагирования, connection budget, прогрев кэшей как критерий, атомарная транзакционная идемпотентность, ежедневная сверка дублей."
+    },
+    "gpt-5.6-terra-high": {
+      "correctness": 10,
+      "reasoning": 10,
+      "format": 10,
+      "russian": 10,
+      "comment": "Образцовый разбор: формула connection budget pool×replicas, startup config validation, durable idempotency 7-30д, чёткие пороги auto-rollback и SLA возвратов."
+    },
+    "gpt-5.6-terra-low": {
+      "correctness": 9,
+      "reasoning": 9,
+      "format": 10,
+      "russian": 10,
+      "comment": "Сильно: три цепочки 5 почему, state machine + outbox, status inquiry перед capture, reconciliation с полнотой 99,99%. Немного короче high-варианта."
+    },
+    "gpt-5.6-terra-medium": {
+      "correctness": 9,
+      "reasoning": 10,
+      "format": 10,
+      "russian": 10,
+      "comment": "Отлично проработано: таблица contributing factors с влиянием, admission control/bulkhead, duplicate_charge_rate как метрика, production-readiness review."
+    }
+  },
+  "winner": "gpt-5.6-sol-low",
+  "notes": "Кластер GPT-5.6 (sol/luna/terra) и GPT-5.5 лидируют за счёт durable-идемпотентности как бизнес-инварианта, status inquiry/reconciliation перед повтором, connection budget и измеримых критериев. Победитель gpt-5.6-sol-low — максимально исполнимый план с ролевой ответственностью и зависимостями. Аутсайдер nemotron-omni из-за фактических ошибок и раздутых самоссылочных зависимостей."
+}

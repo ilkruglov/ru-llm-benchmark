@@ -1,0 +1,19 @@
+{"task_id":"diagram_нефтегаз_9fd5eddcad","category":"diagram","scores":{
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно: нафта -> гидроочистка -> каталитический риформинг, Acid Gas (кислый газ), сера. Чёткая структура."},
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все факты верны, хорошая структура с итогом."},
+"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный маршрут и газ; 'кислотный газ' — небольшая неточность термина, но допустимо."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три ответа корректны, ясная структура."},
+"diffusion-gemma":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Факты верны, но опечатка 'Каталиталитический' и спорное 'нафта (легкий дистиллят)'."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Кратко и полностью верно, кислый газ и сера указаны."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, аккуратная структура и терминология."},
+"nemotron-omni":{"correctness":10,"reasoning":7,"format":7,"russian":9,"comment":"Верно, но очень сжато; 'реформинг' вместо 'риформинг'."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, аккуратно оформлено с пояснением про Acid Gas/кислый газ."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Кратко и полностью корректно."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все факты верны, лаконично."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верный маршрут, газ и продукт."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все факты корректны, кратко."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верно и ясно."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Полностью корректно, лаконично."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верный маршрут, Acid Gas, сера."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все факты верны, кратко и ясно."}
+},"winner":"gpt-5.5-medium","notes":"Все модели ответили верно (нафта -> гидроочистка -> каталитический риформинг, Acid Gas/кислый газ, сера). Различия минимальны; gpt-5.5-medium сочетает точность, структуру и терминологию."}

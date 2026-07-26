@@ -1,0 +1,28 @@
+{
+  "task_id": "m-agentic-16",
+  "category": "agentic",
+  "scores": {
+    "gpt-oss-120b": {"correctness": 7, "reasoning": 7, "format": 3, "russian": 5, "comment": "Содержательно сильный план (5 частей, decisive tests с исключением, дерево, антипаттерны), но ответ испорчен вставкой ~29000 символов повторяющегося тире — как deliverable сломан, формат провален."},
+    "deepseek-flash": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Компактно и практично: временная корреляция первым шагом, 5 гипотез с confirm/refute, чёткое дерево A-E, хорошие антипаттерны. Меньше глубины, чем у топ-кластера."},
+    "deepseek-pro": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 10, "comment": "Отличная локализация по upstream_status, механизмы для каждой гипотезы, decisive tests с исключающим наблюдением, ветки A/B/C, сильные антипаттерны. Практически исполнимо."},
+    "35b-a3b": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 8, "comment": "Сильно: таблицы, decisive tests confirm/exclude, дерево с ветками A-E, антипаттерны с альтернативой. Мелкие опечатки (Блема, поправи)."},
+    "27b-v2": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 8, "comment": "Очень практично: дерево, ключённое на строки ошибок nginx, decisive tests, антипаттерны с правильной альтернативой. Русский с опечатками (инфоценнаость, Дрейт, эвишенами)."},
+    "gemma-4-31b": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Полный и грамотный ответ: 5 гипотез с decisive test и исключением, дерево решений, антипаттерны с обоснованием. Хороший русский."},
+    "diffusion-gemma": {"correctness": 7, "reasoning": 6, "format": 7, "russian": 6, "comment": "Покрыты все 5 частей, гипотезы и тесты разумны, но короче и без теста для H5; заметные опечатки (ПЕРВЮ, правдодобности, направдку)."},
+    "gpt-5.5-low": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 10, "comment": "Топ: реальные PromQL/LogQL, 6 гипотез с confirm/exclude, разрез по слоям, минимальный первый пакет, биллинг-специфичные антипаттерны (идемпотентность/двойные списания)."},
+    "gpt-5.5-medium": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Образцово: сквозная корреляция request_id по CDN/nginx/checkout, 7 гипотез, конкретные запросы, ветвление, богатые антипаттерны с идемпотентностью платежей."},
+    "nemotron-omni": {"correctness": 7, "reasoning": 6, "format": 7, "russian": 7, "comment": "Все части покрыты, гипотезы/тесты слиты, но есть ошибочное рассуждение: исключение PgBouncer/БД как причины вынесено в антипаттерны — DB pool exhaustion реально даёт 502."},
+    "nemotron-super": {"correctness": 8, "reasoning": 7, "format": 7, "russian": 4, "comment": "Сильное покрытие: 5 гипотез с confirm/refute, ветвление по чекам, дашборд, антипаттерны. Но текст засорён иероглифами и битыми токенами (利用率, 觀察, новыхinstrumentов), русский страдает."},
+    "kimi-k2.6": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 10, "comment": "Отлично: приоритеты P0-P4, дерево, ключённое на upstream_status='-' vs '502' и upstream_response_time, decisive negative для каждой гипотезы, H6 как подгипотеза. Практично."},
+    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Образцово: таблица источника 502 по upstream_status, 6 гипотез с confirm/exclude, дерево, критерий остановки, идемпотентность платежей в антипаттернах."},
+    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 10, "comment": "Топ-уровень: 6 гипотез с конкретными запросами и 'следующий шаг', ветвление, правило сокращения пространства причин, биллинг-антипаттерны."},
+    "gpt-5.6-luna-medium": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Образцово: отдельная секция 'что считать решающим доказательством' с цепочками улик, 6 гипотез, ветвление, минимальный порядок, идемпотентность."},
+    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Наиболее полный и практичный: 7 гипотез с confirm/exclude, второй уровень ветвления, анализ deadline, PCI (не логировать PAN/CVV), идемпотентность, критерий успеха mitigation."},
+    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Образцово: 7 гипотез вкл. keep-alive/DNS/TLS/conntrack, требование причинной связи на уровне одного запроса, PCI, идемпотентность, богатое ветвление."},
+    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Образцово: таблица 7 гипотез с decisive test+исключением, отдельный разбор 'по утрам' по часовым поясам, нюанс 504 vs 502, ветвление, идемпотентность."},
+    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 10, "comment": "Топ-уровень: таблица 7 гипотез, ветвление, конкретные PromQL/LogQL срезы, идемпотентность платежей, чёткий целевой результат первого цикла."},
+    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 10, "comment": "Образцово: таблица источника 502, 6 гипотез с confirm/exclude, ветвление с обновлением приоритетов, PCI/идемпотентность, 'не объявлять инцидент самоисцелившимся'."}
+  },
+  "winner": "gpt-5.6-sol-low",
+  "notes": "Кластер gpt-5.x (обе 5.5 и все 8 вариантов 5.6) — сильнейший: локализация слоя первой, реальные PromQL/LogQL, 6-7 ранжированных гипотез с decisive confirm/exclude, деревья и биллинг-специфичные антипаттерны (идемпотентность, PCI); победитель sol-low как самый полный и исполнимый. deepseek-pro/kimi/27b-v2/35b-a3b — почти на том же уровне. gpt-oss-120b силён по сути, но испорчен вставкой тысяч символов тире."
+}

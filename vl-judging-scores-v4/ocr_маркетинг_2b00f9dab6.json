@@ -1,0 +1,19 @@
+{"task_id":"ocr_маркетинг_2b00f9dab6","category":"ocr","scores":{
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три факта верны. Оформление с LaTeX-математикой ($240$, $55,99$) излишне, но данные точны."},
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Название, масса и обе цены указаны верно, точки вместо запятой в цене — мелочь."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, цены дополнительно расшифрованы словами. Чётко и грамотно."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью верный, компактный и хорошо структурированный ответ."},
+"diffusion-gemma":{"correctness":9,"reasoning":8,"format":9,"russian":8,"comment":"Все три факта верны, но опечатка «Зфир» вместо «Зефир» снижает качество распознавания/русского."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный, лаконичный, идеально оформленный ответ со всеми фактами."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные верны, чистое структурированное оформление."},
+"nemotron-omni":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верно названы товар, масса и обе цены, ясная структура."},
+"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Все факты верны, с пояснением расположения цен на ценнике — лучший анализ."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью верный и аккуратно оформленный ответ."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три факта точны, чёткое оформление."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верные название, масса и обе цены, ясная структура."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный и грамотный ответ со всеми фактами."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные верны, аккуратное оформление."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верный лаконичный ответ со всеми тремя фактами."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все факты верны, предельно кратко и корректно."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный, компактный и чисто оформленный ответ."}
+},"winner":"kimi-k2.6","notes":"Практически все модели дали верный ответ (Зефир ШАРЛИЗ 240 г, 55,99 и 62,99 ₽/шт). Kimi выделяется пояснением расположения цен; diffusion-gemma допустила опечатку «Зфир»."}

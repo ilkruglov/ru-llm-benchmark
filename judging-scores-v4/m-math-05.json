@@ -1,0 +1,22 @@
+{"task_id":"m-math-05","category":"math_business","scores":{
+"gpt-oss-120b":{"correctness":6,"reasoning":8,"format":9,"russian":9,"comment":"База и IRR верны, но сценарии масштабируют и CF0 (opt +14.4, pess +2.1) без оговорки — нестандартная трактовка, меняющая вывод по пессимистичному сценарию."},
+"deepseek-flash":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все ключевые метрики верны (8.47/24.5%/+25.69/-11.39), фиксированный CAPEX. Хорошие таблицы и взвешенный вывод."},
+"deepseek-pro":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Точные расчёты по всем сценариям, сильная аргументация про спред доходности и hurdle-rate. Формат меморандума образцовый."},
+"35b-a3b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все метрики верны, аккуратный меморандум с сценарным анализом и обоснованным условным решением."},
+"27b-v2":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верные NPV/IRR по всем сценариям, чёткие таблицы, разумное 'условное одобрение' с этапностью."},
+"gemma-4-31b":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Все итоговые значения верны (интерполяция IRR от 18% чуть грубее, но 24.5% получен). Компактный вывод."},
+"diffusion-gemma":{"correctness":3,"reasoning":5,"format":6,"russian":6,"comment":"База верна, но IRR грубо ошибочен (21.8% вместо 24.5% из-за выдуманного NPV -7.2 при 25%), плюс мелкие ошибки DCF и опечатки ('изжки')."},
+"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все метрики верны при фиксированном CAPEX (явно оговорено), хороший разбор рисков и поэтапного запуска."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верные расчёты по всем сценариям, явная оговорка о немасштабировании CAPEX, взвешенный вывод."},
+"nemotron-super":{"correctness":9,"reasoning":9,"format":9,"russian":8,"comment":"Все метрики по сути верны (база ~8.49 из-за округления степеней), очень подробно; лёгкие иноязычные вкрапления ('výrazно','стратегическуюfit')."},
+"nemotron-omni":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Верные NPV/IRR по всем сценариям, компактно и корректно, разумная рекомендация с резервом."},
+"kimi-k2.6":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все метрики точны; глубочайший разбор Q5 (MIRR, опцион ожидания, ликвидность), сильный меморандум."},
+"gpt-5.6-luna-high":{"correctness":8,"reasoning":9,"format":8,"russian":9,"comment":"База/IRR верны; основной сценарий буквально масштабирует CF0 (opt +14.4/pess +2.1), но явно приведён и стандартный вариант (+25.68/-11.39)."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":7,"format":7,"russian":9,"comment":"Все метрики верны при фиксированном CAPEX, приведены и IRR сценариев; лаконично и корректно."},
+"gpt-5.6-luna-medium":{"correctness":8,"reasoning":8,"format":7,"russian":9,"comment":"Верная база/IRR; основной сценарий по буквальной трактовке (масштаб CF0), но стандартный вариант дан отдельной оговоркой."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Стандартная трактовка (CAPEX фиксирован), все метрики верны, отмечена альтернативная трактовка; хороший разбор рисков."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точные расчёты по всем сценариям, подробные таблицы и оговорки, сильный stage-gate вывод."},
+"gpt-5.6-terra-high":{"correctness":8,"reasoning":7,"format":6,"russian":9,"comment":"База/IRR верны; основной сценарий по буквальной трактовке (opt +14.4/pess +2.1), но фикс-CAPEX вариант оговорён. Очень кратко."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":7,"format":7,"russian":9,"comment":"Все метрики верны при фиксированном CAPEX, лаконичный корректный анализ и условная рекомендация."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":7,"format":7,"russian":9,"comment":"Верные NPV/IRR по всем сценариям (стандартная трактовка), компактно, разумный условный вывод."}
+},"winner":"kimi-k2.6","notes":"Большинство моделей дали верные метрики; kimi-k2.6 и deepseek-pro лидируют по глубине. Winner — kimi-k2.6 за точность и глубочайшее обоснование (MIRR, реальные опционы). diffusion-gemma провалила IRR."}

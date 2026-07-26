@@ -1,0 +1,19 @@
+{"task_id":"table_операционка_ec4db0081d","category":"table","scores":{
+"35b-a3b":{"correctness":6,"reasoning":6,"format":9,"russian":9,"comment":"Все числа считаны верно, но в Q3 арифметическая ошибка: 1 900 850 − 900 375 дано как 999 475 вместо 1 000 475."},
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все три ответа верны (7 912 300; равенство выполняется; 1 000 475), вычисления показаны."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные и расчёты верны, ответ полный и аккуратно структурирован."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три ответа корректны, вычисления и вывод по равенству приведены полностью."},
+"diffusion-gemma":{"correctness":6,"reasoning":6,"format":9,"russian":9,"comment":"Q1 и Q2 верны, но в Q3 ошибка вычитания: указано 999 475 вместо 1 000 475."},
+"gpt-5.5-low":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Итог и Q3 верны, но неверно считаны слагаемые в Q2 (889 981 и 7 022 319 вместо 888 981 и 7 023 319), хотя сумма и вывод правильные."},
+"gpt-5.5-medium":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Верны Q1 и Q3, но слагаемые в Q2 искажены (889 981 + 7 022 319), при этом итог и вывод корректны."},
+"nemotron-omni":{"correctness":3,"reasoning":3,"format":3,"russian":6,"comment":"Q1 дан неверно (7 023 319 вместо 7 912 300), вывод по Q2 противоречив («не совпадает» при сумме 7 912 300); верен только Q3."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три ответа верны, вычисления и вывод по равенству приведены чётко."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все ответы верны, но очень лаконично, без подписи к слагаемым."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все три ответа корректны, изложено кратко и ясно."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны, есть краткая проверка равенства."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три ответа корректны, вычисления показаны компактно."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны и аккуратно оформлены."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три ответа корректны, расчёты приведены."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны, дано краткое пояснение к равенству."},
+"gpt-5.6-terra-medium":{"correctness":3,"reasoning":3,"format":8,"russian":9,"comment":"Q1 выдуман (9 712 300 вместо 7 912 300), из-за чего Q2 ошибочно объявлен несовпадающим; верен только Q3."}
+},"winner":"27b-v2","notes":"Полностью правильных ответов много; 27b-v2, gemma-4-31b, kimi-k2.6 и llama-scout безупречны, у 27b-v2 наиболее полное и чистое оформление. Провалы: nemotron-omni и gpt-5.6-terra-medium с неверным Q1/Q2."}

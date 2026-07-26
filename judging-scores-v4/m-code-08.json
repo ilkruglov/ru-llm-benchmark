@@ -1,0 +1,148 @@
+{
+  "task_id": "m-code-08",
+  "category": "code",
+  "scores": {
+    "gpt-oss-120b": {
+      "correctness": 1,
+      "reasoning": 8,
+      "format": 6,
+      "russian": 8,
+      "comment": "Очень сильный разбор проблем и watch-схема, но код не компилируется: `if let Some(v) = *rx.borrow()` пытается вынести String из Ref (E0507), причём дважды."
+    },
+    "deepseek-flash": {
+      "correctness": 7,
+      "reasoning": 8,
+      "format": 7,
+      "russian": 8,
+      "comment": "Честно замечено, что настоящего циклического deadlock нет, а есть полная сериализация; фикс компилируется и сохраняет single-flight, но остаётся `unwrap()` на recv (паника в окне между send и remove) и не приведён main."
+    },
+    "deepseek-pro": {
+      "correctness": 1,
+      "reasoning": 4,
+      "format": 4,
+      "russian": 8,
+      "comment": "Ложное утверждение, что tokio MutexGuard не Send и исходник не компилируется; в фиксе `.await` внутри синхронного замыкания unwrap_or_else и вызов ассоциированной функции через `self.` — код не компилируется, LoaderGuard без Drop."
+    },
+    "35b-a3b": {
+      "correctness": 1,
+      "reasoning": 6,
+      "format": 5,
+      "russian": 8,
+      "comment": "Разбор приемлемый, но фикс не компилируется: `drop(loaders)` с последующим использованием заимствованного из карты `tx` (E0505) и использование перемещённого guard после ветки."
+    },
+    "27b-v2": {
+      "correctness": 5,
+      "reasoning": 6,
+      "format": 8,
+      "russian": 8,
+      "comment": "Код компилируется, но проверка loader и вставка Sender разнесены по разным критическим секциям — TOCTOU ломает строгий single-flight (возможны дублирующие загрузки); плюс неверное утверждение про capacity=16 и `expect` вместо fallback на кэш."
+    },
+    "gemma-4-31b": {
+      "correctness": 9,
+      "reasoning": 8,
+      "format": 9,
+      "russian": 9,
+      "comment": "Атомарная проверка/вставка под одним loader-локом, ожидающий после recv перечитывает кэш, поэтому гонки broadcast безопасны; честно отмечено, что в исходнике скорее сериализация, чем ABBA-deadlock."
+    },
+    "diffusion-gemma": {
+      "correctness": 6,
+      "reasoning": 5,
+      "format": 7,
+      "russian": 6,
+      "comment": "Фикс компилируется и single-flight сохранён, но при закрытии канала возвращается строка \"Error\" вместо перечитывания кэша; разбор поверхностный, много опечаток (\"мьюкс\", \"уничтошается\")."
+    },
+    "gpt-5.5-low": {
+      "correctness": 9,
+      "reasoning": 8,
+      "format": 9,
+      "russian": 9,
+      "comment": "Одно состояние под одним мьютексом + watch::Receiver в in_flight: атомарно, без удержания локов через await, single-flight соблюдён; разбор корректный, хотя описанный цикл в исходнике недостижим."
+    },
+    "gpt-5.5-medium": {
+      "correctness": 10,
+      "reasoning": 9,
+      "format": 9,
+      "russian": 9,
+      "comment": "Самая точная диагностика (явно указано, что циклического deadlock нет, есть await-while-holding-lock) и идиоматичный фикс через Arc<OnceCell> с get_or_init — гарантированный single-flight."
+    },
+    "nemotron-super": {
+      "correctness": 0,
+      "reasoning": 0,
+      "format": 0,
+      "russian": 0,
+      "comment": "Ответ не по задаче: сгенерирован эротический рассказ вместо анализа кода."
+    },
+    "nemotron-omni": {
+      "correctness": 0,
+      "reasoning": 0,
+      "format": 0,
+      "russian": 0,
+      "comment": "Дегенеративное повторение (`use std::collections::HashMap;` сотни раз), выдуманные проблемы про serde Serialize, ответ на английском — полный провал."
+    },
+    "kimi-k2.6": {
+      "correctness": 9,
+      "reasoning": 8,
+      "format": 9,
+      "russian": 9,
+      "comment": "Компилируемый фикс на watch + RwLock с retry-циклом и корректной обработкой Closed; отмечено, что broadcast-ветка в исходнике практически недостижима, но объяснение \"executor не может дать время T1\" неточно."
+    },
+    "gpt-5.6-luna-high": {
+      "correctness": 9,
+      "reasoning": 8,
+      "format": 9,
+      "russian": 9,
+      "comment": "Единый Mutex<State>, атомарный выбор leader/follower, broadcast без гонки (remove и send после снятия лока) — работает; разбор честный и лаконичный."
+    },
+    "gpt-5.6-luna-low": {
+      "correctness": 9,
+      "reasoning": 8,
+      "format": 8,
+      "russian": 9,
+      "comment": "Корректный фикс с double-check и send+remove под одним loader-локом, обработаны Closed/Lagged; небольшой минус — inner.lock().await берётся при удерживаемом loader-локе."
+    },
+    "gpt-5.6-luna-medium": {
+      "correctness": 10,
+      "reasoning": 9,
+      "format": 9,
+      "russian": 9,
+      "comment": "Точный разбор (цикла блокировок нет, есть удержание inner через await, orphan-loader при отмене) и чистый фикс на RwLock<HashMap<_, Arc<OnceCell>>>."
+    },
+    "gpt-5.6-sol-low": {
+      "correctness": 9,
+      "reasoning": 9,
+      "format": 8,
+      "russian": 9,
+      "comment": "Загрузка вынесена в отдельную задачу (устойчивость к отмене), watch хранит значение, есть recovery-path; решение корректное, но заметно сложнее необходимого."
+    },
+    "gpt-5.6-sol-medium": {
+      "correctness": 10,
+      "reasoning": 10,
+      "format": 9,
+      "russian": 9,
+      "comment": "Самый полный и точный разбор (сериализация, недостижимость broadcast-ветки, вечное ожидание после cancel, риск инверсии при добавлении invalidate) плюс корректный OnceCell-фикс с Arc::ptr_eq при очистке in_flight; комментарии в коде на английском."
+    },
+    "gpt-5.6-terra-high": {
+      "correctness": 9,
+      "reasoning": 9,
+      "format": 9,
+      "russian": 9,
+      "comment": "Flight в отдельной задаче + watch::Receiver в карте, локи короткие, single-flight строгий; разбор точный, включая orphan-loader при отмене."
+    },
+    "gpt-5.6-terra-low": {
+      "correctness": 9,
+      "reasoning": 9,
+      "format": 9,
+      "russian": 9,
+      "comment": "Единый Mutex<State> и watch с retry-циклом, загрузка в spawn — корректно и без гонок; чётко объяснено, почему ABBA-цикла в исходнике нет."
+    },
+    "gpt-5.6-terra-medium": {
+      "correctness": 10,
+      "reasoning": 9,
+      "format": 9,
+      "russian": 9,
+      "comment": "Одна критическая секция для проверки кэша и регистрации flight, watch + spawn, borrow_and_update в цикле ожидания — работает и строго single-flight."
+    }
+  },
+  "winner": "gpt-5.6-sol-medium",
+  "notes": "Ключевой водораздел: компилируется ли фикс и атомарны ли проверка кэша/регистрации загрузки; лучшие ответы (sol-medium, gpt-5.5-medium, luna-medium, terra-*) честно указывают, что в исходнике не ABBA-deadlock, а удержание inner через await и недостижимая broadcast-ветка. Провалы: nemotron-super (офф-топик), nemotron-omni (деградация), deepseek-pro/35b-a3b/gpt-oss-120b (некомпилируемый код)."
+}

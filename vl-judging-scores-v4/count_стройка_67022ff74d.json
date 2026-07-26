@@ -1,0 +1,19 @@
+{"task_id":"count_стройка_67022ff74d","category":"count","scores":{
+"35b-a3b":{"correctness":10,"reasoning":3,"format":4,"russian":5,"comment":"Верное число 3, но голый ответ без анализа."},
+"llama-scout":{"correctness":1,"reasoning":2,"format":6,"russian":8,"comment":"Неверно: назвал 5 тонких прутков вместо 3."},
+"27b-v2":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Верно 3, с кратким пояснением о расположении прутков."},
+"gemma-4-31b":{"correctness":1,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 5, голый ответ."},
+"diffusion-gemma":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Верно 3, ясное описание отделённых прутков."},
+"gpt-5.5-low":{"correctness":1,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 5, без обоснования."},
+"gpt-5.5-medium":{"correctness":1,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 5, без обоснования."},
+"nemotron-omni":{"correctness":10,"reasoning":3,"format":4,"russian":5,"comment":"Верное число 3, но без анализа."},
+"kimi-k2.6":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Верно 3 с чётким описанием диагонали к левому нижнему углу."},
+"gpt-5.6-luna-high":{"correctness":2,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 4 вместо 3."},
+"gpt-5.6-luna-low":{"correctness":2,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 4 вместо 3."},
+"gpt-5.6-luna-medium":{"correctness":2,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 4 вместо 3."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":3,"format":4,"russian":5,"comment":"Верное число 3, голый ответ."},
+"gpt-5.6-sol-medium":{"correctness":2,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 4 вместо 3."},
+"gpt-5.6-terra-high":{"correctness":2,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 4 вместо 3."},
+"gpt-5.6-terra-low":{"correctness":2,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 4 вместо 3."},
+"gpt-5.6-terra-medium":{"correctness":2,"reasoning":1,"format":3,"russian":5,"comment":"Неверно: 4 вместо 3."}
+},"winner":"kimi-k2.6","notes":"Правильный ответ 3. Kimi, 27b-v2 и diffusion-gemma дали верное число с пояснением; голые верные ответы у 35b-a3b, nemotron, sol-low."}

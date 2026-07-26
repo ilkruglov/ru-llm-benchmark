@@ -1,0 +1,22 @@
+{"task_id":"m-format-03","category":"format_strict","scores":{
+"gpt-oss-120b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Чистый CSV без обёрток, 7 строк, 5 метрик, все правила консистентности выполнены, кавычки экранированы верно."},
+"deepseek-flash":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректный RFC 4180 CSV, все обязательные условия (пустая заметка, экранированная кавычка, запятые в location) соблюдены."},
+"deepseek-pro":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Валидный CSV, единицы соответствуют метрикам, все правила выполнены, экранирование корректно."},
+"35b-a3b":{"correctness":9,"reasoning":7,"format":6,"russian":9,"comment":"Данные корректны, но перед заголовком лишние пустые строки — нарушение 'только CSV / первая строка заголовки'."},
+"27b-v2":{"correctness":9,"reasoning":7,"format":6,"russian":5,"comment":"Ведущие пустые строки нарушают формат; заметки на английском, локации смешанные."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":5,"comment":"Формат чистый и валидный, все правила соблюдены, но заметки полностью на английском."},
+"diffusion-gemma":{"correctness":8,"reasoning":5,"format":3,"russian":9,"comment":"Поле operator_note с кавычками не заключено в двойные кавычки (Критическая ошибка \"\"sensor\"\"\") — нарушение RFC 4180 и требования экранирования."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Идеальный CSV, 5 метрик, все обязательные условия выполнены, экранирование верное."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректный CSV, все правила консистентности соблюдены, кавычки только там где нужно."},
+"nemotron-super":{"correctness":8,"reasoning":5,"format":3,"russian":6,"comment":"Ведущие пустые строки плюс несбалансированные кавычки в последней строке (Note: \"\"test\"\"\"\") — невалидный CSV."},
+"nemotron-omni":{"correctness":9,"reasoning":6,"format":7,"russian":8,"comment":"Ведущая пустая строка; почти все заметки пустые, но обязательные условия выполнены, единицы верны."},
+"kimi-k2.6":{"correctness":9,"reasoning":7,"format":6,"russian":5,"comment":"Ведущие пустые строки нарушают формат; заметки на английском."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":6,"format":4,"russian":10,"comment":"Несколько полей без спецсимволов взяты в кавычки и пустые заметки как \"\" — нарушение правила 'кавычки ТОЛЬКО при запятой/кавычке'."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Чистый валидный CSV, все правила соблюдены, экранирование корректно."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Идеальный CSV, кавычки только где нужно, все обязательные условия выполнены."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Валидный CSV с корректными таймзонами и экранированием, все правила выполнены."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректный CSV, единицы и метрики согласованы, все условия соблюдены."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Чистый CSV, все правила консистентности выполнены, кавычки применены строго по RFC."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Валидный CSV, все обязательные условия соблюдены, экранирование верное."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Данные корректны, но две заметки без спецсимволов взяты в кавычки — нарушение правила 'кавычки только при необходимости'."}
+},"winner":"gpt-5.5-medium","notes":"Множество моделей выдали идеальный RFC 4180 CSV; штрафы за ведущие пустые строки (35b/27b/nemotron/kimi), лишние кавычки (luna-high, terra-medium) и невалидное экранирование (diffusion-gemma, nemotron-super)."}

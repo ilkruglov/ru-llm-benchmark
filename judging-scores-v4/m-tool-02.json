@@ -1,0 +1,22 @@
+{"task_id":"m-tool-02","category":"tool_calling","scores":{
+"gpt-oss-120b":{"correctness":10,"reasoning":5,"format":8,"russian":7,"comment":"Три параллельных вызова с верными именами и аргументами; но это три конкатенированных JSON-объекта, а не единый документ/массив."},
+"deepseek-flash":{"correctness":10,"reasoning":7,"format":9,"russian":9,"comment":"Корректный OpenAI-стиль tool_call с stringified-аргументами и осмысленной преамбулой; все три вызова параллельны и верны."},
+"deepseek-pro":{"correctness":10,"reasoning":6,"format":9,"russian":8,"comment":"Чистый JSON-массив из трёх верных вызовов; ключи tool/parameters нестандартны, но валидны."},
+"35b-a3b":{"correctness":10,"reasoning":6,"format":10,"russian":8,"comment":"Идеальный JSON-массив с name/arguments, все три вызова параллельны и точны."},
+"27b-v2":{"correctness":8,"reasoning":4,"format":0,"russian":7,"comment":"Функции и аргументы верны, но это псевдосинтаксис get_weather(...), а не JSON — формат провален."},
+"gemma-4-31b":{"correctness":10,"reasoning":5,"format":8,"russian":7,"comment":"Три блока <tool_use> с валидным JSON внутри; имена и аргументы точны."},
+"diffusion-gemma":{"correctness":7,"reasoning":3,"format":0,"russian":6,"comment":"Имена и аргументы почти верны, но синтаксис ```call: смешивает : и = и не является валидным JSON."},
+"gpt-5.5-low":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказался вызывать инструменты, выдал текстовый бриф с 'недоступно' — обязательные параллельные tool_use не сделаны."},
+"gpt-5.5-medium":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ без вызова инструментов; честно, но ключевая задача (три параллельных вызова) не выполнена."},
+"nemotron-omni":{"correctness":9,"reasoning":5,"format":7,"russian":7,"comment":"Три верных вызова, но конкатенированные объекты с избыточным дублирующим полем tool, не единый документ."},
+"nemotron-super":{"correctness":10,"reasoning":6,"format":9,"russian":7,"comment":"Единый валидный JSON с массивом tool_use, все три вызова параллельны; ключ args вместо arguments — мелкое отклонение."},
+"kimi-k2.6":{"correctness":10,"reasoning":6,"format":10,"russian":8,"comment":"Образцовый JSON-массив с name/arguments, три точных параллельных вызова."},
+"gpt-5.6-luna-high":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ выполнять батч; параллельные вызовы не сделаны."},
+"gpt-5.6-luna-low":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ без вызова инструментов; задача не выполнена."},
+"gpt-5.6-luna-medium":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ, инструменты не вызваны; ключевое требование не выполнено."},
+"gpt-5.6-sol-low":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ выполнять батч, tool_use отсутствуют."},
+"gpt-5.6-sol-medium":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ без вызова инструментов; параллельные вызовы не сделаны."},
+"gpt-5.6-terra-high":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ, инструменты не вызваны; задача провалена."},
+"gpt-5.6-terra-low":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ без вызова инструментов."},
+"gpt-5.6-terra-medium":{"correctness":1,"reasoning":2,"format":1,"russian":8,"comment":"Отказ выполнять запрос; параллельные tool_use отсутствуют."}
+},"winner":"kimi-k2.6","notes":"Победитель — kimi-k2.6 за образцовый валидный JSON-массив с тремя точными параллельными вызовами; 35b-a3b и deepseek-flash почти столь же хороши. Все gpt-5.5/5.6-версии отказались вызывать инструменты и провалили задачу."}

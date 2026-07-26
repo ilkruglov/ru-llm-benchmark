@@ -1,0 +1,19 @@
+{"task_id":"ocr_дата-аналитика_3ac6737789","category":"ocr","scores":{
+"llama-scout":{"correctness":10,"reasoning":8,"format":7,"russian":9,"comment":"Все числа верны, три города правильные. Формат портит навязчивая LaTeX-разметка ($...$) вокруг всех чисел."},
+"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные точны, аккуратно процитированы формулировки, добавлено уместное примечание про Нижний Новгород."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все значения верны, ясная структура с подписями показателей и корректной цитатой про национальности."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все числа и три города верны, чёткий нумерованный список, безупречный русский."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Данные точны, но опечатка «также также» в примечании слегка снижает качество текста."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все значения и города верны, компактный и ясный формат."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все данные точны, аккуратная структура, явно назван блок «Самые густонаселённые города»."},
+"nemotron-omni":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все числа и три города верны, но ответ предельно лаконичен, без пояснений."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения точны, чёткая структура, корректно указаны первые три города из списка."},
+"gpt-5.6-luna-high":{"correctness":7,"reasoning":6,"format":9,"russian":10,"comment":"Числа верны, но в п.5 названы только два города вместо требуемых трёх — Екатеринбург пропущен."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все данные точны, полный и ясный ответ на все пять пунктов."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все числа и три города верны, компактный формат без лишних пояснений."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все значения верны, чёткая структура с выделением ключевых чисел."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все данные точны, аккуратный полный ответ на все пять пунктов."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Числа и города верны; формулировка «наций и национальностей» немного вольная, но факты корректны."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все значения и три города верны, лаконичный ясный список."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":9,"russian":9,"comment":"Числа и города верны; «Более 190 наций» — небольшое упрощение формулировки, но фактически точно."}
+},"winner":"27b-v2","notes":"Почти все модели дали абсолютно точные числа и три верных города; выделяется 27b-v2 идеальной структурой и точными цитатами. Luna-high единственная ошиблась, назвав в п.5 лишь два города."}

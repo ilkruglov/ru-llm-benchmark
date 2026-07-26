@@ -1,0 +1,19 @@
+{"task_id":"chart_нефтегаз_fdd73d94e3","category":"chart","scores":{
+"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три ответа верны: максимум 2019=560,2, 2020=512,7, снижение 47,5, восходящий тренд. Чётко и грамотно."},
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":8,"comment":"Данные и разница 47,5 верны, тренд описан корректно. Использует точку вместо запятой и LaTeX-формат, не отметил снижение 2017."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты точны, отмечено снижение в 2017 году. Полный и грамотный ответ."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения, разница 47,5, тренд с упоминанием отклонения 2017. Кратко и точно."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все данные верны, тренд восходящий с упоминанием колебаний 2017. Хорошая структура."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точные значения, разница 47,5, тренд с отметкой снижения 2017. Кратко и грамотно."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, показан расчёт разницы, тренд с отклонением 2017. Отлично."},
+"nemotron-omni":{"correctness":3,"reasoning":1,"format":2,"russian":1,"comment":"Ответ на английском, назвал только максимум 560,2 без года; вопросы 2 и 3 не раскрыты."},
+"kimi-k2.6":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все факты точны, детально описан тренд и снижение 2017 с числами. Наиболее полный анализ."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения, разница 47,5, тренд с упоминанием 2017. Лаконично и точно."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, тренд с отметкой снижения 2017. Грамотно."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точные факты, разница 47,5, устойчивый рост с отклонением 2017. Отлично."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, разница 47,5, тренд восходящий, но снижение 2017 не отмечено."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Значения и разница верны, но формулировка «ежегодно рос» не учитывает снижение в 2017 году."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Данные точны, но «устойчивый ежегодный рост» без оговорки о снижении 2017."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, тренд с упоминанием снижения 2017. Кратко и точно."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Значения и разница верны, но «последовательно рос» не отражает снижение 2017."}
+},"winner":"kimi-k2.6","notes":"Почти все модели дали точные ответы; kimi-k2.6 отличается наиболее полным анализом с числовым описанием отклонения 2017. Nemotron-omni провалился (английский, неполный)."}

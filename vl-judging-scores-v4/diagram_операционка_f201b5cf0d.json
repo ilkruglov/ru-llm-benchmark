@@ -1,0 +1,19 @@
+{"task_id":"diagram_операционка_f201b5cf0d","category":"diagram","scores":{
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три ответа полностью верны: 3 руководителя, Зам. ген. директора, четыре подразделения ФЭД перечислены точно. Чёткая структура."},
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны, названия совпадают со схемой. Немного избыточно повторяет вопросы, но структурно чисто."},
+"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректные ответы по всем трём пунктам, аккуратное оформление и хороший русский."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три ответа точны и соответствуют картинке, ясная нумерация и списки."},
+"diffusion-gemma":{"correctness":10,"reasoning":7,"format":7,"russian":8,"comment":"Содержание верное, но есть опечатка «сновываясь» и лишние символы **, что снижает аккуратность."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и лаконичны, чёткое оформление списками."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точные ответы по всем пунктам, аккуратное форматирование с выделением."},
+"nemotron-omni":{"correctness":5,"reasoning":4,"format":6,"russian":8,"comment":"П.1 и п.2 верны, но в п.3 вместо перечисления подразделений ФЭД ошибочно повторён ответ про Зам. ген. директора — задание не выполнено."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три ответа полностью верны, чистое структурированное оформление."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные и лаконичные ответы по всем пунктам, аккуратные списки."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, оформление ясное и последовательное."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректно, «Финансовый и управленческий учет» — допустимая расшифровка."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, аккуратное форматирование и грамотный русский."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точные ответы по всем трём пунктам, чистая структура."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы соответствуют схеме, лаконично и структурировано."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные ответы по всем пунктам, ясное оформление списками."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректные ответы, аккуратная структура и хороший русский."}
+},"winner":"35b-a3b","notes":"Почти все модели дали полностью верные ответы; nemotron-omni провалил п.3. Победитель выбран среди эквивалентно точных за полноту и чистоту оформления."}

@@ -1,0 +1,19 @@
+{"task_id":"detect_нефтегаз_1e17d1d9cf","category":"detect","scores":{
+"35b-a3b":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Верно: две трубы, источник у верха левой установки, направление вправо-вверх; не выделил именно переднюю/левую трубу."},
+"llama-scout":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Две трубы и направление вправо-вверх указаны верно, но источник приписан обеим трубам, а не левой/передней."},
+"27b-v2":{"correctness":7,"reasoning":7,"format":9,"russian":9,"comment":"Всё верно, но упомянут дым, которого на однородном небе нет — небольшая выдумка."},
+"gemma-4-31b":{"correctness":8,"reasoning":6,"format":8,"russian":9,"comment":"Кратко и точно: две трубы, направление вправо-вверх; анализ минимален."},
+"diffusion-gemma":{"correctness":8,"reasoning":7,"format":7,"russian":8,"comment":"Содержание верное (2 ствола, направление вправо-вверх), но есть мусорный символ '{:' в тексте."},
+"gpt-5.5-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верно: две трубы, направление вправо-вверх; источник отнесён к обеим верхушкам."},
+"gpt-5.5-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Две трубы и диагональ вправо-вверх указаны верно, без выделения передней трубы."},
+"nemotron-omni":{"correctness":8,"reasoning":6,"format":7,"russian":6,"comment":"Факты верны, но грубая ошибка согласования '2 вертикальных труба'."},
+"kimi-k2.6":{"correctness":8,"reasoning":8,"format":9,"russian":10,"comment":"Развёрнуто и точно: две трубы, направление вправо-вверх, отличный русский; источник отнесён к обеим трубам."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Точно указан источник — верх левой трубы, направление вправо-вверх, две трубы; полное соответствие эталону."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":7,"format":7,"russian":9,"comment":"Верно выделена левая труба и направление вправо-вверх; кратко."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Источник — верх левой трубы, направление вверх-вправо, две трубы; точно и ясно."},
+"gpt-5.6-sol-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Две трубы и диагональ вправо-вверх верны, источник отнесён к обеим трубам."},
+"gpt-5.6-sol-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верно: две трубы, направление вправо-вверх; без выделения передней трубы."},
+"gpt-5.6-terra-high":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Две близко стоящие трубы и направление вправо-вверх указаны верно."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":7,"format":7,"russian":9,"comment":"Верно выделен левый из двух стволов как источник и направление вверх-вправо."},
+"gpt-5.6-terra-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Две трубы и диагональ вправо-вверх верны; источник отнесён к верхушкам обеих труб."}
+},"winner":"gpt-5.6-luna-high","notes":"Почти все ответы верны (две трубы, направление вправо-вверх); выше оценены модели, точно указавшие источник — верхушку левой/передней трубы. Luna-high лаконичен и полностью соответствует эталону."}

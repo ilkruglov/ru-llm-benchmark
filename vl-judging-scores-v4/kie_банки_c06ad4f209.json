@@ -1,0 +1,19 @@
+{"task_id":"kie_банки_c06ad4f209","category":"kie","scores":{
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все поля прочитаны верно, вывод о совпадении сумм правильный. Мешают лишь LaTeX-обёртки $...$ вокруг чисел."},
+"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, добавлен адрес плательщика, корректный вывод о совпадении сумм."},
+"27b-v2":{"correctness":8,"reasoning":9,"format":9,"russian":9,"comment":"Все ключевые факты верны, но наименование плательщика искажено как «Кококольчик» (опечатка/ошибка OCR)."},
+"gemma-4-31b":{"correctness":2,"reasoning":2,"format":8,"russian":8,"comment":"Выдумана сумма прописью «Пять тысяч сто тринадцать» и ошибочный вывод о несовпадении сумм; КПП тоже искажён (67110011)."},
+"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Все данные верны, вывод правильный; мелкие опечатки («Сопадает», «словной»)."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все поля точны, чёткое обоснование совпадения сумм 5312=."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, лаконичное и точное обоснование."},
+"nemotron-omni":{"correctness":10,"reasoning":10,"format":8,"russian":9,"comment":"Все факты верны, приведён явный расчёт 5000+300+12=5312, подтверждающий совпадение."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Все поля верны, хорошая структура; мелкая небрежность «5312 рубля»."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные точны, корректный вывод о совпадении сумм."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все поля верны, аккуратное обоснование по копейкам."},
+"gpt-5.6-luna-medium":{"correctness":6,"reasoning":8,"format":9,"russian":9,"comment":"Данные верны, но наименование плательщика грубо искажено как «Коллоктикс» вместо ООО «Колокольчик»."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, вывод о совпадении сумм корректен."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все поля точны, чёткое обоснование с указанием копеек."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, лаконичный и правильный ответ."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все поля точны, корректный вывод о совпадении сумм."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, максимально сжато и точно."}
+},"winner":"35b-a3b","notes":"Большинство моделей справились безупречно; 35b-a3b дал полный и точный ответ с адресом плательщика. gemma-4-31b провалилась (выдумка суммы прописью и неверный вывод), luna-medium и 27b-v2 исказили наименование плательщика."}

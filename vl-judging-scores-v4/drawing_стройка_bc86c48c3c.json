@@ -1,0 +1,19 @@
+{"task_id":"drawing_стройка_bc86c48c3c","category":"drawing","scores":{
+"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все 4 ответа верны, включая точную маркировку 5x1ПР8-27.12.19у. Чёткая структура и хороший русский."},
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все ответы верны, маркировка ПР1 точная. Развёрнуто с итоговой сводкой, слегка избыточно."},
+"27b-v2":{"correctness":8,"reasoning":8,"format":9,"russian":10,"comment":"Основные 4 ответа верны, но добавлен выдуманный размер 616 (на схеме 510), что снижает точность."},
+"gemma-4-31b":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны; маркировка передана с мелкими опечатками (Пр8, запятые), но ПР8 и 5x1 совпадают."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 4 ответа верны, маркировка ПР1 точная. Ясная структура."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все ответы верны и лаконичны, маркировка 5×1ПР8-27.12.19у точна."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все ответы верны и лаконичны, маркировка ПР1 точная."},
+"nemotron-omni":{"correctness":10,"reasoning":6,"format":7,"russian":8,"comment":"Все 4 ответа верны, маркировка точна, но крайне лаконично без пояснений."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все ответы верны, маркировка ПР1 точная. Чёткое оформление."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":10,"russian":10,"comment":"Ответы 1-3 верны; в маркировке ПР1 опущен суффикс «у», в остальном верно."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":10,"russian":10,"comment":"Ответы 1-3 верны; маркировка ПР1 без суффикса «у», в остальном корректна."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":10,"russian":10,"comment":"Ответы 1-3 верны; маркировка ПР1 без «у», ПР8 и 5×1 совпадают."},
+"gpt-5.6-sol-low":{"correctness":7,"reasoning":8,"format":10,"russian":10,"comment":"Ответы 1-3 верны, но марка прочитана как ПБ8 вместо ПР8, что противоречит эталону."},
+"gpt-5.6-sol-medium":{"correctness":7,"reasoning":8,"format":10,"russian":10,"comment":"Ответы 1-3 верны, но в маркировке ПБ8 вместо ПР8 — ошибка распознавания марки."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":10,"russian":10,"comment":"Ответы 1-3 верны; маркировка ПР1 без суффикса «у», в остальном верна."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Ответы 1-3 верны; маркировка ПР1 без «у», ПР8 и 5х1 совпадают."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все 4 ответа верны, маркировка 5×1ПР8-27.12.19у точна."}
+},"winner":"35b-a3b","notes":"Почти все модели ответили верно; лидируют полностью точные с маркировкой «...у» (35b-a3b, gpt-5.5, kimi, terra-medium). Sol-модели ошиблись в марке (ПБ8), luna/terra опустили суффикс «у»."}

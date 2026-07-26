@@ -1,0 +1,22 @@
+{"task_id":"m-format-02","category":"format_strict","scores":{
+"gpt-oss-120b":{"correctness":9,"reasoning":6,"format":10,"russian":9,"comment":"Чистый well-formed XML, все namespace/атрибуты/поля верны, арифметика сходится. Данные обобщённые (Товар A/B/C)."},
+"deepseek-flash":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Идеальный формат, реалистичные данные, суммы согласованы, префиксы корректны."},
+"deepseek-pro":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Безупречный XML с реалистичной B2B-детализацией и ссылкой на договор; арифметика точна."},
+"35b-a3b":{"correctness":10,"reasoning":7,"format":4,"russian":10,"comment":"Сам XML валиден и качественен, но обёрнут в markdown ```xml — прямое нарушение запрета текста/markdown."},
+"27b-v2":{"correctness":10,"reasoning":6,"format":6,"russian":10,"comment":"Данные и арифметика верны, но перед XML-декларацией стоят пустые строки — декларация не в начале документа."},
+"gemma-4-31b":{"correctness":9,"reasoning":6,"format":10,"russian":9,"comment":"Чистый валидный XML, все поля и суммы корректны; данные простые."},
+"diffusion-gemma":{"correctness":8,"reasoning":6,"format":10,"russian":9,"comment":"Формально валидный XML, суммы сходятся, но опечатка «СеверТор» и странный KPP 000001001."},
+"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Идеальный формат, дробные суммы с НДС 9879.84 точно согласованы, реалистичные данные."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Безупречный well-formed XML, корректные префиксы и арифметика."},
+"nemotron-omni":{"correctness":9,"reasoning":6,"format":6,"russian":9,"comment":"Все поля верны и суммы сходятся, но перед декларацией лишний перевод строки; данные обобщённые."},
+"nemotron-super":{"correctness":9,"reasoning":6,"format":6,"russian":10,"comment":"Корректная структура и арифметика, но пустые строки до XML-декларации нарушают требование."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Идеальный XML с максимально реалистичной номенклатурой (ГОСТ, ссылка на договор); всё сходится."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Чистый валидный XML, дробные суммы точно согласованы, корректные namespace."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Безупречный формат, все обязательные поля и арифметика верны."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Валидный well-formed XML, корректные префиксы, суммы согласованы."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Идеальный XML со всеми required полями и согласованной арифметикой."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Чистый валидный XML, корректные namespace и суммы."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Безупречный формат, все поля и арифметика верны."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Валидный well-formed XML, суммы и типы корректны."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Чистый XML, все обязательные элементы и согласованная арифметика."}
+},"winner":"kimi-k2.6","notes":"Почти все модели дали безупречный well-formed XML с согласованными суммами; kimi-k2.6 добавил наиболее реалистичную B2B-детализацию. Штрафы: 35b-a3b (markdown-обёртка), 27b-v2/nemotron-omni/nemotron-super (текст до декларации)."}

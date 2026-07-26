@@ -1,0 +1,19 @@
+{"task_id":"vqa_маркетинг_4cd6aa5f16","category":"vqa","scores":{
+"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все факты верны, дополнительно указаны места на постере, где найдена информация. Чёткая структура."},
+"27b-v2":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все данные точны, аккуратный маркированный список с адресом."},
+"llama-scout":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полный и верный ответ, развёрнутая структура с итоговым резюме."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все факты верны, лаконичный чёткий список."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Факты верны, но обрыв слова «распространяется ак» портит текст."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все данные верны, ясный ответ, но без адреса и меньшей структуры."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точный ответ, аккуратно разбит по пунктам."},
+"nemotron-omni":{"correctness":10,"reasoning":8,"format":6,"russian":10,"comment":"Все факты верны, но одним предложением без структуры."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полный верный ответ с чёткими заголовками и адресом."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Все факты верны, компактный связный текст без выраженной структуры."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Все данные точны, короткий связный ответ."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Верный лаконичный ответ без структурирования."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Все факты верны, компактный текст."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Точный ответ одним абзацем."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Все данные верны, кратко и по делу."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Верный сжатый ответ без структуры."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Точный лаконичный ответ."}
+},"winner":"llama-scout","notes":"Все модели верно определили время 19:00–21:00, скидку 20% на сладкую продукцию и город Липецк. Победа за наиболее полным и структурированным ответом."}

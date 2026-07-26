@@ -1,0 +1,19 @@
+{"task_id":"kie_операционка_1ec8e77f7d","category":"kie","scores":{
+"llama-scout":{"correctness":7,"reasoning":7,"format":9,"russian":9,"comment":"Все поля прочитаны верно, вывод правильный, но выдумана «стоимость без налога 200 000 в графе 5», хотя там прочерк."},
+"35b-a3b":{"correctness":8,"reasoning":9,"format":9,"russian":9,"comment":"Всё верно и расчёт 18/118 корректен, но КПП покупателя записан с ошибкой (5411001 вместо 541101001)."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все поля и реквизиты считаны точно, расчёт НДС верный и лаконичный."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные верны, арифметика 236000×18/118=36000 показана правильно."},
+"diffusion-gemma":{"correctness":6,"reasoning":8,"format":9,"russian":9,"comment":"Товар, суммы и вывод верны, но оба КПП искажены (7724010001 и 5411010001)."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все реквизиты точны, расчёт верный, вывод корректный."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точное считывание всех полей и корректная проверка НДС."},
+"nemotron-omni":{"correctness":1,"reasoning":1,"format":3,"russian":6,"comment":"Грубые выдумки: ИНН покупателя = ИНН продавца, товар «оплачивание работ», ставка 19%, неверный вывод, что расчёт не сходится."},
+"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Все поля верны, чёткое объяснение расчётной ставки 18/118 и корректная проверка."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все реквизиты верны, расчёт НДС корректен."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точные данные и правильный вывод о сходимости расчёта."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все поля считаны верно, арифметика подтверждена."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все реквизиты верны, корректно добавлена стоимость без НДС 200000."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точное считывание и верная проверка НДС."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные верны, расчёт по расчётной ставке корректен."},
+"gpt-5.6-terra-low":{"correctness":7,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, но ИНН продавца искажён (7724056312 вместо 7724506312)."},
+"gpt-5.6-terra-medium":{"correctness":7,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, но ИНН продавца записан с перестановкой цифр (7724056312)."}
+},"winner":"kimi-k2.6","notes":"Большинство моделей справились идеально; kimi-k2.6 и группа gpt-5.5/5.6 точны, но kimi лучше всех пояснила расчётную ставку. Nemotron-omni полностью провалился с выдумками."}

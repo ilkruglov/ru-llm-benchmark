@@ -1,0 +1,28 @@
+{
+  "task_id": "m-longctx-05",
+  "category": "long_context_extended",
+  "scores": {
+    "gpt-oss-120b": {"correctness": 9, "reasoning": 9, "format": 8, "russian": 8, "comment": "15 проблем по всему контексту: race, context.Background, retry ErrPaymentRejected, currency, SQLi, double-counting, credentials, сломанный RequireRole, config Kafka. Табличный формат громоздкий, но полный."},
+    "deepseek-flash": {"correctness": 7, "reasoning": 7, "format": 7, "russian": 8, "comment": "6 верных core-багов: SQLi, currency, double-counting, race+reset, RequireRole panic, updateStats data loss. Пропущены credentials, retry-rejected, атомарность БД/Kafka."},
+    "deepseek-pro": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "8 багов включая consumer-commit data loss и hardcoded credentials, плюс RequireRole, SQLi, currency, boundary, race. Не хватило context.Background и duplicate-charge."},
+    "35b-a3b": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 8, "comment": "6 сильных багов строго по шаблону: SQLi, currency, consumer data loss, RequireRole panic, race, credentials. Пропущены context, атомарность, retry-rejected."},
+    "27b-v2": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Race, SQLi, currency, boundary, RequireRole panic плюс тонкий JWT algorithm confusion и наблюдение, что мок скрывает баг конверсии. Пропущены context и duplicate-charge."},
+    "gemma-4-31b": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Ловит dual-write атомарность (processOnce), RequireRole panic, SQLi, currency, race, credentials, плюс context и boundary в допзамечаниях. Отлично структурировано."},
+    "diffusion-gemma": {"correctness": 6, "reasoning": 6, "format": 7, "russian": 6, "comment": "6 core-багов верно (race, SQLi, currency, boundary, updateStats, context), но пропущены credentials/RequireRole/duplicate-charge; заметные опечатки и неточные пути файлов."},
+    "gpt-5.5-low": {"correctness": 9, "reasoning": 9, "format": 8, "russian": 9, "comment": "15 проблем, глубоко: duplicate charges/idempotency, атомарность, context, race, SQLi, credentials, currency, boundary, RequireRole, JWT alg, consumer. Исчерпывающе."},
+    "gpt-5.5-medium": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 9, "comment": "18 проблем со всех частей контекста + тонкие (HTML injection, math/rand, external retry, isRetryable rejected). Практически образцовое покрытие."},
+    "nemotron-super": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 1, "comment": "10 багов, включая retry-drift и isRetryable, глубоко и точно — НО весь ответ на английском, качество русского фактически отсутствует."},
+    "nemotron-omni": {"correctness": 0, "reasoning": 0, "format": 0, "russian": 0, "comment": "Не выполнил задачу: 2 строки на английском с описанием того, что код делает, ни одного бага не найдено."},
+    "kimi-k2.6": {"correctness": 9, "reasoning": 9, "format": 8, "russian": 9, "comment": "9 багов: currency, SQLi, RequireRole panic, race, атомарность БД/Kafka, retry ErrPaymentRejected, goroutine storm+data loss, дубль-коммит consumer, credentials. Глубокий и точный."},
+    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 9, "comment": "20 проблем, включая очень тонкие: CBR Nominal, фильтр status='completed', float64 деньги, no-auth/IDOR, connection leak. Исчерпывающе по всему контексту."},
+    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "16 багов: все core + status filter, JWT alg, config Kafka, idempotency. Полное покрытие середины и конца контекста."},
+    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 9, "comment": "17 проблем + тонкие (monthly-report boundary, float деньги, unused import compile, PaymentsTotal до успеха). Очень глубоко."},
+    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 9, "comment": "18 проблем с очень глубоким анализом: CBR Nominal, stale-rate деградация, external retry, compile-блокеры, IDOR. Исчерпывающе."},
+    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 9, "comment": "28 проблем — самое исчерпывающее ревью: все core + миграция схемы, historical rate, SELECT* schema break, Prometheus label DoS, health endpoint. Эталон."},
+    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 9, "comment": "18 проблем, включая Nominal, status filter, no-auth, float деньги, миграцию, Prometheus DoS, JWT alg, retry-rejected. Исчерпывающе и точно."},
+    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "15 багов: RequireRole compile, race, duplicate, атомарность, consumer, config, SQLi, credentials, boundary, currency+Nominal, status filter, context, float. Сильно."},
+    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 9, "comment": "18 проблем + missing interface method, PaymentEventHandler TODO, last-retry sleep, connection leak, миграция, float деньги. Исчерпывающе по всему контексту."}
+  },
+  "winner": "gpt-5.6-sol-medium",
+  "notes": "Семейство gpt-5.6 (sol-medium/luna-high/terra-high/sol-low) и gpt-5.5-medium дали исчерпывающие ревью со всех частей 65K-контекста, включая тонкие баги (Nominal, status-filter, float деньги, idempotency). nemotron-super силён по сути, но на английском (russian=1); nemotron-omni полностью провалил задачу."
+}

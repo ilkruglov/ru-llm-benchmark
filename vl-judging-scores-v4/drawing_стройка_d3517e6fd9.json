@@ -1,0 +1,19 @@
+{"task_id":"drawing_стройка_d3517e6fd9","category":"drawing","scores":{
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все пять ответов верны, элементы условных обозначений выбраны корректно (Лавочка, Пергола). Чёткая структура."},
+"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны, корректно отделены условные обозначения от экспликации. Ясно и структурировано."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все ответы точны, подробное пояснение к каждому пункту, список условных обозначений корректен."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны, лаконично и правильно, условные обозначения выбраны корректно."},
+"diffusion-gemma":{"correctness":10,"reasoning":7,"format":8,"russian":6,"comment":"Ответы фактически верны, но текст с опечатками (уден, Номе), что снижает качество русского."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны и предельно кратки, лавочка и фонарь корректны."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, чёткое и грамотное изложение."},
+"nemotron-omni":{"correctness":2,"reasoning":1,"format":1,"russian":1,"comment":"Обрывочный бессвязный ответ: только масштаб верен, VII назван VIII, ответы неполны и нечитаемы."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, грамотно и полно, корректный список условных обозначений."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, лавочка и урна корректны, чёткое изложение."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и лаконичны, условные обозначения выбраны корректно."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, ясно и грамотно."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, лавочка и фонарь корректны."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, чёткое изложение."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, лаконично и грамотно."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, предельно кратко и корректно."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, ясно и грамотно."}
+},"winner":"27b-v2","notes":"Почти все модели дали все пять верных ответов; 27b-v2 выделяется наиболее полным и точным пояснением каждого пункта. Nemotron-omni полностью провалил задачу."}

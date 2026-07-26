@@ -1,0 +1,19 @@
+{"task_id":"diagram_дата-аналитика_6620fe591e","category":"diagram","scores":{
+"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три ответа абсолютно точны, назначения процитированы дословно. Чёткая структура и безупречный русский."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью верно, полный список в правильном порядке. Хорошая структура и уточнение про форму ромба."},
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все факты верны, порядок корректен. Мелкие англицизмы (diamond) и точки в списке, но ясно."},
+"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные ответы на все вопросы, полный корректный список. Аккуратное оформление."},
+"diffusion-gemma":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все ответы верны и дословны, список в правильном порядке. Хорошая структура."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, компактно. Нумерация списка сбилась на 1, но содержание точное."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные ответы, аккуратная нумерация, полный список. Безупречно."},
+"nemotron-omni":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Факты верны, назначения процитированы. Лишнее слово 'диагональ' и заголовок Answer, но сути не мешает."},
+"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Все ответы точны, добавлено полезное описание ориентации ромба. Отличная структура и русский."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, список через стрелки компактен и корректен по порядку."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точно и полно, аккуратный нумерованный список. Безупречный русский."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, список в строку с кавычками корректен. Компактно и ясно."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все ответы точны, полный правильный список. Хорошее оформление."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные ответы, аккуратная нумерация, полный список. Безупречно."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все факты верны, чистый список сверху вниз. Ясно и корректно."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точно и полно, корректный порядок списка. Хорошее оформление."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все ответы верны, список в строку корректен. Компактно и ясно."}
+},"winner":"kimi-k2.6","notes":"Все модели дали фактически безупречные ответы; kimi-k2.6 чуть выделяется полезным описанием ориентации ромба."}

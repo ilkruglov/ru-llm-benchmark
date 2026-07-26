@@ -1,0 +1,19 @@
+{"task_id":"table_банки_ffae1c7e4e","category":"table","scores":{
+"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три значения верны, сумма 6 600 руб. Полная структура с разбивкой и итогом."},
+"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно 6 600 руб. Использование LaTeX-разметки ($$) немного лишнее, но структура ясная."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верные значения и итог 6 600 руб., чёткий список с формулой."},
+"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно 6 600 руб., но не показана явная формула сложения."},
+"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Верно 6 600 руб., опечатка «представному» снижает качество русского."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верные значения и формула, итог 6 600 руб., ясно и структурированно."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Верно 6 600 руб., значения перечислены, но формула сложения не показана."},
+"nemotron-omni":{"correctness":10,"reasoning":6,"format":6,"russian":9,"comment":"Итог верный 6 600 руб., но ответ предельно сжатый без привязки значений к тарифам."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верные значения, формула и итог 6 600 руб., хорошо оформлено."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно 6 600 руб., но нет явной формулы, названия тарифов сокращены."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно 6 600 руб., аккуратный список без явной формулы сложения."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Верные значения и итог 6 600 руб., чистая структура без формулы."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Итог верный 6 600 руб. с формулой, но значения не привязаны к названиям тарифов."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Итог верный 6 600 руб. с формулой, но без разбивки по названиям тарифов."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и итог 6 600 руб., без явной строки сложения."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно 6 600 руб., полные названия тарифов, но без формулы."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно 6 600 руб., названия сокращены, без явной формулы."}
+},"winner":"35b-a3b","notes":"Все модели дали верный итог 6 600 руб. Лучшие — с полной разбивкой, названиями и формулой (35b-a3b, 27b-v2, kimi, gpt-5.5-low)."}

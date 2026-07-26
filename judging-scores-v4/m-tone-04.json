@@ -1,0 +1,22 @@
+{"task_id":"m-tone-04","category":"tone_style","scores":{
+"deepseek-flash":{"correctness":8,"reasoning":7,"format":9,"russian":8,"comment":"Все факты сохранены, все 6 блоков; жаргон введён с человеческими пояснениями в скобках — требование соблюдено, хотя терминов оставлено много."},
+"deepseek-pro":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Полностью убран жаргон (нет EBS/CMK/OPA/pgaudit/SIEM/FPE), все контроли отражены, безупречный юридический тон."},
+"gpt-oss-120b":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Факты на месте, тон хороший, но часть терминов (SIEM, format-preserving encryption) оставлена, местами калька."},
+"35b-a3b":{"correctness":5,"reasoning":6,"format":8,"russian":7,"comment":"Несколько жаргонных терминов (mTLS, EBS, FPE, CMK) вставлены в скобках без человеческого пояснения — прямое нарушение ключевого требования."},
+"27b-v2":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Жаргон убран полностью, язык близок к 152-ФЗ/GDPR, все меры отражены концептуально; сильная адаптация тона."},
+"gemma-4-31b":{"correctness":8,"reasoning":8,"format":9,"russian":8,"comment":"Термины аккуратно введены с пояснениями в скобках, все блоки и факты присутствуют, тёплый профессиональный тон."},
+"diffusion-gemma":{"correctness":7,"reasoning":7,"format":7,"russian":7,"comment":"Полное покрытие фактов, но превышен лимит знаков и есть опечатки (регла, вефицируется); термины частью оставлены."},
+"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чистое удаление жаргона, все контроли отражены точно, аккуратный юридический язык."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Полный набор мер без жаргона, чёткая структура и грамотный юридический тон."},
+"nemotron-omni":{"correctness":3,"reasoning":4,"format":6,"russian":1,"comment":"Тело ответа написано на английском — провал адаптации тона для русскоязычного юриста, хотя заголовки русские."},
+"nemotron-super":{"correctness":2,"reasoning":1,"format":3,"russian":2,"comment":"Ответ сломан: массивная утечка англоязычного meta-рассуждения о политике, вкрапления польского/японского; итоговый текст погребён в мусоре."},
+"kimi-k2.6":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Жаргон полностью убран, отличный юридический язык; чуть абстрактнее — потеряна часть конкретики, блоки обезличивания и токенизации объединены."},
+"gpt-5.6-luna-high":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Чистый текст, OPA введён с пояснением; чуть короче, но все меры отражены."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Полное покрытие без жаргонных акронимов, ясный юридический тон."},
+"gpt-5.6-luna-medium":{"correctness":7,"reasoning":8,"format":9,"russian":9,"comment":"Хороший текст, но 'AWS EBS типа gp3' оставлен без человеческого пояснения — нарушение требования по жаргону."},
+"gpt-5.6-sol-low":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Все меры отражены, OPA введён с пояснением, аккуратный тон."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Полное покрытие, чистое удаление жаргона плюс юридически ценный нюанс (псевдонимизация, а не необратимая анонимизация)."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Все контроли, KMS пояснён, OPA обезличен, ровный юридический язык."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Без жаргонных акронимов, хорошо структурировано с подпараграфами, все факты."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чистый, полный, грамотный текст без жаргона; все меры отражены."}
+},"winner":"gpt-5.6-sol-medium","notes":"Верхняя группа (deepseek-pro, 27b-v2, gpt-5.5/5.6 семейства) убирает жаргон и сохраняет все факты; sol-medium добавляет ценный юридический нюанс. Провалы: nemotron-omni (ответ на английском) и nemotron-super (сломанная генерация)."}

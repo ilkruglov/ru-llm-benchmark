@@ -1,0 +1,22 @@
+{"task_id":"m-tone-03","category":"tone_style","scores":{
+"gpt-oss-120b":{"correctness":7,"reasoning":7,"format":9,"russian":8,"comment":"Три различимых сообщения со спортивной метафорой, фичи и CTA на месте, но структура шаблонно повторяется, много англицизмов и эмодзи."},
+"deepseek-flash":{"correctness":8,"reasoning":8,"format":9,"russian":7,"comment":"Сильная дифференциация тона, но технарский блок написан почти полностью по-английски, что бьёт по критерию литературного русского."},
+"deepseek-pro":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Отличная стилистическая адаптация: «киберспортсмен», «фидбек без соплей», уместный жаргон и естественный тон для каждой ЦА."},
+"35b-a3b":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Смысл сохранён, тон различается, но эталонная фраза вставлена дословно во все три варианта механически, различие акцентов умеренное."},
+"27b-v2":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Компактные различимые тексты, «деплоишь готовую версию себя» удачно для технарей, но ключевая фраза одинаково впаяна в каждый вариант."},
+"gemma-4-31b":{"correctness":7,"reasoning":7,"format":9,"russian":8,"comment":"Хорошая дифференциация и полный набор фич/CTA, но артефакты LaTeX ($\\rightarrow$) и шаблонная вставка ключевой фразы снижают качество."},
+"diffusion-gemma":{"correctness":6,"reasoning":6,"format":8,"russian":6,"comment":"Дифференциация есть, но заметные опечатки («Головое», «воность», «нета знаний», «биттех-компа») портят русский и общее впечатление."},
+"gpt-5.5-low":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"Убедительные болевые точки под каждую ЦА, естественный тон, deliberate practice для технарей; чуть менее выразительные заголовки."},
+"gpt-5.5-medium":{"correctness":8,"reasoning":8,"format":8,"russian":7,"comment":"Хорошая адаптация, но C-level блок полностью на английском, что снижает оценку русской литературности."},
+"nemotron-super":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Тон различается, спортивная метафора обыграна, но ключевая фраза выделена одинаковым штампом «Ключевая мысль:» во всех трёх."},
+"nemotron-omni":{"correctness":6,"reasoning":6,"format":8,"russian":6,"comment":"Ключевая фраза механически вынесена в начало каждого варианта, дифференциация слабее, опечатки («беспладна»), тексты короче."},
+"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Живой молодёжный тон, уважительный C-level и точный технарский жаргон (necessary/sufficient, trade-offs), метафора вплетена органично."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Тонкая различимая стилистика, референс The Office, естественная подача, все фичи, CTA и ключевая мысль органично интегрированы."},
+"gpt-5.6-luna-low":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Качественная адаптация тона, «boss fight» для студентов, зрелый C-level; чуть менее яркая, чем high-версия."},
+"gpt-5.6-luna-medium":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Естественный русский, хорошая дифференциация акцентов и болей, детальный технарский блок по STAR и system design."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Остроумно и точно по тону: «без packet loss между головой и интервьюером», сильная калибровка жаргона под каждую ЦА."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Мозг выдаёт 404, event-driven платформа на миллионы RPS — меткие образы, органичная метафора и уместный тон для всех трёх."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Лучшая калибровка тона и жаргона: Kafka vs SQS, eventual consistency, остроумные концовки, богатая дифференциация без потери смысла."},
+"gpt-5.6-terra-low":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Сильная адаптация, «panic mode» vs board dialogue, технарский блок с trade-offs; чуть скромнее по яркости, чем high."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Меткие образы (production incident без postmortem, leetcode-stress roulette), органичная метафора и точный тон под каждую аудиторию."}
+},"winner":"gpt-5.6-terra-high","notes":"Топ-кластер (terra-high, luna-high, sol/kimi/deepseek-pro) даёт органичную интеграцию метафоры и точнейшую калибровку жаргона; terra-high лидирует остроумием и глубиной технической специфики без потери смысла."}

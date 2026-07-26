@@ -1,0 +1,22 @@
+{"task_id":"m-summarization-01","category":"summarization","scores":{
+"gpt-oss-120b":{"correctness":6,"reasoning":8,"format":8,"russian":8,"comment":"Полный, богатые таблицы рисков, но ошибки в датах: 'среда 17 мая' (правильно 20 мая) и галлюцинация 'чек-поинт до 30 апреля', выдуманные сроки для Олега/Дмитрия."},
+"deepseek-flash":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Точный и компактный, среда=20 мая верно, все ключевые факты сохранены; пара выдуманных сроков (29 мая) не критична."},
+"deepseek-pro":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Детальный и структурный, факты верны; минус — самостоятельная конвертация $109 в ₽10000, которой не было в транскрипте."},
+"35b-a3b":{"correctness":6,"reasoning":7,"format":8,"russian":8,"comment":"Хорошая структура, но дата анонса PixelPlatform указана как 25 мая вместо 20 мая (дважды), выдуманы инициалы разработчиков."},
+"27b-v2":{"correctness":8,"reasoning":7,"format":9,"russian":9,"comment":"Сжато и точно, даты (среда 20 мая, PixelPlatform 20 мая) корректны, все разделы на месте."},
+"gemma-4-31b":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Факты верны, аккуратный русский; минус — эмодзи в заголовках и урезанный список action items (нет части задач)."},
+"diffusion-gemma":{"correctness":7,"reasoning":6,"format":7,"russian":7,"comment":"Основные факты сохранены, но всего 4 action items, опечатка 'план-графифик', менее полный охват."},
+"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Очень полный и точный, все критичные факты и цифры на месте; список решений слегка перегружен (9 пунктов)."},
+"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Точный, полный, среда=20 мая, чёткая структура и корректный русский без кальки."},
+"nemotron-omni":{"correctness":5,"reasoning":5,"format":3,"russian":1,"comment":"Ответ преимущественно на английском с утёкшим тегом '</think>' и мусором 'noviзность'; нарушено требование русского языка и формата."},
+"nemotron-super":{"correctness":8,"reasoning":8,"format":8,"russian":1,"comment":"Содержательно точный и подробный, но полностью на английском — прямое нарушение требования русского языка."},
+"kimi-k2.6":{"correctness":7,"reasoning":7,"format":8,"russian":9,"comment":"Хорошая структура и русский, PixelPlatform 20 мая верно; минус — выдуманный срок '16 мая (вт)' для Дмитрия (некорректный день недели)."},
+"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чистый, точный, все ключевые факты и даты корректны, литературный русский."},
+"gpt-5.6-luna-low":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Точный и аккуратный, чуть менее детальные action items, но все критичные факты сохранены."},
+"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Полный и точный, среда=20 мая, все разделы и цифры на месте, хороший русский."},
+"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Очень полный и точный, чёткая таблица action items с этапами SSO, корректные даты и русский."},
+"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Точный и хорошо структурированный, все факты сохранены, литературный русский."},
+"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Полный охват фактов, включает состав фич, корректные даты и цифры, чистый русский и точный формат."},
+"gpt-5.6-terra-low":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Точный, компактный, все ключевые факты и даты верны, хороший русский."},
+"gpt-5.6-terra-medium":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Точный и полный, корректные даты и суммы, аккуратная структура и русский."}
+},"winner":"gpt-5.6-terra-high","notes":"Семейства gpt-5.5/5.6 дали одинаково сильные точные саммари на литературном русском; terra-high выделяется полнотой (состав фич) при безупречных фактах. Nemotron-модели провалили требование русского языка (ответ на английском)."}

@@ -1,0 +1,19 @@
+{"task_id":"vqa_маркетинг_f9e737b9bf","category":"vqa","scores":{
+"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три ответа верны, с указанием цвета шрифта и точной цитатой надписи. Чётко и структурировано."},
+"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы верны. Дублирует вопросы в структуре, назвал блюдо как \"Шаурма Гриль\" — по сути корректно."},
+"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три ответа верны, отмечена белая пиала с соусом — хорошая внимательность к деталям."},
+"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все ответы верны, но кратко и без пояснений/цитат."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три ответа верны, аккуратно оформлено."},
+"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, лаконично и ясно."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все верно, но очень сжато, без деталей."},
+"nemotron-omni":{"correctness":9,"reasoning":6,"format":7,"russian":8,"comment":"Ответы верны, но предельно кратко и с опечаткой \"Грилль\"."},
+"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три ответа верны, с точными цитатами надписей. Отлично."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все верно, кратко и ясно."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все верно, кратко и ясно."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все верно, кратко и ясно."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, с цитатами заголовка. Хорошо оформлено."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все верно, с пояснением про способ приготовления."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все верно, кратко и точно."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все верно, кратко."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все верно, кратко и точно."}
+},"winner":"kimi-k2.6","notes":"Все модели дали три правильных ответа; задача несложная. Лидеры (kimi-k2.6, 27b-v2, 35b-a3b) добавили точные цитаты и детали, поэтому чуть выше по reasoning."}

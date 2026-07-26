@@ -1,0 +1,19 @@
+{"task_id":"diagram_нефтегаз_21c8c2e8ac","category":"diagram","scores":{
+"35b-a3b":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"Гудрон назван верно, но выдуман блок «Экструдирование» и цепочка ведёт к коксу вместо Битумной→Битум."},
+"llama-scout":{"correctness":2,"reasoning":3,"format":7,"russian":7,"comment":"Гудрон распознан, но привязан к коксованию и коксу; ошибочная ветка, спутаны фракции 350-500."},
+"27b-v2":{"correctness":5,"reasoning":5,"format":7,"russian":8,"comment":"Верно назвал Гудрон и Витумную (Битумную), но итоговый продукт указан как Кокс, а не Битум — путаница в конце цепочки."},
+"gemma-4-31b":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Гудрон верно, но направил в Установку коксования и к коксу — неверная ветка."},
+"diffusion-gemma":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Гудрон верно, но цепочка коксование→кокс ошибочна."},
+"gpt-5.5-low":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Гудрон верно, но путь ведёт к коксованию и коксу вместо Битумной→Битум."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верная цепочка: Перегонка→гудрон→Битумная→битум."},
+"nemotron-omni":{"correctness":0,"reasoning":0,"format":4,"russian":3,"comment":"Полная галлюцинация: выдуманы блоки «Тяжёлый остаток», «Утв. молва» и «Остальной топлив», которых нет на схеме."},
+"kimi-k2.6":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Гудрон верно, но направлен в Установку коксования и к коксу — ошибочная ветка."},
+"gpt-5.6-luna-high":{"correctness":1,"reasoning":2,"format":8,"russian":9,"comment":"Гудрон верно, но выдуман «Висбрекинг» и котельное топливо — ни блока, ни продукта на этой цепочке нет."},
+"gpt-5.6-luna-low":{"correctness":2,"reasoning":2,"format":8,"russian":9,"comment":"Гудрон и битум названы, но промежуточный блок выдуман («Висбрекинг»)."},
+"gpt-5.6-luna-medium":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Гудрон→битум верно, блок назван «Битумизация» — близко к «Битумной», но не дословно."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верная цепочка: гудрон→Битумная→битум."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верно: гудрон→битумная установка→битум."},
+"gpt-5.6-terra-high":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Гудрон верно, но выдумана «Вакуумная» и уход в коксование→кокс."},
+"gpt-5.6-terra-low":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Гудрон верно, но выдуман блок вакуумной перегонки и цепочка ведёт к коксу."},
+"gpt-5.6-terra-medium":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Гудрон верно, но направлен в Коксование→кокс — ошибочная ветка."}
+},"winner":"gpt-5.5-medium","notes":"Верную цепочку Гудрон→Битумная→Битум дали только gpt-5.5-medium, gpt-5.6-sol-low и gpt-5.6-sol-medium; большинство ошибочно ушли в коксование→кокс."}

@@ -1,0 +1,19 @@
+{"task_id":"diagram_общее_92ccce913e","category":"diagram","scores":{
+"27b-v2":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все 4 пункта верны, включая точную модель ПМЕ-083-220В и «Комплектно с Р25». Чёткая структура."},
+"35b-a3b":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все ответы точны и полны, аккуратное форматирование и хороший русский."},
+"llama-scout":{"correctness":3,"reasoning":4,"format":7,"russian":8,"comment":"Разделы и количество верны, но КМ назван «Контактор» (в таблице — пускатель магнитный), а примечание искажено до «R5» вместо «Комплектно с Р25»."},
+"gemma-4-31b":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Разделы и количество верны, но модель пускателя указана как ПМЕ-283 вместо ПМЕ-083; примечание передано по частям, но по сути верно."},
+"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 4 пункта верны (ПМЭ-083 — мелкая ошибка литеры), хорошее оформление."},
+"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все верно, отдельно отмечено, что примечание относится к строкам C1,C2 и R1,R2."},
+"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 4 пункта точны, лаконично и корректно."},
+"nemotron-omni":{"correctness":10,"reasoning":6,"format":6,"russian":9,"comment":"Все ответы верны (2208 — OCR-прочтение 220В), но предельно кратко, без структуры и пояснений."},
+"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все верно; примечание разбито по строкам, но правильно сведено к «Комплектно с Р25»."},
+"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 4 пункта верны, ясно и структурировано."},
+"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны и корректно оформлены."},
+"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все верно, аккуратная структура и хороший русский."},
+"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 4 пункта точны, чёткое оформление."},
+"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все верно; отдельно указано, что примечание общее для строк C1,C2 и R1,R2."},
+"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":7,"russian":9,"comment":"Все ответы верны (мелкая описка «Комплектное»), но крайне сжато, без пояснений."},
+"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все верно, лаконично; «Комплектное» — незначительная описка."},
+"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все 4 пункта верны, кратко; мелкая описка «Комплектное»."}
+},"winner":"gpt-5.5-low","notes":"Подавляющее большинство моделей дали все 4 факта верно; выделяется gpt-5.5-low точностью и указанием, что примечание относится к обеим строкам. llama-scout и gemma допустили ошибки в наименовании КМ / модели и примечании."}

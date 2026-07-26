@@ -1,0 +1,19 @@
+{"task_id":"chart_банки_81fa9626fd","category":"chart","scores":{
+"llama-scout":{"correctness":6,"reasoning":5,"format":8,"russian":8,"comment":"High/Low верны и последнее значение (77,463) точное, но тренд занижен: рост описан только до 76,6, резкий скачок около 10:00 не отмечен."},
+"35b-a3b":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"High/Low верны, тренд описан точно со скачком после 10:00 и коррекцией; последнее значение 77,459 в пределах допуска."},
+"27b-v2":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Все числа верны, тренд с боковиком и скачком около 10:00 описан хорошо; последнее значение 77,459 приемлемо."},
+"gemma-4-31b":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"High/Low верны, тренд подробный (спад в 07:30, гэп в 10:00, пик), последнее значение 77,469 точно."},
+"diffusion-gemma":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Верные числа, восходящий тренд со скачком 10:00–11:00 и пиком выше 77,8; последнее 77,469 корректно."},
+"gpt-5.5-low":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"High/Low и последнее значение (77,469) верны, тренд с резким скачком после 10:00 описан ясно и кратко."},
+"gpt-5.5-medium":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Все факты верны, тренд и скачок после 10:00 описаны точно; последнее значение 77,469 корректно."},
+"nemotron-omni":{"correctness":8,"reasoning":8,"format":9,"russian":8,"comment":"Числа и тренд верны, скачок в 10:00 отмечен, последнее 77,469 точно; лёгкие огрехи русского ('курсовой', 'колебляясь')."},
+"kimi-k2.6":{"correctness":5,"reasoning":8,"format":8,"russian":9,"comment":"High/Low и тренд описаны отлично, но последнее значение названо ~77,66/77,663 — ошибка чтения, реально ~77,465."},
+"gpt-5.6-luna-high":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верные High/Low и последнее значение 77,469, тренд с скачком к 76,8 и пиком 77,9 описан корректно."},
+"gpt-5.6-luna-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Числа верны, тренд с резким скачком около 10:00 и коррекцией; последнее значение 77,469 точно."},
+"gpt-5.6-luna-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"High/Low верны, тренд со скачком к 76,8 и пиком 77,8 описан ясно; последнее 77,469 корректно."},
+"gpt-5.6-sol-low":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Все факты верны, восходящий тренд со скачком после 10:00 описан хорошо; последнее значение 77,469 точно."},
+"gpt-5.6-sol-medium":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"High/Low, тренд и последнее значение 77,469 корректны, изложение ясное и точное."},
+"gpt-5.6-terra-high":{"correctness":8,"reasoning":7,"format":7,"russian":9,"comment":"Числа верны, тренд и скачок около 10:00 отмечены кратко; последнее значение 77,469 точно."},
+"gpt-5.6-terra-low":{"correctness":8,"reasoning":6,"format":7,"russian":9,"comment":"High/Low и последнее 77,469 верны, но тренд описан обобщённо ('около 77,5'), без чёткого пика."},
+"gpt-5.6-terra-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Все числа верны, тренд с резким подъёмом после 10:00 и пиком 77,9; последнее значение 77,469 точно."}
+},"winner":"gemma-4-31b","notes":"Большинство моделей верно прочитали High/Low и последнее значение ~77,47 и описали восходящий тренд со скачком в 10:00. Лидеры почти равны; kimi ошибся в последнем значении, llama-scout занизил тренд."}

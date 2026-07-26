@@ -1,0 +1,28 @@
+{
+  "task_id": "m-agentic-04",
+  "category": "agentic",
+  "scores": {
+    "gpt-oss-120b": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Очень полный runbook: все 8 разделов, triage с CloudWatch/dmesg, ветвления, PITR, чек-лист. Мелкий минус — устаревшая функция pg_last_xlog_replay_timestamp для PG15 и слабее акцент на fencing перед promote."},
+    "deepseek-flash": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Все разделы покрыты, decision tree с etcd/standby ветками, ручной promote и PITR. Менее детально, часть команд с плейсхолдерами, fencing упомянут слабо."},
+    "deepseek-pro": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Сильный практичный план: triage с признаками I/O/диск, decision tree, promote через patronictl и REST API, обновление DNS, все шаблоны. Осознаёт split-brain и потерю данных."},
+    "35b-a3b": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Хорошо структурирован таблицами, явные ветки включая восстановление etcd, конкретные команды, LSN-проверки. Небольшая нестыковка: PITR-ветка тянет basebackup со standby, который по условию мёртв."},
+    "27b-v2": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Чёткие таблицы, decision tree с ветками A-D и fallback по таймауту, pause/failover/resume, сбор артефактов. Практично и исполнимо, но местами команды обобщённые."},
+    "gemma-4-31b": {"correctness": 7, "reasoning": 6, "format": 8, "russian": 8, "comment": "Все 8 разделов, decision tree с риском, упоминает split-brain и fencing. Заметно короче и поверхностнее топов, команды более общие."},
+    "diffusion-gemma": {"correctness": 6, "reasoning": 5, "format": 7, "russian": 6, "comment": "Покрывает все разделы, но кратко и шаблонно; опечатки (CTO, CTO; Дейем; листера), неверные даты. Базовая структура есть, глубины мало."},
+    "gpt-5.5-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 9, "comment": "Образцовый исполнимый runbook: fencing старого primary до promote, явные ветки, PITR, reconnect endpoint, validation записи и репликации, критерии закрытия SEV-1."},
+    "gpt-5.5-medium": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 9, "comment": "Максимально полный и практичный: degraded mode, fencing, LSN-фиксация перед promote, reconciliation заказов/платежей, PITR, все шаблоны, короткий боевой порядок в конце."},
+    "nemotron-super": {"correctness": 0, "reasoning": 0, "format": 0, "russian": 0, "comment": "Полный провал: вместо runbook сгенерирован не относящийся к делу эротический текст на английском."},
+    "nemotron-omni": {"correctness": 0, "reasoning": 0, "format": 0, "russian": 2, "comment": "Не ответ на задачу: 183 символа с расчётом упущенной выручки и присвоением P0, самого runbook нет."},
+    "kimi-k2.6": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 6, "comment": "Все разделы, ASCII decision tree, ветки execution, запрет рестарта при PANIC. Портит впечатление опечатка patronttl и прорвавшиеся китайские иероглифы в разделе Prevention."},
+    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 9, "comment": "Правила безопасности до promote, idempotency keys, ссылки на доки Patroni/etcd/PG, ветки по кворуму, PITR, K8s-вариант, полная validation. Очень строго и исполнимо."},
+    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Полный и практичный: критическое правило против split-brain, все разделы, ветки, PITR, шаблоны. Чуть компактнее high-версии, но executability высокая."},
+    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Все 8 разделов с fencing, decision tree, PITR, validation и prevention. Структурно и содержательно на уровне лучших ответов семейства gpt-5.x."},
+    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 9, "comment": "Жёсткое дерево решений, fencing старого primary, ветки A/B/emergency/C с сохранением томов и recovery-host, validation до открытия трафика. Полно и исполнимо."},
+    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 9, "comment": "Наиболее строгий: A3 фиксация pre-promotion LSN, D2 emergency DCS-less promote, строгий выбор base backup, все шаблоны и prevention. Отличная практическая исполнимость."},
+    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 9, "comment": "Правила инцидента, ветки с fence и фиксацией LSN, 'не открывать checkout сразу' после async-promote, PITR на чистом инстансе, полная validation и коммуникации."},
+    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Компактный, но полный: изоляция старого primary перед promote, ветки A/B/C с PITR, validation включая бизнес-метрики, все шаблоны и prevention."},
+    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Все разделы, decision tree, три ветки execution с fencing и PITR, validation до возврата трафика, артефакты и prevention. Практично и корректно."}
+  },
+  "winner": "gpt-5.5-medium",
+  "notes": "Топ — семейство gpt-5.x (fencing до promote, фиксация LSN/RPO, reconciliation, PITR, все шаблоны); gpt-5.5-medium и sol-medium/luna-high особенно строги. Провалы: nemotron-super (эротика не по теме) и nemotron-omni (нет runbook)."
+}
