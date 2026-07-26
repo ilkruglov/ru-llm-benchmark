@@ -157,15 +157,43 @@ def render(D, out_path, title, subtitle):
     cat_order = ([c for seg, cats in SEGMENTS.items() for c in cats if c in by_cat_tasks]
                  if not vl else sorted(by_cat_tasks))
 
-    # ---- sidebar ----
+    # ---- sidebar: collapsible two-level nav (segment > category > tasks), as the theme expects ----
     A(f'<aside class="sidebar"><h1>{esc(title)}</h1><div class="sub">{esc(subtitle)}</div>')
-    A('<a href="#exec">Обзор</a><a href="#findings">Ключевые выводы</a><a href="#leaderboard">Лидерборд</a>'
-      '<a href="#tokens">Расход токенов</a><a href="#perf">Производительность</a>'
-      '<a href="#segments">Сегменты</a><a href="#categories">Категории</a>')
-    for c in cat_order:
-        A(f'<div class="grp">{esc(clbl(c))}</div>')
-        for r in by_cat_tasks[c]:
-            A(f'<a class="tlink" href="#{r["id"]}" title="{esc(r.get("title",""))}"><span class="tid">{r["id"]}</span> {esc(r.get("title",""))}</a>')
+    for sid, lbl in [("exec", "Обзор"), ("findings", "Ключевые выводы"), ("leaderboard", "Лидерборд"),
+                     ("tokens", "Расход токенов"), ("perf", "Производительность"),
+                     ("segments", "Отрасли" if vl else "Сегменты"),
+                     ("categories", "Способности" if vl else "Категории")]:
+        A(f'<a class="nav-link" data-target="{sid}" href="#{sid}">{lbl}</a>')
+
+    def cat_block(c):
+        tasks = by_cat_tasks[c]
+        A(f'<div class="nav-cat"><button class="nav-cat-h" data-target="cat-{c}">'
+          f'<span class="chev">▶</span><span class="cat-name">{esc(clbl(c))}</span>'
+          f'<span class="cat-n">{len(tasks)}</span></button><div class="nav-cat-b">')
+        for r in tasks:
+            ttl = esc(r.get("title", ""))
+            A(f'<a class="tlink" data-target="{r["id"]}" href="#{r["id"]}" title="{ttl}">'
+              f'<span class="tid">{r["id"]}</span> {ttl}</a>')
+        A('</div></div>')
+
+    if vl:
+        # VL has one grouping level (capability); keep it open so tasks are one click away
+        A(f'<div class="nav-seg open"><button class="nav-seg-h"><span class="chev">▶</span>Задачи'
+          f'<span class="seg-n">{n_tasks}</span></button><div class="nav-seg-b">')
+        for c in cat_order:
+            cat_block(c)
+        A('</div></div>')
+    else:
+        for seg, cats in SEGMENTS.items():
+            present = [c for c in cats if c in by_cat_tasks]
+            if not present:
+                continue
+            cnt = sum(len(by_cat_tasks[c]) for c in present)
+            A(f'<div class="nav-seg"><button class="nav-seg-h"><span class="chev">▶</span>'
+              f'{esc(seglbl(seg))}<span class="seg-n">{cnt}</span></button><div class="nav-seg-b">')
+            for c in present:
+                cat_block(c)
+            A('</div></div>')
     A('</aside>')
 
     # ---- hero ----
@@ -398,7 +426,39 @@ def render(D, out_path, title, subtitle):
           '<img id="lb-img" src="" alt=""><div class="lb-cap" id="lb-cap"></div></div>')
     js = ("<script>document.querySelectorAll('[data-count]').forEach(e=>{const n=+e.dataset.count;let c=0;"
           "const st=Math.max(1,n/40);const t=setInterval(()=>{c+=st;if(c>=n){c=n;clearInterval(t)}"
-          "e.textContent=Math.round(c).toLocaleString('ru')},20)});")
+          "e.textContent=Math.round(c).toLocaleString('ru')},20)});"
+          # --- collapsible nav: segment/category accordions ---
+          "document.querySelectorAll('.nav-seg-h').forEach(b=>b.addEventListener('click',()=>"
+          "b.parentElement.classList.toggle('open')));"
+          "document.querySelectorAll('.nav-cat-h').forEach(b=>b.addEventListener('click',()=>{"
+          "b.parentElement.classList.toggle('open');"
+          "const t=b.dataset.target,el=t&&document.getElementById(t);"
+          "if(el){history.replaceState(null,'','#'+t);el.scrollIntoView({behavior:'smooth',block:'start'});}}));"
+          # --- scroll-spy: highlight the section in view, open its accordions ---
+          "const navBy={};document.querySelectorAll('[data-target]').forEach(el=>{"
+          "(navBy[el.dataset.target]=navBy[el.dataset.target]||[]).push(el);});"
+          "let cur=null;"
+          "function setActive(id){if(id===cur)return;cur=id;"
+          "document.querySelectorAll('.nav-link.active,.tlink.active,.nav-cat-h.cat-active')"
+          ".forEach(e=>e.classList.remove('active','cat-active'));"
+          "const els=navBy[id];if(!els)return;"
+          "els.forEach(e=>e.classList.add(e.classList.contains('nav-cat-h')?'cat-active':'active'));"
+          "const host=els[0].closest('.nav-cat');if(host){host.classList.add('open');"
+          "const h=host.querySelector('.nav-cat-h');if(h)h.classList.add('cat-active');"
+          "const sg=host.closest('.nav-seg');if(sg)sg.classList.add('open');}"
+          "const a=els.find(e=>e.classList.contains('tlink'))||els[0];"
+          # keep the active link visible by scrolling the sidebar itself; scrollIntoView here
+          # would fight the page scroll and make navigation feel broken
+          "const sb=document.querySelector('.sidebar');"
+          "if(a&&sb){const ar=a.getBoundingClientRect(),sr=sb.getBoundingClientRect();"
+          "if(ar.top<sr.top+8||ar.bottom>sr.bottom-8)sb.scrollTop+=ar.top-sr.top-sr.height/3;}}"
+          "const spy=new IntersectionObserver(es=>{const vis=es.filter(e=>e.isIntersecting)"
+          ".sort((x,y)=>x.boundingClientRect.top-y.boundingClientRect.top);"
+          "if(vis.length)setActive(vis[0].target.id);},{rootMargin:'-72px 0px -70% 0px',threshold:0});"
+          "document.querySelectorAll('#exec,h2.sec,h3.catsec,article.task').forEach(e=>{if(e.id)spy.observe(e);});"
+          # open the accordion that matches the URL hash on load
+          "if(location.hash){const el=document.querySelector(location.hash);if(el&&el.id)setActive(el.id);}"
+          "else{const f=document.querySelector('.nav-seg');if(f)f.classList.add('open');}")
     if vl:
         js += ("const lb=document.getElementById('lb'),li=document.getElementById('lb-img'),"
                "lc=document.getElementById('lb-cap');"
