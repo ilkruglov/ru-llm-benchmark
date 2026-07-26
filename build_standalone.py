@@ -167,7 +167,7 @@ def render(D, out_path, title, subtitle):
 
     def cat_block(c):
         tasks = by_cat_tasks[c]
-        A(f'<div class="nav-cat"><button class="nav-cat-h" data-target="cat-{c}">'
+        A(f'<div class="nav-cat open"><button class="nav-cat-h" data-target="cat-{c}">'
           f'<span class="chev">▶</span><span class="cat-name">{esc(clbl(c))}</span>'
           f'<span class="cat-n">{len(tasks)}</span></button><div class="nav-cat-b">')
         for r in tasks:
@@ -189,7 +189,7 @@ def render(D, out_path, title, subtitle):
             if not present:
                 continue
             cnt = sum(len(by_cat_tasks[c]) for c in present)
-            A(f'<div class="nav-seg"><button class="nav-seg-h"><span class="chev">▶</span>'
+            A(f'<div class="nav-seg open"><button class="nav-seg-h"><span class="chev">▶</span>'
               f'{esc(seglbl(seg))}<span class="seg-n">{cnt}</span></button><div class="nav-seg-b">')
             for c in present:
                 cat_block(c)
@@ -458,7 +458,7 @@ def render(D, out_path, title, subtitle):
           "document.querySelectorAll('#exec,h2.sec,h3.catsec,article.task').forEach(e=>{if(e.id)spy.observe(e);});"
           # open the accordion that matches the URL hash on load
           "if(location.hash){const el=document.querySelector(location.hash);if(el&&el.id)setActive(el.id);}"
-          "else{const f=document.querySelector('.nav-seg');if(f)f.classList.add('open');}")
+          "")
     if vl:
         js += ("const lb=document.getElementById('lb'),li=document.getElementById('lb-img'),"
                "lc=document.getElementById('lb-cap');"
