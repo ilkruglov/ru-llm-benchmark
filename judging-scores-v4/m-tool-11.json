@@ -1,28 +1,155 @@
 {
-  "task_id": "m-tool-11",
-  "category": "tool_calling",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 8, "comment": "Все 5 правил соблюдены: параллельный MAP, условные deploys, ровно один aggregate, условный page_oncall. Данные не выдуманы, шаблоны отчёта с плейсхолдерами."},
-    "deepseek-flash": {"correctness": 6, "reasoning": 8, "format": 8, "russian": 9, "comment": "Логика map-reduce верная, но модель подставила вымышленные метрики, deploy_id и severity='critical' — прямое нарушение правила 5, пусть и помечено как пример."},
-    "deepseek-pro": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Компактный и полностью корректный план со всеми условными ветками и пустым deploy_infos при отсутствии нездоровых сервисов."},
-    "35b-a3b": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Полный план с псевдокодом asyncio.gather, чек-листом соответствия правилам и структурой итогового отчёта на плейсхолдерах."},
-    "27b-v2": {"correctness": 10, "reasoning": 10, "format": 10, "russian": 9, "comment": "Наиболее строгий разбор: явные PARALLEL BATCH, граф выполнения, таблица соответствия каждому правилу, корректная обработка пустого списка нездоровых."},
-    "gemma-4-31b": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 9, "comment": "Все фазы и условия верны, но условная фаза расписана перечислением if по каждому сервису вместо фильтрации; глубина ниже топовых."},
-    "diffusion-gemma": {"correctness": 8, "reasoning": 6, "format": 7, "russian": 9, "comment": "Структура map-reduce корректна, но иллюстративные статусы сервисов выглядят как предугаданные данные, а aggregate вызывается позиционно без явных имён аргументов."},
-    "gpt-5.5-low": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Корректный псевдокод со всеми ветками; честная оговорка об отсутствии реальных инструментов, выдумывания нет."},
-    "gpt-5.5-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Чистый пофазовый псевдокод, все 4 правила соблюдены, итоговая сводная логика продублирована целиком."},
-    "nemotron-super": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 7, "comment": "Табличный план верно покрывает все фазы и условия; мелкие дефекты текста (склейки слов, латиница внутри русских слов)."},
-    "nemotron-omni": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 8, "comment": "План корректен, но избыточная пересборка deploy_infos через zip и позиционный вызов aggregate немного мутят контракт."},
-    "kimi-k2.6": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Чёткие фазы, явная обработка пустого unhealthy, один aggregate с именованными списками, page_oncall строго по severity из отчёта."},
-    "gpt-5.6-luna-high": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Корректный компактный псевдокод плюс перечень того, что должно быть в итоге; данные не подставляются."},
-    "gpt-5.6-luna-low": {"correctness": 8, "reasoning": 6, "format": 7, "russian": 9, "comment": "Все правила названы верно, но изложение максимально конспективное, без псевдокода и без разбора краевого случая пустого списка нездоровых."},
-    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 9, "comment": "Верный план с шаблоном сводки на плейсхолдерах; глубина рассуждения средняя, ветвления описаны кратко."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Корректный асинхронный псевдокод со всеми условиями, явно отказывается подставлять метрики и severity."},
-    "gpt-5.6-sol-medium": {"correctness": 8, "reasoning": 7, "format": 7, "russian": 9, "comment": "Логика верна, но псевдокод смешивает стили (JS-стрелки и Python) и summary остаётся плейсхолдером без опоры на поля отчёта."},
-    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 9, "comment": "Все четыре фазы и условия изложены точно и без выдумок, но без псевдокода и краевых случаев."},
-    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Текстовый план плюс корректный псевдокод с фильтрацией нездоровых и единственным aggregate."},
-    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 9, "comment": "Верный план с явным перечислением пяти health-результатов в aggregate; глубина средняя, краевой случай пустого deploy_infos не разобран."}
+ "task_id": "m-tool-11",
+ "category": "tool_calling",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все 5 правил соблюдены: параллельный MAP, условные deploys, ровно один aggregate, условный page_oncall. Данные не выдуманы, шаблоны отчёта с плейсхолдерами."
   },
-  "winner": "27b-v2",
-  "notes": "Задача на описание плана, а не на фактические вызовы: большинство моделей воспроизвели map-reduce корректно. Отличились 27b-v2, gpt-oss-120b, 35b-a3b и kimi-k2.6; единственное серьёзное нарушение правила 5 — deepseek-flash с подставленными вымышленными метриками и deploy_id."
+  "deepseek-flash": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Логика map-reduce верная, но модель подставила вымышленные метрики, deploy_id и severity='critical' — прямое нарушение правила 5, пусть и помечено как пример."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Компактный и полностью корректный план со всеми условными ветками и пустым deploy_infos при отсутствии нездоровых сервисов."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный план с псевдокодом asyncio.gather, чек-листом соответствия правилам и структурой итогового отчёта на плейсхолдерах."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 9,
+   "comment": "Наиболее строгий разбор: явные PARALLEL BATCH, граф выполнения, таблица соответствия каждому правилу, корректная обработка пустого списка нездоровых."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все фазы и условия верны, но условная фаза расписана перечислением if по каждому сервису вместо фильтрации; глубина ниже топовых."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "Структура map-reduce корректна, но иллюстративные статусы сервисов выглядят как предугаданные данные, а aggregate вызывается позиционно без явных имён аргументов."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный псевдокод со всеми ветками; честная оговорка об отсутствии реальных инструментов, выдумывания нет."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистый пофазовый псевдокод, все 4 правила соблюдены, итоговая сводная логика продублирована целиком."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Табличный план верно покрывает все фазы и условия; мелкие дефекты текста (склейки слов, латиница внутри русских слов)."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "План корректен, но избыточная пересборка deploy_infos через zip и позиционный вызов aggregate немного мутят контракт."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чёткие фазы, явная обработка пустого unhealthy, один aggregate с именованными списками, page_oncall строго по severity из отчёта."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный компактный псевдокод плюс перечень того, что должно быть в итоге; данные не подставляются."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все правила названы верно, но изложение максимально конспективное, без псевдокода и без разбора краевого случая пустого списка нездоровых."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верный план с шаблоном сводки на плейсхолдерах; глубина рассуждения средняя, ветвления описаны кратко."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный асинхронный псевдокод со всеми условиями, явно отказывается подставлять метрики и severity."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Логика верна, но псевдокод смешивает стили (JS-стрелки и Python) и summary остаётся плейсхолдером без опоры на поля отчёта."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все четыре фазы и условия изложены точно и без выдумок, но без псевдокода и краевых случаев."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Текстовый план плюс корректный псевдокод с фильтрацией нездоровых и единственным aggregate."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верный план с явным перечислением пяти health-результатов в aggregate; глубина средняя, краевой случай пустого deploy_infos не разобран."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректная map-reduce-логика: 5 параллельных get_service_health одним батчем, get_recent_deploys(since_minutes=60) только для status != 'healthy', ровно один aggregate_incident_report со списками, условный page_oncall при critical/high; данные не выдуманы (гипотетическая таблица явно помечена как пример). Оформление чистое, есть граф потока и проверка инвариантов; ничего сверх эталона не добавлено."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Задача на описание плана, а не на фактические вызовы: большинство моделей воспроизвели map-reduce корректно. Отличились 27b-v2, gpt-oss-120b, 35b-a3b и kimi-k2.6; единственное серьёзное нарушение правила 5 — deepseek-flash с подставленными вымышленными метриками и deploy_id."
 }

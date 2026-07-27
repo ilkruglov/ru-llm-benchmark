@@ -1,1 +1,134 @@
-{"task_id":"count_промышленность_30f64e4d57","category":"count","scores":{"27b-v2":{"correctness":2,"reasoning":3,"format":8,"russian":8,"comment":"Насчитал 4 яруса вместо 3, выдумав лишнюю оранжевую балку. Разбор структурный, но итог неверный."},"llama-scout":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"Ошибочно получил 4 яруса, перечисление уровней шаблонное и неточное."},"35b-a3b":{"correctness":2,"reasoning":3,"format":8,"russian":8,"comment":"Ответ 4 неверен, упомянул три несуществующие балки. Оформление аккуратное."},"gemma-4-31b":{"correctness":2,"reasoning":2,"format":5,"russian":8,"comment":"4 яруса неверно; выдумал три оранжевые балки вместо двух."},"diffusion-gemma":{"correctness":2,"reasoning":3,"format":8,"russian":8,"comment":"Итог 4 ошибочен, придумал третью оранжевую балку. Структура ясная."},"gpt-5.5-low":{"correctness":2,"reasoning":1,"format":4,"russian":8,"comment":"Кратко назвал 4 яруса — неверно, правильный ответ 3."},"gpt-5.5-medium":{"correctness":2,"reasoning":1,"format":4,"russian":8,"comment":"Ответ 4 без обоснования, неверен."},"nemotron-omni":{"correctness":2,"reasoning":3,"format":7,"russian":1,"comment":"Ответ 4 неверен, к тому же ответ на английском языке."},"kimi-k2.6":{"correctness":2,"reasoning":3,"format":8,"russian":8,"comment":"Насчитал 4 уровня вместо 3, добавив третью балку. Разбор подробный, но итог ошибочен."},"gpt-5.6-luna-high":{"correctness":2,"reasoning":1,"format":4,"russian":8,"comment":"4 яруса без пояснений — неверно."},"gpt-5.6-luna-low":{"correctness":2,"reasoning":1,"format":3,"russian":8,"comment":"Краткий ответ 4 — ошибочен."},"gpt-5.6-luna-medium":{"correctness":2,"reasoning":1,"format":4,"russian":8,"comment":"Назвал 4 яруса — неверно, правильно 3."},"gpt-5.6-sol-low":{"correctness":2,"reasoning":1,"format":3,"russian":8,"comment":"Ответ 4 без обоснования — неверен."},"gpt-5.6-sol-medium":{"correctness":2,"reasoning":1,"format":3,"russian":8,"comment":"4 яруса — ошибка счёта."},"gpt-5.6-terra-high":{"correctness":2,"reasoning":1,"format":3,"russian":8,"comment":"Кратко 4 яруса — неверно."},"gpt-5.6-terra-low":{"correctness":9,"reasoning":3,"format":4,"russian":8,"comment":"Верный ответ 3 яруса, но без обоснования."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":3,"format":4,"russian":8,"comment":"Правильный ответ 3 яруса, кратко и без разбора."}},"winner":"gpt-5.6-terra-low","notes":"Правильный ответ 3 яруса дали только gpt-5.6-terra-low и terra-medium; остальные ошибочно насчитали 4, выдумав лишнюю балку."}
+{
+ "task_id": "count_промышленность_30f64e4d57",
+ "category": "count",
+ "scores": {
+  "27b-v2": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 8,
+   "comment": "Насчитал 4 яруса вместо 3, выдумав лишнюю оранжевую балку. Разбор структурный, но итог неверный."
+  },
+  "llama-scout": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Ошибочно получил 4 яруса, перечисление уровней шаблонное и неточное."
+  },
+  "35b-a3b": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 8,
+   "comment": "Ответ 4 неверен, упомянул три несуществующие балки. Оформление аккуратное."
+  },
+  "gemma-4-31b": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 5,
+   "russian": 8,
+   "comment": "4 яруса неверно; выдумал три оранжевые балки вместо двух."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 8,
+   "comment": "Итог 4 ошибочен, придумал третью оранжевую балку. Структура ясная."
+  },
+  "gpt-5.5-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 8,
+   "comment": "Кратко назвал 4 яруса — неверно, правильный ответ 3."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 8,
+   "comment": "Ответ 4 без обоснования, неверен."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 1,
+   "comment": "Ответ 4 неверен, к тому же ответ на английском языке."
+  },
+  "kimi-k2.6": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 8,
+   "comment": "Насчитал 4 уровня вместо 3, добавив третью балку. Разбор подробный, но итог ошибочен."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 8,
+   "comment": "4 яруса без пояснений — неверно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 3,
+   "russian": 8,
+   "comment": "Краткий ответ 4 — ошибочен."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 8,
+   "comment": "Назвал 4 яруса — неверно, правильно 3."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 3,
+   "russian": 8,
+   "comment": "Ответ 4 без обоснования — неверен."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 3,
+   "russian": 8,
+   "comment": "4 яруса — ошибка счёта."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 3,
+   "russian": 8,
+   "comment": "Кратко 4 яруса — неверно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 3,
+   "format": 4,
+   "russian": 8,
+   "comment": "Верный ответ 3 яруса, но без обоснования."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 3,
+   "format": 4,
+   "russian": 8,
+   "comment": "Правильный ответ 3 яруса, кратко и без разбора."
+  },
+  "minimax-m3": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 8,
+   "comment": "Насчитал 4 яруса вместо 3, добавив несуществующий уровень под потолком и вторую пару балок. Оформление и русский язык хорошие, но итог неверен."
+  }
+ },
+ "winner": "gpt-5.6-terra-low",
+ "notes": "Правильный ответ 3 яруса дали только gpt-5.6-terra-low и terra-medium; остальные ошибочно насчитали 4, выдумав лишнюю балку."
+}

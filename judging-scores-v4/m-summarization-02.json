@@ -1,1 +1,155 @@
-{"task_id":"m-summarization-02","category":"summarization","scores":{"gpt-oss-120b":{"correctness":8,"reasoning":8,"format":6,"russian":8,"comment":"Все ключевые числа и риски сохранены, но EBITDA названа операционной маржой, а объём заметно превышает лимит 350 слов."},"deepseek-flash":{"correctness":8,"reasoning":8,"format":6,"russian":8,"comment":"Полный набор фактов и хорошая структура, но вывод про потерю трети выручки — экстраполяция, длина выше лимита."},"deepseek-pro":{"correctness":8,"reasoning":8,"format":5,"russian":9,"comment":"Богатый, литературный текст со всеми числами, но заметно превышает 350 слов и содержит лёгкие приукрашивания («единогласно»)."},"35b-a3b":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Хорошая структура и объём в норме, но неточность: конверсия с 1,4% до 3,5% названа удвоением."},"27b-v2":{"correctness":8,"reasoning":7,"format":7,"russian":8,"comment":"Сжато и точно, добавлены маржи онлайн/офлайн, но пропущен NPS и объём близок к нижней границе."},"gemma-4-31b":{"correctness":7,"reasoning":7,"format":7,"russian":8,"comment":"Аккуратная структура, но пропущены текущая выручка ₽48,2 млрд и рост до ₽58,8 млрд/+22%."},"diffusion-gemma":{"correctness":8,"reasoning":7,"format":7,"russian":7,"comment":"Полный набор фактов, но опечатка «онлайн-иков» и обрезанные формулировки снижают литературность."},"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Чистый, полный и точный саммари в пределах лимита со всеми KPI и рисками."},"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Образцовый executive summary: все факты, обоснование альтернатив, риски и KPI, отличный русский."},"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Ответ деградирует в англоязычные policy-рассуждения и постороннюю эротику — полный провал задачи."},"nemotron-omni":{"correctness":6,"reasoning":7,"format":5,"russian":7,"comment":"Числа на месте, но EBITDA ошибочно названа прибылью до налогообложения, а текст — сплошной абзац без структуры."},"kimi-k2.6":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Полный, точный и хорошо структурированный саммари в пределах лимита с сильным русским."},"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все факты, чёткое обоснование опций и рисков, объём в норме, литературный русский."},"gpt-5.6-luna-low":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Детально и точно, с упоминанием Magento и всех KPI, отличная структура и язык."},"gpt-5.6-luna-medium":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Полный набор фактов, взвешенное сравнение опций и рисков, безупречный русский в пределах лимита."},"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Тщательный и точный саммари со всеми числами, обоснованием и митигациями, хороший стиль."},"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Сильный executive summary: все факты, ясное обоснование и компромисс по EBITDA, отличный русский."},"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Правильная exec-структура с рекомендацией в начале, все числа и риски, литературный русский."},"gpt-5.6-terra-low":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Полный и точный, с разбивкой по фазам инвестиций и всеми KPI, хороший стиль."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Образцовый саммари: все факты, сравнение опций, риски и компромисс по марже, отличный русский."}},"winner":"gpt-5.5-medium","notes":"Семейства gpt-5.5 и gpt-5.6 дают образцовые, точные и уложенные в лимит саммари; nemotron-super — полный провал с посторонним контентом."}
+{
+ "task_id": "m-summarization-02",
+ "category": "summarization",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 8,
+   "comment": "Все ключевые числа и риски сохранены, но EBITDA названа операционной маржой, а объём заметно превышает лимит 350 слов."
+  },
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 8,
+   "comment": "Полный набор фактов и хорошая структура, но вывод про потерю трети выручки — экстраполяция, длина выше лимита."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 5,
+   "russian": 9,
+   "comment": "Богатый, литературный текст со всеми числами, но заметно превышает 350 слов и содержит лёгкие приукрашивания («единогласно»)."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Хорошая структура и объём в норме, но неточность: конверсия с 1,4% до 3,5% названа удвоением."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Сжато и точно, добавлены маржи онлайн/офлайн, но пропущен NPS и объём близок к нижней границе."
+  },
+  "gemma-4-31b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Аккуратная структура, но пропущены текущая выручка ₽48,2 млрд и рост до ₽58,8 млрд/+22%."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 7,
+   "comment": "Полный набор фактов, но опечатка «онлайн-иков» и обрезанные формулировки снижают литературность."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Чистый, полный и точный саммари в пределах лимита со всеми KPI и рисками."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Образцовый executive summary: все факты, обоснование альтернатив, риски и KPI, отличный русский."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Ответ деградирует в англоязычные policy-рассуждения и постороннюю эротику — полный провал задачи."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 5,
+   "russian": 7,
+   "comment": "Числа на месте, но EBITDA ошибочно названа прибылью до налогообложения, а текст — сплошной абзац без структуры."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полный, точный и хорошо структурированный саммари в пределах лимита с сильным русским."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты, чёткое обоснование опций и рисков, объём в норме, литературный русский."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Детально и точно, с упоминанием Magento и всех KPI, отличная структура и язык."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полный набор фактов, взвешенное сравнение опций и рисков, безупречный русский в пределах лимита."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Тщательный и точный саммари со всеми числами, обоснованием и митигациями, хороший стиль."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Сильный executive summary: все факты, ясное обоснование и компромисс по EBITDA, отличный русский."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильная exec-структура с рекомендацией в начале, все числа и риски, литературный русский."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полный и точный, с разбивкой по фазам инвестиций и всеми KPI, хороший стиль."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Образцовый саммари: все факты, сравнение опций, риски и компромисс по марже, отличный русский."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все ключевые факты и цифры переданы точно (доли, CAPEX, фазы, KPI, риски с митигациями), добавлен корректный вывод +32% к 2025 и грамотное сопоставление опций A/B/C. Формат просел: объём заметно выше верхней границы 250–350 слов, а требование «без жаргона» нарушено (backend, PMO, MVP, CTO, Saleor/MedusaJS)."
+  }
+ },
+ "winner": "gpt-5.5-medium",
+ "notes": "Семейства gpt-5.5 и gpt-5.6 дают образцовые, точные и уложенные в лимит саммари; nemotron-super — полный провал с посторонним контентом."
+}

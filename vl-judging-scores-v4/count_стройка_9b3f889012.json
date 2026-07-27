@@ -1,19 +1,134 @@
-{"task_id":"count_стройка_9b3f889012","category":"count","scores":{
-"35b-a3b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Правильно назвал 2 стойки с отверстиями наверху; лёгкая неточность в 'слева/справа', но суть верна."},
-"llama-scout":{"correctness":1,"reasoning":2,"format":7,"russian":8,"comment":"Насчитал 4 стойки — выдумка, на картинке их 2. Развёрнутый формат не спасает грубую ошибку."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно 2 стойки, корректно отделил центральную ферменную линию от опор — точный анализ."},
-"gemma-4-31b":{"correctness":2,"reasoning":3,"format":7,"russian":9,"comment":"Насчитал 3, приняв центральную линию фермы за отдельную стойку — неверно."},
-"diffusion-gemma":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Насчитал 3, центральную часть фермы ошибочно принял за третью стойку."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно 2 стойки, кратко и по делу."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно 2 стойки, чётко и лаконично."},
-"nemotron-omni":{"correctness":9,"reasoning":3,"format":3,"russian":5,"comment":"Ответ '2' верный, но без пояснений и оформления."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно 2 стойки, отлично объяснил, что центральная линия — часть решётчатой балки, а не опора."},
-"gpt-5.6-luna-high":{"correctness":2,"reasoning":2,"format":6,"russian":9,"comment":"Насчитал 3 — неверно, без обоснования."},
-"gpt-5.6-luna-low":{"correctness":1,"reasoning":2,"format":6,"russian":9,"comment":"Насчитал 4 — грубая ошибка."},
-"gpt-5.6-luna-medium":{"correctness":2,"reasoning":2,"format":6,"russian":9,"comment":"Насчитал 3 — неверно."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":7,"russian":9,"comment":"Верно 2 стойки, кратко без пояснений."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":6,"format":7,"russian":9,"comment":"Верно 2 стойки, лаконично."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":3,"format":3,"russian":5,"comment":"Ответ '2' верный, но голое число без разбора."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Верно 2 стойки, кратко."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Верно 2 стойки, кратко."}
-},"winner":"27b-v2","notes":"Правильный ответ — 2 стойки. Лучшие 27b-v2 и kimi-k2.6: верный подсчёт с корректным отделением центральной фермы от опор. llama-scout и luna-low провалились с 4."}
+{
+ "task_id": "count_стройка_9b3f889012",
+ "category": "count",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильно назвал 2 стойки с отверстиями наверху; лёгкая неточность в 'слева/справа', но суть верна."
+  },
+  "llama-scout": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 8,
+   "comment": "Насчитал 4 стойки — выдумка, на картинке их 2. Развёрнутый формат не спасает грубую ошибку."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно 2 стойки, корректно отделил центральную ферменную линию от опор — точный анализ."
+  },
+  "gemma-4-31b": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 9,
+   "comment": "Насчитал 3, приняв центральную линию фермы за отдельную стойку — неверно."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 9,
+   "comment": "Насчитал 3, центральную часть фермы ошибочно принял за третью стойку."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно 2 стойки, кратко и по делу."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно 2 стойки, чётко и лаконично."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 5,
+   "comment": "Ответ '2' верный, но без пояснений и оформления."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно 2 стойки, отлично объяснил, что центральная линия — часть решётчатой балки, а не опора."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "Насчитал 3 — неверно, без обоснования."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "Насчитал 4 — грубая ошибка."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "Насчитал 3 — неверно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верно 2 стойки, кратко без пояснений."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верно 2 стойки, лаконично."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 5,
+   "comment": "Ответ '2' верный, но голое число без разбора."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верно 2 стойки, кратко."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верно 2 стойки, кратко."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ответ верный — 2 вертикальные стойки, с корректным упоминанием проушин (отверстий) наверху и ржавого цвета. Формулировка «симметрично в верхней части кадра» слегка неточна (стойки у левого края и в центре), обоснование краткое, но по сути правильное."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Правильный ответ — 2 стойки. Лучшие 27b-v2 и kimi-k2.6: верный подсчёт с корректным отделением центральной фермы от опор. llama-scout и luna-low провалились с 4."
+}

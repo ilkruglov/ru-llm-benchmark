@@ -1,22 +1,155 @@
-{"task_id":"m-code-12","category":"code","scores":{
-"gpt-oss-120b":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Каноничный Vyukov с diff, реальный API atomic.Uint64, корректный ordering, padding, полный тест+бенч. Отличный русский разбор с таблицей сравнения."},
-"deepseek-flash":{"correctness":0,"reasoning":6,"format":4,"russian":8,"comment":"Выдуманные методы LoadAcquire/StoreRelease (нет в Go stdlib) — не компилируется; плюс сломанный reserve-then-check алгоритм теряет слоты. Рассуждение неплохое."},
-"deepseek-pro":{"correctness":0,"reasoning":6,"format":4,"russian":2,"comment":"Те же несуществующие LoadAcquire/StoreRelease — код не собирается; CAS-fail возвращает ложное full. Объяснение на английском."},
-"35b-a3b":{"correctness":3,"reasoning":7,"format":7,"russian":8,"comment":"Инвертированная проверка полноты (tail-head даёт underflow) вырождает очередь до capacity=1, хотя данные не теряются. Хороший русский разбор."},
-"27b-v2":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Корректный Vyukov, реальный API, padding head/tail и seq/value, полный тест+бенч, отличная русская таблица требований."},
-"gemma-4-31b":{"correctness":4,"reasoning":8,"format":6,"russian":9,"comment":"Ядро очереди корректно, но import unsafe не используется и бенчмарк содержит нонсенс b.Run — не компилируется как есть. Отличный русский текст."},
-"diffusion-gemma":{"correctness":2,"reasoning":4,"format":3,"russian":6,"comment":"Само ядро Vyukov верно, но строка const true = true ломает компиляцию всего пакета. Короткое объяснение."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Точный Vyukov, реальный API, честная оговорка lock-free vs wait-free, базовый/stress/bench тесты. Русский во введении, комментарии на английском."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Корректный Vyukov с paddedAtomic, go.mod, полный набор тестов и бенч. Хорошая честная оговорка про wait-free."},
-"nemotron-super":{"correctness":1,"reasoning":4,"format":2,"russian":1,"comment":"bits.Len64 без импорта math/bits и неиспользуемый unsafe — не компилируется; Dequeue читает до CAS → дубликаты; тестовый файл сломан. Только английский."},
-"nemotron-omni":{"correctness":1,"reasoning":2,"format":2,"russian":1,"comment":"Выдуманная even/odd схема, tail никогда не инкрементируется, нет детекции full, не компилируется. Только английский."},
-"kimi-k2.6":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Полный корректный Vyukov, реальный API, тесты wraparound/stress/bench, подробные русские комментарии по ordering/ABA/false sharing. Лучший."},
-"gpt-5.6-luna-high":{"correctness":0,"reasoning":1,"format":0,"russian":2,"comment":"Отказ: сослался на read-only workspace, кода нет вообще, только обещание добавить позже."},
-"gpt-5.6-luna-low":{"correctness":0,"reasoning":2,"format":0,"russian":3,"comment":"Отказ без кода; есть верное замечание про lock-free vs wait-free, но задача не выполнена."},
-"gpt-5.6-luna-medium":{"correctness":0,"reasoning":1,"format":0,"russian":2,"comment":"Отказ, реализация не предоставлена; лишь краткая оговорка про wait-free."},
-"gpt-5.6-sol-low":{"correctness":0,"reasoning":3,"format":1,"russian":4,"comment":"Кода нет, но грамотный разбор противоречия wait-free/lock-free и просьба выбрать вариант. Задача не выполнена."},
-"gpt-5.6-sol-medium":{"correctness":0,"reasoning":3,"format":1,"russian":4,"comment":"Кода нет; корректный анализ non-blocking/wait-free, но реализация не предоставлена."},
-"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":7,"comment":"Несмотря на оговорку про read-only, дал полный корректный Vyukov с реальным API, padding, тесты+бенч. Русский во введении."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":7,"comment":"Корректная реализация Vyukov с paddedUint64, stress+bench, объяснение ABA на русском."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":9,"russian":7,"comment":"Корректный Vyukov, тесты (в т.ч. AllocsPerRun), stress с массивом счётчиков; for range int требует Go 1.22, а не 1.21. Хороший разбор."}
-},"winner":"kimi-k2.6","notes":"Кластер идеальных Vyukov-реализаций (kimi, gpt-5.5-low/medium, gpt-oss-120b, 27b-v2, terra-*); kimi самый полный с wraparound-тестом и подробными русскими комментариями. deepseek-flash/pro провалились на выдуманных LoadAcquire/StoreRelease, nemotron — на несобираемом/сломанном коде, luna/sol — отказ без кода."}
+{
+ "task_id": "m-code-12",
+ "category": "code",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Каноничный Vyukov с diff, реальный API atomic.Uint64, корректный ordering, padding, полный тест+бенч. Отличный русский разбор с таблицей сравнения."
+  },
+  "deepseek-flash": {
+   "correctness": 0,
+   "reasoning": 6,
+   "format": 4,
+   "russian": 8,
+   "comment": "Выдуманные методы LoadAcquire/StoreRelease (нет в Go stdlib) — не компилируется; плюс сломанный reserve-then-check алгоритм теряет слоты. Рассуждение неплохое."
+  },
+  "deepseek-pro": {
+   "correctness": 0,
+   "reasoning": 6,
+   "format": 4,
+   "russian": 2,
+   "comment": "Те же несуществующие LoadAcquire/StoreRelease — код не собирается; CAS-fail возвращает ложное full. Объяснение на английском."
+  },
+  "35b-a3b": {
+   "correctness": 3,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Инвертированная проверка полноты (tail-head даёт underflow) вырождает очередь до capacity=1, хотя данные не теряются. Хороший русский разбор."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный Vyukov, реальный API, padding head/tail и seq/value, полный тест+бенч, отличная русская таблица требований."
+  },
+  "gemma-4-31b": {
+   "correctness": 4,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 9,
+   "comment": "Ядро очереди корректно, но import unsafe не используется и бенчмарк содержит нонсенс b.Run — не компилируется как есть. Отличный русский текст."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 3,
+   "russian": 6,
+   "comment": "Само ядро Vyukov верно, но строка const true = true ломает компиляцию всего пакета. Короткое объяснение."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Точный Vyukov, реальный API, честная оговорка lock-free vs wait-free, базовый/stress/bench тесты. Русский во введении, комментарии на английском."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Корректный Vyukov с paddedAtomic, go.mod, полный набор тестов и бенч. Хорошая честная оговорка про wait-free."
+  },
+  "nemotron-super": {
+   "correctness": 1,
+   "reasoning": 4,
+   "format": 2,
+   "russian": 1,
+   "comment": "bits.Len64 без импорта math/bits и неиспользуемый unsafe — не компилируется; Dequeue читает до CAS → дубликаты; тестовый файл сломан. Только английский."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 2,
+   "russian": 1,
+   "comment": "Выдуманная even/odd схема, tail никогда не инкрементируется, нет детекции full, не компилируется. Только английский."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный корректный Vyukov, реальный API, тесты wraparound/stress/bench, подробные русские комментарии по ordering/ABA/false sharing. Лучший."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 0,
+   "reasoning": 1,
+   "format": 0,
+   "russian": 2,
+   "comment": "Отказ: сослался на read-only workspace, кода нет вообще, только обещание добавить позже."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 0,
+   "reasoning": 2,
+   "format": 0,
+   "russian": 3,
+   "comment": "Отказ без кода; есть верное замечание про lock-free vs wait-free, но задача не выполнена."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 0,
+   "reasoning": 1,
+   "format": 0,
+   "russian": 2,
+   "comment": "Отказ, реализация не предоставлена; лишь краткая оговорка про wait-free."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 0,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 4,
+   "comment": "Кода нет, но грамотный разбор противоречия wait-free/lock-free и просьба выбрать вариант. Задача не выполнена."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 0,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 4,
+   "comment": "Кода нет; корректный анализ non-blocking/wait-free, но реализация не предоставлена."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Несмотря на оговорку про read-only, дал полный корректный Vyukov с реальным API, padding, тесты+бенч. Русский во введении."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Корректная реализация Vyukov с paddedUint64, stress+bench, объяснение ABA на русском."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 7,
+   "comment": "Корректный Vyukov, тесты (в т.ч. AllocsPerRun), stress с массивом счётчиков; for range int требует Go 1.22, а не 1.21. Хороший разбор."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 7,
+   "comment": "Корректная реализация Vyukov bounded MPMC без выдуманных API: правильные seq-переходы (pos+1 / pos+capacity), signed diff, padding, power-of-2, ноль аллокаций; честно оговорено, что операции lock-free, а не wait-free. Минусы: в тестовом файле импорт \"mpmc\" не совпадает с предложенным module path (тесты не соберутся), использованы legacy atomic.LoadUint64 вместо запрошенных типизированных atomic.Uint64, а вся документация и комментарии — на английском, по-русски лишь обрамляющие разделы."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Кластер идеальных Vyukov-реализаций (kimi, gpt-5.5-low/medium, gpt-oss-120b, 27b-v2, terra-*); kimi самый полный с wraparound-тестом и подробными русскими комментариями. deepseek-flash/pro провалились на выдуманных LoadAcquire/StoreRelease, nemotron — на несобираемом/сломанном коде, luna/sol — отказ без кода."
+}

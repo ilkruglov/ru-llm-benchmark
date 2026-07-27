@@ -1,28 +1,155 @@
 {
-  "task_id": "m-agentic-06",
-  "category": "agentic",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Полный меморандум со всеми 7 разделами, весами, матрицей, TCO и приложениями с ссылками; но чрезмерно оптимистичен ('УЗ-2 из коробки') и не разделяет аттестацию провайдера и ИСПДн."},
-    "deepseek-flash": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Практичный, все разделы, хорошая деталь про failover в 3 ночи и exit-strategy; портит несогласованность TCO (матрица $400-500k против таблицы $1.2M)."},
-    "deepseek-pro": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Полный, 11 взвешенных критериев, YC+Selectel как топ-2, разумный fallback по GPU; минусы — обёртка ```markdown и мелкие опечатки."},
-    "35b-a3b": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 7, "comment": "Сильный разбор, ценное замечание про регуляторный разрыв Казахстана (нет региона AWS/YC), все разделы; русский снижен из-за обилия англицизмов."},
-    "27b-v2": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 7, "comment": "Очень подробный, регуляторная конкретика (152-ФЗ ст.12/18, UAE Decree 33/2021), юр.карта, checkpoints; русский страдает от тяжёлых англицизмов."},
-    "gemma-4-31b": {"correctness": 7, "reasoning": 7, "format": 7, "russian": 8, "comment": "Все разделы присутствуют, но заметно тоньше топ-группы; несоответствие между списком из 11 критериев и 9 столбцами матрицы, оценки менее гранулярны."},
-    "diffusion-gemma": {"correctness": 6, "reasoning": 6, "format": 7, "russian": 6, "comment": "Самый поверхностный из завершённых: все разделы формально есть, но мало деталей, несколько опечаток ('реги Bahrain', 'Сокупная'), exit-strategy лишь для одного варианта."},
-    "gpt-5.5-low": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 9, "comment": "Исключительно проработан: реальные ссылки (Adilet 94-V, u.ae), модель regional cells, ключевой тезис 'аттестат сегмента не аттестует вашу ИСПДн', подробный roadmap и checkpoints."},
-    "gpt-5.5-medium": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Отлично обоснован, с цитатами (GPU-квота=0 по умолчанию), реалистичные диапазоны TCO, помесячный roadmap; практично и исполнимо."},
-    "nemotron-super": {"correctness": 0, "reasoning": 0, "format": 0, "russian": 0, "comment": "Полностью нерелевантный ответ (художественный эротический текст на английском), не имеет отношения к задаче — провал."},
-    "nemotron-omni": {"correctness": 6, "reasoning": 7, "format": 6, "russian": 7, "comment": "Охватывает все разделы и топ-2 с разбивкой стоимости, но методология весов сломана (итог — простая сумма без применения весов), ошибки в спеках GPU (A100 8GB), смешение кириллицы/латиницы."},
-    "kimi-k2.6": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Очень реалистичен и исполним: матрица с обоснованием каждой ячейки, точные нюансы (у YC нет managed Kafka=YDS, egress, KZ без региона YC), полный набор разделов."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 10, "comment": "Одна из лучших: раздел регуляторных оговорок и чек-лист due diligence, точные факты (YC базово УЗ-1, приказ 193н, GPU-квота=0, реальные цены Cloud.ru), YC vs Cloud.ru как топ-2."},
-    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Сильный, с цитатами (152-ФЗ ст.18, Selectel УЗ-1, законы UAE), реалистичный TCO и exit; чуть менее глубок в разборе второго варианта, чем high/medium."},
-    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Отлично проработан, различает приказ 947н/193н, помесячные gate-критерии, реальные ссылки, jurisdictional cells; практично и грамотно по-русски."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 9, "comment": "Очень тщательная регуляторная база (ст.12 94-V, Federal Law No.2/2019 ст.13, Resolution 51, Riayati/NABIDH/Malaffi), data planes по юрисдикциям, целевые сроки exit."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 9, "comment": "Наиболее исполнимый и точный: критичный факт (AWS прекратил регистрации из РФ), приказы ФСТЭК №77/21, warm-DR в Cloud.ru, математика egress WebRTC (9 Гбит/с), fail-closed маршрутизация."},
-    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 9, "comment": "Превосходный: YC+Selectel DR, математика видео-egress (0.85 ПБ/мес), точная работа с рисками, data planes по странам, реалистичный roadmap и checkpoints."},
-    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Сильный, с конкретикой (947н заменяется 209н), federated-архитектура с диаграммой, YC+Cloud.ru топ-2, грамотный русский; матрица местами объединяет критерии."},
-    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Отлично сбалансирован: точные оговорки по compliance, unit-economics ($/консультация в checkpoints), федерация региональных контуров, полный roadmap; практично."}
+ "task_id": "m-agentic-06",
+ "category": "agentic",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный меморандум со всеми 7 разделами, весами, матрицей, TCO и приложениями с ссылками; но чрезмерно оптимистичен ('УЗ-2 из коробки') и не разделяет аттестацию провайдера и ИСПДн."
   },
-  "winner": "gpt-5.6-sol-medium",
-  "notes": "Семейство gpt-5.6 и gpt-5.5 доминирует за счёт реальных точных фактов (AWS ушёл из РФ, GPU-квота=0, аттестат провайдера ≠ аттестация ИСПДн), математики WebRTC-egress и исполнимых warm-DR/exit-планов. Победитель sol-medium — самый точный и практически исполнимый; luna-high почти равноценен. nemotron-super — полный провал (офф-топик)."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Практичный, все разделы, хорошая деталь про failover в 3 ночи и exit-strategy; портит несогласованность TCO (матрица $400-500k против таблицы $1.2M)."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Полный, 11 взвешенных критериев, YC+Selectel как топ-2, разумный fallback по GPU; минусы — обёртка ```markdown и мелкие опечатки."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Сильный разбор, ценное замечание про регуляторный разрыв Казахстана (нет региона AWS/YC), все разделы; русский снижен из-за обилия англицизмов."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Очень подробный, регуляторная конкретика (152-ФЗ ст.12/18, UAE Decree 33/2021), юр.карта, checkpoints; русский страдает от тяжёлых англицизмов."
+  },
+  "gemma-4-31b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все разделы присутствуют, но заметно тоньше топ-группы; несоответствие между списком из 11 критериев и 9 столбцами матрицы, оценки менее гранулярны."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 6,
+   "comment": "Самый поверхностный из завершённых: все разделы формально есть, но мало деталей, несколько опечаток ('реги Bahrain', 'Сокупная'), exit-strategy лишь для одного варианта."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Исключительно проработан: реальные ссылки (Adilet 94-V, u.ae), модель regional cells, ключевой тезис 'аттестат сегмента не аттестует вашу ИСПДн', подробный roadmap и checkpoints."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отлично обоснован, с цитатами (GPU-квота=0 по умолчанию), реалистичные диапазоны TCO, помесячный roadmap; практично и исполнимо."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Полностью нерелевантный ответ (художественный эротический текст на английском), не имеет отношения к задаче — провал."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 6,
+   "russian": 7,
+   "comment": "Охватывает все разделы и топ-2 с разбивкой стоимости, но методология весов сломана (итог — простая сумма без применения весов), ошибки в спеках GPU (A100 8GB), смешение кириллицы/латиницы."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень реалистичен и исполним: матрица с обоснованием каждой ячейки, точные нюансы (у YC нет managed Kafka=YDS, egress, KZ без региона YC), полный набор разделов."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Одна из лучших: раздел регуляторных оговорок и чек-лист due diligence, точные факты (YC базово УЗ-1, приказ 193н, GPU-квота=0, реальные цены Cloud.ru), YC vs Cloud.ru как топ-2."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Сильный, с цитатами (152-ФЗ ст.18, Selectel УЗ-1, законы UAE), реалистичный TCO и exit; чуть менее глубок в разборе второго варианта, чем high/medium."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отлично проработан, различает приказ 947н/193н, помесячные gate-критерии, реальные ссылки, jurisdictional cells; практично и грамотно по-русски."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень тщательная регуляторная база (ст.12 94-V, Federal Law No.2/2019 ст.13, Resolution 51, Riayati/NABIDH/Malaffi), data planes по юрисдикциям, целевые сроки exit."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Наиболее исполнимый и точный: критичный факт (AWS прекратил регистрации из РФ), приказы ФСТЭК №77/21, warm-DR в Cloud.ru, математика egress WebRTC (9 Гбит/с), fail-closed маршрутизация."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Превосходный: YC+Selectel DR, математика видео-egress (0.85 ПБ/мес), точная работа с рисками, data planes по странам, реалистичный roadmap и checkpoints."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Сильный, с конкретикой (947н заменяется 209н), federated-архитектура с диаграммой, YC+Cloud.ru топ-2, грамотный русский; матрица местами объединяет критерии."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отлично сбалансирован: точные оговорки по compliance, unit-economics ($/консультация в checkpoints), федерация региональных контуров, полный roadmap; практично."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный меморандум по всем 7 разделам с реалистичной разбивкой TCO, exit strategy, roadmap с акторами и бюджетом, чекпойнтами и честным списком неопределённостей. Минусы: пропущен отдельный критерий latency для экспансии, ошибка в трактовке УЗ-3 как уровня для ГИС, придуманная сертификация DevOps и меньше проверяемых ссылок/нюансов (аттестованный сегмент != аттестация ИСПДн), чем у лучших ответов."
+  }
+ },
+ "winner": "gpt-5.6-luna-high",
+ "notes": "Семейство gpt-5.6 и gpt-5.5 доминирует за счёт реальных точных фактов (AWS ушёл из РФ, GPU-квота=0, аттестат провайдера ≠ аттестация ИСПДн), математики WebRTC-egress и исполнимых warm-DR/exit-планов. Победитель sol-medium — самый точный и практически исполнимый; luna-high почти равноценен. nemotron-super — полный провал (офф-топик)."
 }

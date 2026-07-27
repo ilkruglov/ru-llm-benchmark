@@ -1,1 +1,134 @@
-{"task_id":"count_нефтегаз_4f03db4072","category":"count","scores":{"llama-scout":{"correctness":4,"reasoning":4,"format":7,"russian":7,"comment":"Назвал 5 — ближе всех к правильным 6-8, но всё ещё занижено. Есть краткое пояснение."},"27b-v2":{"correctness":2,"reasoning":4,"format":7,"russian":8,"comment":"Ответ 3 сильно занижен, хотя рассуждение структурировано и обоснованно перечисляет объекты."},"35b-a3b":{"correctness":2,"reasoning":2,"format":2,"russian":6,"comment":"Хаотичный поток самопоправок, финальный ответ 3 занижен; формат ужасный из-за многократных метаний."},"gemma-4-31b":{"correctness":3,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 4 — занижено, без пояснений."},"diffusion-gemma":{"correctness":3,"reasoning":2,"format":6,"russian":7,"comment":"Ответ 4 занижен, но оформлен кратким предложением на нормальном русском."},"gpt-5.5-low":{"correctness":2,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 3 — занижено."},"gpt-5.5-medium":{"correctness":1,"reasoning":1,"format":4,"russian":5,"comment":"Ответ 2 сильно занижен, без пояснений."},"nemotron-omni":{"correctness":1,"reasoning":1,"format":4,"russian":5,"comment":"Ответ 2 сильно занижен, без пояснений."},"kimi-k2.6":{"correctness":3,"reasoning":5,"format":8,"russian":8,"comment":"Ответ 4 занижен, но подробное структурированное перечисление и хороший русский."},"gpt-5.6-luna-high":{"correctness":2,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 3 — занижено."},"gpt-5.6-luna-low":{"correctness":3,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 4 — занижено."},"gpt-5.6-luna-medium":{"correctness":3,"reasoning":1,"format":5,"russian":6,"comment":"Ответ 4 занижен, оформлен коротким словосочетанием."},"gpt-5.6-sol-low":{"correctness":2,"reasoning":1,"format":5,"russian":6,"comment":"Ответ 3 занижен, краткая фраза."},"gpt-5.6-sol-medium":{"correctness":3,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 4 — занижено."},"gpt-5.6-terra-high":{"correctness":2,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 3 — занижено."},"gpt-5.6-terra-low":{"correctness":1,"reasoning":1,"format":4,"russian":5,"comment":"Ответ 2 сильно занижен, без пояснений."},"gpt-5.6-terra-medium":{"correctness":3,"reasoning":1,"format":4,"russian":5,"comment":"Голое число 4 — занижено."}},"winner":"llama-scout","notes":"Правильный ответ 7 (допустимо 6-8) не назвал никто; llama-scout с ответом 5 ближе всех и имеет пояснение."}
+{
+ "task_id": "count_нефтегаз_4f03db4072",
+ "category": "count",
+ "scores": {
+  "llama-scout": {
+   "correctness": 4,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 7,
+   "comment": "Назвал 5 — ближе всех к правильным 6-8, но всё ещё занижено. Есть краткое пояснение."
+  },
+  "27b-v2": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 8,
+   "comment": "Ответ 3 сильно занижен, хотя рассуждение структурировано и обоснованно перечисляет объекты."
+  },
+  "35b-a3b": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 2,
+   "russian": 6,
+   "comment": "Хаотичный поток самопоправок, финальный ответ 3 занижен; формат ужасный из-за многократных метаний."
+  },
+  "gemma-4-31b": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Голое число 4 — занижено, без пояснений."
+  },
+  "diffusion-gemma": {
+   "correctness": 3,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 7,
+   "comment": "Ответ 4 занижен, но оформлен кратким предложением на нормальном русском."
+  },
+  "gpt-5.5-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Голое число 3 — занижено."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Ответ 2 сильно занижен, без пояснений."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Ответ 2 сильно занижен, без пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 3,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 8,
+   "comment": "Ответ 4 занижен, но подробное структурированное перечисление и хороший русский."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Голое число 3 — занижено."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Голое число 4 — занижено."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 5,
+   "russian": 6,
+   "comment": "Ответ 4 занижен, оформлен коротким словосочетанием."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 5,
+   "russian": 6,
+   "comment": "Ответ 3 занижен, краткая фраза."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Голое число 4 — занижено."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Голое число 3 — занижено."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Ответ 2 сильно занижен, без пояснений."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Голое число 4 — занижено."
+  },
+  "minimax-m3": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 8,
+   "comment": "Назвал 4 резервуара вместо 7 (допустимый диапазон 6-8) — существенный недосчёт переднего ряда. Ответ дан одной фразой без перечисления и обоснования подсчёта, хотя русский язык корректен."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Правильный ответ 7 (допустимо 6-8) не назвал никто; llama-scout с ответом 5 ближе всех и имеет пояснение."
+}

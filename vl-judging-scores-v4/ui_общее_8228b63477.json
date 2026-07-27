@@ -1,1 +1,134 @@
-{"task_id":"ui_общее_8228b63477","category":"ui","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все факты точны: placeholder, полный список, подпись, 5 вкладок и активная «Платежи». Отлично структурировано."},"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, активную вкладку отметил в списке. Чёткая структура."},"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректно по всем 4 пунктам, ясное оформление."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все факты верны, но подача максимально сжатая, без выделений."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все верно, отмечено частичное отображение последнего пункта и зелёное выделение активной вкладки."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные точны, отмечено что «Домашний телефон» частично виден."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью корректно, отмечена частичная видимость последнего пункта."},"nemotron-omni":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Факты верны, но подача очень сжатая, без разметки списка."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все ответы точны, аккуратное форматирование, отмечено зелёное выделение."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, чистая структура без пометки о частичной видимости."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректно по всем пунктам, компактно и ясно."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректно по всем пунктам, компактно и ясно."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все верно, отмечена частичная видимость последнего пункта."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все точно, отмечены и частичная видимость пункта, и зелёное выделение вкладки."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректно, чёткая структура."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все верно, отмечена частичная видимость «Домашний телефон»."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректно, ясное оформление."}},"winner":"gpt-5.6-sol-medium","notes":"Задача простая на извлечение — почти все модели дали идеально точные ответы. Победитель отмечен за полноту: частичная видимость последнего пункта и зелёное выделение активной вкладки."}
+{
+ "task_id": "ui_общее_8228b63477",
+ "category": "ui",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все факты точны: placeholder, полный список, подпись, 5 вкладок и активная «Платежи». Отлично структурировано."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, активную вкладку отметил в списке. Чёткая структура."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью корректно по всем 4 пунктам, ясное оформление."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все факты верны, но подача максимально сжатая, без выделений."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все верно, отмечено частичное отображение последнего пункта и зелёное выделение активной вкладки."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные точны, отмечено что «Домашний телефон» частично виден."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректно, отмечена частичная видимость последнего пункта."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Факты верны, но подача очень сжатая, без разметки списка."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все ответы точны, аккуратное форматирование, отмечено зелёное выделение."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, чистая структура без пометки о частичной видимости."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно по всем пунктам, компактно и ясно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно по всем пунктам, компактно и ясно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все верно, отмечена частичная видимость последнего пункта."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все точно, отмечены и частичная видимость пункта, и зелёное выделение вкладки."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректно, чёткая структура."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все верно, отмечена частичная видимость «Домашний телефон»."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректно, ясное оформление."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все четыре ответа полностью совпадают с эталоном: точный placeholder, верный порядок всех 8 пунктов, подпись «Без ввода реквизитов», 5 вкладок с активной «Платежи» (зелёная). Мелкий минус — не отмечено, что «Домашний телефон» обрезан внизу."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Задача простая на извлечение — почти все модели дали идеально точные ответы. Победитель отмечен за полноту: частичная видимость последнего пункта и зелёное выделение активной вкладки."
+}

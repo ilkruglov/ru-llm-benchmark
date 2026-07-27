@@ -1,22 +1,155 @@
-{"task_id":"m-code-11","category":"code","scores":{
-"gpt-oss-120b":{"correctness":8,"reasoning":9,"format":9,"russian":9,"comment":"Все 3 утечки, WeakMethod+deque, крайне полный ответ (диагностика, тест, мониторинг). Минус: WeakValueDictionary с payload вычищается сразу (семантический баг кэша, но без утечки/краша)."},
-"deepseek-flash":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Корректный fix через WeakMethod + __del__/unsubscribe; история list с pop(0) (O(n), но работает). Все секции покрыты."},
-"deepseek-pro":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Чистый WeakMethod + deque + инстансовый кэш, все механизмы объяснены верно. Мелочь: в prometheus-сниппете литеральное '...' (помечено как упрощение)."},
-"35b-a3b":{"correctness":3,"reasoning":7,"format":7,"russian":8,"comment":"deque и кэш исправлены, но fix подписчиков сломан: weakref.finalize держит self.handle_job как аргумент, пиная воркер в реестре навсегда — финализатор не сработает, утечка подписок остаётся."},
-"27b-v2":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"Верный fix: WeakMethod, deque, инстансовый кэш с FIFO-эвикцией. Диагностика и тест корректны."},
-"gemma-4-31b":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"WeakMethod + deque + класс-кэш без self (хранит строку). Все механизмы верны, чуть меньше глубины в диагностике."},
-"diffusion-gemma":{"correctness":6,"reasoning":6,"format":7,"russian":8,"comment":"WeakMethod и deque верны, но WeakValueDictionary с payload вычищается сразу; в диагностике неверные API objgraph (find_type/most_common_types). Меньше глубины."},
-"gpt-5.5-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Явный lifecycle close()/unsubscribe, bounded deque+LRUCache, кэш без self. Отличная диагностика (manhole/objgraph/tracemalloc) и тест на weakref."},
-"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"subscribe возвращает unsubscribe-замыкание, close() в finally, bounded LRU/deque. Полный набор секций, корректно и идиоматично."},
-"nemotron-omni":{"correctness":2,"reasoning":6,"format":7,"russian":8,"comment":"Фатально: weakref.ref на bound method умирает мгновенно — обработчики никогда не вызовутся; _results_cache остался класс-уровня без лимита. Fix не работает."},
-"nemotron-super":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Корректный WeakMethod с очисткой мёртвых ссылок, deque, инстансовый кэш. Очень подробно: диагностика, регресс-тест, prometheus."},
-"kimi-k2.6":{"correctness":2,"reasoning":8,"format":7,"russian":9,"comment":"Дизайн отличный (WeakMethod, __slots__ с __weakref__, pyrasite/gdb), но в publish обращение к необъявленному event_name (параметр event) → NameError при первой публикации, код не работает."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Токены-подписки + close(), bounded история/кэш/processed_ids, кэш без self. Отличные оговорки RSS≠heap, исправлена путаница про refcheck. Эталонный ответ."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"unsubscribe-замыкание + close(), bounded history/cache без self. Все секции, корректно и чисто."},
-"gpt-5.6-luna-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"deque + unsubscribe-замыкание + OrderedDict-кэш без self, ограничен processed_ids. Хорошие оговорки про allocator arenas."},
-"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"WeakMethod И явный close() (ремень+подтяжки), bounded, отмечен квадратичный рост processed_ids. Тест с warm-up, глубокая диагностика."},
-"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Явная отписка с nonlocal-guard, bounded история/кэш, refcheck-пример. Полно, корректно, идиоматично."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"unsubscribe+close(), инстансовый кэш, faulthandler для safe stack-dump. Верные механизмы и оговорки про production-безопасность."},
-"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Радикально верно: короткоживущий worker вообще не подписывается (вызов handle_job напрямую), bounded история/кэш. Чуть меньше глубины диагностики."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Токен-подписки с unsubscribe, bounded deque/OrderedDict без self. Корректно, полный набор секций и мониторинг."}
-},"winner":"gpt-5.6-luna-high","notes":"Большинство gpt-5.5/5.6 и nemotron-super/deepseek дали корректные fix'ы (WeakMethod либо явный close/unsubscribe) с bounded-контейнерами; luna-high выделяется инженерной чистотой и оговорками. Провалы: kimi (NameError в publish), nemotron-omni (weakref.ref на bound method) и 35b-a3b (сломанный weakref.finalize) — fix не работает."}
+{
+ "task_id": "m-code-11",
+ "category": "code",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 3 утечки, WeakMethod+deque, крайне полный ответ (диагностика, тест, мониторинг). Минус: WeakValueDictionary с payload вычищается сразу (семантический баг кэша, но без утечки/краша)."
+  },
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректный fix через WeakMethod + __del__/unsubscribe; история list с pop(0) (O(n), но работает). Все секции покрыты."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистый WeakMethod + deque + инстансовый кэш, все механизмы объяснены верно. Мелочь: в prometheus-сниппете литеральное '...' (помечено как упрощение)."
+  },
+  "35b-a3b": {
+   "correctness": 3,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "deque и кэш исправлены, но fix подписчиков сломан: weakref.finalize держит self.handle_job как аргумент, пиная воркер в реестре навсегда — финализатор не сработает, утечка подписок остаётся."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Верный fix: WeakMethod, deque, инстансовый кэш с FIFO-эвикцией. Диагностика и тест корректны."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "WeakMethod + deque + класс-кэш без self (хранит строку). Все механизмы верны, чуть меньше глубины в диагностике."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "WeakMethod и deque верны, но WeakValueDictionary с payload вычищается сразу; в диагностике неверные API objgraph (find_type/most_common_types). Меньше глубины."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Явный lifecycle close()/unsubscribe, bounded deque+LRUCache, кэш без self. Отличная диагностика (manhole/objgraph/tracemalloc) и тест на weakref."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "subscribe возвращает unsubscribe-замыкание, close() в finally, bounded LRU/deque. Полный набор секций, корректно и идиоматично."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Фатально: weakref.ref на bound method умирает мгновенно — обработчики никогда не вызовутся; _results_cache остался класс-уровня без лимита. Fix не работает."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный WeakMethod с очисткой мёртвых ссылок, deque, инстансовый кэш. Очень подробно: диагностика, регресс-тест, prometheus."
+  },
+  "kimi-k2.6": {
+   "correctness": 2,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Дизайн отличный (WeakMethod, __slots__ с __weakref__, pyrasite/gdb), но в publish обращение к необъявленному event_name (параметр event) → NameError при первой публикации, код не работает."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Токены-подписки + close(), bounded история/кэш/processed_ids, кэш без self. Отличные оговорки RSS≠heap, исправлена путаница про refcheck. Эталонный ответ."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "unsubscribe-замыкание + close(), bounded history/cache без self. Все секции, корректно и чисто."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "deque + unsubscribe-замыкание + OrderedDict-кэш без self, ограничен processed_ids. Хорошие оговорки про allocator arenas."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "WeakMethod И явный close() (ремень+подтяжки), bounded, отмечен квадратичный рост processed_ids. Тест с warm-up, глубокая диагностика."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Явная отписка с nonlocal-guard, bounded история/кэш, refcheck-пример. Полно, корректно, идиоматично."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "unsubscribe+close(), инстансовый кэш, faulthandler для safe stack-dump. Верные механизмы и оговорки про production-безопасность."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Радикально верно: короткоживущий worker вообще не подписывается (вызов handle_job напрямую), bounded история/кэш. Чуть меньше глубины диагностики."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Токен-подписки с unsubscribe, bounded deque/OrderedDict без self. Корректно, полный набор секций и мониторинг."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три утечки найдены и верно объяснены (bound method -> __self__, class-level cache с self, безлимитный _history), покрыты все 6 разделов. Минусы: unsubscribe() сравнивает `r() is not handler` — WeakMethod возвращает новый bound method, поэтому отписка фактически не работает (и test_subscribers_dont_grow упадёт), плюс неточность про py-spy как инструмент дампа heap/REPL."
+  }
+ },
+ "winner": "gpt-5.5-low",
+ "notes": "Большинство gpt-5.5/5.6 и nemotron-super/deepseek дали корректные fix'ы (WeakMethod либо явный close/unsubscribe) с bounded-контейнерами; luna-high выделяется инженерной чистотой и оговорками. Провалы: kimi (NameError в publish), nemotron-omni (weakref.ref на bound method) и 35b-a3b (сломанный weakref.finalize) — fix не работает."
+}

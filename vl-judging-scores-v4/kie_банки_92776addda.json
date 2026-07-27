@@ -1,19 +1,134 @@
-{"task_id":"kie_банки_92776addda","category":"kie","scores":{
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре ответа верны: (6), (60)/(61), 0401060, (24). Чётко и структурировано."},
-"llama-scout":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Все ответы верны, дополнительно корректно уточнил про (2) в скобках и код формы 0401060. Небольшие огрехи в markdown."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все ответы верны, с аккуратными пояснениями (над/под подписью). Отлично."},
-"gemma-4-31b":{"correctness":10,"reasoning":5,"format":6,"russian":8,"comment":"Ответы верны, но предельно кратко, без анализа и пояснений."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, чётко структурировано с указанием блоков."},
-"gpt-5.5-low":{"correctness":10,"reasoning":5,"format":7,"russian":8,"comment":"Все ответы верны, но очень лаконично, без пояснений."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, ясно и по делу."},
-"nemotron-omni":{"correctness":7,"reasoning":4,"format":6,"russian":8,"comment":"Три ответа верны, но на вопрос 4 указан (43) вместо (24) — ошибка сопоставления."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, с корректными пояснениями про код формы."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все ответы верны, кратко но ясно."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Все ответы верны, лаконично."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Все ответы верны, кратко."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Ответы верны, но максимально сжато без пояснений."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Ответы верны, очень кратко."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Ответы верны, предельно кратко."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Все ответы верны, лаконично с указанием блоков."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Все ответы верны, кратко и ясно."}
-},"winner":"27b-v2","notes":"Почти все модели дали все 4 верных ответа; 27b-v2 и llama-scout выделяются аккуратными пояснениями. Nemotron ошибся в вопросе 4 ((43) вместо (24))."}
+{
+ "task_id": "kie_банки_92776addda",
+ "category": "kie",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре ответа верны: (6), (60)/(61), 0401060, (24). Чётко и структурировано."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все ответы верны, дополнительно корректно уточнил про (2) в скобках и код формы 0401060. Небольшие огрехи в markdown."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, с аккуратными пояснениями (над/под подписью). Отлично."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 8,
+   "comment": "Ответы верны, но предельно кратко, без анализа и пояснений."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, чётко структурировано с указанием блоков."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все ответы верны, но очень лаконично, без пояснений."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, ясно и по делу."
+  },
+  "nemotron-omni": {
+   "correctness": 7,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 8,
+   "comment": "Три ответа верны, но на вопрос 4 указан (43) вместо (24) — ошибка сопоставления."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, с корректными пояснениями про код формы."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все ответы верны, кратко но ясно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все ответы верны, лаконично."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все ответы верны, кратко."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Ответы верны, но максимально сжато без пояснений."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Ответы верны, очень кратко."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Ответы верны, предельно кратко."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все ответы верны, лаконично с указанием блоков."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все ответы верны, кратко и ясно."
+  },
+  "minimax-m3": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Три пункта из четырёх верны ((6), (60)/(61), (24)), но в п.3 вместо кода формы 0401060 в рамке под стрелкой (2) указан (101) — это другое поле, находящееся ниже. Формат и русский язык безупречны."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Почти все модели дали все 4 верных ответа; 27b-v2 и llama-scout выделяются аккуратными пояснениями. Nemotron ошибся в вопросе 4 ((43) вместо (24))."
+}

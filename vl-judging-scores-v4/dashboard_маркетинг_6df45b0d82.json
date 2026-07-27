@@ -1,1 +1,134 @@
-{"task_id":"dashboard_маркетинг_6df45b0d82","category":"dashboard","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все числа верны, чёткий вывод об отсутствии рекламозависимости с обоснованием."},"llama-scout":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Данные верны, но проценты в формате LaTeX ($88.3\\%$) и точки вместо запятых выглядят неестественно для русского."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все числа верны; формулировка «критически зависит от поисковых систем» слегка резковата, но по сути корректна."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все числа и вывод верны, компактный и ясный ответ."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верные данные и корректный вывод, аккуратная структура."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все числа точны, наглядное сравнение 3,93% против 88,3%."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точные числа, ясный и лаконичный вывод."},"nemotron-omni":{"correctness":10,"reasoning":6,"format":6,"russian":9,"comment":"Числа верны, но ответ предельно сжатый, без обоснования вывода."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все числа верны, хорошее обоснование вывода про менее 4% платного трафика."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные числа, чёткий вывод, но обоснование краткое."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Числа верны, вывод корректный, но без пояснения."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все числа точны, ясный вывод с указанием доминирования поиска."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные данные и корректный вывод, аккуратная структура."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные данные и корректный вывод, аккуратная структура."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все числа верны, чёткий и структурированный ответ."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Числа верны, но ответ очень сжатый, вывод без развёрнутого обоснования."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные числа, ясный вывод об отсутствии рекламозависимости."}},"winner":"35b-a3b","notes":"Все модели дали верные числа и правильный вывод; лидеры (35b-a3b, gpt-5.5, kimi) выделяются полнотой обоснования, аутсайдеры (nemotron-omni, terra-low) — избыточной краткостью."}
+{
+ "task_id": "dashboard_маркетинг_6df45b0d82",
+ "category": "dashboard",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа верны, чёткий вывод об отсутствии рекламозависимости с обоснованием."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Данные верны, но проценты в формате LaTeX ($88.3\\%$) и точки вместо запятых выглядят неестественно для русского."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа верны; формулировка «критически зависит от поисковых систем» слегка резковата, но по сути корректна."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все числа и вывод верны, компактный и ясный ответ."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные данные и корректный вывод, аккуратная структура."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа точны, наглядное сравнение 3,93% против 88,3%."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точные числа, ясный и лаконичный вывод."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 9,
+   "comment": "Числа верны, но ответ предельно сжатый, без обоснования вывода."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа верны, хорошее обоснование вывода про менее 4% платного трафика."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные числа, чёткий вывод, но обоснование краткое."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Числа верны, вывод корректный, но без пояснения."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа точны, ясный вывод с указанием доминирования поиска."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные данные и корректный вывод, аккуратная структура."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные данные и корректный вывод, аккуратная структура."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа верны, чёткий и структурированный ответ."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Числа верны, но ответ очень сжатый, вывод без развёрнутого обоснования."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные числа, ясный вывод об отсутствии рекламозависимости."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа из легенды воспроизведены верно (88,3% поиск; 0,5% и 0,86% как два минимума; 3,93% реклама), вывод о нерекламозависимости корректен. Структура ясная, русский безупречный; оформление слегка избыточно (таблица и жирный шрифт) для такого простого вопроса."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели дали верные числа и правильный вывод; лидеры (35b-a3b, gpt-5.5, kimi) выделяются полнотой обоснования, аутсайдеры (nemotron-omni, terra-low) — избыточной краткостью."
+}

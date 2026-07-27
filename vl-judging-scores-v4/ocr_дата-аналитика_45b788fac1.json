@@ -1,19 +1,134 @@
-{"task_id":"ocr_дата-аналитика_45b788fac1","category":"ocr","scores":{
-"llama-scout":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Все четыре значения верны, но избыточная LaTeX-разметка ($...$) засоряет текст."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чёткое оформление с привязкой процентов к магазинам."},
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, аккуратная структура; мелкое '32,4 миллионов'."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, ясный ответ; согласование '32,4 миллионов'."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, понятная структура с указанием магазинов."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, лаконичное и корректное оформление."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чистое структурированное изложение."},
-"nemotron-omni":{"correctness":10,"reasoning":5,"format":6,"russian":7,"comment":"Значения верны, но предельно телеграфно, капсом и без пояснений."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, аккуратный список с привязкой процентов."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все значения верны, но очень кратко, без пояснений."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все значения верны, лаконично, минимум контекста."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все значения верны, кратко и по делу."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, развёрнутые формулировки с подписями."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чёткое и полное оформление."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все значения верны, очень кратко без пояснений."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все значения верны, лаконичный список."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все значения верны, краткий список."}
-},"winner":"gpt-5.5-medium","notes":"Все модели верно считали четыре значения ($13,2 млрд; 63%/37%; $330 млн; 32,4 млн). Различия только в полноте оформления; лучшие — развёрнутые ответы с привязкой процентов к магазинам."}
+{
+ "task_id": "ocr_дата-аналитика_45b788fac1",
+ "category": "ocr",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все четыре значения верны, но избыточная LaTeX-разметка ($...$) засоряет текст."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чёткое оформление с привязкой процентов к магазинам."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, аккуратная структура; мелкое '32,4 миллионов'."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, ясный ответ; согласование '32,4 миллионов'."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, понятная структура с указанием магазинов."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, лаконичное и корректное оформление."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чистое структурированное изложение."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 7,
+   "comment": "Значения верны, но предельно телеграфно, капсом и без пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, аккуратный список с привязкой процентов."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, но очень кратко, без пояснений."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, лаконично, минимум контекста."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, кратко и по делу."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, развёрнутые формулировки с подписями."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чёткое и полное оформление."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, очень кратко без пояснений."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, лаконичный список."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, краткий список."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре ключевых значения ($13,2 млрд; 63%/37%; $330 млн; 32,4 млн) считаны верно, добавлен корректный контекст про $18 и $12 млн в день. Небольшая неточность в дополнительном факте: рост 125% отнесён к «январю 2013 года», тогда как на картинке — с января по ноябрь."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Все модели верно считали четыре значения ($13,2 млрд; 63%/37%; $330 млн; 32,4 млн). Различия только в полноте оформления; лучшие — развёрнутые ответы с привязкой процентов к магазинам."
+}

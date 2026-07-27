@@ -1,1 +1,134 @@
-{"task_id":"table_промышленность_e69d51201d","category":"table","scores":{"llama-scout":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Верно прочитаны 13.9 и 12.2, сумма 26.1, совпадение подтверждено. Чёткая пошаговая структура."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три числа верны, сумма и совпадение корректны. Ясное структурированное изложение."},"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильные значения, верная сумма и подтверждение совпадения. Хорошая структура."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно все числа и вывод, аккуратное оформление с русской десятичной запятой."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Числа и вывод верны; мелкая опечатка в кавычках, в остальном хорошо."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильные значения, сумма и подтверждение. Компактно и ясно."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три числа верны, совпадение подтверждено. Чёткий список."},"nemotron-omni":{"correctness":8,"reasoning":3,"format":3,"russian":5,"comment":"Числа 13.9, 12.2, 26.1 верны, но нет ни суммы, ни сравнения, ни пояснений."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верные значения, сумма и подтверждение совпадения. Отличное оформление."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":8,"russian":10,"comment":"Все числа и вывод верны, компактно и корректно по-русски."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":8,"russian":10,"comment":"Верные значения, сумма и совпадение указаны. Кратко и ясно."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":8,"russian":10,"comment":"Правильные числа и вывод, лаконичное изложение."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три числа верны, совпадение подтверждено. Аккуратный список."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма, подтверждение совпадения. Чётко."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Числа и вывод верны, но очень сжато, без явного выделения балок отдельно."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Правильные значения и совпадение, компактный формат."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верные числа и вывод, кратко и корректно."}},"winner":"kimi-k2.6","notes":"Практически все модели верно прочитали 13.9, 12.2 и 26.1 и подтвердили совпадение; kimi-k2.6 сочетает точность с лучшим оформлением. nemotron-omni дал только числа без анализа."}
+{
+ "task_id": "table_промышленность_e69d51201d",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Верно прочитаны 13.9 и 12.2, сумма 26.1, совпадение подтверждено. Чёткая пошаговая структура."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три числа верны, сумма и совпадение корректны. Ясное структурированное изложение."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильные значения, верная сумма и подтверждение совпадения. Хорошая структура."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно все числа и вывод, аккуратное оформление с русской десятичной запятой."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Числа и вывод верны; мелкая опечатка в кавычках, в остальном хорошо."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильные значения, сумма и подтверждение. Компактно и ясно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три числа верны, совпадение подтверждено. Чёткий список."
+  },
+  "nemotron-omni": {
+   "correctness": 8,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 5,
+   "comment": "Числа 13.9, 12.2, 26.1 верны, но нет ни суммы, ни сравнения, ни пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верные значения, сумма и подтверждение совпадения. Отличное оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все числа и вывод верны, компактно и корректно по-русски."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные значения, сумма и совпадение указаны. Кратко и ясно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 10,
+   "comment": "Правильные числа и вывод, лаконичное изложение."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три числа верны, совпадение подтверждено. Аккуратный список."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма, подтверждение совпадения. Чётко."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Числа и вывод верны, но очень сжато, без явного выделения балок отдельно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильные значения и совпадение, компактный формат."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верные числа и вывод, кратко и корректно."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три числа прочитаны верно (13,9; 12,2; 26,1), сумма посчитана правильно, совпадение подтверждено. Дополнительно верно отмечено, что подстолбцы «Связи Распорки» и «Прогоны» в этой строке пусты."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Практически все модели верно прочитали 13.9, 12.2 и 26.1 и подтвердили совпадение; kimi-k2.6 сочетает точность с лучшим оформлением. nemotron-omni дал только числа без анализа."
+}

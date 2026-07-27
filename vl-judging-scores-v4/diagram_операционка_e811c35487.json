@@ -1,1 +1,134 @@
-{"task_id":"diagram_операционка_e811c35487","category":"diagram","scores":{"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре отдела названы верно, под HR правильный порядок Найм → Обучение и стажировка. Чёткая структура."},"llama-scout":{"correctness":7,"reasoning":6,"format":8,"russian":9,"comment":"Отделы верны, но в ветке HR ошибочно включён сам блок «HR» как подблок — лишний элемент."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верно: четыре отдела и правильный порядок подблоков HR."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Всё верно, лаконично и по существу."},"diffusion-gemma":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Порядок и структура верны, но опечатка «МАРКИНГ» вместо «МАРКЕТИНГ» — искажение названия отдела."},"gpt-5.5-low":{"correctness":7,"reasoning":6,"format":8,"russian":10,"comment":"Отделы верны, но в ветке HR лишне добавлен сам «HR» как подблок."},"gpt-5.5-medium":{"correctness":7,"reasoning":6,"format":8,"russian":10,"comment":"Отделы верны, но в ветке HR ошибочно включён сам блок «HR»."},"nemotron-omni":{"correctness":10,"reasoning":5,"format":5,"russian":8,"comment":"Ответ фактически верный, но предельно сжат одной строкой без структуры."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, чёткая структура и корректный порядок подблоков HR."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верно, аккуратное оформление."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верно, аккуратное оформление."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, ясная структура с выделением."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верно, чёткий нумерованный список."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верно, порядок подблоков HR соблюдён."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Верно, но кратко в строку без списков."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верно, отделы строкой, подблоки HR нумерованным списком."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верно, лаконично и с корректным порядком."}},"winner":"35b-a3b","notes":"Большинство моделей ответили идеально; штрафы за включение самого «HR» как подблока (llama-scout, gpt-5.5) и опечатку «МАРКИНГ» (diffusion-gemma)."}
+{
+ "task_id": "diagram_операционка_e811c35487",
+ "category": "diagram",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре отдела названы верно, под HR правильный порядок Найм → Обучение и стажировка. Чёткая структура."
+  },
+  "llama-scout": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Отделы верны, но в ветке HR ошибочно включён сам блок «HR» как подблок — лишний элемент."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно: четыре отдела и правильный порядок подблоков HR."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Всё верно, лаконично и по существу."
+  },
+  "diffusion-gemma": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Порядок и структура верны, но опечатка «МАРКИНГ» вместо «МАРКЕТИНГ» — искажение названия отдела."
+  },
+  "gpt-5.5-low": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Отделы верны, но в ветке HR лишне добавлен сам «HR» как подблок."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Отделы верны, но в ветке HR ошибочно включён сам блок «HR»."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 8,
+   "comment": "Ответ фактически верный, но предельно сжат одной строкой без структуры."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, чёткая структура и корректный порядок подблоков HR."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно, аккуратное оформление."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно, аккуратное оформление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, ясная структура с выделением."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно, чёткий нумерованный список."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно, порядок подблоков HR соблюдён."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, но кратко в строку без списков."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, отделы строкой, подблоки HR нумерованным списком."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, лаконично и с корректным порядком."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все четыре отдела названы верно в правильном порядке, подблоки HR (Найм, затем Обучение и стажировка) перечислены точно. Ответ предельно чёткий и структурированный, без лишних рассуждений."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство моделей ответили идеально; штрафы за включение самого «HR» как подблока (llama-scout, gpt-5.5) и опечатку «МАРКИНГ» (diffusion-gemma)."
+}

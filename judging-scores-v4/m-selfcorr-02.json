@@ -1,22 +1,155 @@
-{"task_id":"m-selfcorr-02","category":"self_correction","scores":{
-"gpt-oss-120b":{"correctness":9,"reasoning":9,"format":8,"russian":9,"comment":"Верно найден race condition, обе стратегии фикса (FOR UPDATE + exclusion constraint), валидация и concurrency-тест. Чрезмерно длинно, nowait на overlap спорно."},
-"deepseek-flash":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Корректно указан TOCTOU и пессимистичная блокировка, объяснена причина. Компактно, но без DB-constraint как основного варианта."},
-"deepseek-pro":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Точно найдена гонка, ясная причина, корректный SELECT FOR UPDATE + валидация. Хорошая структура что/почему/фикс."},
-"35b-a3b":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верный TOCTOU, блокировка + exclusion constraint + обработка исключений, таблица изменений. Полно и структурно."},
-"27b-v2":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точно найдена гонка, два варианта фикса, доп. замечания по таймзонам и статусам. Ясная структура."},
-"gemma-4-31b":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верный разбор check-then-act, блокировка строки, объяснение почему рецензент пропустил. Хорошее оформление."},
-"diffusion-gemma":{"correctness":8,"reasoning":7,"format":8,"russian":6,"comment":"Гонка найдена, фикс корректен, но заметные опечатки (тран транзакции, дастбой, законшим) снижают качество текста."},
-"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно: TOCTOU, exclusion constraint как источник истины + обработка IntegrityError, валидация duration. Точно и по делу."},
-"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Чётко: гонка, инвариант на уровне БД, корректный [) диапазон, предупреждение про concurrent test. Отлично."},
-"nemotron-omni":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верный race condition, блокировка + exclusion constraint, таймзоны и валидация. Немного избыточная валидация (год вперёд)."},
-"nemotron-super":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"Гонка найдена верно, но импорт with_lockmode устаревший/некорректный и отдельные искажённые слова снижают точность."},
-"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точный TOCTOU, FOR UPDATE + advisory lock + exclusion constraint, обработка ошибок и тест. Глубоко и аккуратно."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верно: гонка, блокировка и exclusion constraint, корректный [) и concurrent test. Чисто и точно."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верный race condition, ExcludeConstraint + обработка IntegrityError, валидация. Сжато и корректно."},
-"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Гонка найдена, пессимистичная блокировка + рекомендация DB-constraint, concurrent test. Ясно."},
-"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точно: TOCTOU, exclusion constraint, важное замечание про проверку имени constraint, а не любой IntegrityError. Строго."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полный разбор: FOR UPDATE-код и exclusion constraint, tsrange vs tstzrange, source of truth, concurrent test. Наиболее исчерпывающе."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верно: TOCTOU, миграция ExcludeConstraint + точная проверка constraint_name через diag, concurrent test. Очень аккуратно."},
-"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Гонка найдена, exclusion constraint как источник истины + обработка ошибки, корректный [). Сжато и точно."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верный race condition, exclusion constraint, предварительная проверка как оптимизация, concurrent test. Компактно и корректно."}
-},"winner":"gpt-5.6-sol-medium","notes":"Все 20 моделей верно нашли пропущенную гонку (TOCTOU / двойное бронирование), объяснили причину пропуска и дали корректный фикс; различия минимальны. sol-medium даёт самый полный и точный разбор обоих подходов."}
+{
+ "task_id": "m-selfcorr-02",
+ "category": "self_correction",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно найден race condition, обе стратегии фикса (FOR UPDATE + exclusion constraint), валидация и concurrency-тест. Чрезмерно длинно, nowait на overlap спорно."
+  },
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректно указан TOCTOU и пессимистичная блокировка, объяснена причина. Компактно, но без DB-constraint как основного варианта."
+  },
+  "deepseek-pro": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно найдена гонка, ясная причина, корректный SELECT FOR UPDATE + валидация. Хорошая структура что/почему/фикс."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный TOCTOU, блокировка + exclusion constraint + обработка исключений, таблица изменений. Полно и структурно."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно найдена гонка, два варианта фикса, доп. замечания по таймзонам и статусам. Ясная структура."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный разбор check-then-act, блокировка строки, объяснение почему рецензент пропустил. Хорошее оформление."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 6,
+   "comment": "Гонка найдена, фикс корректен, но заметные опечатки (тран транзакции, дастбой, законшим) снижают качество текста."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: TOCTOU, exclusion constraint как источник истины + обработка IntegrityError, валидация duration. Точно и по делу."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чётко: гонка, инвариант на уровне БД, корректный [) диапазон, предупреждение про concurrent test. Отлично."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный race condition, блокировка + exclusion constraint, таймзоны и валидация. Немного избыточная валидация (год вперёд)."
+  },
+  "nemotron-super": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Гонка найдена верно, но импорт with_lockmode устаревший/некорректный и отдельные искажённые слова снижают точность."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точный TOCTOU, FOR UPDATE + advisory lock + exclusion constraint, обработка ошибок и тест. Глубоко и аккуратно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: гонка, блокировка и exclusion constraint, корректный [) и concurrent test. Чисто и точно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный race condition, ExcludeConstraint + обработка IntegrityError, валидация. Сжато и корректно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Гонка найдена, пессимистичная блокировка + рекомендация DB-constraint, concurrent test. Ясно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно: TOCTOU, exclusion constraint, важное замечание про проверку имени constraint, а не любой IntegrityError. Строго."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный разбор: FOR UPDATE-код и exclusion constraint, tsrange vs tstzrange, source of truth, concurrent test. Наиболее исчерпывающе."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: TOCTOU, миграция ExcludeConstraint + точная проверка constraint_name через diag, concurrent test. Очень аккуратно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Гонка найдена, exclusion constraint как источник истины + обработка ошибки, корректный [). Сжато и точно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный race condition, exclusion constraint, предварительная проверка как оптимизация, concurrent test. Компактно и корректно."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Точно найден главный баг (TOCTOU/race между overlap-check и insert), объяснено, почему рецензент его пропустил (проверял корректность запроса, а не транзакции), предложены рабочие фиксы: advisory xact lock + EXCLUDE-constraint, плюс валидные доп. замечания (rollback, валидация входа, tz). Небольшая неточность в утверждении, что SELECT FOR UPDATE по строке Table «не помог бы» — на деле это работающий мьютекс."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Все 20 моделей верно нашли пропущенную гонку (TOCTOU / двойное бронирование), объяснили причину пропуска и дали корректный фикс; различия минимальны. sol-medium даёт самый полный и точный разбор обоих подходов."
+}

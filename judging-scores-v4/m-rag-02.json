@@ -1,1 +1,155 @@
-{"task_id":"m-rag-02","category":"rag","scores":{"gpt-oss-120b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все 5 пунктов верны, хороший код и примеры. Маркеры [ source: ... ] с лишними пробелами, но присутствуют."},"deepseek-flash":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Корректно по всем пунктам, добавлен пример вызова refund. Чёткие citations."},"deepseek-pro":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точно, лаконично, отличный код с обработкой 429 и 5xx. Citations на каждое утверждение."},"35b-a3b":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Все факты верны, аккуратные citations на каждое утверждение, отмечена 2FA."},"27b-v2":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно, хорошие citations и код. Связка TTL→401 обоснована из chunks."},"gemma-4-31b":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Все пункты верны и с citations, но меньше глубины и без кода обработки 429."},"diffusion-gemma":{"correctness":8,"reasoning":6,"format":8,"russian":8,"comment":"Факты верны, но поверхностно: нет TTL, отсутствия refresh. Citations объединённые."},"gpt-5.5-low":{"correctness":9,"reasoning":9,"format":10,"russian":9,"comment":"Максимально точные citations на каждое утверждение, добавлен лимит /token 60/min. Всё из chunks."},"gpt-5.5-medium":{"correctness":8,"reasoning":9,"format":10,"russian":9,"comment":"Глубоко, отличная таблица обработки ошибок, но добавление write:billing как 'нужен' — лёгкое переусиление (хотя scope есть в chunks)."},"nemotron-super":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Явно цитирует строки chunks, всё верно, хороший код backoff. Сильный ответ."},"nemotron-omni":{"correctness":7,"reasoning":6,"format":8,"russian":9,"comment":"Ошибка в п.4: предлагает grant_type=refresh_token, хотя в Client Credentials refresh-токена нет. Остальное верно."},"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Детально и верно, отмечено отсутствие refresh в CC-flow, доп. scopes хеджированы. Хорошие citations."},"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно и лаконично, citations на каждое утверждение, есть псевдокод 429."},"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Все пункты верны, отмечены 2FA, TTL и 5xx retry. Чёткие citations."},"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно, добавлен write:billing scope (есть в chunks), псевдокод 429. Хорошие citations."},"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":10,"russian":9,"comment":"Строгое заземление: честно отмечает, что тело refund не указано в chunks, добавляет RS256/TTL, точные citations."},"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Точно и лаконично, детали JWT/RS256, чёткие citations на каждое утверждение."},"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно по всем пунктам, хорошие citations, краткий комментарий-код для 429."},"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно, добавлен write:billing (из chunks), рабочий JS-код backoff. Хорошие citations."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Все пункты верны, JS-код обработки 429, чёткие citations, write:billing упомянут корректно."}},"winner":"gpt-5.6-sol-low","notes":"Все модели верно определили Client Credentials/sensitive:write/60min. Победитель — sol-low за строгое заземление и честность о неуказанном в chunks. Слабейший — nemotron-omni (ошибка про refresh_token)."}
+{
+ "task_id": "m-rag-02",
+ "category": "rag",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все 5 пунктов верны, хороший код и примеры. Маркеры [ source: ... ] с лишними пробелами, но присутствуют."
+  },
+  "deepseek-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректно по всем пунктам, добавлен пример вызова refund. Чёткие citations."
+  },
+  "deepseek-pro": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно, лаконично, отличный код с обработкой 429 и 5xx. Citations на каждое утверждение."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все факты верны, аккуратные citations на каждое утверждение, отмечена 2FA."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно, хорошие citations и код. Связка TTL→401 обоснована из chunks."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пункты верны и с citations, но меньше глубины и без кода обработки 429."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Факты верны, но поверхностно: нет TTL, отсутствия refresh. Citations объединённые."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Максимально точные citations на каждое утверждение, добавлен лимит /token 60/min. Всё из chunks."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Глубоко, отличная таблица обработки ошибок, но добавление write:billing как 'нужен' — лёгкое переусиление (хотя scope есть в chunks)."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Явно цитирует строки chunks, всё верно, хороший код backoff. Сильный ответ."
+  },
+  "nemotron-omni": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ошибка в п.4: предлагает grant_type=refresh_token, хотя в Client Credentials refresh-токена нет. Остальное верно."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Детально и верно, отмечено отсутствие refresh в CC-flow, доп. scopes хеджированы. Хорошие citations."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно и лаконично, citations на каждое утверждение, есть псевдокод 429."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пункты верны, отмечены 2FA, TTL и 5xx retry. Чёткие citations."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно, добавлен write:billing scope (есть в chunks), псевдокод 429. Хорошие citations."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Строгое заземление: честно отмечает, что тело refund не указано в chunks, добавляет RS256/TTL, точные citations."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно и лаконично, детали JWT/RS256, чёткие citations на каждое утверждение."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно по всем пунктам, хорошие citations, краткий комментарий-код для 429."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно, добавлен write:billing (из chunks), рабочий JS-код backoff. Хорошие citations."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пункты верны, JS-код обработки 429, чёткие citations, write:billing упомянут корректно."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 5 пунктов строго из chunks: Client Credentials, sensitive:write с 2FA, Sensitive Pro 60/min, отсутствие refresh в CC flow, 429 с Retry-After и backoff; выдумок нет, добавка write:billing честно помечена как предположение. Сильные плюсы: кэширование токена с запасом, разделение 4xx/5xx retry, TL;DR-таблица, citations после каждого утверждения, безупречный русский."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Все модели верно определили Client Credentials/sensitive:write/60min. Победитель — sol-low за строгое заземление и честность о неуказанном в chunks. Слабейший — nemotron-omni (ошибка про refresh_token)."
+}

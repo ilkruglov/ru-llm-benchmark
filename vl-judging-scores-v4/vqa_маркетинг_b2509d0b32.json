@@ -1,19 +1,134 @@
-{"task_id":"vqa_маркетинг_b2509d0b32","category":"vqa","scores":{
-"llama-scout":{"correctness":9,"reasoning":8,"format":6,"russian":7,"comment":"Все факты верны, но LaTeX-разметка ($FINAL$ $SALE$) уродует текст и мешает читаемости."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все факты точны, подмечен freepik, различие кнопок и фонов; отличная структура."},
-"27b-v2":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Максимально подробный и точный разбор общего и различий, включая цвет кнопок и композицию."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все факты верны, хорошая структура; не отметил разницу цвета кнопок отдельно."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":8,"russian":8,"comment":"Верно всё, включая цвет кнопок; мелкие опечатки («брендбу», «Ц кнопки») снижают качество."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все факты верны, компактный корректный вывод; меньше деталей о различиях."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Точно и ясно, упомянут цвет кнопки и расположение декора."},
-"nemotron-omni":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Все факты верны, разумный вывод об адаптации шаблона; цвет фона описан чуть неточно (синий/розовый)."},
-"kimi-k2.6":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Полный точный разбор с упоминанием мемфис-стиля, рамок и цвета кнопок."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно и лаконично, различия по цветам и декору отмечены."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Точный компактный ответ с корректным описанием фонов и декора."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Верно, но короче и без деталей о цвете кнопок."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Точно, отмечены зеркальное расположение и разные цвета кнопок."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Верно и подробно, точное описание рамок и палитры."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все факты верны, лаконичный корректный вывод."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Точно и сжато, ключевые общее и различия названы."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно и ясно, чуть меньше деталей о цвете кнопок."}
-},"winner":"27b-v2","notes":"Все модели верно прочитали FINAL/SUMMER SALE, -50% и SHOP NOW. 27b-v2 дал самый полный и точный разбор; kimi-k2.6 и 35b-a3b близко. llama-scout ниже из-за уродливой LaTeX-разметки."}
+{
+ "task_id": "vqa_маркетинг_b2509d0b32",
+ "category": "vqa",
+ "scores": {
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 7,
+   "comment": "Все факты верны, но LaTeX-разметка ($FINAL$ $SALE$) уродует текст и мешает читаемости."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все факты точны, подмечен freepik, различие кнопок и фонов; отличная структура."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Максимально подробный и точный разбор общего и различий, включая цвет кнопок и композицию."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все факты верны, хорошая структура; не отметил разницу цвета кнопок отдельно."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 8,
+   "comment": "Верно всё, включая цвет кнопок; мелкие опечатки («брендбу», «Ц кнопки») снижают качество."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, компактный корректный вывод; меньше деталей о различиях."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно и ясно, упомянут цвет кнопки и расположение декора."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, разумный вывод об адаптации шаблона; цвет фона описан чуть неточно (синий/розовый)."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный точный разбор с упоминанием мемфис-стиля, рамок и цвета кнопок."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно и лаконично, различия по цветам и декору отмечены."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точный компактный ответ с корректным описанием фонов и декора."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, но короче и без деталей о цвете кнопок."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно, отмечены зеркальное расположение и разные цвета кнопок."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно и подробно, точное описание рамок и палитры."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, лаконичный корректный вывод."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно и сжато, ключевые общее и различия названы."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно и ясно, чуть меньше деталей о цвете кнопок."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все ключевые факты названы верно: FINAL SALE / SUMMER SALE, скидка ALL PRICES UP TO -50%, кнопка SHOP NOW, различия фона (бирюзовый vs розовый) и цвета кнопки (розовая vs жёлтая). Небольшая неточность: бейдж скидки на нижнем баннере голубой, а не жёлтый; также подзаголовок на картинке набран не капсом."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Все модели верно прочитали FINAL/SUMMER SALE, -50% и SHOP NOW. 27b-v2 дал самый полный и точный разбор; kimi-k2.6 и 35b-a3b близко. llama-scout ниже из-за уродливой LaTeX-разметки."
+}

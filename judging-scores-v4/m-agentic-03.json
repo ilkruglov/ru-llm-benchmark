@@ -1,28 +1,155 @@
 {
-  "task_id": "m-agentic-03",
-  "category": "agentic",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 6, "reasoning": 6, "format": 8, "russian": 1, "comment": "Модуль алгоритмически верный (Condition, monotonic), но собственные тесты падают 4/12 из-за хрупких точных float-сравнений, и вся проза написана по-английски вопреки русскому заданию."},
-    "deepseek-flash": {"correctness": 4, "reasoning": 6, "format": 7, "russian": 8, "comment": "Логика в целом корректна, но 7 из 14 тестов падают из-за наивных точных сравнений float по времени refill — набор не проходит полностью."},
-    "deepseek-pro": {"correctness": 3, "reasoning": 5, "format": 7, "russian": 8, "comment": "Серьёзный дефект: тест consume с ожиданием зависает (дедлок/data race именно в тонком месте, о котором предупреждало задание), pytest не завершается."},
-    "35b-a3b": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 7, "comment": "Полностью рабочая реализация, 16 тестов проходят; ожидание в consume через polling-loop, без Condition, но практически исполнимо."},
-    "27b-v2": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 7, "comment": "Все 10 тестов проходят, Condition для ожидания, план и Notes на месте; минимальный, но исполнимый набор тестов."},
-    "gemma-4-31b": {"correctness": 6, "reasoning": 6, "format": 7, "russian": 8, "comment": "Модуль корректен, но 3 теста падают из-за точных float-сравнений в собственных тестах; план и структура адекватны."},
-    "diffusion-gemma": {"correctness": 7, "reasoning": 6, "format": 7, "russian": 8, "comment": "Логика верная, лишь 1 тест падает из-за хрупкого точного сравнения float; в остальном исполнимо и структурировано."},
-    "gpt-5.5-low": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 7, "comment": "17 тестов проходят полностью, Condition для ожидания без busy-wait, план учитывает refill и data race; сильная сдача."},
-    "gpt-5.5-medium": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 8, "comment": "Все 15 тестов проходят, аккуратная реализация с polling-ожиданием; план и Notes корректны."},
-    "nemotron-super": {"correctness": 0, "reasoning": 0, "format": 0, "russian": 0, "comment": "Полный провал: вместо кода выдан посторонний эротический текст, задание не выполнено вообще."},
-    "nemotron-omni": {"correctness": 2, "reasoning": 4, "format": 6, "russian": 1, "comment": "Реальный баг блокировок (RuntimeError: release unlocked lock), 10 из 13 тестов падают, и проза на английском вопреки заданию."},
-    "kimi-k2.6": {"correctness": 6, "reasoning": 7, "format": 8, "russian": 8, "comment": "Модуль с Condition корректен, но 2 теста падают из-за точных сравнений; хороший план и Notes."},
-    "gpt-5.6-luna-high": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 8, "comment": "Реализация с Condition верна, падает лишь 1 тест из-за хрупкого сравнения по времени; чёткая структура и рассуждение."},
-    "gpt-5.6-luna-low": {"correctness": 7, "reasoning": 6, "format": 7, "russian": 8, "comment": "Логика корректна, 1 хрупкий тест падает; polling-ожидание, план и Notes на месте."},
-    "gpt-5.6-luna-medium": {"correctness": 6, "reasoning": 7, "format": 7, "russian": 8, "comment": "Модуль с Condition в порядке, но 2 теста падают из-за точных float-ожиданий; в целом добротно."},
-    "gpt-5.6-sol-low": {"correctness": 6, "reasoning": 7, "format": 8, "russian": 8, "comment": "Из 22 тестов падает 1 — реальный, но мелкий пробел: отрицательные tokens в acquire не валидируются ValueError."},
-    "gpt-5.6-sol-medium": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 8, "comment": "Наиболее полная сдача: все 26 тестов проходят, продуманный план с refill и защитой от data race, честные Notes."},
-    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 8, "comment": "14 тестов проходят полностью, Condition для ожидания без busy-wait, качественный план и Notes."},
-    "gpt-5.6-terra-low": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 7, "comment": "Все 17 тестов проходят, polling-ожидание корректно; исполнимая и структурированная реализация."},
-    "gpt-5.6-terra-medium": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 8, "comment": "15 тестов проходят полностью, аккуратный модуль и план; практически исполнимо."}
+ "task_id": "m-agentic-03",
+ "category": "agentic",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 1,
+   "comment": "Модуль алгоритмически верный (Condition, monotonic), но собственные тесты падают 4/12 из-за хрупких точных float-сравнений, и вся проза написана по-английски вопреки русскому заданию."
   },
-  "winner": "gpt-5.6-sol-medium",
-  "notes": "Победитель gpt-5.6-sol-medium: единственный с наиболее полным полностью проходящим набором (26 тестов) и проработанным планом. Много моделей завалили требование 'pytest проходит полностью' из-за хрупких точных float-сравнений в собственных тестах; nemotron-super — полный провал."
+  "deepseek-flash": {
+   "correctness": 4,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Логика в целом корректна, но 7 из 14 тестов падают из-за наивных точных сравнений float по времени refill — набор не проходит полностью."
+  },
+  "deepseek-pro": {
+   "correctness": 3,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Серьёзный дефект: тест consume с ожиданием зависает (дедлок/data race именно в тонком месте, о котором предупреждало задание), pytest не завершается."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Полностью рабочая реализация, 16 тестов проходят; ожидание в consume через polling-loop, без Condition, но практически исполнимо."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Все 10 тестов проходят, Condition для ожидания, план и Notes на месте; минимальный, но исполнимый набор тестов."
+  },
+  "gemma-4-31b": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Модуль корректен, но 3 теста падают из-за точных float-сравнений в собственных тестах; план и структура адекватны."
+  },
+  "diffusion-gemma": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Логика верная, лишь 1 тест падает из-за хрупкого точного сравнения float; в остальном исполнимо и структурировано."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "17 тестов проходят полностью, Condition для ожидания без busy-wait, план учитывает refill и data race; сильная сдача."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все 15 тестов проходят, аккуратная реализация с polling-ожиданием; план и Notes корректны."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Полный провал: вместо кода выдан посторонний эротический текст, задание не выполнено вообще."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 1,
+   "comment": "Реальный баг блокировок (RuntimeError: release unlocked lock), 10 из 13 тестов падают, и проза на английском вопреки заданию."
+  },
+  "kimi-k2.6": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Модуль с Condition корректен, но 2 теста падают из-за точных сравнений; хороший план и Notes."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Реализация с Condition верна, падает лишь 1 тест из-за хрупкого сравнения по времени; чёткая структура и рассуждение."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Логика корректна, 1 хрупкий тест падает; polling-ожидание, план и Notes на месте."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Модуль с Condition в порядке, но 2 теста падают из-за точных float-ожиданий; в целом добротно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Из 22 тестов падает 1 — реальный, но мелкий пробел: отрицательные tokens в acquire не валидируются ValueError."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Наиболее полная сдача: все 26 тестов проходят, продуманный план с refill и защитой от data race, честные Notes."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "14 тестов проходят полностью, Condition для ожидания без busy-wait, качественный план и Notes."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Все 17 тестов проходят, polling-ожидание корректно; исполнимая и структурированная реализация."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "15 тестов проходят полностью, аккуратный модуль и план; практически исполнимо."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полная реализация всех требований, 11 тестов, честный раздел Notes; но consume ждёт только на notify, без расчёта ETA пополнения — при timeout=None и пустом бакете поток зависает навсегда, а с большим timeout возвращает True только по истечении всего таймаута (лидеры калибровки этот момент решили через wait(min(deficit/rate, remaining))). В остальном код запускаем, типизирован, docstrings и план качественные."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Победитель gpt-5.6-sol-medium: единственный с наиболее полным полностью проходящим набором (26 тестов) и проработанным планом. Много моделей завалили требование 'pytest проходит полностью' из-за хрупких точных float-сравнений в собственных тестах; nemotron-super — полный провал."
 }

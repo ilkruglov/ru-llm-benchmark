@@ -1,28 +1,155 @@
 {
-  "task_id": "m-code-05",
-  "category": "code",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 8, "reasoning": 9, "format": 9, "russian": 8, "comment": "Корректный UTC-truncate через timezone(), правильная сетка cohort×offset, нули и NUMERIC(5,4). Самое глубокое пояснение (частичный индекс, окно, generate_series). Минус: исключает текущий незавершённый месяц, тогда как пример его включает как последний offset."},
-    "deepseek-flash": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 8, "comment": "Верный UTC, 12 когорт, LEAST для ограничения будущих offset. Membership корректен. Пояснение по индексам и LEFT JOIN адекватное, но без нюансов."},
-    "deepseek-pro": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Компактный корректный запрос, UTC, частичный индекс, текущий месяц включён (`<=`) — совпадает с примером. Хорошее обоснование LEFT JOIN."},
-    "35b-a3b": {"correctness": 6, "reasoning": 6, "format": 7, "russian": 7, "comment": "Работает, будущее ограничено, но truncate без AT TIME ZONE 'UTC' (нарушение UTC-требования) и дорогой join events на каждый offset."},
-    "27b-v2": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 8, "comment": "Чистый корректный запрос с UTC, правильный membership, нули и NUMERIC(5,4). Хорошее обоснование порядка полей индекса и window vs GROUP BY."},
-    "gemma-4-31b": {"correctness": 6, "reasoning": 7, "format": 7, "russian": 8, "comment": "Логика верна (COUNT по сетке), но truncate когорт/активности без UTC — нарушение требования. Пояснение по индексам и EXISTS хорошее."},
-    "diffusion-gemma": {"correctness": 1, "reasoning": 5, "format": 7, "russian": 7, "comment": "Серьёзный баг: month_offset через EXTRACT(MONTH FROM (ts-ts)) даёт всегда 0 (интервал в днях), retention неверен для offset>0. Плюс нет UTC."},
-    "gpt-5.5-low": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Корректно: UTC, age() для offset, текущий месяц включён. Хорошее пояснение с покрывающим INCLUDE-индексом."},
-    "gpt-5.5-medium": {"correctness": 6, "reasoning": 8, "format": 8, "russian": 8, "comment": "Использует 3-аргументный date_trunc(field, ts, 'UTC') — доступен только с PG16, на заявленном PG15 запрос упадёт. В остальном логика и пояснения сильные."},
-    "nemotron-super": {"correctness": 7, "reasoning": 8, "format": 8, "russian": 1, "comment": "Membership корректен, запрос рабочий (минорный порядок truncate/AT TIME ZONE). Но всё пояснение на английском — требование русского не выполнено."},
-    "nemotron-omni": {"correctness": 1, "reasoning": 4, "format": 6, "russian": 6, "comment": "Критический баг: active_counts считает всех активных пользователей месяца без фильтра принадлежности к когорте — retention_rate завышен и бессмысленен."},
-    "kimi-k2.6": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Корректный запрос с UTC, текущий месяц включён, membership верен. Хорошее пояснение (частичный + BRIN индекс, обоснование выбора GROUP BY)."},
-    "gpt-5.6-luna-high": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 8, "comment": "Корректно и согласованно: 12 когорт, текущий месяц включён (совпадает с примером), offset0 форсирован в cohort_size, MATERIALIZED. Пояснение лаконичное, но по делу."},
-    "gpt-5.6-luna-low": {"correctness": 6, "reasoning": 7, "format": 8, "russian": 8, "comment": "Off-by-one: фильтр `>= current-11 months` даёт 11 когорт вместо 12. Также исключает текущий месяц. В остальном корректно."},
-    "gpt-5.6-luna-medium": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Корректный UTC, 12 когорт, верный membership через join cohort_users. Исключает текущий месяц (минор), пояснения качественные."},
-    "gpt-5.6-sol-low": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Корректно: UTC, age() для offset, текущий месяц включён, LEAST для окна. Пояснение с BRIN и порядком полей индекса."},
-    "gpt-5.6-sol-medium": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Аккуратная работа с UTC (truncate + вывод AT TIME ZONE), 12 когорт, согласованное исключение текущего месяца. Хорошие пояснения."},
-    "gpt-5.6-terra-high": {"correctness": 6, "reasoning": 7, "format": 8, "russian": 8, "comment": "Несогласованность: генерирует offset для текущего месяца (LEAST по age), но окно активности `< current_month` его исключает — строка текущего месяца всегда active_users=0."},
-    "gpt-5.6-terra-low": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Согласованно: offset до текущего месяца включительно и активность включает текущий месяц. UTC корректен, пояснения по индексам хорошие."},
-    "gpt-5.6-terra-medium": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 8, "comment": "Корректный UTC и membership, согласованное исключение текущего месяца. Пояснения адекватные, чуть короче остальных."}
+ "task_id": "m-code-05",
+ "category": "code",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Корректный UTC-truncate через timezone(), правильная сетка cohort×offset, нули и NUMERIC(5,4). Самое глубокое пояснение (частичный индекс, окно, generate_series). Минус: исключает текущий незавершённый месяц, тогда как пример его включает как последний offset."
   },
-  "winner": "gpt-oss-120b",
-  "notes": "Большинство GPT-5.6 и oss-моделей дали корректные, идиоматичные запросы; gpt-oss-120b выигрывает глубиной пояснения при корректном ядре. Провалы: diffusion-gemma (баг offset), nemotron-omni (нет фильтра когорты), nemotron-super (ответ на английском)."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Верный UTC, 12 когорт, LEAST для ограничения будущих offset. Membership корректен. Пояснение по индексам и LEFT JOIN адекватное, но без нюансов."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Компактный корректный запрос, UTC, частичный индекс, текущий месяц включён (`<=`) — совпадает с примером. Хорошее обоснование LEFT JOIN."
+  },
+  "35b-a3b": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 7,
+   "comment": "Работает, будущее ограничено, но truncate без AT TIME ZONE 'UTC' (нарушение UTC-требования) и дорогой join events на каждый offset."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Чистый корректный запрос с UTC, правильный membership, нули и NUMERIC(5,4). Хорошее обоснование порядка полей индекса и window vs GROUP BY."
+  },
+  "gemma-4-31b": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Логика верна (COUNT по сетке), но truncate когорт/активности без UTC — нарушение требования. Пояснение по индексам и EXISTS хорошее."
+  },
+  "diffusion-gemma": {
+   "correctness": 1,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 7,
+   "comment": "Серьёзный баг: month_offset через EXTRACT(MONTH FROM (ts-ts)) даёт всегда 0 (интервал в днях), retention неверен для offset>0. Плюс нет UTC."
+  },
+  "gpt-5.5-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректно: UTC, age() для offset, текущий месяц включён. Хорошее пояснение с покрывающим INCLUDE-индексом."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Использует 3-аргументный date_trunc(field, ts, 'UTC') — доступен только с PG16, на заявленном PG15 запрос упадёт. В остальном логика и пояснения сильные."
+  },
+  "nemotron-super": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 1,
+   "comment": "Membership корректен, запрос рабочий (минорный порядок truncate/AT TIME ZONE). Но всё пояснение на английском — требование русского не выполнено."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 6,
+   "comment": "Критический баг: active_counts считает всех активных пользователей месяца без фильтра принадлежности к когорте — retention_rate завышен и бессмысленен."
+  },
+  "kimi-k2.6": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректный запрос с UTC, текущий месяц включён, membership верен. Хорошее пояснение (частичный + BRIN индекс, обоснование выбора GROUP BY)."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Корректно и согласованно: 12 когорт, текущий месяц включён (совпадает с примером), offset0 форсирован в cohort_size, MATERIALIZED. Пояснение лаконичное, но по делу."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Off-by-one: фильтр `>= current-11 months` даёт 11 когорт вместо 12. Также исключает текущий месяц. В остальном корректно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректный UTC, 12 когорт, верный membership через join cohort_users. Исключает текущий месяц (минор), пояснения качественные."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректно: UTC, age() для offset, текущий месяц включён, LEAST для окна. Пояснение с BRIN и порядком полей индекса."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Аккуратная работа с UTC (truncate + вывод AT TIME ZONE), 12 когорт, согласованное исключение текущего месяца. Хорошие пояснения."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Несогласованность: генерирует offset для текущего месяца (LEAST по age), но окно активности `< current_month` его исключает — строка текущего месяца всегда active_users=0."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Согласованно: offset до текущего месяца включительно и активность включает текущий месяц. UTC корректен, пояснения по индексам хорошие."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректный UTC и membership, согласованное исключение текущего месяца. Пояснения адекватные, чуть короче остальных."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Рабочий один SELECT: корректный UTC-truncate через timezone(), фильтр 12 полных месяцев, сетка generate_series + LEFT JOIN + COALESCE, NUMERIC(5,4), отсечение будущих offset ровно по примеру из ТЗ. Минус: month_offset через age() зависит от session TimeZone (в не-UTC зоне с DST возможен off-by-one), в остальном придирок нет; обоснование выбора GROUP BY vs window, индексов и LEFT JOIN vs EXISTS сильное."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство GPT-5.6 и oss-моделей дали корректные, идиоматичные запросы; gpt-oss-120b выигрывает глубиной пояснения при корректном ядре. Провалы: diffusion-gemma (баг offset), nemotron-omni (нет фильтра когорты), nemotron-super (ответ на английском)."
 }

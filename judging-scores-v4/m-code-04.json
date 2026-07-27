@@ -1,22 +1,155 @@
-{"task_id":"m-code-04","category":"code","scores":{
-"gpt-oss-120b":{"correctness":7,"reasoning":9,"format":8,"russian":8,"comment":"Очень подробно: pandas+polars+multiprocessing, верная диагностика json.load в цикле. Минусы: polars API дрейф (map_dict, parse_dates=True, .then без pl.lit), округление суммы, а не построчно как в оригинале."},
-"deepseek-flash":{"correctness":4,"reasoning":5,"format":6,"russian":8,"comment":"Polars-решение с сомнительным replace(Series) и без построчного round. Наивное перемножение множителей ускорения (120000x) — методологическая ошибка."},
-"deepseek-pro":{"correctness":7,"reasoning":8,"format":8,"russian":8,"comment":"Рабочий чистый Python: csv.reader, date.fromisoformat, потоковая агрегация, фильтр года до парсинга. Не сохранён round-до-суммирования, но код корректен и на реальных API."},
-"35b-a3b":{"correctness":4,"reasoning":7,"format":6,"russian":8,"comment":"Polars, разумная логика, но write_csv по умолчанию пишет заголовок и без .2f/round — нарушена функциональная эквивалентность вывода."},
-"27b-v2":{"correctness":6,"reasoning":8,"format":8,"russian":9,"comment":"Хороший lazy-Polars с join курсов, sink_csv, явным разделом эквивалентности. Округляет сумму, а не построчно; формат total без строгого .2f. then со строкой без pl.lit — рискованно."},
-"gemma-4-31b":{"correctness":5,"reasoning":8,"format":7,"russian":8,"comment":"Polars lazy, верная диагностика. str.to_date с форматом времени рискован, write_csv с заголовком по умолчанию, без .2f и без построчного round."},
-"diffusion-gemma":{"correctness":3,"reasoning":6,"format":6,"russian":7,"comment":"Баг: dt.year как атрибут вместо dt.year(), replace(dict) спорно, write_csv пишет заголовок. Код в таком виде упадёт."},
-"gpt-5.5-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Отличный чистый Python + альтернатива на polars. Сохранён round-до-суммирования, срезы timestamp, потоковая агрегация, качественный разбор профилирования и границ multiprocessing."},
-"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чистый Python со срезами timestamp и потоковой агрегацией, явно сохранён round-до-суммирования. Хорошее профилирование и обоснование отказа от pandas."},
-"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Полностью нерелевантный ответ (эротический рассказ). Задача проигнорирована."},
-"nemotron-omni":{"correctness":5,"reasoning":8,"format":7,"russian":8,"comment":"Очень подробный pandas-разбор, но float32 меняет точность против float() оригинала, line_terminator удалён в pandas 2.0 (упадёт), округление суммы, а не построчно. Polars-сниппет с багами."},
-"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Полное решение: Polars (round построчно перед group sum) и чистый Python — оба сохраняют эквивалентность и формат .2f без заголовка. Отличное профилирование и таблица вкладов."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Чистый Python с буферизацией, срезами timestamp, round-до-агрегации. hyperfine/diff для верификации, аккуратный разбор multiprocessing и float-порядка."},
-"gpt-5.6-luna-low":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Корректный потоковый Python с round-до-суммирования. Распаковка по фиксированному порядку колонок вместо имён — небольшое снижение надёжности против DictReader."},
-"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чистый Python, round-до-суммирования, срезы timestamp, компактно и корректно. Хороший план профилирования."},
-"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Сохраняет strptime для точной эквивалентности исключений, round-до-суммирования, локальные ссылки. Детальнейший разбор профилирования и памяти."},
-"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Fast-path парсинга timestamp с strptime-fallback, строгий контроль порядка float-сложения и построчного round, побайтовая верификация через cmp. Максимально аккуратно к эквивалентности."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Чистый Python, round-до-суммирования, срезы timestamp, сохранён int(user_id). Полное профилирование и обоснованные границы chunks."},
-"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Корректный потоковый Python, round-до-суммирования, срезы timestamp. Хорошее объяснение вкладов и безопасности байтового разбиения CSV."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Чистый Python с round-до-суммирования и strptime-вариантом для нестандартных дат. Аккуратно к порядку float-сложения и формату вывода."}
-},"winner":"kimi-k2.6","notes":"Плотная группа лидеров (gpt-5.6 pure-python семейство, gpt-5.5-low, kimi). Kimi даёт и Polars, и чистый Python — оба с корректным round-до-суммирования, форматом .2f без заголовка и сильным профилированием, полностью покрывая требования. Nemotron-super — полный провал (офф-топик)."}
+{
+ "task_id": "m-code-04",
+ "category": "code",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 7,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 8,
+   "comment": "Очень подробно: pandas+polars+multiprocessing, верная диагностика json.load в цикле. Минусы: polars API дрейф (map_dict, parse_dates=True, .then без pl.lit), округление суммы, а не построчно как в оригинале."
+  },
+  "deepseek-flash": {
+   "correctness": 4,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 8,
+   "comment": "Polars-решение с сомнительным replace(Series) и без построчного round. Наивное перемножение множителей ускорения (120000x) — методологическая ошибка."
+  },
+  "deepseek-pro": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Рабочий чистый Python: csv.reader, date.fromisoformat, потоковая агрегация, фильтр года до парсинга. Не сохранён round-до-суммирования, но код корректен и на реальных API."
+  },
+  "35b-a3b": {
+   "correctness": 4,
+   "reasoning": 7,
+   "format": 6,
+   "russian": 8,
+   "comment": "Polars, разумная логика, но write_csv по умолчанию пишет заголовок и без .2f/round — нарушена функциональная эквивалентность вывода."
+  },
+  "27b-v2": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Хороший lazy-Polars с join курсов, sink_csv, явным разделом эквивалентности. Округляет сумму, а не построчно; формат total без строгого .2f. then со строкой без pl.lit — рискованно."
+  },
+  "gemma-4-31b": {
+   "correctness": 5,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 8,
+   "comment": "Polars lazy, верная диагностика. str.to_date с форматом времени рискован, write_csv с заголовком по умолчанию, без .2f и без построчного round."
+  },
+  "diffusion-gemma": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 7,
+   "comment": "Баг: dt.year как атрибут вместо dt.year(), replace(dict) спорно, write_csv пишет заголовок. Код в таком виде упадёт."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отличный чистый Python + альтернатива на polars. Сохранён round-до-суммирования, срезы timestamp, потоковая агрегация, качественный разбор профилирования и границ multiprocessing."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистый Python со срезами timestamp и потоковой агрегацией, явно сохранён round-до-суммирования. Хорошее профилирование и обоснование отказа от pandas."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Полностью нерелевантный ответ (эротический рассказ). Задача проигнорирована."
+  },
+  "nemotron-omni": {
+   "correctness": 5,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 8,
+   "comment": "Очень подробный pandas-разбор, но float32 меняет точность против float() оригинала, line_terminator удалён в pandas 2.0 (упадёт), округление суммы, а не построчно. Polars-сниппет с багами."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полное решение: Polars (round построчно перед group sum) и чистый Python — оба сохраняют эквивалентность и формат .2f без заголовка. Отличное профилирование и таблица вкладов."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистый Python с буферизацией, срезами timestamp, round-до-агрегации. hyperfine/diff для верификации, аккуратный разбор multiprocessing и float-порядка."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный потоковый Python с round-до-суммирования. Распаковка по фиксированному порядку колонок вместо имён — небольшое снижение надёжности против DictReader."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистый Python, round-до-суммирования, срезы timestamp, компактно и корректно. Хороший план профилирования."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Сохраняет strptime для точной эквивалентности исключений, round-до-суммирования, локальные ссылки. Детальнейший разбор профилирования и памяти."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Fast-path парсинга timestamp с strptime-fallback, строгий контроль порядка float-сложения и построчного round, побайтовая верификация через cmp. Максимально аккуратно к эквивалентности."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистый Python, round-до-суммирования, срезы timestamp, сохранён int(user_id). Полное профилирование и обоснованные границы chunks."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный потоковый Python, round-до-суммирования, срезы timestamp. Хорошее объяснение вкладов и безопасности байтового разбиения CSV."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистый Python с round-до-суммирования и strptime-вариантом для нестандартных дат. Аккуратно к порядку float-сложения и формату вывода."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Основной Polars-вариант рабочий и один из немногих сохраняет точную эквивалентность (bucket по неокруглённому usd, сумма по round(usd,2), ручная запись %.2f без заголовка); профилирование и разбор вкладов ускорений корректны и реалистичны. Минусы: в pandas-фолбэке to_csv пишет заголовок (расхождение с оригиналом), а multiprocessing-набросок опирается на неопределённые _byte_offsets/_slice_lines, т.е. как есть не запускается."
+  }
+ },
+ "winner": "gpt-5.5-low",
+ "notes": "Плотная группа лидеров (gpt-5.6 pure-python семейство, gpt-5.5-low, kimi). Kimi даёт и Polars, и чистый Python — оба с корректным round-до-суммирования, форматом .2f без заголовка и сильным профилированием, полностью покрывая требования. Nemotron-super — полный провал (офф-топик)."
+}

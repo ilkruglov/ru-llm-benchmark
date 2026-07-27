@@ -1,19 +1,134 @@
-{"task_id":"ocr_дата-аналитика_8c4b9328a2","category":"ocr","scores":{
-"35b-a3b":{"correctness":10,"reasoning":7,"format":7,"russian":8,"comment":"Все четыре значения верны (13,9; 116,6; 8500; 39,1). Формат предельно лаконичный, без подписей."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, аккуратные подписи с единицами измерения."},
-"llama-scout":{"correctness":6,"reasoning":6,"format":7,"russian":8,"comment":"Ошибка в разнице температур: 1166 вместо 116.6, остальные три значения верны."},
-"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":7,"comment":"Все четыре значения верны, минимальное оформление."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, чёткое структурированное перечисление с единицами."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, ясные подписи."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, ясные подписи."},
-"nemotron-omni":{"correctness":10,"reasoning":7,"format":7,"russian":7,"comment":"Все четыре значения верны, оформление голым списком."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, развёрнутые и грамотные подписи."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, аккуратное и полное оформление."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, чёткое перечисление."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все значения верны, лаконичный список с подписями."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, ясное оформление."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все значения верны, компактный список."},
-"gpt-5.6-terra-high":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Ошибка в курильщиках: 31% вместо 39,1%, остальные три значения верны."},
-"gpt-5.6-terra-low":{"correctness":7,"reasoning":6,"format":8,"russian":9,"comment":"Курильщики указаны как 39% без десятой доли (эталон 39,1%), остальные значения верны."},
-"gpt-5.6-terra-medium":{"correctness":6,"reasoning":6,"format":7,"russian":8,"comment":"Ошибка в курильщиках: 33,1% вместо 39,1%, остальные три значения верны."}
-},"winner":"kimi-k2.6","notes":"Большинство моделей извлекли все четыре значения точно; kimi-k2.6 и gpt-5.6-luna-high выделяются полнотой и грамотностью. Ошиблись llama-scout (1166 вместо 116.6) и ветки terra в проценте курильщиков."}
+{
+ "task_id": "ocr_дата-аналитика_8c4b9328a2",
+ "category": "ocr",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все четыре значения верны (13,9; 116,6; 8500; 39,1). Формат предельно лаконичный, без подписей."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, аккуратные подписи с единицами измерения."
+  },
+  "llama-scout": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Ошибка в разнице температур: 1166 вместо 116.6, остальные три значения верны."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Все четыре значения верны, минимальное оформление."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, чёткое структурированное перечисление с единицами."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, ясные подписи."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, ясные подписи."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 7,
+   "comment": "Все четыре значения верны, оформление голым списком."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, развёрнутые и грамотные подписи."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, аккуратное и полное оформление."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, чёткое перечисление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, лаконичный список с подписями."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, ясное оформление."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все значения верны, компактный список."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ошибка в курильщиках: 31% вместо 39,1%, остальные три значения верны."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Курильщики указаны как 39% без десятой доли (эталон 39,1%), остальные значения верны."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Ошибка в курильщиках: 33,1% вместо 39,1%, остальные три значения верны."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все четыре значения извлечены верно (13,9 л; 116,6 °C; 8500 ед.; 39,1%), с корректной привязкой к блокам инфографики. Формат чёткий и структурированный; минорно — «13,9 литров» вместо «литра» и отсутствие видимого анализа."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Большинство моделей извлекли все четыре значения точно; kimi-k2.6 и gpt-5.6-luna-high выделяются полнотой и грамотностью. Ошиблись llama-scout (1166 вместо 116.6) и ветки terra в проценте курильщиков."
+}

@@ -1,1 +1,134 @@
-{"task_id":"ocr_операционка_a3ddcf366a","category":"ocr","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Заголовок, все три раздела и пункт 1.1 переданы дословно и верно."},"llama-scout":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Всё распознано точно, оформление чёткое."},"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный ответ на все три вопроса, дословная цитата 1.1."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Всё верно, формат минималистичный, но ясный."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Заголовок, разделы и пункт 1.1 воспроизведены корректно."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью точный и хорошо оформленный ответ."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные распознаны верно, цитата дословна."},"nemotron-omni":{"correctness":3,"reasoning":4,"format":6,"russian":2,"comment":"Заголовок и разделы верны, но текст пункта 1.1 сильно искажён (Исполнода, обязаarse), с бессмысленными вставками."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точное распознавание всех элементов, дословная цитата."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Всё верно, аккуратное оформление с кавычками."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный ответ на все вопросы."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Заголовок, разделы и пункт 1.1 переданы верно."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректный и структурированный ответ."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные распознаны точно."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верный ответ, дословная цитата пункта 1.1."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Всё распознано верно и оформлено ясно."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный и структурированный ответ по всем трём вопросам."}},"winner":"35b-a3b","notes":"Почти все модели дали идеальный ответ; выделен 35b-a3b. Nemotron-omni сильно исказил текст пункта 1.1."}
+{
+ "task_id": "ocr_операционка_a3ddcf366a",
+ "category": "ocr",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Заголовок, все три раздела и пункт 1.1 переданы дословно и верно."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Всё распознано точно, оформление чёткое."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный ответ на все три вопроса, дословная цитата 1.1."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Всё верно, формат минималистичный, но ясный."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Заголовок, разделы и пункт 1.1 воспроизведены корректно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью точный и хорошо оформленный ответ."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все данные распознаны верно, цитата дословна."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 2,
+   "comment": "Заголовок и разделы верны, но текст пункта 1.1 сильно искажён (Исполнода, обязаarse), с бессмысленными вставками."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точное распознавание всех элементов, дословная цитата."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Всё верно, аккуратное оформление с кавычками."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный ответ на все вопросы."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Заголовок, разделы и пункт 1.1 переданы верно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью корректный и структурированный ответ."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все данные распознаны точно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный ответ, дословная цитата пункта 1.1."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Всё распознано верно и оформлено ясно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный и структурированный ответ по всем трём вопросам."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Заголовок, все три названия разделов и дословная цитата п. 1.1 переданы абсолютно точно, дополнительно верно отмечен раздел 4. Оформление чёткое, русский хороший, лишь ремарка про «пронумерованных классически» сформулирована невнятно."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели дали идеальный ответ; выделен 35b-a3b. Nemotron-omni сильно исказил текст пункта 1.1."
+}

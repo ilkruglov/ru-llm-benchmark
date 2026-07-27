@@ -1,1 +1,134 @@
-{"task_id":"ocr_банки_a95fdf0059","category":"ocr","scores":{"35b-a3b":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все пять реквизитов прочитаны точно, включая длинный номер счёта и БИК. Чистый нумерованный список."},"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, есть пояснения о расположении реквизитов. Пометка (п) строчной буквой — мелочь."},"27b-v2":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все реквизиты точны, аккуратный структурированный список."},"gemma-4-31b":{"correctness":9,"reasoning":7,"format":8,"russian":8,"comment":"Данные верны, но 'AO' написано латиницей вместо 'АО'. Остальное точно."},"diffusion-gemma":{"correctness":8,"reasoning":6,"format":8,"russian":9,"comment":"Четыре реквизита верны, но входящий остаток помечен как '(ПИ)' вместо '(П)'."},"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все пять реквизитов прочитаны точно, оформлено ясно."},"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все значения совпадают с картинкой, чёткий список."},"nemotron-omni":{"correctness":9,"reasoning":5,"format":5,"russian":8,"comment":"Значения верны, но остаток без пометки (П), ответ одной строкой через точку с запятой без меток."},"kimi-k2.6":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все реквизиты точны, аккуратное структурированное оформление."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все значения верны, оформлено ясно (кавычки-ёлочки)."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все пять реквизитов прочитаны точно."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все значения совпадают с документом, ясный список."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все реквизиты точны, структурировано."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все значения верны, аккуратный список."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":5,"format":6,"russian":8,"comment":"Все значения верны, но ответ предельно кратко — только значения без меток реквизитов."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":5,"format":6,"russian":8,"comment":"Данные точны, но перечислены только значения без подписей."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":5,"format":6,"russian":8,"comment":"Все реквизиты верны, но формат минимальный — только числа/названия без меток."}},"winner":"llama-scout","notes":"Подавляющее большинство моделей идеально прочитали все пять реквизитов; llama-scout выделяется точностью плюс полезными пояснениями. Ошиблись только diffusion-gemma ('(ПИ)') и gemma (латинское 'AO')."}
+{
+ "task_id": "ocr_банки_a95fdf0059",
+ "category": "ocr",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пять реквизитов прочитаны точно, включая длинный номер счёта и БИК. Чистый нумерованный список."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, есть пояснения о расположении реквизитов. Пометка (п) строчной буквой — мелочь."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все реквизиты точны, аккуратный структурированный список."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Данные верны, но 'AO' написано латиницей вместо 'АО'. Остальное точно."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Четыре реквизита верны, но входящий остаток помечен как '(ПИ)' вместо '(П)'."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пять реквизитов прочитаны точно, оформлено ясно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения совпадают с картинкой, чёткий список."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 8,
+   "comment": "Значения верны, но остаток без пометки (П), ответ одной строкой через точку с запятой без меток."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все реквизиты точны, аккуратное структурированное оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, оформлено ясно (кавычки-ёлочки)."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пять реквизитов прочитаны точно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения совпадают с документом, ясный список."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все реквизиты точны, структурировано."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, аккуратный список."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 8,
+   "comment": "Все значения верны, но ответ предельно кратко — только значения без меток реквизитов."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 8,
+   "comment": "Данные точны, но перечислены только значения без подписей."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 8,
+   "comment": "Все реквизиты верны, но формат минимальный — только числа/названия без меток."
+  },
+  "minimax-m3": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 8,
+   "comment": "Четыре из пяти реквизитов извлечены верно, но номер счёта искажён: 40828101656001000145 вместо 40802810165600100145 — цифры переставлены, что критично для банковского OCR. Добавленное пояснение о «задолженности» по пассивному остатку сомнительно, оформление и русский язык хорошие."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Подавляющее большинство моделей идеально прочитали все пять реквизитов; llama-scout выделяется точностью плюс полезными пояснениями. Ошиблись только diffusion-gemma ('(ПИ)') и gemma (латинское 'AO')."
+}

@@ -1,1 +1,134 @@
-{"task_id":"drawing_стройка_dee15c447a","category":"drawing","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все 4 факта верны, ответ развёрнут с цитированием штампа и таблицы. Чёткая структура."},"llama-scout":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все факты верны, регион дан полностью. Мешают лишние $-обёртки вокруг чисел."},"27b-v2":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все 4 факта верны, лаконично и корректно, с пояснениями по штампу."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все ответы верны, кратко и по делу, без лишних деталей."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, дублирует вопросы и даёт полный регион. Хорошая структура."},"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, максимально лаконично и корректно."},"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, чёткий краткий список."},"nemotron-omni":{"correctness":10,"reasoning":5,"format":6,"russian":7,"comment":"Факты верны, но ответ предельно сухой; опечатка с ударением «Декорáтивный»."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, с указанием источника и полным регионом. Аккуратная структура."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, лаконично и корректно."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, краткий чёткий список."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, краткий чёткий список."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, лаконично и правильно, масштаб с «М»."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, чёткий краткий список."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, лаконично и корректно."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 4 факта верны, максимально кратко."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все 4 факта верны, регион дан с уточнением к/п Ивановское."}},"winner":"35b-a3b","notes":"Все модели дали 4/4 верных факта; победитель — 35b-a3b за наиболее полный и структурированный ответ. Nemotron слабее из-за сухости и опечатки."}
+{
+ "task_id": "drawing_стройка_dee15c447a",
+ "category": "drawing",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 4 факта верны, ответ развёрнут с цитированием штампа и таблицы. Чёткая структура."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, регион дан полностью. Мешают лишние $-обёртки вокруг чисел."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, лаконично и корректно, с пояснениями по штампу."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все ответы верны, кратко и по делу, без лишних деталей."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, дублирует вопросы и даёт полный регион. Хорошая структура."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, максимально лаконично и корректно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, чёткий краткий список."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 7,
+   "comment": "Факты верны, но ответ предельно сухой; опечатка с ударением «Декорáтивный»."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, с указанием источника и полным регионом. Аккуратная структура."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, лаконично и корректно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, краткий чёткий список."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, краткий чёткий список."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, лаконично и правильно, масштаб с «М»."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, чёткий краткий список."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, лаконично и корректно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, максимально кратко."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 факта верны, регион дан с уточнением к/п Ивановское."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре пункта верны: позиция 6 — декоративный пруд с каскадом, 9 позиций, М 1:200, Калужская обл. (к/п Ивановское). Ответ точный и аккуратно оформленный, анализ минимальный, но задача этого и не требует."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели дали 4/4 верных факта; победитель — 35b-a3b за наиболее полный и структурированный ответ. Nemotron слабее из-за сухости и опечатки."
+}

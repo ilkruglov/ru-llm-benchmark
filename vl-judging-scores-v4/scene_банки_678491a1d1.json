@@ -1,1 +1,134 @@
-{"task_id":"scene_банки_678491a1d1","category":"scene","scores":{"llama-scout":{"correctness":8,"reasoning":6,"format":8,"russian":8,"comment":"Оба бренда верны, кресла 2 (зачтено), верно определён моноблок Apple, три элемента интерьера. Немного скупо."},"35b-a3b":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Бренды верны, но технику назвал ноутбуком/MacBook — на деле iMac-моноблок. Элементы корректны."},"27b-v2":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Оба бренда верны, распознал iMac по логотипу-яблоку на задней крышке, элементы точны. Сильный ответ."},"gemma-4-31b":{"correctness":3,"reasoning":4,"format":8,"russian":9,"comment":"Придумал группу «ROSBANK FINANCIAL GROUP» вместо SOCIETE GENERALE, технику назвал ноутбуком — две ошибки."},"diffusion-gemma":{"correctness":6,"reasoning":6,"format":8,"russian":8,"comment":"Бренды верны, элементы корректны, но технику ошибочно назвал ноутбуком MacBook вместо iMac."},"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Оба бренда верны, iMac определён верно, элементы полные включая фрукты на столике."},"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Оба бренда верны, iMac верно, богатый и точный список элементов зоны ожидания."},"nemotron-omni":{"correctness":6,"reasoning":6,"format":7,"russian":5,"comment":"Бренды верны, но техника ошибочно ноутбук/MacBook; в тексте языковая мешанина («Пotted plant»)."},"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Оба бренда верны, iMac-моноблок верно, элементы точны включая белые шторы слева."},"gpt-5.6-luna-high":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Бренды и iMac верны, элементы перечислены, но ответ очень краткий."},"gpt-5.6-luna-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Оба бренда и iMac верны, элементы корректны, изложение сжатое."},"gpt-5.6-luna-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Бренды и iMac верны, элементы перечислены кратко и точно."},"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Оба бренда и iMac верны, детальный список элементов включая журналы и фрукты."},"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Оба бренда и iMac верны, элементы полные и точные."},"gpt-5.6-terra-high":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Бренды и iMac верны, элементы включая пальму в кашпо перечислены."},"gpt-5.6-terra-low":{"correctness":8,"reasoning":7,"format":7,"russian":9,"comment":"Все факты верны включая iMac, но оформление без структуры, сжато."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Оба бренда и iMac верны, структурированный полный перечень элементов."}},"winner":"gpt-5.5-medium","notes":"Топ-ответы (27b-v2, gpt-5.5-medium, sol-*, kimi) верно прочитали оба бренда и опознали iMac; слабее те, кто назвал технику ноутбуком, а gemma-4-31b выдумала банковскую группу."}
+{
+ "task_id": "scene_банки_678491a1d1",
+ "category": "scene",
+ "scores": {
+  "llama-scout": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Оба бренда верны, кресла 2 (зачтено), верно определён моноблок Apple, три элемента интерьера. Немного скупо."
+  },
+  "35b-a3b": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Бренды верны, но технику назвал ноутбуком/MacBook — на деле iMac-моноблок. Элементы корректны."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба бренда верны, распознал iMac по логотипу-яблоку на задней крышке, элементы точны. Сильный ответ."
+  },
+  "gemma-4-31b": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Придумал группу «ROSBANK FINANCIAL GROUP» вместо SOCIETE GENERALE, технику назвал ноутбуком — две ошибки."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Бренды верны, элементы корректны, но технику ошибочно назвал ноутбуком MacBook вместо iMac."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба бренда верны, iMac определён верно, элементы полные включая фрукты на столике."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба бренда верны, iMac верно, богатый и точный список элементов зоны ожидания."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 5,
+   "comment": "Бренды верны, но техника ошибочно ноутбук/MacBook; в тексте языковая мешанина («Пotted plant»)."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба бренда верны, iMac-моноблок верно, элементы точны включая белые шторы слева."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Бренды и iMac верны, элементы перечислены, но ответ очень краткий."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Оба бренда и iMac верны, элементы корректны, изложение сжатое."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Бренды и iMac верны, элементы перечислены кратко и точно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба бренда и iMac верны, детальный список элементов включая журналы и фрукты."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба бренда и iMac верны, элементы полные и точные."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Бренды и iMac верны, элементы включая пальму в кашпо перечислены."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все факты верны включая iMac, но оформление без структуры, сжато."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба бренда и iMac верны, структурированный полный перечень элементов."
+  },
+  "minimax-m3": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 8,
+   "comment": "ROSBANK и моноблок Apple опознаны верно, но название группы на стойке выдумано («INTERFAX GROUP» вместо SOCIETE GENERALE GROUP), а в перечислении добавлено несуществующее «большое зеркало в золотой раме»; кресел названо два вместо трёх. Формат и русский хорошие, но грубые галлюцинации по ключевому пункту."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Топ-ответы (27b-v2, gpt-5.5-medium, sol-*, kimi) верно прочитали оба бренда и опознали iMac; слабее те, кто назвал технику ноутбуком, а gemma-4-31b выдумала банковскую группу."
+}

@@ -1,1 +1,155 @@
-{"task_id":"m-tool-03","category":"tool_calling","scores":{"gpt-oss-120b":{"correctness":6,"reasoning":6,"format":4,"russian":8,"comment":"Взял ветку >50 (snapshot=57) с верной логикой, но не показал явный вызов check_stock и аргументы log_inventory_snapshot (qty/note)."},"deepseek-flash":{"correctness":8,"reasoning":8,"format":7,"russian":9,"comment":"Полная симуляция: check_stock, затем корректный create_purchase_order с точными аргументами; ясное финальное объяснение."},"deepseek-pro":{"correctness":8,"reasoning":7,"format":7,"russian":9,"comment":"Верная ветка <=50 (30 ед.), правильные имена функций и аргументы дозаказа, аккуратный финал."},"35b-a3b":{"correctness":8,"reasoning":7,"format":7,"russian":9,"comment":"Корректная последовательность и аргументы create_purchase_order, понятное объяснение выбранной ветки."},"27b-v2":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Строго по протоколу: check_stock -> create_purchase_order, явно отмечено 'ровно одно действие', точные аргументы."},"gemma-4-31b":{"correctness":4,"reasoning":2,"format":4,"russian":3,"comment":"Вызвал только check_stock и остановился; шаг 2 и финальное сообщение не выполнены, формат нестандартный (не JSON)."},"diffusion-gemma":{"correctness":4,"reasoning":2,"format":3,"russian":2,"comment":"Только check_stock с мусорными токенами разметки; условная ветка и финал отсутствуют."},"gpt-5.5-low":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ: заявил недоступность инструментов, не вызвал даже check_stock; задача не выполнена."},"gpt-5.5-medium":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ выполнять из-за 'недоступных' инструментов; ни одного вызова, задача не решена."},"nemotron-omni":{"correctness":1,"reasoning":1,"format":3,"russian":1,"comment":"Вывел лишь выдуманный JSON-результат check_stock без вызова, без решения ветки и без финального сообщения."},"nemotron-super":{"correctness":7,"reasoning":6,"format":5,"russian":5,"comment":"Верная логика и аргументы дозаказа, но вызовы даны голым текстом, есть языковые сбои ('нижеThreshold', 'Сnapshot')."},"kimi-k2.6":{"correctness":8,"reasoning":9,"format":8,"russian":9,"comment":"Наиболее полный и аккуратный проход: check_stock -> create_purchase_order с точными аргументами, явная проверка 'ровно одно действие', сильное финальное объяснение."},"gpt-5.6-luna-high":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ: инструменты 'недоступны', check_stock не вызван, действий нет."},"gpt-5.6-luna-low":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ выполнять задачу, ни одного вызова инструмента."},"gpt-5.6-luna-medium":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ: check_stock 'недоступен', шаг 2 не выполнен."},"gpt-5.6-sol-low":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ из-за 'недоступности' check_stock; корректная осторожность, но задача не решена."},"gpt-5.6-sol-medium":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ выполнять протокол, ни одного вызова."},"gpt-5.6-terra-high":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ: инструмент недоступен, ни дозаказа, ни snapshot."},"gpt-5.6-terra-low":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ выполнять, вызовов нет."},"gpt-5.6-terra-medium":{"correctness":2,"reasoning":3,"format":1,"russian":8,"comment":"Отказ из-за 'недоступности' складской системы, задача не выполнена."}},"winner":"kimi-k2.6","notes":"Лучшая — kimi-k2.6: полный корректный проход протокола с точными аргументами и явной проверкой 'ровно одно действие'. Симуляторы deepseek/27b/35b близки; многочисленные gpt-5.5/5.6 отказались вызывать инструменты."}
+{
+ "task_id": "m-tool-03",
+ "category": "tool_calling",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 4,
+   "russian": 8,
+   "comment": "Взял ветку >50 (snapshot=57) с верной логикой, но не показал явный вызов check_stock и аргументы log_inventory_snapshot (qty/note)."
+  },
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Полная симуляция: check_stock, затем корректный create_purchase_order с точными аргументами; ясное финальное объяснение."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верная ветка <=50 (30 ед.), правильные имена функций и аргументы дозаказа, аккуратный финал."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Корректная последовательность и аргументы create_purchase_order, понятное объяснение выбранной ветки."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Строго по протоколу: check_stock -> create_purchase_order, явно отмечено 'ровно одно действие', точные аргументы."
+  },
+  "gemma-4-31b": {
+   "correctness": 4,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 3,
+   "comment": "Вызвал только check_stock и остановился; шаг 2 и финальное сообщение не выполнены, формат нестандартный (не JSON)."
+  },
+  "diffusion-gemma": {
+   "correctness": 4,
+   "reasoning": 2,
+   "format": 3,
+   "russian": 2,
+   "comment": "Только check_stock с мусорными токенами разметки; условная ветка и финал отсутствуют."
+  },
+  "gpt-5.5-low": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ: заявил недоступность инструментов, не вызвал даже check_stock; задача не выполнена."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ выполнять из-за 'недоступных' инструментов; ни одного вызова, задача не решена."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 3,
+   "russian": 1,
+   "comment": "Вывел лишь выдуманный JSON-результат check_stock без вызова, без решения ветки и без финального сообщения."
+  },
+  "nemotron-super": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 5,
+   "russian": 5,
+   "comment": "Верная логика и аргументы дозаказа, но вызовы даны голым текстом, есть языковые сбои ('нижеThreshold', 'Сnapshot')."
+  },
+  "kimi-k2.6": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Наиболее полный и аккуратный проход: check_stock -> create_purchase_order с точными аргументами, явная проверка 'ровно одно действие', сильное финальное объяснение."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ: инструменты 'недоступны', check_stock не вызван, действий нет."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ выполнять задачу, ни одного вызова инструмента."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ: check_stock 'недоступен', шаг 2 не выполнен."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ из-за 'недоступности' check_stock; корректная осторожность, но задача не решена."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ выполнять протокол, ни одного вызова."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ: инструмент недоступен, ни дозаказа, ни snapshot."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ выполнять, вызовов нет."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 1,
+   "russian": 8,
+   "comment": "Отказ из-за 'недоступности' складской системы, задача не выполнена."
+  },
+  "minimax-m3": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 1,
+   "russian": 4,
+   "comment": "Модель корректно начала с check_stock с правильными аргументами, но вывод — сломанный tool-call с мусорными разделителями ']<]minimax[>[' вместо валидного JSON. Шаг 2 (ветвление по qty_on_hand) и обязательное финальное сообщение на русском полностью отсутствуют."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Лучшая — kimi-k2.6: полный корректный проход протокола с точными аргументами и явной проверкой 'ровно одно действие'. Симуляторы deepseek/27b/35b близки; многочисленные gpt-5.5/5.6 отказались вызывать инструменты."
+}

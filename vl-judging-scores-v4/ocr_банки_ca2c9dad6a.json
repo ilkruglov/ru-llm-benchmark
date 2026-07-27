@@ -1,1 +1,134 @@
-{"task_id":"ocr_банки_ca2c9dad6a","category":"ocr","scores":{"llama-scout":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все 10 заголовков прочитаны верно и в правильном порядке, аккуратный нумерованный список."},"35b-a3b":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все 10 заголовков верны и по порядку, формат — простое перечисление через запятую."},"27b-v2":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все заголовки верны, чёткий нумерованный список слева направо."},"gemma-4-31b":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Порядок и состав верны, но опечатка «корреспондерующего» вместо «корреспондирующего»."},"diffusion-gemma":{"correctness":8,"reasoning":8,"format":10,"russian":9,"comment":"Список полный и по порядку, но искажение «корреспондррующего» в 7-м заголовке."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 10 заголовков точны и по порядку, построчный вывод."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 10 заголовков точны и по порядку, построчный вывод."},"nemotron-omni":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все заголовки верны и по порядку, перечисление через запятую."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все 10 заголовков точны, аккуратный нумерованный список с пояснением."},"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Все заголовки по порядку, лишь пропущена точка в «№ док»."},"gpt-5.6-luna-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Все заголовки по порядку, лишь пропущена точка в «№ док»."},"gpt-5.6-luna-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Все заголовки по порядку, лишь пропущена точка в «№ док»."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 10 заголовков точны и в правильном порядке через точку с запятой."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 10 заголовков точны и в правильном порядке через точку с запятой."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 10 заголовков точны и в правильном порядке."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 10 заголовков точны и в правильном порядке."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Все заголовки по порядку, лишь пропущена точка в «№ док»."}},"winner":"kimi-k2.6","notes":"Почти все модели прочитали все 10 заголовков верно; kimi/llama/27b дали безупречный полный нумерованный список, gemma и diffusion допустили опечатку в слове «корреспондирующего»."}
+{
+ "task_id": "ocr_банки_ca2c9dad6a",
+ "category": "ocr",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 10 заголовков прочитаны верно и в правильном порядке, аккуратный нумерованный список."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 10 заголовков верны и по порядку, формат — простое перечисление через запятую."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все заголовки верны, чёткий нумерованный список слева направо."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Порядок и состав верны, но опечатка «корреспондерующего» вместо «корреспондирующего»."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Список полный и по порядку, но искажение «корреспондррующего» в 7-м заголовке."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 10 заголовков точны и по порядку, построчный вывод."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 10 заголовков точны и по порядку, построчный вывод."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все заголовки верны и по порядку, перечисление через запятую."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 10 заголовков точны, аккуратный нумерованный список с пояснением."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все заголовки по порядку, лишь пропущена точка в «№ док»."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все заголовки по порядку, лишь пропущена точка в «№ док»."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все заголовки по порядку, лишь пропущена точка в «№ док»."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 10 заголовков точны и в правильном порядке через точку с запятой."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 10 заголовков точны и в правильном порядке через точку с запятой."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 10 заголовков точны и в правильном порядке."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 10 заголовков точны и в правильном порядке."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все заголовки по порядку, лишь пропущена точка в «№ док»."
+  },
+  "minimax-m3": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все 10 заголовков перечислены в правильном порядке, но три искажены: «№ док. оп.» вместо «№ док.», «Вид» вместо «Вид оп.» (сокращение «оп.» перенесено в предыдущий столбец) и «корреспондентского» вместо «корреспондирующего». Формат и русский хорошие, но точность OCR ниже эталонных ответов."
+  }
+ },
+ "winner": "llama-scout",
+ "notes": "Почти все модели прочитали все 10 заголовков верно; kimi/llama/27b дали безупречный полный нумерованный список, gemma и diffusion допустили опечатку в слове «корреспондирующего»."
+}

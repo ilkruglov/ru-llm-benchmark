@@ -1,28 +1,155 @@
 {
-  "task_id": "m-tool-13",
-  "category": "tool_calling",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Корректно отказался от rollback/restart, сопоставил critical -> sev1, выдал валидный JSON-вызов get_service_status без выдумывания результатов. Минус за то, что дальнейшие шаги только описаны."},
-    "deepseek-flash": {"correctness": 6, "reasoning": 5, "format": 4, "russian": 9, "comment": "План и severity верные, но модель выдумала ответы инструментов (метрики, deploy_id, incident_id), причём в фейковом JSON деплоя сломаны скобки."},
-    "deepseek-pro": {"correctness": 6, "reasoning": 6, "format": 5, "russian": 9, "comment": "Верно определил невозможность отката и sev1, но полностью галлюцинировал результаты вызовов и incident_id, что критично для tool-calling."},
-    "35b-a3b": {"correctness": 7, "reasoning": 7, "format": 6, "russian": 9, "comment": "Правильный набор вызовов и severity, результаты не выдуманы, но вызовы даны псевдокодом, а не структурированным JSON, и заявлено, что инцидент уже создан."},
-    "27b-v2": {"correctness": 6, "reasoning": 6, "format": 5, "russian": 9, "comment": "Полная и правильная цепочка из 4 инструментов с sev1, но все ответы инструментов (включая incident_id) сфабрикованы."},
-    "gemma-4-31b": {"correctness": 8, "reasoning": 8, "format": 7, "russian": 9, "comment": "Чётко разделил невозможное и допустимое, sev1 вместо critical, вызовы без выдуманных результатов; формат вызовов - простой текст, не JSON."},
-    "diffusion-gemma": {"correctness": 6, "reasoning": 6, "format": 6, "russian": 8, "comment": "Ограничения названы верно, но выполнена лишь часть плана: create_incident так и не вызван, формат вызовов нестандартный."},
-    "gpt-5.5-low": {"correctness": 8, "reasoning": 8, "format": 7, "russian": 9, "comment": "Честный отказ от rollback/restart, корректный sev1, полная цепочка вызовов без галлюцинаций; вызовы оформлены псевдокодом в блоке text."},
-    "gpt-5.5-medium": {"correctness": 8, "reasoning": 8, "format": 7, "russian": 9, "comment": "Аналогично low: корректный план, валидные аргументы, sev1, без выдуманных результатов; формат - псевдокод, а не JSON."},
-    "nemotron-super": {"correctness": 5, "reasoning": 5, "format": 4, "russian": 6, "comment": "Правильная последовательность и sev1, но выдуманы все ответы инструментов и incident_id; в тексте затесались китайские иероглифы."},
-    "nemotron-omni": {"correctness": 6, "reasoning": 7, "format": 7, "russian": 9, "comment": "Хороший разбор ограничений и валидный JSON вызовов, но заявленный create_incident в итоге не вызван - план выполнен не до конца."},
-    "kimi-k2.6": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 7, "comment": "Лучший ответ: явно перечислены три невозможных пункта, все четыре вызова в валидном JSON с корректными аргументами и sev1, без фабрикации результатов; мелкий мусор-иероглифы в тексте."},
-    "gpt-5.6-luna-high": {"correctness": 3, "reasoning": 4, "format": 4, "russian": 9, "comment": "Ограничения названы верно, но модель ошибочно решила, что каталог инструментов недоступен, и не выполнила допустимую часть задачи."},
-    "gpt-5.6-luna-low": {"correctness": 3, "reasoning": 4, "format": 4, "russian": 9, "comment": "Верный вывод про sev1 и отсутствие rollback, но отказ вызывать доступные инструменты - основная часть задания не выполнена."},
-    "gpt-5.6-luna-medium": {"correctness": 2, "reasoning": 3, "format": 3, "russian": 9, "comment": "Самый скудный вариант: заявил недоступность каталога, не привёл ни одного оформленного вызова, задача практически не выполнена."},
-    "gpt-5.6-sol-low": {"correctness": 3, "reasoning": 4, "format": 5, "russian": 9, "comment": "Правильно отказался галлюцинировать, но ложно счёл инструменты неподключёнными и не выполнил допустимые вызовы; аргументы в примере корректные."},
-    "gpt-5.6-sol-medium": {"correctness": 3, "reasoning": 4, "format": 4, "russian": 9, "comment": "Корректные ограничения и sev1, но отказ от выполнения допустимой части со ссылкой на отсутствие подключения инструментов."},
-    "gpt-5.6-terra-high": {"correctness": 4, "reasoning": 5, "format": 5, "russian": 9, "comment": "Кратко и верно про rollback и sev1, привёл корректный create_incident, но фактического выполнения допустимой части нет."},
-    "gpt-5.6-terra-low": {"correctness": 4, "reasoning": 5, "format": 5, "russian": 9, "comment": "Ограничения и валидные аргументы указаны правильно, но вызовы лишь перечислены как доступные, задача не выполнена."},
-    "gpt-5.6-terra-medium": {"correctness": 4, "reasoning": 5, "format": 5, "russian": 9, "comment": "Хороший разбор и эскалация, честный отказ выдумывать incident_id, но допустимая часть так и не выполнена."}
+ "task_id": "m-tool-13",
+ "category": "tool_calling",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректно отказался от rollback/restart, сопоставил critical -> sev1, выдал валидный JSON-вызов get_service_status без выдумывания результатов. Минус за то, что дальнейшие шаги только описаны."
   },
-  "winner": "kimi-k2.6",
-  "notes": "Задача проверяла отказ от несуществующих инструментов, замену critical на sev1 и выполнение допустимой части. Лидеры - kimi-k2.6 и gpt-oss-120b; семейство gpt-5.6 массово провалило исполнение, сославшись на недоступность каталога, а deepseek/27b/nemotron-super потеряли баллы за фабрикацию ответов инструментов."
+  "deepseek-flash": {
+   "correctness": 6,
+   "reasoning": 5,
+   "format": 4,
+   "russian": 9,
+   "comment": "План и severity верные, но модель выдумала ответы инструментов (метрики, deploy_id, incident_id), причём в фейковом JSON деплоя сломаны скобки."
+  },
+  "deepseek-pro": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 5,
+   "russian": 9,
+   "comment": "Верно определил невозможность отката и sev1, но полностью галлюцинировал результаты вызовов и incident_id, что критично для tool-calling."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 6,
+   "russian": 9,
+   "comment": "Правильный набор вызовов и severity, результаты не выдуманы, но вызовы даны псевдокодом, а не структурированным JSON, и заявлено, что инцидент уже создан."
+  },
+  "27b-v2": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 5,
+   "russian": 9,
+   "comment": "Полная и правильная цепочка из 4 инструментов с sev1, но все ответы инструментов (включая incident_id) сфабрикованы."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Чётко разделил невозможное и допустимое, sev1 вместо critical, вызовы без выдуманных результатов; формат вызовов - простой текст, не JSON."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 8,
+   "comment": "Ограничения названы верно, но выполнена лишь часть плана: create_incident так и не вызван, формат вызовов нестандартный."
+  },
+  "gpt-5.5-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Честный отказ от rollback/restart, корректный sev1, полная цепочка вызовов без галлюцинаций; вызовы оформлены псевдокодом в блоке text."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Аналогично low: корректный план, валидные аргументы, sev1, без выдуманных результатов; формат - псевдокод, а не JSON."
+  },
+  "nemotron-super": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 4,
+   "russian": 6,
+   "comment": "Правильная последовательность и sev1, но выдуманы все ответы инструментов и incident_id; в тексте затесались китайские иероглифы."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Хороший разбор ограничений и валидный JSON вызовов, но заявленный create_incident в итоге не вызван - план выполнен не до конца."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 7,
+   "comment": "Лучший ответ: явно перечислены три невозможных пункта, все четыре вызова в валидном JSON с корректными аргументами и sev1, без фабрикации результатов; мелкий мусор-иероглифы в тексте."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 9,
+   "comment": "Ограничения названы верно, но модель ошибочно решила, что каталог инструментов недоступен, и не выполнила допустимую часть задачи."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 9,
+   "comment": "Верный вывод про sev1 и отсутствие rollback, но отказ вызывать доступные инструменты - основная часть задания не выполнена."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 9,
+   "comment": "Самый скудный вариант: заявил недоступность каталога, не привёл ни одного оформленного вызова, задача практически не выполнена."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 5,
+   "russian": 9,
+   "comment": "Правильно отказался галлюцинировать, но ложно счёл инструменты неподключёнными и не выполнил допустимые вызовы; аргументы в примере корректные."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 9,
+   "comment": "Корректные ограничения и sev1, но отказ от выполнения допустимой части со ссылкой на отсутствие подключения инструментов."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 4,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 9,
+   "comment": "Кратко и верно про rollback и sev1, привёл корректный create_incident, но фактического выполнения допустимой части нет."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 4,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 9,
+   "comment": "Ограничения и валидные аргументы указаны правильно, но вызовы лишь перечислены как доступные, задача не выполнена."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 4,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 9,
+   "comment": "Хороший разбор и эскалация, честный отказ выдумывать incident_id, но допустимая часть так и не выполнена."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 6,
+   "russian": 9,
+   "comment": "Корректно отказался от несуществующих rollback/restart, отверг severity=critical и обосновал замену на sev1, не выдумал результатов вызовов — начал только с get_service_status(service=\"checkout\") и остановился в ожидании ответа. Минус за формат: вызов оформлен псевдокодом, а не валидным JSON по схеме, и остальные шаги плана (list_recent_deploys/get_deploy_diff/create_incident) фактически не вызваны."
+  }
+ },
+ "winner": "gpt-oss-120b",
+ "notes": "Задача проверяла отказ от несуществующих инструментов, замену critical на sev1 и выполнение допустимой части. Лидеры - kimi-k2.6 и gpt-oss-120b; семейство gpt-5.6 массово провалило исполнение, сославшись на недоступность каталога, а deepseek/27b/nemotron-super потеряли баллы за фабрикацию ответов инструментов."
 }

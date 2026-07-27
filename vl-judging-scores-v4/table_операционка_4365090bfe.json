@@ -1,19 +1,134 @@
-{"task_id":"table_операционка_4365090bfe","category":"table","scores":{
-"llama-scout":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все значения верны (2048, 1652, 396), подробное структурированное объяснение с заголовками."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные числа и разница, точно указаны столбцы и код строки, чёткая структура."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"2048 − 1652 = 396, всё корректно и ясно изложено."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильные значения и расчёт, аккуратная структура с итоговым ответом."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верный результат 396; небольшая опечатка «исные значения», в остальном хорошо."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Корректные числа и разница, чистое оформление."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, лаконично и структурировано."},
-"nemotron-omni":{"correctness":10,"reasoning":4,"format":4,"russian":3,"comment":"Числа верны (2048, 1652, 396), но ответ голый, англоязычная метка Answer, без пояснений и русского текста."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и расчёт, ясная структура."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Правильный ответ, кратко и корректно."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верные числа и разница, лаконично."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректный результат, аккуратный список."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Всё верно, кратко и ясно."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Правильные значения и разница, чётко."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Корректный ответ 396, кратко."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верные числа и расчёт, минималистично."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Всё правильно, компактный формат с датами."}
-},"winner":"llama-scout","notes":"Почти все модели дали верный результат 2048 − 1652 = 396; llama-scout лидирует по полноте и структуре, nemotron-omni заметно слабее по оформлению и русскому."}
+{
+ "task_id": "table_операционка_4365090bfe",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все значения верны (2048, 1652, 396), подробное структурированное объяснение с заголовками."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные числа и разница, точно указаны столбцы и код строки, чёткая структура."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "2048 − 1652 = 396, всё корректно и ясно изложено."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильные значения и расчёт, аккуратная структура с итоговым ответом."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный результат 396; небольшая опечатка «исные значения», в остальном хорошо."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректные числа и разница, чистое оформление."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, лаконично и структурировано."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 3,
+   "comment": "Числа верны (2048, 1652, 396), но ответ голый, англоязычная метка Answer, без пояснений и русского текста."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и расчёт, ясная структура."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Правильный ответ, кратко и корректно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные числа и разница, лаконично."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный результат, аккуратный список."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Всё верно, кратко и ясно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Правильные значения и разница, чётко."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Корректный ответ 396, кратко."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные числа и расчёт, минималистично."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Всё правильно, компактный формат с датами."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Значения 2048 и 1652 считаны верно, разница 396 вычислена правильно. Ответ чётко структурирован таблицей и расчётом, русский безупречен."
+  }
+ },
+ "winner": "llama-scout",
+ "notes": "Почти все модели дали верный результат 2048 − 1652 = 396; llama-scout лидирует по полноте и структуре, nemotron-omni заметно слабее по оформлению и русскому."
+}

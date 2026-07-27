@@ -1,28 +1,155 @@
 {
-  "task_id": "m-classification-04",
-  "category": "classification",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 8, "reasoning": 8, "format": 10, "russian": 8, "comment": "Все 10 аспектов и 5 проблем корректны, чистый JSON без обёрток. Занижен churn_risk (medium) и в recommended_action обещано несуществующее увеличение автономности в прошивке."},
-    "deepseek-flash": {"correctness": 8, "reasoning": 8, "format": 10, "russian": 9, "comment": "Полный набор аспектов, точные цитаты, верный churn_risk=high, чистый JSON. Пропущена проблема с контейнером в detected_issues."},
-    "deepseek-pro": {"correctness": 8, "reasoning": 8, "format": 10, "russian": 9, "comment": "Аспекты и цитаты максимально точные, churn=high, валидный JSON. Контейнер не вынесен в issues, а ответ поддержки местами оправдательный."},
-    "27b-v2": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 9, "comment": "Корректные 10 аспектов и 4 проблемы, но JSON обёрнут в markdown-фенсы, churn занижен до medium, а действие сводится к разъяснениям без компенсации."},
-    "35b-a3b": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Все аспекты верны, issues сформулированы содержательно, действие операционно осмысленно. Минусы: markdown-фенсы и churn_risk=medium при явном риске оттока."},
-    "gemma-4-31b": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Полное покрытие аспектов и 4 корректные проблемы, разумный план действий. Фенсы вокруг JSON и churn=medium; формулировка про несоответствие высоты слегка домыслена."},
-    "diffusion-gemma": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 8, "comment": "Аспекты покрыты, churn=high верный, но цитата по шуму склеена из разных фрагментов, описание design_flaw невнятное («критический зазор корпуса»), JSON в фенсах."},
-    "gpt-5.5-low": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 9, "comment": "Полные аспекты и 5 обоснованных проблем, churn=high, сильное рекомендуемое действие. Единственный минус — вывод обёрнут в markdown-фенсы."},
-    "gpt-5.5-medium": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Чистый JSON, полное покрытие аспектов и проблем с адекватными severity, churn=high, конкретный операционный план."},
-    "nemotron-omni": {"correctness": 8, "reasoning": 7, "format": 10, "russian": 8, "comment": "Валидный JSON и корректные аспекты, но цитата по cleaning_quality взята из вступления, всего 4 проблемы (без контейнера), churn занижен, действие короткое и смешивает адресатов."},
-    "nemotron-super": {"correctness": 6, "reasoning": 6, "format": 9, "russian": 2, "comment": "Разбор аспектов подробный, но описания проблем засорены иноязычными вставками («reliably», «nonostante», «apesar», «даётgeneric»), а recommended_action целиком на английском — грубое нарушение требования к русскому выводу."},
-    "kimi-k2.6": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Точные аспекты и цитаты, churn=high, очень практичное действие с эскалацией и компенсацией. Минусы: фенсы и отсутствие контейнера в detected_issues."},
-    "gpt-5.6-luna-high": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Чистый JSON, все аспекты, 5 корректных проблем с разделением железа и ПО, churn=high, действие адресует и продуктовые команды, и клиента."},
-    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 9, "comment": "Полный и точный разбор, валидный JSON, churn=high; классификация контейнера как design_flaw допустима, план действий конкретен."},
-    "gpt-5.6-luna-medium": {"correctness": 8, "reasoning": 8, "format": 10, "russian": 9, "comment": "Валидный JSON и полное покрытие, но проблема застревания продублирована как hardware_issue и design_flaw — избыточные записи снижают точность."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Детальная декомпозиция багов приложения на отдельные записи, все обоснованы отзывом, churn=high, максимально предметный ответ поддержки."},
-    "gpt-5.6-sol-medium": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 10, "comment": "Чистый JSON, полное покрытие аспектов и 6 корректных проблем с точными severity, отличный конкретный план поддержки, включая запретную зону под диваном."},
-    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 10, "comment": "Полное и точное извлечение без ложных срабатываний, приоритезация support_quality как high, churn=high, безупречный русский и структура."},
-    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 9, "comment": "Все аспекты и 5 проблем корректны, валидный JSON, churn=high, действие включает диагностику, сроки и компенсацию."},
-    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 10, "comment": "Точный полный разбор, корректные категории и severity, чистый JSON и грамотный русский; действие охватывает эскалацию, обмен и проверку заявленных характеристик."}
+ "task_id": "m-classification-04",
+ "category": "classification",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 8,
+   "comment": "Все 10 аспектов и 5 проблем корректны, чистый JSON без обёрток. Занижен churn_risk (medium) и в recommended_action обещано несуществующее увеличение автономности в прошивке."
   },
-  "winner": "gpt-5.6-terra-high",
-  "notes": "Задача оказалась лёгкой: почти все модели дали mixed/3 и 10 аспектов; различия сводились к полноте detected_issues, оценке churn_risk и чистоте JSON. Провалился только nemotron-super из-за иноязычных вставок и англоязычного recommended_action."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полный набор аспектов, точные цитаты, верный churn_risk=high, чистый JSON. Пропущена проблема с контейнером в detected_issues."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Аспекты и цитаты максимально точные, churn=high, валидный JSON. Контейнер не вынесен в issues, а ответ поддержки местами оправдательный."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректные 10 аспектов и 4 проблемы, но JSON обёрнут в markdown-фенсы, churn занижен до medium, а действие сводится к разъяснениям без компенсации."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все аспекты верны, issues сформулированы содержательно, действие операционно осмысленно. Минусы: markdown-фенсы и churn_risk=medium при явном риске оттока."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полное покрытие аспектов и 4 корректные проблемы, разумный план действий. Фенсы вокруг JSON и churn=medium; формулировка про несоответствие высоты слегка домыслена."
+  },
+  "diffusion-gemma": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Аспекты покрыты, churn=high верный, но цитата по шуму склеена из разных фрагментов, описание design_flaw невнятное («критический зазор корпуса»), JSON в фенсах."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полные аспекты и 5 обоснованных проблем, churn=high, сильное рекомендуемое действие. Единственный минус — вывод обёрнут в markdown-фенсы."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Чистый JSON, полное покрытие аспектов и проблем с адекватными severity, churn=high, конкретный операционный план."
+  },
+  "nemotron-omni": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 8,
+   "comment": "Валидный JSON и корректные аспекты, но цитата по cleaning_quality взята из вступления, всего 4 проблемы (без контейнера), churn занижен, действие короткое и смешивает адресатов."
+  },
+  "nemotron-super": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 2,
+   "comment": "Разбор аспектов подробный, но описания проблем засорены иноязычными вставками («reliably», «nonostante», «apesar», «даётgeneric»), а recommended_action целиком на английском — грубое нарушение требования к русскому выводу."
+  },
+  "kimi-k2.6": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точные аспекты и цитаты, churn=high, очень практичное действие с эскалацией и компенсацией. Минусы: фенсы и отсутствие контейнера в detected_issues."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Чистый JSON, все аспекты, 5 корректных проблем с разделением железа и ПО, churn=high, действие адресует и продуктовые команды, и клиента."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полный и точный разбор, валидный JSON, churn=high; классификация контейнера как design_flaw допустима, план действий конкретен."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON и полное покрытие, но проблема застревания продублирована как hardware_issue и design_flaw — избыточные записи снижают точность."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Детальная декомпозиция багов приложения на отдельные записи, все обоснованы отзывом, churn=high, максимально предметный ответ поддержки."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Чистый JSON, полное покрытие аспектов и 6 корректных проблем с точными severity, отличный конкретный план поддержки, включая запретную зону под диваном."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полное и точное извлечение без ложных срабатываний, приоритезация support_quality как high, churn=high, безупречный русский и структура."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все аспекты и 5 проблем корректны, валидный JSON, churn=high, действие включает диагностику, сроки и компенсацию."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный полный разбор, корректные категории и severity, чистый JSON и грамотный русский; действие охватывает эскалацию, обмен и проверку заявленных характеристик."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный охват всех 10 аспектов с корректными подсентиментами и точными цитатами, 5 обоснованных issue без выдумок, хорошая детализация (расхождение >35%, iOS 17.4, wi-fi контекст); мелкие спорные моменты — застревание отнесено к hardware_issue, а контейнер к design_flaw, и churn_risk 'medium' при явной угрозе оттока. JSON валиден, но обёрнут в markdown-фенсы; русский безупречный."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Задача оказалась лёгкой: почти все модели дали mixed/3 и 10 аспектов; различия сводились к полноте detected_issues, оценке churn_risk и чистоте JSON. Провалился только nemotron-super из-за иноязычных вставок и англоязычного recommended_action."
 }

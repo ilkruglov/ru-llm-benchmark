@@ -1,28 +1,155 @@
 {
-  "task_id": "m-classification-03",
-  "category": "classification",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Все поля извлечены верно, имена в кавычках сохранены, чистый JSON без обёртки. Delivery_terms усечён до FCA, но это допустимо."},
-    "deepseek-flash": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Полное и точное извлечение, валидный сырой JSON без markdown-обёртки."},
-    "deepseek-pro": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 10, "comment": "Все поля точны, включая полный delivery_terms; JSON обёрнут в ```json, что требует зачистки."},
-    "35b-a3b": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 10, "comment": "Точное извлечение всех полей; JSON в markdown-обёртке."},
-    "27b-v2": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 10, "comment": "Все поля верны, полный delivery_terms; обёртка ```json снижает format."},
-    "gemma-4-31b": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 10, "comment": "Корректное извлечение; JSON в markdown-блоке."},
-    "diffusion-gemma": {"correctness": 9, "reasoning": 7, "format": 9, "russian": 10, "comment": "Имена компаний переданы в одинарных кавычках вместо оригинальных двойных; в остальном точно. Обёртка ```json."},
-    "gpt-5.5-low": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 10, "comment": "Все поля верны, полный delivery_terms; JSON в markdown-обёртке."},
-    "gpt-5.5-medium": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 10, "comment": "Идентично точное извлечение; обёртка ```json."},
-    "nemotron-omni": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 10, "comment": "Кавычки в названиях компаний опущены (ООО ТехноСтройКомплект); в остальном верно, чистый JSON."},
-    "nemotron-super": {"correctness": 0, "reasoning": 0, "format": 0, "russian": 0, "comment": "Ответ полностью не по теме — вместо извлечения полей выдан посторонний текст. Провал."},
-    "kimi-k2.6": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 10, "comment": "Все поля точны, полный delivery_terms; JSON в markdown-обёртке."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Идеальное извлечение всех полей, полный delivery_terms, чистый сырой JSON."},
-    "gpt-5.6-luna-low": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Полное точное извлечение, чистый JSON без обёртки."},
-    "gpt-5.6-luna-medium": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Все поля верны, полный delivery_terms, валидный сырой JSON."},
-    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Точное извлечение, чистый JSON без markdown."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Все поля верны, полный delivery_terms, сырой валидный JSON."},
-    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Идеальное извлечение всех полей, чистый JSON."},
-    "gpt-5.6-terra-low": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Полное точное извлечение, валидный сырой JSON."},
-    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Все поля верны, полный delivery_terms, чистый JSON."}
+ "task_id": "m-classification-03",
+ "category": "classification",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все поля извлечены верно, имена в кавычках сохранены, чистый JSON без обёртки. Delivery_terms усечён до FCA, но это допустимо."
   },
-  "winner": "gpt-5.6-luna-high",
-  "notes": "Подавляющее большинство моделей извлекло все поля идеально; преимущество у ответов с чистым сырым JSON и полным delivery_terms. Nemotron-super полностью провалился (не по теме)."
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полное и точное извлечение, валидный сырой JSON без markdown-обёртки."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля точны, включая полный delivery_terms; JSON обёрнут в ```json, что требует зачистки."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точное извлечение всех полей; JSON в markdown-обёртке."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля верны, полный delivery_terms; обёртка ```json снижает format."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректное извлечение; JSON в markdown-блоке."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Имена компаний переданы в одинарных кавычках вместо оригинальных двойных; в остальном точно. Обёртка ```json."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля верны, полный delivery_terms; JSON в markdown-обёртке."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Идентично точное извлечение; обёртка ```json."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Кавычки в названиях компаний опущены (ООО ТехноСтройКомплект); в остальном верно, чистый JSON."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Ответ полностью не по теме — вместо извлечения полей выдан посторонний текст. Провал."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля точны, полный delivery_terms; JSON в markdown-обёртке."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальное извлечение всех полей, полный delivery_terms, чистый сырой JSON."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полное точное извлечение, чистый JSON без обёртки."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все поля верны, полный delivery_terms, валидный сырой JSON."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точное извлечение, чистый JSON без markdown."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все поля верны, полный delivery_terms, сырой валидный JSON."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальное извлечение всех полей, чистый JSON."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полное точное извлечение, валидный сырой JSON."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все поля верны, полный delivery_terms, чистый JSON."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля извлечены точно: реквизиты, ИНН/КПП/БИК, 5 позиций, суммы, даты в ISO, ставка пени 0,1 и срок 14 дней — ложных срабатываний нет. Единственная мелочь: JSON обёрнут в markdown-фенс ```json, что требует пост-обработки при импорте."
+  }
+ },
+ "winner": "gpt-oss-120b",
+ "notes": "Подавляющее большинство моделей извлекло все поля идеально; преимущество у ответов с чистым сырым JSON и полным delivery_terms. Nemotron-super полностью провалился (не по теме)."
 }

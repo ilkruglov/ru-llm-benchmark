@@ -83,6 +83,14 @@ def get_endpoints():
             "reasoning_field": "reasoning_content",
         },
         {
+            "tag": "minimax-m3",
+            "url": "https://api.deepinfra.com/v1/openai",
+            "key": os.environ.get("DEEPINFRA_API_KEY", ""),
+            "model": "MiniMaxAI/MiniMax-M3",
+            "type": "deepinfra",
+            "reasoning_field": "reasoning_content",
+        },
+        {
             "tag": "nemotron-omni",
             "url": "https://api.deepinfra.com/v1/openai",
             "key": os.environ.get("DEEPINFRA_API_KEY", ""),

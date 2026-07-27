@@ -1,1 +1,134 @@
-{"task_id":"count_промышленность_826557b639","category":"count","scores":{"llama-scout":{"correctness":1,"reasoning":2,"format":6,"russian":8,"comment":"Ответ 9 — сильно завышен, скорее всего сосчитаны тёмные плафоны. Развёрнутое русское предложение."},"35b-a3b":{"correctness":6,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 5 — пограничный, близко к эталону 4, но всё же завышен. Голое число."},"27b-v2":{"correctness":3,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 6 заметно превышает эталон 4. Просто число без анализа."},"gemma-4-31b":{"correctness":3,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 6 — завышен относительно 4 ярких ламп."},"diffusion-gemma":{"correctness":3,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 6 — завышен, вероятно учтены тусклые/тёмные светильники."},"gpt-5.5-low":{"correctness":2,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 7 — существенно больше эталонных 4."},"gpt-5.5-medium":{"correctness":3,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 6 — завышен относительно 4 ярких ламп."},"nemotron-omni":{"correctness":1,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 9 — грубо завышен, посчитаны тёмные плафоны."},"kimi-k2.6":{"correctness":10,"reasoning":2,"format":7,"russian":5,"comment":"Точный ответ 4, совпадает с эталоном. Чистое число по инструкции."},"gpt-5.6-luna-high":{"correctness":1,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 8 — грубо завышен."},"gpt-5.6-luna-low":{"correctness":1,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 8 — грубо завышен."},"gpt-5.6-luna-medium":{"correctness":3,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 6 — завышен относительно 4."},"gpt-5.6-sol-low":{"correctness":1,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 8 — грубо завышен."},"gpt-5.6-sol-medium":{"correctness":2,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 7 — существенно больше эталонных 4."},"gpt-5.6-terra-high":{"correctness":3,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 6 — завышен относительно 4."},"gpt-5.6-terra-low":{"correctness":2,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 7 — существенно больше эталонных 4."},"gpt-5.6-terra-medium":{"correctness":2,"reasoning":1,"format":6,"russian":5,"comment":"Ответ 7 — существенно больше эталонных 4."}},"winner":"kimi-k2.6","notes":"Эталон — 4 ярко горящие лампы; единственный точный ответ дала kimi-k2.6. Остальные завысили (6-9), 35b-a3b с ответом 5 — ближе всех из ошибочных."}
+{
+ "task_id": "count_промышленность_826557b639",
+ "category": "count",
+ "scores": {
+  "llama-scout": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 8,
+   "comment": "Ответ 9 — сильно завышен, скорее всего сосчитаны тёмные плафоны. Развёрнутое русское предложение."
+  },
+  "35b-a3b": {
+   "correctness": 6,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 5 — пограничный, близко к эталону 4, но всё же завышен. Голое число."
+  },
+  "27b-v2": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 6 заметно превышает эталон 4. Просто число без анализа."
+  },
+  "gemma-4-31b": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 6 — завышен относительно 4 ярких ламп."
+  },
+  "diffusion-gemma": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 6 — завышен, вероятно учтены тусклые/тёмные светильники."
+  },
+  "gpt-5.5-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 7 — существенно больше эталонных 4."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 6 — завышен относительно 4 ярких ламп."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 9 — грубо завышен, посчитаны тёмные плафоны."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 5,
+   "comment": "Точный ответ 4, совпадает с эталоном. Чистое число по инструкции."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 8 — грубо завышен."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 8 — грубо завышен."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 6 — завышен относительно 4."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 8 — грубо завышен."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 7 — существенно больше эталонных 4."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 3,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 6 — завышен относительно 4."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 7 — существенно больше эталонных 4."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ 7 — существенно больше эталонных 4."
+  },
+  "minimax-m3": {
+   "correctness": 6,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 5,
+   "comment": "Ответ «3» — погранично близок к эталону 4 (вероятно, пропущена самая дальняя тусклая лампа), что заметно лучше типичных завышений 6-9 у других моделей. Формат минимальный и соответствует требованию «только число», но рассуждений нет и русского текста фактически тоже."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Эталон — 4 ярко горящие лампы; единственный точный ответ дала kimi-k2.6. Остальные завысили (6-9), 35b-a3b с ответом 5 — ближе всех из ошибочных."
+}

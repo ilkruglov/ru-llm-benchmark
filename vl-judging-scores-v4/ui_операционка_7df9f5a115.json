@@ -1,1 +1,134 @@
-{"task_id":"ui_операционка_7df9f5a115","category":"ui","scores":{"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все факты верны: 78, 1325220, A1='Наименование'. Есть небольшое пояснение."},"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Полностью верно, чётко структурировано по пунктам."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три факта верны, ясная структура."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно и лаконично: 78, 1325220, A1='Наименование'."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все данные верны, хорошая структура."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно и чётко, все три факта на месте."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Полностью корректный ответ."},"nemotron-omni":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все факты верны, ясно изложено."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно, добавлено что значение видно и в строке формул — точное наблюдение."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все факты верны, лаконично."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно и чётко."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три факта верны."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно и компактно."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все данные верны."},"gpt-5.6-terra-high":{"correctness":4,"reasoning":6,"format":9,"russian":9,"comment":"Ошибка в 'Итого': указано 132522 вместо 1325220. Остальное верно."},"gpt-5.6-terra-low":{"correctness":4,"reasoning":6,"format":9,"russian":9,"comment":"Та же ошибка: 'Итого' 132522 вместо 1325220. Продано и A1 верны."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все факты верны, в отличие от других terra-вариантов."}},"winner":"kimi-k2.6","notes":"Подавляющее большинство моделей ответило идеально; kimi-k2.6 добавил точное наблюдение о дублировании значения в строке формул. Варианты terra-high/terra-low ошиблись в 'Итого' (132522 вместо 1325220)."}
+{
+ "task_id": "ui_операционка_7df9f5a115",
+ "category": "ui",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все факты верны: 78, 1325220, A1='Наименование'. Есть небольшое пояснение."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью верно, чётко структурировано по пунктам."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три факта верны, ясная структура."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно и лаконично: 78, 1325220, A1='Наименование'."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все данные верны, хорошая структура."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно и чётко, все три факта на месте."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректный ответ."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все факты верны, ясно изложено."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно, добавлено что значение видно и в строке формул — точное наблюдение."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все факты верны, лаконично."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно и чётко."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три факта верны."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно и компактно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все данные верны."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 4,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Ошибка в 'Итого': указано 132522 вместо 1325220. Остальное верно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 4,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Та же ошибка: 'Итого' 132522 вместо 1325220. Продано и A1 верны."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все факты верны, в отличие от других terra-вариантов."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все факты верны: 78 шт., итого 1 325 220, активная ячейка A1 с текстом «Наименование». Ответ чётко структурирован, русский безупречен."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Подавляющее большинство моделей ответило идеально; kimi-k2.6 добавил точное наблюдение о дублировании значения в строке формул. Варианты terra-high/terra-low ошиблись в 'Итого' (132522 вместо 1325220)."
+}

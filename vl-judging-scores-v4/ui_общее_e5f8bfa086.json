@@ -1,1 +1,134 @@
-{"task_id":"ui_общее_e5f8bfa086","category":"ui","scores":{"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре факта верны, есть детализация подписей плиток; мелкая неточность — валюту приписал к «номеру карты»."},"llama-scout":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все ответы верны, аккуратная структура с заголовками, без выдумок."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, хорошее пояснение расположения кнопок; «под номером карты» — небольшая неточность."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все четыре ответа корректны, чисто и структурировано."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все верно, с подписями плиток и указанием расположения выделенной кнопки."},"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты точны, ясная структура, без лишнего."},"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все верно, приведена подпись «Карта в рублях», аккуратно."},"nemotron-omni":{"correctness":10,"reasoning":4,"format":5,"russian":8,"comment":"Все факты верны, но ответ предельно телеграфный, без пояснений и оформления."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы корректны, с уточнением расположения логотипа и кнопок."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все верно, но кратко, без пояснений расположения."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все факты точны, лаконичная структура."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все ответы верны, чисто оформлено, без деталей."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все верно, ясная краткая структура."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все точно, уточнил «российские рубли» и подпись «Карта в рублях»."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":4,"format":6,"russian":9,"comment":"Все факты верны, но ответ максимально сжат, без анализа."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":4,"format":6,"russian":9,"comment":"Все верно, но телеграфно, без пояснений."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":5,"format":7,"russian":10,"comment":"Все ответы корректны, компактно перечислены в одну строку."}},"winner":"kimi-k2.6","notes":"Все модели правильно распознали МИР, рубли, выделенную «О карте» и все четыре плитки. Победитель по полноте и оформлению — kimi-k2.6 (наравне с 27b-v2 и diffusion-gemma)."}
+{
+ "task_id": "ui_общее_e5f8bfa086",
+ "category": "ui",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре факта верны, есть детализация подписей плиток; мелкая неточность — валюту приписал к «номеру карты»."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, аккуратная структура с заголовками, без выдумок."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, хорошее пояснение расположения кнопок; «под номером карты» — небольшая неточность."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре ответа корректны, чисто и структурировано."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все верно, с подписями плиток и указанием расположения выделенной кнопки."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты точны, ясная структура, без лишнего."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все верно, приведена подпись «Карта в рублях», аккуратно."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 5,
+   "russian": 8,
+   "comment": "Все факты верны, но ответ предельно телеграфный, без пояснений и оформления."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы корректны, с уточнением расположения логотипа и кнопок."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все верно, но кратко, без пояснений расположения."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все факты точны, лаконичная структура."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все ответы верны, чисто оформлено, без деталей."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все верно, ясная краткая структура."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все точно, уточнил «российские рубли» и подпись «Карта в рублях»."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 9,
+   "comment": "Все факты верны, но ответ максимально сжат, без анализа."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 9,
+   "comment": "Все верно, но телеграфно, без пояснений."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 10,
+   "comment": "Все ответы корректны, компактно перечислены в одну строку."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре ответа полностью совпадают с эталоном: МИР, рубли, оранжевой рамкой выделена «О карте», названия плиток точны с подписями. Галлюцинаций нет, изложение компактное и структурированное."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели правильно распознали МИР, рубли, выделенную «О карте» и все четыре плитки. Победитель по полноте и оформлению — kimi-k2.6 (наравне с 27b-v2 и diffusion-gemma)."
+}

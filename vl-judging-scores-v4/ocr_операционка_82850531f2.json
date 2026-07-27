@@ -1,1 +1,134 @@
-{"task_id":"ocr_операционка_82850531f2","category":"ocr","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три пункта верны: 15-ВМ, Москва 01 июля 2024, Поставщик «Самый лучший заказчик» с Ивановым. Чёткая структура."},"llama-scout":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Данные распознаны верно, но раздражающее LaTeX-обрамление ($15$-$ВМ$) портит читаемость."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, Поставщик не перепутан с Покупателем. Аккуратная структура."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью корректные ответы, ясная и компактная подача."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно всё: номер, город, дата, Поставщик и директор. Хорошее оформление."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три пункта точны, чистое форматирование."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Идеальные ответы, включая правильный № 15-ВМ и полное наименование Поставщика."},"nemotron-omni":{"correctness":9,"reasoning":7,"format":6,"russian":8,"comment":"Данные верны по сути, но номер написан латиницей (15-BM) и наименование сокращено; ответ очень лаконичный."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью верно, аккуратная структура и правильный № 15-ВМ."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные точны, Поставщик не перепутан с Покупателем."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Корректные ответы, ясная подача."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно всё, чистое оформление."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точные ответы по всем трём вопросам."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, аккуратная структура."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью корректно и компактно."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные ответы, Поставщик указан правильно."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три пункта точны, ясное оформление."}},"winner":"gpt-5.5-medium","notes":"Почти все модели дали идеально верные ответы; выделяются те, что сохранили номер как № 15-ВМ и полное наименование. Nemotron слабее из-за латиницы в номере и сокращений."}
+{
+ "task_id": "ocr_операционка_82850531f2",
+ "category": "ocr",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны: 15-ВМ, Москва 01 июля 2024, Поставщик «Самый лучший заказчик» с Ивановым. Чёткая структура."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Данные распознаны верно, но раздражающее LaTeX-обрамление ($15$-$ВМ$) портит читаемость."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, Поставщик не перепутан с Покупателем. Аккуратная структура."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректные ответы, ясная и компактная подача."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё: номер, город, дата, Поставщик и директор. Хорошее оформление."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта точны, чистое форматирование."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальные ответы, включая правильный № 15-ВМ и полное наименование Поставщика."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 6,
+   "russian": 8,
+   "comment": "Данные верны по сути, но номер написан латиницей (15-BM) и наименование сокращено; ответ очень лаконичный."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью верно, аккуратная структура и правильный № 15-ВМ."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные точны, Поставщик не перепутан с Покупателем."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректные ответы, ясная подача."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё, чистое оформление."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точные ответы по всем трём вопросам."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, аккуратная структура."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректно и компактно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные ответы, Поставщик указан правильно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта точны, ясное оформление."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три ответа полностью верны: № 15-ВМ, г. Москва, «01» июля 2024 г., ООО «Самый лучший заказчик» в лице Иванова Ивана Ивановича; Поставщик и Покупатель не перепутаны. Ответ подкреплён цитатой и корректным примечанием, лёгкая избыточность оформления (эмодзи, жирный текст) не мешает."
+  }
+ },
+ "winner": "gpt-5.5-medium",
+ "notes": "Почти все модели дали идеально верные ответы; выделяются те, что сохранили номер как № 15-ВМ и полное наименование. Nemotron слабее из-за латиницы в номере и сокращений."
+}

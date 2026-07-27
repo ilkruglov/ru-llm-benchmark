@@ -1,1 +1,134 @@
-{"task_id":"diagram_дата-аналитика_bb25786693","category":"diagram","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно по ветви ДА: Выбор наилучшей хромосомы → КОНЕЦ. Чёткая нумерация."},"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Правильная последовательность, начал с ромба и добавил итог. Ясно и структурно."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно назвал оба блока и корректно указал формы (параллелограмм, овал)."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верная последовательность блоков, аккуратная нумерация."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильно прошёл ветвь ДА, ясное изложение."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно и лаконично: Выбор наилучшей хромосомы → КОНЕЦ."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верная последовательность, оформление в code-span немного излишне."},"nemotron-omni":{"correctness":10,"reasoning":6,"format":5,"russian":8,"comment":"Ответ верный, но крайне сжат и капсом, без структуры."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точно, с указанием форм блоков и направления ветви. Отличное оформление."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Компактная верная цепочка через стрелки."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно, нумерованный список блоков."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Правильная последовательность через стрелки."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Верно, но предельно кратко одной строкой."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Верно, лаконичная строка без пояснений."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Правильно, минималистично."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Верная короткая цепочка."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Верно, кратко одной строкой."}},"winner":"kimi-k2.6","notes":"Все модели дали верную ветвь ДА (Выбор наилучшей хромосомы → КОНЕЦ); kimi-k2.6 лучший по полноте и оформлению, nemotron-omni слабее по формату."}
+{
+ "task_id": "diagram_дата-аналитика_bb25786693",
+ "category": "diagram",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно по ветви ДА: Выбор наилучшей хромосомы → КОНЕЦ. Чёткая нумерация."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Правильная последовательность, начал с ромба и добавил итог. Ясно и структурно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно назвал оба блока и корректно указал формы (параллелограмм, овал)."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верная последовательность блоков, аккуратная нумерация."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильно прошёл ветвь ДА, ясное изложение."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и лаконично: Выбор наилучшей хромосомы → КОНЕЦ."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верная последовательность, оформление в code-span немного излишне."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 5,
+   "russian": 8,
+   "comment": "Ответ верный, но крайне сжат и капсом, без структуры."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точно, с указанием форм блоков и направления ветви. Отличное оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Компактная верная цепочка через стрелки."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно, нумерованный список блоков."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Правильная последовательность через стрелки."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, но предельно кратко одной строкой."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, лаконичная строка без пояснений."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Правильно, минималистично."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верная короткая цепочка."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, кратко одной строкой."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Ветвь «ДА» прослежена абсолютно верно: «Выбор \"наилучшей\" хромосомы» → «КОНЕЦ», ветвь «НЕТ» не примешана. Кратко и по делу, с корректным пояснением смысла блоков."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Все модели дали верную ветвь ДА (Выбор наилучшей хромосомы → КОНЕЦ); kimi-k2.6 лучший по полноте и оформлению, nemotron-omni слабее по формату."
+}

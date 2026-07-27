@@ -1,1 +1,134 @@
-{"task_id":"table_стройка_52a1bd4468","category":"table","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Оба значения (694,07 и 327,71) считаны верно, сумма 1021,78 правильная, показан расчёт."},"llama-scout":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Значения и сумма верны; используются точки и $ вместо запятых, что не по стандарту оформления сметы."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма 1021,78, чёткая структура с выделением итога."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Оба исходных значения и сумма правильные, аккуратное оформление."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Значения считаны верно, сумма 1021,78 корректна, показан расчёт."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и сумма; расчёт не расписан, но итог правильный."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения, явно показан расчёт 694,07+327,71=1021,78."},"nemotron-omni":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Значения и сумма верны, оформление простое без выделений."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Оба значения и сумма 1021,78 правильные, показан расчёт."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и сумма, компактное чёткое оформление."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и сумма 1021,78, аккуратный список."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Значения и сумма верны, но подписи сокращены до «Рабочих/Машинистов»."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верный итог 1021,78, сокращённые подписи строк."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Значения и сумма правильные, подписи слегка сокращены."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полные подписи, верные значения и сумма 1021,78."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полные подписи, верные значения и сумма 1021,78."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полные подписи, верные значения и сумма 1021,78."}},"winner":"gpt-5.5-medium","notes":"Все модели верно считали 694,07 и 327,71 и дали сумму 1021,78; различия минимальны в оформлении. gpt-5.5-medium сочетает точность, явный расчёт и полные подписи."}
+{
+ "task_id": "table_стройка_52a1bd4468",
+ "category": "table",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба значения (694,07 и 327,71) считаны верно, сумма 1021,78 правильная, показан расчёт."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Значения и сумма верны; используются точки и $ вместо запятых, что не по стандарту оформления сметы."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма 1021,78, чёткая структура с выделением итога."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба исходных значения и сумма правильные, аккуратное оформление."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Значения считаны верно, сумма 1021,78 корректна, показан расчёт."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма; расчёт не расписан, но итог правильный."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения, явно показан расчёт 694,07+327,71=1021,78."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Значения и сумма верны, оформление простое без выделений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба значения и сумма 1021,78 правильные, показан расчёт."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма, компактное чёткое оформление."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма 1021,78, аккуратный список."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Значения и сумма верны, но подписи сокращены до «Рабочих/Машинистов»."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верный итог 1021,78, сокращённые подписи строк."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Значения и сумма правильные, подписи слегка сокращены."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полные подписи, верные значения и сумма 1021,78."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полные подписи, верные значения и сумма 1021,78."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полные подписи, верные значения и сумма 1021,78."
+  },
+  "minimax-m3": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Значение затрат труда машинистов считано неверно (127,71 вместо 327,71), из-за чего итоговая сумма 821,78 вместо правильной 1021,78. Арифметика и оформление корректны, но главный ответ ошибочен."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели верно считали 694,07 и 327,71 и дали сумму 1021,78; различия минимальны в оформлении. gpt-5.5-medium сочетает точность, явный расчёт и полные подписи."
+}

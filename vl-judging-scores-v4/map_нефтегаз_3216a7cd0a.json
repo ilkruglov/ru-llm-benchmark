@@ -1,19 +1,134 @@
-{"task_id":"map_нефтегаз_3216a7cd0a","category":"map","scores":{
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно назван регион (Западная Сибирь, ХМАО) и океан; корректное сравнение с Волго-Уралом и Сахалином."},
-"llama-scout":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Регион и океан верны; упоминание севера Омской области немного неточно, но в целичном точно."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Западная Сибирь и Северный Ледовитый океан названы верно, хорошее обоснование."},
-"gemma-4-31b":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Кратко и точно: Западная Сибирь, восточнее Урала, океан верен."},
-"diffusion-gemma":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Регион (Западная Сибирь, восточнее Урала) и океан названы правильно."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно: ХМАО/ЯНАО, центрально-северная часть восточнее Урала, океан верен."},
-"gpt-5.5-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Суть верна, но формулировка про 'северо-восточную часть Европейской России' путаная."},
-"nemotron-omni":{"correctness":3,"reasoning":4,"format":8,"russian":8,"comment":"Регион в целом верен, но выдуманы названия месторождений ('Полоное') и океан назван неверно — 'Северный Океан' без 'Ледовитый'."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Западная Сибирь между Уралом и Енисеем, океан верен, хорошее обоснование."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Западная Сибирь (Тюмень, ХМАО, ЯНАО) и океан верны, кратко."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Регион и океан названы правильно, лаконично."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Между Уралом и Енисеем, ХМАО/ЯНАО, океан верен."},
-"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Западная Сибирь, север равнины, океан верен."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Западно-Сибирская равнина, самый густой кластер, океан верен."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Тюмень, ХМАО, ЯНАО и океан названы верно, кратко."},
-"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Регион и океан правильные, лаконичный ответ."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"ХМАО и среднее течение Оби, океан верен."}
-},"winner":"35b-a3b","notes":"Почти все модели верно назвали Западную Сибирь и Северный Ледовитый океан; лучший баланс точности и обоснования у 35b-a3b. nemotron-omni проваливает из-за выдуманных месторождений и неверного названия океана."}
+{
+ "task_id": "map_нефтегаз_3216a7cd0a",
+ "category": "map",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно назван регион (Западная Сибирь, ХМАО) и океан; корректное сравнение с Волго-Уралом и Сахалином."
+  },
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Регион и океан верны; упоминание севера Омской области немного неточно, но в целичном точно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Западная Сибирь и Северный Ледовитый океан названы верно, хорошее обоснование."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно: Западная Сибирь, восточнее Урала, океан верен."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Регион (Западная Сибирь, восточнее Урала) и океан названы правильно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно: ХМАО/ЯНАО, центрально-северная часть восточнее Урала, океан верен."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Суть верна, но формулировка про 'северо-восточную часть Европейской России' путаная."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 8,
+   "comment": "Регион в целом верен, но выдуманы названия месторождений ('Полоное') и океан назван неверно — 'Северный Океан' без 'Ледовитый'."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Западная Сибирь между Уралом и Енисеем, океан верен, хорошее обоснование."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Западная Сибирь (Тюмень, ХМАО, ЯНАО) и океан верны, кратко."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Регион и океан названы правильно, лаконично."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Между Уралом и Енисеем, ХМАО/ЯНАО, океан верен."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Западная Сибирь, север равнины, океан верен."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Западно-Сибирская равнина, самый густой кластер, океан верен."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Тюмень, ХМАО, ЯНАО и океан названы верно, кратко."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Регион и океан правильные, лаконичный ответ."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "ХМАО и среднее течение Оби, океан верен."
+  },
+  "minimax-m3": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 9,
+   "comment": "Океан назван верно, и Западная Сибирь (Среднее Приобье) упомянута, но главный вывод сформулирован неверно: модель относит плотнейшее скопление к «западной и центрально-западной части», к западу/северо-западу от центра карты и утверждает, что восточнее Урала значков мало, тогда как густое пятно лежит именно восточнее Урала, в центре карты. Оформление и русский язык хорошие."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели верно назвали Западную Сибирь и Северный Ледовитый океан; лучший баланс точности и обоснования у 35b-a3b. nemotron-omni проваливает из-за выдуманных месторождений и неверного названия океана."
+}

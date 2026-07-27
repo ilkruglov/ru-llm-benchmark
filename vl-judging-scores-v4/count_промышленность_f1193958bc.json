@@ -1,1 +1,134 @@
-{"task_id":"count_промышленность_f1193958bc","category":"count","scores":{"llama-scout":{"correctness":0,"reasoning":1,"format":6,"russian":7,"comment":"Ответ 17 — грубо завышен, реально видно 5-6 синих стоек. Полное предложение, но число неверно."},"35b-a3b":{"correctness":1,"reasoning":1,"format":7,"russian":6,"comment":"10 — больше 8, неверно."},"27b-v2":{"correctness":1,"reasoning":1,"format":7,"russian":6,"comment":"13 — сильно завышено, неверно."},"gemma-4-31b":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"10 — больше 8, неверно."},"diffusion-gemma":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"12 — завышено, неверно."},"gpt-5.5-low":{"correctness":2,"reasoning":2,"format":8,"russian":6,"comment":"9 — чуть выше допустимого порога 8, неверно."},"gpt-5.5-medium":{"correctness":4,"reasoning":4,"format":8,"russian":6,"comment":"7 — близко, но вне диапазона 5-6."},"nemotron-omni":{"correctness":3,"reasoning":3,"format":8,"russian":6,"comment":"8 — на верхней границе завышения, неверно."},"kimi-k2.6":{"correctness":3,"reasoning":3,"format":8,"russian":6,"comment":"8 — на границе, неверно."},"gpt-5.6-luna-high":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"13 — сильно завышено."},"gpt-5.6-luna-low":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"10 — больше 8, неверно."},"gpt-5.6-luna-medium":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"11 — завышено, неверно."},"gpt-5.6-sol-low":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"10 — больше 8, неверно."},"gpt-5.6-sol-medium":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"12 — завышено, неверно."},"gpt-5.6-terra-high":{"correctness":1,"reasoning":1,"format":8,"russian":6,"comment":"11 — завышено, неверно."},"gpt-5.6-terra-low":{"correctness":3,"reasoning":3,"format":8,"russian":6,"comment":"8 — на верхней границе, неверно."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":8,"russian":6,"comment":"6 — точно в наиболее обоснованном диапазоне 5-6, верный ответ."}},"winner":"gpt-5.6-terra-medium","notes":"Единственный точный ответ (6) дал gpt-5.6-terra-medium; большинство моделей сильно завысили число (10-17)."}
+{
+ "task_id": "count_промышленность_f1193958bc",
+ "category": "count",
+ "scores": {
+  "llama-scout": {
+   "correctness": 0,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 7,
+   "comment": "Ответ 17 — грубо завышен, реально видно 5-6 синих стоек. Полное предложение, но число неверно."
+  },
+  "35b-a3b": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 7,
+   "russian": 6,
+   "comment": "10 — больше 8, неверно."
+  },
+  "27b-v2": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 7,
+   "russian": 6,
+   "comment": "13 — сильно завышено, неверно."
+  },
+  "gemma-4-31b": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "10 — больше 8, неверно."
+  },
+  "diffusion-gemma": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "12 — завышено, неверно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 8,
+   "russian": 6,
+   "comment": "9 — чуть выше допустимого порога 8, неверно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 4,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 6,
+   "comment": "7 — близко, но вне диапазона 5-6."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 6,
+   "comment": "8 — на верхней границе завышения, неверно."
+  },
+  "kimi-k2.6": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 6,
+   "comment": "8 — на границе, неверно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "13 — сильно завышено."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "10 — больше 8, неверно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "11 — завышено, неверно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "10 — больше 8, неверно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "12 — завышено, неверно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 8,
+   "russian": 6,
+   "comment": "11 — завышено, неверно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 6,
+   "comment": "8 — на верхней границе, неверно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 6,
+   "comment": "6 — точно в наиболее обоснованном диапазоне 5-6, верный ответ."
+  },
+  "minimax-m3": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 5,
+   "comment": "Ответ «12» вдвое превышает реально различимое число вертикальных синих стоек (5-6) и попадает в зону явно неверных значений (>8), вероятно из-за подсчёта секций/балок вместо колонн. Формат соблюдён (только число), но никакого анализа и русского текста в ответе нет."
+  }
+ },
+ "winner": "gpt-5.6-terra-medium",
+ "notes": "Единственный точный ответ (6) дал gpt-5.6-terra-medium; большинство моделей сильно завысили число (10-17)."
+}

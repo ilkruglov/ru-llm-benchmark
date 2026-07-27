@@ -1,28 +1,155 @@
 {
-  "task_id": "m-classification-02",
-  "category": "classification",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Точная классификация: complaint/threatening/critical/P0 и все 7 VIP-индикаторов. Развёрнутые, релевантные действия с учётом PR и юр-рисков."},
-    "deepseek-flash": {"correctness": 8, "reasoning": 9, "format": 10, "russian": 10, "comment": "Всё верно, но escalation_risk занижен до high при явных угрозах суда/ЦБ/СМИ и 48-часовом ультиматуме — критично. Действия сильные."},
-    "deepseek-pro": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Идеальные метки и все 7 VIP-признаков, чистый JSON, содержательные действия с извинениями и эскалацией."},
-    "35b-a3b": {"correctness": 7, "reasoning": 8, "format": 9, "russian": 10, "comment": "request_type=claim_status неточен — это формальная жалоба, а не запрос статуса; emotional=angry приемлемо. VIP и приоритет верны. Лишние переводы строк перед JSON."},
-    "27b-v2": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 10, "comment": "complaint/critical/P0 и все 7 VIP верны; angry вместо threatening — допустимо. Практичные действия (исключить Воронина, звонок за 1 час). Ведущие переводы строк."},
-    "gemma-4-31b": {"correctness": 10, "reasoning": 8, "format": 7, "russian": 10, "comment": "Метки идеальны, все 7 VIP. Но ответ обёрнут в markdown-блок ```json — нарушение требования строгого JSON."},
-    "diffusion-gemma": {"correctness": 9, "reasoning": 7, "format": 7, "russian": 8, "comment": "Метки корректны (angry вместо threatening допустимо), все 7 VIP. Обёртка ```json и обрезанный пункт действий ('бездей') снижают формат и русский."},
-    "gpt-5.5-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Безупречная классификация и все 7 VIP; самые детальные действия со ссылками на номер полиса и протокола ГИБДД, фиксация всех рисков."},
-    "gpt-5.5-medium": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Все метки и VIP-индикаторы точны, чистый JSON, конкретные действия с реквизитами полиса/протокола."},
-    "nemotron-super": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 10, "comment": "Идеальные метки и все 7 VIP, развёрнутые действия. Незначительные ведущие переводы строк перед JSON."},
-    "nemotron-omni": {"correctness": 7, "reasoning": 7, "format": 9, "russian": 6, "comment": "Пропущен VIP premium_product (доплата 18к за Премиум Сервис) — false negative по recall; emotional=desperate слабее. Непереведённое слово 'vehicle' в действиях портит русский."},
-    "kimi-k2.6": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 10, "comment": "Метки и все 7 VIP верны (angry вместо threatening допустимо). Отличные конкретные действия: блокировка Воронина, шаблоны для ЦБ/СМИ."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Все метки и 7 VIP точны, чистый JSON, корректные, но чуть более общие действия."},
-    "gpt-5.6-luna-low": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Идеальная классификация и все VIP-индикаторы; сжатый, но валидный набор действий."},
-    "gpt-5.6-luna-medium": {"correctness": 8, "reasoning": 8, "format": 10, "russian": 10, "comment": "request_type=claim_status неточен — обращение является жалобой; остальные метки и все 7 VIP верны."},
-    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Идеальные метки и все 7 VIP, наиболее полный перечень действий с фиксацией всех угроз эскалации."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Все метки и VIP точны, чистый JSON, действия включают расследование по менеджеру и эскалацию в юр-службу."},
-    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Безупречная классификация и все 7 VIP, валидный JSON, корректные действия."},
-    "gpt-5.6-terra-low": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Идеальные метки и все VIP; детальные действия с упоминанием даты осмотра 05.05 и всех типов угроз."},
-    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Все метки и 7 VIP точны, чистый JSON, конкретные действия с датами и планом."}
+ "task_id": "m-classification-02",
+ "category": "classification",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точная классификация: complaint/threatening/critical/P0 и все 7 VIP-индикаторов. Развёрнутые, релевантные действия с учётом PR и юр-рисков."
   },
-  "winner": "gpt-5.5-low",
-  "notes": "Большинство моделей дали идеальную классификацию (complaint/threatening/critical/P0, все 7 VIP). gpt-5.5-low выделяется наиболее детальными действиями с реквизитами полиса и протокола; deepseek-flash занизил escalation_risk, nemotron-omni потерял VIP premium_product."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Всё верно, но escalation_risk занижен до high при явных угрозах суда/ЦБ/СМИ и 48-часовом ультиматуме — критично. Действия сильные."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальные метки и все 7 VIP-признаков, чистый JSON, содержательные действия с извинениями и эскалацией."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "request_type=claim_status неточен — это формальная жалоба, а не запрос статуса; emotional=angry приемлемо. VIP и приоритет верны. Лишние переводы строк перед JSON."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "complaint/critical/P0 и все 7 VIP верны; angry вместо threatening — допустимо. Практичные действия (исключить Воронина, звонок за 1 час). Ведущие переводы строк."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 10,
+   "comment": "Метки идеальны, все 7 VIP. Но ответ обёрнут в markdown-блок ```json — нарушение требования строгого JSON."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Метки корректны (angry вместо threatening допустимо), все 7 VIP. Обёртка ```json и обрезанный пункт действий ('бездей') снижают формат и русский."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Безупречная классификация и все 7 VIP; самые детальные действия со ссылками на номер полиса и протокола ГИБДД, фиксация всех рисков."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все метки и VIP-индикаторы точны, чистый JSON, конкретные действия с реквизитами полиса/протокола."
+  },
+  "nemotron-super": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Идеальные метки и все 7 VIP, развёрнутые действия. Незначительные ведущие переводы строк перед JSON."
+  },
+  "nemotron-omni": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 6,
+   "comment": "Пропущен VIP premium_product (доплата 18к за Премиум Сервис) — false negative по recall; emotional=desperate слабее. Непереведённое слово 'vehicle' в действиях портит русский."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Метки и все 7 VIP верны (angry вместо threatening допустимо). Отличные конкретные действия: блокировка Воронина, шаблоны для ЦБ/СМИ."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все метки и 7 VIP точны, чистый JSON, корректные, но чуть более общие действия."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальная классификация и все VIP-индикаторы; сжатый, но валидный набор действий."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "request_type=claim_status неточен — обращение является жалобой; остальные метки и все 7 VIP верны."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальные метки и все 7 VIP, наиболее полный перечень действий с фиксацией всех угроз эскалации."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все метки и VIP точны, чистый JSON, действия включают расследование по менеджеру и эскалацию в юр-службу."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Безупречная классификация и все 7 VIP, валидный JSON, корректные действия."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальные метки и все VIP; детальные действия с упоминанием даты осмотра 05.05 и всех типов угроз."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все метки и 7 VIP точны, чистый JSON, конкретные действия с датами и планом."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все оси кроме emotional_state определены верно (KASKO/complaint/critical/P0, полный набор из 7 vip_indicators без ложных срабатываний); emotional_state=angry вместо более точного threatening при явных угрозах ЦБ/суд/СМИ. Список required_actions самый проработанный (заморозка стоянки, отстранение Воронина, позиция по ст.28 ЗоЗПП), но JSON обёрнут в ```json и есть опечатка «оффет»."
+  }
+ },
+ "winner": "gpt-oss-120b",
+ "notes": "Большинство моделей дали идеальную классификацию (complaint/threatening/critical/P0, все 7 VIP). gpt-5.5-low выделяется наиболее детальными действиями с реквизитами полиса и протокола; deepseek-flash занизил escalation_risk, nemotron-omni потерял VIP premium_product."
 }

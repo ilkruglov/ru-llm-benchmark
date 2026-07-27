@@ -1,19 +1,134 @@
-{"task_id":"table_банки_2c2308aad9","category":"table","scores":{
-"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Оба значения и разница верны (16 506,76 / 16 141,66 / 365,10). Чёткая структура, немного избыточное дублирование с LaTeX."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все значения верны, дан корректный вывод про аннуитет/дифференцированный платёж. Ясно и грамотно."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и разница, аккуратное оформление и хороший русский."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Оба итога и разница 365,10 верны, ясная нумерованная структура."},
-"diffusion-gemma":{"correctness":1,"reasoning":2,"format":8,"russian":9,"comment":"Выдумано значение Варианта 2 (16 441,66 вместо 16 141,66) и неверная разница 65,10. Грубая ошибка распознавания."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и разница, лаконично и корректно."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения точны, ясное краткое оформление."},
-"nemotron-omni":{"correctness":10,"reasoning":4,"format":4,"russian":6,"comment":"Значения верны (16 506,76 / 16 141,66 / 365,10), но ответ голыми числами без пояснений и структуры."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все значения верны, отмечено округление до 365,1, отличное оформление и русский."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения и разница, кратко и ясно."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Оба итога и разница верны, чёткий список."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения и разница, лаконично."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все значения точны, кратко и ясно."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения с пояснением к разнице, аккуратно."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Оба итога и разница 365,10 верны, ясно сформулировано."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верные значения и разница, простое корректное оформление."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все значения точны, кратко и понятно."}
-},"winner":"kimi-k2.6","notes":"Подавляющее большинство моделей дали верные итоги (16 506,76 / 16 141,66) и разницу 365,10 ₽. Kimi и 35b-a3b выделяются полнотой пояснений; diffusion-gemma выдумала значение и провалила задачу."}
+{
+ "task_id": "table_банки_2c2308aad9",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Оба значения и разница верны (16 506,76 / 16 141,66 / 365,10). Чёткая структура, немного избыточное дублирование с LaTeX."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, дан корректный вывод про аннуитет/дифференцированный платёж. Ясно и грамотно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и разница, аккуратное оформление и хороший русский."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба итога и разница 365,10 верны, ясная нумерованная структура."
+  },
+  "diffusion-gemma": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 8,
+   "russian": 9,
+   "comment": "Выдумано значение Варианта 2 (16 441,66 вместо 16 141,66) и неверная разница 65,10. Грубая ошибка распознавания."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и разница, лаконично и корректно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения точны, ясное краткое оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 6,
+   "comment": "Значения верны (16 506,76 / 16 141,66 / 365,10), но ответ голыми числами без пояснений и структуры."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, отмечено округление до 365,1, отличное оформление и русский."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и разница, кратко и ясно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба итога и разница верны, чёткий список."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и разница, лаконично."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения точны, кратко и ясно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения с пояснением к разнице, аккуратно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба итога и разница 365,10 верны, ясно сформулировано."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные значения и разница, простое корректное оформление."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все значения точны, кратко и понятно."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Оба итоговых значения по столбцу «Погашение процентов» (16 506,76 и 16 141,66 ₽) считаны верно, разница 365,10 ₽ посчитана правильно. Ответ чётко структурирован, русский безупречен; анализ минимально необходимый, без лишних пояснений."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Подавляющее большинство моделей дали верные итоги (16 506,76 / 16 141,66) и разницу 365,10 ₽. Kimi и 35b-a3b выделяются полнотой пояснений; diffusion-gemma выдумала значение и провалила задачу."
+}

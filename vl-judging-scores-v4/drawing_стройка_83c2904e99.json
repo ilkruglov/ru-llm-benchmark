@@ -1,19 +1,134 @@
-{"task_id":"drawing_стройка_83c2904e99","category":"drawing","scores":{
-"llama-scout":{"correctness":1,"reasoning":2,"format":7,"russian":8,"comment":"Все три числа выдуманы (10,74/15,86/18,50) вместо 14,80/55,86/58,50; верны только отметки этажа."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три числа и отметки верны, корректное пояснение назначения строк."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Числа и отметки верны, дан развёрнутый разбор состава площадей и понижающего коэффициента."},
-"gemma-4-31b":{"correctness":1,"reasoning":2,"format":7,"russian":8,"comment":"Все три числа выдуманы (31,16/42,72/42,98); верны только отметки этажа."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Числа 14,80/55,86/58,50 и отметки верны, пояснения корректны."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все числа и отметки верны, лаконично и точно."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все числа и отметки верны, чётко структурировано."},
-"nemotron-omni":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Бессмысленный ответ на английском про timestamp; задача не решена."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все числа и отметки верны, подробное и корректное пояснение состава площадей."},
-"gpt-5.6-luna-high":{"correctness":6,"reasoning":7,"format":9,"russian":9,"comment":"Первые два числа верны, третье ошибочно 56,50 вместо 58,50; отметки верны."},
-"gpt-5.6-luna-low":{"correctness":6,"reasoning":7,"format":9,"russian":9,"comment":"Третье число ошибочно 56,30 вместо 58,50; остальное верно."},
-"gpt-5.6-luna-medium":{"correctness":6,"reasoning":7,"format":9,"russian":9,"comment":"Третье число ошибочно 56,50 вместо 58,50; остальное верно."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все числа и отметки верны, чётко и лаконично."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все числа и отметки верны, аккуратное оформление."},
-"gpt-5.6-terra-high":{"correctness":5,"reasoning":6,"format":9,"russian":9,"comment":"Ключевое первое число ошибочно 41,80 вместо 14,80; два других верны."},
-"gpt-5.6-terra-low":{"correctness":5,"reasoning":6,"format":9,"russian":9,"comment":"Ключевое первое число ошибочно 11,80 вместо 14,80; два других верны."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все числа 14,80/55,86/58,50 и отметки верны."}
-},"winner":"35b-a3b","notes":"35b-a3b, kimi-k2.6 и группа gpt-5.5/sol/terra-medium дали полностью верные числа и отметки; 35b-a3b выигрывает за наиболее полный корректный разбор."}
+{
+ "task_id": "drawing_стройка_83c2904e99",
+ "category": "drawing",
+ "scores": {
+  "llama-scout": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все три числа выдуманы (10,74/15,86/18,50) вместо 14,80/55,86/58,50; верны только отметки этажа."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три числа и отметки верны, корректное пояснение назначения строк."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Числа и отметки верны, дан развёрнутый разбор состава площадей и понижающего коэффициента."
+  },
+  "gemma-4-31b": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все три числа выдуманы (31,16/42,72/42,98); верны только отметки этажа."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Числа 14,80/55,86/58,50 и отметки верны, пояснения корректны."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа и отметки верны, лаконично и точно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа и отметки верны, чётко структурировано."
+  },
+  "nemotron-omni": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Бессмысленный ответ на английском про timestamp; задача не решена."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа и отметки верны, подробное и корректное пояснение состава площадей."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Первые два числа верны, третье ошибочно 56,50 вместо 58,50; отметки верны."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Третье число ошибочно 56,30 вместо 58,50; остальное верно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Третье число ошибочно 56,50 вместо 58,50; остальное верно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа и отметки верны, чётко и лаконично."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа и отметки верны, аккуратное оформление."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Ключевое первое число ошибочно 41,80 вместо 14,80; два других верны."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Ключевое первое число ошибочно 11,80 вместо 14,80; два других верны."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа 14,80/55,86/58,50 и отметки верны."
+  },
+  "minimax-m3": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все три числа таблички выдуманы (27,26/44,42/48,42 вместо 14,80/55,86/58,50), а сопутствующие расчёты сумбурны и противоречивы (обрывок «29,16… нет»). Верно указаны только отметки этажа +27,650/+30,650; оформление и русский язык хорошие."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "35b-a3b, kimi-k2.6 и группа gpt-5.5/sol/terra-medium дали полностью верные числа и отметки; 35b-a3b выигрывает за наиболее полный корректный разбор."
+}

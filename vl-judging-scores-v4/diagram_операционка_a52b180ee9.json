@@ -1,1 +1,134 @@
-{"task_id":"diagram_операционка_a52b180ee9","category":"diagram","scores":{"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 4 факта верны, добавлено корректное объяснение матричной структуры через двойное подчинение."},"llama-scout":{"correctness":10,"reasoning":9,"format":7,"russian":9,"comment":"Факты верны, отличный разбор горизонтальных/вертикальных связей, но нумерация в LaTeX ($1$) портит формат."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, чёткое пояснение пересечения столбцов и строк в матрице."},"gemma-4-31b":{"correctness":10,"reasoning":5,"format":8,"russian":10,"comment":"Все факты верны, но ответ предельно краткий, без анализа матричной структуры."},"diffusion-gemma":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Факты верны, дублирует вопросы, обоснование типа структуры отсутствует."},"gpt-5.5-low":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все факты верны и аккуратно оформлены, но без объяснения выбора матричной структуры."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, дан корректный аргумент про горизонтальные строки исполнителей — эталонный ответ."},"nemotron-omni":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Факты верны, вариант проектно-функциональная допустим, но ответ очень сжат без анализа."},"kimi-k2.6":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все факты верны, аккуратно, но без пояснения типа структуры."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все факты верны, чистое оформление, обоснование матрицы не приведено."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все факты верны, лаконично и ясно, без анализа."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все факты верны, компактный корректный ответ без пояснений."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все факты верны, очень сжато, без обоснования типа структуры."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, добавлено верное объяснение распределения исполнителей по проектным командам."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все факты верны, лаконично и точно, без анализа."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все факты верны, сжатый корректный ответ без пояснений."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты верны, аккуратное оформление, минимальное обоснование матрицы."}},"winner":"gpt-5.5-medium","notes":"Все модели верно распознали Директора, 4 отдела, 3 руководителей и матричную структуру; победитель дал корректный факт-сет плюс аргументацию при чистом оформлении."}
+{
+ "task_id": "diagram_операционка_a52b180ee9",
+ "category": "diagram",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 4 факта верны, добавлено корректное объяснение матричной структуры через двойное подчинение."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 7,
+   "russian": 9,
+   "comment": "Факты верны, отличный разбор горизонтальных/вертикальных связей, но нумерация в LaTeX ($1$) портит формат."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, чёткое пояснение пересечения столбцов и строк в матрице."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все факты верны, но ответ предельно краткий, без анализа матричной структуры."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Факты верны, дублирует вопросы, обоснование типа структуры отсутствует."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны и аккуратно оформлены, но без объяснения выбора матричной структуры."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, дан корректный аргумент про горизонтальные строки исполнителей — эталонный ответ."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Факты верны, вариант проектно-функциональная допустим, но ответ очень сжат без анализа."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, аккуратно, но без пояснения типа структуры."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, чистое оформление, обоснование матрицы не приведено."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, лаконично и ясно, без анализа."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, компактный корректный ответ без пояснений."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все факты верны, очень сжато, без обоснования типа структуры."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, добавлено верное объяснение распределения исполнителей по проектным командам."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все факты верны, лаконично и точно, без анализа."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все факты верны, сжатый корректный ответ без пояснений."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, аккуратное оформление, минимальное обоснование матрицы."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре пункта распознаны верно: Директор, четыре отдела в правильном порядке, три руководителя проектов, матричная структура. Разбор признаков матрицы (двойное подчинение) корректен, галлюцинаций нет; лёгкая избыточность и уточнение «(проектной)» — единственные мелкие придирки."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Все модели верно распознали Директора, 4 отдела, 3 руководителей и матричную структуру; победитель дал корректный факт-сет плюс аргументацию при чистом оформлении."
+}

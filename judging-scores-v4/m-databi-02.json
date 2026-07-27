@@ -1,28 +1,155 @@
 {
-  "task_id": "m-databi-02",
-  "category": "ru_data_logistics",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 9, "comment": "Цифры когорт верные (3/1/2, 2/0/1, 2/1), но итоговая таблица содержит нулевые строки offset=1 и offset=3, которые предложенный SQL без generate_series не вернёт — рассинхрон запроса и результата."},
-    "deepseek-flash": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Корректный SQL и полностью верная когортная таблица; пояснение про offset и DISTINCT точное, оговорка про отсутствие offset 3 и generate_series уместна."},
-    "deepseek-pro": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Безупречный CTE-запрос, размеры когорт берутся из first_orders, таблица полностью совпадает с выводом SQL, плюс развёрнутая интерпретация по каждой когорте."},
-    "35b-a3b": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Верный SQL и таблица, честная оговорка о пропуске нулевых строк и способе их дополнить через generate_series; расшифровка по клиентам корректна."},
-    "27b-v2": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Логика через DISTINCT-CTE корректна, результаты верные; пояснение про перевод в «абсолютные месяцы» точное, разбор по клиентам правильный."},
-    "gemma-4-31b": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Вариант через age() на усечённых датах работает корректно, все числа верны; утверждение о «самом надёжном способе» спорно, но ошибки нет."},
-    "diffusion-gemma": {"correctness": 2, "reasoning": 4, "format": 7, "russian": 6, "comment": "Итоговая таблица неверна: для когорты 2025-01 offset 2 указан 1 вместо 2, для 2025-02 придуман offset 1 = 1 (в марте заказов не было); плюс оборванные слова «верну»."},
-    "gpt-5.5-low": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 9, "comment": "SQL корректен и согласован с таблицей, все проценты верные; объяснение сжатое, но по существу."},
-    "gpt-5.5-medium": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Cross join с generate_series(0,3) даёт полную сетку смещений, таблица со всеми нулями верна и согласована с запросом."},
-    "nemotron-super": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 9, "comment": "Числа верные и пояснения хорошие, но таблица показывает нулевые строки offset=1/3, которых SQL без генерации сетки не выдаст."},
-    "nemotron-omni": {"correctness": 8, "reasoning": 7, "format": 7, "russian": 5, "comment": "Расчёты верные, но комментарии и структура наполовину на английском, есть противоречие (таблица с offset 3 и тут же «offset 3 отсутствует») и ошибка «нет заказов в пятом месяце»."},
-    "kimi-k2.6": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Полный и согласованный запрос с генерацией периодов 0..max_offset, таблица точно соответствует выводу; аккуратный разбор случая с двумя заказами клиента 4 в феврале."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Корректный SQL с полной сеткой offset 0-3; сводная pivot-таблица когорт читаемая и полностью верная."},
-    "gpt-5.6-luna-low": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 9, "comment": "Верный запрос и таблица со всеми смещениями; пояснения корректные, но минимальные."},
-    "gpt-5.6-luna-medium": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 9, "comment": "SQL корректен, дедупликация на уровне orders_by_month, итоговые числа верны; объяснение короткое."},
-    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Аккуратная сетка когорт x offset, верные результаты и хорошее пояснение про границу года (декабрь-январь = 1)."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Корректный запрос с COALESCE и generate_series, верная таблица; полезное замечание о недопустимости деления разницы дат на 30."},
-    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "SQL корректен, фильтр offset 0-3 и zero-fill сделаны правильно, все проценты верные."},
-    "gpt-5.6-terra-low": {"correctness": 10, "reasoning": 7, "format": 9, "russian": 9, "comment": "Верный запрос и итоговая таблица с размерами когорт; пояснение корректное, но лаконичное."},
-    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Корректный SQL и таблица; уместное замечание, что нулевые строки за незавершённые месяцы в реальном отчёте обычно скрывают."}
+ "task_id": "m-databi-02",
+ "category": "ru_data_logistics",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Цифры когорт верные (3/1/2, 2/0/1, 2/1), но итоговая таблица содержит нулевые строки offset=1 и offset=3, которые предложенный SQL без generate_series не вернёт — рассинхрон запроса и результата."
   },
-  "winner": "deepseek-pro",
-  "notes": "Почти все модели дали верный когортный расчёт (3/1/2, 2/0/1, 2/1); лидеры отличаются согласованностью SQL и таблицы и глубиной интерпретации. Провал только у diffusion-gemma — искажённые числа удержания."
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный SQL и полностью верная когортная таблица; пояснение про offset и DISTINCT точное, оговорка про отсутствие offset 3 и generate_series уместна."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Безупречный CTE-запрос, размеры когорт берутся из first_orders, таблица полностью совпадает с выводом SQL, плюс развёрнутая интерпретация по каждой когорте."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный SQL и таблица, честная оговорка о пропуске нулевых строк и способе их дополнить через generate_series; расшифровка по клиентам корректна."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Логика через DISTINCT-CTE корректна, результаты верные; пояснение про перевод в «абсолютные месяцы» точное, разбор по клиентам правильный."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Вариант через age() на усечённых датах работает корректно, все числа верны; утверждение о «самом надёжном способе» спорно, но ошибки нет."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 6,
+   "comment": "Итоговая таблица неверна: для когорты 2025-01 offset 2 указан 1 вместо 2, для 2025-02 придуман offset 1 = 1 (в марте заказов не было); плюс оборванные слова «верну»."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "SQL корректен и согласован с таблицей, все проценты верные; объяснение сжатое, но по существу."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Cross join с generate_series(0,3) даёт полную сетку смещений, таблица со всеми нулями верна и согласована с запросом."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Числа верные и пояснения хорошие, но таблица показывает нулевые строки offset=1/3, которых SQL без генерации сетки не выдаст."
+  },
+  "nemotron-omni": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 5,
+   "comment": "Расчёты верные, но комментарии и структура наполовину на английском, есть противоречие (таблица с offset 3 и тут же «offset 3 отсутствует») и ошибка «нет заказов в пятом месяце»."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный и согласованный запрос с генерацией периодов 0..max_offset, таблица точно соответствует выводу; аккуратный разбор случая с двумя заказами клиента 4 в феврале."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Корректный SQL с полной сеткой offset 0-3; сводная pivot-таблица когорт читаемая и полностью верная."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный запрос и таблица со всеми смещениями; пояснения корректные, но минимальные."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "SQL корректен, дедупликация на уровне orders_by_month, итоговые числа верны; объяснение короткое."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Аккуратная сетка когорт x offset, верные результаты и хорошее пояснение про границу года (декабрь-январь = 1)."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Корректный запрос с COALESCE и generate_series, верная таблица; полезное замечание о недопустимости деления разницы дат на 30."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "SQL корректен, фильтр offset 0-3 и zero-fill сделаны правильно, все проценты верные."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный запрос и итоговая таблица с размерами когорт; пояснение корректное, но лаконичное."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный SQL и таблица; уместное замечание, что нулевые строки за незавершённые месяцы в реальном отчёте обычно скрывают."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "SQL полностью корректен (CTE, DISTINCT по (client_id, month), grid через generate_series), когортная таблица совпадает с эталоном по всем 12 ячейкам. Мелкая неточность в пояснении: age('2025-12-01','2024-01-01') даёт '1 год 11 мес' (=23), а не '11 mons', хотя сама формула EXTRACT(YEAR)*12+EXTRACT(MONTH) верна."
+  }
+ },
+ "winner": "deepseek-pro",
+ "notes": "Почти все модели дали верный когортный расчёт (3/1/2, 2/0/1, 2/1); лидеры отличаются согласованностью SQL и таблицы и глубиной интерпретации. Провал только у diffusion-gemma — искажённые числа удержания."
 }

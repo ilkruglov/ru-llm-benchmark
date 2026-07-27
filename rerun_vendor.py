@@ -36,6 +36,7 @@ TEXT_CFG = {
     "nemotron-super": {"ep": "nemotron-super", "temperature": 1.0, "top_p": 0.95, "thinking": True},  # NVIDIA card: temp 1.0/top_p 0.95 all tasks; reasoning on
     "nemotron-omni":  {"ep": "nemotron-omni",  "temperature": 0.6, "top_p": 0.95, "thinking": True},  # NVIDIA card: temp 0.6/top_p 0.95 reasoning mode
     "kimi-k2.6":      {"ep": "_nd_kimi", "nd_model": "kimi-k2.6", "temperature": 1.0, "top_p": 0.95},  # Moonshot thinking-mode vendor params (1.0/0.95); thinking on by default
+    "minimax-m3":     {"ep": "minimax-m3", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # MiniMax card: temp 1.0 / top_p 0.95 / top_k 40; reasoning on by default
     "35b-a3b-nd":     {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host - isolates host/quantization
 }
 VL_CFG = {
@@ -46,6 +47,7 @@ VL_CFG = {
     "llama-scout": {"ep": "llama-scout", "temperature": 0.6, "top_p": 0.9, "max_tokens": 8192, "img_max_px": 32000000},  # groq caps output at 8192 & rejects >33Mpx images
     "nemotron-omni": {"ep": "nemotron-omni", "temperature": 0.6, "top_p": 0.95, "thinking": True},  # vision-capable; NVIDIA card temp 0.6/top_p 0.95
     "kimi-k2.6":     {"ep": "_nd_kimi", "nd_model": "kimi-k2.6", "temperature": 1.0, "top_p": 0.95},  # Moonshot thinking-mode vendor params; vision-capable, thinking on by default
+    "minimax-m3":    {"ep": "minimax-m3", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # MiniMax card: temp 1.0 / top_p 0.95 / top_k 40; reasoning on by default
     "35b-a3b-nd":    {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host
 }
 

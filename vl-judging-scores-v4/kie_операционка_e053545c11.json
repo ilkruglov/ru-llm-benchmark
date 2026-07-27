@@ -1,19 +1,134 @@
-{"task_id":"kie_операционка_e053545c11","category":"kie","scores":{
-"35b-a3b":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все 4 пункта верны: КНД 1152017, УСН, стр. 001 (передал как 0:0:1), ИНН/КПП не заполнены. Формат минималистичный."},
-"llama-scout":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все ответы верны, но обёртывание чисел в $...$ (LaTeX) выглядит неуместно."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, чёткая структура и уточнение, что поля пустые."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и лаконичны."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты верны, страница передана как 0:0:1, поля пусты."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, аккуратное оформление, стр. 001."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и ясно оформлены."},
-"nemotron-omni":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Ответы верны, но пункт 4 предельно кратко ('Нет') без пояснения."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты верны, стр. 001, поля пустые."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, чёткое оформление."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, корректная передача сути УСН."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, уточнено отсутствие значений в полях."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты верны, полное название декларации, стр. 001."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты верны, аккуратное оформление."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, полное название и стр. 001."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, поля не заполнены."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, чётко и по существу."}
-},"winner":"27b-v2","notes":"Задача простая, почти все модели дали полностью верные ответы; 27b-v2 выделяется чуть более полным и ясным изложением. Галлюцинаций данных ни у кого нет."}
+{
+ "task_id": "kie_операционка_e053545c11",
+ "category": "kie",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 4 пункта верны: КНД 1152017, УСН, стр. 001 (передал как 0:0:1), ИНН/КПП не заполнены. Формат минималистичный."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все ответы верны, но обёртывание чисел в $...$ (LaTeX) выглядит неуместно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, чёткая структура и уточнение, что поля пустые."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и лаконичны."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, страница передана как 0:0:1, поля пусты."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, аккуратное оформление, стр. 001."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и ясно оформлены."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Ответы верны, но пункт 4 предельно кратко ('Нет') без пояснения."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, стр. 001, поля пустые."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, чёткое оформление."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, корректная передача сути УСН."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, уточнено отсутствие значений в полях."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, полное название декларации, стр. 001."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, аккуратное оформление."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, полное название и стр. 001."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, поля не заполнены."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, чётко и по существу."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре пункта отвечены верно: КНД 1152017, декларация по УСН, стр. 001, ИНН/КПП пустые; галлюцинаций нет. Ответ предельно краток, развёрнутого анализа не показано, но по формату задачи это уместно."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Задача простая, почти все модели дали полностью верные ответы; 27b-v2 выделяется чуть более полным и ясным изложением. Галлюцинаций данных ни у кого нет."
+}

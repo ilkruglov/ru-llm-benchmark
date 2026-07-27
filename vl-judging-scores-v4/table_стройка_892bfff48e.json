@@ -1,19 +1,134 @@
-{"task_id":"table_стройка_892bfff48e","category":"table","scores":{
-"llama-scout":{"correctness":1,"reasoning":2,"format":7,"russian":8,"comment":"Прочитана не та строка (Итого локальных смет): 14820446,26 и 1284793,41 — оба значения неверны, сумма тоже."},
-"35b-a3b":{"correctness":6,"reasoning":4,"format":8,"russian":8,"comment":"Оба исходных значения верны, но сумма ошибочна: 18999182,81 вместо 19004182,81."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три значения верны, сумма корректна, ответ хорошо структурирован."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно прочитаны оба значения и правильно вычислена сумма."},
-"diffusion-gemma":{"correctness":0,"reasoning":1,"format":6,"russian":7,"comment":"Выдуманы лишние цифры: 174888126,59 и 15160056,22, сумма 190048182,81 — грубая галлюцинация."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все значения и сумма верны, аккуратное оформление."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и правильная сумма."},
-"nemotron-omni":{"correctness":10,"reasoning":6,"format":4,"russian":6,"comment":"Все три числа верны, но ответ дан голым списком без пояснений."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все значения и сумма верны, отличное оформление."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма, чёткий список."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма, чёткий список."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма, чёткий список."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма, чёткий список."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и сумма."}
-},"winner":"kimi-k2.6","notes":"Большинство моделей верно прочитали 17488126,59 и 1516056,22 и получили 19004182,81; kimi-k2.6 лучший по оформлению. Провалы: llama-scout (не та строка), diffusion-gemma (галлюцинация цифр), 35b-a3b (ошибка в сумме)."}
+{
+ "task_id": "table_стройка_892bfff48e",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 8,
+   "comment": "Прочитана не та строка (Итого локальных смет): 14820446,26 и 1284793,41 — оба значения неверны, сумма тоже."
+  },
+  "35b-a3b": {
+   "correctness": 6,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 8,
+   "comment": "Оба исходных значения верны, но сумма ошибочна: 18999182,81 вместо 19004182,81."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три значения верны, сумма корректна, ответ хорошо структурирован."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно прочитаны оба значения и правильно вычислена сумма."
+  },
+  "diffusion-gemma": {
+   "correctness": 0,
+   "reasoning": 1,
+   "format": 6,
+   "russian": 7,
+   "comment": "Выдуманы лишние цифры: 174888126,59 и 15160056,22, сумма 190048182,81 — грубая галлюцинация."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения и сумма верны, аккуратное оформление."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и правильная сумма."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 4,
+   "russian": 6,
+   "comment": "Все три числа верны, но ответ дан голым списком без пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все значения и сумма верны, отличное оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма, чёткий список."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма, чёткий список."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма, чёткий список."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма, чёткий список."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и сумма."
+  },
+  "minimax-m3": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 8,
+   "comment": "Строительные работы прочитаны неверно (17 488 128,59 вместо 17 488 126,59), из-за чего сумма получилась 19 004 184,81 вместо 19 004 182,81; монтажные работы (1 516 056,22) верны. Хуже того, модель выдумала объяснение, будто верное значение 19004182,81 в шапке — «округление», подкрепив ошибку ложным обоснованием при аккуратном оформлении."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Большинство моделей верно прочитали 17488126,59 и 1516056,22 и получили 19004182,81; kimi-k2.6 лучший по оформлению. Провалы: llama-scout (не та строка), diffusion-gemma (галлюцинация цифр), 35b-a3b (ошибка в сумме)."
+}

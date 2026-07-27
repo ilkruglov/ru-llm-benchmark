@@ -1,19 +1,134 @@
-{"task_id":"diagram_банки_ad23b0dc0a","category":"diagram","scores":{
-"35b-a3b":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Аббревиатура, расшифровка и тип связи (API) верны, но направление стрелок указано неверно — обе якобы к ОПКЦ, тогда как правая идёт от ОПКЦ."},
-"llama-scout":{"correctness":3,"reasoning":3,"format":8,"russian":8,"comment":"Аббревиатура искажена (ОПЦК вместо ОПКЦ), а направление стрелок полностью перевёрнуто (якобы от ОПКЦ к обоим участникам)."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно: ОПКЦ + расшифровка, Информ. обмен (API), левая стрелка к центру, правая от центра."},
-"gemma-4-31b":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Название и API верны, но направление стрелок ошибочно — заявлено от ОПКЦ к обоим участникам."},
-"diffusion-gemma":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Название и API верны, но обе стрелки ошибочно указаны в сторону центра; правая на деле идёт от ОПКЦ."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верно: ОПКЦ, API, левая стрелка к ОПКЦ, правая от ОПКЦ к участникам."},
-"gpt-5.5-medium":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Название и API верны, но направление стрелок ошибочно — обе заявлены к ОПКЦ."},
-"nemotron-omni":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно всё: ОПКЦ, API, слева к центру, центр к правым участникам."},
-"kimi-k2.6":{"correctness":5,"reasoning":4,"format":8,"russian":10,"comment":"Название и API верны, но стрелки объявлены двунаправленными, тогда как они однонаправленные слева направо."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: ОПКЦ, API, слева от участников к ОПКЦ, справа от ОПКЦ к участникам."},
-"gpt-5.6-luna-low":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Название и API верны, но обе стрелки ошибочно указаны к центру."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: ОПКЦ, API, левая стрелка к ОПКЦ, правая от ОПКЦ."},
-"gpt-5.6-sol-low":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Название и API верны, но обе стрелки ошибочно указаны к центру ОПКЦ."},
-"gpt-5.6-sol-medium":{"correctness":5,"reasoning":4,"format":8,"russian":9,"comment":"Название и API верны, но направление обеих стрелок ошибочно — обе к центру."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: ОПКЦ, Информ. обмен (API), слева к ОПКЦ, справа от ОПКЦ к участникам."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: ОПКЦ, API, левая стрелка к ОПКЦ, правая от ОПКЦ к участникам."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: ОПКЦ + расшифровка, API, слева к центру, справа от центра к участникам."}
-},"winner":"27b-v2","notes":"Полностью верные ответы (название, API, направление слева направо) дали 27b-v2, gpt-5.5-low, nemotron-omni и линейка gpt-5.6 luna-high/medium, terra-*; остальные ошиблись в направлении стрелок, а llama-scout ещё и в аббревиатуре."}
+{
+ "task_id": "diagram_банки_ad23b0dc0a",
+ "category": "diagram",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Аббревиатура, расшифровка и тип связи (API) верны, но направление стрелок указано неверно — обе якобы к ОПКЦ, тогда как правая идёт от ОПКЦ."
+  },
+  "llama-scout": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 8,
+   "comment": "Аббревиатура искажена (ОПЦК вместо ОПКЦ), а направление стрелок полностью перевёрнуто (якобы от ОПКЦ к обоим участникам)."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно: ОПКЦ + расшифровка, Информ. обмен (API), левая стрелка к центру, правая от центра."
+  },
+  "gemma-4-31b": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и API верны, но направление стрелок ошибочно — заявлено от ОПКЦ к обоим участникам."
+  },
+  "diffusion-gemma": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и API верны, но обе стрелки ошибочно указаны в сторону центра; правая на деле идёт от ОПКЦ."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно: ОПКЦ, API, левая стрелка к ОПКЦ, правая от ОПКЦ к участникам."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и API верны, но направление стрелок ошибочно — обе заявлены к ОПКЦ."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё: ОПКЦ, API, слева к центру, центр к правым участникам."
+  },
+  "kimi-k2.6": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 10,
+   "comment": "Название и API верны, но стрелки объявлены двунаправленными, тогда как они однонаправленные слева направо."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: ОПКЦ, API, слева от участников к ОПКЦ, справа от ОПКЦ к участникам."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и API верны, но обе стрелки ошибочно указаны к центру."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: ОПКЦ, API, левая стрелка к ОПКЦ, правая от ОПКЦ."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и API верны, но обе стрелки ошибочно указаны к центру ОПКЦ."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и API верны, но направление обеих стрелок ошибочно — обе к центру."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: ОПКЦ, Информ. обмен (API), слева к ОПКЦ, справа от ОПКЦ к участникам."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: ОПКЦ, API, левая стрелка к ОПКЦ, правая от ОПКЦ к участникам."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: ОПКЦ + расшифровка, API, слева к центру, справа от центра к участникам."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью верно: ОПКЦ с расшифровкой, тип связи «Информ. обмен (API)» и корректное направление стрелок слева направо (левые Участники → ОПКЦ → правые Участники). Ясная структура, корректный русский, добавлен уместный вывод о роли центрального узла."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Полностью верные ответы (название, API, направление слева направо) дали 27b-v2, gpt-5.5-low, nemotron-omni и линейка gpt-5.6 luna-high/medium, terra-*; остальные ошиблись в направлении стрелок, а llama-scout ещё и в аббревиатуре."
+}

@@ -1,19 +1,134 @@
-{"task_id":"diagram_нефтегаз_27cb206a34","category":"diagram","scores":{
-"llama-scout":{"correctness":5,"reasoning":5,"format":8,"russian":6,"comment":"Q1 и Q3 верны, но в нижнем ряду две ошибки: «Прочное топливо» вместо дизельного и «Профинит» вместо парафина."},
-"27b-v2":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Q1, Q3 верны; первый продукт назван «Бензиновые прямогонные топлива» вместо «Бытовое и промышленное топливо», плюс выдуманная расшифровка ЭЛОУ."},
-"35b-a3b":{"correctness":7,"reasoning":7,"format":9,"russian":9,"comment":"Всё верно, кроме первого продукта: «Бензиновые и промышленные топлива» вместо «Бытовое и промышленное топливо»."},
-"gemma-4-31b":{"correctness":9,"reasoning":7,"format":9,"russian":8,"comment":"Все три ответа верны, весь нижний ряд перечислен правильно; мелкая опечатка «Сжженные»."},
-"diffusion-gemma":{"correctness":9,"reasoning":7,"format":7,"russian":7,"comment":"Ответы верны, весь ряд корректен, но много опечаток («Котельноельное», обрезанное первое слово)."},
-"gpt-5.5-low":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Q1, Q3 верны; первый продукт ошибочно назван «Битумное и котельное топливо»."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы точны, весь нижний ряд перечислен верно и в правильном порядке."},
-"nemotron-omni":{"correctness":1,"reasoning":1,"format":2,"russian":3,"comment":"Полный провал: «ЗЮУ-АВТ», выдуманные названия, Q2 пропущен, кривая нумерация."},
-"kimi-k2.6":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Q1, Q3 верны; первый продукт назван «Балластное/промышленное топливо» вместо «Бытовое»."},
-"gpt-5.6-luna-high":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Q1, Q3 верны; первый продукт ошибочен — «битумное и строительное топливо»."},
-"gpt-5.6-luna-low":{"correctness":7,"reasoning":5,"format":8,"russian":8,"comment":"Q1, Q3 верны; первый продукт назван «Битумное и вакуумное топливо» вместо «Бытовое»."},
-"gpt-5.6-luna-medium":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Q1, Q3 верны; ошибка только в первом продукте — «битумное и котельное топливо»."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":9,"russian":9,"comment":"Все три ответа верны, нижний ряд перечислен полностью и правильно."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все ответы точны, весь ряд продуктов корректен и в правильном порядке."},
-"gpt-5.6-terra-high":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Q1, Q3 верны; первый продукт ошибочен — «Бензины и реактивное топливо»."},
-"gpt-5.6-terra-low":{"correctness":7,"reasoning":5,"format":7,"russian":8,"comment":"Q1, Q3 верны; первый продукт назван «Бензин и дизельное топливо» вместо «Бытовое»."},
-"gpt-5.6-terra-medium":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Q1, Q3 верны; первый продукт ошибочно — «бензин из вторичных процессов»."}
-},"winner":"gpt-5.5-medium","notes":"Полностью верны gpt-5.5-medium, gpt-5.6-sol-low/medium и gemma-4-31b; большинство GPT-5.6 ошиблись в первом продукте («битумное...» вместо «Бытовое и промышленное топливо»), nemotron-omni — провал."}
+{
+ "task_id": "diagram_нефтегаз_27cb206a34",
+ "category": "diagram",
+ "scores": {
+  "llama-scout": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 6,
+   "comment": "Q1 и Q3 верны, но в нижнем ряду две ошибки: «Прочное топливо» вместо дизельного и «Профинит» вместо парафина."
+  },
+  "27b-v2": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт назван «Бензиновые прямогонные топлива» вместо «Бытовое и промышленное топливо», плюс выдуманная расшифровка ЭЛОУ."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Всё верно, кроме первого продукта: «Бензиновые и промышленные топлива» вместо «Бытовое и промышленное топливо»."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все три ответа верны, весь нижний ряд перечислен правильно; мелкая опечатка «Сжженные»."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 7,
+   "comment": "Ответы верны, весь ряд корректен, но много опечаток («Котельноельное», обрезанное первое слово)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт ошибочно назван «Битумное и котельное топливо»."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все ответы точны, весь нижний ряд перечислен верно и в правильном порядке."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 2,
+   "russian": 3,
+   "comment": "Полный провал: «ЗЮУ-АВТ», выдуманные названия, Q2 пропущен, кривая нумерация."
+  },
+  "kimi-k2.6": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт назван «Балластное/промышленное топливо» вместо «Бытовое»."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт ошибочен — «битумное и строительное топливо»."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 7,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт назван «Битумное и вакуумное топливо» вместо «Бытовое»."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; ошибка только в первом продукте — «битумное и котельное топливо»."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три ответа верны, нижний ряд перечислен полностью и правильно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все ответы точны, весь ряд продуктов корректен и в правильном порядке."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт ошибочен — «Бензины и реактивное топливо»."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 7,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт назван «Бензин и дизельное топливо» вместо «Бытовое»."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Q1, Q3 верны; первый продукт ошибочно — «бензин из вторичных процессов»."
+  },
+  "minimax-m3": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 9,
+   "comment": "Пункты 1 и 3 верны (ЭЛОУ-АВТ и замедленное коксование), но в нижнем ряду два первых продукта выдуманы: вместо «Бытовое и промышленное топливо» и «Сжиженные газы» указаны «Бензол и этилбензольная фракция» и «Сажевое сырьё». Также неверно сказано, что сырая нефть подаётся «сверху» (стрелка идёт слева); оформление и русский хорошие."
+  }
+ },
+ "winner": "gpt-5.5-medium",
+ "notes": "Полностью верны gpt-5.5-medium, gpt-5.6-sol-low/medium и gemma-4-31b; большинство GPT-5.6 ошиблись в первом продукте («битумное...» вместо «Бытовое и промышленное топливо»), nemotron-omni — провал."
+}

@@ -1,1 +1,134 @@
-{"task_id":"ui_операционка_a39761b5c0","category":"ui","scores":{"35b-a3b":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Оба значения верны (113 100 и 440 750), чёткий краткий ответ."},"llama-scout":{"correctness":10,"reasoning":9,"format":6,"russian":8,"comment":"Значения верны, показан ход рассуждения, но избыточное LaTeX-форматирование ($…$) портит читаемость."},"27b-v2":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Оба значения верны, аккуратный краткий список."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верные значения, лаконичный связный ответ одним предложением."},"diffusion-gemma":{"correctness":8,"reasoning":7,"format":9,"russian":10,"comment":"Значения верны, но ошибочные ссылки на ячейки (E4/E8 вместо D4/D8 — столбец Стоимость это D)."},"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Оба значения верны, чётко и кратко."},"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Оба значения верны, чётко и кратко."},"nemotron-omni":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Верные значения, минималистичный ответ без лишнего."},"kimi-k2.6":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Оба значения верны, ясно и аккуратно оформлено."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения, чётко."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения, чётко."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верные значения, кратко."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения, ясный краткий ответ."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения, ясный краткий ответ."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения, аккуратно оформлено."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные значения, аккуратно оформлено."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верные значения, кратко."}},"winner":"35b-a3b","notes":"Почти все модели дали верные значения (113 100 и 440 750); победитель выбран среди безошибочных с чётким форматом. diffusion-gemma ошиблась в ссылках на ячейки, llama-scout ухудшил формат LaTeX."}
+{
+ "task_id": "ui_операционка_a39761b5c0",
+ "category": "ui",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба значения верны (113 100 и 440 750), чёткий краткий ответ."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 6,
+   "russian": 8,
+   "comment": "Значения верны, показан ход рассуждения, но избыточное LaTeX-форматирование ($…$) портит читаемость."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба значения верны, аккуратный краткий список."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные значения, лаконичный связный ответ одним предложением."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Значения верны, но ошибочные ссылки на ячейки (E4/E8 вместо D4/D8 — столбец Стоимость это D)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба значения верны, чётко и кратко."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба значения верны, чётко и кратко."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные значения, минималистичный ответ без лишнего."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба значения верны, ясно и аккуратно оформлено."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения, чётко."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения, чётко."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные значения, кратко."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения, ясный краткий ответ."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения, ясный краткий ответ."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения, аккуратно оформлено."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения, аккуратно оформлено."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные значения, кратко."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Стоимость 113 100 руб. и итог 440 750 руб. определены верно, дополнительно точно указаны количество 78 шт. и цена 1450 руб. Ответ структурирован, русский язык безупречен."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Почти все модели дали верные значения (113 100 и 440 750); победитель выбран среди безошибочных с чётким форматом. diffusion-gemma ошиблась в ссылках на ячейки, llama-scout ухудшил формат LaTeX."
+}

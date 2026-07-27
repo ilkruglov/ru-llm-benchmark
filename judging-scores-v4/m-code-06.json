@@ -1,23 +1,155 @@
-{"task_id":"m-code-06","category":"code","scores":{
-"gpt-oss-120b":{"correctness":1,"reasoning":3,"format":3,"russian":1,"comment":"Regex не компилируется: дублирование named group 'code' в двух ветках — Python re это запрещает. Ответ целиком на английском."},
-"deepseek-flash":{"correctness":1,"reasoning":3,"format":2,"russian":6,"comment":"Тот же фатальный баг — дубль named group 'code', регулярка не компилируется. В тестах сам путается в кейсах ('уберём'). Пояснения на русском."},
-"deepseek-pro":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"14/14 позитивных и 7/7 негативных проходят. Единый code+subscriber, чистая normalize, хорошее пояснение якорей и групп на русском."},
-"35b-a3b":{"correctness":2,"reasoning":5,"format":5,"russian":7,"comment":"Regex матчит, но normalize НЕ вычищает разделители из subscriber — возвращает '+7495123-45-67'. Только 3/14 позитивных, собственные тесты упали бы."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"14/14 и 7/7. Корректный strip разделителей, читаемый VERBOSE с комментариями, заметка про \\b для поиска в тексте."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":8,"russian":8,"comment":"14/14 и 7/7. Обход дубля групп через code/code_alt, доп. lookahead (?!\\+8), понятное объяснение на русском."},
-"diffusion-gemma":{"correctness":2,"reasoning":4,"format":4,"russian":6,"comment":"normalize не удаляет разделители → 3/14 позитивных. В шапке комментария ещё и битый черновой regex. Реализация нерабочая."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"14/14 и 7/7. Верно подмечает ограничение re (группа = непрерывный фрагмент), альтернативы subscriber, чистая normalize."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"14/14 и 7/7. Отмечает ключевое ограничение re, компактный корректный паттерн и normalize."},
-"nemotron-omni":{"correctness":1,"reasoning":3,"format":2,"russian":1,"comment":"Использует branch-reset (?|...) и lookahead-subscriber — синтаксис не поддерживается Python re, регулярка не компилируется. Пояснения на английском."},
-"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Ответ полностью не по теме (посторонний рассказ), кода нет — провал."},
-"kimi-k2.6":{"correctness":2,"reasoning":4,"format":5,"russian":7,"comment":"Паттерн subscriber требует разделители → отвергает +74951234567 и др. Только 5/14 позитивных, нерабочее решение несмотря на хорошие комментарии."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"14/14 и 7/7. Единая группа code через lookahead, отмечает ограничение re, аккуратная normalize на русском."},
-"gpt-5.6-luna-low":{"correctness":2,"reasoning":4,"format":5,"russian":7,"comment":"Ошибочная группировка subscriber (2-2-3 и 4-3 вместо 3-2-2/3-4) → 3/14. Решение нерабочее."},
-"gpt-5.6-luna-medium":{"correctness":6,"reasoning":8,"format":8,"russian":8,"comment":"13/14: падает на обязательном формате 4+3 split '+7 495 123 4567'. Остальное корректно, хорошее пояснение."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Рекомендованное решение проходит 14/14 и 7/7. Глубоко разбирает ограничения re, показывает и нерабочие альтернативы (чуть избыточно, но поучительно)."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"14/14 и 7/7. Чётко объясняет ограничение re, единый code, корректный strip в normalize."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"14/14 и 7/7. Элегантный lookahead даёт единую группу code и балансирует скобки, всё работает."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"14/14 и 7/7. Отмечает ограничение re, единый code+subscriber, корректная normalize."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"14/14 и 7/7. Идиоматичная условная группа (?(open_paren)\\)) даёт ровно одну named group 'code' с балансом скобок — точно по требованию."}
-},
-"winner":"gpt-5.6-terra-medium","notes":"Множество моделей дают полностью рабочее решение (14/14 + 7/7); terra-medium выделяется идиоматичной условной группой (?(open_paren)) с единственной named group 'code' точно по ТЗ. nemotron-super — полный провал (не по теме), gpt-oss-120b/deepseek-flash/nemotron-omni не компилируются, 35b-a3b/diffusion-gemma/kimi/luna-low — нерабочая normalize или неверная группировка."}
+{
+ "task_id": "m-code-06",
+ "category": "code",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 1,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 1,
+   "comment": "Regex не компилируется: дублирование named group 'code' в двух ветках — Python re это запрещает. Ответ целиком на английском."
+  },
+  "deepseek-flash": {
+   "correctness": 1,
+   "reasoning": 3,
+   "format": 2,
+   "russian": 6,
+   "comment": "Тот же фатальный баг — дубль named group 'code', регулярка не компилируется. В тестах сам путается в кейсах ('уберём'). Пояснения на русском."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "14/14 позитивных и 7/7 негативных проходят. Единый code+subscriber, чистая normalize, хорошее пояснение якорей и групп на русском."
+  },
+  "35b-a3b": {
+   "correctness": 2,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 7,
+   "comment": "Regex матчит, но normalize НЕ вычищает разделители из subscriber — возвращает '+7495123-45-67'. Только 3/14 позитивных, собственные тесты упали бы."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "14/14 и 7/7. Корректный strip разделителей, читаемый VERBOSE с комментариями, заметка про \\b для поиска в тексте."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "14/14 и 7/7. Обход дубля групп через code/code_alt, доп. lookahead (?!\\+8), понятное объяснение на русском."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 6,
+   "comment": "normalize не удаляет разделители → 3/14 позитивных. В шапке комментария ещё и битый черновой regex. Реализация нерабочая."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "14/14 и 7/7. Верно подмечает ограничение re (группа = непрерывный фрагмент), альтернативы subscriber, чистая normalize."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "14/14 и 7/7. Отмечает ключевое ограничение re, компактный корректный паттерн и normalize."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 3,
+   "format": 2,
+   "russian": 1,
+   "comment": "Использует branch-reset (?|...) и lookahead-subscriber — синтаксис не поддерживается Python re, регулярка не компилируется. Пояснения на английском."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Ответ полностью не по теме (посторонний рассказ), кода нет — провал."
+  },
+  "kimi-k2.6": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 5,
+   "russian": 7,
+   "comment": "Паттерн subscriber требует разделители → отвергает +74951234567 и др. Только 5/14 позитивных, нерабочее решение несмотря на хорошие комментарии."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "14/14 и 7/7. Единая группа code через lookahead, отмечает ограничение re, аккуратная normalize на русском."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 5,
+   "russian": 7,
+   "comment": "Ошибочная группировка subscriber (2-2-3 и 4-3 вместо 3-2-2/3-4) → 3/14. Решение нерабочее."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "13/14: падает на обязательном формате 4+3 split '+7 495 123 4567'. Остальное корректно, хорошее пояснение."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Рекомендованное решение проходит 14/14 и 7/7. Глубоко разбирает ограничения re, показывает и нерабочие альтернативы (чуть избыточно, но поучительно)."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "14/14 и 7/7. Чётко объясняет ограничение re, единый code, корректный strip в normalize."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "14/14 и 7/7. Элегантный lookahead даёт единую группу code и балансирует скобки, всё работает."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "14/14 и 7/7. Отмечает ограничение re, единый code+subscriber, корректная normalize."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "14/14 и 7/7. Идиоматичная условная группа (?(open_paren)\\)) даёт ровно одну named group 'code' с балансом скобок — точно по требованию."
+  },
+  "minimax-m3": {
+   "correctness": 0,
+   "reasoning": 3,
+   "format": 5,
+   "russian": 9,
+   "comment": "Regex не компилируется вообще: имя группы code определено дважды в альтернативе — re.error 'redefinition of group name'. Дополнительно subscriber захватывает разделители, поэтому normalize вернул бы '+7495123-45-67', а собственные тесты и таблица-сводка ('named groups содержат только цифры') ложны."
+  }
+ },
+ "winner": "gpt-5.6-terra-medium",
+ "notes": "Множество моделей дают полностью рабочее решение (14/14 + 7/7); terra-medium выделяется идиоматичной условной группой (?(open_paren)) с единственной named group 'code' точно по ТЗ. nemotron-super — полный провал (не по теме), gpt-oss-120b/deepseek-flash/nemotron-omni не компилируются, 35b-a3b/diffusion-gemma/kimi/luna-low — нерабочая normalize или неверная группировка."
+}

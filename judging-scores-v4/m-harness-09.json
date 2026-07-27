@@ -1,22 +1,155 @@
-{"task_id":"m-harness-09","category":"harness","scores":{
-"gpt-oss-120b":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Верно выбрал buy-B (новая Svart), один шаг, чистый формат. Рассуждение краткое, но точное."},
-"deepseek-flash":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Различил все три товара, указал цену и план перехода к оформлению. Верный клик buy-B."},
-"deepseek-pro":{"correctness":10,"reasoning":9,"format":6,"russian":10,"comment":"Отличный разбор всех вариантов и цены, но вывод обёрнут в JSON-объект вместо требуемого построчного формата Thought/Action."},
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точно идентифицировал prod-B/buy-B и цену, один шаг. Лишние пустые строки в начале."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Явно исключил Uniform и б/у, верный клик buy-B. Небольшой лишний отступ в начале."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Чётко перебрал три варианта и выбрал нужный, корректный формат и один шаг."},
-"diffusion-gemma":{"correctness":10,"reasoning":6,"format":10,"russian":10,"comment":"Верный клик buy-B, формат корректен, но рассуждение поверхностное без явного исключения б/у/Uniform."},
-"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Кратко, но точно: новая Svart, не Uniform и не б/у, клик buy-B."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Верный выбор prod-B/buy-B, один шаг, лаконичное корректное рассуждение."},
-"nemotron-super":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный клик buy-B, обозначил дальнейшие шаги (корзина, оформление). Лишний отступ в начале."},
-"nemotron-omni":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Идентифицировал prod-B по цене 6490₽, верный клик. Небольшой лишний перевод строки."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Явно исключил Uniform и б/у, выбрал prod-B/buy-B, корректный формат и один шаг."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":10,"russian":10,"comment":"Верный клик buy-B, формат корректен, но рассуждение минимальное без упоминания id/цены."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":10,"russian":10,"comment":"Правильный выбор новой Svart, но очень краткое рассуждение."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Указал цену и исключил Uniform/б/у, верный клик buy-B."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Верно выбрал prod-B, исключил Uniform и б/у, корректный один шаг."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":10,"russian":10,"comment":"Указал цену и признак новизны, верный клик buy-B."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":10,"russian":10,"comment":"Верный клик buy-B, но рассуждение краткое без явного перебора вариантов."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":10,"russian":10,"comment":"Правильный выбор новой Svart, минимальное рассуждение."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":10,"russian":10,"comment":"Верный клик buy-B, корректный формат, рассуждение краткое."}
-},"winner":"deepseek-flash","notes":"Задача одношаговая: все модели верно кликнули buy-B без галлюцинаций. Deepseek-flash лучший по балансу — разобрал все три товара, цену и план, при чистом формате; deepseek-pro сильнее по рассуждению, но нарушил формат JSON-обёрткой."}
+{
+ "task_id": "m-harness-09",
+ "category": "harness",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно выбрал buy-B (новая Svart), один шаг, чистый формат. Рассуждение краткое, но точное."
+  },
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Различил все три товара, указал цену и план перехода к оформлению. Верный клик buy-B."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 6,
+   "russian": 10,
+   "comment": "Отличный разбор всех вариантов и цены, но вывод обёрнут в JSON-объект вместо требуемого построчного формата Thought/Action."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно идентифицировал prod-B/buy-B и цену, один шаг. Лишние пустые строки в начале."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Явно исключил Uniform и б/у, верный клик buy-B. Небольшой лишний отступ в начале."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Чётко перебрал три варианта и выбрал нужный, корректный формат и один шаг."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный клик buy-B, формат корректен, но рассуждение поверхностное без явного исключения б/у/Uniform."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Кратко, но точно: новая Svart, не Uniform и не б/у, клик buy-B."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный выбор prod-B/buy-B, один шаг, лаконичное корректное рассуждение."
+  },
+  "nemotron-super": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный клик buy-B, обозначил дальнейшие шаги (корзина, оформление). Лишний отступ в начале."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Идентифицировал prod-B по цене 6490₽, верный клик. Небольшой лишний перевод строки."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Явно исключил Uniform и б/у, выбрал prod-B/buy-B, корректный формат и один шаг."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный клик buy-B, формат корректен, но рассуждение минимальное без упоминания id/цены."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный выбор новой Svart, но очень краткое рассуждение."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Указал цену и исключил Uniform/б/у, верный клик buy-B."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно выбрал prod-B, исключил Uniform и б/у, корректный один шаг."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Указал цену и признак новизны, верный клик buy-B."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный клик buy-B, но рассуждение краткое без явного перебора вариантов."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный выбор новой Svart, минимальное рассуждение."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный клик buy-B, корректный формат, рассуждение краткое."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный единственный следующий шаг: клик по buy-B с явным исключением Uniform и б/у-варианта, никаких выдуманных Observation и лишних действий. Формат Thought/Action/Action Input строгий, JSON валиден."
+  }
+ },
+ "winner": "deepseek-flash",
+ "notes": "Задача одношаговая: все модели верно кликнули buy-B без галлюцинаций. Deepseek-flash лучший по балансу — разобрал все три товара, цену и план, при чистом формате; deepseek-pro сильнее по рассуждению, но нарушил формат JSON-обёрткой."
+}

@@ -1,19 +1,134 @@
-{"task_id":"drawing_промышленность_2350e9b1be","category":"drawing","scores":{
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все шесть пунктов верны: Корпус, СЧ 25, 1:2, Ø10,5 4 отв., R20/R40, размер для справок. Кратко и точно."},
-"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все ответы верны, добавлены корректные пояснения (серый чугун, 250 МПа). Формулы LaTeX слегка захламляют."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все шесть пунктов верны, с указанием расположения на штампе и правильной трактовкой звёздочки."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны и лаконичны, без ошибок."},
-"diffusion-gemma":{"correctness":8,"reasoning":8,"format":9,"russian":8,"comment":"Все пункты по сути верны, но материал прочитан как «С4 25» вместо «СЧ 25»; есть опечатки («находи», «гласно»)."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все шесть пунктов верны, чёткий формат Ø10,5 4 отв., 140* — для справок."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и корректно оформлены."},
-"nemotron-omni":{"correctness":3,"reasoning":3,"format":6,"russian":7,"comment":"Материал неверно «С4», а трактовка звёздочки выдумана («размер для правой стороны») — грубая ошибка. Остальное верно."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, со ссылкой на пункт 3 техтребований и переводом радиусов в мм."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, кратко и ясно."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все шесть пунктов верны и корректно сформулированы."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, аккуратный русский."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты верны, чёткое оформление."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и лаконичны."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все шесть пунктов верны, но предельно кратко, без пояснений."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и аккуратно оформлены."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все шесть пунктов верны, с указанием единиц измерения."}
-},"winner":"27b-v2","notes":"Большинство моделей дали идеально верные ответы; 27b-v2 и kimi-k2.6 выделяются полнотой пояснений. nemotron-omni выдумал смысл звёздочки и ошибся в материале."}
+{
+ "task_id": "drawing_промышленность_2350e9b1be",
+ "category": "drawing",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все шесть пунктов верны: Корпус, СЧ 25, 1:2, Ø10,5 4 отв., R20/R40, размер для справок. Кратко и точно."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все ответы верны, добавлены корректные пояснения (серый чугун, 250 МПа). Формулы LaTeX слегка захламляют."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все шесть пунктов верны, с указанием расположения на штампе и правильной трактовкой звёздочки."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны и лаконичны, без ошибок."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все пункты по сути верны, но материал прочитан как «С4 25» вместо «СЧ 25»; есть опечатки («находи», «гласно»)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все шесть пунктов верны, чёткий формат Ø10,5 4 отв., 140* — для справок."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и корректно оформлены."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 6,
+   "russian": 7,
+   "comment": "Материал неверно «С4», а трактовка звёздочки выдумана («размер для правой стороны») — грубая ошибка. Остальное верно."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, со ссылкой на пункт 3 техтребований и переводом радиусов в мм."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, кратко и ясно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все шесть пунктов верны и корректно сформулированы."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, аккуратный русский."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, чёткое оформление."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и лаконичны."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все шесть пунктов верны, но предельно кратко, без пояснений."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и аккуратно оформлены."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все шесть пунктов верны, с указанием единиц измерения."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все шесть пунктов совпадают с эталоном: Корпус, СЧ 25 ГОСТ 1412-85, 1:2, Ø10,5 (4 отв.), R20 и R40, справочный размер с корректной ссылкой на п. 3 ТТ. Оформление чёткое, русский безупречный, лишних домыслов нет."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство моделей дали идеально верные ответы; 27b-v2 и kimi-k2.6 выделяются полнотой пояснений. nemotron-omni выдумал смысл звёздочки и ошибся в материале."
+}

@@ -1,22 +1,155 @@
-{"task_id":"m-reason-03","category":"reasoning","scores":{
-"gpt-oss-120b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все части верны: z=3.62, p=0.0003, CI [0.51;1.72] п.п., n≈16550, SRM χ²=0.50, плюс проверка мощности; 6 рисков. Лишние эмодзи."},
-"deepseek-flash":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Точные расчёты по всем пунктам, SRM учтён, 6 рисков с митигациями. Полный и аккуратный разбор."},
-"deepseek-pro":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все вычисления верны, SRM в рекомендации, 4 риска. Чуть меньше глубины, случайно назвал аудиторию B2B."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верные расчёты, SRM разобран, 4 содержательных риска с продуктовыми нюансами. Чётко структурировано."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полный корректный разбор, отдельная секция SRM, 5 рисков с митигациями (включая Simpson's paradox)."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все вычисления верны, SRM учтён, но ровно 3 риска — минимум, без peeking/multiple testing."},
-"diffusion-gemma":{"correctness":6,"reasoning":6,"format":8,"russian":8,"comment":"Пункты 1,2,4 верны, но относительный CI грубо ошибочен ([46%;152%]) и ошибка перенесена в рекомендацию; лишь 3 риска."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все части верны, SRM, 7 рисков включая metric gaming и carryover. Очень тщательно."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Корректные расчёты, SRM, 7 рисков включая instrumentation. Аккуратный и полный ответ."},
-"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Полностью нерелевантный ответ (откровенный текст), задача не решалась вообще."},
-"nemotron-omni":{"correctness":3,"reasoning":3,"format":3,"russian":4,"comment":"Ответ оборван на пункте 3 (относительный CI), отсутствуют пункты 4-6 (n, рекомендация, риски); в таблице японские символы."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все расчёты верны, SRM, executive summary, 4 детальных риска с holdout и алертами. Сильный ответ."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно всё, SRM, важная оговорка про MDE≠доказательство и созревание когорт, 6 рисков."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все части верны (z≈3.60, минимальные округления), SRM, 7 рисков. Полный разбор."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Корректно всё, SRM, оговорка про нижнюю границу CI, 7 рисков включая созревание данных."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Образцовый разбор: все расчёты, log-CI для risk ratio, SRM, оговорка про MDE, 7 рисков включая созревание когорт."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Самый глубокий: точные расчёты, log-risk-ratio CI, SRM, различие MDE и порога значимости, 8 рисков."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все части верны, SRM, оговорка про нижнюю границу CI ниже MDE, 7 рисков включая технические искажения."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Корректно всё, SRM, 6 рисков. Сжато, но полно и аккуратно."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все расчёты верны, отдельная секция SRM, 7 рисков включая созревание окна и carryover."}
-},"winner":"gpt-5.6-sol-medium","notes":"Большинство моделей решили задачу идеально; sol-medium/sol-low выделяются глубиной (log-risk-ratio CI, различие MDE и порога значимости). nemotron-super — полный провал, nemotron-omni оборван, diffusion-gemma ошибся в относительном CI."}
+{
+ "task_id": "m-reason-03",
+ "category": "reasoning",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все части верны: z=3.62, p=0.0003, CI [0.51;1.72] п.п., n≈16550, SRM χ²=0.50, плюс проверка мощности; 6 рисков. Лишние эмодзи."
+  },
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точные расчёты по всем пунктам, SRM учтён, 6 рисков с митигациями. Полный и аккуратный разбор."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все вычисления верны, SRM в рекомендации, 4 риска. Чуть меньше глубины, случайно назвал аудиторию B2B."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верные расчёты, SRM разобран, 4 содержательных риска с продуктовыми нюансами. Чётко структурировано."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный корректный разбор, отдельная секция SRM, 5 рисков с митигациями (включая Simpson's paradox)."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все вычисления верны, SRM учтён, но ровно 3 риска — минимум, без peeking/multiple testing."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Пункты 1,2,4 верны, но относительный CI грубо ошибочен ([46%;152%]) и ошибка перенесена в рекомендацию; лишь 3 риска."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все части верны, SRM, 7 рисков включая metric gaming и carryover. Очень тщательно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректные расчёты, SRM, 7 рисков включая instrumentation. Аккуратный и полный ответ."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Полностью нерелевантный ответ (откровенный текст), задача не решалась вообще."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 4,
+   "comment": "Ответ оборван на пункте 3 (относительный CI), отсутствуют пункты 4-6 (n, рекомендация, риски); в таблице японские символы."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все расчёты верны, SRM, executive summary, 4 детальных риска с holdout и алертами. Сильный ответ."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно всё, SRM, важная оговорка про MDE≠доказательство и созревание когорт, 6 рисков."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все части верны (z≈3.60, минимальные округления), SRM, 7 рисков. Полный разбор."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректно всё, SRM, оговорка про нижнюю границу CI, 7 рисков включая созревание данных."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Образцовый разбор: все расчёты, log-CI для risk ratio, SRM, оговорка про MDE, 7 рисков включая созревание когорт."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Самый глубокий: точные расчёты, log-risk-ratio CI, SRM, различие MDE и порога значимости, 8 рисков."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все части верны, SRM, оговорка про нижнюю границу CI ниже MDE, 7 рисков включая технические искажения."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректно всё, SRM, 6 рисков. Сжато, но полно и аккуратно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все расчёты верны, отдельная секция SRM, 7 рисков включая созревание окна и carryover."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все расчёты верны (uplift +1.12 п.п./+12.4%, z=3.62, p=0.0003, CI [0.51;1.72] п.п. и [5.7%;19.1%], n=16560 против факта ~18100), SRM проверен через хи-квадрат. Отдельный плюс за нюанс, что нижняя граница CI ниже планового MDE, и за guardrail-метрики; мелкая неточность — дисбаланс назван ~0.4% вместо ~0.7%."
+  }
+ },
+ "winner": "gpt-5.6-sol-low",
+ "notes": "Большинство моделей решили задачу идеально; sol-medium/sol-low выделяются глубиной (log-risk-ratio CI, различие MDE и порога значимости). nemotron-super — полный провал, nemotron-omni оборван, diffusion-gemma ошибся в относительном CI."
+}

@@ -1,28 +1,155 @@
 {
-  "task_id": "m-agentic-02",
-  "category": "agentic",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 8, "reasoning": 9, "format": 9, "russian": 9, "comment": "Очень полно, все 6 пунктов, DaData on-prem primary + Yandex/2GIS fallback с корректной обработкой лицензии (короткий TTL). Минус — выдуманная фикс-цена on-prem 250k."},
-    "deepseek-flash": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Сильно, добавлен OSM как креативный доп-fallback, лицензия Яндекса учтена. Расчёт затрат местами путаный, 2GIS отброшен слишком жёстко."},
-    "deepseek-pro": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 10, "comment": "Отличная архитектура: 2GIS вместо Yandex для координат из-за лицензии на хранение, инвалидация ФИАС по еженедельным обновлениям, DR через облачный DaData + timezonefinder. Реалистичный расчёт."},
-    "35b-a3b": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Чётко и компактно: DaData + 2GIS + локальный ФИАС-дамп, bloom-фильтр. Небольшая нестыковка — стоимость DaData считается на полные 18M вопреки цели cache-hit 85-90%."},
-    "27b-v2": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Сильное решение: Yandex fallback с transient-only слоем, ORM-interceptor против записи координат, инвалидация по ФИАС Росреестра, GPS-треки как ground truth. Явно снимает 'потому что российский'."},
-    "gemma-4-31b": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 9, "comment": "Все 6 пунктов покрыты, но легче остальных. Обработка лицензии на кэш координат Яндекса неоднозначна, расчёт грубый, честный cache-hit 30-40%."},
-    "diffusion-gemma": {"correctness": 6, "reasoning": 6, "format": 7, "russian": 7, "comment": "Каскад покрыт, но поверхностно: лицензия обработана вскользь, расчёт затрат внутренне противоречив, заметные опечатки и битые слова (ОТГРАЖЕН, POИ)."},
-    "gpt-5.5-low": {"correctness": 9, "reasoning": 9, "format": 8, "russian": 1, "comment": "Технически превосходный, глубокий ответ, но написан почти полностью на английском (3% кириллицы) — требование ответа на русском фактически провалено."},
-    "gpt-5.5-medium": {"correctness": 9, "reasoning": 9, "format": 8, "russian": 7, "comment": "Очень полно: слоистый кэш, детальная деградация, обширный набор метрик, реалистичный расчёт. Русский сильно перемешан с англоязычными вставками (~68% кириллицы)."},
-    "nemotron-omni": {"correctness": 6, "reasoning": 7, "format": 8, "russian": 7, "comment": "Структурно полно, но DaData занижена в ~3x (38₽/1000 вместо ~108₽) и утверждение о лучшей точности DaData на редких объектах противоречит вводным. Эмодзи, испанское слово, опечатки KLAADR."},
-    "nemotron-super": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 8, "comment": "Корректный расчёт (~108₽/1k, ~1.78M), все 6 пунктов, честное решение лицензии Яндекса (не кэшировать ответы). Отдельные иноязычные вставки (prácticamente, prostor)."},
-    "kimi-k2.6": {"correctness": 7, "reasoning": 8, "format": 8, "russian": 7, "comment": "Хорошая архитектура и валидатор против записи source=yandex, но стоимость DaData занижена в ~10x (0.012₽/req). Утечки CJK-иероглифов и битое слово ПЕРСЕНТОРАЛЬНО."},
-    "gpt-5.6-luna-high": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 9, "comment": "Превосходно: 2GIS для координат, Yandex только transient/shadow, запрет на выдумку ФИАС по неполному совпадению, stale-cache с флагом, сегментированный ground truth, shadow-режим на 3 месяца."},
-    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Все 6 пунктов на высоком уровне, реалистичный расчёт с cache-hit, revalidation по версии ФИАС, shadow-сравнение. Немного меньше глубины и опечатка fiASStatus."},
-    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 9, "comment": "Исключительно тщательно, со ссылками на документацию, локальный слой ФИАС, параллельный fallback, request coalescing, принцип 'адрес принят только при валидном ФИАС'."},
-    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 10, "comment": "Выдающийся разбор: ловит $90k vs ₽90k, даёт формулу стоимости вместо выдуманной цифры, PII в ключах кэша, явные режимы ответа, danger-error как ключевая метрика."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 10, "comment": "Наиболее строгий и фактически точный: лимит DaData 20 RPS/IP, квота Google 50 RPS, tiered $14490, ст.12 152-ФЗ, запрещённые территории, корректирует миф 'Google запрещён в РФ'. Эталон."},
-    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 10, "format": 9, "russian": 9, "comment": "Отлично: локальный индекс ФИАС, анти-PII, метрика false-accept, ссылки на источники, контрактная приёмка p95≤220мс на 600 RPS, запрет автопереключения на Яндекс в аварии."},
-    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 10, "format": 9, "russian": 10, "comment": "Очень сильно: ссылки на условия Google/Yandex, PII-защита кэша, canonical record, запрет выдумывать координаты, ключевой критерий — доля заказов в корректный доставочный объект."},
-    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 10, "comment": "Тщательно и точно: расчёт с кэшем и без, singleflight против stampede, PII-политика, Yandex только как UI-подсказка организаций, метрика dispatch outcome вместо близости координат."}
+ "task_id": "m-agentic-02",
+ "category": "agentic",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень полно, все 6 пунктов, DaData on-prem primary + Yandex/2GIS fallback с корректной обработкой лицензии (короткий TTL). Минус — выдуманная фикс-цена on-prem 250k."
   },
-  "winner": "gpt-5.6-sol-medium",
-  "notes": "Семейство gpt-5.6 доминирует практической исполнимостью: реалистичные оговорки по ценам/контрактам, обработка PII/152-ФЗ, запрет выдумывать ФИАС, shadow-тесты. Победитель sol-medium — самый строгий и фактически точный (лимиты RPS, tiered-прайсинг, конкретные нормы). gpt-5.5-low провален по требованию русского языка (ответ на английском)."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Сильно, добавлен OSM как креативный доп-fallback, лицензия Яндекса учтена. Расчёт затрат местами путаный, 2GIS отброшен слишком жёстко."
+  },
+  "deepseek-pro": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Отличная архитектура: 2GIS вместо Yandex для координат из-за лицензии на хранение, инвалидация ФИАС по еженедельным обновлениям, DR через облачный DaData + timezonefinder. Реалистичный расчёт."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чётко и компактно: DaData + 2GIS + локальный ФИАС-дамп, bloom-фильтр. Небольшая нестыковка — стоимость DaData считается на полные 18M вопреки цели cache-hit 85-90%."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Сильное решение: Yandex fallback с transient-only слоем, ORM-interceptor против записи координат, инвалидация по ФИАС Росреестра, GPS-треки как ground truth. Явно снимает 'потому что российский'."
+  },
+  "gemma-4-31b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все 6 пунктов покрыты, но легче остальных. Обработка лицензии на кэш координат Яндекса неоднозначна, расчёт грубый, честный cache-hit 30-40%."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 7,
+   "comment": "Каскад покрыт, но поверхностно: лицензия обработана вскользь, расчёт затрат внутренне противоречив, заметные опечатки и битые слова (ОТГРАЖЕН, POИ)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 1,
+   "comment": "Технически превосходный, глубокий ответ, но написан почти полностью на английском (3% кириллицы) — требование ответа на русском фактически провалено."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 7,
+   "comment": "Очень полно: слоистый кэш, детальная деградация, обширный набор метрик, реалистичный расчёт. Русский сильно перемешан с англоязычными вставками (~68% кириллицы)."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Структурно полно, но DaData занижена в ~3x (38₽/1000 вместо ~108₽) и утверждение о лучшей точности DaData на редких объектах противоречит вводным. Эмодзи, испанское слово, опечатки KLAADR."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Корректный расчёт (~108₽/1k, ~1.78M), все 6 пунктов, честное решение лицензии Яндекса (не кэшировать ответы). Отдельные иноязычные вставки (prácticamente, prostor)."
+  },
+  "kimi-k2.6": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Хорошая архитектура и валидатор против записи source=yandex, но стоимость DaData занижена в ~10x (0.012₽/req). Утечки CJK-иероглифов и битое слово ПЕРСЕНТОРАЛЬНО."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Превосходно: 2GIS для координат, Yandex только transient/shadow, запрет на выдумку ФИАС по неполному совпадению, stale-cache с флагом, сегментированный ground truth, shadow-режим на 3 месяца."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 6 пунктов на высоком уровне, реалистичный расчёт с cache-hit, revalidation по версии ФИАС, shadow-сравнение. Немного меньше глубины и опечатка fiASStatus."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Исключительно тщательно, со ссылками на документацию, локальный слой ФИАС, параллельный fallback, request coalescing, принцип 'адрес принят только при валидном ФИАС'."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Выдающийся разбор: ловит $90k vs ₽90k, даёт формулу стоимости вместо выдуманной цифры, PII в ключах кэша, явные режимы ответа, danger-error как ключевая метрика."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Наиболее строгий и фактически точный: лимит DaData 20 RPS/IP, квота Google 50 RPS, tiered $14490, ст.12 152-ФЗ, запрещённые территории, корректирует миф 'Google запрещён в РФ'. Эталон."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отлично: локальный индекс ФИАС, анти-PII, метрика false-accept, ссылки на источники, контрактная приёмка p95≤220мс на 600 RPS, запрет автопереключения на Яндекс в аварии."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Очень сильно: ссылки на условия Google/Yandex, PII-защита кэша, canonical record, запрет выдумывать координаты, ключевой критерий — доля заказов в корректный доставочный объект."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Тщательно и точно: расчёт с кэшем и без, singleflight против stampede, PII-политика, Yandex только как UI-подсказка организаций, метрика dispatch outcome вместо близости координат."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полная и практически исполнимая архитектура: DaData primary, Яндекс только real-time для координат (лицензия учтена корректно), 2GIS для POI, конкретные юридические риски Google, кэш/деградация/метрики с shadow-режимом. Снижено за придуманные льготные тарифные ставки (~50 руб/1k DaData), из-за чего бюджет занижен примерно вдвое, и мелкие несостыковки (15% L2 против 30% внешних вызовов, 10-15% против 20% Яндекса, завышенный объём Redis)."
+  }
+ },
+ "winner": "gpt-5.6-sol-low",
+ "notes": "Семейство gpt-5.6 доминирует практической исполнимостью: реалистичные оговорки по ценам/контрактам, обработка PII/152-ФЗ, запрет выдумывать ФИАС, shadow-тесты. Победитель sol-medium — самый строгий и фактически точный (лимиты RPS, tiered-прайсинг, конкретные нормы). gpt-5.5-low провален по требованию русского языка (ответ на английском)."
 }

@@ -1,19 +1,134 @@
-{"task_id":"drawing_промышленность_d99ea2b1c6","category":"drawing","scores":{
-"35b-a3b":{"correctness":9,"reasoning":7,"format":9,"russian":9,"comment":"Все 5 пунктов верны (Пластина, 0,42/1:2, Ø18H9, Ст3пс ГОСТ 14637-89, Ra 12,5). Мелкая неточность: материал приписан графе «Лист»."},
-"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":8,"comment":"Все пункты точны, включая допуск +0,043. Немного мешают латех-артефакты в тексте."},
-"27b-v2":{"correctness":8,"reasoning":8,"format":9,"russian":9,"comment":"Все пункты верны, грамотно разобран материал; но «8 ГОСТ 19903-74» ошибочно назван проволокой (это толщина листа)."},
-"gemma-4-31b":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все 5 пунктов верны и лаконичны, без лишних рассуждений."},
-"diffusion-gemma":{"correctness":7,"reasoning":6,"format":8,"russian":7,"comment":"Пункты 1,2,3,5 верны, но марка искажена «Ста3с»; ГОСТ 14637-89 указан правильно."},
-"gpt-5.5-low":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все пункты верны, включая полную запись материала (лист 8 ГОСТ 19903-74, Ст3пс)."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все 5 пунктов точны, материал приведён полностью."},
-"nemotron-omni":{"correctness":2,"reasoning":2,"format":5,"russian":5,"comment":"Название подменено обозначением СПА.28052020.007, допуск искажён (±0,043), материал выдуман «Пластик» — грубые ошибки."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все пункты точны, с корректным пояснением про H9/+0,043 и толщину листа 8 мм."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все пункты верны с деталями допуска; марка не названа (просто «сталь ГОСТ 14637-89»), но ГОСТ верный."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Все пункты верны; материал дан как «сталь ГОСТ 14637-89» без марки, но корректно."},
-"gpt-5.6-luna-medium":{"correctness":7,"reasoning":6,"format":8,"russian":9,"comment":"Пункты 1-3,5 верны, но материал ошибочно указан «сталь по ГОСТ 19903-74» (это стандарт листа, не марки)."},
-"gpt-5.6-sol-low":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Пункты 1-3,5 верны, но марка стали выдумана «08пс» вместо Ст3пс."},
-"gpt-5.6-sol-medium":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Все пункты верны, материал «сталь 3пс ГОСТ 14637-89» корректен."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все 5 пунктов точны, с верным допуском +0,043 и маркой Ст3пс."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все пункты верны, материал Ст3пс с указанием листа 8."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все 5 пунктов точны и лаконичны, материал Ст3пс ГОСТ 14637-89."}
-},"winner":"gpt-5.6-terra-high","notes":"Множество моделей дали идеальные ответы; terra-high, kimi и llama-scout лидируют полнотой и корректным допуском. Nemotron-omni провалился (выдумал «Пластик» и подменил название)."}
+{
+ "task_id": "drawing_промышленность_d99ea2b1c6",
+ "category": "drawing",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 5 пунктов верны (Пластина, 0,42/1:2, Ø18H9, Ст3пс ГОСТ 14637-89, Ra 12,5). Мелкая неточность: материал приписан графе «Лист»."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все пункты точны, включая допуск +0,043. Немного мешают латех-артефакты в тексте."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пункты верны, грамотно разобран материал; но «8 ГОСТ 19903-74» ошибочно назван проволокой (это толщина листа)."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все 5 пунктов верны и лаконичны, без лишних рассуждений."
+  },
+  "diffusion-gemma": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 7,
+   "comment": "Пункты 1,2,3,5 верны, но марка искажена «Ста3с»; ГОСТ 14637-89 указан правильно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны, включая полную запись материала (лист 8 ГОСТ 19903-74, Ст3пс)."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все 5 пунктов точны, материал приведён полностью."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 5,
+   "russian": 5,
+   "comment": "Название подменено обозначением СПА.28052020.007, допуск искажён (±0,043), материал выдуман «Пластик» — грубые ошибки."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пункты точны, с корректным пояснением про H9/+0,043 и толщину листа 8 мм."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны с деталями допуска; марка не названа (просто «сталь ГОСТ 14637-89»), но ГОСТ верный."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны; материал дан как «сталь ГОСТ 14637-89» без марки, но корректно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Пункты 1-3,5 верны, но материал ошибочно указан «сталь по ГОСТ 19903-74» (это стандарт листа, не марки)."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Пункты 1-3,5 верны, но марка стали выдумана «08пс» вместо Ст3пс."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны, материал «сталь 3пс ГОСТ 14637-89» корректен."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 5 пунктов точны, с верным допуском +0,043 и маркой Ст3пс."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны, материал Ст3пс с указанием листа 8."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все 5 пунктов точны и лаконичны, материал Ст3пс ГОСТ 14637-89."
+  },
+  "minimax-m3": {
+   "correctness": 4,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 8,
+   "comment": "Пункты 1, 2, 3 и 5 верны (Пластина, 0,42 / 1:2, Ø18H9 (+0,043), Ra 12,5), но материал полностью выдуман: вместо «8 ГОСТ 19903-74 / Ст3пс ГОСТ 14637-89» указана «Сталь 45 ГОСТ 1050», которой на чертеже нет. Оформление и русский язык хорошие, однако галлюцинация в графе материала — грубая ошибка распознавания."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Множество моделей дали идеальные ответы; terra-high, kimi и llama-scout лидируют полнотой и корректным допуском. Nemotron-omni провалился (выдумал «Пластик» и подменил название)."
+}

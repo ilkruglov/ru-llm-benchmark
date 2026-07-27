@@ -1,1 +1,134 @@
-{"task_id":"diagram_банки_3ecba180b8","category":"diagram","scores":{"llama-scout":{"correctness":6,"reasoning":7,"format":9,"russian":10,"comment":"Вопросы 1-3 верны, но эндпоинт [20] искажён: '/intech-api/v2/corporate-cards/sbp-approve' вместо /fintech/api/v1/transfer/sbp-approve."},"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре ответа точны, эндпоинт [20] верный. Хорошая структура и русский."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны, включая POST /fintech/api/v1/transfer/sbp-approve. Аккуратное оформление."},"gemma-4-31b":{"correctness":5,"reasoning":6,"format":8,"russian":9,"comment":"Вопросы 1-3 верны, но эндпоинт [20] выдуман: 'https://api/v1/TransferSbp/app-create'."},"diffusion-gemma":{"correctness":8,"reasoning":7,"format":8,"russian":8,"comment":"Ответы в основном верны, но эндпоинт 'sb-approve' вместо sbp-approve и опечатка 'Сбербинес ID'."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, эндпоинт верный. Кратко и по делу."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все четыре ответа точны, эндпоинт [20] верный. Полно и ясно изложено."},"nemotron-omni":{"correctness":6,"reasoning":6,"format":6,"russian":8,"comment":"Пропущен вопрос 4 полностью; в вопросе 3 'Выбрала' вместо 'Вывела'. Ответы 1-3 в целом верны."},"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Ответы верны, но в эндпоинте 'transfers' вместо 'transfer'. В остальном точно."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все ответы точны, эндпоинт верный. Очень лаконично."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре ответа верны, включая эндпоинт [20]. Ясная структура."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, эндпоинт verный. Компактно и корректно."},"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Ответы верны, но 'transfers' вместо 'transfer' в эндпоинте [20]."},"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Ответы верны, кроме 'transfers' вместо 'transfer' в эндпоинте [20]."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, эндпоинт POST /fintech/api/v1/transfer/sbp-approve верный."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре ответа верны, эндпоинт корректен. Кратко и точно."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, включая эндпоинт [20]. Хорошее оформление."}},"winner":"gpt-5.5-medium","notes":"Большинство моделей ответили точно на все 4 вопроса; отличия только в написании эндпоинта [20]. Слабее всех gemma-4-31b (выдуманный эндпоинт) и nemotron-omni (пропущен вопрос 4)."}
+{
+ "task_id": "diagram_банки_3ecba180b8",
+ "category": "diagram",
+ "scores": {
+  "llama-scout": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Вопросы 1-3 верны, но эндпоинт [20] искажён: '/intech-api/v2/corporate-cards/sbp-approve' вместо /fintech/api/v1/transfer/sbp-approve."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре ответа точны, эндпоинт [20] верный. Хорошая структура и русский."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, включая POST /fintech/api/v1/transfer/sbp-approve. Аккуратное оформление."
+  },
+  "gemma-4-31b": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Вопросы 1-3 верны, но эндпоинт [20] выдуман: 'https://api/v1/TransferSbp/app-create'."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Ответы в основном верны, но эндпоинт 'sb-approve' вместо sbp-approve и опечатка 'Сбербинес ID'."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, эндпоинт верный. Кратко и по делу."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре ответа точны, эндпоинт [20] верный. Полно и ясно изложено."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 8,
+   "comment": "Пропущен вопрос 4 полностью; в вопросе 3 'Выбрала' вместо 'Вывела'. Ответы 1-3 в целом верны."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ответы верны, но в эндпоинте 'transfers' вместо 'transfer'. В остальном точно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все ответы точны, эндпоинт верный. Очень лаконично."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре ответа верны, включая эндпоинт [20]. Ясная структура."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, эндпоинт verный. Компактно и корректно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ответы верны, но 'transfers' вместо 'transfer' в эндпоинте [20]."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ответы верны, кроме 'transfers' вместо 'transfer' в эндпоинте [20]."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, эндпоинт POST /fintech/api/v1/transfer/sbp-approve верный."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре ответа верны, эндпоинт корректен. Кратко и точно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, включая эндпоинт [20]. Хорошее оформление."
+  },
+  "minimax-m3": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 7,
+   "comment": "Верно только про 5 этапов и нижний alt-блок; список участников полностью выдуман (5 несуществующих: Мобильное приложение, ВебБрокер, Адаптер вместо Платформа/СберБизнес ID), эндпоинт шага [20] тоже придуман (/fintech/v1/sbp/transfers вместо /fintech/api/v1/transfer/sbp-approve). Оформление аккуратное, но грубые галлюцинации по двум из четырёх вопросов."
+  }
+ },
+ "winner": "gpt-5.5-medium",
+ "notes": "Большинство моделей ответили точно на все 4 вопроса; отличия только в написании эндпоинта [20]. Слабее всех gemma-4-31b (выдуманный эндпоинт) и nemotron-omni (пропущен вопрос 4)."
+}

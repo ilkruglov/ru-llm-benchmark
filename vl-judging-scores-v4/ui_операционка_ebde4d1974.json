@@ -1,1 +1,134 @@
-{"task_id":"ui_операционка_ebde4d1974","category":"ui","scores":{"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три значения верны, включая минус у кассы. Чёткая структура списком."},"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, аккуратный список с пояснением. Отличный русский."},"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три значения корректны, хорошее оформление с заголовком."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чистый структурированный ответ."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три значения верны, ясная структура."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения корректны, аккуратный список."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чёткое оформление."},"nemotron-omni":{"correctness":10,"reasoning":4,"format":4,"russian":6,"comment":"Числа верны и в правильном порядке, но без меток строк и пояснений — минимальный ответ."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, явно указан итог внизу блока."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три значения верны, лаконичный структурированный список."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения корректны, ясное оформление."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чистый список."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения корректны, аккуратное оформление."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чёткий список."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три значения верны, простой понятный формат."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения корректны, выделены жирным."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, аккуратное оформление."}},"winner":"35b-a3b","notes":"Почти все модели дали три верных значения с минусом у кассы; отставание только у nemotron-omni (голые числа без меток). Победитель выбран среди равных за полноту и русский."}
+{
+ "task_id": "ui_операционка_ebde4d1974",
+ "category": "ui",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три значения верны, включая минус у кассы. Чёткая структура списком."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, аккуратный список с пояснением. Отличный русский."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три значения корректны, хорошее оформление с заголовком."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чистый структурированный ответ."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три значения верны, ясная структура."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения корректны, аккуратный список."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чёткое оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 6,
+   "comment": "Числа верны и в правильном порядке, но без меток строк и пояснений — минимальный ответ."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, явно указан итог внизу блока."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три значения верны, лаконичный структурированный список."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения корректны, ясное оформление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чистый список."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения корректны, аккуратное оформление."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чёткий список."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три значения верны, простой понятный формат."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения корректны, выделены жирным."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, аккуратное оформление."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три значения сняты верно, включая отрицательную кассу (-106 440) и итог 289 253 руб. Ответ компактный и точный, но без явной проверки/пояснения (например, красного цвета кассы или сходимости итога)."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели дали три верных значения с минусом у кассы; отставание только у nemotron-omni (голые числа без меток). Победитель выбран среди равных за полноту и русский."
+}

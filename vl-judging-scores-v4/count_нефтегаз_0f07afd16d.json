@@ -1,19 +1,134 @@
-{"task_id":"count_нефтегаз_0f07afd16d","category":"count","scores":{
-"35b-a3b":{"correctness":5,"reasoning":3,"format":6,"russian":9,"comment":"Названо 12 — ниже верного диапазона 14-18, недосчёт. Без разбора по зонам."},
-"llama-scout":{"correctness":5,"reasoning":3,"format":6,"russian":9,"comment":"12 резервуаров — недосчёт относительно эталона (~16), но объект распознан верно."},
-"27b-v2":{"correctness":5,"reasoning":6,"format":8,"russian":9,"comment":"Итог 12 (недосчёт), зато подробный разбор по группам и корректное отделение зданий."},
-"gemma-4-31b":{"correctness":5,"reasoning":5,"format":8,"russian":9,"comment":"12 с разбивкой на кластеры; число ниже диапазона, но структура ответа хорошая."},
-"diffusion-gemma":{"correctness":4,"reasoning":4,"format":7,"russian":9,"comment":"11 резервуаров — заметный недосчёт, разбивка приблизительная."},
-"gpt-5.5-low":{"correctness":4,"reasoning":2,"format":6,"russian":9,"comment":"Голое число 11 — ниже диапазона, без обоснования."},
-"gpt-5.5-medium":{"correctness":4,"reasoning":2,"format":6,"russian":9,"comment":"11 без разбора, недосчёт."},
-"nemotron-omni":{"correctness":5,"reasoning":1,"format":4,"russian":5,"comment":"Только цифра 12; недосчёт, ответ предельно куцый без текста."},
-"kimi-k2.6":{"correctness":3,"reasoning":4,"format":7,"russian":9,"comment":"10 резервуаров — сильнее всех недосчитал, хотя разбивка по зонам присутствует."},
-"gpt-5.6-luna-high":{"correctness":5,"reasoning":2,"format":6,"russian":9,"comment":"12 без обоснования, недосчёт."},
-"gpt-5.6-luna-low":{"correctness":5,"reasoning":2,"format":6,"russian":9,"comment":"12 без разбора, ниже диапазона."},
-"gpt-5.6-luna-medium":{"correctness":5,"reasoning":2,"format":6,"russian":9,"comment":"12 без обоснования, недосчёт."},
-"gpt-5.6-sol-low":{"correctness":5,"reasoning":2,"format":6,"russian":9,"comment":"12 без разбора, ниже верного диапазона."},
-"gpt-5.6-sol-medium":{"correctness":5,"reasoning":2,"format":6,"russian":9,"comment":"12 без обоснования, недосчёт."},
-"gpt-5.6-terra-high":{"correctness":5,"reasoning":2,"format":6,"russian":9,"comment":"12 без разбора, ниже диапазона."},
-"gpt-5.6-terra-low":{"correctness":4,"reasoning":2,"format":6,"russian":9,"comment":"11 без обоснования, заметный недосчёт."},
-"gpt-5.6-terra-medium":{"correctness":4,"reasoning":2,"format":6,"russian":9,"comment":"11 без разбора, недосчёт."}
-},"winner":"27b-v2","notes":"Все модели недосчитали (10-12 против верных ~14-18). Победитель 27b-v2 ближе к диапазону и дал наиболее осмысленный разбор по зонам."}
+{
+ "task_id": "count_нефтегаз_0f07afd16d",
+ "category": "count",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 5,
+   "reasoning": 3,
+   "format": 6,
+   "russian": 9,
+   "comment": "Названо 12 — ниже верного диапазона 14-18, недосчёт. Без разбора по зонам."
+  },
+  "llama-scout": {
+   "correctness": 5,
+   "reasoning": 3,
+   "format": 6,
+   "russian": 9,
+   "comment": "12 резервуаров — недосчёт относительно эталона (~16), но объект распознан верно."
+  },
+  "27b-v2": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Итог 12 (недосчёт), зато подробный разбор по группам и корректное отделение зданий."
+  },
+  "gemma-4-31b": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 9,
+   "comment": "12 с разбивкой на кластеры; число ниже диапазона, но структура ответа хорошая."
+  },
+  "diffusion-gemma": {
+   "correctness": 4,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 9,
+   "comment": "11 резервуаров — заметный недосчёт, разбивка приблизительная."
+  },
+  "gpt-5.5-low": {
+   "correctness": 4,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "Голое число 11 — ниже диапазона, без обоснования."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 4,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "11 без разбора, недосчёт."
+  },
+  "nemotron-omni": {
+   "correctness": 5,
+   "reasoning": 1,
+   "format": 4,
+   "russian": 5,
+   "comment": "Только цифра 12; недосчёт, ответ предельно куцый без текста."
+  },
+  "kimi-k2.6": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 9,
+   "comment": "10 резервуаров — сильнее всех недосчитал, хотя разбивка по зонам присутствует."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 5,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "12 без обоснования, недосчёт."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 5,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "12 без разбора, ниже диапазона."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 5,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "12 без обоснования, недосчёт."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 5,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "12 без разбора, ниже верного диапазона."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 5,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "12 без обоснования, недосчёт."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 5,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "12 без разбора, ниже диапазона."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 4,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "11 без обоснования, заметный недосчёт."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 4,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "11 без разбора, недосчёт."
+  },
+  "minimax-m3": {
+   "correctness": 3,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 9,
+   "comment": "Итоговое число 10 существенно ниже засчитываемого диапазона 14-18: модель верно опознала цилиндрические резервуары и не спутала их со зданиями, но сильно недосчитала (особенно правую/заднюю группу, где указано лишь 4 вместо ~10). Разбивка по зонам и оформление аккуратны, русский язык хороший, однако перечисление пунктов носит формальный характер без реальной привязки к геометрии сцены."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Все модели недосчитали (10-12 против верных ~14-18). Победитель 27b-v2 ближе к диапазону и дал наиболее осмысленный разбор по зонам."
+}

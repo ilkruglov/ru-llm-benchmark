@@ -1,1 +1,134 @@
-{"task_id":"equipment_нефтегаз_84d9dd7dd3","category":"equipment","scores":{"llama-scout":{"correctness":3,"reasoning":3,"format":8,"russian":9,"comment":"Название и техника (вертолёт, катер) верны, но тип определён неверно: 'стационарная платформа с натяжными опорами' вместо самоподъёмной jack-up."},"27b-v2":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Верно определена самоподъёмная (jack-up) установка, назначение, название и оба транспорта; лёгкая неточность про 'плавающее состояние'."},"35b-a3b":{"correctness":3,"reasoning":4,"format":8,"russian":9,"comment":"Название и техника верны, но тип грубо ошибочен: назвал полупогружной и явно противопоставил jack-up."},"gemma-4-31b":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Кратко и точно: СПБУ, назначение, название 'АРКТИЧЕСКАЯ', вертолёт и судно обеспечения."},"diffusion-gemma":{"correctness":8,"reasoning":8,"format":8,"russian":7,"comment":"Тип jack-up, назначение, название и техника верны; есть опечатка 'самоподъемная плаву'."},"gpt-5.5-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верно: jack-up, назначение, название, вертолёт, судно, дополнительно замечена спасательная шлюпка."},"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точный и полный ответ: СПБУ/jack-up, назначение, название, вертолёт, судно и шлюпка."},"nemotron-omni":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Содержимое бессмысленно ('- the other 3'), ответа по существу нет."},"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верно определены jack-up/СПБУ, назначение, название и оба вспомогательных средства."},"gpt-5.6-luna-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точно: самоподъёмная установка, назначение, название, вертолёт и судно снабжения."},"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно определён jack-up, назначение, название и оба транспорта; чуть короче анализ."},"gpt-5.6-luna-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Точный ответ: jack-up, назначение, название, вертолёт и судно/катер."},"gpt-5.6-sol-low":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верно: СПБУ jack-up, назначение, название, вертолёт, судно и шлюпка; 'четыре ноги' — небольшая неточность."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Лучший ответ: корректно трёхопорная jack-up, отличил вышку от опоры, назначение, название и вся техника."},"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно определён jack-up, назначение, название, вертолёт, судно и шлюпка; 'четыре ноги' спорно."},"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Точно: СПБУ jack-up, назначение, название, вертолёт и судно снабжения."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Верно: трёхопорная jack-up, назначение, название, вертолёт и судно/катер."}},"winner":"gpt-5.6-sol-medium","notes":"Большинство GPT-5.6 и gemma/kimi верно определили самоподъёмную jack-up, название и технику; sol-medium точнее всех (3 опоры, отличил вышку). llama-scout и 35b-a3b ошиблись в типе, nemotron-omni пустой."}
+{
+ "task_id": "equipment_нефтегаз_84d9dd7dd3",
+ "category": "equipment",
+ "scores": {
+  "llama-scout": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и техника (вертолёт, катер) верны, но тип определён неверно: 'стационарная платформа с натяжными опорами' вместо самоподъёмной jack-up."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно определена самоподъёмная (jack-up) установка, назначение, название и оба транспорта; лёгкая неточность про 'плавающее состояние'."
+  },
+  "35b-a3b": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Название и техника верны, но тип грубо ошибочен: назвал полупогружной и явно противопоставил jack-up."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Кратко и точно: СПБУ, назначение, название 'АРКТИЧЕСКАЯ', вертолёт и судно обеспечения."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Тип jack-up, назначение, название и техника верны; есть опечатка 'самоподъемная плаву'."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: jack-up, назначение, название, вертолёт, судно, дополнительно замечена спасательная шлюпка."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точный и полный ответ: СПБУ/jack-up, назначение, название, вертолёт, судно и шлюпка."
+  },
+  "nemotron-omni": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Содержимое бессмысленно ('- the other 3'), ответа по существу нет."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно определены jack-up/СПБУ, назначение, название и оба вспомогательных средства."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно: самоподъёмная установка, назначение, название, вертолёт и судно снабжения."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно определён jack-up, назначение, название и оба транспорта; чуть короче анализ."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точный ответ: jack-up, назначение, название, вертолёт и судно/катер."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: СПБУ jack-up, назначение, название, вертолёт, судно и шлюпка; 'четыре ноги' — небольшая неточность."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Лучший ответ: корректно трёхопорная jack-up, отличил вышку от опоры, назначение, название и вся техника."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно определён jack-up, назначение, название, вертолёт, судно и шлюпка; 'четыре ноги' спорно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно: СПБУ jack-up, назначение, название, вертолёт и судно снабжения."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: трёхопорная jack-up, назначение, название, вертолёт и судно/катер."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно определён тип (самоподъёмная/jack-up), назначение, прочитано «АРКТИЧЕСКАЯ», названы вертолёт и судно обеспечения. Минусы: судно описано как «с белым корпусом» (оно оранжево-красное) и добавлена выдумка про «подвешенные на тросах грузы/контейнеры» под вертолётной площадкой."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Большинство GPT-5.6 и gemma/kimi верно определили самоподъёмную jack-up, название и технику; sol-medium точнее всех (3 опоры, отличил вышку). llama-scout и 35b-a3b ошиблись в типе, nemotron-omni пустой."
+}

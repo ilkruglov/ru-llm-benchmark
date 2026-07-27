@@ -1,1 +1,134 @@
-{"task_id":"ocr_дата-аналитика_01b0b23944","category":"ocr","scores":{"35b-a3b":{"correctness":10,"reasoning":8,"format":10,"russian":9,"comment":"Все четыре значения верны, ответ структурирован с ясными подписями и ₽."},"llama-scout":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Значения верны, но числа обёрнуты в math-разметку ($...$), что слегка портит читаемость."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все четыре суммы точны, чистый и понятный список с ₽."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Значения верны, но валюта записана как «р» вместо ₽, оформление минимальное."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все суммы верны, аккуратный нумерованный список с ₽."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Точные значения, ясный структурированный ответ."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Точные значения, ясный структурированный ответ."},"nemotron-omni":{"correctness":10,"reasoning":6,"format":6,"russian":7,"comment":"Значения верны, но ответ предельно сжат, одной строкой, валюта «р»."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все четыре суммы точны, аккуратный список с подписями."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Значения верны, итог записан без пробела (196000), в остальном чисто."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Точные значения, ясный список с ₽."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Точные значения, ясный список с ₽."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все суммы верны, аккуратный список через тире."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все суммы верны, аккуратный список через тире."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":7,"russian":6,"comment":"Числа верны, но даны без подписей статей и без русского текста."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":7,"russian":6,"comment":"Числа верны, но даны без подписей статей и без русского текста."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":7,"russian":6,"comment":"Числа верны, но даны без подписей статей и без русского текста."}},"winner":"35b-a3b","notes":"Все модели верно прочитали все четыре суммы (196 000, 72 000, 50 000, 5 600 ₽); различия только в оформлении. 35b-a3b лидирует за счёт полных подписей и ₽."}
+{
+ "task_id": "ocr_дата-аналитика_01b0b23944",
+ "category": "ocr",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все четыре значения верны, ответ структурирован с ясными подписями и ₽."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Значения верны, но числа обёрнуты в math-разметку ($...$), что слегка портит читаемость."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре суммы точны, чистый и понятный список с ₽."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Значения верны, но валюта записана как «р» вместо ₽, оформление минимальное."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все суммы верны, аккуратный нумерованный список с ₽."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точные значения, ясный структурированный ответ."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точные значения, ясный структурированный ответ."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 7,
+   "comment": "Значения верны, но ответ предельно сжат, одной строкой, валюта «р»."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре суммы точны, аккуратный список с подписями."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Значения верны, итог записан без пробела (196000), в остальном чисто."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точные значения, ясный список с ₽."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точные значения, ясный список с ₽."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все суммы верны, аккуратный список через тире."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все суммы верны, аккуратный список через тире."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 6,
+   "comment": "Числа верны, но даны без подписей статей и без русского текста."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 6,
+   "comment": "Числа верны, но даны без подписей статей и без русского текста."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 6,
+   "comment": "Числа верны, но даны без подписей статей и без русского текста."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все четыре суммы прочитаны верно (196 000, 72 000, 50 000, 5 600 ₽), формат ясный и пронумерованный. Небольшой минус за косноязычную подпись «Заправка (1500 л недели)» вместо «1500 в неделю»."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели верно прочитали все четыре суммы (196 000, 72 000, 50 000, 5 600 ₽); различия только в оформлении. 35b-a3b лидирует за счёт полных подписей и ₽."
+}

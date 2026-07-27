@@ -1,19 +1,134 @@
-{"task_id":"dashboard_маркетинг_ba7342da7d","category":"dashboard","scores":{
-"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все числа и проценты верны, направления корректны, вывод по п.3 правильный. Лишняя LaTeX-разметка чисел не мешает."},
-"35b-a3b":{"correctness":4,"reasoning":7,"format":9,"russian":10,"comment":"Ошибка в направлении Отказов: указан рост на +1,94% вместо снижения −1,94%. Остальные факты верны."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все значения, проценты и направления верны, вывод по максимальной динамике корректен."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Числа и направления точны, правильный вывод о Времени на сайте как благоприятной динамике."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Все факты верны, вывод корректен; мелкая опечатка 'ск изображения' в начале."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью точные значения и направления, верный вывод по п.3."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные и направления корректны, вывод правильный."},
-"nemotron-omni":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все цифры и направления верны, вывод правильный, но ответ сжат без развёрнутого обоснования."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные значения и направления, аккуратная структура, верный вывод."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, направления корректны, вывод по п.3 правильный."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные значения и направления, верный вывод, хорошая структура."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные корректны, вывод правильный."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные значения и направления, корректный вывод по максимальной динамике."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все факты верны, ясная структура, правильный вывод."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Значения и направления точны, вывод по п.3 корректен."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все данные и направления верны, вывод правильный."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точные значения и направления, корректный вывод о положительной динамике."}
-},"winner":"27b-v2","notes":"Почти все модели ответили безупречно; 27b-v2 выделяется идеальной точностью, направлениями и чистой структурой. Единственный провал у 35b-a3b — неверное направление Отказов (рост вместо снижения)."}
+{
+ "task_id": "dashboard_маркетинг_ba7342da7d",
+ "category": "dashboard",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все числа и проценты верны, направления корректны, вывод по п.3 правильный. Лишняя LaTeX-разметка чисел не мешает."
+  },
+  "35b-a3b": {
+   "correctness": 4,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ошибка в направлении Отказов: указан рост на +1,94% вместо снижения −1,94%. Остальные факты верны."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все значения, проценты и направления верны, вывод по максимальной динамике корректен."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Числа и направления точны, правильный вывод о Времени на сайте как благоприятной динамике."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все факты верны, вывод корректен; мелкая опечатка 'ск изображения' в начале."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью точные значения и направления, верный вывод по п.3."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все данные и направления корректны, вывод правильный."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все цифры и направления верны, вывод правильный, но ответ сжат без развёрнутого обоснования."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точные значения и направления, аккуратная структура, верный вывод."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, направления корректны, вывод по п.3 правильный."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точные значения и направления, верный вывод, хорошая структура."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все данные корректны, вывод правильный."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точные значения и направления, корректный вывод по максимальной динамике."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все факты верны, ясная структура, правильный вывод."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Значения и направления точны, вывод по п.3 корректен."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все данные и направления верны, вывод правильный."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точные значения и направления, корректный вывод о положительной динамике."
+  },
+  "minimax-m3": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа считаны верно (1,17; 49 с; 30,05%; 38 308; 37 090) и максимум по модулю определён правильно, но направление динамики Отказов перепутано: указан рост +1,94% вместо снижения −1,94%. Ошибка усилена ложным выводом о «тревожном сигнале» роста отказов, хотя оформление и русский язык отличные."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Почти все модели ответили безупречно; 27b-v2 выделяется идеальной точностью, направлениями и чистой структурой. Единственный провал у 35b-a3b — неверное направление Отказов (рост вместо снижения)."
+}

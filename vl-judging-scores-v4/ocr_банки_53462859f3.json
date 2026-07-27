@@ -1,19 +1,134 @@
-{"task_id":"ocr_банки_53462859f3","category":"ocr","scores":{
-"llama-scout":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Все пять значений верны, но цифры обёрнуты в LaTeX-разметку $...$, что ухудшает читаемость."},
-"35b-a3b":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все реквизиты процитированы точно, чистое структурированное оформление."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все пять значений совпадают с эталоном, аккуратный список."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все значения верны; подписи ИНН/КПП чуть упрощены, но по сути корректно."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все реквизиты верны; лёгкая грамматическая шероховатость ('предоставленного изображения')."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точное совпадение всех пяти значений, ясное оформление."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все реквизиты верны, чистый формат."},
-"nemotron-omni":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения точны, простой но ясный список без выделения."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все пять реквизитов процитированы точно и аккуратно."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все значения верны, чистый список."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точное совпадение всех значений."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все реквизиты верны, аккуратное выделение."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все пять значений совпадают с эталоном."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точное распознавание всех реквизитов."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все значения верны, ясный список."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точное совпадение всех пяти реквизитов."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все реквизиты процитированы верно."}
-},"winner":"gpt-5.5-medium","notes":"Все модели точно прочитали все пять реквизитов; победитель выбран условно среди безупречных ответов, llama-scout чуть ниже по формату из-за LaTeX."}
+{
+ "task_id": "ocr_банки_53462859f3",
+ "category": "ocr",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 10,
+   "comment": "Все пять значений верны, но цифры обёрнуты в LaTeX-разметку $...$, что ухудшает читаемость."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все реквизиты процитированы точно, чистое структурированное оформление."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все пять значений совпадают с эталоном, аккуратный список."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все значения верны; подписи ИНН/КПП чуть упрощены, но по сути корректно."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все реквизиты верны; лёгкая грамматическая шероховатость ('предоставленного изображения')."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точное совпадение всех пяти значений, ясное оформление."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все реквизиты верны, чистый формат."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения точны, простой но ясный список без выделения."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все пять реквизитов процитированы точно и аккуратно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все значения верны, чистый список."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точное совпадение всех значений."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все реквизиты верны, аккуратное выделение."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все пять значений совпадают с эталоном."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точное распознавание всех реквизитов."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все значения верны, ясный список."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точное совпадение всех пяти реквизитов."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все реквизиты процитированы верно."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все пять реквизитов (БИК, банк, корр. счёт, ИНН, КПП) выписаны абсолютно точно, без галлюцинаций по замазанным полям. Аккуратная таблица, безупречный русский; рассуждений как таковых нет, но задача их и не требует."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Все модели точно прочитали все пять реквизитов; победитель выбран условно среди безупречных ответов, llama-scout чуть ниже по формату из-за LaTeX."
+}

@@ -1,1 +1,134 @@
-{"task_id":"scene_банки_20d3126749","category":"scene","scores":{"llama-scout":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Верно: ДОМ.РФ Банк, iMac, растения. Все три ответа корректны."},"35b-a3b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все верно распознано, хорошее пояснение по логотипу Apple."},"27b-v2":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все верно; догадки про драцены/фикусы аккуратно помечены как предположение."},"gemma-4-31b":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Банк, iMac и растения распознаны верно, лаконично."},"diffusion-gemma":{"correctness":3,"reasoning":4,"format":6,"russian":5,"comment":"Выдумал название «ОФП БАНК» вместо ДОМ.РФ — грубая ошибка на главном вопросе; iMac и растения верны, есть опечатки."},"gpt-5.5-low":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Все три ответа верны, кратко и по делу."},"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верно все; хорошая детализация по растениям (папоротники, деревце)."},"nemotron-omni":{"correctness":3,"reasoning":3,"format":7,"russian":8,"comment":"Назвал «Альфа-Банк» вместо ДОМ.РФ — выдумка на ключевом вопросе; iMac и растения верны."},"kimi-k2.6":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"ДОМ.РФ, iMac и растения распознаны верно."},"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Все верно: Банк ДОМ.РФ, iMac, растения."},"gpt-5.6-luna-low":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Все три ответа корректны, лаконично."},"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верно все, с уточнением про папоротники и деревца."},"gpt-5.6-sol-low":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Все верно, кратко."},"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Верно все; детализация растений (пальмы, кустарники)."},"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все три ответа верны и точны."},"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Все верно: Дом.РФ Банк, iMac, растения."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Все верно, максимально лаконично."}},"winner":"gpt-5.5-medium","notes":"Большинство моделей верно прочитали ДОМ.РФ Банк и узнали iMac. diffusion-gemma («ОФП БАНК») и nemotron-omni («Альфа-Банк») провалили главный вопрос выдумкой."}
+{
+ "task_id": "scene_банки_20d3126749",
+ "category": "scene",
+ "scores": {
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно: ДОМ.РФ Банк, iMac, растения. Все три ответа корректны."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно распознано, хорошее пояснение по логотипу Apple."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно; догадки про драцены/фикусы аккуратно помечены как предположение."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Банк, iMac и растения распознаны верно, лаконично."
+  },
+  "diffusion-gemma": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 5,
+   "comment": "Выдумал название «ОФП БАНК» вместо ДОМ.РФ — грубая ошибка на главном вопросе; iMac и растения верны, есть опечатки."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все три ответа верны, кратко и по делу."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно все; хорошая детализация по растениям (папоротники, деревце)."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Назвал «Альфа-Банк» вместо ДОМ.РФ — выдумка на ключевом вопросе; iMac и растения верны."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "ДОМ.РФ, iMac и растения распознаны верно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно: Банк ДОМ.РФ, iMac, растения."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все три ответа корректны, лаконично."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно все, с уточнением про папоротники и деревца."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно, кратко."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно все; детализация растений (пальмы, кустарники)."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все три ответа верны и точны."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно: Дом.РФ Банк, iMac, растения."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно, максимально лаконично."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три ответа по сути верны: iMac и зелёные растения узнаны, банк корректно определён как ДОМ.РФ Банк, но сама вывеска прочитана неточно («ДОМ БАНК», без РФ). Незначительные домыслы о конкретных видах растений (аспидистра, фикус Бенджамина) и «премиум-класс» слегка снижают точность."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Большинство моделей верно прочитали ДОМ.РФ Банк и узнали iMac. diffusion-gemma («ОФП БАНК») и nemotron-omni («Альфа-Банк») провалили главный вопрос выдумкой."
+}

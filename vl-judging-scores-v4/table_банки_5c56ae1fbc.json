@@ -1,19 +1,134 @@
-{"task_id":"table_банки_5c56ae1fbc","category":"table","scores":{
-"llama-scout":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Все три значения (7/15/35) и разница 28 UAH верны; структура хорошая, но избыточные LaTeX-доллары немного вредят читаемости."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно указаны все значения и разница 28 UAH, чёткая структура и хороший русский."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения 7/15/35 и разница 28 UAH, аккуратное оформление и корректный русский."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные и итог 28 UAH правильны, ясная структура и грамотный русский."},
-"diffusion-gemma":{"correctness":10,"reasoning":6,"format":8,"russian":8,"comment":"Итоговые значения и разница 28 UAH верны, но пояснение к вычитанию искажено («вычтем из второго значения второе»)."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Кратко и точно: 7/15/35 и разница 28 UAH, чистая структура."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные значения и разница 28 UAH, лаконичное и ясное оформление."},
-"nemotron-omni":{"correctness":10,"reasoning":3,"format":3,"russian":5,"comment":"Числа 7/15/35 и 28 верны, но ответ голый список без пояснений, структуры и текста на русском."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полный корректный ответ со всеми значениями и разницей 28 UAH, отличная структура и русский."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Значения 7/15/35 и разница 28 UAH верны; кратко, без явного показа вычисления."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный ответ с разницей 28 UAH, чёткое краткое оформление."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения и итог 28 UAH правильны, лаконичная ясная подача."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Корректные значения и разница 28 UAH с показанным вычислением 35−7."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верный ответ с явной формулой 35−7=28 UAH, чистая структура."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Значения 7/15/35 и разница 28,00 UAH верны, аккуратное краткое оформление."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения и итог 28,00 UAH правильны, ясная краткая подача."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верные значения и разница 28,00 UAH; строка значений в одну линию чуть менее наглядна."}
-},"winner":"kimi-k2.6","notes":"Почти все модели дали точный ответ (7/15/35 UAH, разница 28 UAH); слабее лишь nemotron-omni (голый список) и diffusion-gemma (искажённое пояснение)."}
+{
+ "task_id": "table_банки_5c56ae1fbc",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все три значения (7/15/35) и разница 28 UAH верны; структура хорошая, но избыточные LaTeX-доллары немного вредят читаемости."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно указаны все значения и разница 28 UAH, чёткая структура и хороший русский."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения 7/15/35 и разница 28 UAH, аккуратное оформление и корректный русский."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные и итог 28 UAH правильны, ясная структура и грамотный русский."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Итоговые значения и разница 28 UAH верны, но пояснение к вычитанию искажено («вычтем из второго значения второе»)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно: 7/15/35 и разница 28 UAH, чистая структура."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и разница 28 UAH, лаконичное и ясное оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 5,
+   "comment": "Числа 7/15/35 и 28 верны, но ответ голый список без пояснений, структуры и текста на русском."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный корректный ответ со всеми значениями и разницей 28 UAH, отличная структура и русский."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Значения 7/15/35 и разница 28 UAH верны; кратко, без явного показа вычисления."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный ответ с разницей 28 UAH, чёткое краткое оформление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения и итог 28 UAH правильны, лаконичная ясная подача."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректные значения и разница 28 UAH с показанным вычислением 35−7."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный ответ с явной формулой 35−7=28 UAH, чистая структура."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Значения 7/15/35 и разница 28,00 UAH верны, аккуратное краткое оформление."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения и итог 28,00 UAH правильны, ясная краткая подача."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные значения и разница 28,00 UAH; строка значений в одну линию чуть менее наглядна."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три значения (7,00 / 15,00 / 35,00 UAH) считаны верно, разница 28,00 UAH вычислена правильно. Формат таблицей ясный, минус — LaTeX-выражение $$ вместо обычного текста и отсутствие упоминания оговорки про 0,00 UAH."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Почти все модели дали точный ответ (7/15/35 UAH, разница 28 UAH); слабее лишь nemotron-omni (голый список) и diffusion-gemma (искажённое пояснение)."
+}

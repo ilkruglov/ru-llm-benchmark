@@ -1,1 +1,134 @@
-{"task_id":"ocr_операционка_18c9387d94","category":"ocr","scores":{"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все пять реквизитов прочитаны верно, чёткое структурированное оформление."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, аккуратный список с корректной датой в кавычках."},"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все значения верны, дополнительно приведена дословная цитата про отклонение."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все пять значений верны, оформление чуть проще, город без «г.» несущественно."},"diffusion-gemma":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Значения верны, но номер записан латиницей «15-BM» вместо кириллицы «ВМ»."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все реквизиты переданы дословно, включая полную формулировку отклонения."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, чистое и точное оформление."},"nemotron-omni":{"correctness":9,"reasoning":5,"format":4,"russian":8,"comment":"Значения по сути верны, но крайне лаконично без подписей и номер латиницей «15-BM»."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все реквизиты верны и переданы дословно, отличное оформление."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пять значений верны, компактный и ясный список."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, аккуратное оформление."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, ясный список."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, приведён полный заголовок договора."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все пять значений верны, лаконично и точно."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, отклонение передано как «три процента»."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все значения верны, дословные формулировки сохранены."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Значения верны, но номер записан латиницей «15-BM» вместо кириллицы."}},"winner":"gpt-5.5-low","notes":"Почти все модели верно прочитали все пять реквизитов; gpt-5.5-low и kimi-k2.6 передали данные наиболее дословно и полно. Латинское «15-BM» у diffusion-gemma, nemotron-omni и terra-medium снижает точность."}
+{
+ "task_id": "ocr_операционка_18c9387d94",
+ "category": "ocr",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пять реквизитов прочитаны верно, чёткое структурированное оформление."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, аккуратный список с корректной датой в кавычках."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, дополнительно приведена дословная цитата про отклонение."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пять значений верны, оформление чуть проще, город без «г.» несущественно."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Значения верны, но номер записан латиницей «15-BM» вместо кириллицы «ВМ»."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все реквизиты переданы дословно, включая полную формулировку отклонения."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, чистое и точное оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 5,
+   "format": 4,
+   "russian": 8,
+   "comment": "Значения по сути верны, но крайне лаконично без подписей и номер латиницей «15-BM»."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все реквизиты верны и переданы дословно, отличное оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пять значений верны, компактный и ясный список."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, аккуратное оформление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, ясный список."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, приведён полный заголовок договора."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пять значений верны, лаконично и точно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, отклонение передано как «три процента»."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения верны, дословные формулировки сохранены."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Значения верны, но номер записан латиницей «15-BM» вместо кириллицы."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пять реквизитов извлечены верно (15-ВМ, г. Москва, 09 июля 2024, 3 %, 5 банковских дней), галлюцинаций нет. Мелкая небрежность: в п.4 пропущен знак «%» («3 (три процента)»), анализ минимальный — только перечисление значений."
+  }
+ },
+ "winner": "gpt-5.5-low",
+ "notes": "Почти все модели верно прочитали все пять реквизитов; gpt-5.5-low и kimi-k2.6 передали данные наиболее дословно и полно. Латинское «15-BM» у diffusion-gemma, nemotron-omni и terra-medium снижает точность."
+}

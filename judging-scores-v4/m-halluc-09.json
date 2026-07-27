@@ -1,148 +1,155 @@
 {
-  "task_id": "m-halluc-09",
-  "category": "hallucination",
-  "scores": {
-    "gpt-oss-120b": {
-      "correctness": 6,
-      "reasoning": 7,
-      "format": 8,
-      "russian": 8,
-      "comment": "Технически подробно и структурно хорошо, но выдумал/переврал координаторов: Barman (это бэкап-инструмент), Django с using='db2', метод psycopg2 connection.prepare_transaction() — фабрикации в разделе внешних координаторов."
-    },
-    "deepseek-flash": {
-      "correctness": 8,
-      "reasoning": 8,
-      "format": 8,
-      "russian": 9,
-      "comment": "Аккуратно и по делу, xmin/xmax/2PC верны, хорошая таблица-шпаргалка. Мелкая ошибка: PgBouncer как координатор 2PC — он транзакции не координирует."
-    },
-    "deepseek-pro": {
-      "correctness": 8,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Очень глубоко и точно (SSI, wraparound, XA/JTA, Narayana/Atomikos). Небольшие огрехи: выдуманное имя 'pg_prepared_xacts_view' и сомнительная привязка pgBouncer к prepared transactions."
-    },
-    "35b-a3b": {
-      "correctness": 4,
-      "reasoning": 6,
-      "format": 7,
-      "russian": 8,
-      "comment": "В целом связно, но грубая фактическая ошибка прямо в разделе про путаницы: 'PostgreSQL использует 2PL для обеспечения изоляции' — неверно, PG использует MVCC, а не 2PL."
-    },
-    "27b-v2": {
-      "correctness": 7,
-      "reasoning": 7,
-      "format": 8,
-      "russian": 7,
-      "comment": "Хороший нюанс про привязку 2PC к одному инстансу, но в таблице ошибок 2PL описан как 'внутренний протокол блокировок PG' (вводит в заблуждение), 'Kubernetes-операторы с XA' сомнительно, местами русско-английский микс ('across нескольких')."
-    },
-    "gemma-4-31b": {
-      "correctness": 8,
-      "reasoning": 8,
-      "format": 8,
-      "russian": 9,
-      "comment": "Чисто, точно, без выдумок, хорошая граница MVCC/2PC и разумные советы. Чуть меньше глубины по снапшотам/видимости, чем у топовых ответов."
-    },
-    "diffusion-gemma": {
-      "correctness": 8,
-      "reasoning": 7,
-      "format": 8,
-      "russian": 8,
-      "comment": "Короткий, но фактически корректный ответ, ошибок нет (Citus действительно использует 2PC). Меньше деталей и мелкие опечатки ('операцийций')."
-    },
-    "gpt-5.5-low": {
-      "correctness": 9,
-      "reasoning": 8,
-      "format": 9,
-      "russian": 9,
-      "comment": "Точно, чисто, с корректными SQL-примерами и честными оговорками ('MVCC не значит без блокировок'). Без выдумок, хорошая структура доклада."
-    },
-    "gpt-5.5-medium": {
-      "correctness": 9,
-      "reasoning": 8,
-      "format": 9,
-      "russian": 9,
-      "comment": "Полный и аккуратный ответ, верные правила видимости, VACUUM FULL/wraparound, диагностика pg_prepared_xacts. Ошибок фактов нет."
-    },
-    "nemotron-super": {
-      "correctness": 0,
-      "reasoning": 0,
-      "format": 0,
-      "russian": 0,
-      "comment": "Катастрофический сбой: после начала таблицы ответ срывается во внутренний монолог и генерирует посторонний явный сексуальный рассказ, не отвечая на вопрос. Полный провал."
-    },
-    "nemotron-omni": {
-      "correctness": 3,
-      "reasoning": 4,
-      "format": 6,
-      "russian": 7,
-      "comment": "Много ошибок: xmin/xmax названы OID (это XID), Kafka/RabbitMQ как координаторы 2PC и выдуманный 'pg_remote', видимость после COMMIT PREPARED привязана к VACUUM (бессмыслица), противоречия про autovacuum."
-    },
-    "kimi-k2.6": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Отличный точный ответ: cmin/cmax, ctid, SSI, XA/DTC/Tuxedo, freeze, orphaned prepared. Верные подводные камни, чёткая структура доклада, без выдумок."
-    },
-    "gpt-5.6-luna-high": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Глубоко и точно, с ценными оговорками (xmax как MultiXactId, разница xmin строки и xmin снапшота, ограничения prepared). Ссылки на доки корректны."
-    },
-    "gpt-5.6-luna-low": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Чисто, точно, с ограничениями PREPARE TRANSACTION (temp tables, LISTEN/NOTIFY, WITH HOLD) и честными оговорками про блокировки. Без выдумок."
-    },
-    "gpt-5.6-luna-medium": {
-      "correctness": 9,
-      "reasoning": 8,
-      "format": 6,
-      "russian": 8,
-      "comment": "Содержательно точный ответ, но в текст протекли артефакты поиска 'citeturn0search3' и подобные — заметный дефект оформления."
-    },
-    "gpt-5.6-sol-low": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Очень точно и аккуратно: правило видимости, SSI, ограничения prepared, мониторинг возраста, replication slots как удерживатели xmin. Без ошибок."
-    },
-    "gpt-5.6-sol-medium": {
-      "correctness": 10,
-      "reasoning": 10,
-      "format": 9,
-      "russian": 9,
-      "comment": "Самый полный и точный ответ: pg_twophase, gid < 200 байт, X/Open XA, replication slots, риски частичного commit/rollback. Глубоко, честно и без выдумок."
-    },
-    "gpt-5.6-terra-high": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Компактно, но очень точно, с оговорками про xmax и ограничения prepared, хорошая сравнительная таблица. Без фактических ошибок."
-    },
-    "gpt-5.6-terra-low": {
-      "correctness": 9,
-      "reasoning": 8,
-      "format": 9,
-      "russian": 9,
-      "comment": "Аккуратный точный ответ с таблицей сценариев, верные нюансы (serialization_failure, replication slots, ограничения prepared). Без выдумок."
-    },
-    "gpt-5.6-terra-medium": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Точно и полно: VACUUM FULL требует ACCESS EXCLUSIVE, pg_twophase, X/Open XA. Мелкая опечатка в URL доки (sql-vacuum.htm), на факты не влияет."
-    }
+ "task_id": "m-halluc-09",
+ "category": "hallucination",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Технически подробно и структурно хорошо, но выдумал/переврал координаторов: Barman (это бэкап-инструмент), Django с using='db2', метод psycopg2 connection.prepare_transaction() — фабрикации в разделе внешних координаторов."
   },
-  "winner": "gpt-5.6-sol-medium",
-  "notes": "Большинство GPT-моделей и kimi дали технически безупречные ответы; sol-medium — самый полный и точный (pg_twophase, gid<200B, XA, edge-cases). Провал у nemotron-super (сбой в посторонний NSFW-текст) и слабо у nemotron-omni (xmin/xmax как OID, выдуманный pg_remote) и 35b-a3b (ложное 'PG использует 2PL')."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Аккуратно и по делу, xmin/xmax/2PC верны, хорошая таблица-шпаргалка. Мелкая ошибка: PgBouncer как координатор 2PC — он транзакции не координирует."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень глубоко и точно (SSI, wraparound, XA/JTA, Narayana/Atomikos). Небольшие огрехи: выдуманное имя 'pg_prepared_xacts_view' и сомнительная привязка pgBouncer к prepared transactions."
+  },
+  "35b-a3b": {
+   "correctness": 4,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "В целом связно, но грубая фактическая ошибка прямо в разделе про путаницы: 'PostgreSQL использует 2PL для обеспечения изоляции' — неверно, PG использует MVCC, а не 2PL."
+  },
+  "27b-v2": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Хороший нюанс про привязку 2PC к одному инстансу, но в таблице ошибок 2PL описан как 'внутренний протокол блокировок PG' (вводит в заблуждение), 'Kubernetes-операторы с XA' сомнительно, местами русско-английский микс ('across нескольких')."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Чисто, точно, без выдумок, хорошая граница MVCC/2PC и разумные советы. Чуть меньше глубины по снапшотам/видимости, чем у топовых ответов."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Короткий, но фактически корректный ответ, ошибок нет (Citus действительно использует 2PC). Меньше деталей и мелкие опечатки ('операцийций')."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно, чисто, с корректными SQL-примерами и честными оговорками ('MVCC не значит без блокировок'). Без выдумок, хорошая структура доклада."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный и аккуратный ответ, верные правила видимости, VACUUM FULL/wraparound, диагностика pg_prepared_xacts. Ошибок фактов нет."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Катастрофический сбой: после начала таблицы ответ срывается во внутренний монолог и генерирует посторонний явный сексуальный рассказ, не отвечая на вопрос. Полный провал."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Много ошибок: xmin/xmax названы OID (это XID), Kafka/RabbitMQ как координаторы 2PC и выдуманный 'pg_remote', видимость после COMMIT PREPARED привязана к VACUUM (бессмыслица), противоречия про autovacuum."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отличный точный ответ: cmin/cmax, ctid, SSI, XA/DTC/Tuxedo, freeze, orphaned prepared. Верные подводные камни, чёткая структура доклада, без выдумок."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Глубоко и точно, с ценными оговорками (xmax как MultiXactId, разница xmin строки и xmin снапшота, ограничения prepared). Ссылки на доки корректны."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чисто, точно, с ограничениями PREPARE TRANSACTION (temp tables, LISTEN/NOTIFY, WITH HOLD) и честными оговорками про блокировки. Без выдумок."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 8,
+   "comment": "Содержательно точный ответ, но в текст протекли артефакты поиска 'citeturn0search3' и подобные — заметный дефект оформления."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень точно и аккуратно: правило видимости, SSI, ограничения prepared, мониторинг возраста, replication slots как удерживатели xmin. Без ошибок."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Самый полный и точный ответ: pg_twophase, gid < 200 байт, X/Open XA, replication slots, риски частичного commit/rollback. Глубоко, честно и без выдумок."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Компактно, но очень точно, с оговорками про xmax и ограничения prepared, хорошая сравнительная таблица. Без фактических ошибок."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Аккуратный точный ответ с таблицей сценариев, верные нюансы (serialization_failure, replication slots, ограничения prepared). Без выдумок."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно и полно: VACUUM FULL требует ACCESS EXCLUSIVE, pg_twophase, X/Open XA. Мелкая опечатка в URL доки (sql-vacuum.htm), на факты не влияет."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Технически сильный и полный разбор MVCC и 2PC со всеми ключевыми пунктами (xmin/xmax, снапшоты, autovacuum, PREPARE TRANSACTION/max_prepared_transactions, 2PC vs 2PL vs prepared statements). Снижение за мелкие выдумки и неточности: несуществующие \"twophase параметры recovery\", поле снапшота \"xactArray\", завышенное требование wal_level >= replica и противоречие про невидимость prepared-транзакций в SQL при собственном же примере с pg_prepared_xacts."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Большинство GPT-моделей и kimi дали технически безупречные ответы; sol-medium — самый полный и точный (pg_twophase, gid<200B, XA, edge-cases). Провал у nemotron-super (сбой в посторонний NSFW-текст) и слабо у nemotron-omni (xmin/xmax как OID, выдуманный pg_remote) и 35b-a3b (ложное 'PG использует 2PL')."
 }

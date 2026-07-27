@@ -1,1 +1,134 @@
-{"task_id":"scene_банки_94acf07baf","category":"scene","scores":{"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта и стрелки верны, Apple iMac назван. Формат с заголовками аккуратный, но $-обёртки вокруг Apple iMac лишние."},"35b-a3b":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Всё верно, дополнительно обосновал марку по логотипу яблока. Чёткая структура."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верно, упомянул логотип яблока. Ясная и компактная структура."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все пункты и стрелки верны, Apple назван без модели и пояснений — минималистично, но корректно."},"diffusion-gemma":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Верно всё, обосновал iMac дизайном и логотипом. Хорошая структура."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, Apple/iMac указан. Компактно и ясно."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты и стрелки верны, Apple iMac. Аккуратный формат."},"nemotron-omni":{"correctness":10,"reasoning":5,"format":4,"russian":9,"comment":"Данные верны, но ответ предельно сжат в одну строку без структуры и без модели iMac."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верно с символами стрелок и моделью iMac. Чёткая структура."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, Apple iMac. Ясный краткий список."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, Apple iMac. Ясный краткий список."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, Apple iMac. Ясный краткий список."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты и стрелки верны, Apple iMac. Аккуратный формат."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все пункты и стрелки верны, Apple iMac. Аккуратный формат."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, моноблоки Apple iMac. Чёткий список."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, Apple iMac. Чёткий список."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно, Apple iMac. Чёткий список."}},"winner":"35b-a3b","notes":"Все модели прочитали три пункта и направления стрелок верно и правильно назвали Apple iMac. Победитель обосновал марку по логотипу и дал безупречную структуру; nemotron-omni слабее всех из-за предельно сжатого формата."}
+{
+ "task_id": "scene_банки_94acf07baf",
+ "category": "scene",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта и стрелки верны, Apple iMac назван. Формат с заголовками аккуратный, но $-обёртки вокруг Apple iMac лишние."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, дополнительно обосновал марку по логотипу яблока. Чёткая структура."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно, упомянул логотип яблока. Ясная и компактная структура."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все пункты и стрелки верны, Apple назван без модели и пояснений — минималистично, но корректно."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё, обосновал iMac дизайном и логотипом. Хорошая структура."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, Apple/iMac указан. Компактно и ясно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты и стрелки верны, Apple iMac. Аккуратный формат."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 4,
+   "russian": 9,
+   "comment": "Данные верны, но ответ предельно сжат в одну строку без структуры и без модели iMac."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно с символами стрелок и моделью iMac. Чёткая структура."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, Apple iMac. Ясный краткий список."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, Apple iMac. Ясный краткий список."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, Apple iMac. Ясный краткий список."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты и стрелки верны, Apple iMac. Аккуратный формат."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты и стрелки верны, Apple iMac. Аккуратный формат."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, моноблоки Apple iMac. Чёткий список."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, Apple iMac. Чёткий список."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, Apple iMac. Чёткий список."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта таблички прочитаны верно и направления стрелок сопоставлены точно (вправо/вверх/влево), компьютеры корректно определены как моноблоки Apple iMac. Ответ структурирован, обоснование опознания марки по логотипу на задней крышке соответствует картинке."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели прочитали три пункта и направления стрелок верно и правильно назвали Apple iMac. Победитель обосновал марку по логотипу и дал безупречную структуру; nemotron-omni слабее всех из-за предельно сжатого формата."
+}

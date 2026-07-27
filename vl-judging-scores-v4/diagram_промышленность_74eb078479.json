@@ -1,1 +1,134 @@
-{"task_id":"diagram_промышленность_74eb078479","category":"diagram","scores":{"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно: молоковоз с «Молоко», «На топление» и «На розлив», позиции 3 и 4. Чёткая структура."},"35b-a3b":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Всё главное верно, но назвал ТС «грузовик-самосвал», что неточно; расшифровки 3/4 спорны, но их проверять не требуется."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":8,"comment":"Все три ответа верны; мелкая опечатка «молочовоз»."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Кратко и точно: молоковоз с «МОЛОКО», «На топление»/«На розлив», позиции 3 и 4."},"diffusion-gemma":{"correctness":10,"reasoning":7,"format":9,"russian":7,"comment":"Ответы верны, но опечатка «топленогоного» портит русский."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Полностью верно и аккуратно оформлено."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Полностью верно, чистое оформление."},"nemotron-omni":{"correctness":10,"reasoning":7,"format":9,"russian":9,"comment":"Все три ответа верны, изложение простое и корректное."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно всё; добавил разумные предположения о типах аппаратов."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Кратко и точно по всем трём пунктам."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верно и лаконично."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верно и лаконично."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Полностью верно, аккуратная структура."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все ответы верны, ясно изложено."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":9,"russian":8,"comment":"Ответы верны, но «На разлив» вместо «На розлив» — отступление от надписи."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":9,"russian":8,"comment":"Верно, но «На разлив» вместо «На розлив»; отметил и «Смесь для топленого молока»."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все три ответа верны, корректная орфография надписей."}},"winner":"gpt-5.5-low","notes":"Практически все модели дали правильные ответы по всем трём пунктам; различия минимальны. Лидеры — gpt-5.5 и gpt-5.6-sol за точность и оформление."}
+{
+ "task_id": "diagram_промышленность_74eb078479",
+ "category": "diagram",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: молоковоз с «Молоко», «На топление» и «На розлив», позиции 3 и 4. Чёткая структура."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Всё главное верно, но назвал ТС «грузовик-самосвал», что неточно; расшифровки 3/4 спорны, но их проверять не требуется."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все три ответа верны; мелкая опечатка «молочовоз»."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно: молоковоз с «МОЛОКО», «На топление»/«На розлив», позиции 3 и 4."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 7,
+   "comment": "Ответы верны, но опечатка «топленогоного» портит русский."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью верно и аккуратно оформлено."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью верно, чистое оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три ответа верны, изложение простое и корректное."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё; добавил разумные предположения о типах аппаратов."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно по всем трём пунктам."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и лаконично."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и лаконично."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью верно, аккуратная структура."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны, ясно изложено."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 8,
+   "comment": "Ответы верны, но «На разлив» вместо «На розлив» — отступление от надписи."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 8,
+   "comment": "Верно, но «На разлив» вместо «На розлив»; отметил и «Смесь для топленого молока»."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три ответа верны, корректная орфография надписей."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все три ключевых ответа верны: молоковоз с надписью «МОЛОКО», направления «На розлив» и «На топление», повторяющиеся позиции 3 и 4. Снижено за перевранные цитаты надписей («Сырьё для топления молока», «Сухое молоко для производства пастеризованного молока» вместо «Смесь для топлёного молока» и «Сухое молоко для белкового молока») и неточную выдумку про патрубки «б»/«в» у поз.1."
+  }
+ },
+ "winner": "gpt-5.5-low",
+ "notes": "Практически все модели дали правильные ответы по всем трём пунктам; различия минимальны. Лидеры — gpt-5.5 и gpt-5.6-sol за точность и оформление."
+}

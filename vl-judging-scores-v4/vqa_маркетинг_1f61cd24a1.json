@@ -1,19 +1,134 @@
-{"task_id":"vqa_маркетинг_1f61cd24a1","category":"vqa","scores":{
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Обе цены верны (125 и 140), зёрна дороже, разница 15; чёткая структура с расчётом."},
-"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Всё верно, формула и вывод; латинские кавычки вместо ёлочек — мелочь."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точные цены и разница, аккуратная структура с указанием постеров."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные цены, зёрна дороже на 15 ₽, компактно и ясно."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные прочитаны верно, расчёт и вывод корректны."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верно, но без явного указания, что зёрна дороже словами — вывод из чисел."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точный и структурированный ответ, все три величины на месте."},
-"nemotron-omni":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Данные верны, но опечатки «Кофеинные» и латинская e в «постерe»."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все цены и разница верны, чёткий вывод о том, что зёрна дороже."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Верно и лаконично, но однострочный формат без структуры."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Правильные цены и разница, минимальное оформление."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Верно, лаконично, без структуры."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верно, есть выделение чисел, компактно."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Правильный ответ, аккуратное выделение разницы."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Верно, но одной строкой без структуры."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все данные верны, есть разбивка на строки."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верно, зёрна дороже на 15 ₽, компактный формат."}
-},"winner":"35b-a3b","notes":"Все модели прочитали 125 ₽ и 140 ₽ верно, определили зёрна как более дорогие и посчитали разницу 15 ₽; различия лишь в детализации и структуре."}
+{
+ "task_id": "vqa_маркетинг_1f61cd24a1",
+ "category": "vqa",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Обе цены верны (125 и 140), зёрна дороже, разница 15; чёткая структура с расчётом."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Всё верно, формула и вывод; латинские кавычки вместо ёлочек — мелочь."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точные цены и разница, аккуратная структура с указанием постеров."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные цены, зёрна дороже на 15 ₽, компактно и ясно."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные прочитаны верно, расчёт и вывод корректны."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, но без явного указания, что зёрна дороже словами — вывод из чисел."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный и структурированный ответ, все три величины на месте."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Данные верны, но опечатки «Кофеинные» и латинская e в «постерe»."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все цены и разница верны, чёткий вывод о том, что зёрна дороже."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно и лаконично, но однострочный формат без структуры."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 10,
+   "comment": "Правильные цены и разница, минимальное оформление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, лаконично, без структуры."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, есть выделение чисел, компактно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Правильный ответ, аккуратное выделение разницы."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, но одной строкой без структуры."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все данные верны, есть разбивка на строки."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, зёрна дороже на 15 ₽, компактный формат."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Обе цены прочитаны верно (125 ₽ и 140 ₽), правильно определено, что зёрна дороже, разница 15 ₽ посчитана корректно. Ответ структурирован, добавлено уместное примечание о разных единицах измерения; форматирование слегка избыточно для простого вопроса."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели прочитали 125 ₽ и 140 ₽ верно, определили зёрна как более дорогие и посчитали разницу 15 ₽; различия лишь в детализации и структуре."
+}

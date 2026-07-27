@@ -1,19 +1,134 @@
-{"task_id":"diagram_банки_a5b9b7adcc","category":"diagram","scores":{
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно: 4 — Банк покупателя→СБП, 5 — СБП→Банк продавца, общая подпись «Перевод денежных средств». Направления указаны точно."},
-"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Обе пары блоков и направления верны, подпись общая верна, есть итоговое обобщение."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Пары, направления и общая подпись указаны корректно и подробно."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные пары, направления стрелками и одинаковая подпись."},
-"diffusion-gemma":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Пары блоков и подпись верны, но направления стрелок не указаны."},
-"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Направления и общая подпись верны, изложено кратко."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Чётко и верно: обе пары с направлением и общая подпись."},
-"nemotron-omni":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верные блоки, направления и общая подпись, единым абзацем."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Обе стрелки, направления и одинаковая подпись указаны верно."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верные направления и общая подпись, лаконично."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Направления и общая подпись верны."},
-"gpt-5.6-luna-medium":{"correctness":5,"reasoning":4,"format":8,"russian":10,"comment":"Шаг 4 указан неверно (СБП→банк покупателя вместо Банк покупателя→СБП); шаг 5 и подпись верны."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верные направления и общая подпись."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Обе пары с направлением и общая подпись указаны верно."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"Верно, но предельно кратко, без обобщения."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Направления и общая подпись верны, лаконично."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Верные направления и общая подпись, кратко."}
-},"winner":"gpt-5.5-medium","notes":"Почти все модели ответили верно (4: Банк покупателя→СБП, 5: СБП→Банк продавца, общая подпись «Перевод денежных средств»). Исключение — luna-medium с ошибкой в шаге 4."}
+{
+ "task_id": "diagram_банки_a5b9b7adcc",
+ "category": "diagram",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: 4 — Банк покупателя→СБП, 5 — СБП→Банк продавца, общая подпись «Перевод денежных средств». Направления указаны точно."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Обе пары блоков и направления верны, подпись общая верна, есть итоговое обобщение."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Пары, направления и общая подпись указаны корректно и подробно."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные пары, направления стрелками и одинаковая подпись."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Пары блоков и подпись верны, но направления стрелок не указаны."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Направления и общая подпись верны, изложено кратко."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Чётко и верно: обе пары с направлением и общая подпись."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные блоки, направления и общая подпись, единым абзацем."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Обе стрелки, направления и одинаковая подпись указаны верно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные направления и общая подпись, лаконично."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Направления и общая подпись верны."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 10,
+   "comment": "Шаг 4 указан неверно (СБП→банк покупателя вместо Банк покупателя→СБП); шаг 5 и подпись верны."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные направления и общая подпись."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Обе пары с направлением и общая подпись указаны верно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, но предельно кратко, без обобщения."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Направления и общая подпись верны, лаконично."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верные направления и общая подпись, кратко."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба соединения и направления указаны верно (Банк покупателя→СБП, СБП→Банк продавца), общая подпись «Перевод денежных средств» названа точно. Ответ предельно краткий, без разбора шагов, поэтому видимого анализа мало."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели ответили верно (4: Банк покупателя→СБП, 5: СБП→Банк продавца, общая подпись «Перевод денежных средств»). Исключение — luna-medium с ошибкой в шаге 4."
+}

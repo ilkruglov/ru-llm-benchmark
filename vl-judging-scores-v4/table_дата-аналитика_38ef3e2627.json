@@ -1,1 +1,134 @@
-{"task_id":"table_дата-аналитика_38ef3e2627","category":"table","scores":{"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все три ответа верны: Шолохов 46 530 000, разница 172 000, общий итог 103 138 000 / 36. Хорошее структурирование."},"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все ответы точны, есть уместные пояснения и сравнения. Ясный русский."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все значения верны, указаны номера строк и расчёты. Отличная подача."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Правильные ответы с показанным вычитанием. Компактно и грамотно."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все ответы верны с расчётами; мелкая опечатка 'у у'. Русский хороший."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точные ответы, показан расчёт разницы. Чётко и структурированно."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три ответа верны и лаконичны, без явного расчёта, но корректно."},"nemotron-omni":{"correctness":3,"reasoning":2,"format":6,"russian":6,"comment":"Ошибка во втором ответе: 181 000 вместо 172 000; остальное верно, но очень сжато и без пояснений."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все значения точны, с пояснениями и расчётом. Отличное оформление."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и лаконичны. Ясный русский."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Правильные ответы, компактно, без расчёта. Грамотно."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точные ответы, лаконичное оформление. Хороший русский."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три ответа верны, чётко выделены значения. Грамотно."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точные ответы, ясная структура. Русский без ошибок."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные ответы, лаконично и понятно. Грамотный русский."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, общий итог разбит по столбцам. Чётко."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точные ответы, ясное структурирование. Русский без ошибок."}},"winner":"27b-v2","notes":"Почти все модели дали полностью верные ответы; 27b-v2 выделяется точностью с указанием строк и расчётов. Nemotron-omni ошибся в разнице (181 000 вместо 172 000)."}
+{
+ "task_id": "table_дата-аналитика_38ef3e2627",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три ответа верны: Шолохов 46 530 000, разница 172 000, общий итог 103 138 000 / 36. Хорошее структурирование."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, есть уместные пояснения и сравнения. Ясный русский."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, указаны номера строк и расчёты. Отличная подача."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильные ответы с показанным вычитанием. Компактно и грамотно."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все ответы верны с расчётами; мелкая опечатка 'у у'. Русский хороший."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точные ответы, показан расчёт разницы. Чётко и структурированно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три ответа верны и лаконичны, без явного расчёта, но корректно."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 6,
+   "comment": "Ошибка во втором ответе: 181 000 вместо 172 000; остальное верно, но очень сжато и без пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения точны, с пояснениями и расчётом. Отличное оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и лаконичны. Ясный русский."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильные ответы, компактно, без расчёта. Грамотно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точные ответы, лаконичное оформление. Хороший русский."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три ответа верны, чётко выделены значения. Грамотно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точные ответы, ясная структура. Русский без ошибок."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные ответы, лаконично и понятно. Грамотный русский."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, общий итог разбит по столбцам. Чётко."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точные ответы, ясное структурирование. Русский без ошибок."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три ответа полностью верны: Шолохов Г. 46 530 000 руб., разница 172 000 руб., общий итог 103 138 000 / 36. Чёткая структура с таблицей и явным сравнением, безупречный русский."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Почти все модели дали полностью верные ответы; 27b-v2 выделяется точностью с указанием строк и расчётов. Nemotron-omni ошибся в разнице (181 000 вместо 172 000)."
+}

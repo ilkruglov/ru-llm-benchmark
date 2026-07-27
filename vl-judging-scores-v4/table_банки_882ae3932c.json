@@ -1,19 +1,134 @@
-{"task_id":"table_банки_882ae3932c","category":"table","scores":{
-"llama-scout":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три ответа верны (3745.11, стр.3 06.04.2014, 20000.00), с проверкой сложения. Чёткая структура."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все значения точны, приведена проверка суммы. Ясный ответ."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верно, с проверкой 16254.89+3745.11=20000.00."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три пункта верны, проверка приведена. Хороший русский."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":7,"comment":"Данные верны и проверка есть, но опечатка «отдата» портит русский."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные значения и проверка, лаконично и ясно."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, проверка приведена. Аккуратный формат."},
-"nemotron-omni":{"correctness":10,"reasoning":7,"format":6,"russian":8,"comment":"Все значения верны и проверка есть, но крайне телеграфно, без пояснений."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно, аккуратно указано соответствие запятой и точки в форматах чисел."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":7,"russian":9,"comment":"Все три значения верны с проверкой, но очень сжато, без подписей столбцов."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":7,"russian":9,"comment":"Верно и с проверкой, но лаконично."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":7,"russian":9,"comment":"Все ответы точны с проверкой, минимальный формат."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно, подписаны столбцы, приведена проверка."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта точны с проверкой суммы. Ясная структура."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":7,"russian":9,"comment":"Верные значения и проверка, но очень сжато."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":7,"russian":9,"comment":"Все ответы верны с проверкой, лаконичный формат."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно, подписаны столбцы и приведена проверка. Хорошая структура."}
-},"winner":"llama-scout","notes":"Все модели дали точные ответы; победитель — llama-scout за максимально полное и структурированное изложение с проверкой."}
+{
+ "task_id": "table_банки_882ae3932c",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три ответа верны (3745.11, стр.3 06.04.2014, 20000.00), с проверкой сложения. Чёткая структура."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения точны, приведена проверка суммы. Ясный ответ."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верно, с проверкой 16254.89+3745.11=20000.00."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны, проверка приведена. Хороший русский."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 7,
+   "comment": "Данные верны и проверка есть, но опечатка «отдата» портит русский."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные значения и проверка, лаконично и ясно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, проверка приведена. Аккуратный формат."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 6,
+   "russian": 8,
+   "comment": "Все значения верны и проверка есть, но крайне телеграфно, без пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно, аккуратно указано соответствие запятой и точки в форматах чисел."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все три значения верны с проверкой, но очень сжато, без подписей столбцов."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верно и с проверкой, но лаконично."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все ответы точны с проверкой, минимальный формат."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно, подписаны столбцы, приведена проверка."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта точны с проверкой суммы. Ясная структура."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верные значения и проверка, но очень сжато."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все ответы верны с проверкой, лаконичный формат."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно, подписаны столбцы и приведена проверка. Хорошая структура."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три ответа полностью совпадают с данными таблицы (3745.11; строка № 3 от 06.04.2014; ИТОГО 20000.00), проверка суммы выполнена корректно. Оформление ясное, русский язык безупречный; мелкий минус за избыточную жирную разметку и эмодзи-галочку."
+  }
+ },
+ "winner": "llama-scout",
+ "notes": "Все модели дали точные ответы; победитель — llama-scout за максимально полное и структурированное изложение с проверкой."
+}

@@ -1,1 +1,134 @@
-{"task_id":"ocr_общее_8175606769","category":"ocr","scores":{"27b-v2":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Заголовок прочитан точно: «ЗНАКИ ДОРОЖНОГО ДВИЖЕНИЯ», без лишнего."},"llama-scout":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Верный текст с аккуратным оформлением и подписью-заголовком."},"35b-a3b":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точное воспроизведение всех трёх слов заголовка."},"gemma-4-31b":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Чистый и точный ответ без искажений."},"diffusion-gemma":{"correctness":6,"reasoning":4,"format":7,"russian":9,"comment":"Текст верный, но выдуман цвет и фон: буквы чёрные на жёлтой полосе, а не красные на белом."},"gpt-5.5-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без лишнего."},"gpt-5.5-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без лишнего."},"nemotron-omni":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Верно прочитаны все три слова."},"kimi-k2.6":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точное воспроизведение заголовка."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Точный заголовок без ошибок."}},"winner":"llama-scout","notes":"Почти все модели верно прочитали «ЗНАКИ ДОРОЖНОГО ДВИЖЕНИЯ»; llama-scout выделяется аккуратным оформлением, а diffusion-gemma добавила выдуманное описание цвета."}
+{
+ "task_id": "ocr_общее_8175606769",
+ "category": "ocr",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Заголовок прочитан точно: «ЗНАКИ ДОРОЖНОГО ДВИЖЕНИЯ», без лишнего."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный текст с аккуратным оформлением и подписью-заголовком."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точное воспроизведение всех трёх слов заголовка."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Чистый и точный ответ без искажений."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 9,
+   "comment": "Текст верный, но выдуман цвет и фон: буквы чёрные на жёлтой полосе, а не красные на белом."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без лишнего."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без лишнего."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно прочитаны все три слова."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точное воспроизведение заголовка."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точный заголовок без ошибок."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Заголовок «ЗНАКИ ДОРОЖНОГО ДВИЖЕНИЯ» переписан точно и полностью, без лишнего текста и искажений. Ответ предельно лаконичен, поэтому видимого анализа минимум, но для задачи OCR этого достаточно."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Почти все модели верно прочитали «ЗНАКИ ДОРОЖНОГО ДВИЖЕНИЯ»; llama-scout выделяется аккуратным оформлением, а diffusion-gemma добавила выдуманное описание цвета."
+}

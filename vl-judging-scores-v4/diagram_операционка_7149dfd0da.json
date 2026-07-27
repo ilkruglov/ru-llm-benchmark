@@ -1,1 +1,134 @@
-{"task_id":"diagram_операционка_7149dfd0da","category":"diagram","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верно назвал ровно 3 блока: Операторы АСДУ, Электрики, Сантехники. Чёткая структура."},"llama-scout":{"correctness":1,"reasoning":2,"format":8,"russian":9,"comment":"Ошибочно указал 4 блока, добавив «Операторы Горячей Линии», которые подчиняются Руководителю IT отдела. Грубая ошибка."},"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный ответ: 3 верных блока, корректное описание положения на схеме."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно назвал 3 блока, ответ лаконичен и точен."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":8,"comment":"Все 3 блока верны, но есть опечатка «на уровне уровне ниже»."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точно назвал 3 блока с итогом. Ясно и корректно."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Верно указаны 3 прямых подчинённых блока."},"nemotron-omni":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Верно назвал 3 блока, но ответ очень краток без пояснений."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный ответ с корректным описанием расположения блоков."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно назвал 3 блока, лаконично и ясно."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точный ответ: 3 блока с итоговой суммой."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно указаны 3 непосредственных подчинённых."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Точно назвал 3 блока, чёткий нумерованный список."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Верно указаны 3 прямых подчинённых блока."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно назвал 3 блока, лаконично."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точный ответ: 3 верных блока."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно назвал 3 блока, ясно и корректно."}},"winner":"35b-a3b","notes":"Почти все модели дали верный ответ (3 блока: Операторы АСДУ, Электрики, Сантехники); llama-scout грубо ошибся, добавив четвёртый чужой блок."}
+{
+ "task_id": "diagram_операционка_7149dfd0da",
+ "category": "diagram",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно назвал ровно 3 блока: Операторы АСДУ, Электрики, Сантехники. Чёткая структура."
+  },
+  "llama-scout": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ошибочно указал 4 блока, добавив «Операторы Горячей Линии», которые подчиняются Руководителю IT отдела. Грубая ошибка."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный ответ: 3 верных блока, корректное описание положения на схеме."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно назвал 3 блока, ответ лаконичен и точен."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все 3 блока верны, но есть опечатка «на уровне уровне ниже»."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точно назвал 3 блока с итогом. Ясно и корректно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно указаны 3 прямых подчинённых блока."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно назвал 3 блока, но ответ очень краток без пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный ответ с корректным описанием расположения блоков."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно назвал 3 блока, лаконично и ясно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный ответ: 3 блока с итоговой суммой."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно указаны 3 непосредственных подчинённых."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точно назвал 3 блока, чёткий нумерованный список."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно указаны 3 прямых подчинённых блока."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно назвал 3 блока, лаконично."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный ответ: 3 верных блока."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно назвал 3 блока, ясно и корректно."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Названы ровно три верных блока — «Операторы АСДУ», «Электрики», «Сантехники» — и корректно отсечены «Операторы Горячей Линии». Мелкая неточность в локализации: «Главный Инженер» стоит в одном ряду с «Финансовым директором», а не под ним."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели дали верный ответ (3 блока: Операторы АСДУ, Электрики, Сантехники); llama-scout грубо ошибся, добавив четвёртый чужой блок."
+}

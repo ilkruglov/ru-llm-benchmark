@@ -1,1 +1,134 @@
-{"task_id":"chart_дата-аналитика_37894b856a","category":"chart","scores":{"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: Марс 227,9, Меркурий 57,9, отношение 3,9. Полный расчёт, ясная структура."},"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, показано деление 227,9/57,9≈3,936→3,9, чёткий вывод."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точный ответ и расчёт, аккуратная нумерованная структура."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно названы обе планеты и отношение 3,9, полный расчёт."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Данные и расчёт верны, но странная фраза «бюджетной диаграммы» — лёгкий языковой сбой."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно и лаконично, расчёт показан, чистый русский."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректный краткий ответ с расчётом 227,9/57,9≈3,9."},"nemotron-omni":{"correctness":10,"reasoning":2,"format":3,"russian":5,"comment":"Ответ верный по сути (Марс, 227.9, 3.9), но без пояснений, форматирования и с точкой вместо запятой."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, подробное объяснение с указанием столбцов и деления."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верно, но не назван явно минимум-Меркурий в первой строке; расчёт и итог корректны."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Обе планеты и отношение 3,9 указаны верно, лаконично."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Корректный краткий ответ с делением, чистый русский."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно: Марс 227,9, Меркурий 57,9, отношение 3,9."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точный лаконичный ответ с расчётом."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Верно и очень кратко, но без явного показа деления."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":6,"russian":10,"comment":"Ответ верный, но предельно сжатый, без расчёта."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Верно и кратко: Марс 227,9, в 3,9 раза больше Меркурия."}},"winner":"35b-a3b","notes":"Все модели дали верный ответ (Марс 227,9; в 3,9 раза). Лучшие — полные и структурированные ответы (35b-a3b, kimi, gemma, llama, 27b); слабейший nemotron-omni из-за отсутствия пояснений и запятой."}
+{
+ "task_id": "chart_дата-аналитика_37894b856a",
+ "category": "chart",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: Марс 227,9, Меркурий 57,9, отношение 3,9. Полный расчёт, ясная структура."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, показано деление 227,9/57,9≈3,936→3,9, чёткий вывод."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный ответ и расчёт, аккуратная нумерованная структура."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно названы обе планеты и отношение 3,9, полный расчёт."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Данные и расчёт верны, но странная фраза «бюджетной диаграммы» — лёгкий языковой сбой."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и лаконично, расчёт показан, чистый русский."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный краткий ответ с расчётом 227,9/57,9≈3,9."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 3,
+   "russian": 5,
+   "comment": "Ответ верный по сути (Марс, 227.9, 3.9), но без пояснений, форматирования и с точкой вместо запятой."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, подробное объяснение с указанием столбцов и деления."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, но не назван явно минимум-Меркурий в первой строке; расчёт и итог корректны."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Обе планеты и отношение 3,9 указаны верно, лаконично."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Корректный краткий ответ с делением, чистый русский."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: Марс 227,9, Меркурий 57,9, отношение 3,9."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный лаконичный ответ с расчётом."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно и очень кратко, но без явного показа деления."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 10,
+   "comment": "Ответ верный, но предельно сжатый, без расчёта."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно и кратко: Марс 227,9, в 3,9 раза больше Меркурия."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все значения считаны верно: максимум Марс 227,9, минимум Меркурий 57,9, отношение 3,9 раза. Ответ компактный и структурный; лёгкая небрежность формулировки «расстояние от Марса» вместо «до Марса», расчёт показан без промежуточного точного значения."
+  }
+ },
+ "winner": "llama-scout",
+ "notes": "Все модели дали верный ответ (Марс 227,9; в 3,9 раза). Лучшие — полные и структурированные ответы (35b-a3b, kimi, gemma, llama, 27b); слабейший nemotron-omni из-за отсутствия пояснений и запятой."
+}

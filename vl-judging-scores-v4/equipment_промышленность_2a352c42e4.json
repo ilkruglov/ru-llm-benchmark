@@ -1,1 +1,134 @@
-{"task_id":"equipment_промышленность_2a352c42e4","category":"equipment","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все четыре пункта верны: токарный с ЧПУ, 3 кулачка, Ø500x1000, панель ЧПУ. Развёрнуто и точно."},"llama-scout":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно: трёхкулачковый патрон, 500x1000, ЧПУ. Тип станка описан корректно, хотя ЧПУ упомянут только в п.4."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью корректно по всем пунктам с правильной интерпретацией Ø500x1000 и трёхкулачкового патрона."},"gemma-4-31b":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все факты верны, но ответ очень лаконичный, без пояснений размеров."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":8,"russian":7,"comment":"Факты верны, но есть опечатка ('Овываясь') и мелкие огрехи русского."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все пункты верны, аккуратная осторожная формулировка ('вероятно кулачковый'), 3 кулачка и Ø500x1000 распознаны."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно по всем пунктам, корректная интерпретация габаритов и ЧПУ."},"nemotron-omni":{"correctness":2,"reasoning":2,"format":3,"russian":4,"comment":"Грубые ошибки: назван расточный/сверлильный станок вместо токарного, кулачки 'не видно'. Сбита нумерация."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все четыре пункта точны и лаконичны: токарный, 3 кулачка, Ø500x1000, стойка ЧПУ."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Кратко и верно по всем пунктам."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все факты верны, включая трёхкулачковый патрон и Ø500x1000."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно: горизонтальный токарный с ЧПУ, 3 кулачка, Ø500x1000."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все пункты верны и кратко изложены."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Корректно по всем пунктам с интерпретацией габаритов."},"gpt-5.6-terra-high":{"correctness":5,"reasoning":7,"format":8,"russian":9,"comment":"Ошибка в считывании габарита: '6500 x 1000' вместо Ø500x1000. Остальные пункты верны."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все пункты верны, Ø500x1000 и трёхкулачковый патрон распознаны."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно по всем пунктам, три кулачка и Ø500x1000 указаны корректно."}},"winner":"27b-v2","notes":"Большинство моделей ответили полностью верно; 27b-v2, 35b-a3b и kimi-k2.6 лучшие. Nemotron грубо ошибся с типом станка, terra-high неверно прочитал габарит."}
+{
+ "task_id": "equipment_промышленность_2a352c42e4",
+ "category": "equipment",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре пункта верны: токарный с ЧПУ, 3 кулачка, Ø500x1000, панель ЧПУ. Развёрнуто и точно."
+  },
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: трёхкулачковый патрон, 500x1000, ЧПУ. Тип станка описан корректно, хотя ЧПУ упомянут только в п.4."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректно по всем пунктам с правильной интерпретацией Ø500x1000 и трёхкулачкового патрона."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, но ответ очень лаконичный, без пояснений размеров."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Факты верны, но есть опечатка ('Овываясь') и мелкие огрехи русского."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны, аккуратная осторожная формулировка ('вероятно кулачковый'), 3 кулачка и Ø500x1000 распознаны."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно по всем пунктам, корректная интерпретация габаритов и ЧПУ."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 3,
+   "russian": 4,
+   "comment": "Грубые ошибки: назван расточный/сверлильный станок вместо токарного, кулачки 'не видно'. Сбита нумерация."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре пункта точны и лаконичны: токарный, 3 кулачка, Ø500x1000, стойка ЧПУ."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Кратко и верно по всем пунктам."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, включая трёхкулачковый патрон и Ø500x1000."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно: горизонтальный токарный с ЧПУ, 3 кулачка, Ø500x1000."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны и кратко изложены."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректно по всем пунктам с интерпретацией габаритов."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ошибка в считывании габарита: '6500 x 1000' вместо Ø500x1000. Остальные пункты верны."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все пункты верны, Ø500x1000 и трёхкулачковый патрон распознаны."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно по всем пунктам, три кулачка и Ø500x1000 указаны корректно."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Все четыре ключевых факта верны: токарный станок с ЧПУ, трёхкулачковый патрон, Ø500×1000, стойка ЧПУ справа. Снижение за домысленные детали конструкции ('наклонная станина', 'револьверная головка', 'защитное ограждение' — станина плоская горизонтальная) и за опечатку 'токарно-фунциональный центр'."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Большинство моделей ответили полностью верно; 27b-v2, 35b-a3b и kimi-k2.6 лучшие. Nemotron грубо ошибся с типом станка, terra-high неверно прочитал габарит."
+}

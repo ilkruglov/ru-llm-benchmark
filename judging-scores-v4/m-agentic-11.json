@@ -1,22 +1,155 @@
-{"task_id":"m-agentic-11","category":"agentic","scores":{
-"gpt-oss-120b":{"correctness":8,"reasoning":8,"format":9,"russian":8,"comment":"Очень полный ответ с таблицами, roadmap и KPI; покрывает все 6 пунктов. Немного оптимистичен ('90% из коробки'), слабее в нюансах mobile kill-switch/residency."},
-"deepseek-flash":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"Практичный гибрид Unleash+Statsig с корректной обработкой PII (только анонимные ID вовне), реалистичный TCO и fail-early критерий. Хорошо."},
-"deepseek-pro":{"correctness":7,"reasoning":8,"format":8,"russian":9,"comment":"Чистый BUY, логично защищено перед CFO, но жёсткий constraint residency закрыт поверхностно ('EU instance' + private attributes) без due diligence, который отмечают сильнейшие ответы."},
-"35b-a3b":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Крепкий self-host OSS, все пункты, реалистичный TCO и PoC-план. Меньше глубины по mobile kill-switch и residency-нюансам."},
-"27b-v2":{"correctness":8,"reasoning":8,"format":8,"russian":8,"comment":"Формульный критерий, OpenFeature-абстракция, реалистичная нагрузка/TCO, честный trade-off по A/B. Сильно и практично."},
-"gemma-4-31b":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Концентрированно покрывает все 6 пунктов, честно про слабость A/B в OSS. TCO больше словами, чем цифрами; меньше нюансов."},
-"diffusion-gemma":{"correctness":6,"reasoning":6,"format":7,"russian":6,"comment":"Все пункты присутствуют, но заметно короче и поверхностнее; ошибки/опечатки ('требо требованиям','чел-месясов','крично') снижают качество."},
-"gpt-5.5-low":{"correctness":8,"reasoning":8,"format":7,"russian":7,"comment":"Сильный гибрид с честными оговорками (mobile kill-switch, EU-region недостаточно), OpenFeature. Много англицизмов/смешанного языка снижают russian и читаемость."},
-"gpt-5.5-medium":{"correctness":9,"reasoning":9,"format":8,"russian":7,"comment":"Отличный BUY с privacy/lock-in guardrails, реалистичный TCO ($575-775k build), сильные архитектурные детали и mobile-нюанс. Русский сильно перемешан с англ терминами."},
-"nemotron-omni":{"correctness":5,"reasoning":4,"format":7,"russian":7,"comment":"TCO абсурдно завышен (инженер $150k/МЕСЯЦ → $4.5-5.5M), рекомендует писать свои SDK, противореча выбору OSS-гибрида. Серьёзные фактические ошибки."},
-"nemotron-super":{"correctness":2,"reasoning":1,"format":1,"russian":2,"comment":"Ответ катастрофически повреждён: в середине вставлен утёкший policy-дамп и посторонняя откровенная сексуальная история; пункты 5-6 не завершены. Провал."},
-"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Образцовый: hard-constraints-first, реалистичные цифры, честно про mobile в фоне, GitOps, DWH для статистики, чистая структура и русский. Максимум практичности при компактности."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Гибрид с 4 гейтами, тонко разделяет assignment vs статистику, mobile-оговорка, реалистичный TCO, shadow-eval для выхода. Практично и полно."},
-"gpt-5.6-luna-low":{"correctness":8,"reasoning":8,"format":7,"russian":9,"comment":"Сильный BUY с residency-gate и exit-планом; портят формат сломанные токены цитат (citeturn0search0) в тексте."},
-"gpt-5.6-luna-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Очень строгий BUY с двумя гейтами, реалистичный TCO ($0.5-1.1M build), mobile server-enforcement, детальный exit-drill и метрики. Топ-уровень."},
-"gpt-5.6-sol-low":{"correctness":8,"reasoning":9,"format":9,"russian":9,"comment":"BUY+гибрид с 8-пунктным критерием, отличная таблица покрытия, OpenFeature, честно про offline mobile и цену событий. Практично."},
-"gpt-5.6-sol-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Один control plane с 4 гейтами и PoC, реалистичный TCO с явной точкой перелома S*, mobile server-enforcement, exit shadow-mode. Образцовая практичность."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Buy-first с compliance стоп-критерием, чёткая граница data-plane, 4-6-нед пилот перед закупкой, реалистичный TCO. Очень сильно."},
-"gpt-5.6-terra-low":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Buy+гибрид с таблицей-критерием, диаграммой архитектуры, реалистичным TCO и exit-drill. Сильный, чуть менее глубокий чем medium/high варианты."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"Гибрид self-host+DWH с residency-gate, детерминированный bucketing, mobile server-enforcement, честно про 'EU region ≠ residency'. Полно и практично."}
-},"winner":"kimi-k2.6","notes":"Плотнейшая группа gpt-5.6 (sol/terra/luna medium+high) и kimi-k2.6 на уровне 9: реалистичный TCO, честность про offline-mobile kill-switch и про то, что 'EU-регион' сам по себе не решает residency. Победитель kimi-k2.6 за максимум практичности и полноты при компактности и чистом русском. nemotron-super повреждён посторонним контентом, nemotron-omni — грубые ошибки в TCO."}
+{
+ "task_id": "m-agentic-11",
+ "category": "agentic",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Очень полный ответ с таблицами, roadmap и KPI; покрывает все 6 пунктов. Немного оптимистичен ('90% из коробки'), слабее в нюансах mobile kill-switch/residency."
+  },
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Практичный гибрид Unleash+Statsig с корректной обработкой PII (только анонимные ID вовне), реалистичный TCO и fail-early критерий. Хорошо."
+  },
+  "deepseek-pro": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Чистый BUY, логично защищено перед CFO, но жёсткий constraint residency закрыт поверхностно ('EU instance' + private attributes) без due diligence, который отмечают сильнейшие ответы."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Крепкий self-host OSS, все пункты, реалистичный TCO и PoC-план. Меньше глубины по mobile kill-switch и residency-нюансам."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Формульный критерий, OpenFeature-абстракция, реалистичная нагрузка/TCO, честный trade-off по A/B. Сильно и практично."
+  },
+  "gemma-4-31b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Концентрированно покрывает все 6 пунктов, честно про слабость A/B в OSS. TCO больше словами, чем цифрами; меньше нюансов."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 6,
+   "comment": "Все пункты присутствуют, но заметно короче и поверхностнее; ошибки/опечатки ('требо требованиям','чел-месясов','крично') снижают качество."
+  },
+  "gpt-5.5-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 7,
+   "comment": "Сильный гибрид с честными оговорками (mobile kill-switch, EU-region недостаточно), OpenFeature. Много англицизмов/смешанного языка снижают russian и читаемость."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 7,
+   "comment": "Отличный BUY с privacy/lock-in guardrails, реалистичный TCO ($575-775k build), сильные архитектурные детали и mobile-нюанс. Русский сильно перемешан с англ терминами."
+  },
+  "nemotron-omni": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 7,
+   "comment": "TCO абсурдно завышен (инженер $150k/МЕСЯЦ → $4.5-5.5M), рекомендует писать свои SDK, противореча выбору OSS-гибрида. Серьёзные фактические ошибки."
+  },
+  "nemotron-super": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 1,
+   "russian": 2,
+   "comment": "Ответ катастрофически повреждён: в середине вставлен утёкший policy-дамп и посторонняя откровенная сексуальная история; пункты 5-6 не завершены. Провал."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Образцовый: hard-constraints-first, реалистичные цифры, честно про mobile в фоне, GitOps, DWH для статистики, чистая структура и русский. Максимум практичности при компактности."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Гибрид с 4 гейтами, тонко разделяет assignment vs статистику, mobile-оговорка, реалистичный TCO, shadow-eval для выхода. Практично и полно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Сильный BUY с residency-gate и exit-планом; портят формат сломанные токены цитат (citeturn0search0) в тексте."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень строгий BUY с двумя гейтами, реалистичный TCO ($0.5-1.1M build), mobile server-enforcement, детальный exit-drill и метрики. Топ-уровень."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "BUY+гибрид с 8-пунктным критерием, отличная таблица покрытия, OpenFeature, честно про offline mobile и цену событий. Практично."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Один control plane с 4 гейтами и PoC, реалистичный TCO с явной точкой перелома S*, mobile server-enforcement, exit shadow-mode. Образцовая практичность."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Buy-first с compliance стоп-критерием, чёткая граница data-plane, 4-6-нед пилот перед закупкой, реалистичный TCO. Очень сильно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Buy+гибрид с таблицей-критерием, диаграммой архитектуры, реалистичным TCO и exit-drill. Сильный, чуть менее глубокий чем medium/high варианты."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Гибрид self-host+DWH с residency-gate, детерминированный bucketing, mobile server-enforcement, честно про 'EU region ≠ residency'. Полно и практично."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все шесть пунктов закрыты предметно и исполнимо: явный критерий, таблица по каждому требованию с остаточными рисками, фасад+DSL как стратегия выхода, метрики на 6 мес с планами B. Главный минус — TCO-обоснование построено на выдуманной цене SaaS (€200–500K/год) вопреки заданным в промпте «десяткам тысяч USD/год», из-за чего вывод «SaaS проигрывает по TCO уже в первый год» противоречит вводным; плюс мелкие огрехи (GrowthBox, «не согласовано с CFO»)."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Плотнейшая группа gpt-5.6 (sol/terra/luna medium+high) и kimi-k2.6 на уровне 9: реалистичный TCO, честность про offline-mobile kill-switch и про то, что 'EU-регион' сам по себе не решает residency. Победитель kimi-k2.6 за максимум практичности и полноты при компактности и чистом русском. nemotron-super повреждён посторонним контентом, nemotron-omni — грубые ошибки в TCO."
+}

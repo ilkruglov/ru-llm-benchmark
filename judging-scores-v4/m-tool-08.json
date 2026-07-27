@@ -1,22 +1,155 @@
-{"task_id":"m-tool-08","category":"tool_calling","scores":{
-"gpt-oss-120b":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Две read-вызова + ровно один submit, spec идеально по схеме, подробная таблица источников и проверка signed=true."},
-"deepseek-flash":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Корректная последовательность в python-псевдокоде, spec точен по схеме, поля объяснены, подтверждение подписи есть."},
-"deepseek-pro":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Образцовый ответ: read+один submit, валидный JSON, полная таблица источников и явная проверка выполнимости require_signed_image."},
-"35b-a3b":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Верная последовательность и spec по схеме, объяснение полей корректное, но чуть более сжатое."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Правильные вызовы и spec, аккуратная таблица валидации полей и подтверждение signed=true."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Оба read-вызова и один submit, spec точен, объяснение полей корректное но краткое."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":10,"russian":8,"comment":"Верная последовательность и spec по схеме, поля объяснены, есть мелкие опечатки в тексте."},
-"nemotron-omni":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Корректная цепочка вызовов, spec собран из полей обоих ответов, подробное обоснование и проверка подписи."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Чёткие два read + один submit, валидный spec, таблица источников и явная проверка require_signed_image."},
-"nemotron-super":{"correctness":8,"reasoning":8,"format":1,"russian":8,"comment":"Содержательно spec верен, но JSON в submit_deployment сломан (лишняя/смещённая скобка после metadata) — объект не распарсится."},
-"gpt-5.5-low":{"correctness":5,"reasoning":7,"format":10,"russian":9,"comment":"Отказался фактически делать вызовы, но привёл корректный spec с объяснением источников; последовательность вызовов не выполнена."},
-"gpt-5.5-medium":{"correctness":5,"reasoning":7,"format":10,"russian":9,"comment":"Отказ от реальных вызовов, spec корректен (обёрнут в {spec:...}), но требуемые read+submit не сделаны."},
-"gpt-5.6-luna-high":{"correctness":5,"reasoning":6,"format":10,"russian":8,"comment":"Верный spec по схеме, но вызовы не выполнены (заявлена недоступность), объяснение полей минимальное."},
-"gpt-5.6-luna-low":{"correctness":5,"reasoning":6,"format":10,"russian":8,"comment":"Корректный JSON-spec, но требуемая последовательность вызовов не сделана, обоснование очень краткое."},
-"gpt-5.6-luna-medium":{"correctness":5,"reasoning":6,"format":10,"russian":8,"comment":"Spec верен, но реальные вызовы не выполнены, объяснение полей сведено к минимуму."},
-"gpt-5.6-sol-low":{"correctness":5,"reasoning":7,"format":10,"russian":8,"comment":"Отказ от вызовов, но spec точен и источники полей описаны; последовательность read+submit не исполнена."},
-"gpt-5.6-sol-medium":{"correctness":5,"reasoning":7,"format":10,"russian":8,"comment":"Корректный spec с разбором источников, но требуемые tool-вызовы не сделаны."},
-"gpt-5.6-terra-high":{"correctness":5,"reasoning":7,"format":10,"russian":8,"comment":"Валидный spec и объяснение источников, но submit-вызов не выполнен из-за заявленной недоступности."},
-"gpt-5.6-terra-low":{"correctness":5,"reasoning":7,"format":10,"russian":8,"comment":"Spec корректен и поля объяснены, но фактический submit-вызов не сделан."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":10,"russian":9,"comment":"Заявляет выполнение единственного submit, spec точен по схеме, источники полей и проверка подписи описаны; не показан явный синтаксис вызова."}
-},"winner":"deepseek-pro","notes":"Большинство моделей выдали идентичный корректный spec; deepseek-pro/kimi/gpt-oss/nemotron-omni — образцовые. Ряд gpt-5.5/5.6 отказались делать вызовы (штраф по correctness), а nemotron-super сломал JSON."}
+{
+ "task_id": "m-tool-08",
+ "category": "tool_calling",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Две read-вызова + ровно один submit, spec идеально по схеме, подробная таблица источников и проверка signed=true."
+  },
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Корректная последовательность в python-псевдокоде, spec точен по схеме, поля объяснены, подтверждение подписи есть."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Образцовый ответ: read+один submit, валидный JSON, полная таблица источников и явная проверка выполнимости require_signed_image."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 8,
+   "comment": "Верная последовательность и spec по схеме, объяснение полей корректное, но чуть более сжатое."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Правильные вызовы и spec, аккуратная таблица валидации полей и подтверждение signed=true."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 8,
+   "comment": "Оба read-вызова и один submit, spec точен, объяснение полей корректное но краткое."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 8,
+   "comment": "Верная последовательность и spec по схеме, поля объяснены, есть мелкие опечатки в тексте."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Корректная цепочка вызовов, spec собран из полей обоих ответов, подробное обоснование и проверка подписи."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Чёткие два read + один submit, валидный spec, таблица источников и явная проверка require_signed_image."
+  },
+  "nemotron-super": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 1,
+   "russian": 8,
+   "comment": "Содержательно spec верен, но JSON в submit_deployment сломан (лишняя/смещённая скобка после metadata) — объект не распарсится."
+  },
+  "gpt-5.5-low": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Отказался фактически делать вызовы, но привёл корректный spec с объяснением источников; последовательность вызовов не выполнена."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Отказ от реальных вызовов, spec корректен (обёрнут в {spec:...}), но требуемые read+submit не сделаны."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 8,
+   "comment": "Верный spec по схеме, но вызовы не выполнены (заявлена недоступность), объяснение полей минимальное."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 8,
+   "comment": "Корректный JSON-spec, но требуемая последовательность вызовов не сделана, обоснование очень краткое."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 8,
+   "comment": "Spec верен, но реальные вызовы не выполнены, объяснение полей сведено к минимуму."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 8,
+   "comment": "Отказ от вызовов, но spec точен и источники полей описаны; последовательность read+submit не исполнена."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 8,
+   "comment": "Корректный spec с разбором источников, но требуемые tool-вызовы не сделаны."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 8,
+   "comment": "Валидный spec и объяснение источников, но submit-вызов не выполнен из-за заявленной недоступности."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 8,
+   "comment": "Spec корректен и поля объяснены, но фактический submit-вызов не сделан."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Заявляет выполнение единственного submit, spec точен по схеме, источники полей и проверка подписи описаны; не показан явный синтаксис вызова."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректная последовательность: два read-вызова и ровно один submit_deployment; все поля спеки (image-склейка, replicas=6, canary 10, timeout_s=5, metadata) точны, есть подтверждение signed=true. Минус за то, что два read-вызова упакованы в один tool_call-блок двумя JSON-объектами подряд, и мелкая опечатка 'рели-инженера'."
+  }
+ },
+ "winner": "gpt-oss-120b",
+ "notes": "Большинство моделей выдали идентичный корректный spec; deepseek-pro/kimi/gpt-oss/nemotron-omni — образцовые. Ряд gpt-5.5/5.6 отказались делать вызовы (штраф по correctness), а nemotron-super сломал JSON."
+}

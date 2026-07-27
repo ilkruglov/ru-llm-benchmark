@@ -1,19 +1,134 @@
-{"task_id":"vqa_маркетинг_55d50fc1fe","category":"vqa","scores":{
-"35b-a3b":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Все три факта верны (50% в белом круге, LIMITED TIME OFFER, SHOP NOW), обоснование срочности развёрнутое и точное."},
-"llama-scout":{"correctness":9,"reasoning":8,"format":7,"russian":6,"comment":"Факты верны, но артефакты: '$50\\%$', иероглифы '箭ки', 'зайдите сейчас' — портят русский и формат."},
-"27b-v2":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Все элементы названы верно, отмечено отсутствие конкретных дат, хорошее обоснование срочности."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точно указаны скидка, круг, LIMITED TIME OFFER и SHOP NOW; аккуратное обоснование срочности."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":8,"russian":8,"comment":"Факты верны, но опечатки ('сновываясь', 'использованиение') снижают чистоту русского и формата."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Кратко и точно: скидка в белом круге, LIMITED TIME OFFER, SHOP NOW; обоснование лаконичное."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, чёткий сжатый ответ с корректным обоснованием срочности."},
-"nemotron-omni":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно названы все три элемента и их расположение, обоснование срочности адекватное."},
-"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Полный и точный разбор всех элементов с развёрнутым обоснованием срочности."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, ответ предельно краткий, обоснование корректное но минимальное."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно названы все элементы, краткое корректное обоснование срочности."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, отмечено отсутствие конкретной даты окончания."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точный ответ, обоснование опирается на две надписи (LIMITED TIME OFFER и SHOP NOW)."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все элементы верны, аккуратно отмечено отсутствие дат и двойное обоснование срочности."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Факты верны, обоснование краткое но корректное."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три элемента названы верно, краткое обоснование срочности."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верный точный ответ с корректным обоснованием срочности."}
-},"winner":"kimi-k2.6","notes":"Почти все модели верно распознали 50% в белом круге, LIMITED TIME OFFER и SHOP NOW. Полнее и чище всех отработали kimi-k2.6, 35b-a3b и 27b-v2; слабее — llama-scout (артефакты и иероглифы)."}
+{
+ "task_id": "vqa_маркетинг_55d50fc1fe",
+ "category": "vqa",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три факта верны (50% в белом круге, LIMITED TIME OFFER, SHOP NOW), обоснование срочности развёрнутое и точное."
+  },
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 6,
+   "comment": "Факты верны, но артефакты: '$50\\%$', иероглифы '箭ки', 'зайдите сейчас' — портят русский и формат."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все элементы названы верно, отмечено отсутствие конкретных дат, хорошее обоснование срочности."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точно указаны скидка, круг, LIMITED TIME OFFER и SHOP NOW; аккуратное обоснование срочности."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 8,
+   "comment": "Факты верны, но опечатки ('сновываясь', 'использованиение') снижают чистоту русского и формата."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно: скидка в белом круге, LIMITED TIME OFFER, SHOP NOW; обоснование лаконичное."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, чёткий сжатый ответ с корректным обоснованием срочности."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно названы все три элемента и их расположение, обоснование срочности адекватное."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный и точный разбор всех элементов с развёрнутым обоснованием срочности."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, ответ предельно краткий, обоснование корректное но минимальное."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно названы все элементы, краткое корректное обоснование срочности."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, отмечено отсутствие конкретной даты окончания."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный ответ, обоснование опирается на две надписи (LIMITED TIME OFFER и SHOP NOW)."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все элементы верны, аккуратно отмечено отсутствие дат и двойное обоснование срочности."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Факты верны, обоснование краткое но корректное."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три элемента названы верно, краткое обоснование срочности."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный точный ответ с корректным обоснованием срочности."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три пункта названы верно: UPTO 50% OFF в белом круге справа, LIMITED TIME OFFER сверху, кнопка SHOP NOW внизу; обоснование срочности опирается на реально видимые элементы (боке-фон, белые треугольные акценты). Небольшой минус за декоративные эмодзи-маркеры и лёгкую избыточность."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели верно распознали 50% в белом круге, LIMITED TIME OFFER и SHOP NOW. Полнее и чище всех отработали kimi-k2.6, 35b-a3b и 27b-v2; слабее — llama-scout (артефакты и иероглифы)."
+}

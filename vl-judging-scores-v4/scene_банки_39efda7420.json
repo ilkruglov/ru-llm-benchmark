@@ -1,19 +1,134 @@
-{"task_id":"scene_банки_39efda7420","category":"scene","scores":{
-"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все 4 факта верны, подробное описание зоны. Небольшая англоязычная вставка (reception area) снижает русский."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, развёрнутое и структурированное описание назначения зон."},
-"27b-v2":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Факты верны, но неточность про расположение второй двери (на задней стене рядом с телевизором), тогда как обе двери справа."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 4 факта верны, чёткая и краткая структура."},
-"diffusion-gemma":{"correctness":10,"reasoning":7,"format":8,"russian":8,"comment":"Факты верны, но арабский символ в тексте и мелкие огрехи оформления."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, лаконично и корректно."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, ясный и точный ответ."},
-"nemotron-omni":{"correctness":10,"reasoning":4,"format":6,"russian":8,"comment":"Все 4 ответа верны, но крайне лаконично, без описания зоны и анализа."},
-"kimi-k2.6":{"correctness":6,"reasoning":8,"format":9,"russian":10,"comment":"Ошибка в п.4: указана одна дверь вместо двух. Остальные факты верны, описание качественное."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все факты верны, но описание зоны очень краткое."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, кратко и корректно."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, ясный ответ."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, хорошее краткое описание зоны."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, развёрнутое и точное описание назначения зоны."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, чётко и корректно."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, явно указано, что двери справа."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, ясный и точный ответ."}
-},"winner":"35b-a3b","notes":"Почти все модели верно назвали 4 факта; 35b-a3b даёт наиболее развёрнутое и структурированное описание при полной корректности. Kimi ошиблась в числе дверей, nemotron слишком лаконичен."}
+{
+ "task_id": "scene_банки_39efda7420",
+ "category": "scene",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 4 факта верны, подробное описание зоны. Небольшая англоязычная вставка (reception area) снижает русский."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, развёрнутое и структурированное описание назначения зон."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Факты верны, но неточность про расположение второй двери (на задней стене рядом с телевизором), тогда как обе двери справа."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 4 факта верны, чёткая и краткая структура."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Факты верны, но арабский символ в тексте и мелкие огрехи оформления."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, лаконично и корректно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, ясный и точный ответ."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 8,
+   "comment": "Все 4 ответа верны, но крайне лаконично, без описания зоны и анализа."
+  },
+  "kimi-k2.6": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ошибка в п.4: указана одна дверь вместо двух. Остальные факты верны, описание качественное."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все факты верны, но описание зоны очень краткое."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, кратко и корректно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, ясный ответ."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, хорошее краткое описание зоны."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, развёрнутое и точное описание назначения зоны."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, чётко и корректно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, явно указано, что двери справа."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, ясный и точный ответ."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре ключевых факта названы верно (красный диван, журналы, чёрный ТВ, две матовые двери), зона определена правильно. Снижение за две мелкие неточности: рамка телевизора описана как «тонкая светлая», хотя корпус чёрный, и двери названы раздвижными, тогда как это распашные двери с ручками."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели верно назвали 4 факта; 35b-a3b даёт наиболее развёрнутое и структурированное описание при полной корректности. Kimi ошиблась в числе дверей, nemotron слишком лаконичен."
+}

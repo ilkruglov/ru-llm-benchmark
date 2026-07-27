@@ -1,1 +1,134 @@
-{"task_id":"diagram_общее_60836513c9","category":"diagram","scores":{"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три ответа верны: амперметр P/P1 (A), трансформатор T, лампы 2 (E1,E2) и 3 (E1,E2,E3). Полно и с уместными примечаниями."},"llama-scout":{"correctness":9,"reasoning":8,"format":7,"russian":8,"comment":"Факты верны, но в п.1 неудачно назвал P/P1 «названием по подписи»; лишний LaTeX ($1$) мешает читаемости."},"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все ответы точны и структурированы: амперметр P/P1, трансформатор T, 2 и 3 лампы."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно всё: P/P1 амперметр, T трансформатор (упомянут и P2), 2 и 3 лампы."},"diffusion-gemma":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, но в п.1 указал только P без P1; лампы и трансформатор правильно."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Кратко и полностью верно: P/P1 амперметр, T трансформатор, 2 и 3 лампы."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны и ясны: P/P1 амперметр, T трансформатор, 2 и 3 лампы."},"nemotron-omni":{"correctness":2,"reasoning":1,"format":3,"russian":4,"comment":"Грубые ошибки: п.2 назвал P1-амперметр вместо трансформатора T; в п.3 для схемы в) указал 2 лампы E2,E3 вместо трёх."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полный и точный ответ: амперметр P/P1, трансформатор T (с примечанием о P2), 2 и 3 лампы."},"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":8,"russian":9,"comment":"Верно, но в п.1 дал только P без P1; трансформатор и лампы правильно."},"gpt-5.6-luna-low":{"correctness":4,"reasoning":3,"format":7,"russian":9,"comment":"Серьёзная ошибка в п.3: для схемы в) указал 2 лампы E2,E3 вместо трёх (E1,E2,E3); остальное верно."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно: амперметр P/P1 (A), трансформатор T, 2 и 3 лампы."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точный ответ: P/P1 амперметр, T трансформатор, 2 и 3 лампы."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы верны и ясны: P/P1 амперметр, T трансформатор, 2 и 3 лампы."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полно и верно: амперметр P/P1, трансформатор T и дополнительно вольтметр P2, 2 и 3 лампы."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно всё: P/P1 амперметр, T трансформатор, 2 и 3 лампы."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точный ответ: амперметр P/P1 (A), трансформатор T, 2 и 3 лампы."}},"winner":"27b-v2","notes":"Множество моделей дали полностью верные ответы; лидеры (27b-v2, 35b-a3b, gemma-4-31b, kimi-k2.6, terra-high) отличаются полнотой. Провалились nemotron-omni и luna-low из-за ошибок в числе ламп/трансформаторе."}
+{
+ "task_id": "diagram_общее_60836513c9",
+ "category": "diagram",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три ответа верны: амперметр P/P1 (A), трансформатор T, лампы 2 (E1,E2) и 3 (E1,E2,E3). Полно и с уместными примечаниями."
+  },
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 8,
+   "comment": "Факты верны, но в п.1 неудачно назвал P/P1 «названием по подписи»; лишний LaTeX ($1$) мешает читаемости."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны и структурированы: амперметр P/P1, трансформатор T, 2 и 3 лампы."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё: P/P1 амперметр, T трансформатор (упомянут и P2), 2 и 3 лампы."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, но в п.1 указал только P без P1; лампы и трансформатор правильно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и полностью верно: P/P1 амперметр, T трансформатор, 2 и 3 лампы."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны и ясны: P/P1 амперметр, T трансформатор, 2 и 3 лампы."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 3,
+   "russian": 4,
+   "comment": "Грубые ошибки: п.2 назвал P1-амперметр вместо трансформатора T; в п.3 для схемы в) указал 2 лампы E2,E3 вместо трёх."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный и точный ответ: амперметр P/P1, трансформатор T (с примечанием о P2), 2 и 3 лампы."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, но в п.1 дал только P без P1; трансформатор и лампы правильно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 4,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 9,
+   "comment": "Серьёзная ошибка в п.3: для схемы в) указал 2 лампы E2,E3 вместо трёх (E1,E2,E3); остальное верно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно: амперметр P/P1 (A), трансформатор T, 2 и 3 лампы."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный ответ: P/P1 амперметр, T трансформатор, 2 и 3 лампы."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и ясны: P/P1 амперметр, T трансформатор, 2 и 3 лампы."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полно и верно: амперметр P/P1, трансформатор T и дополнительно вольтметр P2, 2 и 3 лампы."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё: P/P1 амперметр, T трансформатор, 2 и 3 лампы."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный ответ: амперметр P/P1 (A), трансформатор T, 2 и 3 лампы."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Вопросы 1 и 3 полностью верны (амперметр P/P1 с буквой «A» в кружке; 2 лампы E1,E2 и 3 лампы E1,E2,E3). В вопросе 2 назван лишь допустимый вариант P2 — вольтметр, а главный ожидаемый элемент — трансформатор T — не упомянут, что снижает точность."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Множество моделей дали полностью верные ответы; лидеры (27b-v2, 35b-a3b, gemma-4-31b, kimi-k2.6, terra-high) отличаются полнотой. Провалились nemotron-omni и luna-low из-за ошибок в числе ламп/трансформаторе."
+}

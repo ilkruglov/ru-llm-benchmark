@@ -1,22 +1,155 @@
-{"task_id":"m-code-02","category":"code","scores":{
-"gpt-oss-120b":{"correctness":9,"reasoning":8,"format":9,"russian":1,"comment":"Рабочие детерминированные тесты, mocked_time консистентен, 15+ кейсов, таблица покрытия. Но всё объяснение и комментарии полностью на английском."},
-"deepseek-pro":{"correctness":3,"reasoning":6,"format":6,"russian":8,"comment":"limiter создаётся вне freeze_time, monotonic рвётся при входе в заморозку — refill/timeout тесты сломаны; в thread-тесте ссылка на несуществующий threading.atomic.AtomicLong."},
-"deepseek-flash":{"correctness":9,"reasoning":7,"format":8,"russian":7,"comment":"mock_time консистентен (лимитер создаётся внутри контекста), тесты корректны, класс вложен в файл, 15+ кейсов."},
-"35b-a3b":{"correctness":2,"reasoning":6,"format":7,"russian":8,"comment":"Фикстура rl не зависит от mock_time и создаётся при реальном monotonic — разрыв времени делает большинство поведенческих тестов падающими (try_acquire_success, refill и т.д.)."},
-"27b-v2":{"correctness":9,"reasoning":7,"format":8,"russian":8,"comment":"limiter зависит от mock_time — консистентно; корректные refill/timeout/None-тесты, параметризация невалидных кейсов. Хвост прозы обрезан, код цел."},
-"gemma-4-31b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"TimeController патчит monotonic и sleep, limiter зависит от фикстуры — консистентно; корректные тесты, отличное подробное объяснение на русском."},
-"diffusion-gemma":{"correctness":2,"reasoning":5,"format":4,"russian":5,"comment":"test_invalid_acquire_n без параметра n → ошибка сбора; в timeout-тесте неопределённый monkeypatch (NameError) и тело с pass; mock не патчит sleep. Много опечаток."},
-"gpt-5.5-low":{"correctness":9,"reasoning":7,"format":9,"russian":6,"comment":"FakeClock патчит monotonic и sleep на уровне модуля, лимитер зависит от clock — корректно; тщательные проверки sleeps, 20+ кейсов. Русского текста мало."},
-"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":9,"russian":6,"comment":"Аккуратные детерминированные тесты, fake_sleep двигает часы, параметризация refill, thread-тест с Barrier. Русского объяснения немного."},
-"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Полностью не по теме: выдана эротическая проза вместо тестов. Провал."},
-"nemotron-omni":{"correctness":0,"reasoning":2,"format":3,"russian":5,"comment":"from freezegun import freeze, travel — ложный API (нет таких экспортов), импорт падает и весь файл не собирается; freezegun к тому же не двигает monotonic лимитера."},
-"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":8,"comment":"Самодостаточный файл, _FakeClock патчит monotonic/sleep, limiter зависит от фикстуры; 20+ точных кейсов, дробный refill, подробное объяснение на русском."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":9,"russian":6,"comment":"Подмена rate_limiter.time на FakeTime, лимитер зависит от clock; корректные проверки sleep_calls и now, thread-тест real-time. Русского текста мало."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":7,"format":8,"russian":6,"comment":"clock патчит monotonic, отдельная instant_sleep для sleep; корректные refill/timeout/deficit тесты, 15+ кейсов. Краткое русское вступление."},
-"gpt-5.6-luna-medium":{"correctness":0,"reasoning":1,"format":0,"russian":3,"comment":"Отказ: сообщает, что ФС read-only и модуля нет, тестов не предоставил вовсе."},
-"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":9,"russian":7,"comment":"conftest+тесты, FakeClock на уровне модуля, лимитеры зависят от фикстуры; 20+ кейсов, точные проверки sleep_calls, хорошие русские пояснения."},
-"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":9,"russian":7,"comment":"Строгие детерминированные тесты с типами, sleep_calls как список, параметризация refill/init, thread-тест real-time. Аккуратно и корректно."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":7,"format":9,"russian":6,"comment":"clock патчит monotonic/sleep на модуле, лимитер зависит от него; корректные refill/timeout, thread-тест с инвариантом. Русского немного."},
-"gpt-5.6-terra-low":{"correctness":9,"reasoning":7,"format":8,"russian":6,"comment":"FakeClock консистентен, корректные refill/timeout/None тесты, параметризация невалидных кейсов. Краткие русские комментарии."},
-"gpt-5.6-terra-medium":{"correctness":7,"reasoning":7,"format":8,"russian":7,"comment":"Основные тесты корректны (SimpleNamespace-подмена time), но в thread-тесте используется time.monotonic() без import time → NameError (модель это отметила, но код доставлен сломанным)."}
-},"winner":"kimi-k2.6","notes":"Много сильных решений с консистентным mock (kimi, sol-low/medium, gpt-5.5-*, luna/terra, gemma, oss, flash, 27b). Провалы: nemotron-super (офф-топик), nemotron-omni (ложный freezegun API), luna-medium (отказ), 35b/deepseek-pro/diffusion (разрыв времени/сломанные тесты)."}
+{
+ "task_id": "m-code-02",
+ "category": "code",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 1,
+   "comment": "Рабочие детерминированные тесты, mocked_time консистентен, 15+ кейсов, таблица покрытия. Но всё объяснение и комментарии полностью на английском."
+  },
+  "deepseek-pro": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 8,
+   "comment": "limiter создаётся вне freeze_time, monotonic рвётся при входе в заморозку — refill/timeout тесты сломаны; в thread-тесте ссылка на несуществующий threading.atomic.AtomicLong."
+  },
+  "deepseek-flash": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "mock_time консистентен (лимитер создаётся внутри контекста), тесты корректны, класс вложен в файл, 15+ кейсов."
+  },
+  "35b-a3b": {
+   "correctness": 2,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Фикстура rl не зависит от mock_time и создаётся при реальном monotonic — разрыв времени делает большинство поведенческих тестов падающими (try_acquire_success, refill и т.д.)."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "limiter зависит от mock_time — консистентно; корректные refill/timeout/None-тесты, параметризация невалидных кейсов. Хвост прозы обрезан, код цел."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "TimeController патчит monotonic и sleep, limiter зависит от фикстуры — консистентно; корректные тесты, отличное подробное объяснение на русском."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 5,
+   "format": 4,
+   "russian": 5,
+   "comment": "test_invalid_acquire_n без параметра n → ошибка сбора; в timeout-тесте неопределённый monkeypatch (NameError) и тело с pass; mock не патчит sleep. Много опечаток."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 6,
+   "comment": "FakeClock патчит monotonic и sleep на уровне модуля, лимитер зависит от clock — корректно; тщательные проверки sleeps, 20+ кейсов. Русского текста мало."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 6,
+   "comment": "Аккуратные детерминированные тесты, fake_sleep двигает часы, параметризация refill, thread-тест с Barrier. Русского объяснения немного."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Полностью не по теме: выдана эротическая проза вместо тестов. Провал."
+  },
+  "nemotron-omni": {
+   "correctness": 0,
+   "reasoning": 2,
+   "format": 3,
+   "russian": 5,
+   "comment": "from freezegun import freeze, travel — ложный API (нет таких экспортов), импорт падает и весь файл не собирается; freezegun к тому же не двигает monotonic лимитера."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Самодостаточный файл, _FakeClock патчит monotonic/sleep, limiter зависит от фикстуры; 20+ точных кейсов, дробный refill, подробное объяснение на русском."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 6,
+   "comment": "Подмена rate_limiter.time на FakeTime, лимитер зависит от clock; корректные проверки sleep_calls и now, thread-тест real-time. Русского текста мало."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 6,
+   "comment": "clock патчит monotonic, отдельная instant_sleep для sleep; корректные refill/timeout/deficit тесты, 15+ кейсов. Краткое русское вступление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 0,
+   "reasoning": 1,
+   "format": 0,
+   "russian": 3,
+   "comment": "Отказ: сообщает, что ФС read-only и модуля нет, тестов не предоставил вовсе."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "conftest+тесты, FakeClock на уровне модуля, лимитеры зависят от фикстуры; 20+ кейсов, точные проверки sleep_calls, хорошие русские пояснения."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Строгие детерминированные тесты с типами, sleep_calls как список, параметризация refill/init, thread-тест real-time. Аккуратно и корректно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 6,
+   "comment": "clock патчит monotonic/sleep на модуле, лимитер зависит от него; корректные refill/timeout, thread-тест с инвариантом. Русского немного."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 6,
+   "comment": "FakeClock консистентен, корректные refill/timeout/None тесты, параметризация невалидных кейсов. Краткие русские комментарии."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Основные тесты корректны (SimpleNamespace-подмена time), но в thread-тесте используется time.monotonic() без import time → NameError (модель это отметила, но код доставлен сломанным)."
+  },
+  "minimax-m3": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Покрытие почти образцовое (clock-фикстура с патчем monotonic+sleep, params=, parametrize негативов, approx, slow-маркер, 6 классов), но test_cap_not_exceeded_on_long_idle падает: после try_acquire() токенов 9, а ассерт ждёт 10.0. Пояснения на русском внятные, однако докстринги и комментарии в коде англоязычные."
+  }
+ },
+ "winner": "gemma-4-31b",
+ "notes": "Много сильных решений с консистентным mock (kimi, sol-low/medium, gpt-5.5-*, luna/terra, gemma, oss, flash, 27b). Провалы: nemotron-super (офф-топик), nemotron-omni (ложный freezegun API), luna-medium (отказ), 35b/deepseek-pro/diffusion (разрыв времени/сломанные тесты)."
+}

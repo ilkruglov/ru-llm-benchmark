@@ -1,1 +1,134 @@
-{"task_id":"kie_банки_8044f2110b","category":"kie","scores":{"27b-v2":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Все три факта верны: ПКО, КО-1, 0310001, Госкомстат 18.08.98 № 88. Ответ лаконичный, без выдумок."},"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, аккуратная структурированная подача с разбивкой органа/даты/номера."},"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три факта верны, чёткое оформление с выделением ключевых данных."},"gemma-4-31b":{"correctness":3,"reasoning":4,"format":8,"russian":9,"comment":"Наименование, форма и ОКУД верны, но постановление указано неверно: 10.08.98 № 58 вместо 18.08.98 № 88."},"diffusion-gemma":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Все факты верны; лёгкая обрезка в начале текста, но содержание корректное."},"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все три факта верны, ясное форматирование, без галлюцинаций."},"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты верны, чёткий лаконичный ответ."},"nemotron-omni":{"correctness":1,"reasoning":0,"format":1,"russian":1,"comment":"Ответ обрывочный и искажённый (03100310001, англ. фразы), наименование не названо, факты перевраны."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три факта верны, аккуратное развёрнутое оформление."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты верны, ясная структура."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты верны, корректный лаконичный ответ."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты верны, чёткое оформление."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все три факта верны, без выдумок."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все три факта верны, ясный ответ."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты верны, аккуратное форматирование."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все факты верны, корректно и лаконично."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все три факта верны, ясное оформление."}},"winner":"llama-scout","notes":"Большинство моделей дали все три факта верно; llama-scout, 35b-a3b и kimi выделяются самой аккуратной структурой. Gemma переврала постановление, nemotron выдал искажённый нечитаемый ответ."}
+{
+ "task_id": "kie_банки_8044f2110b",
+ "category": "kie",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три факта верны: ПКО, КО-1, 0310001, Госкомстат 18.08.98 № 88. Ответ лаконичный, без выдумок."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, аккуратная структурированная подача с разбивкой органа/даты/номера."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, чёткое оформление с выделением ключевых данных."
+  },
+  "gemma-4-31b": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 8,
+   "russian": 9,
+   "comment": "Наименование, форма и ОКУД верны, но постановление указано неверно: 10.08.98 № 58 вместо 18.08.98 № 88."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны; лёгкая обрезка в начале текста, но содержание корректное."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, ясное форматирование, без галлюцинаций."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, чёткий лаконичный ответ."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 0,
+   "format": 1,
+   "russian": 1,
+   "comment": "Ответ обрывочный и искажённый (03100310001, англ. фразы), наименование не названо, факты перевраны."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, аккуратное развёрнутое оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, ясная структура."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, корректный лаконичный ответ."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, чёткое оформление."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, без выдумок."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, ясный ответ."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, аккуратное форматирование."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, корректно и лаконично."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, ясное оформление."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта совпадают с эталоном: «ПРИХОДНЫЙ КАССОВЫЙ ОРДЕР», форма № КО-1 и код ОКУД 0310001, постановление Госкомстата России от 18.08.98 № 88. Галлюцинаций нет, дополнительно верно отмечено, что графа «по ОКПО» не заполнена."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство моделей дали все три факта верно; llama-scout, 35b-a3b и kimi выделяются самой аккуратной структурой. Gemma переврала постановление, nemotron выдал искажённый нечитаемый ответ."
+}

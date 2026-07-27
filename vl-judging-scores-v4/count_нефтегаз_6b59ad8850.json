@@ -1,1 +1,134 @@
-{"task_id":"count_нефтегаз_6b59ad8850","category":"count","scores":{"27b-v2":{"correctness":10,"reasoning":5,"format":8,"russian":10,"comment":"Верный ответ 4, полное грамотное предложение."},"35b-a3b":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Верное число 4, но голый ответ без пояснений и текста."},"llama-scout":{"correctness":10,"reasoning":5,"format":9,"russian":10,"comment":"Верно 4, чёткое оформленное предложение с выделением."},"gemma-4-31b":{"correctness":10,"reasoning":5,"format":8,"russian":10,"comment":"Верный ответ 4, аккуратное полное предложение."},"diffusion-gemma":{"correctness":10,"reasoning":5,"format":8,"russian":10,"comment":"Верно 4, полное корректное предложение."},"gpt-5.5-low":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Правильно 4, но лаконичный голый ответ."},"gpt-5.5-medium":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Правильно 4, без пояснений."},"nemotron-omni":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Верное число 4, только цифра."},"kimi-k2.6":{"correctness":10,"reasoning":5,"format":9,"russian":10,"comment":"Верно 4, полное предложение с уточнением цвета."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":3,"format":6,"russian":8,"comment":"Верно 4, краткая формулировка с существительным."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Правильно 4, голый ответ."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":3,"format":6,"russian":8,"comment":"Верно 4, краткое \"4 резервуара\"."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":5,"format":8,"russian":10,"comment":"Верно 4, оформленное предложение."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Правильно 4, только цифра."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Верно 4, голый ответ."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Правильно 4, только цифра."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":2,"format":4,"russian":5,"comment":"Верно 4, голый ответ."}},"winner":"llama-scout","notes":"Все модели верно назвали 4 резервуара; победитель выделен за наиболее полное и аккуратно оформленное объяснение."}
+{
+ "task_id": "count_нефтегаз_6b59ad8850",
+ "category": "count",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верный ответ 4, полное грамотное предложение."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Верное число 4, но голый ответ без пояснений и текста."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно 4, чёткое оформленное предложение с выделением."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верный ответ 4, аккуратное полное предложение."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно 4, полное корректное предложение."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Правильно 4, но лаконичный голый ответ."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Правильно 4, без пояснений."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Верное число 4, только цифра."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно 4, полное предложение с уточнением цвета."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 3,
+   "format": 6,
+   "russian": 8,
+   "comment": "Верно 4, краткая формулировка с существительным."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Правильно 4, голый ответ."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 3,
+   "format": 6,
+   "russian": 8,
+   "comment": "Верно 4, краткое \"4 резервуара\"."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно 4, оформленное предложение."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Правильно 4, только цифра."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Верно 4, голый ответ."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Правильно 4, только цифра."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 5,
+   "comment": "Верно 4, голый ответ."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ответ верный — 4 резервуара, причём модель корректно локализовала каждый из них (два ближних, два дальних), не спутав с мелкими ёмкостями. Оформление ясное, русский безупречный."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Все модели верно назвали 4 резервуара; победитель выделен за наиболее полное и аккуратно оформленное объяснение."
+}

@@ -1,1 +1,134 @@
-{"task_id":"table_промышленность_14b56bece7","category":"table","scores":{"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все три ответа верны: 16, три профиля с ГОСТ, L100×7 и L125×8. LaTeX-разметка ($…$) слегка засоряет вид."},"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все факты верны, чёткая структура и корректный русский."},"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью верные ответы, аккуратная структура с разбивкой по строкам."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три пункта верны, ясная и лаконичная структура."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Ответы верны, но опечатка «Двутавроры» и незакрытая разметка в п.3 снижают качество."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все верно; размеры уголков даны без символа L (100×7), что допустимо."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректные ответы, аккуратное оформление."},"nemotron-omni":{"correctness":10,"reasoning":7,"format":6,"russian":8,"comment":"Все факты верны, но ответ предельно телеграфный, без структуры и пояснений."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все верно, символ уголка ∟ и подробная разбивка по строкам."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные ответы с корректным символом ∟, чуть менее подробно по п.1."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, компактное и ясное оформление."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Ответы полностью верны, лаконичная структура."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три пункта верны, чёткое построчное оформление."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректно, аккуратная структура с разбивкой по строкам."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные ответы с символом ∟, компактное изложение."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все факты верны, ясная структура."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью верные ответы, корректный символ ∟ и чёткое оформление."}},"winner":"gpt-5.6-terra-medium","notes":"Практически все модели дали фактически идентичные и полностью верные ответы; различия только в оформлении. Слабее прочих nemotron-omni (телеграфно) и diffusion-gemma (опечатка)."}
+{
+ "task_id": "table_промышленность_14b56bece7",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три ответа верны: 16, три профиля с ГОСТ, L100×7 и L125×8. LaTeX-разметка ($…$) слегка засоряет вид."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все факты верны, чёткая структура и корректный русский."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью верные ответы, аккуратная структура с разбивкой по строкам."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта верны, ясная и лаконичная структура."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Ответы верны, но опечатка «Двутавроры» и незакрытая разметка в п.3 снижают качество."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все верно; размеры уголков даны без символа L (100×7), что допустимо."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью корректные ответы, аккуратное оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 6,
+   "russian": 8,
+   "comment": "Все факты верны, но ответ предельно телеграфный, без структуры и пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все верно, символ уголка ∟ и подробная разбивка по строкам."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные ответы с корректным символом ∟, чуть менее подробно по п.1."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, компактное и ясное оформление."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ответы полностью верны, лаконичная структура."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта верны, чёткое построчное оформление."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью корректно, аккуратная структура с разбивкой по строкам."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные ответы с символом ∟, компактное изложение."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все факты верны, ясная структура."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью верные ответы, корректный символ ∟ и чёткое оформление."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта полностью совпадают с эталоном: последний номер 16, три вида профиля с верными ГОСТами (26020-83, 8509-93, 8240-97) и размеры уголков L100×7 и L125×8. Ответ чётко структурирован таблицей и списком, русский язык безупречен."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Практически все модели дали фактически идентичные и полностью верные ответы; различия только в оформлении. Слабее прочих nemotron-omni (телеграфно) и diffusion-gemma (опечатка)."
+}

@@ -1,1 +1,134 @@
-{"task_id":"table_дата-аналитика_1a5b277c75","category":"table","scores":{"35b-a3b":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"Максимум верно (Шолохов), но худшим назван Соколов П. с выдуманной суммой 7 745 000 и неверной разницей 4 325 000."},"llama-scout":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"Максимум верен, но худший — Соколов П. с придуманной суммой 7 450 000 и разницей 4 620 000; ошибка."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."},"gemma-4-31b":{"correctness":5,"reasoning":6,"format":8,"russian":7,"comment":"Значения и разница 4 090 000 верны, но худший назван выдуманной фамилией Григорьев М. вместо Тригубова."},"diffusion-gemma":{"correctness":9,"reasoning":9,"format":9,"russian":8,"comment":"Все суммы и разница 4 090 000 верны; лишь мелкая опечатка в фамилии (Шлохов)."},"gpt-5.5-low":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"Значения и разница 4 090 000 верны, но фамилия худшего искажена (Трибунов вместо Тригубов)."},"gpt-5.5-medium":{"correctness":7,"reasoning":6,"format":8,"russian":8,"comment":"Разница 4 090 000 и суммы верны, но фамилия искажена (Трифонов вместо Тригубов)."},"nemotron-omni":{"correctness":10,"reasoning":4,"format":4,"russian":7,"comment":"Ответ верен (Шолохов Г. и Тригубов М., 4 090 000), но крайне лаконичен, без структуры."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью верно с чётким расчётом: Шолохов Г. минус Тригубов М. = 4 090 000 руб."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."},"gpt-5.6-luna-medium":{"correctness":7,"reasoning":7,"format":9,"russian":9,"comment":"Значения и разница верны, но фамилия худшего искажена (Трибунов вместо Тригубов)."},"gpt-5.6-sol-low":{"correctness":2,"reasoning":3,"format":8,"russian":9,"comment":"Худшим ошибочно назван Соколов П. (9 745 000), разница 2 325 000 — неверно, Тригубов пропущен."},"gpt-5.6-sol-medium":{"correctness":1,"reasoning":2,"format":8,"russian":8,"comment":"Инициал лучшего искажён (Шолохов П.), худший — Соколов П., разница 2 325 000 — неверно."},"gpt-5.6-terra-high":{"correctness":6,"reasoning":7,"format":9,"russian":9,"comment":"Суммы и разница 4 090 000 верны, но фамилия/инициал худшего искажены (Тригуб В.)."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."}},"winner":"kimi-k2.6","notes":"Полностью верный ответ с чётким расчётом и структурой; ряд моделей (27b-v2, luna/terra) также идеальны, но kimi даёт наиболее полное пояснение."}
+{
+ "task_id": "table_дата-аналитика_1a5b277c75",
+ "category": "table",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Максимум верно (Шолохов), но худшим назван Соколов П. с выдуманной суммой 7 745 000 и неверной разницей 4 325 000."
+  },
+  "llama-scout": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Максимум верен, но худший — Соколов П. с придуманной суммой 7 450 000 и разницей 4 620 000; ошибка."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."
+  },
+  "gemma-4-31b": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 7,
+   "comment": "Значения и разница 4 090 000 верны, но худший назван выдуманной фамилией Григорьев М. вместо Тригубова."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все суммы и разница 4 090 000 верны; лишь мелкая опечатка в фамилии (Шлохов)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Значения и разница 4 090 000 верны, но фамилия худшего искажена (Трибунов вместо Тригубов)."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Разница 4 090 000 и суммы верны, но фамилия искажена (Трифонов вместо Тригубов)."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 4,
+   "russian": 7,
+   "comment": "Ответ верен (Шолохов Г. и Тригубов М., 4 090 000), но крайне лаконичен, без структуры."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью верно с чётким расчётом: Шолохов Г. минус Тригубов М. = 4 090 000 руб."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Значения и разница верны, но фамилия худшего искажена (Трибунов вместо Тригубов)."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 9,
+   "comment": "Худшим ошибочно назван Соколов П. (9 745 000), разница 2 325 000 — неверно, Тригубов пропущен."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 8,
+   "russian": 8,
+   "comment": "Инициал лучшего искажён (Шолохов П.), худший — Соколов П., разница 2 325 000 — неверно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Суммы и разница 4 090 000 верны, но фамилия/инициал худшего искажены (Тригуб В.)."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: Шолохов Г. и Тригубов М., разница 4 090 000 руб."
+  },
+  "minimax-m3": {
+   "correctness": 4,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все суммы и разница (4 090 000 руб.) определены верно, включая контрольную проверку общего итога, но обе ключевые фамилии распознаны неправильно: «Терехов М.» вместо «Тригубов М.» и «Шишков Г.» вместо «Шолохов Г.». Так как задание прямо требует указать фамилии, это существенная ошибка распознавания."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Полностью верный ответ с чётким расчётом и структурой; ряд моделей (27b-v2, luna/terra) также идеальны, но kimi даёт наиболее полное пояснение."
+}

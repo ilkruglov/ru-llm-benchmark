@@ -1,28 +1,155 @@
 {
-  "task_id": "m-format-01",
-  "category": "format_strict",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Схема выполнена полностью; subtotal, discount_total, tax_total (по брутто) и grand_total сходятся до копейки. Осмысленные русские данные."},
-    "deepseek-flash": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Валидный JSON, все ограничения соблюдены, вся арифметика (включая налог) полностью согласована."},
-    "deepseek-pro": {"correctness": 7, "reasoning": 7, "format": 10, "russian": 9, "comment": "Формат идеален, но discount_total = 1145 при фактической сумме скидок 1150; grand_total наследует ошибку."},
-    "35b-a3b": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Все поля и форматы корректны, subtotal/discount/grand сходятся; налог посчитан от базы, отличной от брутто (допустимо)."},
-    "27b-v2": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Схема соблюдена, суммы согласованы; tax_total считался от суммы после скидок — допустимая трактовка."},
-    "gemma-4-31b": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Полностью валидный объект, все правила и арифметика (включая налог) сходятся."},
-    "diffusion-gemma": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Все ограничения выполнены, суммы и налог полностью консистентны."},
-    "gpt-5.5-low": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Схема корректна, subtotal и grand_total сходятся; discount_total округлён на копейку, налог от посленалоговой базы."},
-    "gpt-5.5-medium": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 9, "comment": "Все поля валидны, subtotal/discount/grand сходятся; налог посчитан от базы после скидок."},
-    "nemotron-omni": {"correctness": 6, "reasoning": 6, "format": 10, "russian": 9, "comment": "Формально валидно, но discount_total = 8750 при фактической сумме скидок 8300, что ломает согласованность итогов."},
-    "nemotron-super": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Схема и вся арифметика согласованы; суммы товаров нереалистично велики, но правил это не нарушает."},
-    "kimi-k2.6": {"correctness": 5, "reasoning": 6, "format": 10, "russian": 9, "comment": "JSON валиден, но subtotal (22701.5 против 22591) и discount_total (3370.15 против 2759.1) расходятся с line_items и discounts."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Все ограничения соблюдены, subtotal, скидки, налог и grand_total сходятся точно."},
-    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 9, "comment": "Валидная схема, итоги согласованы; налог посчитан от базы после скидок."},
-    "gpt-5.6-luna-medium": {"correctness": 7, "reasoning": 7, "format": 10, "russian": 8, "comment": "Схема корректна, но subtotal 21549.5 против фактических 21549.0; кампания в utm смешивает транслит и кириллицу."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Все правила выполнены (одна скидка допустима), итоги сходятся; налог от базы после скидки."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Полностью валидный объект, subtotal, скидка, налог и grand_total сходятся точно."},
-    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Схема соблюдена, итоги согласованы; налог посчитан от суммы после скидок."},
-    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Все поля и типы корректны, суммы сходятся; налог от посленалоговой базы."},
-    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 7, "format": 10, "russian": 9, "comment": "Валидный JSON без лишних ключей, итоги согласованы; налог от базы после скидок."}
+ "task_id": "m-format-01",
+ "category": "format_strict",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Схема выполнена полностью; subtotal, discount_total, tax_total (по брутто) и grand_total сходятся до копейки. Осмысленные русские данные."
   },
-  "winner": "gpt-oss-120b",
-  "notes": "Все 20 моделей выдали валидный JSON со всеми обязательными полями и корректными типами, поэтому дифференциация идёт по арифметической согласованности итогов. Слабее всех kimi-k2.6 (несходящиеся subtotal и discount_total) и nemotron-omni (ошибка в discount_total)."
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON, все ограничения соблюдены, вся арифметика (включая налог) полностью согласована."
+  },
+  "deepseek-pro": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Формат идеален, но discount_total = 1145 при фактической сумме скидок 1150; grand_total наследует ошибку."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все поля и форматы корректны, subtotal/discount/grand сходятся; налог посчитан от базы, отличной от брутто (допустимо)."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Схема соблюдена, суммы согласованы; tax_total считался от суммы после скидок — допустимая трактовка."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полностью валидный объект, все правила и арифметика (включая налог) сходятся."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все ограничения выполнены, суммы и налог полностью консистентны."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Схема корректна, subtotal и grand_total сходятся; discount_total округлён на копейку, налог от посленалоговой базы."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все поля валидны, subtotal/discount/grand сходятся; налог посчитан от базы после скидок."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 9,
+   "comment": "Формально валидно, но discount_total = 8750 при фактической сумме скидок 8300, что ломает согласованность итогов."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Схема и вся арифметика согласованы; суммы товаров нереалистично велики, но правил это не нарушает."
+  },
+  "kimi-k2.6": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 9,
+   "comment": "JSON валиден, но subtotal (22701.5 против 22591) и discount_total (3370.15 против 2759.1) расходятся с line_items и discounts."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все ограничения соблюдены, subtotal, скидки, налог и grand_total сходятся точно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидная схема, итоги согласованы; налог посчитан от базы после скидок."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 8,
+   "comment": "Схема корректна, но subtotal 21549.5 против фактических 21549.0; кампания в utm смешивает транслит и кириллицу."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все правила выполнены (одна скидка допустима), итоги сходятся; налог от базы после скидки."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полностью валидный объект, subtotal, скидка, налог и grand_total сходятся точно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Схема соблюдена, итоги согласованы; налог посчитан от суммы после скидок."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все поля и типы корректны, суммы сходятся; налог от посленалоговой базы."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON без лишних ключей, итоги согласованы; налог от базы после скидок."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON без обёрток, все поля и форматы (ORD/CUST/SKU, ровно 3 позиции, типы, utm ровно 3 ключа) соблюдены; арифметика полностью сходится: subtotal 27741, скидки 2774.10+500=3274.10, налог 354, grand_total 25170.90. Единственная придирка — нулевая ставка НДС на смартфон и наушники нереалистична для РФ (значение формально допустимое)."
+  }
+ },
+ "winner": "gpt-oss-120b",
+ "notes": "Все 20 моделей выдали валидный JSON со всеми обязательными полями и корректными типами, поэтому дифференциация идёт по арифметической согласованности итогов. Слабее всех kimi-k2.6 (несходящиеся subtotal и discount_total) и nemotron-omni (ошибка в discount_total)."
 }

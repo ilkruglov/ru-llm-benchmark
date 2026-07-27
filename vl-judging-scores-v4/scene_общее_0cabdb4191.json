@@ -1,1 +1,134 @@
-{"task_id":"scene_общее_0cabdb4191","category":"scene","scores":{"llama-scout":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Верно: красные краны, контейнеры слева, суда справа, закат/утро. Полный и структурированный ответ."},"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно всё: красные краны, штабели контейнеров, акватория с судами, золотой час. Отлично."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Верно распознано всё, хороший анализ освещения; опечатка 'тепленному' и 'солнечный блик' слегка снижают качество."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта верны и ясно изложены, упомянуты длинные тени и золотистые тона."},"diffusion-gemma":{"correctness":9,"reasoning":8,"format":8,"russian":6,"comment":"Суть верна, но заметные опечатки ('сновываясь', 'кобли') портят русский."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Точно и лаконично: красные краны, контейнеры, вода с судами и кранами, закат/рассвет."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полный точный ответ с деталями цветов контейнеров и дальних кранов."},"nemotron-omni":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно и кратко: красные краны, контейнеры, вода с кораблями, закат."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Самый детальный и точный: цвета контейнеров, набережная, суда, обоснование заката. Отлично."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Всё верно, но очень сжато, минимум анализа освещения."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Верно и кратко, анализ освещения минимален."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Точно, но сжато, без развёрнутого обоснования."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно, добавлено обоснование по тёплому низкому свету."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Точно, упомянут водный канал и обоснование заката."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Верно, краткое обоснование закатного освещения."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Точно и лаконично, все пункты покрыты."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Верно, но самый короткий из terra, минимум деталей по контейнерам."}},"winner":"kimi-k2.6","notes":"Почти все модели верно распознали красные краны, штабели контейнеров, воду с судами и закатное освещение. Kimi-k2.6 дал наиболее детальный и обоснованный ответ."}
+{
+ "task_id": "scene_общее_0cabdb4191",
+ "category": "scene",
+ "scores": {
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно: красные краны, контейнеры слева, суда справа, закат/утро. Полный и структурированный ответ."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно всё: красные краны, штабели контейнеров, акватория с судами, золотой час. Отлично."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Верно распознано всё, хороший анализ освещения; опечатка 'тепленному' и 'солнечный блик' слегка снижают качество."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны и ясно изложены, упомянуты длинные тени и золотистые тона."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 6,
+   "comment": "Суть верна, но заметные опечатки ('сновываясь', 'кобли') портят русский."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно и лаконично: красные краны, контейнеры, вода с судами и кранами, закат/рассвет."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный точный ответ с деталями цветов контейнеров и дальних кранов."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно и кратко: красные краны, контейнеры, вода с кораблями, закат."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Самый детальный и точный: цвета контейнеров, набережная, суда, обоснование заката. Отлично."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Всё верно, но очень сжато, минимум анализа освещения."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно и кратко, анализ освещения минимален."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно, но сжато, без развёрнутого обоснования."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, добавлено обоснование по тёплому низкому свету."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно, упомянут водный канал и обоснование заката."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, краткое обоснование закатного освещения."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно и лаконично, все пункты покрыты."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, но самый короткий из terra, минимум деталей по контейнерам."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны: ярко-красные STS-краны, штабели разноцветных морских контейнеров слева, акватория с судами и дальними кранами справа, закатное контровое освещение. Ответ развёрнутый, структурный, без галлюцинаций; минус лишь за небольшую избыточность и домыслы про ''любимое время для фотографий''."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели верно распознали красные краны, штабели контейнеров, воду с судами и закатное освещение. Kimi-k2.6 дал наиболее детальный и обоснованный ответ."
+}

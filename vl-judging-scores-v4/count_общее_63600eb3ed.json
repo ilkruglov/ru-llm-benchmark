@@ -1,1 +1,134 @@
-{"task_id":"count_общее_63600eb3ed","category":"count","scores":{"35b-a3b":{"correctness":10,"reasoning":5,"format":6,"russian":9,"comment":"Верный ответ 7, но без разбора расположения машин."},"llama-scout":{"correctness":2,"reasoning":2,"format":6,"russian":9,"comment":"Насчитал 8 вместо 7 — ошибка счёта."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно 7 с подробным перечислением всех машин по позициям."},"gemma-4-31b":{"correctness":10,"reasoning":5,"format":6,"russian":9,"comment":"Верный ответ 7, без пояснений."},"diffusion-gemma":{"correctness":2,"reasoning":2,"format":6,"russian":9,"comment":"Насчитал 6 вместо 7 — ошибка."},"gpt-5.5-low":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно, но без анализа."},"gpt-5.5-medium":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно, без разбора."},"nemotron-omni":{"correctness":10,"reasoning":8,"format":8,"russian":1,"comment":"Верно 7 с подробным перечислением, но ответ полностью на английском."},"kimi-k2.6":{"correctness":10,"reasoning":5,"format":7,"russian":9,"comment":"Верный ответ 7, кратко и ясно."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":5,"format":5,"russian":6,"comment":"Голое число 7 — верно."},"gpt-5.6-terra-low":{"correctness":2,"reasoning":1,"format":5,"russian":6,"comment":"Ответ 8 вместо 7 — ошибка счёта."},"gpt-5.6-terra-medium":{"correctness":2,"reasoning":1,"format":5,"russian":6,"comment":"Ответ 8 вместо 7 — ошибка счёта."}},"winner":"27b-v2","notes":"На картинке 7 машин (4 сверху, 3 снизу). Большинство ответило 7; лучший — 27b-v2 с подробным корректным перечислением на русском."}
+{
+ "task_id": "count_общее_63600eb3ed",
+ "category": "count",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 9,
+   "comment": "Верный ответ 7, но без разбора расположения машин."
+  },
+  "llama-scout": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "Насчитал 8 вместо 7 — ошибка счёта."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно 7 с подробным перечислением всех машин по позициям."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 9,
+   "comment": "Верный ответ 7, без пояснений."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 9,
+   "comment": "Насчитал 6 вместо 7 — ошибка."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно, но без анализа."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно, без разбора."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 1,
+   "comment": "Верно 7 с подробным перечислением, но ответ полностью на английском."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верный ответ 7, кратко и ясно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 5,
+   "russian": 6,
+   "comment": "Голое число 7 — верно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 5,
+   "russian": 6,
+   "comment": "Ответ 8 вместо 7 — ошибка счёта."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 5,
+   "russian": 6,
+   "comment": "Ответ 8 вместо 7 — ошибка счёта."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 2,
+   "format": 5,
+   "russian": 4,
+   "comment": "Ответ «7» полностью верен и совпадает с эталоном. Однако это лишь одна цифра без каких-либо пояснений и разбора рядов, а русскоязычного текста фактически нет."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "На картинке 7 машин (4 сверху, 3 снизу). Большинство ответило 7; лучший — 27b-v2 с подробным корректным перечислением на русском."
+}

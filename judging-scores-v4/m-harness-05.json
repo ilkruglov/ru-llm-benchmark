@@ -1,148 +1,155 @@
 {
-  "task_id": "m-harness-05",
-  "category": "harness",
-  "scores": {
-    "27b-v2": {
-      "correctness": 10,
-      "reasoning": 9,
-      "format": 10,
-      "russian": 10,
-      "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
-    },
-    "gpt-5.6-luna-high": {
-      "correctness": 10,
-      "reasoning": 9,
-      "format": 10,
-      "russian": 10,
-      "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
-    },
-    "gpt-5.6-sol-medium": {
-      "correctness": 10,
-      "reasoning": 9,
-      "format": 10,
-      "russian": 10,
-      "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
-    },
-    "35b-a3b": {
-      "correctness": 10,
-      "reasoning": 9,
-      "format": 10,
-      "russian": 10,
-      "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
-    },
-    "gpt-5.5-low": {
-      "correctness": 10,
-      "reasoning": 9,
-      "format": 10,
-      "russian": 10,
-      "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
-    },
-    "gpt-oss-120b": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "deepseek-pro": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gemma-4-31b": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "diffusion-gemma": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gpt-5.5-medium": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "nemotron-super": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "kimi-k2.6": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gpt-5.6-luna-low": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gpt-5.6-luna-medium": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gpt-5.6-sol-low": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gpt-5.6-terra-high": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gpt-5.6-terra-low": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "gpt-5.6-terra-medium": {
-      "correctness": 10,
-      "reasoning": 8,
-      "format": 10,
-      "russian": 10,
-      "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
-    },
-    "deepseek-flash": {
-      "correctness": 0,
-      "reasoning": 0,
-      "format": 3,
-      "russian": 6,
-      "comment": "Выдумала данные по apac и Observation post_report, пропустив обязательный вызов get_region_metrics; итоговые цифры сфабрикованы."
-    },
-    "nemotron-omni": {
-      "correctness": 0,
-      "reasoning": 2,
-      "format": 4,
-      "russian": 8,
-      "comment": "Правильный вызов, но самостоятельно дописала Observation с выдуманными метриками apac, что прямо запрещено."
-    }
+ "task_id": "m-harness-05",
+ "category": "harness",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
   },
-  "winner": "27b-v2",
-  "notes": "Подавляющее большинство моделей выдали единственно верный шаг — запрос метрик apac; победитель отличается наиболее содержательным Thought со ссылкой на уже посчитанные eu/us. Провалились deepseek-flash и nemotron-omni из-за галлюцинации Observation."
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Ровно один корректный шаг — запрос метрик apac, с явной опорой на уже полученные наблюдения eu/us и планом расчёта."
+  },
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "nemotron-super": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: единственный вызов get_region_metrics для apac с валидными аргументами, без дублей и без выдуманных Observation."
+  },
+  "deepseek-flash": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 3,
+   "russian": 6,
+   "comment": "Выдумала данные по apac и Observation post_report, пропустив обязательный вызов get_region_metrics; итоговые цифры сфабрикованы."
+  },
+  "nemotron-omni": {
+   "correctness": 0,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 8,
+   "comment": "Правильный вызов, но самостоятельно дописала Observation с выдуманными метриками apac, что прямо запрещено."
+  },
+  "minimax-m3": {
+   "correctness": 6,
+   "reasoning": 5,
+   "format": 3,
+   "russian": 9,
+   "comment": "Следующий шаг выбран верно (apac) и Observation не выдуман, но блок Action/Action Input продублирован дважды подряд — прямое нарушение требования 'РОВНО один блок' и повторный вызов того же инструмента. Рассуждение минимальное, без опоры на уже полученные метрики."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Подавляющее большинство моделей выдали единственно верный шаг — запрос метрик apac; победитель отличается наиболее содержательным Thought со ссылкой на уже посчитанные eu/us. Провалились deepseek-flash и nemotron-omni из-за галлюцинации Observation."
 }

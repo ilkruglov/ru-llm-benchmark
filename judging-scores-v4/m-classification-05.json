@@ -1,28 +1,155 @@
 {
-  "task_id": "m-classification-05",
-  "category": "classification",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 6, "reasoning": 6, "format": 9, "russian": 2, "comment": "Риск занижен до high (должен быть critical), ст.256 нерелевантна; escalation_path и immediate_actions полностью на английском."},
-    "deepseek-flash": {"correctness": 7, "reasoning": 8, "format": 9, "russian": 9, "comment": "Критический риск и беременность верны, хорошее замечание про объективный статус, но ст.193-194 (дисциплинарка) — ложное срабатывание, нет ст.81/179."},
-    "deepseek-pro": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Сильный набор статей (261,3,81,179), верный critical; владелец Ethics_Committee спорен для первичного, но защитим."},
-    "35b-a3b": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Полный корректный набор (77,261,81,180), critical, продуманный эскалационный путь без Орлова/Беловой."},
-    "27b-v2": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 9, "comment": "Хороший набор статей (261,179,81,77,178), critical; ответ в ```json-обёртке, эскалация чуть короче."},
-    "gemma-4-31b": {"correctness": 6, "reasoning": 5, "format": 8, "russian": 3, "comment": "Мало статей, escalation_path — просто список ролей без шагов; immediate_actions полностью на английском."},
-    "diffusion-gemma": {"correctness": 6, "reasoning": 6, "format": 8, "russian": 8, "comment": "Всего 2 статьи (77,261) — тонко, escalation почти роли; русский с опечаткой 'предвтости'."},
-    "gpt-5.5-low": {"correctness": 7, "reasoning": 8, "format": 9, "russian": 9, "comment": "Очень подробные действия (litigation hold), но статей лишь две (261,77) и dispute_type=discrimination вместо wrongful_termination спорен."},
-    "gpt-5.5-medium": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Полный корректный набор статей (77,81,179,180,261,3), critical, глубокая проработка, чистый русский."},
-    "nemotron-omni": {"correctness": 5, "reasoning": 6, "format": 8, "russian": 6, "comment": "Риск занижен до high, статей только две; в тексте вкраплён иероглиф 'фリーズ'."},
-    "nemotron-super": {"correctness": 5, "reasoning": 6, "format": 8, "russian": 1, "comment": "ст.64 нерелевантна (ложное срабатывание), логика admin leave несоразмерна; escalation и actions полностью на английском."},
-    "kimi-k2.6": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 8, "comment": "Хороший набор (77,261,180,394), critical, детально; ```json-обёртка и вкрапления английских терминов."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Самый полный набор статей включая 145 УК и 5.27 КоАП, critical, полная проработка на русском."},
-    "gpt-5.6-luna-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Полный корректный набор статей, critical, чёткий отвод Орлова/HR и меры защиты."},
-    "gpt-5.6-luna-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Полный набор (3,77,81,178,179,180,261,237,394,392,5.27), critical, исчерпывающая проработка на русском."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Полный набор со ст.145 УК и 5.27 КоАП, critical, детальные immediate_actions с запретом реталиации."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Наиболее юридически полный: анализ преимущественного права, вакансий, litigation hold; полный набор статей, чистый русский."},
-    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Корректный набор (3,77,78,81,179,180,261), critical, хорошая структура проверки основания сокращения."},
-    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Полный набор статей, critical; sub_categories английскими кодами, прочая проза на русском."},
-    "gpt-5.6-terra-medium": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Корректный набор (3,77,81,180,261,5.27), critical; sub_categories английскими кодами, проза на русском."}
+ "task_id": "m-classification-05",
+ "category": "classification",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 2,
+   "comment": "Риск занижен до high (должен быть critical), ст.256 нерелевантна; escalation_path и immediate_actions полностью на английском."
   },
-  "winner": "gpt-5.6-sol-medium",
-  "notes": "Топ-кластер (sol-medium, luna-high/medium, 5.5-medium) даёт полный набор статей ТК/КоАП/УК, critical и полную русскую проработку. Штрафы: занижение риска до high (gpt-oss, nemotron-omni), англоязычный вывод (gpt-oss, gemma, nemotron-super), ложные статьи (deepseek-flash 193-194, nemotron-super 64)."
+  "deepseek-flash": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Критический риск и беременность верны, хорошее замечание про объективный статус, но ст.193-194 (дисциплинарка) — ложное срабатывание, нет ст.81/179."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Сильный набор статей (261,3,81,179), верный critical; владелец Ethics_Committee спорен для первичного, но защитим."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный корректный набор (77,261,81,180), critical, продуманный эскалационный путь без Орлова/Беловой."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Хороший набор статей (261,179,81,77,178), critical; ответ в ```json-обёртке, эскалация чуть короче."
+  },
+  "gemma-4-31b": {
+   "correctness": 6,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 3,
+   "comment": "Мало статей, escalation_path — просто список ролей без шагов; immediate_actions полностью на английском."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Всего 2 статьи (77,261) — тонко, escalation почти роли; русский с опечаткой 'предвтости'."
+  },
+  "gpt-5.5-low": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень подробные действия (litigation hold), но статей лишь две (261,77) и dispute_type=discrimination вместо wrongful_termination спорен."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный корректный набор статей (77,81,179,180,261,3), critical, глубокая проработка, чистый русский."
+  },
+  "nemotron-omni": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 6,
+   "comment": "Риск занижен до high, статей только две; в тексте вкраплён иероглиф 'фリーズ'."
+  },
+  "nemotron-super": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 1,
+   "comment": "ст.64 нерелевантна (ложное срабатывание), логика admin leave несоразмерна; escalation и actions полностью на английском."
+  },
+  "kimi-k2.6": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Хороший набор (77,261,180,394), critical, детально; ```json-обёртка и вкрапления английских терминов."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Самый полный набор статей включая 145 УК и 5.27 КоАП, critical, полная проработка на русском."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный корректный набор статей, critical, чёткий отвод Орлова/HR и меры защиты."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный набор (3,77,81,178,179,180,261,237,394,392,5.27), critical, исчерпывающая проработка на русском."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный набор со ст.145 УК и 5.27 КоАП, critical, детальные immediate_actions с запретом реталиации."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Наиболее юридически полный: анализ преимущественного права, вакансий, litigation hold; полный набор статей, чистый русский."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный набор (3,77,78,81,179,180,261), critical, хорошая структура проверки основания сокращения."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный набор статей, critical; sub_categories английскими кодами, прочая проза на русском."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный набор (3,77,81,180,261,5.27), critical; sub_categories английскими кодами, проза на русском."
+  },
+  "minimax-m3": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ядро определено верно (wrongful_termination, critical, pregnancy, ст.261/81/180/179), но много false positives: в protected_status добавлены 'maternity' и 'whistleblower', в статьях — раздутый список с выдумкой (ФЗ №491-ФЗ о whistleblower protection), ошибочной трактовкой ст.262.1, нерелевантными ст.82 ТК, ст.179 ГК и упоминанием ст.80 в подкатегории. Формат валиден (внутри markdown-фенса), русский чистый, рассуждение глубокое, но избыточное и с потерей точности."
+  }
+ },
+ "winner": "gpt-5.6-luna-high",
+ "notes": "Топ-кластер (sol-medium, luna-high/medium, 5.5-medium) даёт полный набор статей ТК/КоАП/УК, critical и полную русскую проработку. Штрафы: занижение риска до high (gpt-oss, nemotron-omni), англоязычный вывод (gpt-oss, gemma, nemotron-super), ложные статьи (deepseek-flash 193-194, nemotron-super 64)."
 }

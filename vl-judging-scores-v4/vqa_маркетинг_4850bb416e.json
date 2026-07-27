@@ -1,19 +1,134 @@
-{"task_id":"vqa_маркетинг_4850bb416e","category":"vqa","scores":{
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно прочитал «до 60%», посчитал 3000 руб., назвал MEGA SALE; чётко и с формулой."},
-"llama-scout":{"correctness":10,"reasoning":9,"format":7,"russian":9,"comment":"Все факты верны, расчёт показан; портит формат навязчивое LaTeX-оформление ($...$)."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно: до 60%, 3000 руб., MEGA SALE; структурировано и понятно."},
-"gemma-4-31b":{"correctness":9,"reasoning":6,"format":8,"russian":9,"comment":"Все три ответа верны, но без пояснения «до» и без расчёта — сухой список."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно, отметил «UPTO 60% OFF» и формулу; аккуратный список."},
-"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":8,"russian":10,"comment":"Верно 60%, 3000 руб., MEGA SALE с формулой; не подчеркнул «до»."},
-"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Верно с формулой и итогом; не отметил «до 60%»."},
-"nemotron-omni":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Все факты верны, привязал к «UPTO 60% OFF», показал расчёт; немного избыточно."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно, сослался на «UPTO 60% OFF», аккуратный список."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":6,"format":7,"russian":10,"comment":"Все ответы верны, но кратко, без расчёта и без «до 60%»."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":6,"format":7,"russian":10,"comment":"Верно, но лаконично, без формулы и уточнения «до»."},
-"gpt-5.6-luna-medium":{"correctness":9,"reasoning":5,"format":6,"russian":10,"comment":"Верно, но одной строкой, без расчёта и без «до 60%»."},
-"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":8,"russian":10,"comment":"Верно с формулой; не подчеркнул «до 60%»."},
-"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":8,"russian":10,"comment":"Верно с формулой; без уточнения «до»."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"Верно и с «до 60%», но очень кратко, без явного расчёта."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"Верно с «до 60%», лаконично, без формулы."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":6,"format":7,"russian":10,"comment":"Верно, но без уточнения «до» и без расчёта, кратко."}
-},"winner":"27b-v2","notes":"Все модели дали верный ответ (MEGA SALE, до 60%, 3000 руб.); победители — 27b-v2 и 35b-a3b за точность, формулу и чёткую структуру."}
+{
+ "task_id": "vqa_маркетинг_4850bb416e",
+ "category": "vqa",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно прочитал «до 60%», посчитал 3000 руб., назвал MEGA SALE; чётко и с формулой."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все факты верны, расчёт показан; портит формат навязчивое LaTeX-оформление ($...$)."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно: до 60%, 3000 руб., MEGA SALE; структурировано и понятно."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все три ответа верны, но без пояснения «до» и без расчёта — сухой список."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно, отметил «UPTO 60% OFF» и формулу; аккуратный список."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно 60%, 3000 руб., MEGA SALE с формулой; не подчеркнул «до»."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно с формулой и итогом; не отметил «до 60%»."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, привязал к «UPTO 60% OFF», показал расчёт; немного избыточно."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно, сослался на «UPTO 60% OFF», аккуратный список."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Все ответы верны, но кратко, без расчёта и без «до 60%»."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, но лаконично, без формулы и уточнения «до»."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 10,
+   "comment": "Верно, но одной строкой, без расчёта и без «до 60%»."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно с формулой; не подчеркнул «до 60%»."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно с формулой; без уточнения «до»."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно и с «до 60%», но очень кратко, без явного расчёта."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно с «до 60%», лаконично, без формулы."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Верно, но без уточнения «до» и без расчёта, кратко."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно: название MEGA SALE, скидка прочитана именно как «до 60%» с цитатой надписи, арифметика 5000 × 0,60 = 3000 руб. корректна. Структура чёткая, русский безупречный; анализ минимально краткий, но полностью достаточный."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели дали верный ответ (MEGA SALE, до 60%, 3000 руб.); победители — 27b-v2 и 35b-a3b за точность, формулу и чёткую структуру."
+}

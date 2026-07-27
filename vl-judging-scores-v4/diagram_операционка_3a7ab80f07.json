@@ -1,1 +1,134 @@
-{"task_id":"diagram_операционка_3a7ab80f07","category":"diagram","scores":{"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верно выписаны все номера (1,2,3,4,6,7) и однозначно назван пропущенный цех 5. Чёткая структура."},"llama-scout":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Правильно перечислены цеха обоих заводов и назван пропущенный 5. LaTeX-обёртка чисел ($1$) слегка мешает читаемости."},"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точно перечислены цеха и назван пропущенный Цех 5. Ясно и структурно."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные номера и правильный ответ Цех 5, лаконично."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Правильно выписаны номера и назван пропущенный Цех 5."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректный список 1,2,3,4,6,7 и пропущенный 5, кратко и точно."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные номера и правильный ответ 5."},"nemotron-omni":{"correctness":7,"reasoning":2,"format":2,"russian":4,"comment":"Назван правильный пропущенный номер 5, но номера цехов не выписаны и нет никакого разбора — задание выполнено лишь частично."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полный корректный список по обоим заводам и однозначно назван пропущенный цех 5."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные номера и правильный пропущенный 5, лаконично."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректный список и правильный ответ 5."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно: 1,2,3,4,6,7, пропущен 5."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Правильно перечислены цеха и назван пропущенный № 5."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные номера и правильный ответ Цех 5."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Корректный список и пропущенный Цех 5, очень кратко."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Верно перечислены цеха и назван пропущенный Цех 5."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точный список 1,2,3,4,6,7 и правильный пропущенный Цех 5."}},"winner":"27b-v2","notes":"Почти все модели верно прочитали номера (1,2,3,4,6,7) и назвали пропущенный Цех 5. Лучшие — полные и структурные ответы (27b-v2, 35b-a3b, kimi-k2.6); nemotron-omni дал лишь голое «5» без разбора."}
+{
+ "task_id": "diagram_операционка_3a7ab80f07",
+ "category": "diagram",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно выписаны все номера (1,2,3,4,6,7) и однозначно назван пропущенный цех 5. Чёткая структура."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильно перечислены цеха обоих заводов и назван пропущенный 5. LaTeX-обёртка чисел ($1$) слегка мешает читаемости."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точно перечислены цеха и назван пропущенный Цех 5. Ясно и структурно."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные номера и правильный ответ Цех 5, лаконично."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Правильно выписаны номера и назван пропущенный Цех 5."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный список 1,2,3,4,6,7 и пропущенный 5, кратко и точно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные номера и правильный ответ 5."
+  },
+  "nemotron-omni": {
+   "correctness": 7,
+   "reasoning": 2,
+   "format": 2,
+   "russian": 4,
+   "comment": "Назван правильный пропущенный номер 5, но номера цехов не выписаны и нет никакого разбора — задание выполнено лишь частично."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный корректный список по обоим заводам и однозначно назван пропущенный цех 5."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные номера и правильный пропущенный 5, лаконично."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный список и правильный ответ 5."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: 1,2,3,4,6,7, пропущен 5."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильно перечислены цеха и назван пропущенный № 5."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные номера и правильный ответ Цех 5."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Корректный список и пропущенный Цех 5, очень кратко."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно перечислены цеха и назван пропущенный Цех 5."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный список 1,2,3,4,6,7 и правильный пропущенный Цех 5."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Номера цехов прочитаны верно (1,2,3,4,6,7) и однозначно назван пропущенный Цех 5. Ответ компактный и корректный, но без явного указания, что список одинаков для обоих заводов, и без развёрнутого анализа."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Почти все модели верно прочитали номера (1,2,3,4,6,7) и назвали пропущенный Цех 5. Лучшие — полные и структурные ответы (27b-v2, 35b-a3b, kimi-k2.6); nemotron-omni дал лишь голое «5» без разбора."
+}

@@ -1,1 +1,134 @@
-{"task_id":"map_дата-аналитика_2affe7348e","category":"map","scores":{"llama-scout":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"Главный факт неверен: округ №4 назван Сибирским, тогда как это Дальневосточный. Список округов приведён корректно."},"35b-a3b":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верно: №4 — Дальневосточный. Список округов адекватный, пропущен Северо-Кавказский, но добавлен разумный контекст."},"27b-v2":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верно определён Дальневосточный округ, перечислены остальные семь округов без выдумок."},"gemma-4-31b":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Правильный ответ и полный корректный перечень округов из легенды."},"diffusion-gemma":{"correctness":1,"reasoning":2,"format":5,"russian":3,"comment":"Выдумал несуществующий 'Восточный федеральный округ', имена искажены опечатками ('Североверный', 'Северо-каказский')."},"gpt-5.5-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верный ответ и полный список из восьми реальных округов без ошибок."},"gpt-5.5-medium":{"correctness":6,"reasoning":7,"format":8,"russian":9,"comment":"Ответ верный, но добавлен несуществующий 'Крымский федеральный округ' — выдумка."},"nemotron-omni":{"correctness":1,"reasoning":0,"format":1,"russian":2,"comment":"Ответ 'Южный' неверен, перечень не приведён, содержание практически пустое."},"kimi-k2.6":{"correctness":7,"reasoning":6,"format":8,"russian":9,"comment":"Ответ верный, но перечень дан как общее знание о 'современных картах', а не строго по легенде."},"gpt-5.6-luna-high":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верный ответ, корректный перечень семи округов."},"gpt-5.6-luna-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верно определён Дальневосточный округ, список округов корректен."},"gpt-5.6-luna-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Правильный ответ и точный перечень округов."},"gpt-5.6-sol-low":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верный ответ, корректный перечень округов."},"gpt-5.6-sol-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Правильный ответ и точный список округов."},"gpt-5.6-terra-high":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Верно, Дальневосточный округ, корректный перечень."},"gpt-5.6-terra-low":{"correctness":6,"reasoning":7,"format":8,"russian":9,"comment":"Ответ верный, но добавлен несуществующий 'Крымский федеральный округ'."},"gpt-5.6-terra-medium":{"correctness":8,"reasoning":7,"format":8,"russian":9,"comment":"Правильный ответ и корректный перечень округов."}},"winner":"gpt-5.5-low","notes":"Большинство моделей верно определили округ №4 как Дальневосточный; gpt-5.5-low дал точный ответ и полный список реальных округов без выдумок."}
+{
+ "task_id": "map_дата-аналитика_2affe7348e",
+ "category": "map",
+ "scores": {
+  "llama-scout": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Главный факт неверен: округ №4 назван Сибирским, тогда как это Дальневосточный. Список округов приведён корректно."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно: №4 — Дальневосточный. Список округов адекватный, пропущен Северо-Кавказский, но добавлен разумный контекст."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно определён Дальневосточный округ, перечислены остальные семь округов без выдумок."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильный ответ и полный корректный перечень округов из легенды."
+  },
+  "diffusion-gemma": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 5,
+   "russian": 3,
+   "comment": "Выдумал несуществующий 'Восточный федеральный округ', имена искажены опечатками ('Североверный', 'Северо-каказский')."
+  },
+  "gpt-5.5-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верный ответ и полный список из восьми реальных округов без ошибок."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ответ верный, но добавлен несуществующий 'Крымский федеральный округ' — выдумка."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 0,
+   "format": 1,
+   "russian": 2,
+   "comment": "Ответ 'Южный' неверен, перечень не приведён, содержание практически пустое."
+  },
+  "kimi-k2.6": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ответ верный, но перечень дан как общее знание о 'современных картах', а не строго по легенде."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верный ответ, корректный перечень семи округов."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно определён Дальневосточный округ, список округов корректен."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильный ответ и точный перечень округов."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верный ответ, корректный перечень округов."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильный ответ и точный список округов."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, Дальневосточный округ, корректный перечень."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ответ верный, но добавлен несуществующий 'Крымский федеральный округ'."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Правильный ответ и корректный перечень округов."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Ключевой факт определён верно: округ №4 — Дальневосточный; перечислены все восемь округов легенды. Небольшой минус за то, что список приведён из общих знаний ('как правило') с собственной нумерацией, не совпадающей с нумерацией врезки, плюс необязательный перечень субъектов ДФО, не читаемый по врезке."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство моделей верно определили округ №4 как Дальневосточный; gpt-5.5-low дал точный ответ и полный список реальных округов без выдумок."
+}

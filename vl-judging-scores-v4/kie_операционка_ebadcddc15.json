@@ -1,1 +1,134 @@
-{"task_id":"kie_операционка_ebadcddc15","category":"kie","scores":{"35b-a3b":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все поля и суммы верны, НДС-проверка корректна, отдельно и точно разъяснена ловушка с банковскими реквизитами Получателя."},"llama-scout":{"correctness":10,"reasoning":9,"format":7,"russian":10,"comment":"Данные и НДС верны, но обилие $-обёрток LaTeX загромождает читабельность."},"27b-v2":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все реквизиты и суммы верны, расчёт НДС подробный и корректный."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полностью верные данные и корректная проверка НДС, структура ясная."},"diffusion-gemma":{"correctness":6,"reasoning":5,"format":8,"russian":9,"comment":"Опечатка в названии («ВАИЛЕК») и ложное утверждение о «технической ошибке» в документе — равенство Итого и Всего к оплате корректно для НДС «в том числе»."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все поля и НДС-проверка верны, изложение сжатое и точное."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные реквизиты и суммы, корректный расчёт НДС, аккуратная структура."},"nemotron-omni":{"correctness":10,"reasoning":8,"format":7,"russian":10,"comment":"Все данные и вывод по НДС верны, но оформление минималистичное, без развёрнутого расчёта."},"kimi-k2.6":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все поля точны, расчёт НДС развёрнут и корректен, вывод обоснован."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные реквизиты, суммы и проверка НДС, изложение чёткое."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные и НДС-проверка верны, лаконично и ясно."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные поля и корректный расчёт НДС, аккуратное оформление."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все реквизиты и суммы верны, проверка НДС корректна."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Полностью верные данные, корректный НДС и точное примечание о расхождении банковских реквизитов Получателя."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные поля и суммы, проверка НДС корректна, изложение сжатое."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные и НДС-проверка верны, чёткая структура."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные реквизиты и суммы, корректный вывод по НДС."}},"winner":"35b-a3b","notes":"Почти все модели безошибочно извлекли поля и верно проверили НДС; 35b-a3b и sol-medium дополнительно и точно разъяснили ловушку с банковскими реквизитами Получателя. diffusion-gemma допустила опечатку в названии и ложное утверждение об ошибке в документе."}
+{
+ "task_id": "kie_операционка_ebadcddc15",
+ "category": "kie",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля и суммы верны, НДС-проверка корректна, отдельно и точно разъяснена ловушка с банковскими реквизитами Получателя."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 7,
+   "russian": 10,
+   "comment": "Данные и НДС верны, но обилие $-обёрток LaTeX загромождает читабельность."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все реквизиты и суммы верны, расчёт НДС подробный и корректный."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верные данные и корректная проверка НДС, структура ясная."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 9,
+   "comment": "Опечатка в названии («ВАИЛЕК») и ложное утверждение о «технической ошибке» в документе — равенство Итого и Всего к оплате корректно для НДС «в том числе»."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля и НДС-проверка верны, изложение сжатое и точное."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные реквизиты и суммы, корректный расчёт НДС, аккуратная структура."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 10,
+   "comment": "Все данные и вывод по НДС верны, но оформление минималистичное, без развёрнутого расчёта."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля точны, расчёт НДС развёрнут и корректен, вывод обоснован."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные реквизиты, суммы и проверка НДС, изложение чёткое."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные и НДС-проверка верны, лаконично и ясно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные поля и корректный расчёт НДС, аккуратное оформление."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все реквизиты и суммы верны, проверка НДС корректна."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верные данные, корректный НДС и точное примечание о расхождении банковских реквизитов Получателя."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные поля и суммы, проверка НДС корректна, изложение сжатое."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные и НДС-проверка верны, чёткая структура."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные реквизиты и суммы, корректный вывод по НДС."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Номер, дата, ИНН обоих контрагентов, все три суммы и проверка НДС (381 355,93 = 2 500 000×18/118) выполнены верно, вывод корректен. Две ошибки распознавания: КПП Поставщика указан 773301001 вместо 773303001 и наименование покупателя «ООО ПАГУНА» вместо «ООО ЛАГУНА»."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели безошибочно извлекли поля и верно проверили НДС; 35b-a3b и sol-medium дополнительно и точно разъяснили ловушку с банковскими реквизитами Получателя. diffusion-gemma допустила опечатку в названии и ложное утверждение об ошибке в документе."
+}

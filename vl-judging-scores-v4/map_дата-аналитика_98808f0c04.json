@@ -1,19 +1,134 @@
-{"task_id":"map_дата-аналитика_98808f0c04","category":"map","scores":{
-"27b-v2":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны (Казахстан, Охотское море), но без обоснования."},
-"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно и с опорой на подписи (Астана, Сахалин), развёрнуто и структурно."},
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Оба объекта названы верно, с указанием опорных подписей."},
-"gemma-4-31b":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Верно, но лаконично без обоснования."},
-"diffusion-gemma":{"correctness":10,"reasoning":8,"format":8,"russian":8,"comment":"Верно и с пояснениями, но опечатка в начале ('пираясь')."},
-"gpt-5.5-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, минимальный формат без обоснования."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, минимальный формат без обоснования."},
-"nemotron-omni":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Верно, кратко без пояснений."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно, с чётким указанием опорных подписей (Астана, Магадан, Сахалин)."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Оба ответа верны, без обоснования."}
-},"winner":"kimi-k2.6","notes":"Все модели дали верные ответы (Казахстан, Охотское море); выше оценены развёрнутые с опорой на подписи (kimi-k2.6, llama-scout)."}
+{
+ "task_id": "map_дата-аналитика_98808f0c04",
+ "category": "map",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны (Казахстан, Охотское море), но без обоснования."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и с опорой на подписи (Астана, Сахалин), развёрнуто и структурно."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба объекта названы верно, с указанием опорных подписей."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, но лаконично без обоснования."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Верно и с пояснениями, но опечатка в начале ('пираясь')."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, минимальный формат без обоснования."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, минимальный формат без обоснования."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, кратко без пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно, с чётким указанием опорных подписей (Астана, Магадан, Сахалин)."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Оба ответа верны, без обоснования."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Оба объекта названы верно: Казахстан (с Астаной) и Охотское море (Магадан, Петропавловск-Камчатский, Сахалин). Ответ краткий, точный, с корректной опорой на подписи карты."
+  }
+ },
+ "winner": "llama-scout",
+ "notes": "Все модели дали верные ответы (Казахстан, Охотское море); выше оценены развёрнутые с опорой на подписи (kimi-k2.6, llama-scout)."
+}

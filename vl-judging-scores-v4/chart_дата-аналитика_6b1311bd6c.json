@@ -1,1 +1,134 @@
-{"task_id":"chart_дата-аналитика_6b1311bd6c","category":"chart","scores":{"llama-scout":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Минимум 04:00 ~5,5k и общая динамика верны; максимум чуть занижен (11,5-12k). Очень структурно."},"35b-a3b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Точно: 04:00, ~5k, корректный рост и плато. Кратко и ясно."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Идеально: 04:00, ~5k, пик 14-16, вечернее снижение. Самый детальный и точный разбор."},"gemma-4-31b":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"Минимум и рост верны, но пик завышен (12k-13k) и указан до 18:00. В целоно корректно."},"diffusion-gemma":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"04:00 ~5k, пик свыше 12k в 14-18 — верно. Хорошая структура."},"gpt-5.5-low":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Минимум, значение и динамика верны. Кратко, без выраженной структуры."},"gpt-5.5-medium":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Точное описание минимума ~5k и плато 12-12,5k. Компактно."},"nemotron-omni":{"correctness":9,"reasoning":7,"format":7,"russian":5,"comment":"Данные верны (04:00, ~5k, пик 12k), но вставки на английском ('from 8k') портят русский."},"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"Минимум 04:00-05:00 ~5k и плато ~12k верны. Хорошо структурировано."},"gpt-5.6-luna-high":{"correctness":8,"reasoning":8,"format":7,"russian":9,"comment":"Минимум и динамика верны, но максимум завышен (12,5-13k). Кратко."},"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"04:00 ~5k, пик ~12,5k, спад к ~11,5k — корректно и точно."},"gpt-5.6-luna-medium":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Верный минимум и плато 12-12,5k. Ясно и компактно."},"gpt-5.6-sol-low":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Минимум 04:00 ~5k, день 12-12,5k, вечернее снижение — всё верно."},"gpt-5.6-sol-medium":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Точное описание минимума и плато 11-12,5k со стабилизацией после 14:00."},"gpt-5.6-terra-high":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"04:00 ~5k, рост к ~11k к 08:00, пик 12-12,5k — корректно."},"gpt-5.6-terra-low":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Минимум и пик 14-18 ~12,3k указаны точно. Компактно."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":8,"format":7,"russian":9,"comment":"Верно: минимум 04:00 ~5k, пик 14-18 ~12,3-12,4k, вечернее снижение."}},"winner":"27b-v2","notes":"Почти все модели верно определили минимум 04:00 ~5k и динамику. 27b-v2 дал самый точный и детальный разбор; nemotron-omni подпортил русский английскими вставками."}
+{
+ "task_id": "chart_дата-аналитика_6b1311bd6c",
+ "category": "chart",
+ "scores": {
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Минимум 04:00 ~5,5k и общая динамика верны; максимум чуть занижен (11,5-12k). Очень структурно."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Точно: 04:00, ~5k, корректный рост и плато. Кратко и ясно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Идеально: 04:00, ~5k, пик 14-16, вечернее снижение. Самый детальный и точный разбор."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Минимум и рост верны, но пик завышен (12k-13k) и указан до 18:00. В целоно корректно."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "04:00 ~5k, пик свыше 12k в 14-18 — верно. Хорошая структура."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Минимум, значение и динамика верны. Кратко, без выраженной структуры."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Точное описание минимума ~5k и плато 12-12,5k. Компактно."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 5,
+   "comment": "Данные верны (04:00, ~5k, пик 12k), но вставки на английском ('from 8k') портят русский."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Минимум 04:00-05:00 ~5k и плато ~12k верны. Хорошо структурировано."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Минимум и динамика верны, но максимум завышен (12,5-13k). Кратко."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "04:00 ~5k, пик ~12,5k, спад к ~11,5k — корректно и точно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верный минимум и плато 12-12,5k. Ясно и компактно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Минимум 04:00 ~5k, день 12-12,5k, вечернее снижение — всё верно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Точное описание минимума и плато 11-12,5k со стабилизацией после 14:00."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "04:00 ~5k, рост к ~11k к 08:00, пик 12-12,5k — корректно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Минимум и пик 14-18 ~12,3k указаны точно. Компактно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верно: минимум 04:00 ~5k, пик 14-18 ~12,3-12,4k, вечернее снижение."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Минимум точно определён (04:00, ~5k), таблица значений и описание динамики (падение к 4 утра, резкий рост до 06:00, плато 12–12,5k днём, слабое снижение к 22:00) полностью соответствуют графику. Разбор глубокий и структурный, русский корректный; лёгкий минус за избыточные эмодзи и слегка формальную интерпретацию 'вечерний пик' для плато."
+  }
+ },
+ "winner": "27b-v2",
+ "notes": "Почти все модели верно определили минимум 04:00 ~5k и динамику. 27b-v2 дал самый точный и детальный разбор; nemotron-omni подпортил русский английскими вставками."
+}

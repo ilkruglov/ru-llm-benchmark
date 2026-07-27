@@ -1,19 +1,134 @@
-{"task_id":"kie_операционка_1364943338","category":"kie","scores":{
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 8 полей извлечены абсолютно верно, включая прочерки в ИНН. Чёткий нумерованный список."},
-"llama-scout":{"correctness":9,"reasoning":7,"format":7,"russian":8,"comment":"Все значения верны, но опечатка в тексте формы (ОТВЕТСВЕННОСТЬЮ) и странное $-оформление цифр."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 8 полей верны, аккуратный список."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все поля извлечены точно и полно."},
-"diffusion-gemma":{"correctness":2,"reasoning":4,"format":7,"russian":7,"comment":"Грубые ошибки: КПП 3808010001, код органа 38112/210, представитель ИВАНОВ ПЕТР ИВАНОВ — искажения фактов."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 8 значений верны, чистое оформление."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все поля извлечены безупречно, включая прочерки ИНН."},
-"nemotron-omni":{"correctness":3,"reasoning":3,"format":3,"russian":5,"comment":"ИНН искажён (38121213456), КПП 3808010001, наименование сведено к ИВАНОВИЧ — несколько ошибок, без подписей полей."},
-"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 8 полей верны, аккуратно оформлено."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны; ПЁТР через ё допустимо."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 8 полей верны, включая прочерки ИНН."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точное извлечение всех полей."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все поля верны; ПЁТР через ё допустимо."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все 8 значений корректны и полны."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все значения верны; в пп.6-8 без подписей полей, но нумерация сохранена."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все поля извлечены точно."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все значения верны; часть пунктов без подписей полей."}
-},"winner":"gpt-5.5-medium","notes":"Большинство моделей извлекли все 8 полей идеально. Провалились diffusion-gemma и nemotron-omni (искажения ИНН/КПП/наименования/ФИО)."}
+{
+ "task_id": "kie_операционка_1364943338",
+ "category": "kie",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 8 полей извлечены абсолютно верно, включая прочерки в ИНН. Чёткий нумерованный список."
+  },
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все значения верны, но опечатка в тексте формы (ОТВЕТСВЕННОСТЬЮ) и странное $-оформление цифр."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 8 полей верны, аккуратный список."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля извлечены точно и полно."
+  },
+  "diffusion-gemma": {
+   "correctness": 2,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 7,
+   "comment": "Грубые ошибки: КПП 3808010001, код органа 38112/210, представитель ИВАНОВ ПЕТР ИВАНОВ — искажения фактов."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 8 значений верны, чистое оформление."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля извлечены безупречно, включая прочерки ИНН."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 5,
+   "comment": "ИНН искажён (38121213456), КПП 3808010001, наименование сведено к ИВАНОВИЧ — несколько ошибок, без подписей полей."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 8 полей верны, аккуратно оформлено."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны; ПЁТР через ё допустимо."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 8 полей верны, включая прочерки ИНН."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точное извлечение всех полей."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля верны; ПЁТР через ё допустимо."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 8 значений корректны и полны."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все значения верны; в пп.6-8 без подписей полей, но нумерация сохранена."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все поля извлечены точно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все значения верны; часть пунктов без подписей полей."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 8 запрошенных полей извлечены верно (ИНН 3812123456, КПП 380801001, период 34, год 2021, орган 3812, ООО \"ИВАНОВИЧ\", ИВАНОВ ПЕТР ИВАНОВИЧ, 31.03.2022), лишних данных нет. Формат чистый нумерованный список; видимого анализа минимум, что для KIE-задачи достаточно."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Большинство моделей извлекли все 8 полей идеально. Провалились diffusion-gemma и nemotron-omni (искажения ИНН/КПП/наименования/ФИО)."
+}

@@ -1,1 +1,134 @@
-{"task_id":"ocr_операционка_0cc17b1a66","category":"ocr","scores":{"llama-scout":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Все 7 полей Исполнителя верны; дополнительно приведена колонка Заказчик, о которой не спрашивали, но данные корректны."},"35b-a3b":{"correctness":8,"reasoning":7,"format":8,"russian":10,"comment":"7 верных полей, но лишний 8-й пункт «Исполнитель:» — это строка подписи, а не реквизит."},"27b-v2":{"correctness":8,"reasoning":7,"format":8,"russian":10,"comment":"Правильные 7 полей, но ошибочно добавлен «Исполнитель:» как реквизит."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точный список ровно из 7 полей в правильном порядке."},"diffusion-gemma":{"correctness":8,"reasoning":8,"format":8,"russian":10,"comment":"7 верных полей, но добавлен лишний «Исполнитель:» (хотя с пометкой о подписи)."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Точно 7 полей без лишнего; чистый список."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Ровно 7 корректных полей, ясная нумерация и краткое пояснение."},"nemotron-omni":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все 7 полей верны, оформлено как JSON-массив — корректно, но менее читаемо."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Точный список из 7 полей с корректным контекстом раздела."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Ровно 7 полей, чисто и без лишнего."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Ровно 7 полей, чисто и без лишнего."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Ровно 7 полей, чисто и без лишнего."},"gpt-5.6-sol-low":{"correctness":8,"reasoning":7,"format":8,"russian":10,"comment":"7 верных полей, но добавлен лишний «Исполнитель:» — строка подписи, а не реквизит."},"gpt-5.6-sol-medium":{"correctness":8,"reasoning":7,"format":8,"russian":10,"comment":"7 верных полей, но ошибочно включён «Исполнитель:»."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Ровно 7 полей, точно и без лишнего."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Ровно 7 полей, точно и без лишнего."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Ровно 7 полей, точно и без лишнего."}},"winner":"gpt-5.5-medium","notes":"Многие модели дали идеальный список из 7 полей; часть (35b-a3b, 27b-v2, diffusion-gemma, sol) ошибочно добавили строку подписи «Исполнитель:» как реквизит."}
+{
+ "task_id": "ocr_операционка_0cc17b1a66",
+ "category": "ocr",
+ "scores": {
+  "llama-scout": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 7 полей Исполнителя верны; дополнительно приведена колонка Заказчик, о которой не спрашивали, но данные корректны."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "7 верных полей, но лишний 8-й пункт «Исполнитель:» — это строка подписи, а не реквизит."
+  },
+  "27b-v2": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Правильные 7 полей, но ошибочно добавлен «Исполнитель:» как реквизит."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный список ровно из 7 полей в правильном порядке."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "7 верных полей, но добавлен лишний «Исполнитель:» (хотя с пометкой о подписи)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно 7 полей без лишнего; чистый список."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Ровно 7 корректных полей, ясная нумерация и краткое пояснение."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 7 полей верны, оформлено как JSON-массив — корректно, но менее читаемо."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный список из 7 полей с корректным контекстом раздела."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ровно 7 полей, чисто и без лишнего."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ровно 7 полей, чисто и без лишнего."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ровно 7 полей, чисто и без лишнего."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "7 верных полей, но добавлен лишний «Исполнитель:» — строка подписи, а не реквизит."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "7 верных полей, но ошибочно включён «Исполнитель:»."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ровно 7 полей, точно и без лишнего."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ровно 7 полей, точно и без лишнего."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ровно 7 полей, точно и без лишнего."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 7 полей колонки «Исполнитель» перечислены в правильном порядке, колонки не перепутаны; единственная мелочь — «Паспорт серии» вместо видимого «Паспорт серия»."
+  }
+ },
+ "winner": "gpt-5.5-medium",
+ "notes": "Многие модели дали идеальный список из 7 полей; часть (35b-a3b, 27b-v2, diffusion-gemma, sol) ошибочно добавили строку подписи «Исполнитель:» как реквизит."
+}

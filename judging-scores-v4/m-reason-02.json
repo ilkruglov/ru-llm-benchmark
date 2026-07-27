@@ -1,22 +1,155 @@
-{"task_id":"m-reason-02","category":"reasoning","scores":{
-"gpt-oss-120b":{"correctness":6,"reasoning":8,"format":9,"russian":8,"comment":"Очень подробный разбор с таблицами, но ставит H3 первой — слабее, чем H4/H1: рост трафика хуже объясняет локализацию на 3 нодах и точный старт в 14:30 (хотя сам это признаёт). Хорошая митигация и доп-гипотезы (lock contention, GC)."},
-"deepseek-flash":{"correctness":6,"reasoning":8,"format":8,"russian":8,"comment":"H3 первой — спорно, но верно замечает, что высокий CPU на app-серверах и replication lag = запись противоречат чисто DB-версиям. Хорошая митигация (вывод 3 нод из LB) и доп-гипотезы (sticky ip_hash, cache)."},
-"deepseek-pro":{"correctness":8,"reasoning":9,"format":8,"russian":9,"comment":"H4 первой, глубокий разбор противоречий, ключевые сигналы (CPU на app не БД, replication lag=запись, рестарт=локальный ресурс) использованы точно. Сильные доп-гипотезы (DDL-миграция+lock, noisy neighbor)."},
-"35b-a3b":{"correctness":7,"reasoning":8,"format":8,"russian":8,"comment":"H1 первой — валидный путь (тайминг деплоя, рестарт, GC/thread-blocking). Умная митигация (не увеличивать пул при утечке, circuit breaker), доп-гипотезы mesh-sidecar и GC-паузы."},
-"27b-v2":{"correctness":7,"reasoning":8,"format":8,"russian":8,"comment":"H1 первой, инсайт про общий PgBouncer-пул, аккуратный разбор локализации. Митигация с rollback payment-service, доп-гипотезы disk I/O и GC. Полезное резюме для команды."},
-"gemma-4-31b":{"correctness":7,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой, корректно ставит вопрос о локализации на 3 нодах для каждой гипотезы. Хорошая митигация (pg_terminate_backend), интересные доп-гипотезы poison-pill и cache stampede."},
-"diffusion-gemma":{"correctness":7,"reasoning":7,"format":8,"russian":8,"comment":"H4 первой, все секции на месте, но разбор противоречий поверхностнее конкурентов. Митигация и доп-гипотезы (deadlock, poison pill) адекватны, глубина средняя."},
-"gpt-5.5-low":{"correctness":8,"reasoning":9,"format":8,"russian":9,"comment":"H4 первой, отлично: явно отмечает replication lag=write amplification, локализацию как sticky/hot-shard, аргумент про исчезновение 502 без rollback. Сильная митигация и доп-гипотезы (skew, retry storm)."},
-"gpt-5.5-medium":{"correctness":8,"reasoning":9,"format":8,"russian":9,"comment":"H4 первой, глубокий и последовательный разбор всех сигналов, аккуратная митигация (drain перед рестартом, осторожно с capacity), доп-гипотезы hot tenant и timeout mismatch."},
-"nemotron-super":{"correctness":0,"reasoning":0,"format":0,"russian":0,"comment":"Полный провал: вместо анализа инцидента сгенерирован посторонний эротический рассказ, задача полностью проигнорирована."},
-"nemotron-omni":{"correctness":3,"reasoning":4,"format":3,"russian":5,"comment":"Ответ обрезан: есть только частичное ранжирование и разбор H4/H3, отсутствуют секции митигации и доп-гипотез. Присутствуют артефакты (Windows Task Scheduler, «35-х серверов»)."},
-"kimi-k2.6":{"correctness":8,"reasoning":9,"format":9,"russian":9,"comment":"H4 первой, самый тонкий анализ: явно различает причину и следствие (replication lag/pool как следствие для H2/H5), сильная митигация и глубокие доп-гипотезы (hot partition, thread leak на poison payload)."},
-"gpt-5.6-luna-high":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой, H1 вторая с указанием проверять параллельно — здравый подход. Компактный, но покрывает ключевые сигналы, митигация и доп-гипотезы на месте."},
-"gpt-5.6-luna-low":{"correctness":7,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой, H2 второй. Аккуратный разбор с использованием сигнала replication lag=запись и локализации, все секции полные, глубина хорошая."},
-"gpt-5.6-luna-medium":{"correctness":7,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой, ставит DLQ/missing rates как вторичные эффекты (верно). Полный набор секций, солидный разбор, чуть менее глубоко чем топ."},
-"gpt-5.6-sol-low":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой с хорошим вводным синтезом каскада. Корректно объясняет остаточную latency и локализацию по партициям, полные митигация и доп-гипотезы."},
-"gpt-5.6-sol-medium":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой, явно называет комбинацию batch+неравномерная нагрузка и помечает replication lag/downstream как последствия. Чёткая структура, хорошая митигация."},
-"gpt-5.6-terra-high":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой, ясное объяснение каскада БД→API→downstream. Табличное ранжирование с обоснованиями, полные секции, крепкая логика."},
-"gpt-5.6-terra-low":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"H4 первой в сочетании с неравномерным распределением. Хорошее использование сигналов локализации и тайминга, полный набор секций и митигации."},
-"gpt-5.6-terra-medium":{"correctness":7,"reasoning":7,"format":8,"russian":9,"comment":"H4 первой, самый компактный (таблица): все секции есть, но разбор короче и менее глубокий, чем у других 5.6-вариантов."}
-},"winner":"kimi-k2.6","notes":"Верхний кластер (kimi-k2.6, deepseek-pro, gpt-5.5-*, gpt-5.6-*) ставит H4 первой и корректно использует ключевые сигналы (replication lag=запись, CPU на app не БД, локализация 3/12, рестарт=локальный ресурс). kimi-k2.6 выделяется самым чётким разделением причины и следствия. nemotron-super — полный провал (эротический рассказ), nemotron-omni обрезан."}
+{
+ "task_id": "m-reason-02",
+ "category": "reasoning",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Очень подробный разбор с таблицами, но ставит H3 первой — слабее, чем H4/H1: рост трафика хуже объясняет локализацию на 3 нодах и точный старт в 14:30 (хотя сам это признаёт). Хорошая митигация и доп-гипотезы (lock contention, GC)."
+  },
+  "deepseek-flash": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "H3 первой — спорно, но верно замечает, что высокий CPU на app-серверах и replication lag = запись противоречат чисто DB-версиям. Хорошая митигация (вывод 3 нод из LB) и доп-гипотезы (sticky ip_hash, cache)."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, глубокий разбор противоречий, ключевые сигналы (CPU на app не БД, replication lag=запись, рестарт=локальный ресурс) использованы точно. Сильные доп-гипотезы (DDL-миграция+lock, noisy neighbor)."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "H1 первой — валидный путь (тайминг деплоя, рестарт, GC/thread-blocking). Умная митигация (не увеличивать пул при утечке, circuit breaker), доп-гипотезы mesh-sidecar и GC-паузы."
+  },
+  "27b-v2": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "H1 первой, инсайт про общий PgBouncer-пул, аккуратный разбор локализации. Митигация с rollback payment-service, доп-гипотезы disk I/O и GC. Полезное резюме для команды."
+  },
+  "gemma-4-31b": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, корректно ставит вопрос о локализации на 3 нодах для каждой гипотезы. Хорошая митигация (pg_terminate_backend), интересные доп-гипотезы poison-pill и cache stampede."
+  },
+  "diffusion-gemma": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "H4 первой, все секции на месте, но разбор противоречий поверхностнее конкурентов. Митигация и доп-гипотезы (deadlock, poison pill) адекватны, глубина средняя."
+  },
+  "gpt-5.5-low": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, отлично: явно отмечает replication lag=write amplification, локализацию как sticky/hot-shard, аргумент про исчезновение 502 без rollback. Сильная митигация и доп-гипотезы (skew, retry storm)."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, глубокий и последовательный разбор всех сигналов, аккуратная митигация (drain перед рестартом, осторожно с capacity), доп-гипотезы hot tenant и timeout mismatch."
+  },
+  "nemotron-super": {
+   "correctness": 0,
+   "reasoning": 0,
+   "format": 0,
+   "russian": 0,
+   "comment": "Полный провал: вместо анализа инцидента сгенерирован посторонний эротический рассказ, задача полностью проигнорирована."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 3,
+   "russian": 5,
+   "comment": "Ответ обрезан: есть только частичное ранжирование и разбор H4/H3, отсутствуют секции митигации и доп-гипотез. Присутствуют артефакты (Windows Task Scheduler, «35-х серверов»)."
+  },
+  "kimi-k2.6": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "H4 первой, самый тонкий анализ: явно различает причину и следствие (replication lag/pool как следствие для H2/H5), сильная митигация и глубокие доп-гипотезы (hot partition, thread leak на poison payload)."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, H1 вторая с указанием проверять параллельно — здравый подход. Компактный, но покрывает ключевые сигналы, митигация и доп-гипотезы на месте."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, H2 второй. Аккуратный разбор с использованием сигнала replication lag=запись и локализации, все секции полные, глубина хорошая."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, ставит DLQ/missing rates как вторичные эффекты (верно). Полный набор секций, солидный разбор, чуть менее глубоко чем топ."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой с хорошим вводным синтезом каскада. Корректно объясняет остаточную latency и локализацию по партициям, полные митигация и доп-гипотезы."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, явно называет комбинацию batch+неравномерная нагрузка и помечает replication lag/downstream как последствия. Чёткая структура, хорошая митигация."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, ясное объяснение каскада БД→API→downstream. Табличное ранжирование с обоснованиями, полные секции, крепкая логика."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой в сочетании с неравномерным распределением. Хорошее использование сигналов локализации и тайминга, полный набор секций и митигации."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "H4 первой, самый компактный (таблица): все секции есть, но разбор короче и менее глубокий, чем у других 5.6-вариантов."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Убедительное ранжирование (H4>H1>H3>H2>H5) с системным критерием 'почему только 3 из 12 нод' и корректным разбором за/против по каждой гипотезе, конкретные проверки (pg_stat_activity, pg_locks, pg_stat_statements) и приоритизированный mitigation-план; добавлены сильные доп. гипотезы (lock contention, pgBouncer, thread pool exhaustion как мост к H1). Минусы: перегруженность эмодзи/таблицами, местами тяжёлый англицизмами русский и одна невнятная формулировка в поддержке H4."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Верхний кластер (kimi-k2.6, deepseek-pro, gpt-5.5-*, gpt-5.6-*) ставит H4 первой и корректно использует ключевые сигналы (replication lag=запись, CPU на app не БД, локализация 3/12, рестарт=локальный ресурс). kimi-k2.6 выделяется самым чётким разделением причины и следствия. nemotron-super — полный провал (эротический рассказ), nemotron-omni обрезан."
+}

@@ -1,19 +1,134 @@
-{"task_id":"chart_маркетинг_c89e79d6c5","category":"chart","scores":{
-"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта верны, чёткая структура и правильные факты."},
-"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верный ответ, аккуратное форматирование с выделением."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё правильно, ясная структура и корректный русский."},
-"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верные ответы по всем пунктам, компактно и понятно."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верно, дополнительно корректно отметил безымянный красный верхний сегмент; опечатка «Ниний»."},
-"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, аккуратное выделение ключевых слов."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректно, чистое форматирование."},
-"nemotron-omni":{"correctness":10,"reasoning":6,"format":7,"russian":9,"comment":"Ответы верны, но предельно кратко, без структуры и пояснений."},
-"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Всё верно, добавил синонимы цвета (пурпурный/сиреневый), отличная структура."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно и лаконично, все пункты покрыты."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно и лаконично, все пункты покрыты."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный ответ по всем трём пунктам, ясно изложено."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, аккуратное выделение."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректно и структурировано."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно и кратко, все пункты покрыты."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верный ответ, корректный русский с грамотным согласованием."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта верны, лаконично и ясно."}
-},"winner":"kimi-k2.6","notes":"Все модели дали верные ответы; kimi-k2.6 выделяется полнотой (синонимы цвета) при сохранении структуры. Nemotron-omni слабее по формату из-за чрезмерной краткости."}
+{
+ "task_id": "chart_маркетинг_c89e79d6c5",
+ "category": "chart",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны, чёткая структура и правильные факты."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верный ответ, аккуратное форматирование с выделением."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё правильно, ясная структура и корректный русский."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные ответы по всем пунктам, компактно и понятно."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно, дополнительно корректно отметил безымянный красный верхний сегмент; опечатка «Ниний»."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, аккуратное выделение ключевых слов."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректно, чистое форматирование."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "Ответы верны, но предельно кратко, без структуры и пояснений."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно, добавил синонимы цвета (пурпурный/сиреневый), отличная структура."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и лаконично, все пункты покрыты."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и лаконично, все пункты покрыты."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный ответ по всем трём пунктам, ясно изложено."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, аккуратное выделение."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректно и структурировано."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и кратко, все пункты покрыты."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный ответ, корректный русский с грамотным согласованием."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны, лаконично и ясно."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три задания выполнены полностью верно: порядок этапов Внимание-Интерес-Желание-Действие, фиолетовый нижний блок «Действие», синий = «Желание воспользоваться предложением». Дополнительно корректно отмечен неподписанный красный верхний сегмент, ошибок и галлюцинаций нет."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Все модели дали верные ответы; kimi-k2.6 выделяется полнотой (синонимы цвета) при сохранении структуры. Nemotron-omni слабее по формату из-за чрезмерной краткости."
+}

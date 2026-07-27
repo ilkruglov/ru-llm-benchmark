@@ -1,28 +1,155 @@
 {
-  "task_id": "m-harness-04",
-  "category": "harness",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 3, "comment": "Корректное восстановление через describe_endpoint с шаблонным путём, один Action, без выдумки Observation. Ответ целиком на английском."},
-    "deepseek-flash": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Правильный повтор вызова с as_of=2026-06-04 по acc_002; мысль предельно краткая, выбор счёта не обоснован."},
-    "deepseek-pro": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Верный шаг: повтор баланса с обязательным as_of и сегодняшней датой, ровно один Action."},
-    "35b-a3b": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 10, "comment": "Явно опирается на ошибку прошлого Observation и корректно добавляет as_of; лишние пустые строки в начале."},
-    "27b-v2": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 10, "comment": "Точный разбор ошибки и правильный повторный вызов по acc_002 с ISO-датой; мелкий шум с пустыми строками."},
-    "gemma-4-31b": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Корректно восстанавливается после missing_required_param, указывает основной расчётный счёт и дату."},
-    "diffusion-gemma": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Правильный один шаг с as_of; рассуждение адекватное, но без обоснования выбора acc_002."},
-    "gpt-5.5-low": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Чёткий повтор запроса баланса с обязательным query-параметром as_of в ISO-формате."},
-    "gpt-5.5-medium": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Обосновывает выбор acc_002 как primary RUB checking и корректно передаёт as_of."},
-    "nemotron-super": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Верный шаг с as_of, но мысль не ссылается явно на acc_002; лишние пустые строки."},
-    "nemotron-omni": {"correctness": 5, "reasoning": 5, "format": 3, "russian": 9, "comment": "Идея describe_endpoint разумна, но путь подставлен конкретным id вместо шаблона и выведено два блока Action Input — формат сломан."},
-    "kimi-k2.6": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Эталонный шаг: разбор ошибки, выбор основного рублёвого счёта и повтор с as_of в ISO."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 7, "format": 10, "russian": 10, "comment": "Правильный вызов с as_of, но рассуждение минимальное."},
-    "gpt-5.6-luna-low": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Корректный повтор запроса баланса с сегодняшней датой, ровно один Action."},
-    "gpt-5.6-luna-medium": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 10, "comment": "Указывает основной рублёвый расчётный счёт и передаёт обязательный as_of — верный шаг."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 9, "format": 10, "russian": 10, "comment": "Уточняет схему эндпоинта через describe_endpoint с шаблонным путём — валидное, чуть более длинное восстановление."},
-    "gpt-5.6-sol-medium": {"correctness": 9, "reasoning": 8, "format": 10, "russian": 10, "comment": "describe_endpoint по шаблонному пути — корректный, но не самый прямой путь к ответу."},
-    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 10, "comment": "Верный повтор вызова баланса с обязательным as_of на сегодняшнюю дату."},
-    "gpt-5.6-terra-low": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 10, "comment": "Правильный шаг с as_of; блоки Action/Action Input разделены лишними пустыми строками."},
-    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 10, "comment": "Корректный вызов баланса основного счёта с as_of; формат чуть разрежен пустыми строками."}
+ "task_id": "m-harness-04",
+ "category": "harness",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 3,
+   "comment": "Корректное восстановление через describe_endpoint с шаблонным путём, один Action, без выдумки Observation. Ответ целиком на английском."
   },
-  "winner": "kimi-k2.6",
-  "notes": "Задача простая: почти все модели корректно восстановились, повторив вызов баланса acc_002 с обязательным as_of=2026-06-04, без выдуманных Observation. Провалился только nemotron-omni (сломанный формат и конкретный id в describe_endpoint)."
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный повтор вызова с as_of=2026-06-04 по acc_002; мысль предельно краткая, выбор счёта не обоснован."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный шаг: повтор баланса с обязательным as_of и сегодняшней датой, ровно один Action."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Явно опирается на ошибку прошлого Observation и корректно добавляет as_of; лишние пустые строки в начале."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный разбор ошибки и правильный повторный вызов по acc_002 с ISO-датой; мелкий шум с пустыми строками."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Корректно восстанавливается после missing_required_param, указывает основной расчётный счёт и дату."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный один шаг с as_of; рассуждение адекватное, но без обоснования выбора acc_002."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Чёткий повтор запроса баланса с обязательным query-параметром as_of в ISO-формате."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Обосновывает выбор acc_002 как primary RUB checking и корректно передаёт as_of."
+  },
+  "nemotron-super": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный шаг с as_of, но мысль не ссылается явно на acc_002; лишние пустые строки."
+  },
+  "nemotron-omni": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 3,
+   "russian": 9,
+   "comment": "Идея describe_endpoint разумна, но путь подставлен конкретным id вместо шаблона и выведено два блока Action Input — формат сломан."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Эталонный шаг: разбор ошибки, выбор основного рублёвого счёта и повтор с as_of в ISO."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный вызов с as_of, но рассуждение минимальное."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Корректный повтор запроса баланса с сегодняшней датой, ровно один Action."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Указывает основной рублёвый расчётный счёт и передаёт обязательный as_of — верный шаг."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Уточняет схему эндпоинта через describe_endpoint с шаблонным путём — валидное, чуть более длинное восстановление."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "describe_endpoint по шаблонному пути — корректный, но не самый прямой путь к ответу."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный повтор вызова баланса с обязательным as_of на сегодняшнюю дату."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильный шаг с as_of; блоки Action/Action Input разделены лишними пустыми строками."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный вызов баланса основного счёта с as_of; формат чуть разрежен пустыми строками."
+  },
+  "minimax-m3": {
+   "correctness": 0,
+   "reasoning": 2,
+   "format": 2,
+   "russian": 9,
+   "comment": "Первый шаг (повтор запроса баланса acc_002 с as_of=2026-06-04) верный, но модель сама выдумала Observation с несуществующими цифрами (available 1842503.47) и выдала Final Answer. Галлюцинация Observation плюс нарушение правила одного Action за ход дают correctness 0."
+  }
+ },
+ "winner": "gemma-4-31b",
+ "notes": "Задача простая: почти все модели корректно восстановились, повторив вызов баланса acc_002 с обязательным as_of=2026-06-04, без выдуманных Observation. Провалился только nemotron-omni (сломанный формат и конкретный id в describe_endpoint)."
 }

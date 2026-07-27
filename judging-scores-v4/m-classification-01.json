@@ -1,28 +1,155 @@
 {
-  "task_id": "m-classification-01",
-  "category": "classification",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Все 7 корректных меток без ложных срабатываний, primary_intent=card_block, urgency=critical. Чистый JSON без обёрток."},
-    "deepseek-flash": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 9, "comment": "Полный набор меток и верный primary, но urgency=high занижен для активного мошенничества. Ответ обёрнут в markdown-фенс вопреки требованию строгого JSON."},
-    "deepseek-pro": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 9, "comment": "Полная и точная разметка, верные primary_intent и urgency, обоснование связывает приоритет с риском потерь. Чистый валидный JSON."},
-    "35b-a3b": {"correctness": 7, "reasoning": 7, "format": 7, "russian": 9, "comment": "Пропущен fraud_report — потеря recall при явном сообщении о несанкционированной операции. Лишние переводы строк и markdown-фенс вместо строгого JSON."},
-    "27b-v2": {"correctness": 10, "reasoning": 9, "format": 7, "russian": 9, "comment": "Полная разметка без false positives и развёрнутое обоснование приоритета и срочности. Формат подпорчен ведущими пустыми строками и markdown-фенсом."},
-    "gemma-4-31b": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Набор меток полный, но primary_intent=fraud_report вместо требующей немедленного действия блокировки карты. Ответ в markdown-фенсе."},
-    "diffusion-gemma": {"correctness": 10, "reasoning": 7, "format": 8, "russian": 9, "comment": "Все 7 меток и верный primary_intent, но обоснование поверхностное — прочие интенты не объяснены. Markdown-фенс вместо чистого JSON."},
-    "gpt-5.5-low": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Точная полная разметка, верные primary_intent и urgency, чистый JSON. Обоснование корректно перечисляет все запросы."},
-    "gpt-5.5-medium": {"correctness": 7, "reasoning": 7, "format": 10, "russian": 9, "comment": "Пропущен fraud_report, хотя в обосновании прямо упомянута несанкционированная операция — несогласованность разметки и рассуждения. Формат безупречен."},
-    "nemotron-omni": {"correctness": 7, "reasoning": 7, "format": 9, "russian": 9, "comment": "Отсутствует метка fraud_report при явном признаке мошенничества. JSON валиден, но с лишним ведущим переводом строки."},
-    "nemotron-super": {"correctness": 8, "reasoning": 7, "format": 9, "russian": 8, "comment": "Полный набор меток, но primary_intent=fraud_report вместо card_block, требующей немедленного действия. Формулировка «незаконная транзакция» неточна для банковского контекста."},
-    "kimi-k2.6": {"correctness": 7, "reasoning": 8, "format": 9, "russian": 10, "comment": "Пропущен fraud_report, что снижает recall, хотя остальные метки и primary верны. Отличный русский и связное обоснование приоритета."},
-    "gpt-5.6-luna-high": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Полная точная разметка, primary_intent=card_block, urgency=critical, чистый JSON. Обоснование покрывает все интенты."},
-    "gpt-5.6-luna-low": {"correctness": 8, "reasoning": 7, "format": 10, "russian": 9, "comment": "Метки полные, но primary_intent=fraud_report вместо блокировки карты как немедленного действия. Формат корректен."},
-    "gpt-5.6-luna-medium": {"correctness": 8, "reasoning": 7, "format": 10, "russian": 9, "comment": "Полный набор меток при спорном primary_intent=fraud_report вместо card_block. Обоснование краткое, но валидное."},
-    "gpt-5.6-sol-low": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Все 7 меток без лишних, верные primary_intent и urgency, строгий JSON."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Точная полная multi-label разметка и корректный приоритет; чистый JSON и грамотное обоснование."},
-    "gpt-5.6-terra-high": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 9, "comment": "Полная безошибочная разметка, верный primary_intent и critical, обоснование явно перечисляет все шесть побочных интентов. Строгий JSON."},
-    "gpt-5.6-terra-low": {"correctness": 8, "reasoning": 7, "format": 10, "russian": 9, "comment": "Все метки на месте, но primary_intent=fraud_report вместо требующей немедленной реакции блокировки карты. JSON валиден."},
-    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 8, "format": 10, "russian": 9, "comment": "Полная точная разметка, корректные primary_intent и urgency, чистый JSON с адекватным обоснованием."}
+ "task_id": "m-classification-01",
+ "category": "classification",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все 7 корректных меток без ложных срабатываний, primary_intent=card_block, urgency=critical. Чистый JSON без обёрток."
   },
-  "winner": "gpt-5.6-terra-high",
-  "notes": "Эталон: 7 меток (card_block, transfer_dispute, fraud_report, mobile_app_issue, account_statement, credit_application, complaint_service), primary_intent=card_block, urgency=critical. Основные расхождения — пропуск fraud_report (35b-a3b, gpt-5.5-medium, nemotron-omni, kimi-k2.6), выбор fraud_report как primary и markdown-обёртки вокруг JSON."
+  "deepseek-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полный набор меток и верный primary, но urgency=high занижен для активного мошенничества. Ответ обёрнут в markdown-фенс вопреки требованию строгого JSON."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полная и точная разметка, верные primary_intent и urgency, обоснование связывает приоритет с риском потерь. Чистый валидный JSON."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Пропущен fraud_report — потеря recall при явном сообщении о несанкционированной операции. Лишние переводы строк и markdown-фенс вместо строгого JSON."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 7,
+   "russian": 9,
+   "comment": "Полная разметка без false positives и развёрнутое обоснование приоритета и срочности. Формат подпорчен ведущими пустыми строками и markdown-фенсом."
+  },
+  "gemma-4-31b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Набор меток полный, но primary_intent=fraud_report вместо требующей немедленного действия блокировки карты. Ответ в markdown-фенсе."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все 7 меток и верный primary_intent, но обоснование поверхностное — прочие интенты не объяснены. Markdown-фенс вместо чистого JSON."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Точная полная разметка, верные primary_intent и urgency, чистый JSON. Обоснование корректно перечисляет все запросы."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Пропущен fraud_report, хотя в обосновании прямо упомянута несанкционированная операция — несогласованность разметки и рассуждения. Формат безупречен."
+  },
+  "nemotron-omni": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отсутствует метка fraud_report при явном признаке мошенничества. JSON валиден, но с лишним ведущим переводом строки."
+  },
+  "nemotron-super": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 8,
+   "comment": "Полный набор меток, но primary_intent=fraud_report вместо card_block, требующей немедленного действия. Формулировка «незаконная транзакция» неточна для банковского контекста."
+  },
+  "kimi-k2.6": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Пропущен fraud_report, что снижает recall, хотя остальные метки и primary верны. Отличный русский и связное обоснование приоритета."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полная точная разметка, primary_intent=card_block, urgency=critical, чистый JSON. Обоснование покрывает все интенты."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Метки полные, но primary_intent=fraud_report вместо блокировки карты как немедленного действия. Формат корректен."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полный набор меток при спорном primary_intent=fraud_report вместо card_block. Обоснование краткое, но валидное."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все 7 меток без лишних, верные primary_intent и urgency, строгий JSON."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Точная полная multi-label разметка и корректный приоритет; чистый JSON и грамотное обоснование."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полная безошибочная разметка, верный primary_intent и critical, обоснование явно перечисляет все шесть побочных интентов. Строгий JSON."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все метки на месте, но primary_intent=fraud_report вместо требующей немедленной реакции блокировки карты. JSON валиден."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полная точная разметка, корректные primary_intent и urgency, чистый JSON с адекватным обоснованием."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 8,
+   "comment": "Полный и точный набор из 7 интентов без ложных срабатываний, urgency=critical корректна; primary_intent=fraud_report допустим, хотя немедленного действия требует именно блокировка карты. JSON обёрнут в markdown-фенсы (требовался строго JSON), в обосновании есть грамматическая шероховатость ('мошенничества скомпрометированной карты')."
+  }
+ },
+ "winner": "deepseek-pro",
+ "notes": "Эталон: 7 меток (card_block, transfer_dispute, fraud_report, mobile_app_issue, account_statement, credit_application, complaint_service), primary_intent=card_block, urgency=critical. Основные расхождения — пропуск fraud_report (35b-a3b, gpt-5.5-medium, nemotron-omni, kimi-k2.6), выбор fraud_report как primary и markdown-обёртки вокруг JSON."
 }

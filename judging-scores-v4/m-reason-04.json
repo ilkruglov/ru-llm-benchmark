@@ -1,22 +1,155 @@
-{"task_id":"m-reason-04","category":"reasoning","scores":{
-"gpt-oss-120b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все EV/variance/worst-case верны, выбор A по всем критериям, 5 biases, глубокий разбор runway. Отлично."},
-"deepseek-flash":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все расчёты верны, выбор A обоснован, 5 biases. Чуть менее глубокий разбор рисков, но полно."},
-"deepseek-pro":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полный вывод variance через E[X^2]-EV^2, все числа верны, сильная аргументация, 4 bias."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"EV/worst-case верны, детальный анализ runway с числами, 3 сильных bias. Variance качественно, не численно."},
-"27b-v2":{"correctness":10,"reasoning":8,"format":8,"russian":8,"comment":"EV верны, worst-case верно, хороший разбор; численную variance не считал. Пара опечаток (выживемо, цифк)."},
-"gemma-4-31b":{"correctness":6,"reasoning":8,"format":8,"russian":9,"comment":"Арифметическая ошибка: EV C = -51 вместо -48, хотя итоговый выбор A правильный. Остальное корректно, 3 bias."},
-"diffusion-gemma":{"correctness":9,"reasoning":7,"format":8,"russian":7,"comment":"EV верны, выбор A. Ошибка: C сокращает runway 'до 10 месяцев' вместо 4. Опечатки (самобыточность, выбитьбить)."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все расчёты включая variance верны, выбор A, 5 biases, чёткая таблица и вывод."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью корректно, variance верна, 5 biases, аргумент о доминировании A по EV и риску."},
-"nemotron-omni":{"correctness":3,"reasoning":4,"format":6,"russian":1,"comment":"Все три EV неверны (19.75/5.5/-30), формула C искажена; итог A угадан по worst-case. Полностью на английском."},
-"nemotron-super":{"correctness":9,"reasoning":8,"format":9,"russian":1,"comment":"EV верны, variance C слегка неточна (использ. 40 вместо 25), выбор A, 5 biases. Ответ полностью на английском."},
-"kimi-k2.6":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все расчёты верны, добавил Sharpe-аналог, глубочайший бизнес-разбор, 4 bias, безупречный русский."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все числа верны, variance корректна, выбор A, 6 biases, оговорка про utility vs рубли."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":8,"format":9,"russian":9,"comment":"EV верны, но variance C = 22118.5 ошибочна (должно 15118.5). Выбор A верен, 6 biases."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все расчёты верны, выбор A, 5 biases, аргумент о доминировании A. Чётко."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Все верно, полный вывод формул, 7 biases, практический сплит ресурсов, оговорка про информационную ценность."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":10,"format":9,"russian":9,"comment":"Все верно, 7 biases включая ошибку точности/sensitivity analysis. Глубокое мета-рассуждение."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все числа верны, компактно и полно, выбор A, 6 biases с оговоркой про status-quo в обе стороны."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все расчёты верны, выбор A, 6 biases. Сжатый, но корректный формат."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Все верно, variance корректна, выбор A обоснован доминированием, 6 biases."}
-},"winner":"kimi-k2.6","notes":"Множество безупречных ответов; kimi-k2.6 сочетает верную математику, Sharpe-аналог, глубочайший бизнес-разбор и лучший русский. Штрафы: gemma (EV C -51), nemotron-omni (все EV неверны, англ.), nemotron-super (англ.), luna-low (variance C)."}
+{
+ "task_id": "m-reason-04",
+ "category": "reasoning",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все EV/variance/worst-case верны, выбор A по всем критериям, 5 biases, глубокий разбор runway. Отлично."
+  },
+  "deepseek-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все расчёты верны, выбор A обоснован, 5 biases. Чуть менее глубокий разбор рисков, но полно."
+  },
+  "deepseek-pro": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный вывод variance через E[X^2]-EV^2, все числа верны, сильная аргументация, 4 bias."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "EV/worst-case верны, детальный анализ runway с числами, 3 сильных bias. Variance качественно, не численно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "EV верны, worst-case верно, хороший разбор; численную variance не считал. Пара опечаток (выживемо, цифк)."
+  },
+  "gemma-4-31b": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Арифметическая ошибка: EV C = -51 вместо -48, хотя итоговый выбор A правильный. Остальное корректно, 3 bias."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "EV верны, выбор A. Ошибка: C сокращает runway 'до 10 месяцев' вместо 4. Опечатки (самобыточность, выбитьбить)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все расчёты включая variance верны, выбор A, 5 biases, чёткая таблица и вывод."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректно, variance верна, 5 biases, аргумент о доминировании A по EV и риску."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 1,
+   "comment": "Все три EV неверны (19.75/5.5/-30), формула C искажена; итог A угадан по worst-case. Полностью на английском."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 1,
+   "comment": "EV верны, variance C слегка неточна (использ. 40 вместо 25), выбор A, 5 biases. Ответ полностью на английском."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все расчёты верны, добавил Sharpe-аналог, глубочайший бизнес-разбор, 4 bias, безупречный русский."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа верны, variance корректна, выбор A, 6 biases, оговорка про utility vs рубли."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "EV верны, но variance C = 22118.5 ошибочна (должно 15118.5). Выбор A верен, 6 biases."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все расчёты верны, выбор A, 5 biases, аргумент о доминировании A. Чётко."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все верно, полный вывод формул, 7 biases, практический сплит ресурсов, оговорка про информационную ценность."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все верно, 7 biases включая ошибку точности/sensitivity analysis. Глубокое мета-рассуждение."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все числа верны, компактно и полно, выбор A, 6 biases с оговоркой про status-quo в обе стороны."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все расчёты верны, выбор A, 6 biases. Сжатый, но корректный формат."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно, variance корректна, выбор A обоснован доминированием, 6 biases."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все расчёты верны (EV 27.75/6/-48, дисперсии 401.2/5844/15118.5, worst-case -30/-80/-150), корректный вывод о доминировании опции A по обоим критериям и разбор 6 когнитивных искажений. Структура образцовая; мелкие шероховатости — англицизмы (hire-ов, execution risk) и формальная запись 14×0.286 для runway в опции C."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Множество безупречных ответов; kimi-k2.6 сочетает верную математику, Sharpe-аналог, глубочайший бизнес-разбор и лучший русский. Штрафы: gemma (EV C -51), nemotron-omni (все EV неверны, англ.), nemotron-super (англ.), luna-low (variance C)."
+}

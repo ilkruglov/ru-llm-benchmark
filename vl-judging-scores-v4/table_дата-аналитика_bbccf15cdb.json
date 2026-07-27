@@ -1,1 +1,134 @@
-{"task_id":"table_дата-аналитика_bbccf15cdb","category":"table","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: Тригубов 8, сумма 36, итог верен. Чёткая проверка."},"llama-scout":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, подробная структура с выводом. Немного избыточно."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верное значение 8, корректная проверка суммы 36 и вывод."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Кратко и точно: 8, 36, итог верен."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные данные, ясная проверка суммы и вывод."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно: 8, 36, итог верен. Компактно и ясно."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно всё, аккуратная краткая проверка."},"nemotron-omni":{"correctness":8,"reasoning":2,"format":2,"russian":3,"comment":"Значения 8 и 36 верны, но нет проверки, вывода и структуры — просто числа."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: Тригубов 8, итог 36 верен, проверка приведена."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно и лаконично: 8, сумма 36, итог верен."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верное значение и проверка суммы, вывод корректен."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Кратко и точно: 8, 36, итог верен."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно: 8, сумма 36, вывод верен."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно и компактно: 8, 36, итог верен."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные данные и вывод, лаконично."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Точно: 8, сумма 36, итог верен."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верное значение, корректная проверка суммы и вывод."}},"winner":"gpt-5.5-medium","notes":"Почти все модели дали идеально верный ответ (8, сумма 36, итог верен); nemotron-omni выпадает — только числа без проверки. Победитель выбран среди эквивалентно точных за краткость и ясность."}
+{
+ "task_id": "table_дата-аналитика_bbccf15cdb",
+ "category": "table",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: Тригубов 8, сумма 36, итог верен. Чёткая проверка."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, подробная структура с выводом. Немного избыточно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верное значение 8, корректная проверка суммы 36 и вывод."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно: 8, 36, итог верен."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные данные, ясная проверка суммы и вывод."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно: 8, 36, итог верен. Компактно и ясно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё, аккуратная краткая проверка."
+  },
+  "nemotron-omni": {
+   "correctness": 8,
+   "reasoning": 2,
+   "format": 2,
+   "russian": 3,
+   "comment": "Значения 8 и 36 верны, но нет проверки, вывода и структуры — просто числа."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: Тригубов 8, итог 36 верен, проверка приведена."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно и лаконично: 8, сумма 36, итог верен."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верное значение и проверка суммы, вывод корректен."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно: 8, 36, итог верен."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно: 8, сумма 36, вывод верен."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и компактно: 8, 36, итог верен."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные данные и вывод, лаконично."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно: 8, сумма 36, итог верен."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верное значение, корректная проверка суммы и вывод."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Ключевые данные верны: Тригубов М. = 8, сумма 14+8+14=36, вывод о корректности «Общего итога» правильный. Однако две фамилии распознаны неверно — «Смоков П.» вместо «Соколов П.» и «Шашков Г.» вместо «Шолохов Г.», что снижает точность распознавания."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Почти все модели дали идеально верный ответ (8, сумма 36, итог верен); nemotron-omni выпадает — только числа без проверки. Победитель выбран среди эквивалентно точных за краткость и ясность."
+}

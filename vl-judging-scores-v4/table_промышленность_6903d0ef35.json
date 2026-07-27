@@ -1,1 +1,134 @@
-{"task_id":"table_промышленность_6903d0ef35","category":"table","scores":{"llama-scout":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Максимум определён верно (поз.2, код 81321830, 409), но количество у поз.8 указано неверно как 17.2 вместо 172."},"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Всё верно: поз.2, код 81321830, 409 и 172 для поз.8. Чётко и ясно."},"27b-v2":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректный ответ по обеим частям, аккуратная структура."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно определены максимум (409, поз.2, код) и количество поз.8 (172)."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все данные верны, ответ хорошо оформлен."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректно: поз.2, код 81321830, 409 и 172 для поз.8."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректно и чётко изложены обе части ответа."},"nemotron-omni":{"correctness":2,"reasoning":3,"format":6,"russian":9,"comment":"Максимум определён неверно: указана поз.1 (228) вместо поз.2 (409); лишь поз.8=172 верно."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью верный ответ по обеим частям, аккуратное оформление."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно: поз.2, код 81321830, 409 и 172 для поз.8."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректный и лаконичный ответ по обеим частям."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все значения верны, ясное оформление."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно определены максимум и количество поз.8."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Полностью корректный ответ, чёткая структура."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно: поз.2, код 81321830, 409 и 172 для поз.8."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Корректный ответ по обеим частям, лаконично."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все данные верны, аккуратное выделение ключевых значений."}},"winner":"35b-a3b","notes":"Большинство моделей дали полностью верный ответ (поз.2, код 81321830, 409; поз.8=172). llama-scout ошиблась в количестве поз.8 (17.2), nemotron-omni неверно определила максимум."}
+{
+ "task_id": "table_промышленность_6903d0ef35",
+ "category": "table",
+ "scores": {
+  "llama-scout": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Максимум определён верно (поз.2, код 81321830, 409), но количество у поз.8 указано неверно как 17.2 вместо 172."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Всё верно: поз.2, код 81321830, 409 и 172 для поз.8. Чётко и ясно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректный ответ по обеим частям, аккуратная структура."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно определены максимум (409, поз.2, код) и количество поз.8 (172)."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, ответ хорошо оформлен."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно: поз.2, код 81321830, 409 и 172 для поз.8."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно и чётко изложены обе части ответа."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 6,
+   "russian": 9,
+   "comment": "Максимум определён неверно: указана поз.1 (228) вместо поз.2 (409); лишь поз.8=172 верно."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью верный ответ по обеим частям, аккуратное оформление."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: поз.2, код 81321830, 409 и 172 для поз.8."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный и лаконичный ответ по обеим частям."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все значения верны, ясное оформление."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно определены максимум и количество поз.8."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректный ответ, чёткая структура."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: поз.2, код 81321830, 409 и 172 для поз.8."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Корректный ответ по обеим частям, лаконично."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, аккуратное выделение ключевых значений."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильно определена поз. 2 (код 81321830, 409 шт) и количество 172 для поз. 8; сводная таблица со всеми 13 позициями и кодами полностью совпадает с изображением. Идеальная структура и безупречный русский."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство моделей дали полностью верный ответ (поз.2, код 81321830, 409; поз.8=172). llama-scout ошиблась в количестве поз.8 (17.2), nemotron-omni неверно определила максимум."
+}

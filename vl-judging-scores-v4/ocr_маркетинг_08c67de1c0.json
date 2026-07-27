@@ -1,1 +1,134 @@
-{"task_id":"ocr_маркетинг_08c67de1c0","category":"ocr","scores":{"llama-scout":{"correctness":5,"reasoning":6,"format":8,"russian":8,"comment":"Цена по карте 179,99 и масса 120 г верны, но цена без карты названа 229,00 вместо 229,99 — ошибка в копейках."},"35b-a3b":{"correctness":10,"reasoning":6,"format":8,"russian":8,"comment":"Все три значения верны, аккуратный нумерованный список с подписями."},"27b-v2":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Все значения верны, но ответ предельно краткий, без подписей и единиц."},"gemma-4-31b":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Все значения верны, лаконичный список без пояснений и единиц."},"diffusion-gemma":{"correctness":10,"reasoning":5,"format":8,"russian":8,"comment":"Все три значения верны, с рублями и граммами, ясный список."},"gpt-5.5-low":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Значения верны, но перечислены через точку с запятой без подписей."},"gpt-5.5-medium":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Значения верны, но перечислены через точку с запятой без подписей."},"nemotron-omni":{"correctness":1,"reasoning":1,"format":2,"russian":6,"comment":"Назвал только одно значение 229,99 руб. — задача не выполнена."},"kimi-k2.6":{"correctness":10,"reasoning":5,"format":8,"russian":8,"comment":"Все три значения верны, с единицами и подписями, чёткий список."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":5,"format":7,"russian":8,"comment":"Все значения верны, с рублями и граммами в одну строку."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":5,"format":7,"russian":8,"comment":"Все значения верны, с единицами измерения."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":5,"format":7,"russian":8,"comment":"Все значения верны, с рублями и граммами в одну строку."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Значения верны, но без подписей и единиц."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Значения верны, но без подписей и единиц."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":4,"format":6,"russian":7,"comment":"Значения верны, но перечислены без подписей и единиц."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":5,"format":7,"russian":8,"comment":"Все значения верны, с символом рубля и граммами."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":5,"format":7,"russian":8,"comment":"Все значения верны, с символом рубля и граммами."}},"winner":"kimi-k2.6","notes":"Большинство моделей дали все три верных значения; kimi-k2.6, 35b-a3b и diffusion-gemma лучшие по сочетанию точности и оформления. Llama-scout ошиблась в копейках, nemotron-omni провалил задачу."}
+{
+ "task_id": "ocr_маркетинг_08c67de1c0",
+ "category": "ocr",
+ "scores": {
+  "llama-scout": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Цена по карте 179,99 и масса 120 г верны, но цена без карты названа 229,00 вместо 229,99 — ошибка в копейках."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все три значения верны, аккуратный нумерованный список с подписями."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Все значения верны, но ответ предельно краткий, без подписей и единиц."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Все значения верны, лаконичный список без пояснений и единиц."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все три значения верны, с рублями и граммами, ясный список."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Значения верны, но перечислены через точку с запятой без подписей."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Значения верны, но перечислены через точку с запятой без подписей."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 2,
+   "russian": 6,
+   "comment": "Назвал только одно значение 229,99 руб. — задача не выполнена."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все три значения верны, с единицами и подписями, чёткий список."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все значения верны, с рублями и граммами в одну строку."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все значения верны, с единицами измерения."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все значения верны, с рублями и граммами в одну строку."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Значения верны, но без подписей и единиц."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Значения верны, но без подписей и единиц."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Значения верны, но перечислены без подписей и единиц."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все значения верны, с символом рубля и граммами."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "Все значения верны, с символом рубля и граммами."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три значения названы верно: 179,99 по карте, 229,99 без карты, 120 г. Ответ предельно чёткий и правильно структурированный, без лишних рассуждений (отсюда чуть ниже reasoning)."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство моделей дали все три верных значения; kimi-k2.6, 35b-a3b и diffusion-gemma лучшие по сочетанию точности и оформления. Llama-scout ошиблась в копейках, nemotron-omni провалил задачу."
+}

@@ -1,1 +1,134 @@
-{"task_id":"map_общее_baf1626518","category":"map","scores":{"35b-a3b":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все четыре аэропорта и коды верны, добавлены детали о линиях (частично не точны, но не критично)."},"llama-scout":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами, число 4 указано."},"27b-v2":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Верно перечислены все четыре аэропорта с кодами и расположением."},"gemma-4-31b":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта и коды верны, порядок иной, но корректно."},"diffusion-gemma":{"correctness":0,"reasoning":1,"format":5,"russian":8,"comment":"Грубая галлюцинация: 7 аэропортов, придуманы несуществующие (Ховрино, Планерная, Раменевское) с фейковыми кодами."},"gpt-5.5-low":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами, число 4 указано."},"gpt-5.5-medium":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами, число 4 указано."},"nemotron-omni":{"correctness":10,"reasoning":7,"format":9,"russian":10,"comment":"Все четыре аэропорта с кодами и расположением верны."},"kimi-k2.6":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами, число 4 указано."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":8,"russian":10,"comment":"Все четыре аэропорта с верными кодами, число 4 указано."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":9,"russian":10,"comment":"Все четыре аэропорта с верными кодами."}},"winner":"35b-a3b","notes":"Почти все модели верно назвали 4 аэропорта с кодами SVO/VKO/DME/ZIA; 35b-a3b дал наиболее подробный ответ. diffusion-gemma грубо галлюцинировал (7 аэропортов)."}
+{
+ "task_id": "map_общее_baf1626518",
+ "category": "map",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта и коды верны, добавлены детали о линиях (частично не точны, но не критично)."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами, число 4 указано."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно перечислены все четыре аэропорта с кодами и расположением."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта и коды верны, порядок иной, но корректно."
+  },
+  "diffusion-gemma": {
+   "correctness": 0,
+   "reasoning": 1,
+   "format": 5,
+   "russian": 8,
+   "comment": "Грубая галлюцинация: 7 аэропортов, придуманы несуществующие (Ховрино, Планерная, Раменевское) с фейковыми кодами."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами, число 4 указано."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами, число 4 указано."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с кодами и расположением верны."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами, число 4 указано."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами, число 4 указано."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре аэропорта с верными кодами."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все четыре аэропорта и их коды (SVO, VKO, DME, ZIA) указаны верно, число 4 названо; мелкая неточность — Домодедово отнесено к юго-востоку (на схеме внизу, юг), а расположение Жуковского продублировано тем же направлением. Оформление таблицей и русский язык безупречны."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Почти все модели верно назвали 4 аэропорта с кодами SVO/VKO/DME/ZIA; 35b-a3b дал наиболее подробный ответ. diffusion-gemma грубо галлюцинировал (7 аэропортов)."
+}

@@ -1,28 +1,155 @@
 {
-  "task_id": "m-halluc-07",
-  "category": "hallucination",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 8, "reasoning": 8, "format": 7, "russian": 9, "comment": "Сразу отрицает существование метода и даёт собственную реализацию, но объём избыточен, а финальная фраза «почти наверняка там уже есть similarity_threshold» — необоснованная спекуляция."},
-    "deepseek-flash": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 9, "comment": "Чёткое отрицание с проверкой через hasattr и рабочей альтернативой на thefuzz; разбор по 5 пунктам менее систематичен."},
-    "deepseek-pro": {"correctness": 8, "reasoning": 7, "format": 7, "russian": 8, "comment": "Отрицание верное, но подача «сигнатура, как если бы метод существовал» с таблицей параметров размывает границу между реальным API и выдумкой."},
-    "35b-a3b": {"correctness": 9, "reasoning": 8, "format": 8, "russian": 9, "comment": "Отрицает метод, приводит реальную сигнатуру pd.merge и даёт диагностические команды для поиска источника; хороший баланс."},
-    "27b-v2": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 9, "comment": "Явно называет вероятную галлюцинацию LLM и даёт практичную замену fuzzy_merge с порогом; глубина по производительности средняя."},
-    "gemma-4-31b": {"correctness": 9, "reasoning": 7, "format": 7, "russian": 8, "comment": "Резкое и корректное отрицание плюс готовое решение на rapidfuzz; структура по 5 пунктам частичная, тон панибратский."},
-    "diffusion-gemma": {"correctness": 7, "reasoning": 6, "format": 6, "russian": 8, "comment": "Отрицание есть, но затем даётся гипотетическая сигнатура «как выглядела бы» и упоминаются сомнительные пакеты; разбор поверхностный."},
-    "gpt-5.5-low": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Короткое точное отрицание, верная сигнатура merge с copy=None, ссылка на доки и последовательный ответ по всем пунктам."},
-    "gpt-5.5-medium": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Идеальное разграничение: метода нет, AttributeError, реальный API, ссылка на документацию и корректная альтернатива без выдумок."},
-    "nemotron-omni": {"correctness": 7, "reasoning": 7, "format": 7, "russian": 8, "comment": "Верно отрицает метод, но домысливает несуществующие пакеты («pandas-smart», «rapidfuzz-pandas») и сильно перегружен объёмом."},
-    "nemotron-super": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Развёрнутое обоснование отсутствия метода со ссылками, но заявление «все примеры протестированы» и ссылка на несуществующий файл ченджлога — лишняя уверенность."},
-    "kimi-k2.6": {"correctness": 8, "reasoning": 8, "format": 8, "russian": 9, "comment": "Чёткое отрицание и качественная собственная реализация на rapidfuzz; в конце предполагает совпадение сигнатуры с гипотетическим корпоративным форком."},
-    "gpt-5.6-luna-high": {"correctness": 8, "reasoning": 8, "format": 6, "russian": 8, "comment": "Содержательно верно, но в тексте остались битые служебные токены цитат и copy=True вместо copy=None в сигнатуре 2.2.0."},
-    "gpt-5.6-luna-low": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 9, "comment": "Ясное отрицание и рабочая альтернатива, но copy=True в сигнатуре и ссылка на документацию другой версии (2.2.3)."},
-    "gpt-5.6-luna-medium": {"correctness": 9, "reasoning": 7, "format": 9, "russian": 9, "comment": "Компактно и точно: метод отсутствует, AttributeError, реальная сигнатура, ссылки; глубина по производительности умеренная."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Хорошее разделение «что есть в pandas» и «чего нет», корректное указание, что merge_asof не является fuzzy-заменой."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 9, "format": 9, "russian": 9, "comment": "Лучший ответ: отрицание, реальный API, честное «сигнатуры нет», плюс сниппет с inspect для проверки происхождения метода в рантайме."},
-    "gpt-5.6-terra-high": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Точное отрицание с корректной сигнатурой merge, разумный fuzzy-пайплайн и явное сопоставление score_cutoff с мнимым similarity_threshold."},
-    "gpt-5.6-terra-low": {"correctness": 9, "reasoning": 7, "format": 8, "russian": 9, "comment": "Верное краткое отрицание и практичные советы по блокировке; разбор пунктов сжат."},
-    "gpt-5.6-terra-medium": {"correctness": 10, "reasoning": 8, "format": 9, "russian": 9, "comment": "Отрицание с оговоркой про возможный monkey patch, точная сигнатура с типами и корректный вывод по порогу схожести."}
+ "task_id": "m-halluc-07",
+ "category": "hallucination",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Сразу отрицает существование метода и даёт собственную реализацию, но объём избыточен, а финальная фраза «почти наверняка там уже есть similarity_threshold» — необоснованная спекуляция."
   },
-  "winner": "gpt-5.6-sol-medium",
-  "notes": "Все модели корректно распознали несуществующий метод — прямых выдумок фактов почти нет. Различия в основном в чистоте разделения «реальный API vs собственная реализация» и в мелких неточностях сигнатуры (copy=True) и выдуманных названиях пакетов."
+  "deepseek-flash": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Чёткое отрицание с проверкой через hasattr и рабочей альтернативой на thefuzz; разбор по 5 пунктам менее систематичен."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Отрицание верное, но подача «сигнатура, как если бы метод существовал» с таблицей параметров размывает границу между реальным API и выдумкой."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Отрицает метод, приводит реальную сигнатуру pd.merge и даёт диагностические команды для поиска источника; хороший баланс."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Явно называет вероятную галлюцинацию LLM и даёт практичную замену fuzzy_merge с порогом; глубина по производительности средняя."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Резкое и корректное отрицание плюс готовое решение на rapidfuzz; структура по 5 пунктам частичная, тон панибратский."
+  },
+  "diffusion-gemma": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 8,
+   "comment": "Отрицание есть, но затем даётся гипотетическая сигнатура «как выглядела бы» и упоминаются сомнительные пакеты; разбор поверхностный."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Короткое точное отрицание, верная сигнатура merge с copy=None, ссылка на доки и последовательный ответ по всем пунктам."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Идеальное разграничение: метода нет, AttributeError, реальный API, ссылка на документацию и корректная альтернатива без выдумок."
+  },
+  "nemotron-omni": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Верно отрицает метод, но домысливает несуществующие пакеты («pandas-smart», «rapidfuzz-pandas») и сильно перегружен объёмом."
+  },
+  "nemotron-super": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Развёрнутое обоснование отсутствия метода со ссылками, но заявление «все примеры протестированы» и ссылка на несуществующий файл ченджлога — лишняя уверенность."
+  },
+  "kimi-k2.6": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Чёткое отрицание и качественная собственная реализация на rapidfuzz; в конце предполагает совпадение сигнатуры с гипотетическим корпоративным форком."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 8,
+   "comment": "Содержательно верно, но в тексте остались битые служебные токены цитат и copy=True вместо copy=None в сигнатуре 2.2.0."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ясное отрицание и рабочая альтернатива, но copy=True в сигнатуре и ссылка на документацию другой версии (2.2.3)."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Компактно и точно: метод отсутствует, AttributeError, реальная сигнатура, ссылки; глубина по производительности умеренная."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Хорошее разделение «что есть в pandas» и «чего нет», корректное указание, что merge_asof не является fuzzy-заменой."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Лучший ответ: отрицание, реальный API, честное «сигнатуры нет», плюс сниппет с inspect для проверки происхождения метода в рантайме."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точное отрицание с корректной сигнатурой merge, разумный fuzzy-пайплайн и явное сопоставление score_cutoff с мнимым similarity_threshold."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верное краткое отрицание и практичные советы по блокировке; разбор пунктов сжат."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отрицание с оговоркой про возможный monkey patch, точная сигнатура с типами и корректный вывод по порогу схожести."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Сразу и однозначно заявила, что метода нет ни в одной версии pandas, отказалась выдумывать сигнатуру и предупредила про AttributeError; API pandas не сфабрикован. Минус за уверенно изложенные детали параметров fuzzy_pandas (keep/limit) без оговорки и за оборванный псевдокод во втором варианте."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Все модели корректно распознали несуществующий метод — прямых выдумок фактов почти нет. Различия в основном в чистоте разделения «реальный API vs собственная реализация» и в мелких неточностях сигнатуры (copy=True) и выдуманных названиях пакетов."
 }

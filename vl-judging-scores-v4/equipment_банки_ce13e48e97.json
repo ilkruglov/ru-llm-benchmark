@@ -1,19 +1,134 @@
-{"task_id":"equipment_банки_ce13e48e97","category":"equipment","scores":{
-"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верно опознан Сбербанк, тип терминала и заголовок «Оплатить и перевести», всё обосновано видимыми элементами."},
-"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Все три факта верны, обоснование чуть менее детальное, но корректное."},
-"35b-a3b":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Максимально детально: верно всё, дополнительно прочитан подзаголовок под основным текстом."},
-"gemma-4-31b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Верно опознаны банк, тип и заголовок; отмечены логотипы платёжных систем."},
-"diffusion-gemma":{"correctness":9,"reasoning":8,"format":9,"russian":6,"comment":"Факты верны, но заметные опечатки («переводыводы», «самослуживания») снижают качество текста."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все три факта верны и обоснованы видимыми элементами корпуса и экрана."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Корректно опознаны Сбербанк, тип терминала и заголовок экрана."},
-"nemotron-omni":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Верно всё, детально описаны видимые элементы; лёгкие шероховатости языка."},
-"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Полный и точный ответ с детальным обоснованием по логотипу и элементам корпуса."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, ответ краткий но полный, указано ПАО «Сбербанк»."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верно, но очень лаконично, без развёрнутого обоснования."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три факта верны, обоснование сжатое но достаточное."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Корректно опознаны банк, тип и заголовок с указанием видимых элементов."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно всё, обоснование по фирменному оформлению и панели над экраном."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все факты верны, обоснование через видимые слот, клавиатуру и надписи."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Верно опознаны Сбербанк, тип и заголовок экрана."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три факта верны, ответ структурный и краткий."}
-},"winner":"35b-a3b","notes":"Все модели верно опознали терминал Сбербанка и заголовок «Оплатить и перевести». 35b-a3b и kimi-k2.6 дали самый детальный разбор; 35b-a3b дополнительно прочитал подзаголовок экрана."}
+{
+ "task_id": "equipment_банки_ce13e48e97",
+ "category": "equipment",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно опознан Сбербанк, тип терминала и заголовок «Оплатить и перевести», всё обосновано видимыми элементами."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три факта верны, обоснование чуть менее детальное, но корректное."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Максимально детально: верно всё, дополнительно прочитан подзаголовок под основным текстом."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно опознаны банк, тип и заголовок; отмечены логотипы платёжных систем."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 6,
+   "comment": "Факты верны, но заметные опечатки («переводыводы», «самослуживания») снижают качество текста."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны и обоснованы видимыми элементами корпуса и экрана."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно опознаны Сбербанк, тип терминала и заголовок экрана."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Верно всё, детально описаны видимые элементы; лёгкие шероховатости языка."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный и точный ответ с детальным обоснованием по логотипу и элементам корпуса."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, ответ краткий но полный, указано ПАО «Сбербанк»."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно, но очень лаконично, без развёрнутого обоснования."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, обоснование сжатое но достаточное."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно опознаны банк, тип и заголовок с указанием видимых элементов."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно всё, обоснование по фирменному оформлению и панели над экраном."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, обоснование через видимые слот, клавиатуру и надписи."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно опознаны Сбербанк, тип и заголовок экрана."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три факта верны, ответ структурный и краткий."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три ключевых факта верны: терминал самообслуживания Сбербанка, заголовок «Оплатить и перевести», перечислены реально видимые элементы (экран, картридер, PIN-пад, слот купюр). Небольшие неточности в деталях: верхняя плашка описана как зелёная (она светлая/белая), логотип назван зелёной «галочкой-листиком» (он белый на зелёном), текст на ней домыслен как «Оплатить карту»."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Все модели верно опознали терминал Сбербанка и заголовок «Оплатить и перевести». 35b-a3b и kimi-k2.6 дали самый детальный разбор; 35b-a3b дополнительно прочитал подзаголовок экрана."
+}

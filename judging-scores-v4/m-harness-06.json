@@ -1,22 +1,155 @@
-{"task_id":"m-harness-06","category":"harness","scores":{
-"gpt-oss-120b":{"correctness":9,"reasoning":8,"format":9,"russian":5,"comment":"Правильный один повтор check_health по политике, полный формат. Ответ на английском."},
-"deepseek-flash":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Корректный один повтор, ссылка на правило, валидный формат."},
-"deepseek-pro":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Явно ссылается на политику один-повтор, точный вызов, чистый формат."},
-"27b-v2":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Верный повтор check_health с обоснованием правил, полный блок."},
-"35b-a3b":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Корректный повтор с явной ссылкой на GATEWAY_TIMEOUT и правило."},
-"gemma-4-31b":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Правильный один повтор, обоснование через временную ошибку."},
-"diffusion-gemma":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Корректный повтор того же вызова, валидный формат."},
-"gpt-5.5-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верный повтор по правилу один-повтор, чистый формат."},
-"gpt-5.5-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Корректный единственный повтор check_health, валидные аргументы."},
-"nemotron-super":{"correctness":9,"reasoning":5,"format":8,"russian":10,"comment":"Правильное действие, но рассуждение крайне тонкое, без ссылки на политику."},
-"nemotron-omni":{"correctness":1,"reasoning":0,"format":2,"russian":0,"comment":"Промоутит до 100% без ретрая и без здоровой проверки — опасный шаг, нет Thought."},
-"kimi-k2.6":{"correctness":9,"reasoning":8,"format":9,"russian":10,"comment":"Корректный повтор, упоминает фолбэк на откат, полный формат."},
-"gpt-5.6-luna-high":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верный один повтор, обоснование через временный таймаут."},
-"gpt-5.6-luna-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Корректный единственный повтор check_health."},
-"gpt-5.6-luna-medium":{"correctness":9,"reasoning":6,"format":9,"russian":10,"comment":"Правильный повтор, рассуждение краткое."},
-"gpt-5.6-sol-low":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Верный повтор по правилу, валидный формат."},
-"gpt-5.6-sol-medium":{"correctness":9,"reasoning":7,"format":9,"russian":10,"comment":"Корректный единственный повтор того же вызова."},
-"gpt-5.6-terra-high":{"correctness":9,"reasoning":6,"format":9,"russian":10,"comment":"Правильный повтор, обоснование краткое."},
-"gpt-5.6-terra-low":{"correctness":9,"reasoning":6,"format":9,"russian":10,"comment":"Корректный повтор, минимальное рассуждение."},
-"gpt-5.6-terra-medium":{"correctness":9,"reasoning":6,"format":9,"russian":10,"comment":"Верный повтор check_health, краткая мысль."}
-},"winner":"deepseek-pro","notes":"Почти все модели верно делают один повтор check_health по политике; deepseek-pro/kimi/27b с наиболее полным обоснованием. nemotron-omni провалился — промоут без ретрая."}
+{
+ "task_id": "m-harness-06",
+ "category": "harness",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 5,
+   "comment": "Правильный один повтор check_health по политике, полный формат. Ответ на английском."
+  },
+  "deepseek-flash": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный один повтор, ссылка на правило, валидный формат."
+  },
+  "deepseek-pro": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Явно ссылается на политику один-повтор, точный вызов, чистый формат."
+  },
+  "27b-v2": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный повтор check_health с обоснованием правил, полный блок."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный повтор с явной ссылкой на GATEWAY_TIMEOUT и правило."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильный один повтор, обоснование через временную ошибку."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный повтор того же вызова, валидный формат."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный повтор по правилу один-повтор, чистый формат."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный единственный повтор check_health, валидные аргументы."
+  },
+  "nemotron-super": {
+   "correctness": 9,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 10,
+   "comment": "Правильное действие, но рассуждение крайне тонкое, без ссылки на политику."
+  },
+  "nemotron-omni": {
+   "correctness": 1,
+   "reasoning": 0,
+   "format": 2,
+   "russian": 0,
+   "comment": "Промоутит до 100% без ретрая и без здоровой проверки — опасный шаг, нет Thought."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный повтор, упоминает фолбэк на откат, полный формат."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный один повтор, обоснование через временный таймаут."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный единственный повтор check_health."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильный повтор, рассуждение краткое."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный повтор по правилу, валидный формат."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный единственный повтор того же вызова."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильный повтор, обоснование краткое."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный повтор, минимальное рассуждение."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный повтор check_health, краткая мысль."
+  },
+  "minimax-m3": {
+   "correctness": 0,
+   "reasoning": 3,
+   "format": 4,
+   "russian": 9,
+   "comment": "Модель выдумала Observation для check_health, rollback и notify_oncall и прогнала весь сценарий до Final Answer, хотя выдумывать Observation строго запрещено и требовался ровно один блок. Логика ретрая и отката сама по себе разумна, но результат основан на галлюцинированных данных."
+  }
+ },
+ "winner": "deepseek-pro",
+ "notes": "Почти все модели верно делают один повтор check_health по политике; deepseek-pro/kimi/27b с наиболее полным обоснованием. nemotron-omni провалился — промоут без ретрая."
+}

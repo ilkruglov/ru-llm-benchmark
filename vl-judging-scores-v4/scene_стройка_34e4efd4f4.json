@@ -1,1 +1,134 @@
-{"task_id":"scene_стройка_34e4efd4f4","category":"scene","scores":{"llama-scout":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"Зима и промышленный характер верны, но количество кранов (3) и цвет грузовика (красный) — обе ключевые ошибки."},"35b-a3b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"2 жёлтых крана и оранжевый грузовик верны, зима и стальной каркас распознаны точно и подробно."},"27b-v2":{"correctness":5,"reasoning":7,"format":8,"russian":7,"comment":"Кранов 2 и зима верно, но цвет грузовика назван красным — ошибка; есть опечатка «стальноым»."},"gemma-4-31b":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Оба ключевых факта верны (2 крана, оранжевый грузовик), зима и промышленный каркас определены точно."},"diffusion-gemma":{"correctness":9,"reasoning":8,"format":8,"russian":8,"comment":"2 жёлтых крана и оранжевый грузовик верны, зима и рабочие в тёплой одежде подмечены корректно."},"gpt-5.5-low":{"correctness":6,"reasoning":7,"format":7,"russian":8,"comment":"Кранов 2 и зима верно, но грузовик назван светло-серым/белым — ошибка по цвету."},"gpt-5.5-medium":{"correctness":6,"reasoning":7,"format":7,"russian":8,"comment":"2 крана и зима верны, цвет грузовика (серый) определён неверно — он оранжевый."},"nemotron-omni":{"correctness":8,"reasoning":7,"format":8,"russian":8,"comment":"Итог верен: 2 крана и оранжевый грузовик, хотя формулировка про кран «на грузовике» слегка путаная."},"kimi-k2.6":{"correctness":9,"reasoning":8,"format":8,"russian":9,"comment":"Оба факта верны (2 крана, оранжевый грузовик), зима и промышленный комплекс распознаны точно."},"gpt-5.6-luna-high":{"correctness":6,"reasoning":7,"format":7,"russian":8,"comment":"2 крана и зима верны, но грузовик назван серым — цвет ошибочен."},"gpt-5.6-luna-low":{"correctness":6,"reasoning":6,"format":7,"russian":8,"comment":"Кранов 2 и зима верно, цвет грузовика (серый) неверен."},"gpt-5.6-luna-medium":{"correctness":6,"reasoning":6,"format":7,"russian":8,"comment":"2 крана и зима верны, грузовик ошибочно назван серым."},"gpt-5.6-sol-low":{"correctness":6,"reasoning":6,"format":7,"russian":8,"comment":"Кранов 2 и зима верно, но цвет грузовика (серый) не соответствует оранжевому."},"gpt-5.6-sol-medium":{"correctness":6,"reasoning":7,"format":7,"russian":8,"comment":"2 крана и зима верны, грузовик ошибочно назван серым."},"gpt-5.6-terra-high":{"correctness":1,"reasoning":2,"format":7,"russian":8,"comment":"Обе ключевые ошибки: 3 крана вместо 2 и зелёный грузовик вместо оранжевого."},"gpt-5.6-terra-low":{"correctness":6,"reasoning":6,"format":7,"russian":8,"comment":"2 крана и зима верны, но грузовик назван светло-серым — цвет неверен."},"gpt-5.6-terra-medium":{"correctness":6,"reasoning":7,"format":7,"russian":8,"comment":"Кранов 2 и зима верно, грузовик ошибочно назван светло-серым/белым."}},"winner":"35b-a3b","notes":"Победители по обоим ключевым фактам (2 жёлтых крана + оранжевый грузовик): 35b-a3b, gemma-4-31b, kimi-k2.6, diffusion-gemma; выбран 35b-a3b за точность и детальность. Большинство GPT-5.6 верно назвали 2 крана, но ошиблись с цветом грузовика (серый), terra-high и llama-scout провалили оба факта."}
+{
+ "task_id": "scene_стройка_34e4efd4f4",
+ "category": "scene",
+ "scores": {
+  "llama-scout": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Зима и промышленный характер верны, но количество кранов (3) и цвет грузовика (красный) — обе ключевые ошибки."
+  },
+  "35b-a3b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "2 жёлтых крана и оранжевый грузовик верны, зима и стальной каркас распознаны точно и подробно."
+  },
+  "27b-v2": {
+   "correctness": 5,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 7,
+   "comment": "Кранов 2 и зима верно, но цвет грузовика назван красным — ошибка; есть опечатка «стальноым»."
+  },
+  "gemma-4-31b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Оба ключевых факта верны (2 крана, оранжевый грузовик), зима и промышленный каркас определены точно."
+  },
+  "diffusion-gemma": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "2 жёлтых крана и оранжевый грузовик верны, зима и рабочие в тёплой одежде подмечены корректно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Кранов 2 и зима верно, но грузовик назван светло-серым/белым — ошибка по цвету."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "2 крана и зима верны, цвет грузовика (серый) определён неверно — он оранжевый."
+  },
+  "nemotron-omni": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Итог верен: 2 крана и оранжевый грузовик, хотя формулировка про кран «на грузовике» слегка путаная."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Оба факта верны (2 крана, оранжевый грузовик), зима и промышленный комплекс распознаны точно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "2 крана и зима верны, но грузовик назван серым — цвет ошибочен."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Кранов 2 и зима верно, цвет грузовика (серый) неверен."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "2 крана и зима верны, грузовик ошибочно назван серым."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Кранов 2 и зима верно, но цвет грузовика (серый) не соответствует оранжевому."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "2 крана и зима верны, грузовик ошибочно назван серым."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 8,
+   "comment": "Обе ключевые ошибки: 3 крана вместо 2 и зелёный грузовик вместо оранжевого."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "2 крана и зима верны, но грузовик назван светло-серым — цвет неверен."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Кранов 2 и зима верно, грузовик ошибочно назван светло-серым/белым."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ключевые факты верны: зима, промышленный стальной каркас, два жёлтых автокрана на переднем плане и оранжево-красный грузовик с ЖБ-элементами. Обоснования конкретны и опираются на видимые детали; минус лишь за размытую формулировку цвета кабины (оранжево-красная) вместо чистого оранжевого."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Победители по обоим ключевым фактам (2 жёлтых крана + оранжевый грузовик): 35b-a3b, gemma-4-31b, kimi-k2.6, diffusion-gemma; выбран 35b-a3b за точность и детальность. Большинство GPT-5.6 верно назвали 2 крана, но ошиблись с цветом грузовика (серый), terra-high и llama-scout провалили оба факта."
+}

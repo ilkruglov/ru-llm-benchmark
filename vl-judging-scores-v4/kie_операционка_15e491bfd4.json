@@ -1,1 +1,134 @@
-{"task_id":"kie_операционка_15e491bfd4","category":"kie","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, заголовок, столбцы, итоги и должности точны, отмечена пустота бланка. Заголовок дан кратко."},"llama-scout":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью корректный ответ, чёткая структура, явно указано, что все поля пустые."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные прочитаны верно, отмечено что бланк чистый без выдуманных значений."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":8,"russian":10,"comment":"Кратко и верно, ценное уточнение что «1» — часть разметки бланка."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":8,"russian":6,"comment":"Содержание верное, отмечена пустота бланка, но есть опечатки «сновываясь», «навания»."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Полный заголовок и все пункты верны, чётко указано отсутствие заполненных значений."},"gpt-5.5-medium":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Точный ответ с полным заголовком и уточнением о номере строки «1»."},"nemotron-omni":{"correctness":9,"reasoning":6,"format":3,"russian":5,"comment":"Содержание в основном верно, но сбита нумерация пунктов и опечатка «Руковиодитель»."},"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Полный и точный ответ, ясная структура, явно подчёркнута незаполненность всех полей."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все верно, отмечена преднапечатанная нумерация «1» и отсутствие данных."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Кратко и точно, все поля отмечены как пустые."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, чётко указано отсутствие заполненных значений."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Точный ответ с уточнением о порядковом номере строки «1»."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Полный заголовок, все столбцы и итоги верны, отмечен номер строки «1»."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, чётко указано что поля пустые."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Корректный краткий ответ, отмечена незаполненность бланка."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, полный заголовок и явное указание пустоты полей."}},"winner":"kimi-k2.6","notes":"Почти все модели ответили верно и отметили незаполненность бланка; kimi-k2.6 дал самый полный и структурированный ответ. Слабее всех nemotron-omni (сбитая нумерация, опечатки)."}
+{
+ "task_id": "kie_операционка_15e491bfd4",
+ "category": "kie",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, заголовок, столбцы, итоги и должности точны, отмечена пустота бланка. Заголовок дан кратко."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью корректный ответ, чёткая структура, явно указано, что все поля пустые."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные прочитаны верно, отмечено что бланк чистый без выдуманных значений."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 10,
+   "comment": "Кратко и верно, ценное уточнение что «1» — часть разметки бланка."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 6,
+   "comment": "Содержание верное, отмечена пустота бланка, но есть опечатки «сновываясь», «навания»."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный заголовок и все пункты верны, чётко указано отсутствие заполненных значений."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный ответ с полным заголовком и уточнением о номере строки «1»."
+  },
+  "nemotron-omni": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 3,
+   "russian": 5,
+   "comment": "Содержание в основном верно, но сбита нумерация пунктов и опечатка «Руковиодитель»."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный и точный ответ, ясная структура, явно подчёркнута незаполненность всех полей."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все верно, отмечена преднапечатанная нумерация «1» и отсутствие данных."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Кратко и точно, все поля отмечены как пустые."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, чётко указано отсутствие заполненных значений."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точный ответ с уточнением о порядковом номере строки «1»."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный заголовок, все столбцы и итоги верны, отмечен номер строки «1»."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, чётко указано что поля пустые."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный краткий ответ, отмечена незаполненность бланка."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, полный заголовок и явное указание пустоты полей."
+  },
+  "minimax-m3": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все пять пунктов верны: 6 столбцов, три итоговые строки, должности и явное указание на незаполненность бланка без выдуманных данных. Небольшая неполнота в п.1 (не приведён полный заголовок со датой 'от __.__.20__ г.')."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Почти все модели ответили верно и отметили незаполненность бланка; kimi-k2.6 дал самый полный и структурированный ответ. Слабее всех nemotron-omni (сбитая нумерация, опечатки)."
+}

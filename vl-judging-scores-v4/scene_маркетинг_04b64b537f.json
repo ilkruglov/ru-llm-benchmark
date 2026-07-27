@@ -1,19 +1,134 @@
-{"task_id":"scene_маркетинг_04b64b537f","category":"scene","scores":{
-"35b-a3b":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верно назван бренд ТВОЕ и номер 780-61-11, чёткое структурированное оформление."},
-"llama-scout":{"correctness":4,"reasoning":3,"format":6,"russian":9,"comment":"Бренд «Твое» верный, но номер прочитан неверно (+7 780 61-11), потеряна группа цифр."},
-"27b-v2":{"correctness":4,"reasoning":3,"format":7,"russian":9,"comment":"Номер 780-61-11 верный, но название искажено (ТЕОЕ вместо ТВОЕ)."},
-"gemma-4-31b":{"correctness":10,"reasoning":7,"format":7,"russian":10,"comment":"Оба факта верны: ТВОЕ и 780-61-11, ясный ответ."},
-"diffusion-gemma":{"correctness":7,"reasoning":5,"format":6,"russian":9,"comment":"Бренд ТВОЕ верный, но номер записан с шумом «7,780-61-11»."},
-"gpt-5.5-low":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"ТВОЕ и 780-61-11 верно, аккуратное оформление."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"ТВОЕ и 780-61-11 верно, аккуратное оформление."},
-"nemotron-omni":{"correctness":10,"reasoning":4,"format":5,"russian":9,"comment":"Оба факта верны, но ответ предельно лаконичен без структуры."},
-"kimi-k2.6":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Верно ТВОЕ и т.780-61-11, ясно и структурировано."},
-"gpt-5.6-luna-high":{"correctness":8,"reasoning":6,"format":7,"russian":10,"comment":"Номер верный, но бренд написан «ТВОЁ» с Ё вместо Е."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"ТВОЕ и 780-61-11 верно, кратко и точно."},
-"gpt-5.6-luna-medium":{"correctness":8,"reasoning":6,"format":7,"russian":10,"comment":"Номер верный, но бренд написан «ТВОЁ» с Ё вместо Е."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"ТВОЕ и 780-61-11 верно, лаконично."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"ТВОЕ и 780-61-11 верно, лаконично."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"ТВОЕ и 780-61-11 верно, лаконично."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"«Твое» и 780-61-11 верно."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":6,"format":7,"russian":10,"comment":"ТВОЕ и 780-61-11 верно, лаконично."}
-},"winner":"35b-a3b","notes":"Много моделей дали идеально верный ответ; 35b-a3b, kimi-k2.6, gpt-5.5 выделяются точностью и аккуратной структурой. Ошиблись llama-scout (номер) и 27b-v2 (название)."}
+{
+ "task_id": "scene_маркетинг_04b64b537f",
+ "category": "scene",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно назван бренд ТВОЕ и номер 780-61-11, чёткое структурированное оформление."
+  },
+  "llama-scout": {
+   "correctness": 4,
+   "reasoning": 3,
+   "format": 6,
+   "russian": 9,
+   "comment": "Бренд «Твое» верный, но номер прочитан неверно (+7 780 61-11), потеряна группа цифр."
+  },
+  "27b-v2": {
+   "correctness": 4,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 9,
+   "comment": "Номер 780-61-11 верный, но название искажено (ТЕОЕ вместо ТВОЕ)."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 10,
+   "comment": "Оба факта верны: ТВОЕ и 780-61-11, ясный ответ."
+  },
+  "diffusion-gemma": {
+   "correctness": 7,
+   "reasoning": 5,
+   "format": 6,
+   "russian": 9,
+   "comment": "Бренд ТВОЕ верный, но номер записан с шумом «7,780-61-11»."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "ТВОЕ и 780-61-11 верно, аккуратное оформление."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "ТВОЕ и 780-61-11 верно, аккуратное оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 4,
+   "format": 5,
+   "russian": 9,
+   "comment": "Оба факта верны, но ответ предельно лаконичен без структуры."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно ТВОЕ и т.780-61-11, ясно и структурировано."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Номер верный, но бренд написан «ТВОЁ» с Ё вместо Е."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "ТВОЕ и 780-61-11 верно, кратко и точно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "Номер верный, но бренд написан «ТВОЁ» с Ё вместо Е."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "ТВОЕ и 780-61-11 верно, лаконично."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "ТВОЕ и 780-61-11 верно, лаконично."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "ТВОЕ и 780-61-11 верно, лаконично."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "«Твое» и 780-61-11 верно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 10,
+   "comment": "ТВОЕ и 780-61-11 верно, лаконично."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Бренд «ТВОЕ» и телефон 780-61-11 распознаны абсолютно верно, без галлюцинаций. Ответ лаконичный и аккуратно оформленный, но развёрнутого анализа сцены нет."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Много моделей дали идеально верный ответ; 35b-a3b, kimi-k2.6, gpt-5.5 выделяются точностью и аккуратной структурой. Ошиблись llama-scout (номер) и 27b-v2 (название)."
+}

@@ -1,19 +1,134 @@
-{"task_id":"dashboard_дата-аналитика_e3bf79ccc2","category":"dashboard","scores":{
-"llama-scout":{"correctness":1,"reasoning":2,"format":6,"russian":7,"comment":"Максимум $21.8M ошибочно назван Total, лидер USA не выявлен; пара названа US&Canada вместо Australia&Canada. Главная аномалия упущена."},
-"35b-a3b":{"correctness":3,"reasoning":6,"format":7,"russian":8,"comment":"Верно уловил структуру (лидер 21.8M, разрыв 16.5M, ~4x, пара 5.3M), но грубо переврал названия стран: лидер 'New Zealand', пара US&Canada."},
-"27b-v2":{"correctness":2,"reasoning":5,"format":7,"russian":8,"comment":"21.8M ошибочно назван Total, лидер не выявлен; максимум US&Canada 5.3M. Хорошее рассуждение про Units, но ключевая аномалия пропущена."},
-"gemma-4-31b":{"correctness":4,"reasoning":7,"format":8,"russian":8,"comment":"Структура верна (лидер 21.8M, 16.5M, 4x, пара Australia&Canada верно), но лидер ошибочно назван UK вместо USA (перепутаны USA и UK)."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":7,"comment":"Все значения и страны верны: USA 21.8M, разрыв 16.5M, ~4x, пара Australia&Canada. Портят лишь опечатки ('номалия','взя вместе')."},
-"gpt-5.5-low":{"correctness":1,"reasoning":2,"format":6,"russian":8,"comment":"Всего 5 стран, 21.8M пропущен, выдумана Mexico; лидер US&Canada 5.3M. Аномалия не найдена."},
-"gpt-5.5-medium":{"correctness":1,"reasoning":2,"format":6,"russian":8,"comment":"5 стран, 21.8M пропущен, выдумана Mexico; максимум US&Canada 5.3M. Ключевая аномалия упущена."},
-"nemotron-omni":{"correctness":3,"reasoning":6,"format":7,"russian":1,"comment":"Ответ полностью на английском. Структура верна (лидер 21.8M, 16.5M, пара 5.3M), но лидер назван 'China', пара US&Canada."},
-"kimi-k2.6":{"correctness":1,"reasoning":2,"format":6,"russian":8,"comment":"5 стран, лидер ошибочно 'France' 21.8M, и ошибочно заявлено об отсутствии одинаковых значений — пара Australia&Canada пропущена."},
-"gpt-5.6-luna-high":{"correctness":3,"reasoning":6,"format":7,"russian":8,"comment":"Структура верна (лидер 21.8M, 16.5M), но лидер назван Germany вместо USA, пара US&Canada вместо Australia&Canada."},
-"gpt-5.6-luna-low":{"correctness":3,"reasoning":6,"format":7,"russian":8,"comment":"Лидер ошибочно Germany 21.8M, пара US&Canada. Значения и логика верны, но названия стран перепутаны."},
-"gpt-5.6-luna-medium":{"correctness":3,"reasoning":6,"format":7,"russian":8,"comment":"Лидер назван Germany вместо USA, пара US&Canada вместо Australia&Canada. Числа и структура верны."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":9,"comment":"Все верно: лидер USA 21.8M, разрыв 16.5M, >4x, пара Australia&Canada 5.3M. Кратко и точно."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Полностью корректно: USA 21.8M лидер, 16.5M и >4x над Australia&Canada 5.3M, пара названа верно. Ясный вывод."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":8,"comment":"Все значения и страны верны: USA 21.8M, 16.5M, пара Australia&Canada. Мелкая опечатка (лишний backtick)."},
-"gpt-5.6-terra-low":{"correctness":2,"reasoning":3,"format":7,"russian":8,"comment":"Только 5 стран, USA 21.8M пропущена; максимум Australia&Canada 5.3M, разрыв 2.0M. Пара верна, но ключевая аномалия упущена."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":8,"comment":"Все верно: USA 21.8M лидер, 16.5M и >4x над Australia&Canada 5.3M, пара названа корректно."}
-},"winner":"gpt-5.6-sol-medium","notes":"Полностью верные ответы у diffusion-gemma, sol-low/medium, terra-high/medium; победитель sol-medium за точность, качественный анализ и чистый русский. Много моделей перепутали названия стран лидера или совсем пропустили USA=21.8M."}
+{
+ "task_id": "dashboard_дата-аналитика_e3bf79ccc2",
+ "category": "dashboard",
+ "scores": {
+  "llama-scout": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 7,
+   "comment": "Максимум $21.8M ошибочно назван Total, лидер USA не выявлен; пара названа US&Canada вместо Australia&Canada. Главная аномалия упущена."
+  },
+  "35b-a3b": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Верно уловил структуру (лидер 21.8M, разрыв 16.5M, ~4x, пара 5.3M), но грубо переврал названия стран: лидер 'New Zealand', пара US&Canada."
+  },
+  "27b-v2": {
+   "correctness": 2,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 8,
+   "comment": "21.8M ошибочно назван Total, лидер не выявлен; максимум US&Canada 5.3M. Хорошее рассуждение про Units, но ключевая аномалия пропущена."
+  },
+  "gemma-4-31b": {
+   "correctness": 4,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Структура верна (лидер 21.8M, 16.5M, 4x, пара Australia&Canada верно), но лидер ошибочно назван UK вместо USA (перепутаны USA и UK)."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 7,
+   "comment": "Все значения и страны верны: USA 21.8M, разрыв 16.5M, ~4x, пара Australia&Canada. Портят лишь опечатки ('номалия','взя вместе')."
+  },
+  "gpt-5.5-low": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 8,
+   "comment": "Всего 5 стран, 21.8M пропущен, выдумана Mexico; лидер US&Canada 5.3M. Аномалия не найдена."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 8,
+   "comment": "5 стран, 21.8M пропущен, выдумана Mexico; максимум US&Canada 5.3M. Ключевая аномалия упущена."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 1,
+   "comment": "Ответ полностью на английском. Структура верна (лидер 21.8M, 16.5M, пара 5.3M), но лидер назван 'China', пара US&Canada."
+  },
+  "kimi-k2.6": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 6,
+   "russian": 8,
+   "comment": "5 стран, лидер ошибочно 'France' 21.8M, и ошибочно заявлено об отсутствии одинаковых значений — пара Australia&Canada пропущена."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Структура верна (лидер 21.8M, 16.5M), но лидер назван Germany вместо USA, пара US&Canada вместо Australia&Canada."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Лидер ошибочно Germany 21.8M, пара US&Canada. Значения и логика верны, но названия стран перепутаны."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Лидер назван Germany вместо USA, пара US&Canada вместо Australia&Canada. Числа и структура верны."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все верно: лидер USA 21.8M, разрыв 16.5M, >4x, пара Australia&Canada 5.3M. Кратко и точно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полностью корректно: USA 21.8M лидер, 16.5M и >4x над Australia&Canada 5.3M, пара названа верно. Ясный вывод."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все значения и страны верны: USA 21.8M, 16.5M, пара Australia&Canada. Мелкая опечатка (лишний backtick)."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Только 5 стран, USA 21.8M пропущена; максимум Australia&Canada 5.3M, разрыв 2.0M. Пара верна, но ключевая аномалия упущена."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все верно: USA 21.8M лидер, 16.5M и >4x над Australia&Canada 5.3M, пара названа корректно."
+  },
+  "minimax-m3": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 9,
+   "russian": 9,
+   "comment": "Суммы прочитаны верно и лидер USA ($21.8M, +$16.5M, ~4.1x) определён, но карточка Canada ошибочно названа 'United States', из-за чего пара с одинаковым значением указана неправильно (United States вместо Canada). На этой галлюцинации построен целый ложный вывод о дублирующейся категории стран в модели данных, чего на изображении нет."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Полностью верные ответы у diffusion-gemma, sol-low/medium, terra-high/medium; победитель sol-medium за точность, качественный анализ и чистый русский. Много моделей перепутали названия стран лидера или совсем пропустили USA=21.8M."
+}

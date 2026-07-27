@@ -1,28 +1,155 @@
 {
-  "task_id": "m-code-10",
-  "category": "code",
-  "scores": {
-    "gpt-oss-120b": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 8, "comment": "Валидный YAML, все 6 операций и полный набор кодов, но нигде нет заголовка Retry-After при 429 (прямое требование), примеров мало."},
-    "deepseek-flash": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Полная валидная спека с 25 примерами, RFC7807, Retry-After, webhooks; нет 410 Gone, пути без префикса /v1."},
-    "deepseek-pro": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Валидная спека, все требуемые операции и коды (плюс 416), 27 примеров, webhooks; аккуратное обоснование Content-Range + HEAD/Upload-Offset."},
-    "35b-a3b": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 8, "comment": "Корректный YAML со всеми кодами и операциями, но компонентов и примеров мало, обоснование сжато до одного абзаца."},
-    "27b-v2": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 8, "comment": "Обоснованно выбран tus-семантика, спека парсится и покрывает все коды, но всего 5 схем и 4 примера — детализация ниже лидеров."},
-    "gemma-4-31b": {"correctness": 2, "reasoning": 7, "format": 3, "russian": 9, "comment": "Дублирующийся корневой ключ components: секция schemas затёрта, все $ref на ProblemDetails/FileStatus висячие, отсутствуют 403/415/422/500 — валидатор спеку не примет."},
-    "diffusion-gemma": {"correctness": 3, "reasoning": 2, "format": 5, "russian": 0, "comment": "Самая куцая спека: нет problem+json, Retry-After, webhooks и половины кодов ответов; текстовое объяснение вообще отсутствует."},
-    "gpt-5.5-low": {"correctness": 4, "reasoning": 8, "format": 5, "russian": 9, "comment": "Содержательно почти полная спека, но components объявлен дважды на корневом уровне и второй блок затирает schemas — десятки висячих $ref, документ невалиден."},
-    "gpt-5.5-medium": {"correctness": 9, "reasoning": 8, "format": 9, "russian": 9, "comment": "Валидный документ, все операции/коды, webhooks, пагинация статуса для 10k файлов, чёткое обоснование идемпотентности и 409 при конфликте fingerprint."},
-    "nemotron-super": {"correctness": 7, "reasoning": 7, "format": 8, "russian": 1, "comment": "Спека парсится и покрывает почти всё (нет 422 и webhooks), но итоговое объяснение целиком на английском — требование по русскому не выполнено."},
-    "nemotron-omni": {"correctness": 2, "reasoning": 5, "format": 3, "russian": 4, "comment": "YAML не парсится из-за самодельного тега '!binary | <binary data>' в примере, нет 403/410/415/500 и webhooks; объяснение — смесь русского и английского."},
-    "kimi-k2.6": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Валидная спека со всеми операциями и кодами, 35 примеров, webhooks, sha256-pattern; обоснование tus vs Content-Range и S3 multipart по делу."},
-    "gpt-5.6-luna-high": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 8, "comment": "Аккуратная валидная спека (12 схем, 15 примеров) с tus-подобными Upload-Offset, но webhooks описаны только в прозе, отдельной секции в спеке нет."},
-    "gpt-5.6-luna-low": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 9, "comment": "Полный набор операций и кодов, webhooks и HMAC-подпись описаны, но примеров всего 4 и схемы менее детальны."},
-    "gpt-5.6-luna-medium": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 9, "comment": "Валидная спека, все коды, честная оговорка про последовательные чанки; webhooks не вынесены в спеку, примеров немного."},
-    "gpt-5.6-sol-low": {"correctness": 9, "reasoning": 9, "format": 9, "russian": 9, "comment": "Очень детальная валидная спека (14 схем, 27 примеров, webhooks), обоснование включает CAS для offset и пагинацию прогресса."},
-    "gpt-5.6-sol-medium": {"correctness": 10, "reasoning": 9, "format": 10, "russian": 9, "comment": "Самая полная и при этом валидная спека: 19 схем, 29 примеров, все требуемые коды плюс 304, webhooks; объяснение покрывает все заданные вопросы."},
-    "gpt-5.6-terra-high": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Валидная спека со всеми операциями/кодами и webhooks, отмечена at-least-once доставка и дедупликация eventId; примеров всего 7."},
-    "gpt-5.6-terra-low": {"correctness": 8, "reasoning": 7, "format": 8, "russian": 9, "comment": "Корректная спека, все коды, но webhook-секции в YAML нет и всего 4 примера."},
-    "gpt-5.6-terra-medium": {"correctness": 8, "reasoning": 8, "format": 9, "russian": 9, "comment": "Валидный документ с полным покрытием кодов и внятным объяснением, но webhooks остались только в тексте."}
+ "task_id": "m-code-10",
+ "category": "code",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Валидный YAML, все 6 операций и полный набор кодов, но нигде нет заголовка Retry-After при 429 (прямое требование), примеров мало."
   },
-  "winner": "gpt-5.6-sol-medium",
-  "notes": "Большинство моделей выдали парсящуюся OpenAPI 3.1 спеку; провалы — gemma-4-31b и gpt-5.5-low (дублирующийся корневой components с висячими $ref), nemotron-omni (невалидный тег !binary) и diffusion-gemma (нет problem+json/webhooks/объяснения). Лидеры по полноте: gpt-5.6-sol-medium, gpt-5.6-sol-low, kimi-k2.6, gpt-5.5-medium, deepseek-pro."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полная валидная спека с 25 примерами, RFC7807, Retry-After, webhooks; нет 410 Gone, пути без префикса /v1."
+  },
+  "deepseek-pro": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Валидная спека, все требуемые операции и коды (плюс 416), 27 примеров, webhooks; аккуратное обоснование Content-Range + HEAD/Upload-Offset."
+  },
+  "35b-a3b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректный YAML со всеми кодами и операциями, но компонентов и примеров мало, обоснование сжато до одного абзаца."
+  },
+  "27b-v2": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Обоснованно выбран tus-семантика, спека парсится и покрывает все коды, но всего 5 схем и 4 примера — детализация ниже лидеров."
+  },
+  "gemma-4-31b": {
+   "correctness": 2,
+   "reasoning": 7,
+   "format": 3,
+   "russian": 9,
+   "comment": "Дублирующийся корневой ключ components: секция schemas затёрта, все $ref на ProblemDetails/FileStatus висячие, отсутствуют 403/415/422/500 — валидатор спеку не примет."
+  },
+  "diffusion-gemma": {
+   "correctness": 3,
+   "reasoning": 2,
+   "format": 5,
+   "russian": 0,
+   "comment": "Самая куцая спека: нет problem+json, Retry-After, webhooks и половины кодов ответов; текстовое объяснение вообще отсутствует."
+  },
+  "gpt-5.5-low": {
+   "correctness": 4,
+   "reasoning": 8,
+   "format": 5,
+   "russian": 9,
+   "comment": "Содержательно почти полная спека, но components объявлен дважды на корневом уровне и второй блок затирает schemas — десятки висячих $ref, документ невалиден."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Валидный документ, все операции/коды, webhooks, пагинация статуса для 10k файлов, чёткое обоснование идемпотентности и 409 при конфликте fingerprint."
+  },
+  "nemotron-super": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 1,
+   "comment": "Спека парсится и покрывает почти всё (нет 422 и webhooks), но итоговое объяснение целиком на английском — требование по русскому не выполнено."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 5,
+   "format": 3,
+   "russian": 4,
+   "comment": "YAML не парсится из-за самодельного тега '!binary | <binary data>' в примере, нет 403/410/415/500 и webhooks; объяснение — смесь русского и английского."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Валидная спека со всеми операциями и кодами, 35 примеров, webhooks, sha256-pattern; обоснование tus vs Content-Range и S3 multipart по делу."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Аккуратная валидная спека (12 схем, 15 примеров) с tus-подобными Upload-Offset, но webhooks описаны только в прозе, отдельной секции в спеке нет."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Полный набор операций и кодов, webhooks и HMAC-подпись описаны, но примеров всего 4 и схемы менее детальны."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Валидная спека, все коды, честная оговорка про последовательные чанки; webhooks не вынесены в спеку, примеров немного."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень детальная валидная спека (14 схем, 27 примеров, webhooks), обоснование включает CAS для offset и пагинацию прогресса."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Самая полная и при этом валидная спека: 19 схем, 29 примеров, все требуемые коды плюс 304, webhooks; объяснение покрывает все заданные вопросы."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Валидная спека со всеми операциями/кодами и webhooks, отмечена at-least-once доставка и дедупликация eventId; примеров всего 7."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректная спека, все коды, но webhook-секции в YAML нет и всего 4 примера."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Валидный документ с полным покрытием кодов и внятным объяснением, но webhooks остались только в тексте."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Очень полная 3.1 спека: все 6 операций, resumable через Content-Range+Upload-Offset, идемпотентность, RFC 7807 с расширениями, webhooks, примеры, корректные pattern/format/min-max. Минусы: в PUT requestBody медиатип application/offset+octet-stream смещён на уровень requestBody (строгий OpenAPI-валидатор упадёт), '400' у создания сессии ссылается на responses/Conflict, 304 описан через If-Match вместо If-None-Match, discriminator в WebhookEvent некорректен."
+  }
+ },
+ "winner": "gpt-5.6-sol-medium",
+ "notes": "Большинство моделей выдали парсящуюся OpenAPI 3.1 спеку; провалы — gemma-4-31b и gpt-5.5-low (дублирующийся корневой components с висячими $ref), nemotron-omni (невалидный тег !binary) и diffusion-gemma (нет problem+json/webhooks/объяснения). Лидеры по полноте: gpt-5.6-sol-medium, gpt-5.6-sol-low, kimi-k2.6, gpt-5.5-medium, deepseek-pro."
 }

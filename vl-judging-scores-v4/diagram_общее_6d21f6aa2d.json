@@ -1,19 +1,134 @@
-{"task_id":"diagram_общее_6d21f6aa2d","category":"diagram","scores":{
-"llama-scout":{"correctness":2,"reasoning":2,"format":5,"russian":5,"comment":"Объект «ЩУ Гродно» неверен, автоматы OF1 E3A/OF2 LQ02 и ПЛК искажены, верны лишь тип схемы и 230В 50Гц. Странное LaTeX-форматирование."},
-"35b-a3b":{"correctness":7,"reasoning":7,"format":8,"russian":9,"comment":"Верно: ШУ Градирня, 230В 50Гц, QF1 C3A. Ошибки: QF2 C4.0 вместо C40A, ПЛК100 вместо 110 и MOD вместо М02."},
-"27b-v2":{"correctness":6,"reasoning":7,"format":8,"russian":8,"comment":"Автоматы QF1 C3A/QF2 C40A и питание верны, ПЛК110-220.30Р почти точно. Объект «Гройдрия» искажён."},
-"gemma-4-31b":{"correctness":4,"reasoning":4,"format":7,"russian":8,"comment":"Верны питание и QF1 C3A, ПЛК110-220.3Р близко. Объект «Гобурина» и QF2 C6A вместо C40A ошибочны."},
-"diffusion-gemma":{"correctness":8,"reasoning":8,"format":8,"russian":9,"comment":"ШУ Градирня, 230В 50Гц, QF1 C3A/QF2 C40A верны. ПЛК110-220.30Р почти точно, лишь суффикс (ИМ01) вместо [М02]."},
-"gpt-5.5-low":{"correctness":7,"reasoning":7,"format":8,"russian":9,"comment":"ШУ Градирня, питание и оба автомата верны. ПЛК прочитан как «ПЛК70» вместо ПЛК110 — ошибка."},
-"gpt-5.5-medium":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Питание и оба автомата QF1 C3A/QF2 C40A верны. Объект «Грануля» и ПЛК70 вместо ПЛК110 неверны."},
-"nemotron-omni":{"correctness":3,"reasoning":2,"format":4,"russian":6,"comment":"Только питание верно; объект «Гравирна» искажён, автоматы без номиналов, ПЛК П/КТ10 искажён. Очень скупо."},
-"kimi-k2.6":{"correctness":9,"reasoning":9,"format":9,"russian":9,"comment":"ШУ Градирня, 230В 50Гц, QF1 C3A/QF2 C40A точны, ПЛК110-220.30Р почти точен (ИО2 вместо М02). Отличный разбор."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все четыре ответа точны, включая ПЛК110-220.30.Р [М02] дословно. Эталонное распознавание."},
-"gpt-5.6-luna-low":{"correctness":4,"reasoning":3,"format":7,"russian":8,"comment":"Питание и оба автомата верны, но объект выдуман («подъёмник») и ПЛК полностью искажён."},
-"gpt-5.6-luna-medium":{"correctness":5,"reasoning":4,"format":7,"russian":8,"comment":"Питание и оба автомата верны; объект «114 Установка» выдуман, ПЛК прочитан искажённо."},
-"gpt-5.6-sol-low":{"correctness":7,"reasoning":7,"format":8,"russian":9,"comment":"ШУ1 Градирня, питание и ПЛК110-220.30.Р [М02] точны, QF2 C40A верно. Ошибка: QF1 C2A вместо C3A."},
-"gpt-5.6-sol-medium":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Питание и ПЛК110-220.30.Р [М02] точны, QF2 C40A верно. Объект «Поляна» и QF1 C2A ошибочны."},
-"gpt-5.6-terra-high":{"correctness":6,"reasoning":6,"format":8,"russian":9,"comment":"Питание, QF1 C3A/QF2 C40A и ПЛК110-220.30Р почти точны. Объект «ШУ4 МИКТ-30» выдуман."},
-"gpt-5.6-terra-low":{"correctness":5,"reasoning":5,"format":8,"russian":9,"comment":"Питание и оба автомата верны, но объект «МИКТЭЛИНА» и ПЛК110-220.8Р ОВЕН ПР121 выдуманы."},
-"gpt-5.6-terra-medium":{"correctness":5,"reasoning":5,"format":8,"russian":9,"comment":"Питание и оба автомата QF1 C3A/QF2 C40A верны. Объект «Дымоудаления» и ПЛК ОВЕН ПР202 выдуманы."}
-},"winner":"gpt-5.6-luna-high","notes":"gpt-5.6-luna-high дал все четыре ответа точно, включая дословный ПЛК110-220.30.Р [М02]; близко kimi-k2.6 и diffusion-gemma."}
+{
+ "task_id": "diagram_общее_6d21f6aa2d",
+ "category": "diagram",
+ "scores": {
+  "llama-scout": {
+   "correctness": 2,
+   "reasoning": 2,
+   "format": 5,
+   "russian": 5,
+   "comment": "Объект «ЩУ Гродно» неверен, автоматы OF1 E3A/OF2 LQ02 и ПЛК искажены, верны лишь тип схемы и 230В 50Гц. Странное LaTeX-форматирование."
+  },
+  "35b-a3b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно: ШУ Градирня, 230В 50Гц, QF1 C3A. Ошибки: QF2 C4.0 вместо C40A, ПЛК100 вместо 110 и MOD вместо М02."
+  },
+  "27b-v2": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Автоматы QF1 C3A/QF2 C40A и питание верны, ПЛК110-220.30Р почти точно. Объект «Гройдрия» искажён."
+  },
+  "gemma-4-31b": {
+   "correctness": 4,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 8,
+   "comment": "Верны питание и QF1 C3A, ПЛК110-220.3Р близко. Объект «Гобурина» и QF2 C6A вместо C40A ошибочны."
+  },
+  "diffusion-gemma": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "ШУ Градирня, 230В 50Гц, QF1 C3A/QF2 C40A верны. ПЛК110-220.30Р почти точно, лишь суффикс (ИМ01) вместо [М02]."
+  },
+  "gpt-5.5-low": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "ШУ Градирня, питание и оба автомата верны. ПЛК прочитан как «ПЛК70» вместо ПЛК110 — ошибка."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Питание и оба автомата QF1 C3A/QF2 C40A верны. Объект «Грануля» и ПЛК70 вместо ПЛК110 неверны."
+  },
+  "nemotron-omni": {
+   "correctness": 3,
+   "reasoning": 2,
+   "format": 4,
+   "russian": 6,
+   "comment": "Только питание верно; объект «Гравирна» искажён, автоматы без номиналов, ПЛК П/КТ10 искажён. Очень скупо."
+  },
+  "kimi-k2.6": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "ШУ Градирня, 230В 50Гц, QF1 C3A/QF2 C40A точны, ПЛК110-220.30Р почти точен (ИО2 вместо М02). Отличный разбор."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре ответа точны, включая ПЛК110-220.30.Р [М02] дословно. Эталонное распознавание."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 4,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 8,
+   "comment": "Питание и оба автомата верны, но объект выдуман («подъёмник») и ПЛК полностью искажён."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 8,
+   "comment": "Питание и оба автомата верны; объект «114 Установка» выдуман, ПЛК прочитан искажённо."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "ШУ1 Градирня, питание и ПЛК110-220.30.Р [М02] точны, QF2 C40A верно. Ошибка: QF1 C2A вместо C3A."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Питание и ПЛК110-220.30.Р [М02] точны, QF2 C40A верно. Объект «Поляна» и QF1 C2A ошибочны."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Питание, QF1 C3A/QF2 C40A и ПЛК110-220.30Р почти точны. Объект «ШУ4 МИКТ-30» выдуман."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 9,
+   "comment": "Питание и оба автомата верны, но объект «МИКТЭЛИНА» и ПЛК110-220.8Р ОВЕН ПР121 выдуманы."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 5,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 9,
+   "comment": "Питание и оба автомата QF1 C3A/QF2 C40A верны. Объект «Дымоудаления» и ПЛК ОВЕН ПР202 выдуманы."
+  },
+  "minimax-m3": {
+   "correctness": 1,
+   "reasoning": 2,
+   "format": 7,
+   "russian": 8,
+   "comment": "Верно прочитан только ввод питания 230В/50Гц; название объекта («ЩУ Проливки» вместо «ШУ Градирня»), обозначение чертежа, номиналы автоматов (16А/40А вместо C3A и C40A) и обозначение ПЛК («А1 (ПЛК)-220.20XP.2PD2» вместо ПЛК110-220.30.Р) выдуманы. Добавлены галлюцинации про ~380В и Siemens LOGO!, при аккуратном оформлении ответа."
+  }
+ },
+ "winner": "gpt-5.6-luna-high",
+ "notes": "gpt-5.6-luna-high дал все четыре ответа точно, включая дословный ПЛК110-220.30.Р [М02]; близко kimi-k2.6 и diffusion-gemma."
+}

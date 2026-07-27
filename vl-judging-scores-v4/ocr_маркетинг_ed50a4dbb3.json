@@ -1,1 +1,134 @@
-{"task_id":"ocr_маркетинг_ed50a4dbb3","category":"ocr","scores":{"35b-a3b":{"correctness":10,"reasoning":6,"format":8,"russian":8,"comment":"Все три факта верны, аккуратный нумерованный список; цена «399 95 руб.» чуть неявно по копейкам."},"llama-scout":{"correctness":10,"reasoning":6,"format":7,"russian":8,"comment":"Данные верны, структура с заголовками, но LaTeX-обёртки ($399,95$) портят читаемость."},"27b-v2":{"correctness":10,"reasoning":6,"format":8,"russian":8,"comment":"Идентичный корректный ответ, аккуратный список."},"gemma-4-31b":{"correctness":10,"reasoning":6,"format":8,"russian":8,"comment":"Все значения верны, чистый нумерованный список."},"diffusion-gemma":{"correctness":10,"reasoning":7,"format":8,"russian":9,"comment":"Верно, с поясняющими подписями к каждому пункту; хороший русский."},"gpt-5.5-low":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все факты верны, чистое оформление."},"gpt-5.5-medium":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все факты верны, чистое оформление."},"nemotron-omni":{"correctness":10,"reasoning":6,"format":8,"russian":8,"comment":"Корректный нумерованный ответ по всем трём пунктам."},"kimi-k2.6":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Верно, цена записана явно «399,95 руб.»."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все факты верны, аккуратный список, цена «399,95 руб.»."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":6,"format":8,"russian":9,"comment":"Все факты верны, аккуратный список, цена «399,95 руб.»."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":6,"format":6,"russian":8,"comment":"Данные верны, но всё в одну строку через точку с запятой — менее структурно."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":7,"format":9,"russian":9,"comment":"Все верно, цена явно «399 руб. 95 коп.» — наиболее точная передача копеек."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":7,"format":9,"russian":9,"comment":"Все верно, цена явно «399 руб. 95 коп.» — наиболее точная передача копеек."},"gpt-5.6-terra-high":{"correctness":9,"reasoning":6,"format":7,"russian":8,"comment":"Дата и код верны, но «399 руб. 95» без обозначения копеек читается неоднозначно."},"gpt-5.6-terra-low":{"correctness":9,"reasoning":6,"format":7,"russian":8,"comment":"Дата и код верны, но «399 руб. 95» без обозначения копеек читается неоднозначно."},"gpt-5.6-terra-medium":{"correctness":9,"reasoning":6,"format":7,"russian":8,"comment":"Дата и код верны, но «399 руб. 95» без обозначения копеек читается неоднозначно."}},"winner":"gpt-5.6-sol-medium","notes":"Почти все модели верно прочитали 399,95 руб., 01.02.2025 и код 1234567890; sol-версии выделяются самой явной передачей копеек «399 руб. 95 коп.»."}
+{
+ "task_id": "ocr_маркетинг_ed50a4dbb3",
+ "category": "ocr",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все три факта верны, аккуратный нумерованный список; цена «399 95 руб.» чуть неявно по копейкам."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Данные верны, структура с заголовками, но LaTeX-обёртки ($399,95$) портят читаемость."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Идентичный корректный ответ, аккуратный список."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все значения верны, чистый нумерованный список."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, с поясняющими подписями к каждому пункту; хороший русский."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, чистое оформление."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, чистое оформление."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректный нумерованный ответ по всем трём пунктам."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Верно, цена записана явно «399,95 руб.»."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, аккуратный список, цена «399,95 руб.»."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все факты верны, аккуратный список, цена «399,95 руб.»."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 6,
+   "russian": 8,
+   "comment": "Данные верны, но всё в одну строку через точку с запятой — менее структурно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все верно, цена явно «399 руб. 95 коп.» — наиболее точная передача копеек."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все верно, цена явно «399 руб. 95 коп.» — наиболее точная передача копеек."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Дата и код верны, но «399 руб. 95» без обозначения копеек читается неоднозначно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Дата и код верны, но «399 руб. 95» без обозначения копеек читается неоднозначно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Дата и код верны, но «399 руб. 95» без обозначения копеек читается неоднозначно."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три ключевых факта считаны верно: 399 руб. 95 коп., дата 01.02.2025 и код 1234567890. Ответ чистый и структурированный, анализа как такового нет, но для задачи извлечения этого достаточно."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Почти все модели верно прочитали 399,95 руб., 01.02.2025 и код 1234567890; sol-версии выделяются самой явной передачей копеек «399 руб. 95 коп.»."
+}

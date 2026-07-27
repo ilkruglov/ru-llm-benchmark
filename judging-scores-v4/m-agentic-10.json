@@ -1,148 +1,155 @@
 {
-  "task_id": "m-agentic-10",
-  "category": "agentic",
-  "scores": {
-    "gpt-oss-120b": {
-      "correctness": 6,
-      "reasoning": 8,
-      "format": 9,
-      "russian": 8,
-      "comment": "Полное покрытие всех 6 пунктов с отличными таблицами и диаграммой, но выбор self-managed Kafka И RabbitMQ для команды из 6 инженеров без ops прямо противоречит ограничению задачи; MSK ошибочно отвергнут по compliance, хотя он живёт в вашем аккаунте/VPC."
-    },
-    "deepseek-flash": {
-      "correctness": 8,
-      "reasoning": 8,
-      "format": 8,
-      "russian": 8,
-      "comment": "Крепкий гибрид MSK+RabbitMQ: верно замечено, что MSK внутри аккаунта и что объём уведомлений меньше общего потока. Хорошие отвержения и риски, но exactly-once разобран менее глубоко (без outbox/inbox)."
-    },
-    "deepseek-pro": {
-      "correctness": 8,
-      "reasoning": 8,
-      "format": 8,
-      "russian": 9,
-      "comment": "MSK+SQS с грамотным client-side envelope-encryption — сильнейший разбор compliance для тела в managed-сервисе. Честно отмечен лимит delay 15 мин со scheduler-митигацией."
-    },
-    "35b-a3b": {
-      "correctness": 5,
-      "reasoning": 6,
-      "format": 7,
-      "russian": 8,
-      "comment": "Единый MSK для обоих классов игнорирует естественный fit для B (native ack/priority/delay) и навешивает костыли на Kafka, что противоречит его же аргументу об операционной простоте для слабой команды."
-    },
-    "27b-v2": {
-      "correctness": 7,
-      "reasoning": 8,
-      "format": 8,
-      "russian": 8,
-      "comment": "Тщательный MSK+SQS со всеми 6 пунктами и хорошими рисками, но compliance для тела B опирается на SSE-KMS (server-side) вместо client-side шифрования — слабее нюанса задачи."
-    },
-    "gemma-4-31b": {
-      "correctness": 7,
-      "reasoning": 7,
-      "format": 8,
-      "russian": 8,
-      "comment": "Компактный MSK+SQS с аккуратным Claim-Check/KMS для compliance, все пункты покрыты, но глубина рассуждения ниже топовых ответов."
-    },
-    "diffusion-gemma": {
-      "correctness": 6,
-      "reasoning": 6,
-      "format": 7,
-      "russian": 7,
-      "comment": "MSK+SQS/SNS с чистым Claim-Check, все 6 пунктов есть, но тоньше по деталям; один из 'рисков' — стоимость, а не операционный, есть мелкие опечатки."
-    },
-    "gpt-5.5-low": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Отличный MSK+SQS: exactly-once как бизнес-эффект через outbox/inbox, hot-key ограничение, metadata-only для compliance. Практично и полно."
-    },
-    "gpt-5.5-medium": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Самый консервативно-корректный MSK+RabbitMQ: RabbitMQ выбран именно чтобы тело B тоже осталось в VPC, quorum queues, глубокий разбор exactly-once и hot keys."
-    },
-    "nemotron-super": {
-      "correctness": 8,
-      "reasoning": 7,
-      "format": 8,
-      "russian": 5,
-      "comment": "Содержательно полный MSK+SQS с расчётами и VPC-endpoint для compliance, но русский сильно испорчен вкраплениями иностранных слов (nunca, enlace, корейские/японские токены)."
-    },
-    "nemotron-omni": {
-      "correctness": 2,
-      "reasoning": 1,
-      "format": 2,
-      "russian": 2,
-      "comment": "Провал: связной только раздел 1, дальше ответ распадается в бесконечное повторение мусорных символов; 5 из 6 обязательных пунктов отсутствуют."
-    },
-    "kimi-k2.6": {
-      "correctness": 7,
-      "reasoning": 7,
-      "format": 8,
-      "russian": 8,
-      "comment": "Аккуратный MSK+SQS со всеми пунктами и корректным разбором нюанса same-account vs SaaS для compliance; лёгкая неточность про добавление партиций только в новые топики."
-    },
-    "gpt-5.6-luna-high": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Эталон: MSK+RabbitMQ с расчётом хранилища (22/66 ТБ), outbox/inbox, hot partitions, quorum queues и явной оговоркой, что скорость B в задаче не задана и требует нагрузочного теста."
-    },
-    "gpt-5.6-luna-low": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "MSK+RabbitMQ с envelope-only compliance, exactly-once через outbox/inbox и нюансом starvation приоритетов при большом prefetch. Практично и полно."
-    },
-    "gpt-5.6-luna-medium": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "MSK+RabbitMQ через relay-сервис с честным разбором риска рассинхронизации Kafka↔RabbitMQ, exactly-once как бизнес-эффект и оговоркой о неизвестной нагрузке B."
-    },
-    "gpt-5.6-sol-low": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "Очень строгий MSK+SQS: sizing по байтам, outbox/inbox, hot accounts, weighted polling приоритетов, scheduler для delay>15м и требование письменного одобрения compliance для MSK."
-    },
-    "gpt-5.6-sol-medium": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "MSK+SQS Standard с claim-check, глубоким exactly-once, разбором рассинхронизации SQS↔payload store и пересмотром по фактическим метрикам, а не по x3."
-    },
-    "gpt-5.6-terra-high": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "MSK+SQS+EventBridge Scheduler с account_sequence для детекции пропусков порядка, envelope-only compliance и точными ссылками на квоты; исключительно тщательно."
-    },
-    "gpt-5.6-terra-low": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "MSK+RabbitMQ с sequencer/optimistic versioning для конкурентных писателей, quorum queues с delivery limit и envelope-профилем compliance. Полно и практично."
-    },
-    "gpt-5.6-terra-medium": {
-      "correctness": 9,
-      "reasoning": 9,
-      "format": 9,
-      "russian": 9,
-      "comment": "MSK+SQS Standard с claim-check; отмечена точная деталь, что Amazon MQ for RabbitMQ не поддерживает delayed-message plugin. Все 6 пунктов на высоком уровне."
-    }
+ "task_id": "m-agentic-10",
+ "category": "agentic",
+ "scores": {
+  "gpt-oss-120b": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Полное покрытие всех 6 пунктов с отличными таблицами и диаграммой, но выбор self-managed Kafka И RabbitMQ для команды из 6 инженеров без ops прямо противоречит ограничению задачи; MSK ошибочно отвергнут по compliance, хотя он живёт в вашем аккаунте/VPC."
   },
-  "winner": "gpt-5.6-luna-high",
-  "notes": "Топ-уровень заняло семейство GPT-5.6 и gpt-5.5 (MSK для A + SQS/RabbitMQ для B, exactly-once как бизнес-эффект через outbox/inbox, claim-check compliance); luna-high выделяется расчётом хранилища и оговоркой о неизвестной нагрузке B. Провалился nemotron-omni (распад в мусор), gpt-oss и 35b-a3b проиграли по практической исполнимости для слабой команды."
+  "deepseek-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Крепкий гибрид MSK+RabbitMQ: верно замечено, что MSK внутри аккаунта и что объём уведомлений меньше общего потока. Хорошие отвержения и риски, но exactly-once разобран менее глубоко (без outbox/inbox)."
+  },
+  "deepseek-pro": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "MSK+SQS с грамотным client-side envelope-encryption — сильнейший разбор compliance для тела в managed-сервисе. Честно отмечен лимит delay 15 мин со scheduler-митигацией."
+  },
+  "35b-a3b": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 8,
+   "comment": "Единый MSK для обоих классов игнорирует естественный fit для B (native ack/priority/delay) и навешивает костыли на Kafka, что противоречит его же аргументу об операционной простоте для слабой команды."
+  },
+  "27b-v2": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Тщательный MSK+SQS со всеми 6 пунктами и хорошими рисками, но compliance для тела B опирается на SSE-KMS (server-side) вместо client-side шифрования — слабее нюанса задачи."
+  },
+  "gemma-4-31b": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Компактный MSK+SQS с аккуратным Claim-Check/KMS для compliance, все пункты покрыты, но глубина рассуждения ниже топовых ответов."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 7,
+   "comment": "MSK+SQS/SNS с чистым Claim-Check, все 6 пунктов есть, но тоньше по деталям; один из 'рисков' — стоимость, а не операционный, есть мелкие опечатки."
+  },
+  "gpt-5.5-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отличный MSK+SQS: exactly-once как бизнес-эффект через outbox/inbox, hot-key ограничение, metadata-only для compliance. Практично и полно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Самый консервативно-корректный MSK+RabbitMQ: RabbitMQ выбран именно чтобы тело B тоже осталось в VPC, quorum queues, глубокий разбор exactly-once и hot keys."
+  },
+  "nemotron-super": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 5,
+   "comment": "Содержательно полный MSK+SQS с расчётами и VPC-endpoint для compliance, но русский сильно испорчен вкраплениями иностранных слов (nunca, enlace, корейские/японские токены)."
+  },
+  "nemotron-omni": {
+   "correctness": 2,
+   "reasoning": 1,
+   "format": 2,
+   "russian": 2,
+   "comment": "Провал: связной только раздел 1, дальше ответ распадается в бесконечное повторение мусорных символов; 5 из 6 обязательных пунктов отсутствуют."
+  },
+  "kimi-k2.6": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Аккуратный MSK+SQS со всеми пунктами и корректным разбором нюанса same-account vs SaaS для compliance; лёгкая неточность про добавление партиций только в новые топики."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Эталон: MSK+RabbitMQ с расчётом хранилища (22/66 ТБ), outbox/inbox, hot partitions, quorum queues и явной оговоркой, что скорость B в задаче не задана и требует нагрузочного теста."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "MSK+RabbitMQ с envelope-only compliance, exactly-once через outbox/inbox и нюансом starvation приоритетов при большом prefetch. Практично и полно."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "MSK+RabbitMQ через relay-сервис с честным разбором риска рассинхронизации Kafka↔RabbitMQ, exactly-once как бизнес-эффект и оговоркой о неизвестной нагрузке B."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень строгий MSK+SQS: sizing по байтам, outbox/inbox, hot accounts, weighted polling приоритетов, scheduler для delay>15м и требование письменного одобрения compliance для MSK."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "MSK+SQS Standard с claim-check, глубоким exactly-once, разбором рассинхронизации SQS↔payload store и пересмотром по фактическим метрикам, а не по x3."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "MSK+SQS+EventBridge Scheduler с account_sequence для детекции пропусков порядка, envelope-only compliance и точными ссылками на квоты; исключительно тщательно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "MSK+RabbitMQ с sequencer/optimistic versioning для конкурентных писателей, quorum queues с delivery limit и envelope-профилем compliance. Полно и практично."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "MSK+SQS Standard с claim-check; отмечена точная деталь, что Amazon MQ for RabbitMQ не поддерживает delayed-message plugin. Все 6 пунктов на высоком уровне."
+  },
+  "minimax-m3": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный гибрид MSK + Amazon MQ со всеми 6 разделами, сильные обоснования, outbox/дедуп по event_id, честное разделение Kafka-EOS и бизнес-эффекта. Ключевой минус исполнимости: Amazon MQ for RabbitMQ не поддерживает плагин rabbitmq_delayed_message_exchange, на котором держится обязательное требование delayed delivery, и обходного пути не предложено; трактовка compliance для managed-брокеров тоже упрощена."
+  }
+ },
+ "winner": "gpt-5.5-low",
+ "notes": "Топ-уровень заняло семейство GPT-5.6 и gpt-5.5 (MSK для A + SQS/RabbitMQ для B, exactly-once как бизнес-эффект через outbox/inbox, claim-check compliance); luna-high выделяется расчётом хранилища и оговоркой о неизвестной нагрузке B. Провалился nemotron-omni (распад в мусор), gpt-oss и 35b-a3b проиграли по практической исполнимости для слабой команды."
 }

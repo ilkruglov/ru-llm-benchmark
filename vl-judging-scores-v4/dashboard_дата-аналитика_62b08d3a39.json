@@ -1,1 +1,134 @@
-{"task_id":"dashboard_дата-аналитика_62b08d3a39","category":"dashboard","scores":{"35b-a3b":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Все три пункта верны: Online $15тыс, Outlet 18%, чётко раскрыта обратная связь объёма и ROI."},"llama-scout":{"correctness":5,"reasoning":4,"format":7,"russian":7,"comment":"Q1 и Q2 верны, но аномалию свёл только к Social Media 0%, не назвал ключевую обратную связь Outlet; ошибка '$9,262 тыс.'."},"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты верны, аномалия и вывод раскрыты подробно и корректно."},"gemma-4-31b":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно названы Online $15тыс, Outlet 18% и обратная зависимость объёма и ROI."},"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":8,"comment":"Факты и вывод корректны, но есть опечатки ('Основаясь', 'сформулий')."},"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":8,"russian":10,"comment":"Верно: Online лидер, Total $32тыс уточнён, Outlet 18% максимальный ROI, аномалия названа."},"gpt-5.5-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, вывод об отсутствии связи объёма и ROI точный."},"nemotron-omni":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно названы факты и обратная связь между объёмом продаж и ROI."},"kimi-k2.6":{"correctness":10,"reasoning":10,"format":9,"russian":10,"comment":"Полный корректный ответ: Online $15тыс, уточнение Total $32тыс, Outlet 18%, детально раскрыта обратная зависимость."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно и лаконично: Online $15тыс, Outlet 18%, обратная связь объёма и ROI."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, уточнён Total $32тыс и лидер-канал Online."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":7,"russian":5,"comment":"Факты верны, но в вывод вставлена английская фраза 'Conversely, Online has...', что портит русский и формат."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно: Online $15тыс, Outlet 18%, чётко сформулирована обратная связь."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все факты и вывод корректны, ответ ясный и лаконичный."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верно названы факты и обратная связь объёма продаж с ROI."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все пункты верны, сравнение Outlet 18% и Online 12% корректно."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Факты и вывод верны: объём продаж не равен эффективности инвестиций."}},"winner":"kimi-k2.6","notes":"Почти все модели ответили верно; kimi-k2.6 и 35b-a3b дали наиболее полный и точный разбор. Слабее всех llama-scout (не назвал ключевую аномалию Outlet) и gpt-5.6-luna-medium (английская вставка)."}
+{
+ "task_id": "dashboard_дата-аналитика_62b08d3a39",
+ "category": "dashboard",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны: Online $15тыс, Outlet 18%, чётко раскрыта обратная связь объёма и ROI."
+  },
+  "llama-scout": {
+   "correctness": 5,
+   "reasoning": 4,
+   "format": 7,
+   "russian": 7,
+   "comment": "Q1 и Q2 верны, но аномалию свёл только к Social Media 0%, не назвал ключевую обратную связь Outlet; ошибка '$9,262 тыс.'."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты верны, аномалия и вывод раскрыты подробно и корректно."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно названы Online $15тыс, Outlet 18% и обратная зависимость объёма и ROI."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Факты и вывод корректны, но есть опечатки ('Основаясь', 'сформулий')."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно: Online лидер, Total $32тыс уточнён, Outlet 18% максимальный ROI, аномалия названа."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, вывод об отсутствии связи объёма и ROI точный."
+  },
+  "nemotron-omni": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно названы факты и обратная связь между объёмом продаж и ROI."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный корректный ответ: Online $15тыс, уточнение Total $32тыс, Outlet 18%, детально раскрыта обратная зависимость."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно и лаконично: Online $15тыс, Outlet 18%, обратная связь объёма и ROI."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, уточнён Total $32тыс и лидер-канал Online."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 7,
+   "russian": 5,
+   "comment": "Факты верны, но в вывод вставлена английская фраза 'Conversely, Online has...', что портит русский и формат."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно: Online $15тыс, Outlet 18%, чётко сформулирована обратная связь."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все факты и вывод корректны, ответ ясный и лаконичный."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно названы факты и обратная связь объёма продаж с ROI."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты верны, сравнение Outlet 18% и Online 12% корректно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Факты и вывод верны: объём продаж не равен эффективности инвестиций."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все цифры с пяти карточек считаны точно, Total корректно отделён от каналов, максимальный ROI у Outlet 18% и обратная связь объёма и ROI сформулированы верно. Ответ структурирован таблицей, добавлен разумный практический вывод; русский язык безупречен."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Почти все модели ответили верно; kimi-k2.6 и 35b-a3b дали наиболее полный и точный разбор. Слабее всех llama-scout (не назвал ключевую аномалию Outlet) и gpt-5.6-luna-medium (английская вставка)."
+}

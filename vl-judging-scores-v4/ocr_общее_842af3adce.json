@@ -1,1 +1,134 @@
-{"task_id":"ocr_общее_842af3adce","category":"ocr","scores":{"27b-v2":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три строки прочитаны безошибочно: ЕКАТЕРИНБУРГ / EKATERINBURG / ГОРОД БЕСОВ."},"35b-a3b":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Идеальное распознавание всех трёх надписей."},"llama-scout":{"correctness":7,"reasoning":8,"format":9,"russian":9,"comment":"Хорошая структура, но нижняя строка записана смешанными латинскими символами «БECOB» вместо чистого «БЕСОВ»."},"gemma-4-31b":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три надписи воспроизведены точно."},"diffusion-gemma":{"correctness":6,"reasoning":7,"format":8,"russian":9,"comment":"Ошибка в первом слове: «ЕКАТЕРИБУРГ» без буквы Н; остальное верно."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три строки распознаны безошибочно."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Точное распознавание всех надписей."},"nemotron-omni":{"correctness":5,"reasoning":6,"format":7,"russian":9,"comment":"Латинская строка EKATERINBURG заменена дублем кириллического «ЕКАТЕРИНБУРГ»; нижняя строка верна."},"kimi-k2.6":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три надписи прочитаны корректно."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Безошибочное распознавание всех трёх строк."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три надписи точны."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Точное распознавание всех надписей."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три строки прочитаны верно."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Безошибочное распознавание."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три надписи воспроизведены точно."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Точное распознавание всех строк."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":8,"russian":10,"comment":"Все три надписи прочитаны безошибочно."}},"winner":"27b-v2","notes":"Большинство моделей идеально прочитали ЕКАТЕРИНБУРГ / EKATERINBURG / ГОРОД БЕСОВ; ошиблись nemotron-omni (дубль вместо латиницы), diffusion-gemma (пропуск Н) и llama-scout (латинские буквы в «БЕСОВ»)."}
+{
+ "task_id": "ocr_общее_842af3adce",
+ "category": "ocr",
+ "scores": {
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три строки прочитаны безошибочно: ЕКАТЕРИНБУРГ / EKATERINBURG / ГОРОД БЕСОВ."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Идеальное распознавание всех трёх надписей."
+  },
+  "llama-scout": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Хорошая структура, но нижняя строка записана смешанными латинскими символами «БECOB» вместо чистого «БЕСОВ»."
+  },
+  "gemma-4-31b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три надписи воспроизведены точно."
+  },
+  "diffusion-gemma": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ошибка в первом слове: «ЕКАТЕРИБУРГ» без буквы Н; остальное верно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три строки распознаны безошибочно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точное распознавание всех надписей."
+  },
+  "nemotron-omni": {
+   "correctness": 5,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "Латинская строка EKATERINBURG заменена дублем кириллического «ЕКАТЕРИНБУРГ»; нижняя строка верна."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три надписи прочитаны корректно."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Безошибочное распознавание всех трёх строк."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три надписи точны."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точное распознавание всех надписей."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три строки прочитаны верно."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Безошибочное распознавание."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три надписи воспроизведены точно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Точное распознавание всех строк."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три надписи прочитаны безошибочно."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три надписи прочитаны дословно верно: ЕКАТЕРИНБУРГ / EKATERINBURG / ГОРОД БЕСОВ, без галлюцинаций. Ответ аккуратно разделён на верхнюю и нижнюю таблички; собственного анализа минимум, но для OCR-задачи этого достаточно."
+  }
+ },
+ "winner": "minimax-m3",
+ "notes": "Большинство моделей идеально прочитали ЕКАТЕРИНБУРГ / EKATERINBURG / ГОРОД БЕСОВ; ошиблись nemotron-omni (дубль вместо латиницы), diffusion-gemma (пропуск Н) и llama-scout (латинские буквы в «БЕСОВ»)."
+}

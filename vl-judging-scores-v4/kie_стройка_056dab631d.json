@@ -1,19 +1,134 @@
-{"task_id":"kie_стройка_056dab631d","category":"kie","scores":{
-"llama-scout":{"correctness":10,"reasoning":9,"format":10,"russian":9,"comment":"Все данные верны, полная проверка арифметики; лишь мелкое «распорной» вместо «распорочной»."},
-"35b-a3b":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все реквизиты, строки и итоги верны, арифметика проверена корректно."},
-"27b-v2":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Полностью верные данные и корректная проверка расчётов."},
-"gemma-4-31b":{"correctness":6,"reasoning":8,"format":9,"russian":9,"comment":"Дата составления указана 26.06.2013 вместо 28.06.2013 — ошибка чтения; остальное верно."},
-"diffusion-gemma":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все данные и итоги верны, арифметика проверена корректно."},
-"gpt-5.5-low":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верные данные, аккуратная проверка; «распорной» — мелкая неточность."},
-"gpt-5.5-medium":{"correctness":10,"reasoning":10,"format":10,"russian":9,"comment":"Всё верно, включая общую строку и полную проверку арифметики."},
-"nemotron-omni":{"correctness":8,"reasoning":8,"format":6,"russian":8,"comment":"Данные верны, но не указано название 1-й строки (Геодезические работы) и нет явного блока итогов; «распорчной» — опечатка."},
-"kimi-k2.6":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Полный и точный ответ: все реквизиты, строки, итоги и подробная корректная проверка."},
-"gpt-5.6-luna-high":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, арифметика проверена корректно."},
-"gpt-5.6-luna-low":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Верные данные и корректная проверка расчётов."},
-"gpt-5.6-luna-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны; суммы без копеек, но по сути корректно."},
-"gpt-5.6-sol-low":{"correctness":10,"reasoning":10,"format":10,"russian":10,"comment":"Полный ответ с общей строкой и корректной проверкой арифметики."},
-"gpt-5.6-sol-medium":{"correctness":10,"reasoning":9,"format":9,"russian":10,"comment":"Все данные верны, проверка расчётов корректна."},
-"gpt-5.6-terra-high":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Верные данные; «распорной» — мелкая неточность, арифметика верна."},
-"gpt-5.6-terra-low":{"correctness":10,"reasoning":9,"format":8,"russian":9,"comment":"Данные верны; «распорной», проверка арифметики дана компактно."},
-"gpt-5.6-terra-medium":{"correctness":10,"reasoning":9,"format":9,"russian":9,"comment":"Все данные верны; «распорной» — мелкая неточность."}
-},"winner":"kimi-k2.6","notes":"Почти все модели дали корректный ответ; kimi-k2.6, gpt-5.5-medium и sol-low — самые полные. gemma-4-31b ошиблась в дате (26 вместо 28), nemotron-omni опустил название первой строки и блок итогов."}
+{
+ "task_id": "kie_стройка_056dab631d",
+ "category": "kie",
+ "scores": {
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все данные верны, полная проверка арифметики; лишь мелкое «распорной» вместо «распорочной»."
+  },
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все реквизиты, строки и итоги верны, арифметика проверена корректно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью верные данные и корректная проверка расчётов."
+  },
+  "gemma-4-31b": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Дата составления указана 26.06.2013 вместо 28.06.2013 — ошибка чтения; остальное верно."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все данные и итоги верны, арифметика проверена корректно."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верные данные, аккуратная проверка; «распорной» — мелкая неточность."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 9,
+   "comment": "Всё верно, включая общую строку и полную проверку арифметики."
+  },
+  "nemotron-omni": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 8,
+   "comment": "Данные верны, но не указано название 1-й строки (Геодезические работы) и нет явного блока итогов; «распорчной» — опечатка."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный и точный ответ: все реквизиты, строки, итоги и подробная корректная проверка."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, арифметика проверена корректно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верные данные и корректная проверка расчётов."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны; суммы без копеек, но по сути корректно."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный ответ с общей строкой и корректной проверкой арифметики."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все данные верны, проверка расчётов корректна."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верные данные; «распорной» — мелкая неточность, арифметика верна."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Данные верны; «распорной», проверка арифметики дана компактно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все данные верны; «распорной» — мелкая неточность."
+  },
+  "minimax-m3": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все ключевые данные (номер 17, дата 28.06.2013, период, четыре суммы, три итога) прочитаны верно, арифметическая проверка корректна. Единственная ошибка — искажено наименование строки 3: «Установка распределительной системы комплекса» вместо «Установка распорочной системы котлована»."
+  }
+ },
+ "winner": "kimi-k2.6",
+ "notes": "Почти все модели дали корректный ответ; kimi-k2.6, gpt-5.5-medium и sol-low — самые полные. gemma-4-31b ошиблась в дате (26 вместо 28), nemotron-omni опустил название первой строки и блок итогов."
+}

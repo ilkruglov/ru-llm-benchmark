@@ -1,1 +1,134 @@
-{"task_id":"diagram_банки_12c06b7020","category":"diagram","scores":{"35b-a3b":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все три пункта верны, включая метки, соединяемые блоки и направления зелёных стрелок."},"llama-scout":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, направления зелёных стрелок указаны верно."},"27b-v2":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Полностью верно, направления и расположение блоков описаны корректно."},"gemma-4-31b":{"correctness":6,"reasoning":6,"format":9,"russian":10,"comment":"Пп.1 и 3 верны, но направление стрелки «Инструкции» указано наоборот (от банка к заказчику)."},"diffusion-gemma":{"correctness":10,"reasoning":8,"format":9,"russian":9,"comment":"Ответы верны; мелкая опечатка в первом слове («сновываясь»)."},"gpt-5.5-low":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все три пункта точны, направления указаны верно."},"gpt-5.5-medium":{"correctness":10,"reasoning":8,"format":10,"russian":10,"comment":"Все три пункта точны, направления указаны верно."},"nemotron-omni":{"correctness":6,"reasoning":4,"format":5,"russian":9,"comment":"Пп.1 и 3 верны, но у «Инструкции» перепутано направление (вниз вместо вверх); ответ очень краткий."},"kimi-k2.6":{"correctness":10,"reasoning":9,"format":10,"russian":10,"comment":"Все пункты верны, направления и позиции блоков корректны."},"gpt-5.6-luna-high":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны, блоки и направления указаны верно."},"gpt-5.6-luna-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все ответы точны и корректны."},"gpt-5.6-luna-medium":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Ответы верны, но очень лаконичны и без явного указания направлений вверх/вниз."},"gpt-5.6-sol-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта верны."},"gpt-5.6-sol-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта верны."},"gpt-5.6-terra-high":{"correctness":10,"reasoning":7,"format":8,"russian":10,"comment":"Ответы верны, изложение краткое."},"gpt-5.6-terra-low":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все верно, направления вверх/вниз указаны явно."},"gpt-5.6-terra-medium":{"correctness":10,"reasoning":8,"format":9,"russian":10,"comment":"Все три пункта верны."}},"winner":"35b-a3b","notes":"Большинство моделей ответили безупречно; gemma-4-31b и nemotron-omni перепутали направление зелёной стрелки «Инструкции». Победитель среди равных — 35b-a3b за полный и точный ответ."}
+{
+ "task_id": "diagram_банки_12c06b7020",
+ "category": "diagram",
+ "scores": {
+  "35b-a3b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта верны, включая метки, соединяемые блоки и направления зелёных стрелок."
+  },
+  "llama-scout": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, направления зелёных стрелок указаны верно."
+  },
+  "27b-v2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью верно, направления и расположение блоков описаны корректно."
+  },
+  "gemma-4-31b": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 10,
+   "comment": "Пп.1 и 3 верны, но направление стрелки «Инструкции» указано наоборот (от банка к заказчику)."
+  },
+  "diffusion-gemma": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Ответы верны; мелкая опечатка в первом слове («сновываясь»)."
+  },
+  "gpt-5.5-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта точны, направления указаны верно."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все три пункта точны, направления указаны верно."
+  },
+  "nemotron-omni": {
+   "correctness": 6,
+   "reasoning": 4,
+   "format": 5,
+   "russian": 9,
+   "comment": "Пп.1 и 3 верны, но у «Инструкции» перепутано направление (вниз вместо вверх); ответ очень краткий."
+  },
+  "kimi-k2.6": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все пункты верны, направления и позиции блоков корректны."
+  },
+  "gpt-5.6-luna-high": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны, блоки и направления указаны верно."
+  },
+  "gpt-5.6-luna-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы точны и корректны."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Ответы верны, но очень лаконичны и без явного указания направлений вверх/вниз."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 10,
+   "comment": "Ответы верны, изложение краткое."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все верно, направления вверх/вниз указаны явно."
+  },
+  "gpt-5.6-terra-medium": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта верны."
+  },
+  "minimax-m3": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все три пункта совпадают с эталоном: метка «Сообщение S.W.I.F.T.», обе зелёные стрелки с верными блоками и направлениями, верхняя красная стрелка от корреспондента банка-отправителя к корреспонденту банка-получателя. Русский безупречен, оформление структурное; лёгкая избыточность пояснений в скобках."
+  }
+ },
+ "winner": "35b-a3b",
+ "notes": "Большинство моделей ответили безупречно; gemma-4-31b и nemotron-omni перепутали направление зелёной стрелки «Инструкции». Победитель среди равных — 35b-a3b за полный и точный ответ."
+}
