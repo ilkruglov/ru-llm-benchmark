@@ -57,6 +57,7 @@ th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line)}
 th{font-family:"JetBrains Mono",monospace;font-size:10.5px;text-transform:uppercase;
   letter-spacing:.08em;color:var(--muted);font-weight:500}
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+td.sz{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);white-space:nowrap}
 tr.top td{background:#fffbeb}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:34px}
 .note{background:var(--bg-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;
@@ -151,19 +152,19 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
       <h2>Текст</h2>
       <p class="sub">11 моделей с открытыми весами</p>
       <table>
-        <thead><tr><th>#</th><th>Модель</th><th class="num">Балл</th></tr></thead>
+        <thead><tr><th>#</th><th>Модель</th><th class="num">Размер</th><th class="num">Балл</th></tr></thead>
         <tbody>
-          <tr class="top"><td>1</td><td>DeepSeek v4-pro</td><td class="num">8.45</td></tr>
-          <tr><td>2</td><td>MiniMax-M3</td><td class="num">8.44</td></tr>
-          <tr><td>3</td><td>Kimi K2.6</td><td class="num">8.37</td></tr>
-          <tr><td>4</td><td>Qwen3.6-27B-FP8</td><td class="num">8.19</td></tr>
-          <tr><td>5</td><td>DeepSeek v4-flash</td><td class="num">8.13</td></tr>
-          <tr><td>6</td><td>Gemma-4-31B</td><td class="num">8.00</td></tr>
-          <tr><td>7</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num">7.90</td></tr>
-          <tr><td>8</td><td>gpt-oss-120b</td><td class="num">7.32</td></tr>
-          <tr><td>9</td><td>DiffusionGemma</td><td class="num">6.06</td></tr>
-          <tr><td>10</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num">4.62</td></tr>
-          <tr><td>11</td><td>Nemotron-3-Super-120B</td><td class="num">4.37</td></tr>
+          <tr class="top"><td>1</td><td>DeepSeek v4-pro</td><td class="num sz">1.6T / 49B</td><td class="num">8.45</td></tr>
+          <tr><td>2</td><td>MiniMax-M3</td><td class="num sz">428B / 23B</td><td class="num">8.44</td></tr>
+          <tr><td>3</td><td>Kimi K2.6</td><td class="num sz">1T / 32B</td><td class="num">8.37</td></tr>
+          <tr><td>4</td><td>Qwen3.6-27B-FP8</td><td class="num sz">27B</td><td class="num">8.19</td></tr>
+          <tr><td>5</td><td>DeepSeek v4-flash</td><td class="num sz">284B / 13B</td><td class="num">8.13</td></tr>
+          <tr><td>6</td><td>Gemma-4-31B</td><td class="num sz">31B</td><td class="num">8.00</td></tr>
+          <tr><td>7</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num sz">35B / 3B</td><td class="num">7.90</td></tr>
+          <tr><td>8</td><td>gpt-oss-120b</td><td class="num sz">120B / 5B</td><td class="num">7.32</td></tr>
+          <tr><td>9</td><td>DiffusionGemma</td><td class="num sz">26B / 4B</td><td class="num">6.06</td></tr>
+          <tr><td>10</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num sz">30B / 3B</td><td class="num">4.62</td></tr>
+          <tr><td>11</td><td>Nemotron-3-Super-120B</td><td class="num sz">120B / 12B</td><td class="num">4.37</td></tr>
         </tbody>
       </table>
     </div>
@@ -171,20 +172,21 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
       <h2>Зрение</h2>
       <p class="sub">8 моделей с открытыми весами</p>
       <table>
-        <thead><tr><th>#</th><th>Модель</th><th class="num">Балл</th></tr></thead>
+        <thead><tr><th>#</th><th>Модель</th><th class="num">Размер</th><th class="num">Балл</th></tr></thead>
         <tbody>
-          <tr class="top"><td>1</td><td>Kimi K2.6</td><td class="num">9.01</td></tr>
-          <tr><td>2</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num">8.84</td></tr>
-          <tr><td>3</td><td>Qwen3.6-27B-FP8</td><td class="num">8.77</td></tr>
-          <tr><td>4</td><td>Gemma-4-31B</td><td class="num">8.46</td></tr>
-          <tr><td>5</td><td>DiffusionGemma</td><td class="num">8.20</td></tr>
-          <tr><td>6</td><td>MiniMax-M3</td><td class="num">8.10</td></tr>
-          <tr><td>7</td><td>Llama-4-Scout-17B</td><td class="num">7.53</td></tr>
-          <tr><td>8</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num">6.80</td></tr>
+          <tr class="top"><td>1</td><td>Kimi K2.6</td><td class="num sz">1T / 32B</td><td class="num">9.01</td></tr>
+          <tr><td>2</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num sz">35B / 3B</td><td class="num">8.84</td></tr>
+          <tr><td>3</td><td>Qwen3.6-27B-FP8</td><td class="num sz">27B</td><td class="num">8.77</td></tr>
+          <tr><td>4</td><td>Gemma-4-31B</td><td class="num sz">31B</td><td class="num">8.46</td></tr>
+          <tr><td>5</td><td>DiffusionGemma</td><td class="num sz">26B / 4B</td><td class="num">8.20</td></tr>
+          <tr><td>6</td><td>MiniMax-M3</td><td class="num sz">428B / 23B</td><td class="num">8.10</td></tr>
+          <tr><td>7</td><td>Llama-4-Scout-17B</td><td class="num sz">109B / 17B</td><td class="num">7.53</td></tr>
+          <tr><td>8</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num sz">30B / 3B</td><td class="num">6.80</td></tr>
         </tbody>
       </table>
     </div>
   </div>
+  <p class="sub" style="margin-top:14px;font-size:13px">Размер — всего параметров; для MoE-моделей «всего / активных на токен».</p>
 
   <div class="note">
     <b>Как читать.</b> Судья — Claude Opus, единым методом для всех моделей: один агент на задачу
