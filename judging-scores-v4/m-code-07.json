@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Все семь требований формально закрыты (один generic S, Partial<S>|updater, generic select, tuple-inference combiner, () => void из subscribe, без any); отдельный плюс — корректное сужение lastInputs через локальную const prev, которое многие модели упустили. Минус: readonly-tuple в rest-параметре и вывод S только из constraint в createSelector — рискованные места, где tsc может ругаться."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 1,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 6,
+   "comment": "В subscribe потерян вызов subscribers.add(fn) — подписчики никогда не регистрируются и никогда не получают уведомлений, т.е. стор функционально сломан, хотя типы в целом верны (variadic tuple + mapped SelectorOutputs). Пояснение на русском короткое и с опечаткой ('наружу наружу'), обоснование unknown/каста поверхностное."
   }
  },
  "winner": "gpt-oss-120b",

@@ -148,6 +148,13 @@
    "format": 10,
    "russian": 6,
    "comment": "Полностью валидный RFC 4180 CSV без обёрток и лишнего текста: точные заголовки, ровно 7 строк, корректные форматы record_id/sensor_id/ISO-8601, все unit соответствуют metric_name, покрыты все 5 метрик, есть suspect и bad, 4 location в кавычках, пустой operator_note и правильно удвоенная кавычка. Минус только за operator_note на английском при русских location (смешение языков)."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Валидный RFC 4180 CSV: точные заголовки, ровно 7 строк, 5 разных метрик с верными единицами, suspect и bad, 4 location с запятыми, два пустых operator_note и корректно удвоенные кавычки. Никаких обёрток и лишнего текста."
   }
  },
  "winner": "gpt-oss-120b",

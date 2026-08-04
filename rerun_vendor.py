@@ -30,6 +30,7 @@ TEXT_CFG = {
     "35b-a3b":       {"ep": "35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # precise preset (RU benchmark)
     "gpt-oss-120b":  {"ep": "gpt-oss-120b", "url": "https://api.groq.com/openai/v1", "temperature": 1.0, "top_p": 1.0, "reasoning_effort": "high"},
     "deepseek-flash":{"ep": "deepseek-flash", "reasoning_effort": "high"},
+    "deepseek-flash-0731":{"ep": "deepseek-flash-0731", "reasoning_effort": "high"},  # same params as the flash rows above; only the snapshot differs (vendor moved the alias 2026-07-31). "max" is the one step up (xhigh maps back down to high) but buys nothing here: 30-task probe at max gave median 94s/6783 reasoning tok vs 83s/7019 at high. The 7x jump in reasoning length is the snapshot itself - the pre-0731 flash did 1001 tok at the same effort
     "deepseek-pro":  {"ep": "deepseek-pro",  "reasoning_effort": "high"},
     "gemma-4-31b":   {"ep": "_nd_gemma", "temperature": 1.0, "top_p": 0.95, "top_k": 64, "reasoning": {"enabled": True}},  # thinking on (neuraldeep param)
     "diffusion-gemma": {"ep": "_nd_diff", "nd_model": "diffusion-gemma", "temperature": 0.6, "top_p": 0.95, "top_k": 64, "reasoning": {"enabled": True}},  # temp 0.6 ~ mid of recommended diffusion decay 0.8->0.4 (sampler/steps are server-side, not API-settable)

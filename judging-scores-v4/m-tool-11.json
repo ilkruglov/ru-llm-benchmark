@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 10,
    "comment": "Полностью корректная map-reduce-логика: 5 параллельных get_service_health одним батчем, get_recent_deploys(since_minutes=60) только для status != 'healthy', ровно один aggregate_incident_report со списками, условный page_oncall при critical/high; данные не выдуманы (гипотетическая таблица явно помечена как пример). Оформление чистое, есть граф потока и проверка инвариантов; ничего сверх эталона не добавлено."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 4 правила соблюдены: параллельный map из 5 get_service_health, условный get_recent_deploys(since_minutes=60) только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, без выдуманных значений. Изложение чёткое, но рассуждение шаблонное, без разбора краевых случаев (кроме пустого deploy_infos)."
   }
  },
  "winner": "27b-v2",

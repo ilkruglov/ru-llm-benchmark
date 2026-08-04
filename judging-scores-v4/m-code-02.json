@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 7,
    "comment": "Покрытие почти образцовое (clock-фикстура с патчем monotonic+sleep, params=, parametrize негативов, approx, slow-маркер, 6 классов), но test_cap_not_exceeded_on_long_idle падает: после try_acquire() токенов 9, а ассерт ждёт 10.0. Пояснения на русском внятные, однако докстринги и комментарии в коде англоязычные."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 2,
+   "comment": "Тесты рабочие и точные: fake-clock через monkeypatch на time.monotonic/time.sleep, 20 тест-функций, params-фикстура, параметризованные negative cases, pytest.approx, корректная арифметика deficit/timeout; минусы — pytest_configure в тест-модуле не вызывается (маркер slow даст warning), а 'slow' thread-safety тест на самом деле идёт с замороженным временем. Объяснений на русском практически нет — только код и один комментарий."
   }
  },
  "winner": "gemma-4-31b",

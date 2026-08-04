@@ -72,13 +72,13 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
   <div class="inner">
     <div class="eyebrow">Открытый бенчмарк · русский язык</div>
     <h1>Какие модели реально работают <span class="accent">на русском</span></h1>
-    <p class="lead">39 конфигураций моделей на 490 прикладных задачах российского бизнеса —
+    <p class="lead">40 конфигураций моделей на 484 прикладных задачах российского бизнеса —
       бухгалтерия, право, финансы, BI, логистика, стройка, нефтегаз, промышленность, банки.
       Вендорские параметры инференса, единое судейство, полный разбор каждой задачи.</p>
     <div class="kpis">
-      <div class="kpi"><div class="v">490</div><div class="l">задач</div></div>
-      <div class="kpi"><div class="v">21 / 18</div><div class="l">моделей текст / VL</div></div>
-      <div class="kpi"><div class="v">39</div><div class="l">категорий</div></div>
+      <div class="kpi"><div class="v">484</div><div class="l">задач</div></div>
+      <div class="kpi"><div class="v">22 / 18</div><div class="l">моделей текст / VL</div></div>
+      <div class="kpi"><div class="v">38</div><div class="l">категорий</div></div>
       <div class="kpi"><div class="v">~15k</div><div class="l">оценок судьи</div></div>
     </div>
   </div>
@@ -90,7 +90,7 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
     тепловые карты по сегментам и разбор каждой задачи с комментариями судьи.</p>
   <div class="cards">
     <a class="card" href="text-benchmark.html">
-      <span class="tag">187 задач · 21 модель</span>
+      <span class="tag">181 задача · 22 модели</span>
       <h3>Текстовый бенчмарк</h3>
       <p>Рассуждение, код, RAG, агентские сценарии, отраслевые задачи РФ: налоги,
          юр. комплаенс, корпфинансы, данные и логистика.</p>
@@ -114,13 +114,13 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
       <table>
         <thead><tr><th>#</th><th>Модель</th><th class="num">Балл</th></tr></thead>
         <tbody>
-          <tr class="top"><td>1</td><td>GPT-5.6 Sol (medium)</td><td class="num">9.03</td></tr>
+          <tr class="top"><td>1</td><td>GPT-5.6 Sol (medium)</td><td class="num">9.04</td></tr>
           <tr><td>2</td><td>GPT-5.6 Sol (low)</td><td class="num">8.87</td></tr>
-          <tr><td>3</td><td>GPT-5.5 (medium)</td><td class="num">8.86</td></tr>
+          <tr><td>3</td><td>GPT-5.5 (medium)</td><td class="num">8.85</td></tr>
           <tr><td>4</td><td>GPT-5.6 Luna (high)</td><td class="num">8.84</td></tr>
-          <tr><td>5</td><td>GPT-5.6 Terra (high)</td><td class="num">8.76</td></tr>
-          <tr><td>6</td><td>GPT-5.6 Terra (medium)</td><td class="num">8.73</td></tr>
-          <tr><td>7</td><td>GPT-5.5 (low)</td><td class="num">8.73</td></tr>
+          <tr><td>5</td><td>GPT-5.6 Terra (high)</td><td class="num">8.77</td></tr>
+          <tr><td>6</td><td>GPT-5.5 (low)</td><td class="num">8.76</td></tr>
+          <tr><td>7</td><td>GPT-5.6 Terra (medium)</td><td class="num">8.74</td></tr>
           <tr><td>8</td><td>GPT-5.6 Terra (low)</td><td class="num">8.62</td></tr>
         </tbody>
       </table>
@@ -150,21 +150,22 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
   <div class="two">
     <div>
       <h2>Текст</h2>
-      <p class="sub">11 моделей с открытыми весами</p>
+      <p class="sub">12 моделей с открытыми весами</p>
       <table>
         <thead><tr><th>#</th><th>Модель</th><th class="num">Размер</th><th class="num">Балл</th></tr></thead>
         <tbody>
-          <tr class="top"><td>1</td><td>DeepSeek v4-pro</td><td class="num sz">1.6T / 49B</td><td class="num">8.45</td></tr>
-          <tr><td>2</td><td>MiniMax-M3</td><td class="num sz">428B / 23B</td><td class="num">8.44</td></tr>
-          <tr><td>3</td><td>Kimi K2.6</td><td class="num sz">1T / 32B</td><td class="num">8.37</td></tr>
-          <tr><td>4</td><td>Qwen3.6-27B-FP8</td><td class="num sz">27B</td><td class="num">8.19</td></tr>
-          <tr><td>5</td><td>DeepSeek v4-flash</td><td class="num sz">284B / 13B</td><td class="num">8.13</td></tr>
-          <tr><td>6</td><td>Gemma-4-31B</td><td class="num sz">31B</td><td class="num">8.00</td></tr>
-          <tr><td>7</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num sz">35B / 3B</td><td class="num">7.90</td></tr>
-          <tr><td>8</td><td>gpt-oss-120b</td><td class="num sz">120B / 5B</td><td class="num">7.32</td></tr>
-          <tr><td>9</td><td>DiffusionGemma</td><td class="num sz">26B / 4B</td><td class="num">6.06</td></tr>
-          <tr><td>10</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num sz">30B / 3B</td><td class="num">4.62</td></tr>
-          <tr><td>11</td><td>Nemotron-3-Super-120B</td><td class="num sz">120B / 12B</td><td class="num">4.37</td></tr>
+          <tr class="top"><td>1</td><td>DeepSeek v4-flash-0731</td><td class="num sz">284B / 13B</td><td class="num">8.56</td></tr>
+          <tr><td>2</td><td>DeepSeek v4-pro</td><td class="num sz">1.6T / 49B</td><td class="num">8.49</td></tr>
+          <tr><td>3</td><td>MiniMax-M3</td><td class="num sz">428B / 23B</td><td class="num">8.39</td></tr>
+          <tr><td>4</td><td>Kimi K2.6</td><td class="num sz">1T / 32B</td><td class="num">8.33</td></tr>
+          <tr><td>5</td><td>DeepSeek v4-flash (до 0731)</td><td class="num sz">284B / 13B</td><td class="num">8.19</td></tr>
+          <tr><td>6</td><td>Qwen3.6-27B-FP8</td><td class="num sz">27B</td><td class="num">8.16</td></tr>
+          <tr><td>7</td><td>Gemma-4-31B</td><td class="num sz">31B</td><td class="num">8.00</td></tr>
+          <tr><td>8</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num sz">35B / 3B</td><td class="num">7.85</td></tr>
+          <tr><td>9</td><td>gpt-oss-120b</td><td class="num sz">120B / 5B</td><td class="num">7.34</td></tr>
+          <tr><td>10</td><td>DiffusionGemma</td><td class="num sz">26B / 4B</td><td class="num">6.08</td></tr>
+          <tr><td>11</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num sz">30B / 3B</td><td class="num">4.57</td></tr>
+          <tr><td>12</td><td>Nemotron-3-Super-120B</td><td class="num sz">120B / 12B</td><td class="num">4.36</td></tr>
         </tbody>
       </table>
     </div>

@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 8,
    "comment": "Все 8 разделов покрыты конкретными командами, есть decision tree, PITR-ветка, шаблоны коммуникаций и финальный чек-лист. Минусы по исполнимости: слабый fencing (stop patroni вместо изоляции PG/VIP при риске split-brain), опасная слепая чистка WAL-архива через ls|xargs rm, неверные флаги patronictl failover --master, баг с $(date +%s) в canary-таблице и отсутствие фиксации LSN/RPO до promote."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все 8 разделов закрыты конкретными командами и явным decision tree, но есть заметные практические пробелы: нет fencing старого primary и защиты от split-brain (при этом предлагается pg_ctl promote в обход Patroni), не описано переключение трафика приложения (pgbouncer/HAProxy/DNS) и maintenance-mode для write-path. Фактические ошибки: пути и юниты для PostgreSQL 14 вместо заявленной 15, 'PgBouncer + WAL-G' как инструмент бэкапа, сомнительный совет удалять recovery.signal вручную."
   }
  },
  "winner": "gpt-5.5-medium",

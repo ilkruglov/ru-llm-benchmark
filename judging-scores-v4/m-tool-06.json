@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 10,
    "comment": "Ровно один вызов create_policy со всеми обязательными полями: нормализация телефона (+79152203344), дат в ISO, usage=PERSONAL, term_months=12, franchise_rub=0, options=[GLASS,GAP], promo_code=null — ошибок и выдуманных полей нет. Небольшой минус формату: JSON-блок содержит только payload без явной обёртки вызова create_policy(...), имя функции указано лишь текстом рядом."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Ровно один вызов create_policy со всеми обязательными полями и корректной нормализацией (телефон, даты, term_months=12, PERSONAL, franchise 0, options [GLASS,GAP], promo_code null). Небольшой минус формату: тело обёрнуто в псевдовызов create_policy({...}) внутри блока json, поэтому строго валидным JSON не является."
   }
  },
  "winner": "gpt-oss-120b",

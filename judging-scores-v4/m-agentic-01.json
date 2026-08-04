@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Полный исполнимый план: все 6 требуемых разделов, задачи с ролями/PD/зависимостями, 9 рисков, сравнение DMS/pgloader/asyncio с бюджетом, детальный rollback и KPI. Минусы: в recon-SQL для PostgreSQL использованы несуществующие CRC32/BIT_XOR, ошибка в арифметике порога (0.001% от 3 млрд названо '3 млн', позже верно 30k), encrypt_pii помечена IMMUTABLE при current_setting, collation utf8mb4_0900_ai_ci невозможна в MySQL 5.7, reverse DMS за 10 минут в rollback оптимистичен."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Практически исполнимый план: все 6 фаз с ID задач, ролями, ЧД и зависимостями, конкретный binlog-CDC с GTID/checkpoint/ON CONFLICT, рабочие SQL-запросы сверки для обеих СУБД, честный выбор custom asyncio + pgloader против DMS и осознанный fail-forward rollback; минусы — rollback после открытия записи фактически отсутствует, varbinary уходит в S3 вместо строгой реляционной нормализации, есть языковые сбои (деletes, 적용)."
   }
  },
  "winner": "gpt-5.5-medium",

@@ -67,6 +67,14 @@ def get_endpoints():
             "reasoning_field": "reasoning_content",
         },
         {
+            "tag": "deepseek-flash-0731",
+            "url": "https://api.deepseek.com/v1",
+            "key": os.environ.get("DEEPSEEK_API_KEY", ""),
+            "model": "deepseek-v4-flash",   # alias now serves DeepSeek-V4-Flash-0731; the deepseek-flash rows above are the earlier snapshot
+            "type": "deepseek",
+            "reasoning_field": "reasoning_content",
+        },
+        {
             "tag": "deepseek-pro",
             "url": "https://api.deepseek.com/v1",
             "key": os.environ.get("DEEPSEEK_API_KEY", ""),

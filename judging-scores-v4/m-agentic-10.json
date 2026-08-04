@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Полный гибрид MSK + Amazon MQ со всеми 6 разделами, сильные обоснования, outbox/дедуп по event_id, честное разделение Kafka-EOS и бизнес-эффекта. Ключевой минус исполнимости: Amazon MQ for RabbitMQ не поддерживает плагин rabbitmq_delayed_message_exchange, на котором держится обязательное требование delayed delivery, и обходного пути не предложено; трактовка compliance для managed-брокеров тоже упрощена."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Сильный, конкретный гибрид Kafka+RabbitMQ с реальными настройками, расчётом партиций/диска и адекватными отвержениями, но выбор self-managed RabbitMQ плохо согласуется с ключевым ограничением (6 инженеров, нет платформенной команды), а альтернатива SQS+claim-check/envelope-шифрование для класса B не рассмотрена; есть мелкие неточности (лимит FIFO с батчами, совместимость quorum queues с приоритетами и delayed-плагином)."
   }
  },
  "winner": "gpt-5.5-low",

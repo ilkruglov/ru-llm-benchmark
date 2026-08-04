@@ -148,6 +148,13 @@
    "format": 10,
    "russian": 10,
    "comment": "Верный единственный следующий шаг: клик по buy-B с явным исключением Uniform и б/у-варианта, никаких выдуманных Observation и лишних действий. Формат Thought/Action/Action Input строгий, JSON валиден."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Ровно один корректный шаг: click buy-B по реальному element_id, без выдуманных Observation и без нескольких действий. Рассуждение верное, но короче эталонного — явно не проговорено отсечение вариантов Uniform и б/у."
   }
  },
  "winner": "deepseek-flash",

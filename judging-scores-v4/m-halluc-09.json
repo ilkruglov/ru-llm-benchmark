@@ -148,6 +148,13 @@
    "format": 8,
    "russian": 9,
    "comment": "Технически сильный и полный разбор MVCC и 2PC со всеми ключевыми пунктами (xmin/xmax, снапшоты, autovacuum, PREPARE TRANSACTION/max_prepared_transactions, 2PC vs 2PL vs prepared statements). Снижение за мелкие выдумки и неточности: несуществующие \"twophase параметры recovery\", поле снапшота \"xactArray\", завышенное требование wal_level >= replica и противоречие про невидимость prepared-транзакций в SQL при собственном же примере с pg_prepared_xacts."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Фактически точный ответ без выдумок: верно описаны xmin/xmax, состав снапшота, pg_xact, pg_prepared_xacts, max_prepared_transactions=0 по умолчанию и требование рестарта, реальные XA-координаторы; корректно разведены 2PC/2PL и PREPARE TRANSACTION vs prepared statements. Минус за меньшую глубину, чем у лучших ответов: не раскрыты уровни изоляции и момент взятия снапшота, ctid/cmin/cmax, HOT, влияние зависшего prepared xact на wraparound."
   }
  },
  "winner": "gpt-5.6-sol-medium",

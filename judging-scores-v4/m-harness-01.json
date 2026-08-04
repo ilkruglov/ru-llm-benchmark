@@ -148,6 +148,13 @@
    "format": 10,
    "russian": 10,
    "comment": "Верно локализован баг по реальным Observation и сделана минимальная правка одной ветки; old-строка включает обе строки return, что гарантирует однозначность замены. Ровно один Action, строгий формат Thought/Action/Action Input, валидный JSON."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Один корректный шаг: минимальная правка ветки reverse charge на return 0.0 с однозначным old-фрагментом (обе строки), опора на реальные Observation, без галлюцинаций и дублей. Чуть избыточный old-блок, но это скорее плюс к точности замены."
   }
  },
  "winner": "deepseek-flash",

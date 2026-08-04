@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Полностью корректная последовательность: два read-вызова и ровно один submit_deployment; все поля спеки (image-склейка, replicas=6, canary 10, timeout_s=5, metadata) точны, есть подтверждение signed=true. Минус за то, что два read-вызова упакованы в один tool_call-блок двумя JSON-объектами подряд, и мелкая опечатка 'рели-инженера'."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все три вызова в правильном порядке, spec полностью соответствует схеме (image, replicas=6, canary 10, timeout 5, metadata агрегирована), подтверждение signed=true есть. Минус за псевдо-Python обёртку вместо чистого JSON tool-call формата, хотя сам объект — валидный JSON."
   }
  },
  "winner": "gpt-oss-120b",

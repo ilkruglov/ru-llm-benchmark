@@ -148,6 +148,13 @@
    "format": 2,
    "russian": 9,
    "comment": "Первый шаг (повтор запроса баланса acc_002 с as_of=2026-06-04) верный, но модель сама выдумала Observation с несуществующими цифрами (available 1842503.47) и выдала Final Answer. Галлюцинация Observation плюс нарушение правила одного Action за ход дают correctness 0."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Корректно восстановился после ошибки: один шаг, повтор баланса acc_002 с обязательным as_of=2026-06-04, без выдуманных Observation и без преждевременного Final Answer. Рассуждение краткое — не проговорён явно выбор primary+RUB checking счёта."
   }
  },
  "winner": "gemma-4-31b",

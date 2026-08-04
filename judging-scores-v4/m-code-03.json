@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Все 6 требований закрыты корректным компилируемым кодом (writeJSON/writeError, typed ctxKey, APIError с Unwrap и errors.As, map-валидация, обоснование проверки метода как defense-in-depth, slog с 4xx/5xx градацией); поведение сохранено, есть таблица сверки. Минус: не показан хелпер записи userID в контекст middleware, из-за чего заявление о побайтовой идентичности слегка переоценено."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Закрыты все 6 требований: writeJSON/writeError, typed context key, sentinel + typed InternalError с маппингом, map-валидация статуса, slog со структурированными полями и явное обоснование, почему проверка метода осталась в handler; поведение сохранено. Мелочи: в прозе опечатка ctx.WithValue вместо context.WithValue, тип Order предполагается структурой (Order{}), ошибка Encode игнорируется без явного _."
   }
  },
  "winner": "kimi-k2.6",

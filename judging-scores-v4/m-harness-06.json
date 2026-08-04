@@ -148,8 +148,15 @@
    "format": 4,
    "russian": 9,
    "comment": "Модель выдумала Observation для check_health, rollback и notify_oncall и прогнала весь сценарий до Final Answer, хотя выдумывать Observation строго запрещено и требовался ровно один блок. Логика ретрая и отката сама по себе разумна, но результат основан на галлюцинированных данных."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Выведен ровно один корректный блок ReAct: единственный допустимый повтор check_health с тем же deploy_id, без выдумывания Observation и без забегания вперёд. Рассуждение верное, хотя предельно краткое."
   }
  },
- "winner": "deepseek-pro",
+ "winner": "deepseek-flash-0731",
  "notes": "Почти все модели верно делают один повтор check_health по политике; deepseek-pro/kimi/27b с наиболее полным обоснованием. nemotron-omni провалился — промоут без ретрая."
 }

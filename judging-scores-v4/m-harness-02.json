@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Корректно остановился на Final Answer: точно указан файл services/billing/charge.py, функция perform_charge (стр.86) и двойной путь уведомления через emit_event -> notify_on_charge; Observation не выдуманы, лишних вызовов нет. Небольшой минус за спекулятивную реконструкцию истории релиза ('видимо') и избыточную длину ответа."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректно остановился на Final Answer: точно указан файл, функция, строка и корневая причина — двойное уведомление через прямой send_sms в perform_charge и подписчика notify_on_charge на charge.succeeded, без выдумывания Observation. Минус: retry-обёртка как отвлекающий фактор явно не разобрана."
   }
  },
  "winner": "gpt-5.5-medium",

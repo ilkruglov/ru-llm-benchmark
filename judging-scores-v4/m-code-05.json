@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Рабочий один SELECT: корректный UTC-truncate через timezone(), фильтр 12 полных месяцев, сетка generate_series + LEFT JOIN + COALESCE, NUMERIC(5,4), отсечение будущих offset ровно по примеру из ТЗ. Минус: month_offset через age() зависит от session TimeZone (в не-UTC зоне с DST возможен off-by-one), в остальном придирок нет; обоснование выбора GROUP BY vs window, индексов и LEFT JOIN vs EXISTS сильное."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 7,
+   "comment": "Запрос рабочий и валидный: корректный UTC-трункейт, окно из 12 полных когорт, generate_series+CROSS JOIN с LEFT JOIN и COALESCE, отсечение будущих offset'ов, каст в NUMERIC(5,4). Минусы: требование про window functions проигнорировано (MIN+GROUP BY без обоснования выбора), пояснение про индексы очень краткое и без разбора порядка полей."
   }
  },
  "winner": "minimax-m3",

@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 8,
    "comment": "Полностью закрывает пункты а-д: конкретный tokenizer в стриме, разделение events_clean/PII vault, роли и ACCESS_HISTORY, lifecycle S3, Time Travel=1д и обход Fail-safe за счёт SLA 23 дня, erasure-сервис с tombstone и filter_erased(), плюс реалистичный дневной план, freeze-лист и риски. Минусы: отдельный бакет lake-pii-raw с сырым PII формально трётся о требование (1), а ставка на 'HMAC-токен не восстановим' как крипто-erasure переоценена (хеш email остаётся ПДн); есть опечатки ('сущещем', 'Линeдж')."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Покрыты все пункты (а)-(д): санитайзер перед lake, PII Vault с per-user DEK и crypto-shredding, Iceberg/compaction и версии объектов в S3, transient+DATA_RETENTION=0 и DROP ... PURGE против Time Travel/Fail-safe, разумный freeze/rollback в день 0-1. Слабее эталона: нет акторов/ответственных и оценки трудоёмкости, не отмечено, что user_key сам по себе остаётся псевдонимизированными персданными, не разобраны утечки PII в логи/DLQ/выгрузки, SLA-реестр удаления и пересчёт агрегатов описаны поверхностно."
   }
  },
  "winner": "gpt-5.6-sol-low",

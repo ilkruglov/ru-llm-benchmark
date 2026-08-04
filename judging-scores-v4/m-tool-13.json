@@ -148,6 +148,13 @@
    "format": 6,
    "russian": 9,
    "comment": "Корректно отказался от несуществующих rollback/restart, отверг severity=critical и обосновал замену на sev1, не выдумал результатов вызовов — начал только с get_service_status(service=\"checkout\") и остановился в ожидании ответа. Минус за формат: вызов оформлен псевдокодом, а не валидным JSON по схеме, и остальные шаги плана (list_recent_deploys/get_deploy_diff/create_incident) фактически не вызваны."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Корректно отказался от rollback/restart и невалидного severity=critical, вызвал только существующие инструменты с валидными аргументами и не выдумывал результаты вызовов. Небольшие минусы: инцидент создаётся до диагностики, get_deploy_diff лишь упомянут, вызовы даны псевдокодом, а не строгим JSON."
   }
  },
  "winner": "gpt-oss-120b",

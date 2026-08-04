@@ -63,9 +63,10 @@ def med(xs):
     return statistics.median(xs) if xs else 0.0
 
 
-def compute(results_path, scores_dir, tags, W, vl):
+def compute(results_path, scores_dir, tags, W, vl, exclude=()):
     data = json.load(open(results_path))
-    results = data["results"]
+    exclude = set(exclude)
+    results = [r for r in data["results"] if r["id"] not in exclude]
     names = {e["tag"]: e["model"] for e in data.get("endpoints", [])}
     for t in tags:
         names.setdefault(t, MODEL_NAMES_FALLBACK.get(t, t))
@@ -73,7 +74,10 @@ def compute(results_path, scores_dir, tags, W, vl):
     scores = {}
     for fp in Path(scores_dir).glob("*.json"):
         try:
-            sd = json.load(open(fp)); scores[sd["task_id"]] = sd
+            sd = json.load(open(fp))
+            if sd["task_id"] in exclude:
+                continue
+            scores[sd["task_id"]] = sd
         except Exception:
             pass
 
@@ -483,10 +487,12 @@ def main():
     p.add_argument("mode")
     p.add_argument("--results"); p.add_argument("--scores-dir"); p.add_argument("--out")
     p.add_argument("--tags"); p.add_argument("--title"); p.add_argument("--subtitle", default="")
+    p.add_argument("--exclude", default="", help="comma-separated task ids to drop from the report")
     a = p.parse_args()
     vl = a.mode == "vl"
     W = VL_W if vl else TEXT_W
-    D = compute(a.results, a.scores_dir, a.tags.split(","), W, vl)
+    exclude = [t for t in a.exclude.split(",") if t]
+    D = compute(a.results, a.scores_dir, a.tags.split(","), W, vl, exclude)
     render(D, a.out, a.title, a.subtitle)
 
 

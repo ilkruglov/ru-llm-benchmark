@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Найдены все ключевые проблемы (guard через await, сломанный single-flight, unwrap на RecvError, утечка Sender при отмене лидера, Mutex vs RwLock); фикс на tokio::sync::OnceCell::get_or_init компилируется, реальные API, single-flight строго сохранён, локи не держатся через await. Честно указано, что классической AB-BA инверсии в исходнике нет; лёгкая неточность в объяснении через NLL — единственная придирка."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 9,
+   "comment": "Фиксированный код компилируется и корректно реализует single-flight: единый Mutex<HashMap<String,State>> с Loading/Loaded, ни один guard не удерживается через await, порядок insert(Loaded) -> tx.send исключает гонку потерянного уведомления. Однако описанный deadlock-сценарий (T2 держит inner и ждёт broadcast, T1 ждёт inner) в исходном коде недостижим и противоречит их же пункту 3; пропущены утечка Sender при отмене загрузчика, missed-notification семантика broadcast и паника на unwrap()."
   }
  },
  "winner": "gpt-5.6-sol-medium",

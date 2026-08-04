@@ -148,6 +148,13 @@
    "format": 10,
    "russian": 9,
    "comment": "Точно найден главный баг (TOCTOU/race между overlap-check и insert), объяснено, почему рецензент его пропустил (проверял корректность запроса, а не транзакции), предложены рабочие фиксы: advisory xact lock + EXCLUDE-constraint, плюс валидные доп. замечания (rollback, валидация входа, tz). Небольшая неточность в утверждении, что SELECT FOR UPDATE по строке Table «не помог бы» — на деле это работающий мьютекс."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точно найдена ключевая пропущенная проблема — TOCTOU/race condition между проверкой overlap и вставкой, с корректным объяснением причины пропуска рецензентом и рабочим исправлением (SELECT ... FOR UPDATE плюс exclusion constraint в PostgreSQL). Мелкая неточность: в exclusion constraint не учтён фильтр status='confirmed', и лишних выдуманных ошибок нет."
   }
  },
  "winner": "gpt-5.6-sol-medium",

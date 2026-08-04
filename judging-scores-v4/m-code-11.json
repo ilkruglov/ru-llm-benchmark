@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Все три утечки найдены и верно объяснены (bound method -> __self__, class-level cache с self, безлимитный _history), покрыты все 6 разделов. Минусы: unsubscribe() сравнивает `r() is not handler` — WeakMethod возвращает новый bound method, поэтому отписка фактически не работает (и test_subscribers_dont_grow упадёт), плюс неточность про py-spy как инструмент дампа heap/REPL."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три утечки найдены и корректно объяснены (bound-методы в _subscribers, глобальный Worker._results_cache с (self,payload), неограниченный _history); исправленный код проверен запуском — воркеры собираются, history и subscribers стабильны. Минусы: подписка изменена на объект вместо Callable (сужение API вместо weakref.WeakMethod/finalize), инстансный кэш всё ещё безлимитен, а signal+pdb требует правки кода, что противоречит требованию 'без перезапуска'."
   }
  },
  "winner": "gpt-5.5-low",

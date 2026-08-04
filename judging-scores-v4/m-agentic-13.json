@@ -148,6 +148,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Найдены все ключевые дефекты (DROP COLUMN под ACCESS EXCLUSIVE, DEFAULT 'pending' как порча данных, Recreate, FLUSHALL с потерей идемпотентности, деструктивный откат, 30-минутная проверка), дан корректный expand-contract план с dual-write, батчевым бэкфиллом с контролем лага, canary и автооткатом. Минусы исполнимости: часть YAML для Argo Rollouts выдумана (canaryMetrics, rollback.automatic), PDB minAvailable 100% заблокирует drain узлов, regex status=~\"5xx\" некорректен, нет lock_timeout и явного маппинга старых статусов в новые."
+  },
+  "deepseek-flash-0731": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Покрыты все ключевые изъяны (expand-contract вместо DROP, NOT NULL DEFAULT затирает статусы, Recreate -> RollingUpdate maxUnavailable:0, FLUSHALL и сессии, невозможность отката DDL, поздняя ручная проверка), правки конкретны и исполнимы: батчевый backfill, CREATE INDEX CONCURRENTLY, триггер синхронизации, rollout undo, PromQL-пороги. Минусы: нет канареечного/поэтапного выката и feature-flag, не заданы lock_timeout/statement_timeout, PDB и резервная копия, а в итоговом плане отсутствуют акторы, длительности этапов и явные gate-критерии."
   }
  },
  "winner": "gpt-5.6-sol-low",
