@@ -155,6 +155,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Сделан ровно один корректный следующий шаг: issue_refund с реальным charge_id ch_77a2, суммой 990 и требуемым reason_code 'auto_renew_unused', без выдумывания Observation. Обоснование опирается на фактические наблюдения (5 дней при окне 14, подтверждение неиспользования), формат Thought/Action/Action Input безупречен."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный следующий шаг: issue_refund с ch_77a2, 990, auto_renew_unused. Явно проверены все три условия политики, опора на реальные Observation, формат Thought/Action/Action Input валиден."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Тот же корректный вызов issue_refund с правильными аргументами и reason_code. Рассуждение точное, но чуть менее детальное, чем перечисление всех условий; формат валиден."
   }
  },
  "winner": "gpt-oss-120b",

@@ -155,8 +155,22 @@
    "format": 6,
    "russian": 6,
    "comment": "В subscribe потерян вызов subscribers.add(fn) — подписчики никогда не регистрируются и никогда не получают уведомлений, т.е. стор функционально сломан, хотя типы в целом верны (variadic tuple + mapped SelectorOutputs). Пояснение на русском короткое и с опечаткой ('наружу наружу'), обоснование unknown/каста поверхностное."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный variadic-tuple паттерн с mapped type ReturnType, все требования выполнены, unknown обоснован. Отличный разбор с построчной проверкой type-check требуемого использования."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 7,
+   "comment": "Рабочее решение через рекурсивный conditional type SelectorResults и interface Store, без any, unknown обоснован. Код чистый и идиоматичный, но пояснений видимого рассуждения заметно меньше (буквально пара фраз)."
   }
  },
- "winner": "gpt-oss-120b",
+ "winner": "glm-5.2",
  "notes": "Большинство GPT-5.6/oss/terra/sol дают корректный variadic-generic; gpt-oss-120b лидирует чистотой кода и лучшим русским объяснением. Провалы: nemotron-super (не по теме), nemotron-omni (нет решения), diffusion-gemma (невалидная сигнатура), deepseek-flash (as any)."
 }

@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Все EV (27,75 / 6 / -48), дисперсии (401,19 / 5844 / 15118,5) и worst-case посчитаны верно, выбор A обоснован и по EV, и по risk-averse, и по контексту runway; биасы разобраны предметно с контрпримером пересчёта EV опции B. Минус только за сырые LaTeX-разделители в markdown."
+  },
+  "glm-5.2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все расчёты верны (EV A=27.75/B=6/C=-48, variance 401/5844/15118.5, worst-case -30/-80/-150), выбор A по всем критериям, 3+ bias с глубоким анализом (в т.ч. prospect theory, risk-seeking in losses). Мелкая опечатка «победляет»."
+  },
+  "deepseek-pro-new": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все EV и variance посчитаны корректно через E[X^2]-EV^2, выбор A обоснован по EV и риску, приведено 5 когнитивных искажений. Раздел про CEO чуть суше (тезисно), но полный и правильный."
   }
  },
  "winner": "kimi-k2.6",

@@ -4,7 +4,7 @@
 юридический комплаенс, корпоративные финансы, BI и данные, ВЭД и логистика, стройка, нефтегаз,
 промышленность, банки.
 
-* **Текст** — 181 задача, 22 модели, 21 категория
+* **Текст** — 181 задача, 24 модели, 21 категория
 * **Зрение** — 303 задачи, 18 моделей, 17 способностей на 8 отраслей
 
 Отчёты с разбором каждой задачи:
@@ -19,17 +19,18 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | GPT-5.6 Sol (medium) | 9.04 | | 12 | MiniMax-M3 | 8.39 |
-| 2 | GPT-5.6 Sol (low) | 8.87 | | 13 | GPT-5.6 Luna (low) | 8.34 |
-| 3 | GPT-5.5 (medium) | 8.85 | | 14 | Kimi K2.6 | 8.33 |
-| 4 | GPT-5.6 Luna (high) | 8.84 | | 15 | DeepSeek v4-flash (до 0731) | 8.19 |
-| 5 | GPT-5.6 Terra (high) | 8.77 | | 16 | Qwen3.6-27B-FP8 | 8.16 |
-| 6 | GPT-5.5 (low) | 8.76 | | 17 | Gemma-4-31B | 8.00 |
-| 7 | GPT-5.6 Terra (medium) | 8.74 | | 18 | Qwen3.6-35B-A3B-FP8 | 7.85 |
-| 8 | GPT-5.6 Terra (low) | 8.62 | | 19 | gpt-oss-120b | 7.34 |
-| 9 | DeepSeek v4-flash-0731 | 8.56 | | 20 | DiffusionGemma | 6.08 |
-| 10 | DeepSeek v4-pro | 8.49 | | 21 | Nemotron-3-Nano-Omni-30B | 4.57 |
-| 11 | GPT-5.6 Luna (medium) | 8.53 | | 22 | Nemotron-3-Super-120B | 4.36 |
+| 1 | GPT-5.6 Sol (medium) | 9.04 | | 13 | DeepSeek v4-pro (старый) | 8.49 |
+| 2 | DeepSeek v4-pro-new | 8.96 | | 14 | MiniMax-M3 | 8.39 |
+| 3 | GPT-5.6 Sol (low) | 8.87 | | 15 | GPT-5.6 Luna (low) | 8.34 |
+| 4 | GPT-5.5 (medium) | 8.85 | | 16 | Kimi K2.6 | 8.33 |
+| 5 | GPT-5.6 Luna (high) | 8.84 | | 17 | DeepSeek v4-flash (до 0731) | 8.19 |
+| 6 | GPT-5.6 Terra (high) | 8.77 | | 18 | Qwen3.6-27B-FP8 | 8.16 |
+| 7 | GPT-5.5 (low) | 8.76 | | 19 | Gemma-4-31B | 8.00 |
+| 8 | GPT-5.6 Terra (medium) | 8.74 | | 20 | Qwen3.6-35B-A3B-FP8 | 7.85 |
+| 9 | GPT-5.6 Terra (low) | 8.62 | | 21 | gpt-oss-120b | 7.34 |
+| 10 | DeepSeek v4-flash-0731 | 8.56 | | 22 | DiffusionGemma | 6.08 |
+| 11 | GPT-5.6 Luna (medium) | 8.53 | | 23 | Nemotron-3-Nano-Omni-30B | 4.57 |
+| 12 | GLM-5.2 | 8.50 | | 24 | Nemotron-3-Super-120B | 4.36 |
 
 ### Зрение
 

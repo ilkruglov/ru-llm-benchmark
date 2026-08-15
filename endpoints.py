@@ -83,6 +83,14 @@ def get_endpoints():
             "reasoning_field": "reasoning_content",
         },
         {
+            "tag": "deepseek-pro-new",
+            "url": "https://api.deepseek.com/v1",
+            "key": os.environ.get("DEEPSEEK_API_KEY", ""),
+            "model": "deepseek-v4-pro",   # alias now serves the newer pro snapshot; the deepseek-pro rows above are the earlier one
+            "type": "deepseek",
+            "reasoning_field": "reasoning_content",
+        },
+        {
             "tag": "nemotron-super",
             "url": "https://api.deepinfra.com/v1/openai",
             "key": os.environ.get("DEEPINFRA_API_KEY", ""),
@@ -103,6 +111,14 @@ def get_endpoints():
             "url": "https://api.deepinfra.com/v1/openai",
             "key": os.environ.get("DEEPINFRA_API_KEY", ""),
             "model": "nvidia/Nemotron-3-Nano-Omni-30B-A3B-Reasoning",
+            "type": "deepinfra",
+            "reasoning_field": "reasoning_content",
+        },
+        {
+            "tag": "glm-5.2",
+            "url": "https://api.deepinfra.com/v1/openai",
+            "key": os.environ.get("DEEPINFRA_API_KEY", ""),
+            "model": "zai-org/GLM-5.2",
             "type": "deepinfra",
             "reasoning_field": "reasoning_content",
         },

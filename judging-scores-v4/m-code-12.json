@@ -155,6 +155,20 @@
    "format": 8,
    "russian": 8,
    "comment": "Ядро алгоритма Vyukov реализовано верно (seq-протокол, CAS, mask, отсутствие аллокаций), тесты и бенчмарк для 1/4/16 есть; минусы — хранение sequence через uintptr→unsafe.Pointer вне правил unsafe (флагается vet unsafeptr) и 64 байта на слот, отсутствие обнуления вычитанного значения, неверное утверждение о wait-free. Объяснение memory ordering поверхностное ('атомики — барьеры') без ссылки на SC-семантику Go, но русский текст ясный и структурированный."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректная классическая Vyukov CAS-реализация: правильные seq-номера, release-store после записи, padding, power-of-2 через panic, очистка data для GC; честно отмечает lock-free vs wait-free. Полный набор: бенч 1/4/16, стресс с sync.Map. Использует только реальные API."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Тоже верная Vyukov CAS-очередь с корректным reload pos при провале CAS, паддингами, округлением до степени двойки, очисткой data; хорошее сравнение альтернатив таблицей и заметка про relaxed-ordering. Мелкий опечаточный шум (seqсst), но код и рассуждения без ошибок."
   }
  },
  "winner": "kimi-k2.6",

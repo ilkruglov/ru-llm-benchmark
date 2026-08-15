@@ -155,6 +155,20 @@
    "format": 7,
    "russian": 9,
    "comment": "Покрыты все пункты (а)-(д): санитайзер перед lake, PII Vault с per-user DEK и crypto-shredding, Iceberg/compaction и версии объектов в S3, transient+DATA_RETENTION=0 и DROP ... PURGE против Time Travel/Fail-safe, разумный freeze/rollback в день 0-1. Слабее эталона: нет акторов/ответственных и оценки трудоёмкости, не отмечено, что user_key сам по себе остаётся псевдонимизированными персданными, не разобраны утечки PII в логи/DLQ/выгрузки, SLA-реестр удаления и пересчёт агрегатов описаны поверхностно."
+  },
+  "glm-5.2": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 6,
+   "comment": "Практичный shift-left план с крипто-шреддингом токенов для erasure, все пункты (а)-(д) закрыты, но опущены ключевые нюансы immutable S3 (Object Lock compliance/governance) и Snowflake Fail-safe/transient. В русском вкрапления китайских иероглифов (极度, 架构) портят текст."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень полный и технически точный ре-план: явно разобраны Object Lock compliance vs governance, Fail-safe/transient-таблицы, HMAC-lookup для erasure без хранения email, noncurrent-версии, эскалация рисков. Отличная структура и чистый русский."
   }
  },
  "winner": "gpt-5.6-sol-low",

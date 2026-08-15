@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Все 4 правила соблюдены: параллельный map из 5 get_service_health, условный get_recent_deploys(since_minutes=60) только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, без выдуманных значений. Изложение чёткое, но рассуждение шаблонное, без разбора краевых случаев (кроме пустого deploy_infos)."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректная map-reduce-логика: параллельный health-батч, get_recent_deploys только для нездоровых, ровно один aggregate_incident_report, условный page_oncall при critical/high. Пример-данные чётко помечены как иллюстративные для раскрытия веток, глубокий разбор каскада."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Чистая и абсолютно корректная логика без выдуманных значений: параллельный health, условные деплои, единый агрегатор, условный пейджинг. Рассуждение аккуратное, но менее детальное, чем у лучших ответов."
   }
  },
  "winner": "27b-v2",

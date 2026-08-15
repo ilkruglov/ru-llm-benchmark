@@ -155,6 +155,20 @@
    "format": 8,
    "russian": 10,
    "comment": "Все три вызова в правильном порядке, spec полностью соответствует схеме (image, replicas=6, canary 10, timeout 5, metadata агрегирована), подтверждение signed=true есть. Минус за псевдо-Python обёртку вместо чистого JSON tool-call формата, хотя сам объект — валидный JSON."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Показаны оба read-вызова, затем ровно один submit_deployment с полностью корректным spec (image склеен верно, replicas=6, canary 10, timeout=5, require_signed_image=true). Подробная таблица источников и подтверждение подписи."
+  },
+  "deepseek-pro-new": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 8,
+   "comment": "Сам объект spec идеально корректен и валиден, но модель не показала два read-вызова и не обернула объект в вызов submit_deployment, нарушив требование о последовательности вызовов; пояснения короткие."
   }
  },
  "winner": "gpt-oss-120b",

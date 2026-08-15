@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Сильный, конкретный гибрид Kafka+RabbitMQ с реальными настройками, расчётом партиций/диска и адекватными отвержениями, но выбор self-managed RabbitMQ плохо согласуется с ключевым ограничением (6 инженеров, нет платформенной команды), а альтернатива SQS+claim-check/envelope-шифрование для класса B не рассмотрена; есть мелкие неточности (лимит FIFO с батчами, совместимость quorum queues с приоритетами и delayed-плагином)."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Полный гибрид MSK+Amazon MQ RabbitMQ: RabbitMQ для класса B нативно закрывает ack/nack, приоритеты, delayed и DLQ; отвергнуты все неподходящие варианты, compliance и риски (hot partition, OOM, outbox->CDC) реалистичны. Чуть меньше количественной проработки и есть англицизмы (burden, ceiling)."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "MSK+SQS с конкретными конфигами (acks=all, RF=3, zstd), расчётами партиций и стораджа (43/130 TB), EventBridge Scheduler для delay>15 мин и compliance через метаданные-only для класса B; выбор SQS честно обоснован под малую команду. Русский хороший, но местами англицизмы (sustained, bottleneck, awkward)."
   }
  },
  "winner": "gpt-5.5-low",

@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Фактически точный ответ без выдумок: верно описаны xmin/xmax, состав снапшота, pg_xact, pg_prepared_xacts, max_prepared_transactions=0 по умолчанию и требование рестарта, реальные XA-координаторы; корректно разведены 2PC/2PL и PREPARE TRANSACTION vs prepared statements. Минус за меньшую глубину, чем у лучших ответов: не раскрыты уровни изоляции и момент взятия снапшота, ctid/cmin/cmax, HOT, влияние зависшего prepared xact на wraparound."
+  },
+  "glm-5.2": {
+   "correctness": 1,
+   "reasoning": 7,
+   "format": 5,
+   "russian": 8,
+   "comment": "Технически сильный и структурированный ответ, но уверенно выдуман несуществующий параметр prepared_statements_timeout, якобы автоматически откатывающий зависшие prepared-транзакции — фактическая галлюцинация. Остальное (xmin/xmax, снапшоты, VACUUM, 2PC, путаница с 2PL/prepared statements) корректно."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точный, глубокий и хорошо структурированный ответ без выдуманных фактов: верный формат pg_current_snapshot и pg_prepared_xacts, корректные координаторы (Narayana/Atomikos/Bitronix, XA), правильные замечания про temp-таблицы, undo и max_prepared_transactions. Отличные SQL-примеры и сводная таблица."
   }
  },
  "winner": "gpt-5.6-sol-medium",

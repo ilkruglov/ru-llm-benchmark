@@ -155,6 +155,20 @@
    "format": 10,
    "russian": 9,
    "comment": "SQL корректен (CTE, DISTINCT по клиент-месяцу, cross join смещений с LEFT JOIN для нулей), month_offset посчитан верно через EXTRACT по date_trunc; итоговая таблица полностью совпадает с эталоном (01: 3/100/33.3/66.7; 02: 2/100/0/50; 03: 2/100/50/0). Объяснение верное, но лаконичное — не разобраны альтернативы (age/интервалы) и нюансы отсутствующих месяцев."
+  },
+  "glm-5.2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полностью корректный SQL с CTE, age()-подходом для month_offset и полной сеткой когорт через generate_series; итоговая таблица совпадает с эталоном, объяснение DISTINCT и offset точное."
+  },
+  "deepseek-pro-new": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный SQL через EXTRACT(year/month) с усечением date_trunc, distinct-активность и полная сетка offset 0-3; таблица удержания правильная, пояснения ясные и корректные."
   }
  },
  "winner": "deepseek-pro",

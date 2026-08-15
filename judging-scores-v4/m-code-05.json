@@ -155,6 +155,20 @@
    "format": 8,
    "russian": 7,
    "comment": "Запрос рабочий и валидный: корректный UTC-трункейт, окно из 12 полных когорт, generate_series+CROSS JOIN с LEFT JOIN и COALESCE, отсечение будущих offset'ов, каст в NUMERIC(5,4). Минусы: требование про window functions проигнорировано (MIN+GROUP BY без обоснования выбора), пояснение про индексы очень краткое и без разбора порядка полей."
+  },
+  "glm-5.2": {
+   "correctness": 1,
+   "reasoning": 8,
+   "format": 5,
+   "russian": 9,
+   "comment": "Логика верна и проработка самая глубокая (user-month grain, MIN+FILTER vs FIRST_VALUE, порядок полей в индексах, hash join vs nested loop), но запрос не запустится: OFFSET — зарезервированное слово и недопустим как алиас в gs(offset)/gs.offset, плюс 3-арг date_trunc(...,'UTC') доступен лишь с PG16, а требуется 15+."
+  },
+  "deepseek-pro-new": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректный переносимый запрос (AT TIME ZONE 'UTC', make_interval, NUMERIC(5,4), нулевые строки через LEFT JOIN) точно выполняет все требования, включая невыход в будущее. Пояснения верные, но заметно короче и менее глубокие, чем у лидеров."
   }
  },
  "winner": "minimax-m3",

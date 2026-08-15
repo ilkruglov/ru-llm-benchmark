@@ -155,6 +155,20 @@
    "format": 8,
    "russian": 8,
    "comment": "Все 8 разделов закрыты конкретными командами и явным decision tree, но есть заметные практические пробелы: нет fencing старого primary и защиты от split-brain (при этом предлагается pg_ctl promote в обход Patroni), не описано переключение трафика приложения (pgbouncer/HAProxy/DNS) и maintenance-mode для write-path. Фактические ошибки: пути и юниты для PostgreSQL 14 вместо заявленной 15, 'PgBouncer + WAL-G' как инструмент бэкапа, сомнительный совет удалять recovery.signal вручную."
+  },
+  "glm-5.2": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Практически образцовый runbook: защита артефактов и снапшоты до любых destructive-действий, явный decision tree с числовыми порогами (16 MB), fencing старого primary, pg_rewind для возврата ноды, PITR-ветка, полная валидация и коммуникации с финансовым импактом. Мелкий недочёт — регион ru-central1 при заявленном AWS."
+  },
+  "deepseek-pro-new": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Крепкий исполнимый план с грамотным fencing (aws ec2 stop-instances), очисткой stale-ключей etcd и корректной PITR-веткой; чуть менее глубок в валидации метрик/observability и коммуникациях, рассуждение местами короче, но всё конкретно и выполнимо в стрессе."
   }
  },
  "winner": "gpt-5.5-medium",

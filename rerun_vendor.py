@@ -32,13 +32,16 @@ TEXT_CFG = {
     "deepseek-flash":{"ep": "deepseek-flash", "reasoning_effort": "high"},
     "deepseek-flash-0731":{"ep": "deepseek-flash-0731", "reasoning_effort": "high"},  # same params as the flash rows above; only the snapshot differs (vendor moved the alias 2026-07-31). "max" is the one step up (xhigh maps back down to high) but buys nothing here: 30-task probe at max gave median 94s/6783 reasoning tok vs 83s/7019 at high. The 7x jump in reasoning length is the snapshot itself - the pre-0731 flash did 1001 tok at the same effort
     "deepseek-pro":  {"ep": "deepseek-pro",  "reasoning_effort": "high"},
+    "deepseek-pro-new":{"ep": "deepseek-pro-new", "reasoning_effort": "high"},  # same params as deepseek-pro; vendor moved the deepseek-v4-pro alias to a newer snapshot
     "gemma-4-31b":   {"ep": "_nd_gemma", "temperature": 1.0, "top_p": 0.95, "top_k": 64, "reasoning": {"enabled": True}},  # thinking on (neuraldeep param)
     "diffusion-gemma": {"ep": "_nd_diff", "nd_model": "diffusion-gemma", "temperature": 0.6, "top_p": 0.95, "top_k": 64, "reasoning": {"enabled": True}},  # temp 0.6 ~ mid of recommended diffusion decay 0.8->0.4 (sampler/steps are server-side, not API-settable)
     "nemotron-super": {"ep": "nemotron-super", "temperature": 1.0, "top_p": 0.95, "thinking": True},  # NVIDIA card: temp 1.0/top_p 0.95 all tasks; reasoning on
     "nemotron-omni":  {"ep": "nemotron-omni",  "temperature": 0.6, "top_p": 0.95, "thinking": True},  # NVIDIA card: temp 0.6/top_p 0.95 reasoning mode
     "kimi-k2.6":      {"ep": "_nd_kimi", "nd_model": "kimi-k2.6", "temperature": 1.0, "top_p": 0.95},  # Moonshot thinking-mode vendor params (1.0/0.95); thinking on by default
     "minimax-m3":     {"ep": "minimax-m3", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # MiniMax card: temp 1.0 / top_p 0.95 / top_k 40; reasoning on by default
+    "glm-5.2":        {"ep": "glm-5.2", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # GLM family vendor sampling (temp 1.0 / top_p 0.95 / top_k 40); reasoning on by default on deepinfra
     "35b-a3b-nd":     {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host - isolates host/quantization
+    "qwen3.8-27b":    {"ep": "_nd_qwen38", "nd_model": "qwen3.8-27b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # Qwen precise preset (temp 0.6, matches 27b/35b); default thinking on (no forced effort — max thinking made hard tasks 10-20min and neuraldeep allows only 1 parallel req); neuraldeep -> serial
 }
 VL_CFG = {
     "27b-v2":      {"ep": "27b-v2",  "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},
@@ -50,6 +53,7 @@ VL_CFG = {
     "kimi-k2.6":     {"ep": "_nd_kimi", "nd_model": "kimi-k2.6", "temperature": 1.0, "top_p": 0.95},  # Moonshot thinking-mode vendor params; vision-capable, thinking on by default
     "minimax-m3":    {"ep": "minimax-m3", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # MiniMax card: temp 1.0 / top_p 0.95 / top_k 40; reasoning on by default
     "35b-a3b-nd":    {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host
+    "qwen3.8-27b":   {"ep": "_nd_qwen38", "nd_model": "qwen3.8-27b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # Qwen VL preset (temp 0.6), vision-capable on neuraldeep; default thinking on; rate-limited -> serial
 }
 
 

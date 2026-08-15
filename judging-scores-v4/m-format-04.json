@@ -155,6 +155,20 @@
    "format": 10,
    "russian": 8,
    "comment": "Чистый одиночный YAML-документ без обёрток: порядок и состав ключей верхнего уровня точны, все enum, типы, диапазоны, регексы и счётчики (3 ноды, 5 флагов со смешанными boolean, 3 snake_case тега) соблюдены. Нет якорей, комментариев и многострочных скаляров; видимого рассуждения нет, но оно и не требовалось."
+  },
+  "glm-5.2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 7,
+   "comment": "Полностью валидный YAML, все required-поля, корректные типы и enum-значения, порядок ключей соблюдён, features 5 ключей с true/false, 3 ноды кэша, semver в кавычках. Схема выполнена безупречно."
+  },
+  "deepseek-pro-new": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 7,
+   "comment": "Валидный YAML, все ключи в нужном порядке, tls.enabled=false с пустыми строками, pool min<=max, password_env по regex, features 5/true+false, 3 ноды. Всё строго по схеме."
   }
  },
  "winner": "gpt-oss-120b",

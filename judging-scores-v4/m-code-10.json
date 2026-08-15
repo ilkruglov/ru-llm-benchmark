@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 8,
    "comment": "Валидный OpenAPI 3.1 (парсится, все $ref резолвятся), все требуемые операции, RFC 7807, Idempotency-Key, Content-Range, Retry-After, примеры и securityScheme на месте. Минусы: полностью отсутствуют queryParameters (явно требовались, в т.ч. пагинация для 10000 файлов), обоснование tus vs Content-Range очень поверхностное, нет 308/Upload-Offset-семантики resume-статусов; описание в русском блоке корректное, но сжатое."
+  },
+  "glm-5.2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Валидный OpenAPI 3.1 без висячих $ref, все 6 операций и полный набор кодов (400-500), Retry-After, RFC7807, sha256 и UUIDv4 паттерны; но webhooks только как поле callbackUrl без объекта callbacks, примеров мало и статус 10k файлов без пагинации."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полная валидная спека: все операции (плюс per-file DELETE), все коды, корректные callbacks-webhooks с событием, пагинация статуса для 10k файлов, примеры на каждый error-ответ, additionalProperties:false; чёткое обоснование Content-Range+HEAD, идемпотентности и масштабирования на русском."
   }
  },
  "winner": "gpt-5.6-sol-medium",

@@ -155,6 +155,20 @@
    "format": 10,
    "russian": 9,
    "comment": "Метки точные и без ложных срабатываний (wrongful_termination, critical, только pregnancy), статьи ТК РФ подобраны корректно (3, 78, 81 п.2, 179, 180, 261), пропущены лишь ст. 145 УК РФ и ст. 5.27 КоАП. Формат — чистый валидный JSON строго по схеме; шаги эскалации и 24-часовые действия конкретны, хотя аналитика чуть менее детальна, чем у лучших ответов."
+  },
+  "glm-5.2": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верная классификация (wrongful_termination, critical, pregnancy) и отличные подкатегории без ложных срабатываний; сильные immediate_actions с сохранением улик и упоминанием ст.145 УК, но список legal_articles скуден — только ст.77 и ст.261, упущены ст.81/179/180/3."
+  },
+  "deepseek-pro-new": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный и точный набор полей: исчерпывающие подкатегории (вкл. conflict_of_interest) и статьи (3,77,81,179,180,261), глубокий escalation_path с опросом свидетелей; dispute_type 'discrimination' допустим, хотя wrongful_termination был бы центральнее."
   }
  },
  "winner": "gpt-5.6-luna-high",

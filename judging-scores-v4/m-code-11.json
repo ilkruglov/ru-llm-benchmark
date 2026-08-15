@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Все три утечки найдены и корректно объяснены (bound-методы в _subscribers, глобальный Worker._results_cache с (self,payload), неограниченный _history); исправленный код проверен запуском — воркеры собираются, history и subscribers стабильны. Минусы: подписка изменена на объект вместо Callable (сужение API вместо weakref.WeakMethod/finalize), инстансный кэш всё ещё безлимитен, а signal+pdb требует правки кода, что противоречит требованию 'без перезапуска'."
+  },
+  "glm-5.2": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 8,
+   "comment": "Все 3 утечки найдены с точным механизмом (bound method держит self, class-cache хранит self, unbounded history); fix через WeakMethod + weakref.ref, deque(maxlen), bounded cache без self — рабочий. Диагностика исчерпывающая (py-spy, signal, manhole, pyrasite, gdb py-bt). Минусы: добавлен избыточный __del__-unsubscribe (антипаттерн при WeakMethod), запутанный unsubscribe с дублем условия, вкрапление китайского текста в комментарии теста."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 3 утечки с точной цепочкой ссылок и верным объяснением почему GC не собирает; эталонный fix: WeakMethod + weakref.ref fallback, чистка мёртвых ссылок в publish/subscribe, deque(maxlen), инстанс-уровневый bounded OrderedDict-cache без self, close() без антипаттерна __del__. Полная и корректная диагностика (verно отмечено, что py-spy не показывает heap), regression test с gc.collect и snapshot diff."
   }
  },
  "winner": "gpt-5.5-low",

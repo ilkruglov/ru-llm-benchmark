@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Закрыты все 6 требований: writeJSON/writeError, typed context key, sentinel + typed InternalError с маппингом, map-валидация статуса, slog со структурированными полями и явное обоснование, почему проверка метода осталась в handler; поведение сохранено. Мелочи: в прозе опечатка ctx.WithValue вместо context.WithValue, тип Order предполагается структурой (Order{}), ошибка Encode игнорируется без явного _."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 6 требований выполнены, код компилируется и идиоматичен, chi API использован корректно, восстановлен оригинал; исключительно глубокий разбор с анализом совместимости поведения и tradeoff'ов."
+  },
+  "deepseek-pro-new": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 8,
+   "comment": "Основной handler отличный, typed handlerError с Unwrap/errors.As даже элегантнее, но не восстановлен оригинал (было в задании) и в chi-примере поле r.MethodNotAllowedHandler — это API gorilla/mux, а не chi; объяснение корректное, но заметно короче."
   }
  },
  "winner": "kimi-k2.6",

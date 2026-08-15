@@ -155,8 +155,22 @@
    "format": 8,
    "russian": 1,
    "comment": "Код компилируемый и покрывает все 10 требований (sentinel + %w, string-тип с UnmarshalJSON-валидацией, Hook, slice структур, RWMutex, main с примером); минус — хуки вызываются под удерживаемым write-lock (риск дедлока, лишь задокументирован, тогда как лидеры снимают снапшот хуков и отпускают мьютекс). Пояснений на русском нет вообще: только английские комментарии в коде, обоснование выбора *Order дано одной фразой по-английски."
+  },
+  "glm-5.2": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Компилируемый идиоматичный Go: sentinel-ошибки с %w, typed string + UnmarshalJSON, slice of struct, RWMutex со снапшотом хуков, обоснование in-place, testable Example с корректным Output-блоком и разделом 'что не покрыто'. Эталонный уровень."
+  },
+  "deepseek-pro-new": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все требования выполнены корректно: две блокировки (mu для хуков, stateMu для сериализации переходов), nil-проверки, UnmarshalJSON, Example с верным Output. Чуть менее подробное объяснение и лёгкая over-serialization всех заказов через общий stateMu, но код рабочий и идиоматичный."
   }
  },
- "winner": "kimi-k2.6",
+ "winner": "glm-5.2",
  "notes": "Большинство моделей дали компилируемый идиоматичный Go со всеми 10 требованиями; kimi-k2.6 выделяется чистой конкурентностью, ожидаемым выводом и полнотой. Провалы: diffusion-gemma (синтаксис) и nemotron-super (нет import json) не компилируются, nemotron-omni падает в runtime (nil map)."
 }

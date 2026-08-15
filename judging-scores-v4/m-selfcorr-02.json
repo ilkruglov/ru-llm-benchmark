@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Точно найдена ключевая пропущенная проблема — TOCTOU/race condition между проверкой overlap и вставкой, с корректным объяснением причины пропуска рецензентом и рабочим исправлением (SELECT ... FOR UPDATE плюс exclusion constraint в PostgreSQL). Мелкая неточность: в exclusion constraint не учтён фильтр status='confirmed', и лишних выдуманных ошибок нет."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно нашла пропущенный race condition (TOCTOU) с двойным бронированием, детально объяснила почему рецензент пропустил и дала двухуровневое исправление (FOR UPDATE + exclusion constraint) плюс тест на конкуренцию. Никаких выдуманных ошибок."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно выявила гонку между проверкой overlap и вставкой, корректно объяснила причину пропуска и предложила правильный фикс через SELECT FOR UPDATE с упоминанием exclusion constraint. Чуть меньше глубины, чем у лучших ответов, но всё точно."
   }
  },
  "winner": "gpt-5.6-sol-medium",

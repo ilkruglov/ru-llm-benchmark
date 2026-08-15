@@ -155,8 +155,22 @@
    "format": 8,
    "russian": 2,
    "comment": "Тесты рабочие и точные: fake-clock через monkeypatch на time.monotonic/time.sleep, 20 тест-функций, params-фикстура, параметризованные negative cases, pytest.approx, корректная арифметика deficit/timeout; минусы — pytest_configure в тест-модуле не вызывается (маркер slow даст warning), а 'slow' thread-safety тест на самом деле идёт с замороженным временем. Объяснений на русском практически нет — только код и один комментарий."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Исчерпывающее покрытие (28 методов + параметризация): FakeClock+fake_sleep, все требуемые кейсы корректны и детерминированы, таблица покрытия и инструкции запуска. Единственный минус — затесавшееся китайское слово в одном комментарии."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Полностью корректные тесты: FakeTime через monkeypatch, все обязательные сценарии (timeout=0/недостаточный/достаточный/None, refill, cap, thread-safety slow), pytest.approx, организация по классам. Чуть меньше поясняющей прозы, чем у лидера."
   }
  },
- "winner": "gemma-4-31b",
+ "winner": "glm-5.2",
  "notes": "Много сильных решений с консистентным mock (kimi, sol-low/medium, gpt-5.5-*, luna/terra, gemma, oss, flash, 27b). Провалы: nemotron-super (офф-топик), nemotron-omni (ложный freezegun API), luna-medium (отказ), 35b/deepseek-pro/diffusion (разрыв времени/сломанные тесты)."
 }

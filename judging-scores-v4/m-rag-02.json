@@ -155,6 +155,20 @@
    "format": 9,
    "russian": 8,
    "comment": "Все пять пунктов покрыты строго по чанкам, без выдумок: Client Credentials, sensitive:write с 2FA, Sensitive 60/min на Pro, перевыпуск токена (refresh_token в CC нет) и backoff с jitter от Retry-After; citations проставлены после каждого утверждения. Мелкие минусы: не упомянут код 401 invalid_token из chunk_errors и опечатка «привышении»."
+  },
+  "glm-5.2": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Все 5 пунктов верны и строго из chunks, citations корректны, полезное упоминание лимита /oauth/token; мелкая опечатка 'дляSensitive' и небольшое двойное приписывание expires_in к chunk_auth_overview."
+  },
+  "deepseek-pro-new": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точный, полностью grounded ответ: верно приписывает 403 к chunk_errors, явно исключает PKCE, различает лимиты endpoint и /token; чёткие маркеры [source] и качественный русский."
   }
  },
  "winner": "minimax-m3",

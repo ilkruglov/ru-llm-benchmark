@@ -155,6 +155,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Найдены все шесть обязательных интентов плюс обоснованный fraud_report (несанкционированная операция без кодов подтверждения), primary_intent и urgency определены верно. Чистый валидный JSON без обёрток, корректный русский; обоснование точное, но чуть более поверхностное, чем у лучших ответов."
+  },
+  "glm-5.2": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Все 7 релевантных интентов извлечены без ложных срабатываний, primary_intent=card_block и urgency=critical корректны. JSON валиден, но обёрнут в ```json-фенсы при требовании 'строго JSON'."
+  },
+  "deepseek-pro-new": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точная multi-label разметка из 7 интентов без FP/FN, верные primary_intent и urgency. Чистый валидный JSON без обёрток, обоснование корректное, хотя чуть менее детальное."
   }
  },
  "winner": "deepseek-pro",
