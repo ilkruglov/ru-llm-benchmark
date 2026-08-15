@@ -63,6 +63,19 @@ def med(xs):
     return statistics.median(xs) if xs else 0.0
 
 
+# completion_tokens is the total output (answer + reasoning) for every provider EXCEPT the
+# neuraldeep-streamed models below, where it counts only the visible answer and the reasoning
+# tokens are reported separately. For a consistent "output tokens per task" cost we add them back.
+CONTENT_ONLY_CT = {"qwen3.8-27b"}
+
+
+def out_toks(tag, resp):
+    ct = resp.get("completion_tokens") or 0
+    if tag in CONTENT_ONLY_CT:
+        ct += resp.get("reasoning_tokens") or 0
+    return ct
+
+
 def compute(results_path, scores_dir, tags, W, vl, exclude=()):
     data = json.load(open(results_path))
     exclude = set(exclude)
@@ -94,6 +107,7 @@ def compute(results_path, scores_dir, tags, W, vl, exclude=()):
     cat_wins = defaultdict(lambda: defaultdict(int))
     wins = defaultdict(int)
     perf = defaultdict(lambda: {"lat": [], "ct": [], "tps": [], "alen": [], "ok": 0})
+    by_cat_tok = defaultdict(lambda: defaultdict(list))   # cat -> tag -> [output tokens/task]
     blocked = defaultdict(int)
 
     for r in results:
@@ -105,9 +119,10 @@ def compute(results_path, scores_dir, tags, W, vl, exclude=()):
                 blocked[t] += 1; continue
             if resp.get("ok"):
                 perf[t]["ok"] += 1
-                lat = resp.get("latency_ms") or 0; ct = resp.get("completion_tokens") or 0
+                lat = resp.get("latency_ms") or 0; ct = out_toks(t, resp)
                 perf[t]["lat"].append(lat); perf[t]["ct"].append(ct)
                 perf[t]["alen"].append(len(resp.get("content") or ""))
+                by_cat_tok[r.get(cat_key, "?")][t].append(ct)
                 if ct and lat:
                     perf[t]["tps"].append(ct / (lat / 1000))
             if sd and emp(t, r):
@@ -134,7 +149,7 @@ def compute(results_path, scores_dir, tags, W, vl, exclude=()):
                 macro=macro, micro=micro, winrate=winrate, cats_led=cats_led, wins=wins,
                 by_cat=by_cat, by_seg=by_seg, judged_cats=judged_cats, crit_avg=crit_avg,
                 perf=perf, blocked=blocked, n_cats=len(judged_cats), cat_wins=cat_wins,
-                blk=blk, emp=emp)
+                by_cat_tok=by_cat_tok, blk=blk, emp=emp)
 
 
 def render(D, out_path, title, subtitle):
@@ -359,13 +374,15 @@ def render(D, out_path, title, subtitle):
     A('<div class="callout">Лидер и балл в каждой из категорий.</div>')
     A('<div class="chart"><div class="chart-cap"><span class="ct">Категория × лидер</span><span class="cs">0–10</span></div>')
     A('<div class="table-scroll"><table><thead><tr><th>Категория</th><th>Лидер</th>'
-      '<th class="num">Балл</th><th class="num">задач</th></tr></thead><tbody>')
+      '<th class="num">Балл</th><th class="num">задач</th><th class="num">ср. ток/задача</th></tr></thead><tbody>')
     for c in cat_order:
         if c not in D["by_cat"]:
             continue
         lead = max(tags, key=lambda t: avg(D["by_cat"][c][t]))
+        ctoks = [v for t in tags for v in D["by_cat_tok"][c][t]]   # cost across all models in this category
         A(f'<tr><td>{esc(clbl(c))}</td><td><b>{nm(lead)}</b></td>'
-          f'<td class="num">{avg(D["by_cat"][c][lead]):.2f}</td><td class="num">{len(by_cat_tasks[c])}</td></tr>')
+          f'<td class="num">{avg(D["by_cat"][c][lead]):.2f}</td><td class="num">{len(by_cat_tasks[c])}</td>'
+          f'<td class="num">{avg(ctoks):,.0f}</td></tr>')
     A('</tbody></table></div></div></div>')
 
     # ---- per-task ----
@@ -398,7 +415,7 @@ def render(D, out_path, title, subtitle):
             if vl and r.get("image"):
                 A('</div><div class="scorewrap">')   # table spans the whole card, not the narrow column
             A('<div class="table-scroll"><table><thead><tr><th>Модель</th><th class="num">C</th><th class="num">F</th>'
-              '<th class="num">Ru</th><th class="num">Σ</th><th>Комментарий судьи</th></tr></thead><tbody>')
+              '<th class="num">Ru</th><th class="num">Σ</th><th class="num">ток</th><th>Комментарий судьи</th></tr></thead><tbody>')
 
             def rk(t):
                 if D["blk"](t, r):
@@ -409,15 +426,17 @@ def render(D, out_path, title, subtitle):
             for t in sorted(tags, key=rk):
                 if D["blk"](t, r):
                     A(f'<tr style="color:var(--faint)"><td>{nm(t)}</td><td class="num">—</td><td class="num">—</td>'
-                      f'<td class="num">—</td><td class="num">—</td><td class="cmt-cell">Заблокировано кибербез-фильтром OpenAI.</td></tr>')
+                      f'<td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="cmt-cell">Заблокировано кибербез-фильтром OpenAI.</td></tr>')
                     continue
                 if t not in sd["scores"] or D["emp"](t, r):
                     continue
                 s = sd["scores"][t]; tot = wsum(s, W)
                 cls = ' class="win"' if t == winner else ""
+                toks = out_toks(t, r["responses"].get(t, {}))
                 A(f'<tr{cls}><td><b>{nm(t)}</b></td><td class="num">{s["correctness"]}</td>'
                   f'<td class="num">{s["format"]}</td><td class="num">{s["russian"]}</td>'
-                  f'<td class="num"><b>{tot:.1f}</b></td><td class="cmt-cell">{esc(s.get("comment",""))}</td></tr>')
+                  f'<td class="num"><b>{tot:.1f}</b></td><td class="num">{toks:,}</td>'
+                  f'<td class="cmt-cell">{esc(s.get("comment",""))}</td></tr>')
             A('</tbody></table></div>')
             if sd.get("notes"):
                 A(f'<div class="note">{esc(sd["notes"])}</div>')
