@@ -5,7 +5,7 @@
 промышленность, банки.
 
 * **Текст** — 181 задача, 24 модели, 21 категория
-* **Зрение** — 303 задачи, 18 моделей, 17 способностей на 8 отраслей
+* **Зрение** — 303 задачи, 19 моделей, 17 способностей на 8 отраслей
 
 Отчёты с разбором каждой задачи:
 [текстовый](https://ilkruglov.github.io/ru-llm-benchmark/text-benchmark.html) ·
@@ -36,15 +36,16 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | Kimi K2.6 | 9.01 | | 10 | GPT-5.6 Terra (low) | 8.73 |
-| 2 | GPT-5.6 Sol (medium) | 8.99 | | 11 | GPT-5.6 Luna (high) | 8.72 |
-| 3 | GPT-5.5 (medium) | 8.95 | | 12 | GPT-5.6 Luna (medium) | 8.69 |
-| 4 | GPT-5.6 Sol (low) | 8.94 | | 13 | GPT-5.6 Luna (low) | 8.57 |
-| 5 | GPT-5.5 (low) | 8.89 | | 14 | Gemma-4-31B | 8.46 |
-| 6 | GPT-5.6 Terra (medium) | 8.86 | | 15 | DiffusionGemma | 8.20 |
-| 7 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 16 | MiniMax-M3 | 8.10 |
-| 8 | Qwen3.6-27B-FP8 | 8.77 | | 17 | Llama-4-Scout-17B | 7.53 |
-| 9 | GPT-5.6 Terra (high) | 8.75 | | 18 | Nemotron-3-Nano-Omni-30B | 6.80 |
+| 1 | Kimi K2.6 | 9.01 | | 11 | GPT-5.6 Terra (low) | 8.73 |
+| 2 | GPT-5.6 Sol (medium) | 8.99 | | 12 | GPT-5.6 Luna (high) | 8.72 |
+| 3 | GPT-5.5 (medium) | 8.95 | | 13 | GPT-5.6 Luna (medium) | 8.69 |
+| 4 | GPT-5.6 Sol (low) | 8.94 | | 14 | GPT-5.6 Luna (low) | 8.57 |
+| 5 | **Qwen3.8-27B** | **8.91** | | 15 | Gemma-4-31B | 8.46 |
+| 6 | GPT-5.5 (low) | 8.89 | | 16 | DiffusionGemma | 8.20 |
+| 7 | GPT-5.6 Terra (medium) | 8.86 | | 17 | MiniMax-M3 | 8.10 |
+| 8 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 18 | Llama-4-Scout-17B | 7.53 |
+| 9 | Qwen3.6-27B-FP8 | 8.77 | | 19 | Nemotron-3-Nano-Omni-30B | 6.80 |
+| 10 | GPT-5.6 Terra (high) | 8.75 | | | | |
 
 ## Как считалось
 

@@ -66,7 +66,7 @@ def med(xs):
 # completion_tokens is the total output (answer + reasoning) for every provider EXCEPT the
 # neuraldeep-streamed models below, where it counts only the visible answer and the reasoning
 # tokens are reported separately. For a consistent "output tokens per task" cost we add them back.
-CONTENT_ONLY_CT = {"qwen3.8-27b"}
+CONTENT_ONLY_CT = set()  # qwen3.8 VL (EmpirioLabs) reports completion_tokens as total; text-qwen not in a report
 
 
 def out_toks(tag, resp):

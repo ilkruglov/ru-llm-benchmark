@@ -41,7 +41,7 @@ TEXT_CFG = {
     "minimax-m3":     {"ep": "minimax-m3", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # MiniMax card: temp 1.0 / top_p 0.95 / top_k 40; reasoning on by default
     "glm-5.2":        {"ep": "glm-5.2", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # GLM family vendor sampling (temp 1.0 / top_p 0.95 / top_k 40); reasoning on by default on deepinfra
     "35b-a3b-nd":     {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host - isolates host/quantization
-    "qwen3.8-27b":    {"ep": "_nd_qwen38", "nd_model": "qwen3.8-27b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # Qwen precise preset (temp 0.6, matches 27b/35b); default thinking on (no forced effort — max thinking made hard tasks 10-20min and neuraldeep allows only 1 parallel req); neuraldeep -> serial
+    "qwen3.8-27b":    {"ep": "empirio-qwen38", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True, "reasoning_effort": "high"},  # EmpirioLabs (trusted 3.8 host; neuraldeep suspected of serving 3.6). Heaviest ~13 tasks may 502 -> accept partial. Qwen precise preset (temp 0.6, matches 27b/35b); default thinking on; EmpirioLabs direct host (parallel-capable, 32K output cap) instead of neuraldeep's 1-req serial
 }
 VL_CFG = {
     "27b-v2":      {"ep": "27b-v2",  "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},
@@ -53,7 +53,7 @@ VL_CFG = {
     "kimi-k2.6":     {"ep": "_nd_kimi", "nd_model": "kimi-k2.6", "temperature": 1.0, "top_p": 0.95},  # Moonshot thinking-mode vendor params; vision-capable, thinking on by default
     "minimax-m3":    {"ep": "minimax-m3", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # MiniMax card: temp 1.0 / top_p 0.95 / top_k 40; reasoning on by default
     "35b-a3b-nd":    {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host
-    "qwen3.8-27b":   {"ep": "_nd_qwen38", "nd_model": "qwen3.8-27b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # Qwen VL preset (temp 0.6), vision-capable on neuraldeep; default thinking on; rate-limited -> serial
+    "qwen3.8-27b":   {"ep": "empirio-qwen38", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True, "reasoning_effort": "high"},  # Qwen VL preset (temp 0.6), vision-capable; EmpirioLabs direct host (parallel, 32K output cap)
 }
 
 

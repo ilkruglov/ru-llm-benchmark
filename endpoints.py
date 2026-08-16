@@ -122,4 +122,12 @@ def get_endpoints():
             "type": "deepinfra",
             "reasoning_field": "reasoning_content",
         },
+        {
+            "tag": "empirio-qwen38",
+            "url": "https://api.empiriolabs.ai/v1",   # direct host of Qwen3.8-27B; parallel-capable (unlike neuraldeep's 1-req limit), 32K output cap
+            "key": os.environ.get("EMPIRIOLABS_API_KEY", ""),
+            "model": "qwen3-8-27b",
+            "type": "empirio",
+            "reasoning_field": "reasoning_content",
+        },
     ]
