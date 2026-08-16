@@ -44,6 +44,10 @@ main,.wrap,article.task{max-width:100%;}
 article.task.vl{grid-template-columns:290px minmax(0,1fr);}
 article.task.vl .body{min-width:0;}
 @media (max-width:900px){article.task.vl{grid-template-columns:1fr;}.task .imgcol{position:static;}}
+/* mobile perf: with 180-300 per-task cards (tens of thousands of table cells) the full DOM
+   overwhelms phone browsers (page appears not to load). content-visibility defers rendering
+   of off-screen cards; contain-intrinsic-size gives the scrollbar an estimate so layout is stable. */
+article.task{content-visibility:auto;contain-intrinsic-size:0 720px;}
 """
 TEXT_W = {"correctness": 0.6, "format": 0.1, "russian": 0.3}
 VL_W = {"correctness": 0.8, "format": 0.1, "russian": 0.1}
