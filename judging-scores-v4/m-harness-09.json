@@ -169,6 +169,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Корректный один шаг click buy-B по существующему id, нужный товар выбран верно. Формат строгий, рассуждение чуть короче, но достаточное."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный единственный шаг: клик по реальному buy-B для новой Wilfa Svart, исключая Uniform и б/у. Формат строгий и валидный, рассуждение краткое, но корректное."
+  },
+  "qwen3.8-27b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг: клик buy-B — новая «Wilfa Svart», явно исключены Uniform и б/у. Ровно один блок, валидный JSON, корректный формат Thought/Action/Action Input."
   }
  },
  "winner": "glm-5.2",

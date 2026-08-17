@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Правильный вывод и корректная остановка: весь спад = отток, Enterprise 60000/74000, даунгрейда нет. Thought+Final Answer, опора на реальные Observation."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный вывод: падение 74000 полностью объясняется churn Enterprise (81%), даунгрейда нет — остатка на него не остаётся. Корректная остановка на Final Answer, опора на реальные Observation. Рассуждение сжатое, но логически точное."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректно завершает Final Answer: churn = всё падение (74000=74000), виновник Enterprise 60000 (81%), даунгрейда нет — числа и вывод точны. Таблица и разбор среднего MRR глубокие; лёгкая условность с валютой (₽) и отсутствие Thought перед Final Answer не критичны."
   }
  },
  "winner": "deepseek-flash",

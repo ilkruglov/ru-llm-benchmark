@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 8,
    "comment": "Полностью корректные тесты: FakeTime через monkeypatch, все обязательные сценарии (timeout=0/недостаточный/достаточный/None, refill, cap, thread-safety slow), pytest.approx, организация по классам. Чуть меньше поясняющей прозы, чем у лидера."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 6,
+   "comment": "Тесты корректны и прошли бы: monkeypatch на rate_limiter.time точен, покрыты все требуемые сценарии (init, try_acquire, refill, cap, timeout=0≈try_acquire, недостаточный/достаточный timeout, slow thread-safety с barrier и rate=1e-9), фикстуры с params=, pytest.approx, >15 тестов. Русских пояснений мало — почти чистый код."
+  },
+  "qwen3.8-27b": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Код полностью рабочий и детерминированный (патч monotonic+sleep через FakeClock), все ветки acquire/refill/timeout прослеживаются верно, 25 тестов, conftest с маркером slow, pytest.approx везде. Минус: не использована фикстура с параметрами через params= (использованы только parametrize и фабрика make_limiter), что явно требовалось в п.1."
   }
  },
  "winner": "glm-5.2",

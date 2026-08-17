@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Крепкий исполнимый план с грамотным fencing (aws ec2 stop-instances), очисткой stale-ключей etcd и корректной PITR-веткой; чуть менее глубок в валидации метрик/observability и коммуникациях, рассуждение местами короче, но всё конкретно и выполнимо в стрессе."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Практически исполнимый runbook: все 8 разделов, явный decision tree с ветками потери etcd-кворума, fencing старого primary против split-brain, корректная PITR-логика (база 00:00 + WAL, а не 02:00), snapshots и сбор артефактов до удаления. Команды реалистичны и готовы к 3 утра."
+  },
+  "qwen3.8-27b": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Полный runbook по всем 8 пунктам с явными ветвлениями, конкретными командами и учётом split-brain/потери данных. Минусы исполнимости: перезапись всего postgresql.conf через cat >, ошибочный --dbname=host в pg_basebackup, отсутствие recovery.signal для PITR в PG15, pg_stat_replication на реплике."
   }
  },
  "winner": "gpt-5.5-medium",

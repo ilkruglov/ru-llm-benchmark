@@ -169,6 +169,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Идеальный ход: единственный повтор того же вызова check_health по политике временных ошибок, без галлюцинаций. Рассуждение чуть подробнее, явно упоминает последующее решение промоут/откат."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный следующий шаг: единственный допустимый повтор check_health после временного GATEWAY_TIMEOUT, без выдумывания Observation. Формат строго ReAct, аргументы валидны; рассуждение верное, но лаконичное."
+  },
+  "qwen3.8-27b": {
+   "correctness": 0,
+   "reasoning": 2,
+   "format": 2,
+   "russian": 8,
+   "comment": "Первый шаг (один повтор check_health) верный, но модель выдумала Observation'ы (healthy error_rate=0.002, promote ok, notify sent) и прогнала весь цикл до Final Answer, грубо нарушив запрет на фабрикацию наблюдений и правило 'ровно один блок'. Галлюцинация данных = correctness 0."
   }
  },
  "winner": "deepseek-flash-0731",

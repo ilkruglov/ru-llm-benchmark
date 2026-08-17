@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Исчерпывающий исполнимый план: явные зависимости по задачам, элегантная сверка через коммутативный XOR(SHA256) с drill-down, трёхуровневый rollback и разбивка бюджета. Чистый русский, минимум замечаний."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Исчерпывающий, практически исполнимый план: все 6 разделов закрыты, конкретный CDC через DMS+binlog→S3, идемпотентность через event_ledger и UNIQUE, чек-суммы SHA256 по 4096 PK-чанкам с xor/sum/ordered, pgcrypto+HMAC blind index, честный нюанс rollback после включения writes. Задачи с ролями/чел-днями/зависимостями, минутный runbook cutover. Придирки минимальны."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Практически исполнимый план: верное ключевое решение (cutover = catch-up дельты, а не загрузка 4.2 ТБ), CDC с идемпотентностью по LSN, конкретная сверка по партиционным чек-суммам, blind index/content_hash для PII под pgcrypto с random IV, 12 рисков, бюджет в $15k, rollback и KPI. Мелкие опечатки/англицизмы в русском (бенчмарч, Непроускная)."
   }
  },
  "winner": "gpt-5.5-medium",

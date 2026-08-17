@@ -169,8 +169,22 @@
    "format": 9,
    "russian": 8,
    "comment": "MSK+SQS с конкретными конфигами (acks=all, RF=3, zstd), расчётами партиций и стораджа (43/130 TB), EventBridge Scheduler для delay>15 мин и compliance через метаданные-only для класса B; выбор SQS честно обоснован под малую команду. Русский хороший, но местами англицизмы (sustained, bottleneck, awkward)."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью закрывает все 6 пунктов: гибрид MSK+SQS с реалистичными цифрами, exactly-once через outbox/inbox и commit offset после транзакции, корректная compliance-логика (payload_ref, VPC endpoint не меняет место хранения тела), риски с митигейшнами и условия пересмотра включая hot-account partition. Практически исполнимо, глубоко и точно."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полное покрытие всех 6 пунктов: гибрид Kafka(A)/RabbitMQ(B) с привязкой к цифрам (45k->135k, FIFO ~3k/s), корректное отвержение SQS и exactly-once через идемпотентных потребителей, compliance через VPC, 3 риска с митигейшн и внятные условия пересмотра. Практически исполнимо; чуть недостаёт явного transactional outbox на стороне продюсера."
   }
  },
- "winner": "gpt-5.5-low",
+ "winner": "qwen3.8-27b",
  "notes": "Топ-уровень заняло семейство GPT-5.6 и gpt-5.5 (MSK для A + SQS/RabbitMQ для B, exactly-once как бизнес-эффект через outbox/inbox, claim-check compliance); luna-high выделяется расчётом хранилища и оговоркой о неизвестной нагрузке B. Провалился nemotron-omni (распад в мусор), gpt-oss и 35b-a3b проиграли по практической исполнимости для слабой команды."
 }

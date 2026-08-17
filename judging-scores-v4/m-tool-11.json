@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Чистая и абсолютно корректная логика без выдуманных значений: параллельный health, условные деплои, единый агрегатор, условный пейджинг. Рассуждение аккуратное, но менее детальное, чем у лучших ответов."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректная map-reduce-логика: параллельный MAP из 5 health, get_recent_deploys только для нездоровых, ровно один aggregate_incident_report и условный page_oncall при critical/high. Чисто и без выдумок, чуть лаконичнее топовых калибровочных ответов."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью соблюдены все 5 правил: параллельный health-батч, условный get_recent_deploys(since_minutes=60) только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, без выдуманных данных. Разобраны ветки A/B/C. Минус — избыточная повторяемость."
   }
  },
  "winner": "27b-v2",

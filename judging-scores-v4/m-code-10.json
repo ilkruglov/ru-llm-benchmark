@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Полная валидная спека: все операции (плюс per-file DELETE), все коды, корректные callbacks-webhooks с событием, пагинация статуса для 10k файлов, примеры на каждый error-ответ, additionalProperties:false; чёткое обоснование Content-Range+HEAD, идемпотентности и масштабирования на русском."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полная валидная OpenAPI 3.1 спецификация: все 6 операций, все требуемые коды ответов, RFC 7807 problem+json, Idempotency-Key с UUID-паттерном, sha256-паттерны, examples, webhooks через callbacks, Retry-After — все $ref резолвятся, YAML парсится. Итоговое объяснение чётко покрывает Content-Range vs tus, S3 multipart, идемпотентность и масштабирование."
+  },
+  "qwen3.8-27b": {
+   "correctness": 1,
+   "reasoning": 8,
+   "format": 3,
+   "russian": 8,
+   "comment": "Дизайн отличный и полный (все операции, RFC 7807, tus vs Content-Range, S3 multipart, идемпотентность, webhooks с HMAC, масштабирование), но YAML НЕ парсится: 7 незакрытых одинарных кавычек ('#/.../Problem500 и Problem429) ломают документ, а главное требование — валидный OpenAPI. Русское объяснение сильное."
   }
  },
  "winner": "gpt-5.6-sol-medium",

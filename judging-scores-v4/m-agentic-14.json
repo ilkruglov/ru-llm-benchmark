@@ -169,8 +169,22 @@
    "format": 9,
    "russian": 9,
    "comment": "Очень полный и технически точный ре-план: явно разобраны Object Lock compliance vs governance, Fail-safe/transient-таблицы, HMAC-lookup для erasure без хранения email, noncurrent-версии, эскалация рисков. Отличная структура и чистый русский."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Исчерпывающий и технически точный ре-планнинг: покрыты все пункты а-д, глубоко разобраны immutable S3 Object Lock, crypto-shredding, Snowflake Time Travel/Fail-safe/clones, псевдонимизация vs анонимизация, erasure control plane, day-0 заморозка и go/no-go. Формат чуть теряет из-за слабо явных акторов, но в целае образцовый ответ."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Практически исполнимый план: закрывает все пункты (а-д), честно разбирает тупики immutable-S3/бэкапов через crypto-shredding, даёт erasure-workflow с индексом и SLA, бэкилл, заморозку и критический путь. Русский хороший, лишь единичные опечатки/англицизмы (Стоп-пись, встать vault)."
   }
  },
- "winner": "gpt-5.6-sol-low",
+ "winner": "gpt-5.6-luna-xhigh",
  "notes": "Семейство gpt-5.6 (sol/luna/terra), deepseek-pro и kimi — топ: crypto-shredding, честность про immutable Object Lock Compliance и Fail-safe, sanitizer на границе, compatibility-view для events_flat. Победитель sol-low — самый исчерпывающий и практически исполнимый. nemotron-super и nemotron-omni — провал (деградация/срыв генерации)."
 }

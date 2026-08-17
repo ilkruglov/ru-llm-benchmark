@@ -169,8 +169,22 @@
    "format": 9,
    "russian": 9,
    "comment": "Все 3 утечки с точной цепочкой ссылок и верным объяснением почему GC не собирает; эталонный fix: WeakMethod + weakref.ref fallback, чистка мёртвых ссылок в publish/subscribe, deque(maxlen), инстанс-уровневый bounded OrderedDict-cache без self, close() без антипаттерна __del__. Полная и корректная диагностика (verно отмечено, что py-spy не показывает heap), regression test с gc.collect и snapshot diff."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Найдены все три утечки с точным механизмом (bound method в _subscribers, безлимитный _history, class-level _results_cache с self/payload), плюс верный вывод об O(N^2) росте. Fix идиоматичен (WeakMethod+prune, deque maxlen, LRU-cache без self), диагностика и regression-тест полны, ложных API нет."
+  },
+  "qwen3.8-27b": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все три утечки найдены верно с точными механизмами (retention из GC-root, не цикл), рабочий fix (deque/per-instance cache/unsubscribe), regression-тест и мониторинг. Минусы: manhole ошибочно описан как web-shell на http, битый сниппет метрик (isinstance с False) и странный тернарник в publish; упущен эффект O(N^2) роста processed_ids."
   }
  },
- "winner": "gpt-5.5-low",
+ "winner": "gpt-5.6-luna-xhigh",
  "notes": "Большинство gpt-5.5/5.6 и nemotron-super/deepseek дали корректные fix'ы (WeakMethod либо явный close/unsubscribe) с bounded-контейнерами; luna-high выделяется инженерной чистотой и оговорками. Провалы: kimi (NameError в publish), nemotron-omni (weakref.ref на bound method) и 35b-a3b (сломанный weakref.finalize) — fix не работает."
 }

@@ -125,7 +125,7 @@ MODEL_NAMES_FALLBACK = {
     "gpt-5.5-xhigh": "GPT-5.5 (xhigh)",
     "nemotron-super": "Nemotron-3-Super-120B", "nemotron-omni": "Nemotron-3-Nano-Omni-30B",
     "kimi-k2.6": "Kimi K2.6", "minimax-m3": "MiniMax-M3",
-    "gpt-5.6-sol-low": "GPT-5.6 Sol (low)", "gpt-5.6-sol-medium": "GPT-5.6 Sol (med)", "gpt-5.6-terra-low": "GPT-5.6 Terra (low)", "gpt-5.6-terra-medium": "GPT-5.6 Terra (med)", "gpt-5.6-terra-high": "GPT-5.6 Terra (high)", "gpt-5.6-luna-low": "GPT-5.6 Luna (low)", "gpt-5.6-luna-medium": "GPT-5.6 Luna (med)", "gpt-5.6-luna-high": "GPT-5.6 Luna (high)",
+    "gpt-5.6-sol-low": "GPT-5.6 Sol (low)", "gpt-5.6-sol-medium": "GPT-5.6 Sol (med)", "gpt-5.6-terra-low": "GPT-5.6 Terra (low)", "gpt-5.6-terra-medium": "GPT-5.6 Terra (med)", "gpt-5.6-terra-high": "GPT-5.6 Terra (high)", "gpt-5.6-luna-low": "GPT-5.6 Luna (low)", "gpt-5.6-luna-medium": "GPT-5.6 Luna (med)", "gpt-5.6-luna-high": "GPT-5.6 Luna (high)", "gpt-5.6-luna-xhigh": "GPT-5.6 Luna (xhigh)",
 }
 
 

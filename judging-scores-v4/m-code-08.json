@@ -169,8 +169,22 @@
    "format": 8,
    "russian": 9,
    "comment": "Верный разбор deadlock-а с конкретикой T1/T2 и точным замечанием, что исходник маскирует гонку сериализацией; дизайн single-flight корректен и после правки реально отрабатывает 50 задач без зависания. Но код как есть НЕ компилируется: рекурсивный async-вызов get_or_load требует Box::pin (E0733). По рубрике неработающий код => correctness 1."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Найдены все ключевые проблемы (lock через await, subscribe-after-send, unwrap-panic, утечка loader при отмене); честно отмечено, что строгого цикла X<->Y внутри функции нет. Фикс на Arc<OnceCell> с double-checked RwLock корректен, компилируется, сохраняет single-flight и не держит lock во время load. Единственный минор — конкретную реальную взаимоблокировку (держит inner в recv, а загрузчик ждёт inner) можно было связать явнее."
+  },
+  "qwen3.8-27b": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный per-key gate single-flight фикс: компилируется, реальные API (RwLock/Mutex/Arc), single-flight сохранён, load_from_db остаётся async. Минус: 'lock-order inversion' подан гипотетически, и не отмечено, что в исходнике ветка подписчика фактически недостижима (просто сериализация на inner), а не классический цикл."
   }
  },
- "winner": "gpt-5.6-sol-medium",
+ "winner": "gpt-5.6-luna-xhigh",
  "notes": "Ключевой водораздел: компилируется ли фикс и атомарны ли проверка кэша/регистрации загрузки; лучшие ответы (sol-medium, gpt-5.5-medium, luna-medium, terra-*) честно указывают, что в исходнике не ABBA-deadlock, а удержание inner через await и недостижимая broadcast-ветка. Провалы: nemotron-super (офф-топик), nemotron-omni (деградация), deepseek-pro/35b-a3b/gpt-oss-120b (некомпилируемый код)."
 }

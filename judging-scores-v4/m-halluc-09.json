@@ -169,8 +169,22 @@
    "format": 9,
    "russian": 9,
    "comment": "Точный, глубокий и хорошо структурированный ответ без выдуманных фактов: верный формат pg_current_snapshot и pg_prepared_xacts, корректные координаторы (Narayana/Atomikos/Bitronix, XA), правильные замечания про temp-таблицы, undo и max_prepared_transactions. Отличные SQL-примеры и сводная таблица."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Технически безупречный ответ без выдуманных фактов: реальные механизмы MVCC (xmin/xmax, snapshot, VACUUM) и 2PC (PREPARE/COMMIT PREPARED, max_prepared_transactions, реальные координаторы Narayana/Atomikos), корректные тонкости и уместные оговорки. Отличная структура и русский."
+  },
+  "qwen3.8-27b": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Технически очень точный и полный разбор MVCC и 2PC без выдуманных фактов; лёгкий минус за ошибочное утверждение, что нельзя PREPARE транзакцию с SAVEPOINT/подтранзакциями, и спорный нюанс о писателе, ждущем читателя. Отличная структура, таблицы, SQL-примеры, качественный русский."
   }
  },
- "winner": "gpt-5.6-sol-medium",
+ "winner": "gpt-5.6-luna-xhigh",
  "notes": "Большинство GPT-моделей и kimi дали технически безупречные ответы; sol-medium — самый полный и точный (pg_twophase, gid<200B, XA, edge-cases). Провал у nemotron-super (сбой в посторонний NSFW-текст) и слабо у nemotron-omni (xmin/xmax как OID, выдуманный pg_remote) и 35b-a3b (ложное 'PG использует 2PL')."
 }

@@ -169,8 +169,22 @@
    "format": 9,
    "russian": 9,
    "comment": "Точный, полностью grounded ответ: верно приписывает 403 к chunk_errors, явно исключает PKCE, различает лимиты endpoint и /token; чёткие маркеры [source] и качественный русский."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 5 пунктов строго из chunks, корректные citations, без галлюцинаций; бонус про 403->OAuth. Ответ очень лаконичный — рассуждение видно, но неглубоко раскрыто."
+  },
+  "qwen3.8-27b": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 5 пунктов строго из chunks с корректными citations, галлюцинаций нет. Отличное рассуждение: явно объясняет, почему PKCE не нужен и что refresh_token относится только к Authorization Code, а не Client Credentials; чёткие attribution-маркеры и безупречный русский."
   }
  },
- "winner": "minimax-m3",
+ "winner": "qwen3.8-27b",
  "notes": "Все модели верно определили Client Credentials/sensitive:write/60min. Победитель — sol-low за строгое заземление и честность о неуказанном в chunks. Слабейший — nemotron-omni (ошибка про refresh_token)."
 }

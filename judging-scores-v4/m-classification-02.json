@@ -169,6 +169,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Точная классификация по всем осям и полный корректный список vip_indicators без false positives. Actions привязаны к номеру полиса и осмотру 05.05, вывод — строго валидный JSON на грамотном русском."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все оси классификации совпадают с консенсусом сильных моделей (KASKO, complaint, threatening, critical, все 7 vip-индикаторов, P0), ложных срабатываний нет. Чистый валидный JSON и грамотный русский; явного рассуждения нет, но required_actions содержательны и приоритезированы."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все оси верны (KASKO/complaint/critical/P0, полный набор из 7 vip-индикаторов без ложных), спорно лишь emotional_state=angry вместо более точного threatening при явных угрозах ЦБ/суд/СМИ. Богатый и продуманный список required_actions; JSON валиден, русский хороший, мелкая опечатка «Учсть»."
   }
  },
  "winner": "gpt-oss-120b",

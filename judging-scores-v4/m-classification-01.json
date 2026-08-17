@@ -169,8 +169,22 @@
    "format": 10,
    "russian": 10,
    "comment": "Точная multi-label разметка из 7 интентов без FP/FN, верные primary_intent и urgency. Чистый валидный JSON без обёрток, обоснование корректное, хотя чуть менее детальное."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 7 корректных интентов (включая fraud_report), без ложных срабатываний; primary_intent=card_block и urgency=critical обоснованы. JSON чистый, без обёрток; обоснование краткое, но покрывает все намерения."
+  },
+  "qwen3.8-27b": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 9,
+   "comment": "Полная и точная multi-label разметка из 7 корректных меток без ложных срабатываний, primary_intent=card_block и urgency=critical обоснованы. Обоснование детально цитирует каждый интент; лёгкая помарка в слове 'оспорение' вместо 'оспаривание'."
   }
  },
- "winner": "deepseek-pro",
+ "winner": "qwen3.8-27b",
  "notes": "Эталон: 7 меток (card_block, transfer_dispute, fraud_report, mobile_app_issue, account_statement, credit_application, complaint_service), primary_intent=card_block, urgency=critical. Основные расхождения — пропуск fraud_report (35b-a3b, gpt-5.5-medium, nemotron-omni, kimi-k2.6), выбор fraud_report как primary и markdown-обёртки вокруг JSON."
 }

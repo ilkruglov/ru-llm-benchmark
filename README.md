@@ -4,8 +4,8 @@
 юридический комплаенс, корпоративные финансы, BI и данные, ВЭД и логистика, стройка, нефтегаз,
 промышленность, банки.
 
-* **Текст** — 181 задача, 24 модели, 21 категория
-* **Зрение** — 303 задачи, 19 моделей, 17 способностей на 8 отраслей
+* **Текст** — 181 задача, 26 моделей, 21 категория
+* **Зрение** — 303 задачи, 20 моделей, 17 способностей на 8 отраслей
 
 Отчёты с разбором каждой задачи:
 [текстовый](https://ilkruglov.github.io/ru-llm-benchmark/text-benchmark.html) ·
@@ -19,33 +19,34 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | GPT-5.6 Sol (medium) | 9.04 | | 13 | DeepSeek v4-pro (старый) | 8.49 |
-| 2 | DeepSeek v4-pro-new | 8.96 | | 14 | MiniMax-M3 | 8.39 |
-| 3 | GPT-5.6 Sol (low) | 8.87 | | 15 | GPT-5.6 Luna (low) | 8.34 |
-| 4 | GPT-5.5 (medium) | 8.85 | | 16 | Kimi K2.6 | 8.33 |
-| 5 | GPT-5.6 Luna (high) | 8.84 | | 17 | DeepSeek v4-flash (до 0731) | 8.19 |
-| 6 | GPT-5.6 Terra (high) | 8.77 | | 18 | Qwen3.6-27B-FP8 | 8.16 |
-| 7 | GPT-5.5 (low) | 8.76 | | 19 | Gemma-4-31B | 8.00 |
-| 8 | GPT-5.6 Terra (medium) | 8.74 | | 20 | Qwen3.6-35B-A3B-FP8 | 7.85 |
-| 9 | GPT-5.6 Terra (low) | 8.62 | | 21 | gpt-oss-120b | 7.34 |
-| 10 | DeepSeek v4-flash-0731 | 8.56 | | 22 | DiffusionGemma | 6.08 |
-| 11 | GPT-5.6 Luna (medium) | 8.53 | | 23 | Nemotron-3-Nano-Omni-30B | 4.57 |
-| 12 | GLM-5.2 | 8.50 | | 24 | Nemotron-3-Super-120B | 4.36 |
+| 1 | GPT-5.6 Sol (medium) | 9.04 | | 14 | DeepSeek v4-pro (старый) | 8.49 |
+| 2 | **GPT-5.6 Luna (xhigh)** | **9.01** | | 15 | **Qwen3.8-27B** | **8.47** |
+| 3 | DeepSeek v4-pro-new | 8.96 | | 16 | MiniMax-M3 | 8.39 |
+| 4 | GPT-5.6 Sol (low) | 8.87 | | 17 | GPT-5.6 Luna (low) | 8.34 |
+| 5 | GPT-5.5 (medium) | 8.85 | | 18 | Kimi K2.6 | 8.33 |
+| 6 | GPT-5.6 Luna (high) | 8.84 | | 19 | DeepSeek v4-flash (до 0731) | 8.19 |
+| 7 | GPT-5.6 Terra (high) | 8.77 | | 20 | Qwen3.6-27B-FP8 | 8.16 |
+| 8 | GPT-5.5 (low) | 8.76 | | 21 | Gemma-4-31B | 8.00 |
+| 9 | GPT-5.6 Terra (medium) | 8.74 | | 22 | Qwen3.6-35B-A3B-FP8 | 7.85 |
+| 10 | GPT-5.6 Terra (low) | 8.62 | | 23 | gpt-oss-120b | 7.34 |
+| 11 | DeepSeek v4-flash-0731 | 8.56 | | 24 | DiffusionGemma | 6.08 |
+| 12 | GPT-5.6 Luna (medium) | 8.53 | | 25 | Nemotron-3-Nano-Omni-30B | 4.57 |
+| 13 | GLM-5.2 | 8.50 | | 26 | Nemotron-3-Super-120B | 4.36 |
 
 ### Зрение
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | Kimi K2.6 | 9.01 | | 11 | GPT-5.6 Terra (low) | 8.73 |
-| 2 | GPT-5.6 Sol (medium) | 8.99 | | 12 | GPT-5.6 Luna (high) | 8.72 |
-| 3 | GPT-5.5 (medium) | 8.95 | | 13 | GPT-5.6 Luna (medium) | 8.69 |
-| 4 | GPT-5.6 Sol (low) | 8.94 | | 14 | GPT-5.6 Luna (low) | 8.57 |
-| 5 | **Qwen3.8-27B** | **8.91** | | 15 | Gemma-4-31B | 8.46 |
-| 6 | GPT-5.5 (low) | 8.89 | | 16 | DiffusionGemma | 8.20 |
-| 7 | GPT-5.6 Terra (medium) | 8.86 | | 17 | MiniMax-M3 | 8.10 |
-| 8 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 18 | Llama-4-Scout-17B | 7.53 |
-| 9 | Qwen3.6-27B-FP8 | 8.77 | | 19 | Nemotron-3-Nano-Omni-30B | 6.80 |
-| 10 | GPT-5.6 Terra (high) | 8.75 | | | | |
+| 1 | Kimi K2.6 | 9.01 | | 11 | GPT-5.6 Terra (high) | 8.75 |
+| 2 | GPT-5.6 Sol (medium) | 8.99 | | 12 | GPT-5.6 Terra (low) | 8.73 |
+| 3 | **GPT-5.6 Luna (xhigh)** | **8.95** | | 13 | GPT-5.6 Luna (high) | 8.72 |
+| 4 | GPT-5.5 (medium) | 8.95 | | 14 | GPT-5.6 Luna (medium) | 8.69 |
+| 5 | GPT-5.6 Sol (low) | 8.94 | | 15 | GPT-5.6 Luna (low) | 8.57 |
+| 6 | **Qwen3.8-27B** | **8.91** | | 16 | Gemma-4-31B | 8.46 |
+| 7 | GPT-5.5 (low) | 8.89 | | 17 | DiffusionGemma | 8.20 |
+| 8 | GPT-5.6 Terra (medium) | 8.86 | | 18 | MiniMax-M3 | 8.10 |
+| 9 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 19 | Llama-4-Scout-17B | 7.53 |
+| 10 | Qwen3.6-27B-FP8 | 8.77 | | 20 | Nemotron-3-Nano-Omni-30B | 6.80 |
 
 ## Как считалось
 

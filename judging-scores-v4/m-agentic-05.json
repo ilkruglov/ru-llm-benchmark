@@ -169,6 +169,20 @@
    "format": 8,
    "russian": 9,
    "comment": "Полное исполнимое покрытие: явная SLA-матрица тип×сегмент×срочность, разделены confidence классификатора и RAG, billing-подтип как гейт, дедуп/reopen/sentiment-триггеры и 5 детальных сквозных примеров. Не хватает жёсткого policy-gate против авто-закрытия и продвинутых guardrails (DLP/prompt-injection)."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Покрыты все 8 требований: дедуп с порогами similarity, мультиосевая классификация, RAG с grounding и safety-guardrails, таблица маршрутизации, матрица SLA, escalation triggers, handoff с контекстом, feedback loop с canary/rollback. 7 сквозных примеров (нужно 5), реалистично и практично. Отличная структура и русский; безупречно, но без формальной блок-схемы-графа мелкие придирки."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный end-to-end workflow: все 10 узлов, блок-схема, state-machine, матрица SLA, дословные правила маршрутизации, триггеры эскалации, handoff и retrain с canary/rollback, 6 разобранных примеров с edge cases и инструментами. Практически исполнимо, зрелые рассуждения о порогах и приоритетах; язык естественный."
   }
  },
  "winner": "gpt-5.6-sol-low",

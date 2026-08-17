@@ -169,6 +169,20 @@
    "format": 10,
    "russian": 7,
    "comment": "Валидный YAML, все ключи в нужном порядке, tls.enabled=false с пустыми строками, pool min<=max, password_env по regex, features 5/true+false, 3 ноды. Всё строго по схеме."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 5,
+   "comment": "Валидный YAML 1.2, все 7 верхних ключей в правильном порядке, без лишних ключей, якорей и комментариев. Все ограничения соблюдены: semver, порт в диапазоне, password_env по регэкспу, ровно 3 узла кэша, 5 фича-флагов с true и false, теги в snake_case."
+  },
+  "qwen3.8-27b": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 6,
+   "comment": "Валидный YAML 1.2, все верхнеуровневые ключи в нужном порядке и типах; enum-значения, semver, password_env, ровно 3 узла кэша, 5 фич-флагов с true/false, 4 snake_case тега — всё по схеме. Ведущие пустые строки безвредны, запрещённых конструкций нет."
   }
  },
  "winner": "gpt-oss-120b",

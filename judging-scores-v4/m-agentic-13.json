@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Наиболее полный разбор: expand/contract, батчевый backfill, dual-write+fallback, pg_dump, smoke-тесты, обратный backfill при откате, canary. Практические огрехи: UPDATE ... LIMIT в PostgreSQL так не работает (нужен подзапрос по ctid/id), в остальном исполнимо и аккуратно."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Покрывает все 6 изъянов с точными последствиями и конкретными правками (expand/contract, RollingUpdate maxUnavailable:0 + canary, dual-write и feature flags, namespacing вместо FLUSHALL, forward-fix rollback, автоматические SLO-gates), технически аккуратен (верно про constant DEFAULT в PG14) и практически исполним. Небольшой минус форматирования: в итоговом плане нет явных акторов и длительностей этапов."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Практически исполнимый, крайне конкретный разбор: expand/contract с lock_timeout и батчами, RollingUpdate+canary, dual-write, отказ от FLUSHALL, откат из бэкапа, авто-rollback по SLO и reconciliation. Мелкие технические огрехи (COMMIT в DO-блоке, флаг redis) и русские опечатки ('квезятся','висяк','длиннющий транзакция') мешают максимуму."
   }
  },
  "winner": "gpt-5.6-sol-low",

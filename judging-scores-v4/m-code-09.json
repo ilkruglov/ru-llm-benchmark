@@ -169,6 +169,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Все требования выполнены корректно: две блокировки (mu для хуков, stateMu для сериализации переходов), nil-проверки, UnmarshalJSON, Example с верным Output. Чуть менее подробное объяснение и лёгкая over-serialization всех заказов через общий stateMu, но код рабочий и идиоматичный."
+  },
+  "gpt-5.6-luna-xhigh": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Корректный компилируемый Go: все 10 требований выполнены, нет выдуманных API, sentinel-ошибки с %w, UnmarshalJSON-валидация, RWMutex, плюс безопасный dispatch хуков без deadlock и доп. mutex на Order. Обоснование выбора *Order краткое, но по делу; объяснения на русском лаконичны и верны."
+  },
+  "qwen3.8-27b": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Компилируемый идиоматичный Go, все 10 требований покрыты (sentinel-ошибки с %w, string-тип, *Order с обоснованием, Hook func(*Order), slice of struct, RWMutex со snapshot хуков вне лока, UnmarshalJSON-валидация, пример main). Мелочи: snapshot хуков до проверки легальности перехода и выдуманные детерминированные таймстемпы в примере вывода."
   }
  },
  "winner": "glm-5.2",
