@@ -53,17 +53,17 @@
   },
   "gpt-5.5-low": {
    "correctness": 8,
-   "reasoning": 8,
+   "reasoning": 7,
    "format": 8,
    "russian": 9,
-   "comment": "Полный план с JSON-аргументами: cursor=null, цикл по next_cursor до has_more=false/null, агрегаты с days_overdue>30, одно письмо. Честно не выдумывает числа."
+   "comment": "Полный корректный план: cursor=null, цикл по next_cursor до has_more=false, days_overdue>30, одно письмо в конце. Не выдумывает данные."
   },
   "gpt-5.5-medium": {
    "correctness": 9,
-   "reasoning": 9,
+   "reasoning": 8,
    "format": 9,
    "russian": 9,
-   "comment": "Наиболее полный: явный цикл с условием выхода, все агрегаты (>30 строго), одно send_dunning_email, плюс шаблон итогового отчёта. Эталонная логика."
+   "comment": "Самый полный: правильный цикл, явная зависимость от next_cursor, строго >30, одно письмо, плюс шаблон итогового отчёта. Ничего не выдумывает."
   },
   "nemotron-super": {
    "correctness": 1,
@@ -91,56 +91,56 @@
    "reasoning": 6,
    "format": 7,
    "russian": 9,
-   "comment": "Верная логика цикла (next_cursor до has_more=false/null, >30, одно письмо), но кратко и с рамкой 'инструменты недоступны'."
+   "comment": "Компактный, но корректный план: cursor=null, точный next_cursor до конца, >30, одно письмо. Начинается с отказа-фрейма, коротко."
   },
   "gpt-5.6-luna-low": {
    "correctness": 8,
    "reasoning": 7,
    "format": 8,
    "russian": 9,
-   "comment": "Чёткий план с JSON: cursor=null, цикл по точному next_cursor до has_more=false/null, агрегаты >30, одно письмо."
+   "comment": "Полный корректный план цикла с точным next_cursor и условием выхода, days_overdue>30, одно письмо. Не выдумывает."
   },
   "gpt-5.6-luna-medium": {
    "correctness": 7,
    "reasoning": 7,
-   "format": 7,
+   "format": 8,
    "russian": 9,
-   "comment": "Хороший план, подчёркивает что cursor берётся из предыдущего ответа, одно письмо; шаг агрегации менее выражен, но >30 упомянут."
+   "comment": "Верный цикл, отлично подчёркнута зависимость cursor из предыдущего ответа. Агрегаты упомянуты слабее (в дисклеймере), но одно письмо и логика верны."
   },
   "gpt-5.6-sol-low": {
    "correctness": 7,
    "reasoning": 6,
    "format": 7,
    "russian": 9,
-   "comment": "Сжатый корректный план: cursor=null, while has_more & next_cursor!=null, >30, одно письмо. Немного лаконично."
+   "comment": "Сжатый, но верный план: cursor=null, цикл по next_cursor, >30, одно письмо. Больше уклон в отказ."
   },
   "gpt-5.6-sol-medium": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Подробный и точный: цикл с точным next_cursor, объединение страниц, сумма, строго >30, ровно одно письмо. Не подставляет вымысел."
+  },
+  "gpt-5.6-terra-high": {
    "correctness": 7,
    "reasoning": 6,
    "format": 7,
    "russian": 9,
-   "comment": "Верная логика цикла и агрегатов (>30), одно письмо. Кратко."
+   "comment": "Компактный корректный план: cursor=null, точный next_cursor до конца, >30 дней, одно письмо. Кратко, с предложением подключить инструменты."
   },
-  "gpt-5.6-terra-high": {
+  "gpt-5.6-terra-low": {
    "correctness": 6,
    "reasoning": 6,
    "format": 7,
    "russian": 9,
-   "comment": "Логика верна, но условие выхода описано расплывчато ('до конца пагинации') без явной привязки к has_more/next_cursor. >30 корректно, одно письмо."
-  },
-  "gpt-5.6-terra-low": {
-   "correctness": 6,
-   "reasoning": 5,
-   "format": 7,
-   "russian": 9,
-   "comment": "Кратко: цикл 'пока не закончатся страницы' без явного условия по has_more; просрочка >30, одно письмо. Логика в целом верна."
+   "comment": "Краткий верный план цикла и агрегатов, одно письмо. Уклон в отказ, минимум деталей о зависимости от курсора."
   },
   "gpt-5.6-terra-medium": {
    "correctness": 6,
    "reasoning": 6,
    "format": 7,
    "russian": 9,
-   "comment": "Рамка недоступности, затем план: цикл с next_cursor до завершения, >30, одно письмо. Условие выхода менее явное."
+   "comment": "Начинается с отказа, затем краткий корректный план: cursor=null, точный next_cursor, >30, одно письмо. Логика верна, но детализация минимальна."
   },
   "minimax-m3": {
    "correctness": 2,
@@ -173,9 +173,9 @@
   "gpt-5.6-luna-xhigh": {
    "correctness": 7,
    "reasoning": 7,
-   "format": 7,
+   "format": 8,
    "russian": 9,
-   "comment": "Правильная логика: цикл до has_more==false/next_cursor==null, агрегаты >30, одно письмо. Кратко, рамка недоступности инструментов."
+   "comment": "Полный корректный план с условием выхода и >30, одно письмо. Лишний отказ-фрейм про отсутствие инструментов, но логика правильная."
   },
   "qwen3.8-27b": {
    "correctness": 8,

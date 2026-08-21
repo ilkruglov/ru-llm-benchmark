@@ -52,18 +52,18 @@
    "comment": "Симулировал 2 попытки с выдуманными ответами и success. Аргументы и логика верны, но результаты сфабрикованы вместо ожидания реального ответа."
   },
   "gpt-5.5-low": {
-   "correctness": 2,
-   "reasoning": 2,
-   "format": 6,
-   "russian": 8,
-   "comment": "Полный отказ: посчитал инструменты недоступными, не описал ни вызова charge_card, ни политику ретраев. Неверный подход по notes."
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный первый charge_card, полностью описан весь дерево ретраев с корректными notify_ops (high/medium), константный ключ, финал про 0 факт. попыток"
   },
   "gpt-5.5-medium": {
-   "correctness": 3,
-   "reasoning": 3,
-   "format": 7,
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
    "russian": 9,
-   "comment": "Тоже отказ, но упомянул max 3 попытки и неизменный ключ. Не описал первый вызов и ветвление — слабо."
+   "comment": "Правильный первый вызов и все ветки политики с корректными notify_ops; чуть суше, но полно"
   },
   "nemotron-super": {
    "correctness": 8,
@@ -91,56 +91,56 @@
    "reasoning": 8,
    "format": 8,
    "russian": 9,
-   "comment": "Верный первый вызов с корректными аргументами и полное ветвление: success/transient(до 3, потом notify_ops high)/permanent(notify_ops medium). Сообщения и severity точны."
+   "comment": "Первый вызов верный, все три ветки и notify_ops корректны, компактно"
   },
   "gpt-5.6-luna-low": {
    "correctness": 5,
    "reasoning": 4,
    "format": 7,
    "russian": 9,
-   "comment": "Корректный первый вызов, но политику ретраев не описал, остановился на 'результат не предоставлен'. Частично."
+   "comment": "Только первый корректный вызов, дальше отказ описывать политику ретраев — неполно"
   },
   "gpt-5.6-luna-medium": {
    "correctness": 5,
    "reasoning": 4,
    "format": 7,
    "russian": 9,
-   "comment": "Только первый вызов с верными аргументами, дальше стоп без описания ветвления. Частично."
+   "comment": "Только первый вызов, ветки ретраев/notify_ops не описаны — неполно"
   },
   "gpt-5.6-sol-low": {
-   "correctness": 8,
+   "correctness": 9,
    "reasoning": 8,
-   "format": 8,
+   "format": 9,
    "russian": 9,
-   "comment": "Наиболее подробно: первый вызов, ветви с числом попыток (1/1/3), notify_ops high/medium корректны, ключ неизменен."
+   "comment": "Детально: первый вызов, все ветки со счётчиком попыток, корректные notify_ops, константный ключ"
   },
   "gpt-5.6-sol-medium": {
    "correctness": 8,
-   "reasoning": 7,
-   "format": 8,
-   "russian": 9,
-   "comment": "Первый вызов + полное ветвление, верные severity и сообщения, неизменный idempotency_key."
-  },
-  "gpt-5.6-terra-high": {
-   "correctness": 8,
    "reasoning": 8,
    "format": 8,
    "russian": 9,
-   "comment": "Полное последовательное описание попыток 1-2-3, notify_ops high/medium, корректные аргументы и severity."
+   "comment": "Первый вызов верный, все ветки и notify_ops корректны, max 3 попытки указан"
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полное дерево с числом попыток по каждой ветке, корректные notify_ops, точные аргументы"
   },
   "gpt-5.6-terra-low": {
    "correctness": 5,
    "reasoning": 4,
    "format": 7,
    "russian": 9,
-   "comment": "Верный первый вызов, но политику ретраев не раскрыл, ссылается на отсутствие результата. Частично."
+   "comment": "Только первый корректный вызов, политика ретраев не описана — неполно"
   },
   "gpt-5.6-terra-medium": {
    "correctness": 5,
    "reasoning": 4,
-   "format": 7,
+   "format": 6,
    "russian": 9,
-   "comment": "Только первый вызов с корректными аргументами, без описания ветвления ретраев. Частично."
+   "comment": "Только первый вызов, ветки не раскрыты — неполно"
   },
   "minimax-m3": {
    "correctness": 6,
@@ -175,7 +175,7 @@
    "reasoning": 8,
    "format": 8,
    "russian": 9,
-   "comment": "Первый вызов + полная логика ретраев, notify_ops high/medium с точными сообщениями. Корректно."
+   "comment": "Верный первый вызов и полное дерево веток с корректными notify_ops, transaction_id null"
   },
   "qwen3.8-27b": {
    "correctness": 1,

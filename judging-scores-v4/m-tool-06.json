@@ -53,17 +53,17 @@
   },
   "gpt-5.5-low": {
    "correctness": 10,
-   "reasoning": 9,
+   "reasoning": 8,
    "format": 9,
-   "russian": 9,
-   "comment": "Точный payload по схеме, все нормализации верны и перечислены."
+   "russian": 10,
+   "comment": "Payload полностью по схеме: все поля, типы, enum, даты/телефон нормализованы, options=[GLASS,GAP], franchise 0, promo null. Нормализация перечислена (телефон, даты, срок, usage, франшиза, промо). Идеально."
   },
   "gpt-5.5-medium": {
    "correctness": 10,
-   "reasoning": 9,
+   "reasoning": 8,
    "format": 9,
-   "russian": 9,
-   "comment": "Идеальный вызов, корректные типы и дефолты, полное пояснение."
+   "russian": 10,
+   "comment": "Идентично корректный вызов, полный набор нормализаций включая usage->PERSONAL и срок->12. Ошибок нет."
   },
   "nemotron-omni": {
    "correctness": 9,
@@ -87,60 +87,60 @@
    "comment": "Все значения корректны, хорошее обоснование; формат — псевдокод-вызов, не строгий JSON."
   },
   "gpt-5.6-luna-high": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 5,
-   "russian": 8,
-   "comment": "Ошибочно отказалась ('функция отсутствует'), полного вызова нет — лишь частичный список нормализаций."
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 10,
+   "comment": "Payload корректен полностью. Пояснение чуть короче: usage->PERSONAL явно не назван, остальное покрыто. Без ошибок."
   },
   "gpt-5.6-luna-low": {
    "correctness": 10,
-   "reasoning": 9,
+   "reasoning": 8,
    "format": 9,
-   "russian": 9,
-   "comment": "Полный корректный текстовый вызов, верные нормализации."
+   "russian": 10,
+   "comment": "Корректный вызов, нормализация полная: даты, телефон, срок->12, франшиза 0, промо null, 'сама, не такси'->PERSONAL."
   },
   "gpt-5.6-luna-medium": {
    "correctness": 10,
-   "reasoning": 8,
+   "reasoning": 7,
    "format": 9,
    "russian": 9,
-   "comment": "Точный payload, отмечено отсутствие ROADSIDE; пояснение чуть короче."
+   "comment": "Payload верный. Пояснение слегка сумбурно ('отсутствие roadside отражено отсутствием ROADSIDE'), usage не назван явно. Содержательно верно."
   },
   "gpt-5.6-sol-low": {
    "correctness": 10,
-   "reasoning": 9,
+   "reasoning": 8,
    "format": 9,
-   "russian": 9,
-   "comment": "Корректно обёрнут в payload, все значения и нормализации точны."
+   "russian": 10,
+   "comment": "Верный payload в обёртке {payload:...} (соответствует сигнатуре). Полный список нормализаций включая usage; уместно отметил, что policy_id/premium не показаны, т.к. функция не исполнялась."
   },
   "gpt-5.6-sol-medium": {
-   "correctness": 1,
-   "reasoning": 1,
-   "format": 4,
-   "russian": 8,
-   "comment": "Полный отказ ('функция не подключена') — задача не выполнена."
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный вызов с обёрткой payload, полный маркированный список нормализаций включая usage->PERSONAL. Без ошибок."
   },
   "gpt-5.6-terra-high": {
-   "correctness": 1,
-   "reasoning": 1,
-   "format": 3,
-   "russian": 8,
-   "comment": "Полный отказ без вызова — провал по сути задачи."
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Payload по схеме (в обёртке payload), все нормализации перечислены включая usage и срок->12. Идеально."
   },
   "gpt-5.6-terra-low": {
    "correctness": 10,
-   "reasoning": 9,
+   "reasoning": 7,
    "format": 9,
-   "russian": 9,
-   "comment": "Точный payload с обёрткой, верные нормализации."
+   "russian": 10,
+   "comment": "Верный вызов, нормализация покрывает даты, телефон, usage, франшизу, промо; срок->12 явно не назван. Содержательно корректно."
   },
   "gpt-5.6-terra-medium": {
    "correctness": 10,
-   "reasoning": 9,
+   "reasoning": 8,
    "format": 9,
-   "russian": 9,
-   "comment": "Идеальный вызов, все типы и дефолты корректны, полное пояснение."
+   "russian": 10,
+   "comment": "Корректный payload с обёрткой, полный список нормализаций (даты, телефон, срок->12, usage, франшиза, промо). Без ошибок."
   },
   "minimax-m3": {
    "correctness": 10,
@@ -172,10 +172,10 @@
   },
   "gpt-5.6-luna-xhigh": {
    "correctness": 10,
-   "reasoning": 8,
+   "reasoning": 7,
    "format": 9,
-   "russian": 9,
-   "comment": "Верный вызов; пояснение не упоминает usage=PERSONAL, но всё правильно."
+   "russian": 10,
+   "comment": "Полностью корректный вызов, пояснение краткое: даты, телефон, срок, франшиза, промо; usage не упомянут. Ошибок нет."
   },
   "qwen3.8-27b": {
    "correctness": 10,

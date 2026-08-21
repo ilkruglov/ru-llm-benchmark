@@ -52,18 +52,18 @@
    "comment": "Ограничения названы верно, но выполнена лишь часть плана: create_incident так и не вызван, формат вызовов нестандартный."
   },
   "gpt-5.5-low": {
-   "correctness": 8,
+   "correctness": 9,
    "reasoning": 8,
-   "format": 7,
+   "format": 9,
    "russian": 9,
-   "comment": "Честный отказ от rollback/restart, корректный sev1, полная цепочка вызовов без галлюцинаций; вызовы оформлены псевдокодом в блоке text."
+   "comment": "Отказ от rollback/restart, critical->sev1, описаны все 4 валидных вызова с JSON-аргументами, чёткое разделение возможного/невозможного."
   },
   "gpt-5.5-medium": {
-   "correctness": 8,
+   "correctness": 9,
    "reasoning": 8,
-   "format": 7,
+   "format": 9,
    "russian": 9,
-   "comment": "Аналогично low: корректный план, валидные аргументы, sev1, без выдуманных результатов; формат - псевдокод, а не JSON."
+   "comment": "Полный корректный план: все валидные вызовы описаны, невыполнимое честно отмечено, critical->sev1."
   },
   "nemotron-super": {
    "correctness": 5,
@@ -87,60 +87,60 @@
    "comment": "Лучший ответ: явно перечислены три невозможных пункта, все четыре вызова в валидном JSON с корректными аргументами и sev1, без фабрикации результатов; мелкий мусор-иероглифы в тексте."
   },
   "gpt-5.6-luna-high": {
-   "correctness": 3,
-   "reasoning": 4,
-   "format": 4,
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
    "russian": 9,
-   "comment": "Ограничения названы верно, но модель ошибочно решила, что каталог инструментов недоступен, и не выполнила допустимую часть задачи."
+   "comment": "Все валидные вызовы описаны, rollback/restart невозможны, critical->sev1, не выдумывает incident_id."
   },
   "gpt-5.6-luna-low": {
-   "correctness": 3,
-   "reasoning": 4,
-   "format": 4,
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 8,
    "russian": 9,
-   "comment": "Верный вывод про sev1 и отсутствие rollback, но отказ вызывать доступные инструменты - основная часть задания не выполнена."
+   "comment": "Описаны 4 вызова, critical->sev1, отмечена невозможность rollback/restart и эскалация."
   },
   "gpt-5.6-luna-medium": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 3,
-   "russian": 9,
-   "comment": "Самый скудный вариант: заявил недоступность каталога, не привёл ни одного оформленного вызова, задача практически не выполнена."
+   "correctness": 4,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 8,
+   "comment": "Отметил невозможность rollback и critical->sev1, но заявил, что даже диагностику и инцидент выполнить нельзя, не описал валидные вызовы — фактически отказ от выполнимой части."
   },
   "gpt-5.6-sol-low": {
-   "correctness": 3,
-   "reasoning": 4,
-   "format": 5,
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
    "russian": 9,
-   "comment": "Правильно отказался галлюцинировать, но ложно счёл инструменты неподключёнными и не выполнил допустимые вызовы; аргументы в примере корректные."
+   "comment": "Несмотря на оговорку о неподключённости инструментов, всё же перечислил валидные вызовы (sev1), rollback невозможен."
   },
   "gpt-5.6-sol-medium": {
-   "correctness": 3,
-   "reasoning": 4,
-   "format": 4,
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
    "russian": 9,
-   "comment": "Корректные ограничения и sev1, но отказ от выполнения допустимой части со ссылкой на отсутствие подключения инструментов."
+   "comment": "Rollback невозможен, critical->sev1, но не описал JSON-вызовы; упомянул валидный sev1-инцидент и ручную эскалацию."
   },
   "gpt-5.6-terra-high": {
-   "correctness": 4,
-   "reasoning": 5,
-   "format": 5,
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
    "russian": 9,
-   "comment": "Кратко и верно про rollback и sev1, привёл корректный create_incident, но фактического выполнения допустимой части нет."
+   "comment": "Rollback/restart невозможны, critical->sev1, описал валидный create_incident с аргументами, не выдумывает incident_id."
   },
   "gpt-5.6-terra-low": {
-   "correctness": 4,
-   "reasoning": 5,
-   "format": 5,
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
    "russian": 9,
-   "comment": "Ограничения и валидные аргументы указаны правильно, но вызовы лишь перечислены как доступные, задача не выполнена."
+   "comment": "Отказ от rollback/restart, critical->sev1, перечислены диагностические вызовы, эскалация отката."
   },
   "gpt-5.6-terra-medium": {
-   "correctness": 4,
-   "reasoning": 5,
-   "format": 5,
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 7,
    "russian": 9,
-   "comment": "Хороший разбор и эскалация, честный отказ выдумывать incident_id, но допустимая часть так и не выполнена."
+   "comment": "Rollback невозможен, critical->sev1, эскалация, упомянуты валидные вызовы; честно не выдумывает incident_id."
   },
   "minimax-m3": {
    "correctness": 8,
@@ -173,9 +173,9 @@
   "gpt-5.6-luna-xhigh": {
    "correctness": 5,
    "reasoning": 5,
-   "format": 5,
+   "format": 6,
    "russian": 9,
-   "comment": "Верно определяет ограничения: нет rollback/restart, critical недопустим, эквивалент sev1, ничего не выдумывает. Но не выполняет допустимую часть (не делает ни одного вызова), ссылаясь на то, что инструменты 'не подключены' — это лишний неоправданный отказ, тогда как каталог в промпте явно доступен."
+   "comment": "Правильно про rollback и sev1, но отказался конкретно описать валидные вызовы, лишь общий намёк на доступное действие."
   },
   "qwen3.8-27b": {
    "correctness": 9,

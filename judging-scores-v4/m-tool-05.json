@@ -73,74 +73,74 @@
    "comment": "Образцовое исполнение: правильный порядок, точные фамилии, явное извлечение email из lookup, полный финал с booking_id."
   },
   "gpt-5.5-low": {
-   "correctness": 8,
-   "reasoning": 7,
-   "format": 8,
-   "russian": 9,
-   "comment": "Полный план A, 3+ нерелевантных, все 4 вызова с верными аргументами и query, порядок допустим, не выдумывает данные."
-  },
-  "gpt-5.5-medium": {
-   "correctness": 8,
+   "correctness": 9,
    "reasoning": 8,
    "format": 8,
    "russian": 9,
-   "comment": "Хороший план, порядок search-lookup-book-invite, корректные аргументы и query, честно про недоступность."
+   "comment": "Полный план A, 3+ нерелевантных с обоснованием, корректные аргументы и порядок (lookup после book допустимо), query верный, ничего не выдумал."
+  },
+  "gpt-5.5-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Порядок search→lookup→book→invite точно как в эталоне, корректные аргументы, чёткая структура, без выдуманных данных."
   },
   "gpt-5.6-luna-high": {
    "correctness": 7,
-   "reasoning": 7,
-   "format": 8,
-   "russian": 8,
-   "comment": "Полный план и вызовы, но в lookup_employees query=[Иванова,Петрова,Сидорова] — склонённые формы вместо Иванов/Сидоров."
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Хорошая структура A/B, но в lookup query ошибочно ['Иванова','Петрова','Сидорова'] вместо номинатива Иванов/Сидоров. Остальное корректно."
   },
   "gpt-5.6-luna-low": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "План и полные JSON-вызовы, query верный, порядок валиден (lookup параллельно), не выдумывает результаты."
+  },
+  "gpt-5.6-luna-medium": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректные аргументы всех 4 функций, верный query, честно про недоступность исполнения, без выдумок."
+  },
+  "gpt-5.6-sol-low": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точный порядок и аргументы, верный query, добавил проверку available:true, честно про итоговое подтверждение."
+  },
+  "gpt-5.6-sol-medium": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный корректный план и вызовы, верный query, шаблон финального подтверждения, без выдуманных данных."
+  },
+  "gpt-5.6-terra-high": {
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Верные выбор инструментов, порядок и отказ выдумывать, но в части B не выписал конкретные аргументы вызовов (дата, email, title, query) — менее полно."
+  },
+  "gpt-5.6-terra-low": {
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "План и нерелевантные корректны, но часть B фактически отсутствует: только словесная последовательность без аргументов и JSON."
+  },
+  "gpt-5.6-terra-medium": {
    "correctness": 8,
    "reasoning": 7,
    "format": 8,
    "russian": 9,
-   "comment": "Все 4 вызова с верными аргументами и query, отмечена параллельность, не выдумывает."
-  },
-  "gpt-5.6-luna-medium": {
-   "correctness": 1,
-   "reasoning": 1,
-   "format": 2,
-   "russian": 5,
-   "comment": "По сути отказ: нет части A, нет списка нерелевантных, нет описания вызовов. Провал задачи."
-  },
-  "gpt-5.6-sol-low": {
-   "correctness": 8,
-   "reasoning": 8,
-   "format": 9,
-   "russian": 9,
-   "comment": "Полный план, отмечена проверка available:true, верные аргументы и query, аккуратно про недоступность."
-  },
-  "gpt-5.6-sol-medium": {
-   "correctness": 8,
-   "reasoning": 8,
-   "format": 9,
-   "russian": 9,
-   "comment": "Полные A/B, верные вызовы и query, приведён образец финального подтверждения без выдумки данных."
-  },
-  "gpt-5.6-terra-high": {
-   "correctness": 5,
-   "reasoning": 5,
-   "format": 6,
-   "russian": 8,
-   "comment": "Есть план и нерелевантные, но нет конкретных вызовов с аргументами (часть B/C не выполнена)."
-  },
-  "gpt-5.6-terra-low": {
-   "correctness": 5,
-   "reasoning": 5,
-   "format": 6,
-   "russian": 8,
-   "comment": "План и нерелевантные есть, но вызовы даны лишь как порядок без аргументов — часть B недовыполнена."
-  },
-  "gpt-5.6-terra-medium": {
-   "correctness": 7,
-   "reasoning": 6,
-   "format": 7,
-   "russian": 8,
-   "comment": "План + нерелевантные, вызовы в сжатой позиционной форме с верной query и порядком, но без JSON-детализации."
+   "comment": "Даёт сигнатуры вызовов с аргументами, верный query, корректный отказ выдумывать; порядок валиден, менее детально чем sol/luna."
   },
   "minimax-m3": {
    "correctness": 9,
@@ -171,11 +171,11 @@
    "comment": "Правильный порядок вызовов и аргументы, email из lookup, полное подтверждение и 8 нерелевантных инструментов. Рассуждение корректное, но более сжатое и без нюансов выбора комнаты."
   },
   "gpt-5.6-luna-xhigh": {
-   "correctness": 8,
-   "reasoning": 8,
+   "correctness": 9,
+   "reasoning": 9,
    "format": 9,
    "russian": 9,
-   "comment": "Чёткие A/B/C, все вызовы с верными аргументами и query, корректный порядок, не выдумывает."
+   "comment": "Чёткие A/B/C, порядок как в эталоне, все аргументы точны, query верный, отказ выдумывать значения."
   },
   "qwen3.8-27b": {
    "correctness": 8,
