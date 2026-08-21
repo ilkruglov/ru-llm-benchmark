@@ -52,18 +52,18 @@
    "comment": "Данные корректны; формат псевдокод без payload, мелкие языковые огрехи в пояснении."
   },
   "gpt-5.5-low": {
-   "correctness": 9,
-   "reasoning": 8,
+   "correctness": 10,
+   "reasoning": 9,
    "format": 9,
-   "russian": 10,
-   "comment": "Чистый валидный JSON-объект, но без обёртки payload; краткое полное пояснение."
+   "russian": 9,
+   "comment": "Точный payload по схеме, все нормализации верны и перечислены."
   },
   "gpt-5.5-medium": {
-   "correctness": 9,
-   "reasoning": 8,
+   "correctness": 10,
+   "reasoning": 9,
    "format": 9,
-   "russian": 10,
-   "comment": "Чистый валидный JSON без обёртки payload; корректная краткая нормализация."
+   "russian": 9,
+   "comment": "Идеальный вызов, корректные типы и дефолты, полное пояснение."
   },
   "nemotron-omni": {
    "correctness": 9,
@@ -87,60 +87,60 @@
    "comment": "Все значения корректны, хорошее обоснование; формат — псевдокод-вызов, не строгий JSON."
   },
   "gpt-5.6-luna-high": {
-   "correctness": 0,
+   "correctness": 2,
    "reasoning": 3,
-   "format": 0,
-   "russian": 10,
-   "comment": "Отказ: заявил, что функция недоступна, вызов не сделан, хотя нормализовал значения."
+   "format": 5,
+   "russian": 8,
+   "comment": "Ошибочно отказалась ('функция отсутствует'), полного вызова нет — лишь частичный список нормализаций."
   },
   "gpt-5.6-luna-low": {
-   "correctness": 0,
-   "reasoning": 1,
-   "format": 0,
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
    "russian": 9,
-   "comment": "Отказ выполнить задачу, вызов create_policy не сделан."
+   "comment": "Полный корректный текстовый вызов, верные нормализации."
   },
   "gpt-5.6-luna-medium": {
-   "correctness": 0,
-   "reasoning": 1,
-   "format": 0,
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
    "russian": 9,
-   "comment": "Отказ: функция якобы недоступна, вызов не выполнен."
+   "comment": "Точный payload, отмечено отсутствие ROADSIDE; пояснение чуть короче."
   },
   "gpt-5.6-sol-low": {
-   "correctness": 0,
-   "reasoning": 1,
-   "format": 0,
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
    "russian": 9,
-   "comment": "Отказ выполнить обязательный вызов, полис не оформлен."
+   "comment": "Корректно обёрнут в payload, все значения и нормализации точны."
   },
   "gpt-5.6-sol-medium": {
-   "correctness": 0,
+   "correctness": 1,
    "reasoning": 1,
-   "format": 0,
-   "russian": 9,
-   "comment": "Отказ: функция не подключена, вызов не сделан."
+   "format": 4,
+   "russian": 8,
+   "comment": "Полный отказ ('функция не подключена') — задача не выполнена."
   },
   "gpt-5.6-terra-high": {
-   "correctness": 0,
+   "correctness": 1,
    "reasoning": 1,
-   "format": 0,
-   "russian": 9,
-   "comment": "Отказ вызвать create_policy, задача не выполнена."
+   "format": 3,
+   "russian": 8,
+   "comment": "Полный отказ без вызова — провал по сути задачи."
   },
   "gpt-5.6-terra-low": {
-   "correctness": 0,
-   "reasoning": 1,
-   "format": 0,
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
    "russian": 9,
-   "comment": "Отказ: функция недоступна, вызов не сделан."
+   "comment": "Точный payload с обёрткой, верные нормализации."
   },
   "gpt-5.6-terra-medium": {
-   "correctness": 0,
-   "reasoning": 1,
-   "format": 0,
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
    "russian": 9,
-   "comment": "Отказ выполнить, реальный вызов не сделан."
+   "comment": "Идеальный вызов, все типы и дефолты корректны, полное пояснение."
   },
   "minimax-m3": {
    "correctness": 10,
@@ -171,11 +171,11 @@
    "comment": "Вызов и payload полностью корректны, все нормализации правильные. Пояснение чуть короче: не разобраны usage→PERSONAL и term_months→12, но JSON валиден."
   },
   "gpt-5.6-luna-xhigh": {
-   "correctness": 0,
-   "reasoning": 1,
-   "format": 0,
-   "russian": 1,
-   "comment": "Ложный отказ: функция create_policy явно описана в каталоге инструментов промпта, но модель заявила о её недоступности и не сделала ни одного вызова. Основная задача (ровно один вызов create_policy) провалена; частичная нормализация в тексте не спасает."
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верный вызов; пояснение не упоминает usage=PERSONAL, но всё правильно."
   },
   "qwen3.8-27b": {
    "correctness": 10,

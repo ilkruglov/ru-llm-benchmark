@@ -19,18 +19,18 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | GPT-5.6 Sol (medium) | 9.04 | | 14 | DeepSeek v4-pro (старый) | 8.49 |
-| 2 | **GPT-5.6 Luna (xhigh)** | **9.01** | | 15 | **Qwen3.8-27B** | **8.47** |
-| 3 | DeepSeek v4-pro-new | 8.96 | | 16 | MiniMax-M3 | 8.39 |
-| 4 | GPT-5.6 Sol (low) | 8.87 | | 17 | GPT-5.6 Luna (low) | 8.34 |
-| 5 | GPT-5.5 (medium) | 8.85 | | 18 | Kimi K2.6 | 8.33 |
-| 6 | GPT-5.6 Luna (high) | 8.84 | | 19 | DeepSeek v4-flash (до 0731) | 8.19 |
-| 7 | GPT-5.6 Terra (high) | 8.77 | | 20 | Qwen3.6-27B-FP8 | 8.16 |
-| 8 | GPT-5.5 (low) | 8.76 | | 21 | Gemma-4-31B | 8.00 |
-| 9 | GPT-5.6 Terra (medium) | 8.74 | | 22 | Qwen3.6-35B-A3B-FP8 | 7.85 |
-| 10 | GPT-5.6 Terra (low) | 8.62 | | 23 | gpt-oss-120b | 7.34 |
-| 11 | DeepSeek v4-flash-0731 | 8.56 | | 24 | DiffusionGemma | 6.08 |
-| 12 | GPT-5.6 Luna (medium) | 8.53 | | 25 | Nemotron-3-Nano-Omni-30B | 4.57 |
+| 1 | GPT-5.6 Sol (medium) | 9.12 | | 14 | DeepSeek v4-pro (старый) | 8.49 |
+| 2 | **GPT-5.6 Luna (xhigh)** | **9.12** | | 15 | **Qwen3.8-27B** | **8.47** |
+| 3 | GPT-5.6 Sol (low) | 8.97 | | 16 | GPT-5.6 Luna (low) | 8.45 |
+| 4 | DeepSeek v4-pro-new | 8.96 | | 17 | MiniMax-M3 | 8.39 |
+| 5 | GPT-5.6 Luna (high) | 8.91 | | 18 | Kimi K2.6 | 8.33 |
+| 6 | GPT-5.5 (medium) | 8.91 | | 19 | DeepSeek v4-flash (до 0731) | 8.19 |
+| 7 | GPT-5.6 Terra (high) | 8.83 | | 20 | Qwen3.6-27B-FP8 | 8.16 |
+| 8 | GPT-5.6 Terra (medium) | 8.82 | | 21 | Gemma-4-31B | 8.00 |
+| 9 | GPT-5.5 (low) | 8.81 | | 22 | Qwen3.6-35B-A3B-FP8 | 7.85 |
+| 10 | GPT-5.6 Terra (low) | 8.68 | | 23 | gpt-oss-120b | 7.34 |
+| 11 | GPT-5.6 Luna (medium) | 8.59 | | 24 | DiffusionGemma | 6.08 |
+| 12 | DeepSeek v4-flash-0731 | 8.56 | | 25 | Nemotron-3-Nano-Omni-30B | 4.57 |
 | 13 | GLM-5.2 | 8.50 | | 26 | Nemotron-3-Super-120B | 4.36 |
 
 ### Зрение

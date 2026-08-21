@@ -53,17 +53,17 @@
   },
   "gpt-5.5-low": {
    "correctness": 8,
-   "reasoning": 7,
+   "reasoning": 8,
    "format": 8,
-   "russian": 8,
-   "comment": "Честно сообщает о недоступности инструментов и даёт точный, полный план вызовов с правильными аргументами."
+   "russian": 9,
+   "comment": "Полный план с JSON-аргументами: cursor=null, цикл по next_cursor до has_more=false/null, агрегаты с days_overdue>30, одно письмо. Честно не выдумывает числа."
   },
   "gpt-5.5-medium": {
-   "correctness": 7,
-   "reasoning": 6,
-   "format": 8,
-   "russian": 8,
-   "comment": "Корректный компактный план с верными аргументами, отказ от выдумывания данных; чуть менее детально."
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Наиболее полный: явный цикл с условием выхода, все агрегаты (>30 строго), одно send_dunning_email, плюс шаблон итогового отчёта. Эталонная логика."
   },
   "nemotron-super": {
    "correctness": 1,
@@ -89,58 +89,58 @@
   "gpt-5.6-luna-high": {
    "correctness": 7,
    "reasoning": 6,
-   "format": 8,
-   "russian": 8,
-   "comment": "Краткий, но верный план с правильными аргументами и честным указанием на недоступность инструментов."
+   "format": 7,
+   "russian": 9,
+   "comment": "Верная логика цикла (next_cursor до has_more=false/null, >30, одно письмо), но кратко и с рамкой 'инструменты недоступны'."
   },
   "gpt-5.6-luna-low": {
-   "correctness": 3,
-   "reasoning": 2,
-   "format": 6,
-   "russian": 8,
-   "comment": "Только отказ без плана вызовов, хотя план явно требовался задачей."
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 9,
+   "comment": "Чёткий план с JSON: cursor=null, цикл по точному next_cursor до has_more=false/null, агрегаты >30, одно письмо."
   },
   "gpt-5.6-luna-medium": {
-   "correctness": 3,
-   "reasoning": 2,
-   "format": 6,
-   "russian": 8,
-   "comment": "Отказ без описания плана вызовов; требование задачи выполнено лишь частично."
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 9,
+   "comment": "Хороший план, подчёркивает что cursor берётся из предыдущего ответа, одно письмо; шаг агрегации менее выражен, но >30 упомянут."
   },
   "gpt-5.6-sol-low": {
    "correctness": 7,
    "reasoning": 6,
-   "format": 8,
-   "russian": 8,
-   "comment": "Корректный план пагинации и одного письма, отказ от выдумывания показателей."
+   "format": 7,
+   "russian": 9,
+   "comment": "Сжатый корректный план: cursor=null, while has_more & next_cursor!=null, >30, одно письмо. Немного лаконично."
   },
   "gpt-5.6-sol-medium": {
    "correctness": 7,
    "reasoning": 6,
-   "format": 8,
-   "russian": 8,
-   "comment": "Верный план с правильными аргументами, честный итог о недоступности инструментов."
+   "format": 7,
+   "russian": 9,
+   "comment": "Верная логика цикла и агрегатов (>30), одно письмо. Кратко."
   },
   "gpt-5.6-terra-high": {
-   "correctness": 7,
+   "correctness": 6,
    "reasoning": 6,
-   "format": 8,
-   "russian": 8,
-   "comment": "Точный компактный план с pagination-циклом и одним вызовом send_dunning_email, без фабрикаций."
+   "format": 7,
+   "russian": 9,
+   "comment": "Логика верна, но условие выхода описано расплывчато ('до конца пагинации') без явной привязки к has_more/next_cursor. >30 корректно, одно письмо."
   },
   "gpt-5.6-terra-low": {
-   "correctness": 7,
-   "reasoning": 6,
-   "format": 8,
-   "russian": 8,
-   "comment": "Корректные шаги и аргументы, явный отказ выдумывать счета и суммы."
+   "correctness": 6,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 9,
+   "comment": "Кратко: цикл 'пока не закончатся страницы' без явного условия по has_more; просрочка >30, одно письмо. Логика в целом верна."
   },
   "gpt-5.6-terra-medium": {
-   "correctness": 7,
+   "correctness": 6,
    "reasoning": 6,
-   "format": 8,
-   "russian": 8,
-   "comment": "Честный отказ плюс полный корректный план вызовов с верными параметрами."
+   "format": 7,
+   "russian": 9,
+   "comment": "Рамка недоступности, затем план: цикл с next_cursor до завершения, >30, одно письмо. Условие выхода менее явное."
   },
   "minimax-m3": {
    "correctness": 2,
@@ -171,11 +171,11 @@
    "comment": "Чёткий пошаговый план с верной логикой пагинации, правильными функциями и аргументами, проверкой sent и message_id. Не фабрикует данные и явно указывает на отсутствие реального API — соответствует правилам без выдумок."
   },
   "gpt-5.6-luna-xhigh": {
-   "correctness": 8,
+   "correctness": 7,
    "reasoning": 7,
-   "format": 8,
+   "format": 7,
    "russian": 9,
-   "comment": "Честно отказалась выдумывать инвойсы при отсутствии реальных инструментов и дала корректный план: пагинация с точным next_cursor до has_more==false и один send_dunning_email со всеми invoice_id и шаблоном overdue_final. Имена функций и порядок верны, ничего не сфабриковано."
+   "comment": "Правильная логика: цикл до has_more==false/next_cursor==null, агрегаты >30, одно письмо. Кратко, рамка недоступности инструментов."
   },
   "qwen3.8-27b": {
    "correctness": 8,

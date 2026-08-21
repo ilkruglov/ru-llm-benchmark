@@ -54,16 +54,16 @@
   "gpt-5.5-low": {
    "correctness": 2,
    "reasoning": 3,
-   "format": 1,
+   "format": 6,
    "russian": 8,
-   "comment": "Отказ: заявил недоступность инструментов, не вызвал даже check_stock; задача не выполнена."
+   "comment": "Полный отказ: трактует инструменты как неподключённые, не описал ни check_stock с аргументами, ни ветвление. По условию нужно было описать вызовы текстом."
   },
   "gpt-5.5-medium": {
    "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "reasoning": 4,
+   "format": 6,
    "russian": 8,
-   "comment": "Отказ выполнять из-за 'недоступных' инструментов; ни одного вызова, задача не решена."
+   "comment": "Отказ имитировать вызовы, не описал check_stock с JSON-аргументами и обе ветки. Мимо ожидаемого формата описания."
   },
   "nemotron-omni": {
    "correctness": 1,
@@ -87,60 +87,60 @@
    "comment": "Наиболее полный и аккуратный проход: check_stock -> create_purchase_order с точными аргументами, явная проверка 'ровно одно действие', сильное финальное объяснение."
   },
   "gpt-5.6-luna-high": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
    "russian": 8,
-   "comment": "Отказ: инструменты 'недоступны', check_stock не вызван, действий нет."
+   "comment": "Описал ШАГ 1 check_stock с корректными аргументами, обоснованно не вызвал ветку 2, но не расписал условную логику обеих веток."
   },
   "gpt-5.6-luna-low": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
    "russian": 8,
-   "comment": "Отказ выполнять задачу, ни одного вызова инструмента."
+   "comment": "check_stock с верными аргументами, корректно воздержался от шага 2, объяснил. Не показал направление неравенства и обе ветки."
   },
   "gpt-5.6-luna-medium": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 6,
+   "reasoning": 5,
+   "format": 7,
    "russian": 8,
-   "comment": "Отказ: check_stock 'недоступен', шаг 2 не выполнен."
+   "comment": "check_stock с аргументами, кратко объяснил отказ от шага 2. Не расписал условное ветвление."
   },
   "gpt-5.6-sol-low": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
    "russian": 8,
-   "comment": "Отказ из-за 'недоступности' check_stock; корректная осторожность, но задача не решена."
+   "comment": "check_stock с верными аргументами, обоснованный отказ от шага 2. Не расписал обе ветки условно."
   },
   "gpt-5.6-sol-medium": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 6,
+   "reasoning": 6,
+   "format": 7,
    "russian": 8,
-   "comment": "Отказ выполнять протокол, ни одного вызова."
+   "comment": "check_stock с аргументами, хорошо объяснил, почему нельзя выбрать ветку. Не показал условную логику веток."
   },
   "gpt-5.6-terra-high": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
    "russian": 8,
-   "comment": "Отказ: инструмент недоступен, ни дозаказа, ни snapshot."
+   "comment": "Лучший уровень: check_stock с аргументами плюс корректное условное ветвление (<=50 -> PO, иначе snapshot) с верным направлением неравенства."
   },
   "gpt-5.6-terra-low": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
    "russian": 8,
-   "comment": "Отказ выполнять, вызовов нет."
+   "comment": "check_stock с аргументами и корректно расписанные обе ветки условно, верное неравенство. Не указал детальные аргументы PO/snapshot."
   },
   "gpt-5.6-terra-medium": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 1,
+   "correctness": 4,
+   "reasoning": 4,
+   "format": 6,
    "russian": 8,
-   "comment": "Отказ из-за 'недоступности' складской системы, задача не выполнена."
+   "comment": "Не описал check_stock с JSON-аргументами и ветвление, по сути отказ из-за недоступности результата."
   },
   "minimax-m3": {
    "correctness": 3,
@@ -171,11 +171,11 @@
    "comment": "Выдумал qty_on_hand=45 и на этом основании сделал реальный вызов create_purchase_order — фабрикация аргументов и overcalling шага 2, хотя остаток не мог быть известен. Логика применена связно, но к галлюцинированному числу."
   },
   "gpt-5.6-luna-xhigh": {
-   "correctness": 2,
-   "reasoning": 3,
-   "format": 4,
+   "correctness": 4,
+   "reasoning": 4,
+   "format": 6,
    "russian": 8,
-   "comment": "Модель ложно заявила, что инструмент check_stock недоступен, и не выполнила даже обязательный ШАГ 1, хотя определения инструментов были даны. Фабрикации нет (это лучше галлюцинирующих ответов), но задача полностью провалена: ни одного вызова, выбор ветки не сделан."
+   "comment": "Трактует check_stock как неподключённый, не привёл JSON-аргументы вызова и ветвление. Слабее прочих luna."
   },
   "qwen3.8-27b": {
    "correctness": 7,

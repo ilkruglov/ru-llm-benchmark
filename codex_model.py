@@ -43,9 +43,22 @@ def save():
     os.replace(tmp, OUT)
 
 
+# codex runs sandbox read-only with NO tools registered, so on tool/agentic tasks the model
+# aborts ("инструмент X недоступен") instead of describing the routing. Groq models get an
+# equivalent nudge (GROQ_NUDGE in rerun_vendor); give codex the same so tool-shaped tasks are
+# answered in text, not refused. Prepended to the prompt (codex exec has no separate system msg).
+CODEX_NUDGE = (
+    "В этой среде инструменты/функции НЕ исполняются — по-настоящему их вызвать нельзя, "
+    "и это не ошибка окружения. Если задача подразумевает вызовы инструментов, ОПИСЫВАЙ их "
+    "ТЕКСТОМ (имя функции и аргументы в виде JSON), рассуждая по шагам, и дай финальный ответ "
+    "как обычным сообщением. НЕ прекращай работу из-за отсутствия инструментов и НЕ выдумывай "
+    "результаты их выполнения.\n\n---\n\n"
+)
+
+
 def run_one(tid):
     r = results[tid]
-    prompt = r["prompt"]
+    prompt = CODEX_NUDGE + r["prompt"]
     for attempt in (1, 2):
         with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as tf:
             outfile = tf.name
@@ -64,8 +77,10 @@ def run_one(tid):
                 if attempt == 1:
                     continue
                 return {"ok": False, "error": "empty", "latency_ms": dt}
-            m = re.search(r"tokens used\D+([\d,]+)", (p.stdout + p.stderr).decode(errors="ignore"))
-            ctok = int(m.group(1).replace(",", "")) if m else None
+            # codex prints "tokens used" then the count, which may use comma OR space/NBSP
+            # thousands separators (e.g. "12,572" or "12 572"); grab the whole run and strip.
+            m = re.search(r"tokens used[^\d]*([\d][\d,  ]*)", (p.stdout + p.stderr).decode(errors="ignore"))
+            ctok = int(re.sub(r"[^\d]", "", m.group(1))) if m else None
             return {"ok": True, "content": content, "completion_tokens": ctok, "latency_ms": dt, "attempt": attempt}
         except Exception as e:
             try:

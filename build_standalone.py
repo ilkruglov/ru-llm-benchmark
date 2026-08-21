@@ -73,8 +73,20 @@ def med(xs):
 CONTENT_ONLY_CT = set()  # qwen3.8 VL (EmpirioLabs) reports completion_tokens as total; text-qwen not in a report
 
 
+def is_codex(tag):
+    # GPT-5.5/5.6 run via the codex CLI: it reports only a stdout "tokens used" count (whole-turn,
+    # locale-formatted, unreliable to parse) and hides the reasoning trace, and its latency includes
+    # per-task subprocess overhead. So codex tokens aren't comparable and its TPS is meaningless ->
+    # excluded from the token and performance metrics (still ranked on scores).
+    return tag.startswith("gpt-5.5") or tag.startswith("gpt-5.6")
+
+
 def out_toks(tag, resp):
+    if is_codex(tag):
+        return None
+    # total turn tokens, comparable across HTTP hosts: completion(output)+prompt(input).
     ct = resp.get("completion_tokens") or 0
+    ct += resp.get("prompt_tokens") or 0
     if tag in CONTENT_ONLY_CT:
         ct += resp.get("reasoning_tokens") or 0
     return ct
@@ -123,12 +135,14 @@ def compute(results_path, scores_dir, tags, W, vl, exclude=()):
                 blocked[t] += 1; continue
             if resp.get("ok"):
                 perf[t]["ok"] += 1
-                lat = resp.get("latency_ms") or 0; ct = out_toks(t, resp)
-                perf[t]["lat"].append(lat); perf[t]["ct"].append(ct)
-                perf[t]["alen"].append(len(resp.get("content") or ""))
-                by_cat_tok[r.get(cat_key, "?")][t].append(ct)
-                if ct and lat:
-                    perf[t]["tps"].append(ct / (lat / 1000))
+                ct = out_toks(t, resp)
+                if ct is not None:   # codex excluded from token/perf metrics (out_toks -> None)
+                    lat = resp.get("latency_ms") or 0
+                    perf[t]["lat"].append(lat); perf[t]["ct"].append(ct)
+                    perf[t]["alen"].append(len(resp.get("content") or ""))
+                    by_cat_tok[r.get(cat_key, "?")][t].append(ct)
+                    if ct and lat:
+                        perf[t]["tps"].append(ct / (lat / 1000))
             if sd and emp(t, r):
                 continue
             if sd and t in sd["scores"]:
@@ -319,13 +333,13 @@ def render(D, out_path, title, subtitle):
     A('</tbody></table></div></details></div>')
 
     # ---- tokens ----
-    tok_order = sorted(tags, key=lambda t: -med(D["perf"][t]["ct"]))
-    mx = max((med(D["perf"][t]["ct"]) for t in tags), default=1) or 1
+    tok_order = sorted([t for t in tags if D["perf"][t]["ct"]], key=lambda t: -med(D["perf"][t]["ct"]))
+    mx = max((med(D["perf"][t]["ct"]) for t in tok_order), default=1) or 1
     rows = [(nm(t), med(D["perf"][t]["ct"]), round(100 * med(D["perf"][t]["ct"]) / mx),
              f'<div class="bc-meta"><span class="bc-chip">символов <b>{med(D["perf"][t]["alen"]):,.0f}</b></span></div>',
              f'{med(D["perf"][t]["ct"]):,.0f}') for t in tok_order]
-    barsection("tokens", "Расход токенов на ответ",
-               "Медиана выходных токенов на задачу — «болтливость» модели (у reasoning-моделей включает рассуждение).", rows)
+    barsection("tokens", "Расход токенов на задачу",
+               "Медиана токенов хода (вход + рассуждение + ответ). GPT-5.x через codex исключены — codex отдаёт лишь суммарный счётчик и прячет трейс, токены несопоставимы.", rows)
     A('<details class="tbl-d"><summary>Таблица токенов</summary><div class="table-scroll"><table><thead><tr>'
       '<th>Модель</th><th class="num">Медиана</th><th class="num">Среднее</th>'
       '<th class="num">символов (медиана)</th></tr></thead><tbody>')
@@ -336,8 +350,8 @@ def render(D, out_path, title, subtitle):
     A('</tbody></table></div></details></div>')
 
     # ---- performance ----
-    perf_order = sorted(tags, key=lambda t: -med(D["perf"][t]["tps"]))
-    mx = max((med(D["perf"][t]["tps"]) for t in tags), default=1) or 1
+    perf_order = sorted([t for t in tags if D["perf"][t]["tps"]], key=lambda t: -med(D["perf"][t]["tps"]))
+    mx = max((med(D["perf"][t]["tps"]) for t in perf_order), default=1) or 1
     rows = [(nm(t), med(D["perf"][t]["tps"]), round(100 * med(D["perf"][t]["tps"]) / mx),
              f'<div class="bc-meta"><span class="bc-chip">задержка <b>{med(D["perf"][t]["lat"])/1000:.1f}с</b></span></div>',
              f'{med(D["perf"][t]["tps"]):.0f}<small> tok/s</small>') for t in perf_order]
@@ -437,9 +451,10 @@ def render(D, out_path, title, subtitle):
                 s = sd["scores"][t]; tot = wsum(s, W)
                 cls = ' class="win"' if t == winner else ""
                 toks = out_toks(t, r["responses"].get(t, {}))
+                toks_cell = f'{toks:,}' if toks is not None else '—'   # codex: no comparable token count
                 A(f'<tr{cls}><td><b>{nm(t)}</b></td><td class="num">{s["correctness"]}</td>'
                   f'<td class="num">{s["format"]}</td><td class="num">{s["russian"]}</td>'
-                  f'<td class="num"><b>{tot:.1f}</b></td><td class="num">{toks:,}</td>'
+                  f'<td class="num"><b>{tot:.1f}</b></td><td class="num">{toks_cell}</td>'
                   f'<td class="cmt-cell">{esc(s.get("comment",""))}</td></tr>')
             A('</tbody></table></div>')
             if sd.get("notes"):
