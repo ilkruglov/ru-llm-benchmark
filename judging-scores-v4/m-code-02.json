@@ -178,11 +178,11 @@
    "comment": "Тесты корректны и прошли бы: monkeypatch на rate_limiter.time точен, покрыты все требуемые сценарии (init, try_acquire, refill, cap, timeout=0≈try_acquire, недостаточный/достаточный timeout, slow thread-safety с barrier и rate=1e-9), фикстуры с params=, pytest.approx, >15 тестов. Русских пояснений мало — почти чистый код."
   },
   "qwen3.8-27b": {
-   "correctness": 8,
-   "reasoning": 9,
-   "format": 9,
-   "russian": 9,
-   "comment": "Код полностью рабочий и детерминированный (патч monotonic+sleep через FakeClock), все ветки acquire/refill/timeout прослеживаются верно, 25 тестов, conftest с маркером slow, pytest.approx везде. Минус: не использована фикстура с параметрами через params= (использованы только parametrize и фабрика make_limiter), что явно требовалось в п.1."
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Тест test_timeout_insufficient зависает бесконечно: дедлайн считается по замороженному fake monotonic, а реальный time.sleep не сдвигает часы, поэтому цикл acquire никогда не завершается (подтверждено симуляцией) — при этом это один из явно требуемых кейсов. Остальная часть suite корректна и идиоматична, выдуманных API нет, params=-фикстура объявлена, но нигде не используется; русское объяснение с таблицей качественное."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

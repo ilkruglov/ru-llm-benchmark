@@ -179,10 +179,10 @@
   },
   "qwen3.8-27b": {
    "correctness": 6,
-   "reasoning": 8,
-   "format": 7,
-   "russian": 8,
-   "comment": "Чистый Python-вариант корректен, bit-accurate и правильно указывает главный хотспот (json.load в цикле), профилирование и вклад расписаны хорошо. Но Polars-вариант содержит выдуманный API (.elif_, .then('micro') без pl.lit, несуществующие n_threads/chunked), а pandas-вариант ломает порядок сортировки по категориальному bucket — за ложные API строгий штраф по correctness."
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Отлично диагностирует доминирующий баг (json.load в цикле ~100x), даёт полностью рабочий чистый-Python фикс, глубокий разбор вклада и памяти. Но рекомендуемый polars-вариант сломан: бессмысленный join rate_map, отсутствует cast amount при infer_schema_length=0, спорные then(строка)."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

@@ -179,10 +179,10 @@
   },
   "qwen3.8-27b": {
    "correctness": 8,
-   "reasoning": 8,
+   "reasoning": 9,
    "format": 8,
    "russian": 9,
-   "comment": "Все три утечки найдены верно с точными механизмами (retention из GC-root, не цикл), рабочий fix (deque/per-instance cache/unsubscribe), regression-тест и мониторинг. Минусы: manhole ошибочно описан как web-shell на http, битый сниппет метрик (isinstance с False) и странный тернарник в publish; упущен эффект O(N^2) роста processed_ids."
+   "comment": "Все 3 утечки найдены верно (_history, class-level _results_cache с (self,payload) и уникальными ключами, accumulating bound methods в _subscribers), корректно объяснён каскад и почему GC не помогает; фиксы рабочие. Минусы: import collections засунут в блок __main__, weakref на bound method обёрнут неполно (нужен WeakMethod), сниппет signal+pdb с gdb местами мусорный и 'import Worker' некорректен."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

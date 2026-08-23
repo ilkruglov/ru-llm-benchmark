@@ -180,9 +180,9 @@
   "qwen3.8-27b": {
    "correctness": 10,
    "reasoning": 9,
-   "format": 9,
+   "format": 10,
    "russian": 10,
-   "comment": "Точно локализован баг на строке 21; замена с якорем по строке `if inv.buyer_vat_valid:` анкорит нужный return и не трогает B2C-ветку. Минимальная корректная правка, верное объяснение reverse charge."
+   "comment": "Точно локализовал баг на строке 21 и сделал минимальную безопасную правку: old-строка включает условие if, поэтому меняется только ветка reverse charge (0.0), B2C-ветка не затронута. Верное объяснение reverse charge, идеальный формат Thought/Action/JSON."
   },
   "deepseek-flash-vl": {
    "correctness": 10,

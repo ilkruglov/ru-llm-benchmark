@@ -178,11 +178,11 @@
    "comment": "Корректная map-reduce-логика: параллельный MAP из 5 health, get_recent_deploys только для нездоровых, ровно один aggregate_incident_report и условный page_oncall при critical/high. Чисто и без выдумок, чуть лаконичнее топовых калибровочных ответов."
   },
   "qwen3.8-27b": {
-   "correctness": 9,
-   "reasoning": 8,
+   "correctness": 10,
+   "reasoning": 9,
    "format": 9,
    "russian": 9,
-   "comment": "Полностью соблюдены все 5 правил: параллельный health-батч, условный get_recent_deploys(since_minutes=60) только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, без выдуманных данных. Разобраны ветки A/B/C. Минус — избыточная повторяемость."
+   "comment": "Полностью верная map-reduce-логика: параллельный батч из 5 health, условные get_recent_deploys только для нездоровых, ровно один aggregate_incident_report со всеми 5 health и deploy только по unhealthy, page_oncall лишь при critical/high, без выдуманных данных. Отличное изложение с картой вызовов, инвариантами и подсчётом мин/макс (6-12) — на уровне лучших ответов."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

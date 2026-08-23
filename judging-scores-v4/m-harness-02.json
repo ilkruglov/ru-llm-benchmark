@@ -178,11 +178,11 @@
    "comment": "Верно указаны оба канала уведомления (charge.py:86 и hooks.py notify_on_charge), точные файлы/функции/строки, корректно отмечено, что @retry лишь усугубляет неидемпотентность, а не является прямой причиной. Опора на реальные Observation, корректная остановка на Final Answer."
   },
   "qwen3.8-27b": {
-   "correctness": 10,
-   "reasoning": 10,
+   "correctness": 8,
+   "reasoning": 8,
    "format": 9,
    "russian": 10,
-   "comment": "Правильно остановился на Final Answer, точно указал оба пути отправки SMS (прямой вызов в perform_charge:86 и хук notify_on_charge на событие charge.succeeded) и корректно объяснил, что retry — мнимая причина. Опора на реальные Observation, без галлюцинаций."
+   "comment": "Верно назвал корневую причину — два независимых пути отправки SMS (прямой вызов на строке 86 и хук notify_on_charge через событие charge.succeeded), опираясь на реальные Observation; строку 14 взял из grep (валидно). Корректно остановился на Final Answer с файлом/функцией/причиной; framing про retry слегка спекулятивный, но обоснованный."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

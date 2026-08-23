@@ -178,11 +178,11 @@
    "comment": "Один SELECT через CTE, корректная UTC-трунковка, верное N=0=1.0, аккуратная обработка req6 (offset до текущего месяца включительно как в примере). Пояснения по индексам, MIN vs window и LEFT JOIN vs EXISTS точны, хоть и кратки."
   },
   "qwen3.8-27b": {
-   "correctness": 9,
+   "correctness": 6,
    "reasoning": 8,
-   "format": 9,
-   "russian": 9,
-   "comment": "Полностью рабочий один SELECT: window MIN OVER для когорты, per-cohort generate_series(0,max_offset) корректно отсекает будущие месяцы (совпадает с примером п.6), NUMERIC(5,4), нули через LEFT JOIN. Выдуманных API нет, обоснованы индексы с порядком полей и LEFT JOIN vs EXISTS."
+   "format": 8,
+   "russian": 8,
+   "comment": "Запрос структурно корректен и полон (window ROW_NUMBER, generate_series+CROSS JOIN, LEFT JOIN для нулей, NUMERIC(5,4), отсечение будущих месяцев), но во всех date_trunc отсутствует AT TIME ZONE 'UTC', хотя ТЗ явно требует усечение в UTC — при не-UTC сессии когорты сместятся. Рассуждение и русское пояснение (индексы, LEFT JOIN vs EXISTS с разбором плана) очень сильные."
   },
   "deepseek-flash-vl": {
    "correctness": 8,

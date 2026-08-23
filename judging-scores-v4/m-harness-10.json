@@ -179,10 +179,10 @@
   },
   "qwen3.8-27b": {
    "correctness": 9,
-   "reasoning": 8,
+   "reasoning": 9,
    "format": 9,
    "russian": 10,
-   "comment": "Корректный следующий шаг: issue_refund с charge_id ch_77a2, суммой 990 и reason_code auto_renew_unused, опираясь на реальные Observation; не галлюцинирует и верно намечает последующую отмену с at_period_end=false. Строгий формат Thought/Action/Action Input."
+   "comment": "Верный следующий шаг: issue_refund с ch_77a2, 990, auto_renew_unused; чётко перечислены все три условия политики, Observation не выдуман, формат Thought/Action/Action Input валиден."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

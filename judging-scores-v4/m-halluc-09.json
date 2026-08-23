@@ -178,11 +178,11 @@
    "comment": "Технически безупречный ответ без выдуманных фактов: реальные механизмы MVCC (xmin/xmax, snapshot, VACUUM) и 2PC (PREPARE/COMMIT PREPARED, max_prepared_transactions, реальные координаторы Narayana/Atomikos), корректные тонкости и уместные оговорки. Отличная структура и русский."
   },
   "qwen3.8-27b": {
-   "correctness": 8,
+   "correctness": 9,
    "reasoning": 9,
    "format": 9,
    "russian": 9,
-   "comment": "Технически очень точный и полный разбор MVCC и 2PC без выдуманных фактов; лёгкий минус за ошибочное утверждение, что нельзя PREPARE транзакцию с SAVEPOINT/подтранзакциями, и спорный нюанс о писателе, ждущем читателя. Отличная структура, таблицы, SQL-примеры, качественный русский."
+   "comment": "Технически точный, полный ответ без выдумок: верно разобраны xmin/xmax, снапшоты, VACUUM, PREPARE TRANSACTION/COMMIT PREPARED, max_prepared_transactions и путаницы 2PC/2PL/prepared statements. Мелкие неточности формулировок (xmin, опечатка COMMIT PREpared) не снижают уровень существенно."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

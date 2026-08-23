@@ -178,11 +178,11 @@
    "comment": "Закрывает все 6 требований: writeJSON/writeError, typed context key через iota, structured errors с Unwrap и mapping errorResponse, валидация через map, метод вынесен в chi-роутер с MethodNotAllowed, slog LogAttrs только для 5xx. Компилируется, API реальные, поведение сохранено; объяснения на русском краткие, но точные."
   },
   "qwen3.8-27b": {
-   "correctness": 9,
-   "reasoning": 9,
-   "format": 9,
-   "russian": 9,
-   "comment": "Выполнены все 6 требований, код идиоматичный и компилируемый, ложных API нет. Особенно силён разбор нюанса с JSON-ответом 405 на уровне роутера (chi/gorilla) и тонкий handler через updateOrder; поведение сохранено, логирование через slog с полями."
+   "correctness": 7,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Покрыты все 6 пунктов, код чистый и идиоматичный, отличное обоснование метода на роутере. Слабость: функция httpStatus(err) определена, но не используется в хендлере (dead code, mapping не подключён), а Server.db как *sql.DB не имеет GetOrder/UpdateOrder."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

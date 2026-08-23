@@ -178,11 +178,11 @@
    "comment": "Собранный spec полностью корректен и соответствует схеме (image, replicas, strategy canary 10, healthcheck timeout 5, metadata). Но модель отказалась делать требуемый вызов submit_deployment, сославшись на отсутствие инструмента, то есть провалила ядро задачи; пояснение по полям крайне поверхностное, без разбора источника каждого поля."
   },
   "qwen3.8-27b": {
-   "correctness": 10,
+   "correctness": 9,
    "reasoning": 9,
-   "format": 10,
-   "russian": 10,
-   "comment": "Правильная последовательность двух read-вызовов и ровно один submit_deployment; объект полностью соответствует схеме (image, replicas, canary 10%, timeout 5, metadata). Полное пояснение источников полей и проверка signed=true."
+   "format": 9,
+   "russian": 9,
+   "comment": "Верная последовательность (2 read + один submit), spec на 100% соответствует схеме: image, replicas=6, canary 10%, timeout 5, metadata агрегирована корректно. Подробное пояснение и явная проверка схемы. Минус за выдуманный deployment_id в выводе tool."
   },
   "deepseek-flash-vl": {
    "correctness": 10,
@@ -192,6 +192,6 @@
    "comment": "Идеальная последовательность вызовов и полностью корректный spec: image склеен верно, replicas=6, canary 10%, timeout_s=5, metadata агрегирована правильно. Пофайловое пояснение и подтверждение signed=true присутствуют; формат — Python-псевдокод, а не чистый JSON tool call, но значения точны."
   }
  },
- "winner": "qwen3.8-27b",
+ "winner": "gpt-oss-120b",
  "notes": "Большинство моделей выдали идентичный корректный spec; deepseek-pro/kimi/gpt-oss/nemotron-omni — образцовые. Ряд gpt-5.5/5.6 отказались делать вызовы (штраф по correctness), а nemotron-super сломал JSON."
 }

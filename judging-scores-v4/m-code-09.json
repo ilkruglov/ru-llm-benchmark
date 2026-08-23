@@ -178,11 +178,11 @@
    "comment": "Корректный компилируемый Go: все 10 требований выполнены, нет выдуманных API, sentinel-ошибки с %w, UnmarshalJSON-валидация, RWMutex, плюс безопасный dispatch хуков без deadlock и доп. mutex на Order. Обоснование выбора *Order краткое, но по делу; объяснения на русском лаконичны и верны."
   },
   "qwen3.8-27b": {
-   "correctness": 9,
-   "reasoning": 9,
-   "format": 9,
+   "correctness": 1,
+   "reasoning": 8,
+   "format": 7,
    "russian": 9,
-   "comment": "Компилируемый идиоматичный Go, все 10 требований покрыты (sentinel-ошибки с %w, string-тип, *Order с обоснованием, Hook func(*Order), slice of struct, RWMutex со snapshot хуков вне лока, UnmarshalJSON-валидация, пример main). Мелочи: snapshot хуков до проверки легальности перехода и выдуманные детерминированные таймстемпы в примере вывода."
+   "comment": "Ядро state machine корректно и идиоматично (sentinel-ошибки, RWMutex, UnmarshalJSON, обоснование *Order), но в main() используется неопределённый идентификатор stderr при неимпортированном os — программа не компилируется, поэтому correctness по строгому правилу занижена."
   },
   "deepseek-flash-vl": {
    "correctness": 10,

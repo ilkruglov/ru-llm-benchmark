@@ -178,11 +178,11 @@
    "comment": "Точнейшее извлечение из всех частей контекста: Table 3 (14.2 vs 16.8 = 15.5%; avg 11.7 vs Switch 14.0; low-resource самое сильное относительно dense ~22.8%), essential trust-region (diverged после 8B, collapse к одному эксперту) vs bootstrap (4.91, marginally stable), все ограничения с числами (12-15%, 50B cold-start, single seed 32B, нет гарантий, 980 tCO2eq). Галлюцинаций нет; мелкие огрехи в номерах приложений (Appendix D)."
   },
   "qwen3.8-27b": {
-   "correctness": 10,
+   "correctness": 9,
    "reasoning": 9,
-   "format": 10,
-   "russian": 10,
-   "comment": "Безупречное извлечение из всех частей контекста: точные цитаты §1.1, Table 3, §7.1/7.2, §8.1-8.8, верные числа и корректно посчитанные относительные улучшения, без галлюцинаций. Отличная структура и русский, все 4 подвопроса Q4 закрыты."
+   "format": 9,
+   "russian": 9,
+   "comment": "Точное и полное извлечение по всем 4 вопросам с верными числами (14.2 vs 16.8=15.5%, среднее 11.7 vs 14.0, low-resource 22.8% vs dense, trust-region essential/diverged после 8B, cold-start ~50B, single-seed, нет теор. гарантий), цитаты подтверждаются вплоть до аппендиксов J-EXTRA/H/E без галлюцинаций. Мелкие огрехи в номерах разделов (§E.10 для async, §8.8 для safety guardrails)."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

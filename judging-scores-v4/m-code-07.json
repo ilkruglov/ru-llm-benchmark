@@ -178,11 +178,11 @@
    "comment": "Код не компилируется: перенос строки перед `as` даёт синтаксическую ошибку TS1434, и даже после её исправления createSelector не выводит S (инферится unknown) — требуемый пример с age/counter не проходит type-check, т.е. ключевое требование #4 провалено. Store-часть (reqs 1,2,3,5,6,7) корректна и идиоматична."
   },
   "qwen3.8-27b": {
-   "correctness": 2,
-   "reasoning": 4,
-   "format": 7,
-   "russian": 8,
-   "comment": "createStore типизирован корректно и проходит tsc --strict, но createSelector (ключевое требование 4) не компилируется: overload-подход не матчится, age/counter выводятся как unknown, а итоговый result:number падает. Рассуждение глубокое (circular inference, keyof на generic-массивах), но ведёт к неверному решению и содержит фейковую секцию проверки с ✓, хотя код не работает."
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректная типизация: single generic createStore, Partial|updater с сужением через typeof, select с <T> inference, variadic tuple с mapped-type для combiner, subscribe возвращает () => void, без any. Паттерн совпадает с топовыми ответами и type-check проходит. Минус: mapped-type повторён дословно 4 раза вместо вынесения в helper — многословно. Отличное русское объяснение с таблицами и секцией проверки."
   },
   "deepseek-flash-vl": {
    "correctness": 2,

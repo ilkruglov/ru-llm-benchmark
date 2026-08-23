@@ -178,11 +178,11 @@
    "comment": "Все 5 пунктов строго из chunks, корректные citations, без галлюцинаций; бонус про 403->OAuth. Ответ очень лаконичный — рассуждение видно, но неглубоко раскрыто."
   },
   "qwen3.8-27b": {
-   "correctness": 10,
+   "correctness": 8,
    "reasoning": 9,
    "format": 10,
    "russian": 10,
-   "comment": "Все 5 пунктов строго из chunks с корректными citations, галлюцинаций нет. Отличное рассуждение: явно объясняет, почему PKCE не нужен и что refresh_token относится только к Authorization Code, а не Client Credentials; чёткие attribution-маркеры и безупречный русский."
+   "comment": "Все 5 пунктов корректны и точно процитированы; глубокая проработка нюанса 2FA при выдаче sensitive:write с предложением гибридного refresh-подхода. Минус: слегка спекулятивное 'refresh без 2FA' вне chunks и внутреннее противоречие '15 минут' против TTL 1 час."
   },
   "deepseek-flash-vl": {
    "correctness": 10,
@@ -192,6 +192,6 @@
    "comment": "Все 5 пунктов строго из chunks, корректные citations, без галлюцинаций; верно избегает refresh-token для Client Credentials, отмечает 2FA и доп. лимит /oauth/token. Чёткие attribution-маркеры, отличный русский."
   }
  },
- "winner": "qwen3.8-27b",
+ "winner": "deepseek-flash-vl",
  "notes": "Все модели верно определили Client Credentials/sensitive:write/60min. Победитель — sol-low за строгое заземление и честность о неуказанном в chunks. Слабейший — nemotron-omni (ошибка про refresh_token)."
 }

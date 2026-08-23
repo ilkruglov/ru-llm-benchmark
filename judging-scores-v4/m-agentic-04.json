@@ -179,10 +179,10 @@
   },
   "qwen3.8-27b": {
    "correctness": 7,
-   "reasoning": 8,
+   "reasoning": 7,
    "format": 9,
-   "russian": 8,
-   "comment": "Полный runbook по всем 8 пунктам с явными ветвлениями, конкретными командами и учётом split-brain/потери данных. Минусы исполнимости: перезапись всего postgresql.conf через cat >, ошибочный --dbname=host в pg_basebackup, отсутствие recovery.signal для PITR в PG15, pg_stat_replication на реплике."
+   "russian": 7,
+   "comment": "Очень полный исполнимый runbook: все 8 секций, явные ветвления, таблица акторов, тайминги, comms-шаблоны, сбор артефактов. Минусы: неверные флаги patronictl failover (--master/--leader), путаница pause vs edit-config, логическая нестыковка в ветке PITR (восстановление с db-prod-02 при 'оба standby down'); в русском проскочил китайский фрагмент."
   },
   "deepseek-flash-vl": {
    "correctness": 8,

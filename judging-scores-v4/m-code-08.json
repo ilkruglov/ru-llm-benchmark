@@ -178,11 +178,11 @@
    "comment": "Найдены все ключевые проблемы (lock через await, subscribe-after-send, unwrap-panic, утечка loader при отмене); честно отмечено, что строгого цикла X<->Y внутри функции нет. Фикс на Arc<OnceCell> с double-checked RwLock корректен, компилируется, сохраняет single-flight и не держит lock во время load. Единственный минор — конкретную реальную взаимоблокировку (держит inner в recv, а загрузчик ждёт inner) можно было связать явнее."
   },
   "qwen3.8-27b": {
-   "correctness": 8,
+   "correctness": 1,
    "reasoning": 7,
-   "format": 9,
+   "format": 6,
    "russian": 9,
-   "comment": "Корректный per-key gate single-flight фикс: компилируется, реальные API (RwLock/Mutex/Arc), single-flight сохранён, load_from_db остаётся async. Минус: 'lock-order inversion' подан гипотетически, и не отмечено, что в исходнике ветка подписчика фактически недостижима (просто сериализация на inner), а не классический цикл."
+   "comment": "Отличный разбор (lock-across-await, single-flight, std vs tokio Mutex, RwLock), но фикснутый код НЕ компилируется: tx вне области видимости в tx.send(), is_loader не используется — требование 7 провалено, поэтому correctness 1."
   },
   "deepseek-flash-vl": {
    "correctness": 1,

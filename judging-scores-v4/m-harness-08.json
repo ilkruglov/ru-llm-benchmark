@@ -178,11 +178,11 @@
    "comment": "Правильный следующий шаг — get_commit_diff на e7c1a9, опираясь на реальные Observation (регрессия между b3f0d2 и e7c1a9). Формат ReAct строгий, аргументы валидны; рассуждение верное, но лаконичное."
   },
   "qwen3.8-27b": {
-   "correctness": 9,
-   "reasoning": 8,
-   "format": 10,
-   "russian": 10,
-   "comment": "Корректный следующий шаг: get_commit_diff по e7c1a9 с опорой на реальные Observation (1841 passed на b3f0d2, 1842 failed). Валидный ReAct-формат, не перезапускает джоб, обоснованная гипотеза про подпись/секрет/тест."
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 3,
+   "russian": 9,
+   "comment": "Верный следующий шаг (get_commit_diff e7c1a9) с корректной опорой на реальные Observation и без выдумывания данных. Но грубо нарушен ReAct-протокол: написана запрещённая строка Observation (пусть и с плейсхолдером) и добавлен лишний блок предварительных рассуждений вместо ровно одного Thought/Action/Action Input."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

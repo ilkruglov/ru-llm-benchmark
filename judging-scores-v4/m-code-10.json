@@ -178,11 +178,11 @@
    "comment": "Полная валидная OpenAPI 3.1 спецификация: все 6 операций, все требуемые коды ответов, RFC 7807 problem+json, Idempotency-Key с UUID-паттерном, sha256-паттерны, examples, webhooks через callbacks, Retry-After — все $ref резолвятся, YAML парсится. Итоговое объяснение чётко покрывает Content-Range vs tus, S3 multipart, идемпотентность и масштабирование."
   },
   "qwen3.8-27b": {
-   "correctness": 1,
+   "correctness": 5,
    "reasoning": 8,
-   "format": 3,
+   "format": 6,
    "russian": 8,
-   "comment": "Дизайн отличный и полный (все операции, RFC 7807, tus vs Content-Range, S3 multipart, идемпотентность, webhooks с HMAC, масштабирование), но YAML НЕ парсится: 7 незакрытых одинарных кавычек ('#/.../Problem500 и Problem429) ломают документ, а главное требование — валидный OpenAPI. Русское объяснение сильное."
+   "comment": "Полная, качественная спецификация со всеми 6 операциями, кодами, RFC 7807 и хорошим обоснованием (tus vs Content-Range, S3 multipart, идемпотентность, масштабирование). Но нарушено ключевое требование валидности: сырой YAML не парсится (description начинается с backtick у progressPct) и есть битый $ref '#/.components/schemas/ByteCount'."
   },
   "deepseek-flash-vl": {
    "correctness": 6,

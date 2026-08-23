@@ -182,7 +182,7 @@
    "reasoning": 9,
    "format": 9,
    "russian": 9,
-   "comment": "Точно найдена главная пропущенная ошибка — race condition/TOCTOU при check-then-act, ведущий к double booking; подробно объяснено, почему рецензент пропустил, и даны корректные исправления (with_for_update, exclusion constraint, serializable) с разбором ограничений. Дополнительные замечания (валидация duration, учёт статусов) валидны, не выдумка."
+   "comment": "Точно найдена главная пропущенная ошибка — TOCTOU race condition с двойным бронированием, объяснена причина слепого угла рецензента и дано два корректных фикса (SELECT FOR UPDATE и exclusion constraint). Вторичные замечания реальны, выдумок нет; лёгкий опечаточный дефект в тексте."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

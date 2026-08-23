@@ -180,9 +180,9 @@
   "qwen3.8-27b": {
    "correctness": 9,
    "reasoning": 9,
-   "format": 9,
-   "russian": 8,
-   "comment": "Практически исполнимый, крайне конкретный разбор: expand/contract с lock_timeout и батчами, RollingUpdate+canary, dual-write, отказ от FLUSHALL, откат из бэкапа, авто-rollback по SLO и reconciliation. Мелкие технические огрехи (COMMIT в DO-блоке, флаг redis) и русские опечатки ('квезятся','висяк','длиннющий транзакция') мешают максимуму."
+   "format": 10,
+   "russian": 9,
+   "comment": "Разобраны все 6 изъянов с последствиями и конкретными правками (expand/contract, RollingUpdate+canary, dual-write, отказ от FLUSHALL, feature-flag откат, авто-rollback по SLO) плюс полный поэтапный план. Практично, точнее ряда топ-моделей (верно про metadata-only ADD COLUMN в PG11+); мелкая несогласованность maxSurge в canary."
   },
   "deepseek-flash-vl": {
    "correctness": 9,

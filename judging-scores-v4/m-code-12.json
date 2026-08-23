@@ -183,6 +183,13 @@
    "format": 8,
    "russian": 8,
    "comment": "Корректный Vyukov bounded MPMC с CAS-циклом и реальными API sync/atomic (Load/Store/CAS, без выдуманных методов), верная логика seq/full/empty, ABA-safe, padding против false sharing. Обоснование покрывает channel/lock/Michael-Scott, memory ordering и ABA. Мелочи: New паникует вместо округления до power-of-2, b.Fatal внутри RunParallel-воркера, опечатка \"требula\"."
+  },
+  "qwen3.8-27b": {
+   "correctness": 3,
+   "reasoning": 6,
+   "format": 8,
+   "russian": 8,
+   "comment": "Отличная структура и разбор ABA/ordering/false-sharing, но в Enqueue/Dequeue отсутствует ветка reload pos при seq>pos (dif>0), которую эталонные модели включают: под contention это даёт livelock и ложный full/empty. API реальные, но ключевой сценарий MPMC ломается."
   }
  },
  "winner": "kimi-k2.6",

@@ -178,11 +178,11 @@
    "comment": "Полностью закрывает все 6 пунктов: гибрид MSK+SQS с реалистичными цифрами, exactly-once через outbox/inbox и commit offset после транзакции, корректная compliance-логика (payload_ref, VPC endpoint не меняет место хранения тела), риски с митигейшнами и условия пересмотра включая hot-account partition. Практически исполнимо, глубоко и точно."
   },
   "qwen3.8-27b": {
-   "correctness": 9,
-   "reasoning": 9,
-   "format": 10,
-   "russian": 9,
-   "comment": "Полное покрытие всех 6 пунктов: гибрид Kafka(A)/RabbitMQ(B) с привязкой к цифрам (45k->135k, FIFO ~3k/s), корректное отвержение SQS и exactly-once через идемпотентных потребителей, compliance через VPC, 3 риска с митигейшн и внятные условия пересмотра. Практически исполнимо; чуть недостаёт явного transactional outbox на стороне продюсера."
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 7,
+   "comment": "Все 6 разделов раскрыты глубоко: верно указано, что Kafka не даёт exactly-once нативно (dedup-таблица), реальные цифры по партициям, throughput, ретеншну, отвержения и compliance проработаны. Слабое место — self-managed RabbitMQ для Class B противоречит собственной логике ухода от ops (практическая исполнимость), плюс несколько опечаток/выдуманных параметров (min.insightful, параметк)."
   },
   "deepseek-flash-vl": {
    "correctness": 9,
@@ -192,6 +192,6 @@
    "comment": "Покрывает все 6 пунктов, реалистичная гибридная архитектура Kafka/SQS с transactional outbox, идемпотентностью, envelope+payload_ref в VPC и грамотным разделом рисков/пересмотра. Русский хороший, но есть мелкие огрехи (Faktically, согласование)."
   }
  },
- "winner": "qwen3.8-27b",
+ "winner": "gpt-5.5-low",
  "notes": "Топ-уровень заняло семейство GPT-5.6 и gpt-5.5 (MSK для A + SQS/RabbitMQ для B, exactly-once как бизнес-эффект через outbox/inbox, claim-check compliance); luna-high выделяется расчётом хранилища и оговоркой о неизвестной нагрузке B. Провалился nemotron-omni (распад в мусор), gpt-oss и 35b-a3b проиграли по практической исполнимости для слабой команды."
 }
