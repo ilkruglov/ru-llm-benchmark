@@ -141,6 +141,13 @@
    "format": 9,
    "russian": 10,
    "comment": "Все четыре пункта верны: бренд ŠKODA, модель KODIAQ, светло-серебристый SUV/кроссовер, сайт SKODA-AUTO.RU и слоган SIMPLY CLEVER. Ответ точный, ясный и корректный по-русски."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре пункта верны: ŠKODA KODIAQ, светло-серебристый SUV/кроссовер, SKODA-AUTO.RU, SIMPLY CLEVER. Ответ точный, структурированный и на грамотном русском."
   }
  },
  "winner": "35b-a3b",

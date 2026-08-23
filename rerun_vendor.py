@@ -70,6 +70,7 @@ VL_CFG = {
     "minimax-m3":    {"ep": "minimax-m3", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # MiniMax card: temp 1.0 / top_p 0.95 / top_k 40; reasoning on by default
     "35b-a3b-nd":    {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host
     "qwen3.8-27b":   {"ep": "empirio-qwen38", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True, "reasoning_effort": "high"},  # Qwen VL preset (temp 0.6), vision-capable; EmpirioLabs direct host (parallel, 32K output cap)
+    "deepseek-flash-vl": {"ep": "deepseek-flash-vl", "reasoning_effort": "high"},  # DeepSeek V4-Flash vision (exp head); same vendor knob as text deepseek (reasoning_effort high, no temp override)
 }
 
 

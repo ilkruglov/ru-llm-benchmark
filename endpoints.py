@@ -75,6 +75,14 @@ def get_endpoints():
             "reasoning_field": "reasoning_content",
         },
         {
+            "tag": "deepseek-flash-vl",
+            "url": "https://api.deepseek.com/v1",
+            "key": os.environ.get("DEEPSEEK_API_KEY", ""),
+            "model": "deepseek-v4-flash-vision-exp",   # DeepSeek's experimental vision head on V4-Flash (only DS model that accepts images)
+            "type": "deepseek",
+            "reasoning_field": "reasoning_content",
+        },
+        {
             "tag": "deepseek-pro",
             "url": "https://api.deepseek.com/v1",
             "key": os.environ.get("DEEPSEEK_API_KEY", ""),

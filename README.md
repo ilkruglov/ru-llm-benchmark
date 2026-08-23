@@ -5,7 +5,7 @@
 промышленность, банки.
 
 * **Текст** — 181 задача, 26 моделей, 21 категория
-* **Зрение** — 303 задачи, 20 моделей, 17 способностей на 8 отраслей
+* **Зрение** — 303 задачи, 21 модель, 17 способностей на 8 отраслей
 
 Отчёты с разбором каждой задачи:
 [текстовый](https://ilkruglov.github.io/ru-llm-benchmark/text-benchmark.html) ·
@@ -37,16 +37,17 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | Kimi K2.6 | 9.01 | | 11 | GPT-5.6 Terra (high) | 8.75 |
-| 2 | GPT-5.6 Sol (medium) | 8.99 | | 12 | GPT-5.6 Terra (low) | 8.73 |
-| 3 | **GPT-5.6 Luna (xhigh)** | **8.95** | | 13 | GPT-5.6 Luna (high) | 8.72 |
-| 4 | GPT-5.5 (medium) | 8.95 | | 14 | GPT-5.6 Luna (medium) | 8.69 |
-| 5 | GPT-5.6 Sol (low) | 8.94 | | 15 | GPT-5.6 Luna (low) | 8.57 |
-| 6 | **Qwen3.8-27B** | **8.91** | | 16 | Gemma-4-31B | 8.46 |
-| 7 | GPT-5.5 (low) | 8.89 | | 17 | DiffusionGemma | 8.20 |
-| 8 | GPT-5.6 Terra (medium) | 8.86 | | 18 | MiniMax-M3 | 8.10 |
-| 9 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 19 | Llama-4-Scout-17B | 7.53 |
-| 10 | Qwen3.6-27B-FP8 | 8.77 | | 20 | Nemotron-3-Nano-Omni-30B | 6.80 |
+| 1 | Kimi K2.6 | 9.01 | | 12 | GPT-5.6 Terra (low) | 8.73 |
+| 2 | GPT-5.6 Sol (medium) | 8.99 | | 13 | GPT-5.6 Luna (high) | 8.72 |
+| 3 | **GPT-5.6 Luna (xhigh)** | **8.95** | | 14 | GPT-5.6 Luna (medium) | 8.69 |
+| 4 | GPT-5.5 (medium) | 8.95 | | 15 | GPT-5.6 Luna (low) | 8.57 |
+| 5 | GPT-5.6 Sol (low) | 8.94 | | 16 | **DeepSeek v4-Flash Vision (exp)** | **8.49** |
+| 6 | **Qwen3.8-27B** | **8.91** | | 17 | Gemma-4-31B | 8.46 |
+| 7 | GPT-5.5 (low) | 8.89 | | 18 | DiffusionGemma | 8.20 |
+| 8 | GPT-5.6 Terra (medium) | 8.86 | | 19 | MiniMax-M3 | 8.10 |
+| 9 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 20 | Llama-4-Scout-17B | 7.53 |
+| 10 | Qwen3.6-27B-FP8 | 8.77 | | 21 | Nemotron-3-Nano-Omni-30B | 6.80 |
+| 11 | GPT-5.6 Terra (high) | 8.75 | | | | |
 
 ## Как считалось
 
