@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Код полностью рабочий и детерминированный (патч monotonic+sleep через FakeClock), все ветки acquire/refill/timeout прослеживаются верно, 25 тестов, conftest с маркером slow, pytest.approx везде. Минус: не использована фикстура с параметрами через params= (использованы только parametrize и фабрика make_limiter), что явно требовалось в п.1."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 7,
+   "format": 9,
+   "russian": 7,
+   "comment": "Полный, корректный набор: FakeClock мокает monotonic и sleep, все acquire-тесты детерминированы и проходят (проверено трассировкой границ timeout). Отлично организован по классам, есть params-фикстуры, pytest.approx, pytest.ini для маркера slow; прозы-рассуждений немного, но покрытие и идиоматика на уровне топ-моделей."
   }
  },
  "winner": "glm-5.2",

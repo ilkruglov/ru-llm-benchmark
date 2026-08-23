@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 10,
    "comment": "Нашёл все заложенные баги и синтезировал по всему 65K-контексту (SQL-инъекция, деление вместо умножения, race, half-open, хардкод креденшалов, сломанный RequireRole, idempotency, тест-маскировка, мёртвый ExternalProcessor) без галлюцинаций и без lost-in-the-middle. Мелкие пропуски: не отмечен неподключённый auth-middleware (эскалация привилегий), непроверяемый alg JWT и compile-ошибки."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Нашёл практически все заложенные баги из всех частей длинного контекста (SQL-инъекция, деление вместо умножения, инклюзивная граница периодов, race, потеря данных в Kafka publish и consumer, паника в RequireRole, KAFKA_BROKER vs BROKERS, хардкод креденшелов) без галлюцинаций; глубокая находка про необёрнутый ErrConnTimeout и дубли платежей. Мелкие пропуски: JWT alg-confusion, невызванная валидация, compile-ошибки."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

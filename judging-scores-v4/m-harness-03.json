@@ -183,8 +183,15 @@
    "format": 8,
    "russian": 9,
    "comment": "Корректно завершает Final Answer: churn = всё падение (74000=74000), виновник Enterprise 60000 (81%), даунгрейда нет — числа и вывод точны. Таблица и разбор среднего MRR глубокие; лёгкая условность с валютой (₽) и отсутствие Thought перед Final Answer не критичны."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный Final Answer, опирающийся на реальные Observation: падение 74000 полностью объяснено оттоком (74000=60000+14000), даунгрейда нет, виноват Enterprise (81%). Логика верна и полна, остановка обоснована."
   }
  },
- "winner": "deepseek-flash",
+ "winner": "deepseek-flash-vl",
  "notes": "Почти все модели верно распознали достаточность данных и дали правильный вывод (churn, Enterprise). nemotron-omni выдумал Observation (correctness 0), kimi сделал лишний запрос вместо остановки."
 }

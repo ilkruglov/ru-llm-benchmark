@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 8,
    "comment": "Практически исполнимый план: верное ключевое решение (cutover = catch-up дельты, а не загрузка 4.2 ТБ), CDC с идемпотентностью по LSN, конкретная сверка по партиционным чек-суммам, blind index/content_hash для PII под pgcrypto с random IV, 12 рисков, бюджет в $15k, rollback и KPI. Мелкие опечатки/англицизмы в русском (бенчмарч, Непроускная)."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный исполнимый план: все 6 фаз с задачами (ID, роль, ЧД, зависимости), 8 рисков, сравнение DMS/pgloader/custom, конкретные CDC через binlog+idempotent replay, SHA-256 по чанкам с канонизацией, трёхуровневый rollback и KPI. Мелкие шероховатости (несогласованность CDC lag 1 vs 5 мин, слабый reverse-rollback честно компенсирован PITR), но практическая исполнимость очень высокая."
   }
  },
  "winner": "gpt-5.5-medium",

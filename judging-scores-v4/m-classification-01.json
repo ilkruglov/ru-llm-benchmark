@@ -183,6 +183,13 @@
    "format": 10,
    "russian": 9,
    "comment": "Полная и точная multi-label разметка из 7 корректных меток без ложных срабатываний, primary_intent=card_block и urgency=critical обоснованы. Обоснование детально цитирует каждый интент; лёгкая помарка в слове 'оспорение' вместо 'оспаривание'."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все семь корректных intent-меток без ложных срабатываний, primary_intent=card_block и urgency=critical соответствуют эталону. Чистый валидный JSON без обёрток, обоснование точно перечисляет намерения."
   }
  },
  "winner": "qwen3.8-27b",

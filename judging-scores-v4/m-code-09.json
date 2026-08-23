@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Компилируемый идиоматичный Go, все 10 требований покрыты (sentinel-ошибки с %w, string-тип, *Order с обоснованием, Hook func(*Order), slice of struct, RWMutex со snapshot хуков вне лока, UnmarshalJSON-валидация, пример main). Мелочи: snapshot хуков до проверки легальности перехода и выдуманные детерминированные таймстемпы в примере вывода."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Компилируемый идиоматичный Go: все 10 требований выполнены (sentinel+%w, string-enum, *Order с обоснованием, Hook, slice истории, RWMutex с копированием хуков под RLock, UnmarshalJSON-валидация, main). Есть бонусы (nil-checks, Valid/CanTransitionTo, NewOrder), но текстовое объяснение на русском заметно короче калибровочных лидеров."
   }
  },
  "winner": "glm-5.2",

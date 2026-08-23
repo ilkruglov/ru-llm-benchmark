@@ -176,6 +176,13 @@
    "format": 0,
    "russian": 1,
    "comment": "Полный отказ: модель заявила, что рабочая директория только для чтения, и не создала ни кода, ни тестов, ни бенчмарка — задача не выполнена вообще."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Корректный Vyukov bounded MPMC с CAS-циклом и реальными API sync/atomic (Load/Store/CAS, без выдуманных методов), верная логика seq/full/empty, ABA-safe, padding против false sharing. Обоснование покрывает channel/lock/Michael-Scott, memory ordering и ABA. Мелочи: New паникует вместо округления до power-of-2, b.Fatal внутри RunParallel-воркера, опечатка \"требula\"."
   }
  },
  "winner": "kimi-k2.6",

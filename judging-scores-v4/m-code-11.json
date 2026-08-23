@@ -183,6 +183,13 @@
    "format": 8,
    "russian": 9,
    "comment": "Все три утечки найдены верно с точными механизмами (retention из GC-root, не цикл), рабочий fix (deque/per-instance cache/unsubscribe), regression-тест и мониторинг. Минусы: manhole ошибочно описан как web-shell на http, битый сниппет метрик (isinstance с False) и странный тернарник в publish; упущен эффект O(N^2) роста processed_ids."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Найдены все 3 утечки (unbounded _history, bound-method подписки удерживают Worker, class-level _results_cache) с верным объяснением недостижимости для GC; fix через weakref.WeakMethod, deque(maxlen), weakref в кэше корректен, все API реальные. Диагностика (py-spy, signal+pdb, manhole, tracemalloc, objgraph, gc.get_referrers), regression-тест и Prometheus — на уровне лучших калибровочных ответов."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

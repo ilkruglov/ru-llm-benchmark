@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 10,
    "comment": "Точно локализован баг на строке 21; замена с якорем по строке `if inv.buyer_vat_valid:` анкорит нужный return и не трогает B2C-ветку. Минимальная корректная правка, верное объяснение reverse charge."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точная минимальная правка только ветки reverse charge (return 0.0), опора на реальный Observation, валидный однократный Action. Рассуждение чёткое и корректное."
   }
  },
  "winner": "deepseek-flash",

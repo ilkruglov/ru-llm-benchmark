@@ -183,6 +183,13 @@
    "format": 2,
    "russian": 9,
    "comment": "Структура, namespace-префиксы, INN/KPP и вся арифметика (сумма LineTotal=Subtotal, VAT 20%, GrandTotal) идеально согласованы. Но перед XML-декларацией стоят два пустых перевода строки, из-за чего документ НЕ является well-formed XML (парсер падает) и нарушено жёсткое требование о декларации в самом начале — на строгом format-задании это серьёзный дефект формата."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Well-formed XML со всеми namespace, корректными INN/KPP, ровно 3 позициями и точной арифметикой (Subtotal+VAT=GrandTotal, сумма LineTotal=Subtotal). Формат безупречен; явных рассуждений в ответе нет, как и требует формат-задача."
   }
  },
  "winner": "minimax-m3",

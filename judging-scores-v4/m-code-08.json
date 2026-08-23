@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Корректный per-key gate single-flight фикс: компилируется, реальные API (RwLock/Mutex/Arc), single-flight сохранён, load_from_db остаётся async. Минус: 'lock-order inversion' подан гипотетически, и не отмечено, что в исходнике ветка подписчика фактически недостижима (просто сериализация на inner), а не классический цикл."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 1,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 9,
+   "comment": "Дизайн верный (RwLock + watch + Drop-guard, real API), но рекурсивный вызов self.get_or_load(...).await в async fn без Box::pin => E0733, код не компилируется (нарушено требование 7). Deadlock-сценарий внутренне противоречив: сам отметил недостижимость ветки waiter при удержании inner, но всё равно привёл невозможную схему T1/T2."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

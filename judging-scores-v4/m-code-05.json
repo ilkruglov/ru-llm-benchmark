@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Полностью рабочий один SELECT: window MIN OVER для когорты, per-cohort generate_series(0,max_offset) корректно отсекает будущие месяцы (совпадает с примером п.6), NUMERIC(5,4), нули через LEFT JOIN. Выдуманных API нет, обоснованы индексы с порядком полей и LEFT JOIN vs EXISTS."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 8,
+   "comment": "Функционально корректный один SELECT: UTC-truncation через AT TIME ZONE, MIN OVER для когорты, generate_series+LEFT JOIN даёт нулевые строки, фильтр будущих offset соответствует примеру. Пояснения корректны, но кратки; лёгкая тонкость timestamptz+interval, общая для большинства ответов."
   }
  },
  "winner": "minimax-m3",

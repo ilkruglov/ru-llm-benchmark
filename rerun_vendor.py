@@ -42,6 +42,7 @@ TEXT_CFG = {
     "glm-5.2":        {"ep": "glm-5.2", "temperature": 1.0, "top_p": 0.95, "top_k": 40},  # GLM family vendor sampling (temp 1.0 / top_p 0.95 / top_k 40); reasoning on by default on deepinfra
     "35b-a3b-nd":     {"ep": "_nd_qwen", "nd_model": "qwen3.6-35b-a3b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True},  # SAME params as the primary 35b-a3b endpoint, routed to the alternate host - isolates host/quantization
     "qwen3.8-27b":    {"ep": "empirio-qwen38", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True, "reasoning_effort": "high", "dummy_tool": True},  # EmpirioLabs (trusted 3.8 host). dummy_tool: pass a tools schema (never called) to curb qwen3.8's cyclic over-reasoning on hard tasks. Qwen precise preset (temp 0.6, matches 27b/35b)
+    "deepseek-flash-vl": {"ep": "deepseek-flash-vl", "reasoning_effort": "high"},  # DeepSeek V4-Flash vision-exp head, also probed on TEXT (same vendor knob as text deepseek)
 }
 
 # Passing a tools schema — even one the model never invokes — curbs qwen3.8-27b's cyclic

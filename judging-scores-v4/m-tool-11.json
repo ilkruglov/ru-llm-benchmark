@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Полностью соблюдены все 5 правил: параллельный health-батч, условный get_recent_deploys(since_minutes=60) только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, без выдуманных данных. Разобраны ветки A/B/C. Минус — избыточная повторяемость."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Корректная map-reduce-логика: параллельный health по 5 сервисам, get_recent_deploys только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, метрики не выдуманы. Рассуждение чуть менее подробное, чем у топовых ответов, но все правила соблюдены."
   }
  },
  "winner": "27b-v2",

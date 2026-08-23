@@ -183,6 +183,13 @@
    "format": 6,
    "russian": 9,
    "comment": "Модель подтвердила метку billing, то есть пропустила ошибку классификатора: тикет — это баг-репорт о рассинхроне UI/API/billing и должен идти в technical_issue. Структура и русский отличные, но вывод неверен, поэтому correctness=0."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 0,
+   "reasoning": 3,
+   "format": 5,
+   "russian": 9,
+   "comment": "Модель подтвердила метку billing как верную и не нашла ошибку — тикет по сути technical_issue (баг в логике подсчёта seats, расхождение UI/API/billing). Пропущена ошибка, поэтому correctness 0; структура и язык хорошие, но вывод неверный."
   }
  },
  "winner": "deepseek-flash",

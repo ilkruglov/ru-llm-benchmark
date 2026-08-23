@@ -183,6 +183,13 @@
    "format": 10,
    "russian": 10,
    "comment": "Правильная последовательность двух read-вызовов и ровно один submit_deployment; объект полностью соответствует схеме (image, replicas, canary 10%, timeout 5, metadata). Полное пояснение источников полей и проверка signed=true."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Идеальная последовательность вызовов и полностью корректный spec: image склеен верно, replicas=6, canary 10%, timeout_s=5, metadata агрегирована правильно. Пофайловое пояснение и подтверждение signed=true присутствуют; формат — Python-псевдокод, а не чистый JSON tool call, но значения точны."
   }
  },
  "winner": "qwen3.8-27b",

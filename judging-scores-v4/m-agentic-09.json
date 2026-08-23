@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 8,
    "comment": "Полный, практически исполнимый план: все 7 требований покрыты, честно учтён отпуск B2 и code freeze, критический путь с буфером, техрешения по каждому bottleneck с обоснованием и rollback через feature flags. Минусы: слегка оптимистичные оценки (миграция Redis Cluster/нагрузка 24k за 3 дня), ошибка в математике SLA (21 сек вместо ~43) и обильное вкрапление английского."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Очень сильный, практически исполнимый план: корректно соблюдён отпуск B2 (нед.2-3) и code freeze (нед.6), критический путь и SRE как узкое место названы, все 4 bottleneck закрыты технически грамотно (PgBouncer transaction pooling, split Redis с политиками eviction, transactional outbox+SQS, rate limiter+circuit breaker+queue mode). Runbook с порогами и рубильниками до freeze, измеримый go/no-go, оба обязательных риска покрыты. Мелочи: оценки трудозатрат местами приблизительны, ramp-профиль краток."
   }
  },
  "winner": "gpt-5.6-luna-high",

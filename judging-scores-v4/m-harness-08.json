@@ -183,6 +183,13 @@
    "format": 10,
    "russian": 10,
    "comment": "Корректный следующий шаг: get_commit_diff по e7c1a9 с опорой на реальные Observation (1841 passed на b3f0d2, 1842 failed). Валидный ReAct-формат, не перезапускает джоб, обоснованная гипотеза про подпись/секрет/тест."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректный следующий шаг — get_commit_diff по e7c1a9; рассуждение опирается на реальные Observation (регрессия между b3f0d2 и e7c1a9), формат ReAct валиден, не выдумывает и не перезапускает джоб."
   }
  },
  "winner": "deepseek-flash-0731",

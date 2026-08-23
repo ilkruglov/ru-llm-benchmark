@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Технически очень точный и полный разбор MVCC и 2PC без выдуманных фактов; лёгкий минус за ошибочное утверждение, что нельзя PREPARE транзакцию с SAVEPOINT/подтранзакциями, и спорный нюанс о писателе, ждущем читателя. Отличная структура, таблицы, SQL-примеры, качественный русский."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Технически точный ответ без выдумок: xmin/xmax, снапшоты, VACUUM, PREPARE/COMMIT PREPARED, max_prepared_transactions=0, XA-координаторы, чёткое разделение 2PC/2PL/prepared statement. Отличная структура и русский."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

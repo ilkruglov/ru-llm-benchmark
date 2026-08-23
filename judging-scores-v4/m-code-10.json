@@ -183,6 +183,13 @@
    "format": 3,
    "russian": 8,
    "comment": "Дизайн отличный и полный (все операции, RFC 7807, tus vs Content-Range, S3 multipart, идемпотентность, webhooks с HMAC, масштабирование), но YAML НЕ парсится: 7 незакрытых одинарных кавычек ('#/.../Problem500 и Problem429) ломают документ, а главное требование — валидный OpenAPI. Русское объяснение сильное."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 8,
+   "comment": "Очень полный и идиоматичный OpenAPI 3.1: все 6 операций, RFC7807, Idempotency-Key/sha256 паттерны, вебхуки, per-file+aggregated прогресс, грамотное объяснение (Content-Range vs tus, S3 multipart, идемпотентность, масштабирование). Но спека НЕ парсится валидатором из-за незакавыченного 'Authorization: Bearer' в description (двоеточие+пробел в plain-scalar) — все сильные конкуренты сдали валидный YAML, а это был явно требуемый критерий."
   }
  },
  "winner": "gpt-5.6-sol-medium",

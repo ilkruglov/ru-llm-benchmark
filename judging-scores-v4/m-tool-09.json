@@ -183,6 +183,13 @@
    "format": 8,
    "russian": 9,
    "comment": "Правильно отказалась выдумывать инвойсы/курсоры/суммы и дала верный план: cursor=null, page_size=100, цикл пагинации до has_more=false, одно письмо send_dunning_email с template=overdue_final и всеми invoice_id. Последовательность и имена функций точны; фактических вызовов нет, но это соответствует отсутствию инструментов, как в откалиброванной группе."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 9,
+   "comment": "Честно отказалась выдумывать инвойсы и суммы, дала корректный план: правильная пагинация (cursor=null, page_size=100, next_cursor до has_more=false), верная агрегация (days_overdue>30) и одно письмо со всеми invoice_id и шаблоном overdue_final. Минус за формат: план описан псевдокодом, а не валидными JSON-вызовами."
   }
  },
  "winner": "deepseek-flash-0731",

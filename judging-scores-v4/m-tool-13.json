@@ -183,6 +183,13 @@
    "format": 7,
    "russian": 9,
    "comment": "Верно отказался от rollback/restart и невалидного severity=critical, смапил на sev1, корректные функции и аргументы, вызовы записаны неформальным текстом func(\"arg\"), а не строгими JSON-объектами."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Корректно отказался от rollback/restart, смапил critical на sev1, вызвал нужные инструменты в правильном порядке и не выдумал deploy_id и результаты. Вызовы даны в псевдонотации, а не строгим JSON."
   }
  },
  "winner": "gpt-oss-120b",

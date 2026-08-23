@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Выполнены все 6 требований, код идиоматичный и компилируемый, ложных API нет. Особенно силён разбор нюанса с JSON-ответом 405 на уровне роутера (chi/gorilla) и тонкий handler через updateOrder; поведение сохранено, логирование через slog с полями."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Компилируемый идиоматичный Go, покрыты все 6 требований (writeJSON/writeError, typed ctx key, sentinel errors + errorResponse mapping, map-lookup валидации, slog, обоснование метода), поведение и коды/сообщения сохранены; дополнительно выделены orderIDFromRequest/validStatus. Разбор изменений чуть лаконичнее топовых калибровочных ответов."
   }
  },
  "winner": "kimi-k2.6",

@@ -183,6 +183,13 @@
    "format": 2,
    "russian": 8,
    "comment": "Первый шаг (один повтор check_health) верный, но модель выдумала Observation'ы (healthy error_rate=0.002, promote ok, notify sent) и прогнала весь цикл до Final Answer, грубо нарушив запрет на фабрикацию наблюдений и правило 'ровно один блок'. Галлюцинация данных = correctness 0."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильный следующий шаг: ровно один повтор check_health на временный GATEWAY_TIMEOUT, без выдумывания Observation и без лишних действий. Формат ReAct валиден, рассуждение корректно, но кратко."
   }
  },
  "winner": "deepseek-flash-0731",

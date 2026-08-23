@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 10,
    "comment": "Правильно остановился на Final Answer, точно указал оба пути отправки SMS (прямой вызов в perform_charge:86 и хук notify_on_charge на событие charge.succeeded) и корректно объяснил, что retry — мнимая причина. Опора на реальные Observation, без галлюцинаций."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верно указан двойной путь отправки SMS: прямой вызов в perform_charge (стр.86) и хук notify_on_charge на событие charge.succeeded; корректно отмечено, что @retry вторичен. Опора на реальные Observation, валидный Final Answer."
   }
  },
  "winner": "gpt-5.5-medium",

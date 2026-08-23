@@ -183,6 +183,13 @@
    "format": 10,
    "russian": 9,
    "comment": "Валидный JSON, ровно 3 позиции, все форматы (ORD/CUST/SKU/utm) и типы соблюдены, лишних ключей нет. Арифметика полностью сходится: скидка 10400, налог на базе после скидки 16620, grand_total 100220. Осмысленные русские значения."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 8,
+   "reasoning": 6,
+   "format": 10,
+   "russian": 8,
+   "comment": "Валидный JSON, все required-поля, верные типы, ровно 3 line_items, консистентная currency и корректные форматы ID/SKU/UTM. Единственный минус — арифметика totals: subtotal 111941 против фактических 108941, что тянет вниз correctness."
   }
  },
  "winner": "gpt-oss-120b",

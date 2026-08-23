@@ -183,6 +183,13 @@
    "format": 7,
    "russian": 8,
    "comment": "createStore типизирован корректно и проходит tsc --strict, но createSelector (ключевое требование 4) не компилируется: overload-подход не матчится, age/counter выводятся как unknown, а итоговый result:number падает. Рассуждение глубокое (circular inference, keyof на generic-массивах), но ведёт к неверному решению и содержит фейковую секцию проверки с ✓, хотя код не работает."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 7,
+   "russian": 2,
+   "comment": "createStore/setState/select/subscribe типизированы корректно, но ключевое требование (createSelector variadic inference) не проходит tsc: S выводится в unknown, combiner получает age/counter как unknown и требуемое использование не компилируется. Объяснений на русском почти нет — только один комментарий, чистый идиоматичный код."
   }
  },
  "winner": "glm-5.2",

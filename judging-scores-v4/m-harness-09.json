@@ -183,6 +183,13 @@
    "format": 10,
    "russian": 10,
    "comment": "Верный следующий шаг: клик buy-B — новая «Wilfa Svart», явно исключены Uniform и б/у. Ровно один блок, валидный JSON, корректный формат Thought/Action/Action Input."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный единственный шаг: click buy-B — точный товар Wilfa Svart (не Uniform, не б/у). Строгий формат Thought/Action/Action Input, валидный JSON с реальным element_id, одно действие за ход."
   }
  },
  "winner": "glm-5.2",

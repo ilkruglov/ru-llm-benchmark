@@ -183,6 +183,13 @@
    "format": 10,
    "russian": 9,
    "comment": "Все оси верны (KASKO/complaint/critical/P0, полный набор из 7 vip-индикаторов без ложных), спорно лишь emotional_state=angry вместо более точного threatening при явных угрозах ЦБ/суд/СМИ. Богатый и продуманный список required_actions; JSON валиден, русский хороший, мелкая опечатка «Учсть»."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все ключевые метки совпадают с консенсусом сильных моделей (KASKO, complaint, threatening, critical, P0, все 7 vip_indicators), лишних false positives нет. Required_actions конкретны и уместны (звонок в течение часа, замена менеджера, компенсации, ответ за 48ч), JSON валиден, русский чистый."
   }
  },
  "winner": "gpt-oss-120b",

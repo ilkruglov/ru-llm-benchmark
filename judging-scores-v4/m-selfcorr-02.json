@@ -183,6 +183,13 @@
    "format": 9,
    "russian": 9,
    "comment": "Точно найдена главная пропущенная ошибка — race condition/TOCTOU при check-then-act, ведущий к double booking; подробно объяснено, почему рецензент пропустил, и даны корректные исправления (with_for_update, exclusion constraint, serializable) с разбором ограничений. Дополнительные замечания (валидация duration, учёт статусов) валидны, не выдумка."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Точно нашла главную пропущенную ошибку — race condition (двойное бронирование), с корректным объяснением причины и правильным исправлением (FOR UPDATE до проверки + exclusion constraint). Без выдуманных 'ошибок', чистая структура и отличный русский."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

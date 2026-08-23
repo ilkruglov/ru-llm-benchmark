@@ -183,6 +183,13 @@
    "format": 10,
    "russian": 9,
    "comment": "Полное покрытие всех 6 пунктов: гибрид Kafka(A)/RabbitMQ(B) с привязкой к цифрам (45k->135k, FIFO ~3k/s), корректное отвержение SQS и exactly-once через идемпотентных потребителей, compliance через VPC, 3 риска с митигейшн и внятные условия пересмотра. Практически исполнимо; чуть недостаёт явного transactional outbox на стороне продюсера."
+  },
+  "deepseek-flash-vl": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Покрывает все 6 пунктов, реалистичная гибридная архитектура Kafka/SQS с transactional outbox, идемпотентностью, envelope+payload_ref в VPC и грамотным разделом рисков/пересмотра. Русский хороший, но есть мелкие огрехи (Faktically, согласование)."
   }
  },
  "winner": "qwen3.8-27b",
