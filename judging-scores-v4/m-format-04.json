@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 7,
    "comment": "Валидный YAML 1.2, все 7 ключей верхнего уровня в правильном порядке, корректные типы и enum-значения. tls отключён с пустыми строками, password_env соответствует regex, ровно 3 узла кэша, 5 флагов со смешанными boolean, 3 snake_case тега. Схема соблюдена полностью."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 7,
+   "comment": "Валидный YAML 1.2, все ключи верхнего уровня в правильном порядке, ровно 5 feature-флагов со смешанными boolean, 3 cache-узла, корректный password_env и enum-значения. Без якорей, комментариев и лишних ключей."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 7,
+   "comment": "Валидный YAML, все требования схемы выполнены: порядок ключей, tls с пустыми путями при enabled:false, 5 флагов, 3 узла, корректный password_env и теги в snake_case. Ошибок нет."
   }
  },
  "winner": "gpt-oss-120b",

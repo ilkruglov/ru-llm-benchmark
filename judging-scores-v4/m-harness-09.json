@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Правильный единственный шаг: click buy-B — точный товар Wilfa Svart (не Uniform, не б/у). Строгий формат Thought/Action/Action Input, валидный JSON с реальным element_id, одно действие за ход."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный следующий шаг click buy-B по реальному element_id, чётко исключает Uniform и б/у. Формат строгий, рассуждение адекватное, хотя чуть короче лидеров."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный click buy-B, рассуждение явно сопоставляет все три id (prod-A/B/C) и отсекает лишние варианты. Формат идеальный, опора только на реальный DOM."
   }
  },
  "winner": "glm-5.2",

@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Точная минимальная правка только ветки reverse charge (return 0.0), опора на реальный Observation, валидный однократный Action. Рассуждение чёткое и корректное."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точная минимальная правка: включает обе одинаковые строки return в old для однозначной замены, меняет только ветку buyer_vat_valid на 0.0. Один Action, валидный JSON, опора на реальные Observation."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальный шаг: тот же безопасный дизамбигуированный old с двумя строками return, при этом явно объясняет, почему включает контекст и не ломает 17 проходящих тестов. Один Action, валидный JSON."
   }
  },
  "winner": "deepseek-flash",

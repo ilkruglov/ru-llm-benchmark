@@ -190,8 +190,22 @@
    "format": 5,
    "russian": 9,
    "comment": "Модель подтвердила метку billing как верную и не нашла ошибку — тикет по сути technical_issue (баг в логике подсчёта seats, расхождение UI/API/billing). Пропущена ошибка, поэтому correctness 0; структура и язык хорошие, но вывод неверный."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно скорректировал на technical_issue, детально объяснил причину ошибки (keyword bias, симптом vs тип проблемы) и дал корректную коррекцию. Исчерпывающе, но местами избыточно длинно."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Точно определил technical_issue, чётко объяснил причину ошибки классификатора и заметил неразрешённую дельту 11 seats. Сжато, структурно и по существу."
   }
  },
- "winner": "deepseek-flash",
+ "winner": "glm-5.3-flash",
  "notes": "Правильный ответ — technical_issue (баг в логике подсчёта seats, billing лишь симптом). Модели, подтвердившие billing (gpt-oss-120b, nemotron-super/omni, luna-medium, sol-low/medium), пропустили ошибку. Kimi, deepseek-pro/flash, 27b/35b, gemma дали наиболее полный разбор."
 }

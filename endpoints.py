@@ -83,6 +83,30 @@ def get_endpoints():
             "reasoning_field": "reasoning_content",
         },
         {
+            "tag": "empirio-flash",
+            "url": "https://api.empiriolabs.ai/v1",   # same EmpirioLabs host as empirio-qwen38, different model id
+            "key": os.environ.get("EMPIRIOLABS_API_KEY", ""),
+            "model": "qwen3-8-flash",   # Qwen3.8-Flash (smaller/faster 3.8 variant)
+            "type": "empirio",
+            "reasoning_field": "reasoning_content",
+        },
+        {
+            "tag": "zai-glm53",
+            "url": "https://api.z.ai/api/paas/v4",   # Zhipu z.ai international, OpenAI-compatible
+            "key": os.environ.get("ZAI_API_KEY", ""),
+            "model": "glm-5.3",
+            "type": "deepseek",   # generic OpenAI path (base + /chat/completions)
+            "reasoning_field": "reasoning_content",
+        },
+        {
+            "tag": "zai-glm53-flash",
+            "url": "https://api.z.ai/api/paas/v4",
+            "key": os.environ.get("ZAI_API_KEY", ""),
+            "model": "glm-5.3-flash",
+            "type": "deepseek",
+            "reasoning_field": "reasoning_content",
+        },
+        {
             "tag": "deepseek-pro",
             "url": "https://api.deepseek.com/v1",
             "key": os.environ.get("DEEPSEEK_API_KEY", ""),

@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Разбирает все 7 изъянов по схеме (а)/(б) и даёт исполнимый план expand/contract с dual-write, батч-бэкфиллом, RollingUpdate maxUnavailable:0, code-only откатом и автопроверками; тонкий момент с реконсилингом legacy_status перед rollback выделяет ответ. Практически безупречно, лишь слабо раскрыты акторы/длительность."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Исключительно полный разбор (13 изъянов) с корректной механикой отказов, expand/contract, bridge-триггером, dual-write, canary с авто-гейтами и runbook отката; лёгкий минус за пару выдуманных каталожных объектов (pg_stat_user_columns, pg_depends_view)."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 6 шагов разобраны верно с матрицей совместимости, expand→dual-write→backfill→contract, NOT NULL через CHECK, canary и SLO-гейтами вместо дашборда; чуть менее глубоко, чем лучшие ответы, но практически исполнимо."
   }
  },
  "winner": "gpt-5.6-sol-low",

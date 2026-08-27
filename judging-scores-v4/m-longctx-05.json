@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Нашёл практически все заложенные баги из всех частей длинного контекста (SQL-инъекция, деление вместо умножения, инклюзивная граница периодов, race, потеря данных в Kafka publish и consumer, паника в RequireRole, KAFKA_BROKER vs BROKERS, хардкод креденшелов) без галлюцинаций; глубокая находка про необёрнутый ErrConnTimeout и дубли платежей. Мелкие пропуски: JWT alg-confusion, невызванная валидация, compile-ошибки."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью покрыл контекст от начала до конца без галлюцинаций: SQLi, прод-креды, деление вместо умножения, race, двойное списание, algorithm-confusion JWT, panic в RequireRole, outbox/consumer-commit, float64 для денег, cardinality-DoS. Точные цитаты и глубокий разбор production-impact; чуть слабее по бизнес-логике (не отметил, что Charge никогда не вызывается и оборот не фильтруется по статусу)."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Исключительно полный и точный ответ через весь длинный контекст: все ключевые баги плюс тонкие синтетические находки (Charge не вызывается — платежи вечно pending, отсутствие фильтра status='completed', Nominal у CBR для KZT, aborted-соединение без rollback). Безупречная структура с чеклистом и разделом 'что хорошо', глубочайший root-cause; галлюцинаций нет."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

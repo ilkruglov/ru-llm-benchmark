@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Корректный следующий шаг: issue_refund с точным charge_id ch_77a2, суммой 990 и reason_code auto_renew_unused, без выдумывания Observation. Явно проверены все три условия политики; строгий формат Thought/Action/Action Input с валидным JSON."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Правильный единственный следующий шаг issue_refund с корректными аргументами; опирается на реальные Observation, явно сверяет все три условия политики, не выдумывает Observation."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный шаг issue_refund с валидным JSON; проверены все условия политики и обозначен следующий шаг отмены, без галлюцинации Observation."
   }
  },
  "winner": "gpt-oss-120b",

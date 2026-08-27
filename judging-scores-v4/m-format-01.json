@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 8,
    "comment": "Валидный JSON, все required-поля, верные типы, ровно 3 line_items, консистентная currency и корректные форматы ID/SKU/UTM. Единственный минус — арифметика totals: subtotal 111941 против фактических 108941, что тянет вниз correctness."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON, все required-поля и типы верны, ровно 3 line_items, SKU-консистентность и currency соблюдены, subtotal и discount_total точно бьются (НДС-включённая модель, grand=subtotal-discount)."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON, все поля и ограничения соблюдены, все totals внутренне согласованы (grand=subtotal-discount+tax+shipping); tax_total слегка расходится с расчётом по ставкам позиций."
   }
  },
  "winner": "gpt-oss-120b",

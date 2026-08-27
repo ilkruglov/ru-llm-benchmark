@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 7,
    "comment": "Полный, корректный набор: FakeClock мокает monotonic и sleep, все acquire-тесты детерминированы и проходят (проверено трассировкой границ timeout). Отлично организован по классам, есть params-фикстуры, pytest.approx, pytest.ini для маркера slow; прозы-рассуждений немного, но покрытие и идиоматика на уровне топ-моделей."
+  },
+  "qwen3.8-flash": {
+   "correctness": 0,
+   "reasoning": 1,
+   "format": 0,
+   "russian": 0,
+   "comment": "Ответ оборван на вступительной фразе (к тому же по-английски): ни одного теста, ни кода — фактически пустой не-ответ."
+  },
+  "glm-5.3-flash": {
+   "correctness": 5,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Отличная структура, conftest с params-фикстурами и приёмом FakeClock+sleep-проматывает-часы, покрыты все требования без выдуманных API; но два теста (multi_stage_timeline и cap_counts_from_consumed_level) читают rl._tokens после clock.advance без refill и потому падают."
   }
  },
  "winner": "glm-5.2",

@@ -121,6 +121,7 @@ MODEL_NAMES_FALLBACK = {
     "deepseek-flash": "deepseek-v4-flash (до 0731)", "deepseek-flash-0731": "deepseek-v4-flash-0731",
     "deepseek-pro": "deepseek-v4-pro (до обновления)", "deepseek-pro-new": "deepseek-v4-pro-new",
     "deepseek-flash-vl": "DeepSeek v4-Flash Vision (exp)",
+    "qwen3.8-flash": "Qwen3.8-Flash", "glm-5.3-flash": "GLM-5.3-Flash", "glm-5.3": "GLM-5.3",
     "glm-5.2": "GLM-5.2", "qwen3.8-27b": "Qwen3.8-27B",
     "gpt-5.5-low": "GPT-5.5 (low)", "gpt-5.5-medium": "GPT-5.5 (medium)",
     "gpt-5.5-xhigh": "GPT-5.5 (xhigh)",

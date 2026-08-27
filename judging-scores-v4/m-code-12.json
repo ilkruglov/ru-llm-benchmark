@@ -190,6 +190,20 @@
    "format": 8,
    "russian": 8,
    "comment": "Отличная структура и разбор ABA/ordering/false-sharing, но в Enqueue/Dequeue отсутствует ветка reload pos при seq>pos (dif>0), которую эталонные модели включают: под contention это даёт livelock и ложный full/empty. API реальные, но ключевой сценарий MPMC ломается."
+  },
+  "qwen3.8-flash": {
+   "correctness": 7,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 9,
+   "comment": "Ядро queue.go — корректная реализация Vyukov (правильный протокол seq, ABA, memory ordering), но в бенчмарках баг типов (j uint64 < per int) — тестовый файл целиком не компилируется, из-за чего и стресс-тест не запустится. Рассуждение выдающееся: честная оговорка про wait-free, шардинг SPSC, ретеншн памяти."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Чистая корректная реализация Vyukov с раздельными seqs/data, весь код (impl+тесты+бенчи) компилируется, паддинг через константный unsafe.Sizeof(atomic.Uint64), стресс через сравнение мультимножеств. Глубокий разбор ordering (таблица C++ acquire/release, критичный LoadStore-reorder), но несколько смешанно-язычных опечаток."
   }
  },
  "winner": "kimi-k2.6",

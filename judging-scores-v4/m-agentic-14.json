@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Практичный, исполнимый план: токенизация на входе, PII Vault, crypto-shredding, view для сохранения dbt/BI, разбор Object Lock и Time Travel, чёткий 3-недельный план со стоп-краном. Небольшой минус — перезапись Parquet на каждый erasure дороговата, но принцип верный."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Исчерпывающий и реалистичный ре-план: токенизация на входе, PII vault, compatibility-view для events_flat, crypto-shredding, и особенно глубоко разобран самый трудный пункт (г) с Object Lock compliance-mode, Fail-safe и immutable-копиями. Очень объёмно, местами избыточно, много англицизмов, но всё по делу."
+  },
+  "glm-5.3-flash": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Плотный, приоритизированный и практичный план с сильными доменными нюансами (HMAC-детерминизм для joins, PII в свободных строках, финансовое исключение из erasure, письменная фиксация трактовок с DPO, откат). Слегка недожат самый острый подвопрос (г) — что делать с уже существующими immutable/compliance-lock копиями, полагается в основном на lifecycle."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

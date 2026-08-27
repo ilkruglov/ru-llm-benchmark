@@ -148,6 +148,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Все четыре пункта верны: ŠKODA KODIAQ, светло-серебристый SUV/кроссовер, SKODA-AUTO.RU, SIMPLY CLEVER. Ответ точный, структурированный и на грамотном русском."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все 4 ответа точны: Škoda Kodiaq, белый SUV, SKODA-AUTO.RU, SIMPLY CLEVER. Верно отметил KODIAQ на кузове."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все ответы верны и подробны: бренд, модель, белый кроссовер, сайт, слоган. Отмечена надпись KODIAQ и контекст сцены."
   }
  },
  "winner": "35b-a3b",

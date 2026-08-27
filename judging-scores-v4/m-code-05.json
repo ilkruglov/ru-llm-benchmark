@@ -190,8 +190,22 @@
    "format": 8,
    "russian": 8,
    "comment": "Функционально корректный один SELECT: UTC-truncation через AT TIME ZONE, MIN OVER для когорты, generate_series+LEFT JOIN даёт нулевые строки, фильтр будущих offset соответствует примеру. Пояснения корректны, но кратки; лёгкая тонкость timestamptz+interval, общая для большинства ответов."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Функционально корректный один SELECT: фильтр signup до MIN, целочисленные month-key для offset, LEFT JOIN к пред-агрегату, cohorts за 12 полных месяцев, будущие месяцы отсечены по примеру. Рассуждение исключительной глубины (window vs GroupAggregate, порядок колонок в индексах, ON vs WHERE в LEFT JOIN)."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный один SELECT с важным наблюдением, что фильтр по окну нельзя ставить до MIN(signup); чистый count(DISTINCT), generate_series+COALESCE для нулей, target<=cur_month по примеру. Сильное обоснование индексов (range-колонка первой, partial, BRIN) и LEFT JOIN vs EXISTS."
   }
  },
- "winner": "minimax-m3",
+ "winner": "qwen3.8-flash",
  "notes": "Большинство GPT-5.6 и oss-моделей дали корректные, идиоматичные запросы; gpt-oss-120b выигрывает глубиной пояснения при корректном ядре. Провалы: diffusion-gemma (баг offset), nemotron-omni (нет фильтра когорты), nemotron-super (ответ на английском)."
 }

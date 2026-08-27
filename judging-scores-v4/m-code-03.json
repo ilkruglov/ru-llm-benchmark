@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Компилируемый идиоматичный Go, покрыты все 6 требований (writeJSON/writeError, typed ctx key, sentinel errors + errorResponse mapping, map-lookup валидации, slog, обоснование метода), поведение и коды/сообщения сохранены; дополнительно выделены orderIDFromRequest/validStatus. Разбор изменений чуть лаконичнее топовых калибровочных ответов."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Восстановил оригинал и дал компилируемый рефактор, закрывающий все 6 пунктов: writeJSON/writeError, typed ctx key, typed httpError + mapping через errors.As, map-валидация, slog со структурными полями, обоснование метода на уровне роутера с примерами chi/mux. Поведение сохранено 1:1."
+  },
+  "glm-5.3-flash": {
+   "correctness": 2,
+   "reasoning": 3,
+   "format": 4,
+   "russian": 4,
+   "comment": "Архитектура (возврат ошибок из ядра + respondErr, apiError, map-валидация, slog) в целом здравая, но код не компилируется: используется context.Context без импорта \"context\". Хуже того, весь текстовый разбор галлюцинирован — описывает несуществующие функции (resolveIdentity, stripBOM, XOR-подпись, finalize), не совпадающие с реальным кодом, с искажённым мешаным русским."
   }
  },
  "winner": "kimi-k2.6",

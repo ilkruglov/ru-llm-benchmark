@@ -190,6 +190,20 @@
    "format": 7,
    "russian": 2,
    "comment": "createStore/setState/select/subscribe типизированы корректно, но ключевое требование (createSelector variadic inference) не проходит tsc: S выводится в unknown, combiner получает age/counter как unknown и требуемое использование не компилируется. Объяснений на русском почти нет — только один комментарий, чистый идиоматичный код."
+  },
+  "qwen3.8-flash": {
+   "correctness": 2,
+   "reasoning": 5,
+   "format": 7,
+   "russian": 7,
+   "comment": "createStore (setState/select/subscribe/type-guard) компилируется чисто, но центральное требование #4 createSelector не проходит tsc: S выводится как unknown, combiner получает unknown-аргументы; при этом заявлено, что использование type-check'ится."
+  },
+  "glm-5.3-flash": {
+   "correctness": 2,
+   "reasoning": 6,
+   "format": 7,
+   "russian": 7,
+   "comment": "Аккуратная типизация createStore работает, но createSelector реально не компилируется (S=unknown, параметры combiner unknown), хотя раздел прямо озаглавлен 'полностью type-check'ится' — ложное заявление; объяснения concepts качественные."
   }
  },
  "winner": "glm-5.2",

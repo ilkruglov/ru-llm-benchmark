@@ -190,6 +190,20 @@
    "format": 7,
    "russian": 9,
    "comment": "Дизайн верный (RwLock + watch + Drop-guard, real API), но рекурсивный вызов self.get_or_load(...).await в async fn без Box::pin => E0733, код не компилируется (нарушено требование 7). Deadlock-сценарий внутренне противоречив: сам отметил недостижимость ветки waiter при удержании inner, но всё равно привёл невозможную схему T1/T2."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно найдены все проблемы (inner через await, broadcast one-shot, cleanup при panic, unwrap); фикс через per-key OnceCell + RwLock компилируется и сохраняет single-flight, реальные API. Deadlock-сценарий описан корректно, но менее остро, чем эталон (не разделён достижимый/маскированный случай)."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Точнейший разбор: два сценария A/B (реальный hang при отмене лидера vs дремлющий ABBA), явно отмечено что дедлок не от инверсии локов, а от await-под-lock и отсутствия cleanup. Фикс полный (RwLock значений + Mutex inflight с OnceCell, ре-проверка гонки, ptr_eq cleanup), компилируется, реальные API."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

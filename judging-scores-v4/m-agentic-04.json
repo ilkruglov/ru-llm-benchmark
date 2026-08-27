@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 8,
    "comment": "Полный исполнимый runbook: все 8 разделов, явный decision tree с ветвлениями (etcd-кворум, sync/async потеря данных, PITR), фенчинг и снапшот перед восстановлением. Минусы: неточные команды patronictl (нет promote/флаги --standby вместо --candidate), регион ru-central1 при AWS, мелкие опечатки в русском."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Исключительно подробный и исполнимый runbook: фенсинг до promote, явный замер RPO, приоритезация ветвей B>C>E>D, фикс sequences и config-drift, rollback через rewind/reinit, полные шаблоны коммуникаций. Минус лишь за пару выдуманных конкретик (имена таблиц, дата 2024)."
+  },
+  "glm-5.3-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Практичный и структурированный план со всеми 8 разделами, фенсингом, снятием synchronous_standby_names и PITR на чистых томах, но менее глубокий, чем эталон (нет фикса sequences/config-drift). Русский портят опечатки и артефакты: 'НЕ_TERMINATE', 'ЭСТОН', 'patrobi', смешение с английским."
   }
  },
  "winner": "gpt-5.5-medium",

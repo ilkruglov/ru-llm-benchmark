@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Единственный корректный вызов create_policy, все обязательные поля и типы верны, нормализация телефона, дат, usage=PERSONAL, франшизы и промокода выполнена правильно. Пояснения краткие, но полные."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Единственный вызов create_policy с полностью корректным payload: все нормализации (телефон, даты, PERSONAL, term_months=12, franchise 0, options [GLASS,GAP], promo null) верны. Пояснения по нормализации ясные, но без верификации inn/vin."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Payload полностью корректен и совпадает с эталоном; рассуждение подробное, с таблицей нормализаций и явной проверкой длины inn (12) и vin (17), отмечено, что лишние поля не добавлялись."
   }
  },
  "winner": "gpt-oss-120b",

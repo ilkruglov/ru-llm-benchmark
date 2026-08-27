@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Полный исполнимый план: все 6 фаз с задачами (ID, роль, ЧД, зависимости), 8 рисков, сравнение DMS/pgloader/custom, конкретные CDC через binlog+idempotent replay, SHA-256 по чанкам с канонизацией, трёхуровневый rollback и KPI. Мелкие шероховатости (несогласованность CDC lag 1 vs 5 мин, слабый reverse-rollback честно компенсирован PITR), но практическая исполнимость очень высокая."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Исчерпывающий исполнимый план: атомарные задачи с ID/ролями/чд/зависимостями, exit-criteria по фазам, баланс 148чд против капасити команды, честное сравнение DMS/pgloader/Python (DMS только для CDC, не для pgcrypto — галлюцинаций нет), CDC binlog+DMS+idempotent upsert с source_version, outbox, pgcrypto+blind index+KMS session key, partition-checksum сверка с Python-реализацией, поминутный cutover, reverse-replication rollback. Отличный русский."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Очень сильный практичный план: единый transform-lib для bulk и CDC, Debezium→Kinesis с DMS как зарезервированный fallback (с бюджетом), exactly-once через чекпойнт в одной транзакции, сверка с готовым SQL для ОБОИХ диалектов (BIT_XOR половин MD5), обоснованный отказ от dual-write, 3-уровневый rollback с защитой от петли, поминутный cutover. Минус — мелкие опечатки и склеенные слова (areverse, innn_enc, буферистики)."
   }
  },
  "winner": "gpt-5.5-medium",

@@ -5,7 +5,7 @@
 промышленность, банки.
 
 * **Текст** — 181 задача, 27 моделей, 21 категория
-* **Зрение** — 303 задачи, 21 модель, 17 способностей на 8 отраслей
+* **Зрение** — 303 задачи, 23 модели, 17 способностей на 8 отраслей
 
 Отчёты с разбором каждой задачи:
 [текстовый](https://ilkruglov.github.io/ru-llm-benchmark/text-benchmark.html) ·
@@ -19,36 +19,37 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | GPT-5.6 Sol (medium) | 9.16 | | 15 | DeepSeek v4-pro (старый) | 8.49 |
-| 2 | **GPT-5.6 Luna (xhigh)** | **9.13** | | 16 | GPT-5.6 Luna (low) | 8.46 |
-| 3 | GPT-5.6 Sol (low) | 8.99 | | 17 | MiniMax-M3 | 8.39 |
-| 4 | DeepSeek v4-pro-new | 8.96 | | 18 | Kimi K2.6 | 8.33 |
-| 5 | GPT-5.6 Luna (high) | 8.94 | | 19 | **Qwen3.8-27B** | **8.30** |
-| 6 | GPT-5.5 (medium) | 8.93 | | 20 | DeepSeek v4-flash (до 0731) | 8.19 |
-| 7 | GPT-5.6 Terra (high) | 8.86 | | 21 | Qwen3.6-27B-FP8 | 8.16 |
-| 8 | GPT-5.5 (low) | 8.83 | | 22 | Gemma-4-31B | 8.00 |
-| 9 | GPT-5.6 Terra (medium) | 8.83 | | 23 | Qwen3.6-35B-A3B-FP8 | 7.85 |
-| 10 | **DeepSeek v4-Flash Vision (exp)** | **8.80** | | 24 | gpt-oss-120b | 7.34 |
-| 11 | GPT-5.6 Terra (low) | 8.69 | | 25 | DiffusionGemma | 6.08 |
-| 12 | GPT-5.6 Luna (medium) | 8.63 | | 26 | Nemotron-3-Nano-Omni-30B | 4.57 |
-| 13 | DeepSeek v4-flash-0731 | 8.56 | | 27 | Nemotron-3-Super-120B | 4.36 |
-| 14 | GLM-5.2 | 8.50 | | | | |
+| 1 | GPT-5.6 Sol (medium) | 9.16 | | 15 | DeepSeek v4-flash-0731 | 8.56 |
+| 2 | **GPT-5.6 Luna (xhigh)** | **9.13** | | 16 | GLM-5.2 | 8.50 |
+| 3 | **GLM-5.3-Flash** | **9.03** | | 17 | GPT-5.6 Luna (low) | 8.46 |
+| 4 | GPT-5.6 Sol (low) | 8.99 | | 18 | MiniMax-M3 | 8.39 |
+| 5 | DeepSeek v4-pro-new | 8.96 | | 19 | Kimi K2.6 | 8.33 |
+| 6 | GPT-5.6 Luna (high) | 8.94 | | 20 | **Qwen3.8-27B (medium)** | **8.30** |
+| 7 | GPT-5.5 (medium) | 8.93 | | 21 | Qwen3.6-27B-FP8 | 8.16 |
+| 8 | GPT-5.6 Terra (high) | 8.86 | | 22 | Gemma-4-31B | 8.00 |
+| 9 | GPT-5.5 (low) | 8.83 | | 23 | Qwen3.6-35B-A3B-FP8 | 7.85 |
+| 10 | GPT-5.6 Terra (medium) | 8.83 | | 24 | gpt-oss-120b | 7.34 |
+| 11 | **DeepSeek v4-Flash Vision (exp)** | **8.80** | | 25 | DiffusionGemma | 6.08 |
+| 12 | **Qwen3.8-Flash** | **8.74** | | 26 | Nemotron-3-Nano-Omni-30B | 4.57 |
+| 13 | GPT-5.6 Terra (low) | 8.69 | | 27 | Nemotron-3-Super-120B | 4.36 |
+| 14 | GPT-5.6 Luna (medium) | 8.63 | | | | |
 
 ### Зрение
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | Kimi K2.6 | 9.01 | | 12 | GPT-5.6 Terra (low) | 8.73 |
-| 2 | GPT-5.6 Sol (medium) | 8.99 | | 13 | GPT-5.6 Luna (high) | 8.72 |
-| 3 | **GPT-5.6 Luna (xhigh)** | **8.95** | | 14 | GPT-5.6 Luna (medium) | 8.69 |
-| 4 | GPT-5.5 (medium) | 8.95 | | 15 | GPT-5.6 Luna (low) | 8.57 |
-| 5 | GPT-5.6 Sol (low) | 8.94 | | 16 | **DeepSeek v4-Flash Vision (exp)** | **8.49** |
-| 6 | **Qwen3.8-27B** | **8.91** | | 17 | Gemma-4-31B | 8.46 |
-| 7 | GPT-5.5 (low) | 8.89 | | 18 | DiffusionGemma | 8.20 |
-| 8 | GPT-5.6 Terra (medium) | 8.86 | | 19 | MiniMax-M3 | 8.10 |
-| 9 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 20 | Llama-4-Scout-17B | 7.53 |
-| 10 | Qwen3.6-27B-FP8 | 8.77 | | 21 | Nemotron-3-Nano-Omni-30B | 6.80 |
-| 11 | GPT-5.6 Terra (high) | 8.75 | | | | |
+| 1 | **Qwen3.8-Flash** | **9.06** | | 13 | GPT-5.6 Terra (high) | 8.75 |
+| 2 | Kimi K2.6 | 9.01 | | 14 | GPT-5.6 Terra (low) | 8.73 |
+| 3 | GPT-5.6 Sol (medium) | 8.99 | | 15 | GPT-5.6 Luna (high) | 8.72 |
+| 4 | **GPT-5.6 Luna (xhigh)** | **8.95** | | 16 | GPT-5.6 Luna (medium) | 8.69 |
+| 5 | GPT-5.5 (medium) | 8.95 | | 17 | GPT-5.6 Luna (low) | 8.57 |
+| 6 | GPT-5.6 Sol (low) | 8.94 | | 18 | **DeepSeek v4-Flash Vision (exp)** | **8.49** |
+| 7 | **Qwen3.8-27B (high)** | **8.91** | | 19 | Gemma-4-31B | 8.46 |
+| 8 | GPT-5.5 (low) | 8.89 | | 20 | DiffusionGemma | 8.20 |
+| 9 | GPT-5.6 Terra (medium) | 8.86 | | 21 | MiniMax-M3 | 8.10 |
+| 10 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 22 | Llama-4-Scout-17B | 7.53 |
+| 11 | **GLM-5.3-Flash** | **8.78** | | 23 | Nemotron-3-Nano-Omni-30B | 6.80 |
+| 12 | Qwen3.6-27B-FP8 | 8.77 | | | | |
 
 ## Как считалось
 

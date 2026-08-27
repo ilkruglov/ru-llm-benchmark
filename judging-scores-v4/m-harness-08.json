@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Корректный следующий шаг — get_commit_diff по e7c1a9; рассуждение опирается на реальные Observation (регрессия между b3f0d2 и e7c1a9), формат ReAct валиден, не выдумывает и не перезапускает джоб."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Правильный следующий шаг — get_commit_diff по e7c1a9, опора на реальные Observation (падение только на e7c1a9, предыдущие проходили). Чистый формат ReAct, без галлюцинаций и лишних Observation."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Верно локализует регрессию на e7c1a9 (1841/b3f0d2 passed vs 1842/e7c1a9 failed) и цитирует детали HMAC из лога, корректно вызывает get_commit_diff. Строгий формат, без выдуманных наблюдений."
   }
  },
  "winner": "deepseek-flash-0731",

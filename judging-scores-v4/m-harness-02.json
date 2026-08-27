@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Верно указан двойной путь отправки SMS: прямой вызов в perform_charge (стр.86) и хук notify_on_charge на событие charge.succeeded; корректно отмечено, что @retry вторичен. Опора на реальные Observation, валидный Final Answer."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Верно даёт Final Answer: оба канала уведомления (прямой вызов charge.py:86 и хук notify_on_charge на charge.succeeded), корректно отмечает, что retry сам по себе не создаёт второй SMS на успешном пути. Формат — сразу Final Answer без Thought, что допустимо, но без углублённого разбора ретрая как ложного следа."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Образцовый разбор: оба канала уведомления, плюс сильный аргумент, что при retry было бы и двойное списание/проводка, а жалоба только на SMS — значит дубль локализован в слое нотификации. Опрятный Thought/Final Answer с механизмом и исправлением."
   }
  },
  "winner": "gpt-5.5-medium",

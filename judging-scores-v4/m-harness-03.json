@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Корректный Final Answer, опирающийся на реальные Observation: падение 74000 полностью объяснено оттоком (74000=60000+14000), даунгрейда нет, виноват Enterprise (81%). Логика верна и полна, остановка обоснована."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 10,
+   "comment": "Корректный Final Answer: падение 74000, вывод — churn Enterprise (81%), даунгрейда нет, т.к. 60000+14000=74000. Опора на реальные Observation, верная остановка; нет явного Thought, обоснование встроено в ответ."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полный Thought+Final Answer, верные числа и вывод (churn Enterprise, остатка на downgrade нет). Добавлен ценный нюанс: SMB лидирует по числу отмен, но дёшево (~130 MRR), Enterprise концентрирует денежные потери (~5000/подписку)."
   }
  },
  "winner": "deepseek-flash-vl",

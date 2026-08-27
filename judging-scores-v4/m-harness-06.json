@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Правильный следующий шаг: ровно один повтор check_health на временный GATEWAY_TIMEOUT, без выдумывания Observation и без лишних действий. Формат ReAct валиден, рассуждение корректно, но кратко."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильно распознал GATEWAY_TIMEOUT как временную ошибку и выполнил ровно один повтор check_health с тем же deploy_id, без выдуманных Observation."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Корректный один повтор check_health с явным упоминанием фолбэка на откат при повторной ошибке, аргументы валидны, ничего не выдумано."
   }
  },
  "winner": "qwen3.8-27b",

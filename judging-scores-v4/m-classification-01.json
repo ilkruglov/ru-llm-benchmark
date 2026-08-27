@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Все семь корректных intent-меток без ложных срабатываний, primary_intent=card_block и urgency=critical соответствуют эталону. Чистый валидный JSON без обёрток, обоснование точно перечисляет намерения."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 7 применимых интентов извлечены без ложноположительных, urgency=critical корректна, primary_intent=fraud_report — обоснованный выбор. Развёрнутое и точное обоснование."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Полный и точный набор из 7 интентов без лишних меток, primary_intent=card_block и critical оправданы. Детальное обоснование с конкретикой по кейсу."
   }
  },
  "winner": "deepseek-flash-vl",

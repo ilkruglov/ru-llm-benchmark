@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Найдены все 3 утечки (unbounded _history, bound-method подписки удерживают Worker, class-level _results_cache) с верным объяснением недостижимости для GC; fix через weakref.WeakMethod, deque(maxlen), weakref в кэше корректен, все API реальные. Диагностика (py-spy, signal+pdb, manhole, tracemalloc, objgraph, gc.get_referrers), regression-тест и Prometheus — на уровне лучших калибровочных ответов."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Все три утечки найдены и объяснены точно; фикс образцовый, с корректным weakref.WeakMethod (и объяснением, почему weakref.ref на bound method не работает), prune_dead, bounded history/cache, полноценным regression-тестом и мониторингом. Живая диагностика через py-spy/manhole/signal+pdb/gdb-инъекцию покрыта полностью."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все три утечки и механизмы верны, фикс рабочий (долгоживущие воркеры + close/unsubscribe, bounded deque/cache, cache без self); ценные детали: квадратичная деградация publish, memray/pyrasite, антипаттерн lru_cache на методе, замечание что WeakMethod не спасает от классового кэша. Мелкий минус — слегка скомканная строка в PromQL-алертах."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

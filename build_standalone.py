@@ -92,13 +92,15 @@ def out_toks(tag, resp):
     return ct
 
 
-def compute(results_path, scores_dir, tags, W, vl, exclude=()):
+def compute(results_path, scores_dir, tags, W, vl, exclude=(), rename=None):
     data = json.load(open(results_path))
     exclude = set(exclude)
     results = [r for r in data["results"] if r["id"] not in exclude]
     names = {e["tag"]: e["model"] for e in data.get("endpoints", [])}
     for t in tags:
         names.setdefault(t, MODEL_NAMES_FALLBACK.get(t, t))
+    for t, nm in (rename or {}).items():   # per-report display-name overrides (e.g. effort suffix)
+        names[t] = nm
     cat_key = "capability" if vl else "category"
     scores = {}
     for fp in Path(scores_dir).glob("*.json"):
@@ -526,11 +528,13 @@ def main():
     p.add_argument("--results"); p.add_argument("--scores-dir"); p.add_argument("--out")
     p.add_argument("--tags"); p.add_argument("--title"); p.add_argument("--subtitle", default="")
     p.add_argument("--exclude", default="", help="comma-separated task ids to drop from the report")
+    p.add_argument("--rename", default="", help="comma-separated tag=Display Name overrides")
     a = p.parse_args()
     vl = a.mode == "vl"
     W = VL_W if vl else TEXT_W
     exclude = [t for t in a.exclude.split(",") if t]
-    D = compute(a.results, a.scores_dir, a.tags.split(","), W, vl, exclude)
+    rename = dict(kv.split("=", 1) for kv in a.rename.split(",") if "=" in kv)
+    D = compute(a.results, a.scores_dir, a.tags.split(","), W, vl, exclude, rename)
     render(D, a.out, a.title, a.subtitle)
 
 

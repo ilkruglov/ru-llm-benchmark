@@ -190,6 +190,20 @@
    "format": 8,
    "russian": 9,
    "comment": "Корректная map-reduce-логика: параллельный health по 5 сервисам, get_recent_deploys только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, метрики не выдуманы. Рассуждение чуть менее подробное, чем у топовых ответов, но все правила соблюдены."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректная map→conditional fan-out→reduce→conditional escalation логика: параллельный health-батч, get_recent_deploys только для нездоровых, ровно один aggregate_incident_report, условный page_oncall. Очень подробно, местами избыточно, но без ошибок и выдумок."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 5 правил соблюдены точно, компактно и ясно; сильные плюсы — таблица инвариантов для самопроверки и вдумчивая заметка о поведении при ошибках/таймаутах без ретраев. Данные строго из ответов инструментов."
   }
  },
  "winner": "27b-v2",

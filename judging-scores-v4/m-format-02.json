@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 9,
    "comment": "Well-formed XML со всеми namespace, корректными INN/KPP, ровно 3 позициями и точной арифметикой (Subtotal+VAT=GrandTotal, сумма LineTotal=Subtotal). Формат безупречен; явных рассуждений в ответе нет, как и требует формат-задача."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Well-formed XML без обёрток и преамбулы, все namespace/атрибуты корректны, порядок и структура точны, INN/KPP валидны, арифметика полностью сходится (24810.90 + 4962.18 = 29773.08)."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Валидный well-formed XML, все требования соблюдены, префиксы и currency согласованы, суммы сходятся (25436.50 + 5087.30 = 30523.80), DueDate позже IssueDate."
   }
  },
  "winner": "minimax-m3",

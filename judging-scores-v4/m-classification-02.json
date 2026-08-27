@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Все ключевые метки совпадают с консенсусом сильных моделей (KASKO, complaint, threatening, critical, P0, все 7 vip_indicators), лишних false positives нет. Required_actions конкретны и уместны (звонок в течение часа, замена менеджера, компенсации, ответ за 48ч), JSON валиден, русский чистый."
+  },
+  "qwen3.8-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все оси верны (KASKO, complaint, critical, P0, все 7 vip-индикаторов без ложных срабатываний); спорно лишь emotional_state=angry вместо более точного threatening при явных угрозах ЦБ/суд/СМИ. Действия детальны, привязаны к фактам (полис, сроки, суммы), русский безупречен."
+  },
+  "glm-5.3-flash": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Классификация точна и полна (все 7 vip без false positives, complaint/critical/P0), emotional_state=angry — приемлемо, но threatening точнее отражает ультиматумы. Список действий глубокий, с учётом LTV, подменного авто и комплаенс-риска; JSON валидный, русский корректный."
   }
  },
  "winner": "gpt-oss-120b",

@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Все 5 пунктов строго из chunks, корректные citations, без галлюцинаций; верно избегает refresh-token для Client Credentials, отмечает 2FA и доп. лимит /oauth/token. Чёткие attribution-маркеры, отличный русский."
+  },
+  "qwen3.8-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Всё строго из chunks, корректные citations; явно отказывается выдумывать тело refund, добавляет кэширование токена и учёт лимита /token — глубоко и без галлюцинаций."
+  },
+  "glm-5.3-flash": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Точный и полный ответ по всем 5 пунктам с верными ссылками, отмечает отсутствие схемы тела refund; лёгкий англицизм entirely в русском тексте."
   }
  },
  "winner": "deepseek-flash-vl",

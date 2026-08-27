@@ -190,6 +190,20 @@
    "format": 10,
    "russian": 9,
    "comment": "Все 10 аспектов с верными сентиментами, набор из 5 реальных проблем без ложных срабатываний, корректные severity. Чистый валидный JSON без обёрток и грамотный русский; churn_risk 'medium' допустим, рассуждения не видны (формат-задача)."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 10 аспектов с верными сентиментами и цитатами, mixed/3/churn high; issues корректно разложены (software_bug, false_advertising, navigation, dustbin, support). Чистый валидный JSON без обёрток, ложных срабатываний нет."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 10,
+   "comment": "Полное покрытие аспектов и issues, очень глубокие описания багов и продуманное recommended_action; JSON корректный, но обёрнут в ```json-фенсы, что снижает чистоту формата."
   }
  },
  "winner": "gpt-5.6-sol-medium",

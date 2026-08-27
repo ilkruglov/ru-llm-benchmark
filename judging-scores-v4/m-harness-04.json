@@ -190,6 +190,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Корректно восстановился после ошибки: добавил обязательный query-параметр as_of с сегодняшней датой 2026-06-04 к acc_002 (основной RUB checking). Опирается на реальный последний Observation, формат ReAct валиден, ничего не выдумано."
+  },
+  "qwen3.8-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно восстановился после ошибки: один Action — повтор баланса acc_002 с обязательным as_of=2026-06-04, без выдуманных Observation. Идеальный следующий шаг, лаконичное рассуждение."
+  },
+  "glm-5.3-flash": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Тот же правильный шаг: повтор call_endpoint для основного счёта acc_002 с as_of в ISO-формате, ошибка учтена, галлюцинаций нет. Строгий формат Thought/Action/Action Input, валидный JSON."
   }
  },
  "winner": "gemma-4-31b",
