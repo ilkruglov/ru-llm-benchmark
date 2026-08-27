@@ -389,10 +389,33 @@ def render(D, out_path, title, subtitle):
             A(f'<div class="cell{" lead" if t==lead else ""}" style="background:{bg};color:{fg}">{ld}{v:.1f}</div>')
     A('</div></div></div></div>')
 
-    # ---- categories heatmap ----
+    # ---- categories heatmap (category × model, same style as segments) ----
     A('<div class="wrap"><h2 class="sec" id="categories">Результаты по категориям</h2>')
-    A('<div class="callout">Лидер и балл в каждой из категорий.</div>')
-    A('<div class="chart"><div class="chart-cap"><span class="ct">Категория × лидер</span><span class="cs">0–10</span></div>')
+    A('<div class="callout">Средний балл по каждой категории × модели. Теплее = выше; золотая рамка — лидер категории.</div>')
+    A('<div class="chart"><div class="chart-cap"><span class="ct">Категория × модель</span><span class="cs">0–10</span></div>')
+    A('<div class="heat-scroll">')
+    A(f'<div class="heat" style="min-width:{150 + len(order) * 58}px;'
+      f'grid-template-columns:minmax(140px,1.3fr) repeat({len(order)},minmax(52px,1fr))"><div></div>')
+    for t in order:
+        parts = nm(t).replace(" (", "|(").split("|", 1)
+        A(f'<div class="hh">{"<br>".join(parts)}</div>')
+    for c in cat_order:
+        if c not in D["by_cat"]:
+            continue
+        cs = {t: (avg(D["by_cat"][c][t]) if D["by_cat"][c][t] else None) for t in order}
+        lead = max((t for t in order if cs[t] is not None), key=lambda t: cs[t], default=None)
+        A(f'<div class="hr">{esc(clbl(c))}</div>')
+        for t in order:
+            v = cs[t]
+            if v is None:
+                A('<div class="cell" style="background:var(--bg-soft);color:var(--faint)">—</div>'); continue
+            bg, fg = heat_color(v)
+            ld = '<span class="ld"></span>' if t == lead else ''
+            A(f'<div class="cell{" lead" if t==lead else ""}" style="background:{bg};color:{fg}">{ld}{v:.1f}</div>')
+    A('</div></div></div></div>')
+
+    # ---- category leaders + token cost table ----
+    A('<div class="wrap"><div class="chart"><div class="chart-cap"><span class="ct">Лидер и стоимость по категории</span><span class="cs">0–10</span></div>')
     A('<div class="table-scroll"><table><thead><tr><th>Категория</th><th>Лидер</th>'
       '<th class="num">Балл</th><th class="num">задач</th><th class="num">ср. ток/задача</th></tr></thead><tbody>')
     for c in cat_order:
