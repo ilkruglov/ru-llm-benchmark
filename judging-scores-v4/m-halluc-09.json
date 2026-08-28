@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Плотный, технически безупречный ответ: CLOG/pg_xact, hint-биты, pg_twophase, переживание рестарта, корректное ограничение на temp-таблицы, Citus/pgpool, SSI вместо 2PL — без выдумок. Отличная структура и русский."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 8,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 7,
+   "comment": "Технически глубокий и точный разбор MVCC vs 2PC без выдумок; мелкая неточность про DDL в prepared-транзакции. Русский портят повторяющиеся глитчи 'лoki' (латинские буквы) и вкрапление китайского '某些'."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Технически безупречный разбор без единой выдумки: xmin/xmax/ctid, CLOG, снапшоты, VACUUM/wraparound, PREPARE/COMMIT PREPARED, max_prepared_transactions=0, координаторы (Atomikos, Citus, postgres_fdw) — всё точно. Глубоко связывает механизмы (prepared-транзакция держит горизонт xmin -> bloat) и чётко разводит 2PC/2PL/prepared statements."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

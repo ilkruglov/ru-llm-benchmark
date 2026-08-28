@@ -204,8 +204,22 @@
    "format": 8,
    "russian": 9,
    "comment": "Отличная структура, conftest с params-фикстурами и приёмом FakeClock+sleep-проматывает-часы, покрыты все требования без выдуманных API; но два теста (multi_stage_timeline и cap_counts_from_consumed_level) читают rl._tokens после clock.advance без refill и потому падают."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 8,
+   "comment": "Полностью рабочий детерминированный набор: FakeClock мокает monotonic и sleep, все ветки acquire/refill/timeout трассируются верно, покрыты все требования, 25 тестов в классах, pytest.approx и slow-маркер на месте. Минус: не использован буквально params= в фикстуре (заменён отдельными фикстурами + parametrize), русских пояснений немного."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Образцовое покрытие: FakeClock через monkeypatch (time.monotonic/sleep), параметризованные фикстуры и negative-cases, все требуемые сценарии, pytest.approx, slow-маркер; логика acquire с timeout проверена и работает. Отличное обоснование выбора monkeypatch вместо freezegun и подбора точных в float границ."
   }
  },
- "winner": "glm-5.2",
+ "winner": "qwen3.8-max",
  "notes": "Много сильных решений с консистентным mock (kimi, sol-low/medium, gpt-5.5-*, luna/terra, gemma, oss, flash, 27b). Провалы: nemotron-super (офф-топик), nemotron-omni (ложный freezegun API), luna-medium (отказ), 35b/deepseek-pro/diffusion (разрыв времени/сломанные тесты)."
 }

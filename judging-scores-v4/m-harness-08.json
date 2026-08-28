@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Верно локализует регрессию на e7c1a9 (1841/b3f0d2 passed vs 1842/e7c1a9 failed) и цитирует детали HMAC из лога, корректно вызывает get_commit_diff. Строгий формат, без выдуманных наблюдений."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный следующий шаг — get_commit_diff по e7c1a9; верно опирается на реальные Observation (1841 passed, 1842 failed), строгий формат ReAct, не галлюцинирует Observation и не перезапускает джоб. В отличие от версии qwen3.8-27b, останавливается на Action без выдуманного результата."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный следующий шаг: get_commit_diff на e7c1a9, опираясь на реальные Observation (b3f0d2 passed, e7c1a9 failed). Идеальный ReAct-формат, не перезапускает джоб без доказательства флака; рассуждение верное, но лаконичное."
   }
  },
  "winner": "deepseek-flash-0731",

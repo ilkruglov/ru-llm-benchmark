@@ -204,6 +204,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Правильный click buy-B, рассуждение явно сопоставляет все три id (prod-A/B/C) и отсекает лишние варианты. Формат идеальный, опора только на реальный DOM."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно выбрана именно новая «Wilfa Svart» (buy-B), исключены Uniform и б/у; строгий формат Thought/Action/Action Input, валидный JSON, ровно один шаг."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точный клик по buy-B (Wilfa Svart новая), явно исключены Uniform и б/у; строгий формат Thought/Action/Action Input, валидный JSON, ровно один шаг."
   }
  },
  "winner": "glm-5.2",

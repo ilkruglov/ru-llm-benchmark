@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Все 5 правил соблюдены точно, компактно и ясно; сильные плюсы — таблица инвариантов для самопроверки и вдумчивая заметка о поведении при ошибках/таймаутах без ретраев. Данные строго из ответов инструментов."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректная map-reduce-логика: параллельный батч из 5 health-вызовов, условный get_recent_deploys только для нездоровых, ровно один aggregate_incident_report со всеми 5 healths, условный page_oncall при critical/high, без выдуманных данных. Наглядная DAG-схема и таблица соответствия правилам."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью верная map-reduce-логика: параллельный батч из 5 get_service_health, get_recent_deploys(since_minutes=60) только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, ничего не выдумано. Очень подробно, со сценариями A/B/C и валидными JSON-блоками; уровень топовых ответов."
   }
  },
  "winner": "27b-v2",

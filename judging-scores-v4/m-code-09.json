@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 8,
    "comment": "Корректный идиоматичный in-place вариант с сильным обоснованием (entity identity, копия хуков вне лока), все требования закрыты. Мелкий дефект: в русский текст просочились китайские иероглифы (嵌入式)."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 9,
+   "comment": "Покрывает все 10 требований: sentinel-ошибка с %w и errors.Is, OrderState как string с UnmarshalJSON/MarshalJSON-валидацией, Hook func(*Order), история slice-of-struct, RWMutex со снятием лока перед вызовом хуков (без deadlock), обоснование *Order vs value. Мелкий изъян: func main() в package order (как entry point не запустится). Отличное рассуждение и таблица решений на русском."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Закрывает все 10 требований: sentinel-ошибка с %w, OrderState string+UnmarshalJSON, Hook, HistoryEntry, RWMutex, полный main с конкурентным демо и выводом. Глубокое обоснование in-place vs value (алиасинг slice) и явный документированный контракт по хукам под локом."
   }
  },
  "winner": "glm-5.2",

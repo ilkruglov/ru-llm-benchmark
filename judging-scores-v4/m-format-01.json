@@ -204,6 +204,20 @@
    "format": 10,
    "russian": 9,
    "comment": "Валидный JSON, все поля и ограничения соблюдены, все totals внутренне согласованы (grand=subtotal-discount+tax+shipping); tax_total слегка расходится с расчётом по ставкам позиций."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON, все required-поля и типы верны, ровно 3 line_items, SKU/ORD/CUST-форматы соблюдены, line_item_sku совпадает с существующим SKU. Арифметика полностью согласована: subtotal, discount_total (16765+200), tax_total (20% на облагаемые) и grand_total сходятся; осмысленные русские значения."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 7,
+   "format": 10,
+   "russian": 9,
+   "comment": "Валидный JSON без обёрток, все обязательные поля и типы верны: ровно 3 line_items, корректные SKU/order_id, utm ровно с тремя ключами, currency согласован, скидка line_item ссылается на существующий SKU. Числа внутренне непротиворечивы (subtotal, VAT-inclusive grand_total), осмысленные русские значения."
   }
  },
  "winner": "gpt-oss-120b",

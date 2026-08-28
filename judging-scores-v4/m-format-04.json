@@ -204,6 +204,20 @@
    "format": 10,
    "russian": 7,
    "comment": "Валидный YAML, все требования схемы выполнены: порядок ключей, tls с пустыми путями при enabled:false, 5 флагов, 3 узла, корректный password_env и теги в snake_case. Ошибок нет."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 7,
+   "comment": "Валидный YAML, ровно 7 top-level ключей в порядке, все схемные ограничения соблюдены: semver, диапазоны портов, tls с путями, password_env по regex, 3 cache-ноды, ровно 5 feature-флагов (есть true и false), теги snake_case. Ни якорей, ни комментариев, ни разделителей."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 7,
+   "comment": "Валидный YAML 1.2, ровно 7 ключей в нужном порядке, все типы и enum корректны; features ровно 5 с true/false, nodes ровно 3, password_env по регэкспу. Без якорей, комментариев и обёрток — эталонное следование схеме."
   }
  },
  "winner": "gpt-oss-120b",

@@ -90,12 +90,12 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
     тепловые карты по сегментам и разбор каждой задачи с комментариями судьи.</p>
   <div class="cards">
     <a class="card" href="text-benchmark.html">
-      <span class="tag">181 задача · 27 моделей</span>
+      <span class="tag">181 задача · 29 моделей</span>
       <h3>Текстовый бенчмарк</h3>
       <p>Рассуждение, код, RAG, агентские сценарии, отраслевые задачи РФ: налоги,
          юр. комплаенс, корпфинансы, данные и логистика.</p>
       <div class="win"><span class="rk">1&nbsp;место</span>
-        <span class="nm">GPT-5.6 Sol (medium)</span><span class="sc">9.16</span></div>
+        <span class="nm">Qwen3.8-Max</span><span class="sc">9.41</span></div>
     </a>
     <a class="card" href="vl-benchmark.html">
       <span class="tag">303 задачи · 24 модели</span>
@@ -114,14 +114,14 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
       <table>
         <thead><tr><th>#</th><th>Модель</th><th class="num">Балл</th></tr></thead>
         <tbody>
-          <tr class="top"><td>1</td><td>GPT-5.6 Sol (medium)</td><td class="num">9.16</td></tr>
-          <tr class="top"><td>2</td><td>GPT-5.6 Luna (xhigh)</td><td class="num">9.13</td></tr>
-          <tr class="top"><td>3</td><td>GLM-5.3-Flash</td><td class="num">9.03</td></tr>
-          <tr><td>4</td><td>GPT-5.6 Sol (low)</td><td class="num">8.99</td></tr>
-          <tr><td>5</td><td>DeepSeek v4-pro-new</td><td class="num">8.96</td></tr>
-          <tr><td>6</td><td>GPT-5.6 Luna (high)</td><td class="num">8.94</td></tr>
-          <tr><td>7</td><td>GPT-5.5 (medium)</td><td class="num">8.93</td></tr>
-          <tr><td>8</td><td>GPT-5.6 Terra (high)</td><td class="num">8.86</td></tr>
+          <tr class="top"><td>1</td><td>Qwen3.8-Max (medium)</td><td class="num">9.41</td></tr>
+          <tr class="top"><td>2</td><td>GPT-5.6 Sol (medium)</td><td class="num">9.16</td></tr>
+          <tr class="top"><td>3</td><td>GPT-5.6 Luna (xhigh)</td><td class="num">9.13</td></tr>
+          <tr class="top"><td>4</td><td>GLM-5.3-Flash</td><td class="num">9.03</td></tr>
+          <tr><td>5</td><td>GPT-5.6 Sol (low)</td><td class="num">8.99</td></tr>
+          <tr><td>6</td><td>DeepSeek v4-pro-new</td><td class="num">8.96</td></tr>
+          <tr><td>7</td><td>GPT-5.6 Luna (high)</td><td class="num">8.94</td></tr>
+          <tr><td>8</td><td>GPT-5.5 (medium)</td><td class="num">8.93</td></tr>
         </tbody>
       </table>
     </div>
@@ -150,26 +150,28 @@ footer .inner{display:flex;gap:18px;flex-wrap:wrap}
   <div class="two">
     <div>
       <h2>Текст</h2>
-      <p class="sub">16 моделей с открытыми весами</p>
+      <p class="sub">18 моделей с открытыми весами</p>
       <table>
         <thead><tr><th>#</th><th>Модель</th><th class="num">Размер</th><th class="num">Балл</th></tr></thead>
         <tbody>
-          <tr class="top"><td>1</td><td>GLM-5.3-Flash</td><td class="num sz">320B / 18B</td><td class="num">9.03</td></tr>
-          <tr><td>2</td><td>DeepSeek v4-pro-new</td><td class="num sz">1.6T / 49B</td><td class="num">8.96</td></tr>
-          <tr class="top"><td>3</td><td>DeepSeek v4-Flash Vision <span style="color:var(--muted);font-size:11px;font-weight:400">(exp · веса не выложены)</span></td><td class="num sz">284B / 13B</td><td class="num">8.80</td></tr>
-          <tr class="top"><td>4</td><td>Qwen3.8-Flash</td><td class="num sz">125B</td><td class="num">8.74</td></tr>
-          <tr><td>5</td><td>DeepSeek v4-flash-0731</td><td class="num sz">284B / 13B</td><td class="num">8.56</td></tr>
-          <tr><td>6</td><td>GLM-5.2</td><td class="num sz">753B / 35B</td><td class="num">8.50</td></tr>
-          <tr><td>7</td><td>MiniMax-M3</td><td class="num sz">428B / 23B</td><td class="num">8.39</td></tr>
-          <tr><td>8</td><td>Kimi K2.6</td><td class="num sz">1T / 32B</td><td class="num">8.33</td></tr>
-          <tr class="top"><td>9</td><td>Qwen3.8-27B (medium)</td><td class="num sz">27B</td><td class="num">8.30</td></tr>
-          <tr><td>10</td><td>Qwen3.6-27B-FP8</td><td class="num sz">27B</td><td class="num">8.16</td></tr>
-          <tr><td>11</td><td>Gemma-4-31B</td><td class="num sz">31B</td><td class="num">8.00</td></tr>
-          <tr><td>12</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num sz">35B / 3B</td><td class="num">7.85</td></tr>
-          <tr><td>13</td><td>gpt-oss-120b</td><td class="num sz">120B / 5B</td><td class="num">7.34</td></tr>
-          <tr><td>14</td><td>DiffusionGemma</td><td class="num sz">26B / 4B</td><td class="num">6.08</td></tr>
-          <tr><td>15</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num sz">30B / 3B</td><td class="num">4.57</td></tr>
-          <tr><td>16</td><td>Nemotron-3-Super-120B</td><td class="num sz">120B / 12B</td><td class="num">4.36</td></tr>
+          <tr class="top"><td>1</td><td>Qwen3.8-Max (medium)</td><td class="num sz">—</td><td class="num">9.41</td></tr>
+          <tr class="top"><td>2</td><td>GLM-5.3-Flash</td><td class="num sz">320B / 18B</td><td class="num">9.03</td></tr>
+          <tr><td>3</td><td>DeepSeek v4-pro-new</td><td class="num sz">1.6T / 49B</td><td class="num">8.96</td></tr>
+          <tr class="top"><td>4</td><td>DeepSeek v4-Flash Vision <span style="color:var(--muted);font-size:11px;font-weight:400">(exp · веса не выложены)</span></td><td class="num sz">284B / 13B</td><td class="num">8.80</td></tr>
+          <tr class="top"><td>5</td><td>Qwen3.8-Flash</td><td class="num sz">125B</td><td class="num">8.74</td></tr>
+          <tr class="top"><td>6</td><td>Qwen3.8-27B (nd/low)</td><td class="num sz">27B</td><td class="num">8.58</td></tr>
+          <tr><td>7</td><td>DeepSeek v4-flash-0731</td><td class="num sz">284B / 13B</td><td class="num">8.56</td></tr>
+          <tr><td>8</td><td>GLM-5.2</td><td class="num sz">753B / 35B</td><td class="num">8.50</td></tr>
+          <tr><td>9</td><td>MiniMax-M3</td><td class="num sz">428B / 23B</td><td class="num">8.39</td></tr>
+          <tr><td>10</td><td>Kimi K2.6</td><td class="num sz">1T / 32B</td><td class="num">8.33</td></tr>
+          <tr class="top"><td>11</td><td>Qwen3.8-27B (medium)</td><td class="num sz">27B</td><td class="num">8.30</td></tr>
+          <tr><td>12</td><td>Qwen3.6-27B-FP8</td><td class="num sz">27B</td><td class="num">8.16</td></tr>
+          <tr><td>13</td><td>Gemma-4-31B</td><td class="num sz">31B</td><td class="num">8.00</td></tr>
+          <tr><td>14</td><td>Qwen3.6-35B-A3B-FP8</td><td class="num sz">35B / 3B</td><td class="num">7.85</td></tr>
+          <tr><td>15</td><td>gpt-oss-120b</td><td class="num sz">120B / 5B</td><td class="num">7.34</td></tr>
+          <tr><td>16</td><td>DiffusionGemma</td><td class="num sz">26B / 4B</td><td class="num">6.08</td></tr>
+          <tr><td>17</td><td>Nemotron-3-Nano-Omni-30B</td><td class="num sz">30B / 3B</td><td class="num">4.57</td></tr>
+          <tr><td>18</td><td>Nemotron-3-Super-120B</td><td class="num sz">120B / 12B</td><td class="num">4.36</td></tr>
         </tbody>
       </table>
     </div>

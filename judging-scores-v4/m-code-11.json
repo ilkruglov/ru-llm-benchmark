@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Все три утечки и механизмы верны, фикс рабочий (долгоживущие воркеры + close/unsubscribe, bounded deque/cache, cache без self); ценные детали: квадратичная деградация publish, memray/pyrasite, антипаттерн lru_cache на методе, замечание что WeakMethod не спасает от классового кэша. Мелкий минус — слегка скомканная строка в PromQL-алертах."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 3 утечки найдены с верными механизмами (reachable-from-root, не цикл), корректные fix'ы (deque/instance-dict/unsubscribe+close, WeakValueDictionary), полный охват всех 6 пунктов включая живую диагностику и regression-тест. Мелкая неточность в API manhole.server.Server и pyrasite-spy, но не ложные ядровые API."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Найдены все 3 утечки с точными механизмами (bound method __self__, class-dict с self и уникальными ключами, безлимитный _history), рабочий fix на WeakMethod+deque+LRU без выдуманных API. Полностью закрыты все 6 разделов, включая живую диагностику (gdb-инжект, manhole, SIGUSR1) и regression test; не отмечен лишь квадратичный ре-диспатч на старых воркеров."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

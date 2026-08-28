@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Точнейший разбор: два сценария A/B (реальный hang при отмене лидера vs дремлющий ABBA), явно отмечено что дедлок не от инверсии локов, а от await-под-lock и отсутствия cleanup. Фикс полный (RwLock значений + Mutex inflight с OnceCell, ре-проверка гонки, ptr_eq cleanup), компилируется, реальные API."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 1,
+   "reasoning": 8,
+   "format": 4,
+   "russian": 9,
+   "comment": "Анализ отличный: верно найдены все проблемы (inner держится через await, мёртвый broadcast-путь, race при удалении) и правильная single-flight архитектура через один Mutex и Decision-enum. Но код оборван на match: Phase 2 и main() отсутствуют, не компилируется, плюс блок кода продублирован — требование 7 не выполнено."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Найдены все проблемы (await под inner-гардом, recv под гардом, unwrap/отравленный in-flight), корректный компилируемый single-flight на одном Mutex с try_recv для смерти лидера. Честно отмечено, что в исходнике ветка recv недостижима и это сериализация, а не AB-BA deadlock; отличный разбор Mutex vs RwLock."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

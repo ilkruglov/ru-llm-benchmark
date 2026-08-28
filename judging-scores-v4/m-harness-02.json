@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Образцовый разбор: оба канала уведомления, плюс сильный аргумент, что при retry было бы и двойное списание/проводка, а жалоба только на SMS — значит дубль локализован в слое нотификации. Опрятный Thought/Final Answer с механизмом и исправлением."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный Final Answer: корректно опирается на реальные Observation, называет файл/функцию и корневую причину — двойной путь отправки SMS (прямой вызов charge.py:86 плюс хук notify_on_charge на событие charge.succeeded). Ретрай верно указан как контекст релиза, а не как непосредственная причина; чистый формат."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный Final Answer: дубль SMS из-за прямого вызова (charge.py:86) и хука notify_on_charge на событие charge.succeeded (hooks.py). Опирается на реальные Observation, корректно называет строку 14 в hooks.py, не приписывает причину retry. Рассуждение чуть короче лучших ответов."
   }
  },
  "winner": "gpt-5.5-medium",

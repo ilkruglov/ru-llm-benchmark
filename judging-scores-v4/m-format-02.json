@@ -204,6 +204,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Валидный well-formed XML, все требования соблюдены, префиксы и currency согласованы, суммы сходятся (25436.50 + 5087.30 = 30523.80), DueDate позже IssueDate."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 6,
+   "format": 3,
+   "russian": 9,
+   "comment": "Данные безупречны: арифметика полностью сходится (Subtotal 978660 + VAT 195732 = GrandTotal 1174392), INN/KPP верной длины, namespace-префиксы не спутаны, все required-поля на месте. Но перед XML-декларацией стоят два перевода строки, из-за чего документ не well-formed (parser: 'XML declaration not at start of entity'), что при строгом формат-требовании резко снижает format."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Well-formed XML, все namespace/префиксы и обязательные поля на месте, декларация, порядок и типы соблюдены; арифметика полностью согласована (LineTotal=Qty*Price, сумма=Subtotal, VAT 20%, GrandTotal). Никакого лишнего текста."
   }
  },
  "winner": "minimax-m3",

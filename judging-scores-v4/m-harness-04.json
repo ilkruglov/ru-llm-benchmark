@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Тот же правильный шаг: повтор call_endpoint для основного счёта acc_002 с as_of в ISO-формате, ошибка учтена, галлюцинаций нет. Строгий формат Thought/Action/Action Input, валидный JSON."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальный один шаг ReAct: учёл ошибку missing as_of, добавил query-параметр с сегодняшней датой, повторил вызов баланса acc_002. Не выдумал Observation и не остановился рано — строго один Action, валидный JSON."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Корректно распознал обязательный as_of, восстановился одним валидным вызовом баланса по правильному основному RUB-счёту acc_002 с сегодняшней датой; без выдумок Observation и без дублей. Рассуждение краткое, но точное."
   }
  },
  "winner": "gemma-4-31b",

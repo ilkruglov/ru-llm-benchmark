@@ -204,6 +204,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Классификация точна и полна (все 7 vip без false positives, complaint/critical/P0), emotional_state=angry — приемлемо, но threatening точнее отражает ультиматумы. Список действий глубокий, с учётом LTV, подменного авто и комплаенс-риска; JSON валидный, русский корректный."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все метки совпадают с консенсусом (KASKO, complaint, threatening, critical, P0, полный набор из 7 vip_indicators без ложных срабатываний); действия детальные и точные. Небольшой минус за обёртку в markdown-блок ```json при требовании 'строго JSON'."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все оси классификации точны (KASKO/complaint/threatening/critical/P0), все 7 vip_indicators обоснованы без ложных срабатываний. Действия конкретны и полны; лёгкий минус формату за обёртку в ```json вместо чистого JSON."
   }
  },
  "winner": "gpt-oss-120b",

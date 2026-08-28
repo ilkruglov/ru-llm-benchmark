@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 8,
    "comment": "Чистая корректная реализация Vyukov с раздельными seqs/data, весь код (impl+тесты+бенчи) компилируется, паддинг через константный unsafe.Sizeof(atomic.Uint64), стресс через сравнение мультимножеств. Глубокий разбор ordering (таблица C++ acquire/release, критичный LoadStore-reorder), но несколько смешанно-язычных опечаток."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 1,
+   "reasoning": 3,
+   "format": 3,
+   "russian": 6,
+   "comment": "Ответ оборван на середине: есть только грамотное обоснование выбора Vyukov (ASCII-таблица) и начало doc-комментария, но отсутствует любая реализация — нет struct, New, Enqueue/Dequeue/Len, бенчмарка и stress-теста. Присутствующая часть корректна и на хорошем русском, но кода нет."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректная эталонная реализация Vyukov MPMC с бенчмарком, -race стресс-тестом и глубоким разбором ABA/memory ordering/false sharing; мелкие минусы: unsafe-арена ограничивает T (запрет указателей) и reflect.TypeFor требует Go 1.22, а go.mod заявляет 1.21."
   }
  },
  "winner": "kimi-k2.6",

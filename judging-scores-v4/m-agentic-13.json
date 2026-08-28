@@ -204,6 +204,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Все 6 шагов разобраны верно с матрицей совместимости, expand→dual-write→backfill→contract, NOT NULL через CHECK, canary и SLO-гейтами вместо дашборда; чуть менее глубоко, чем лучшие ответы, но практически исполнимо."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Топ-уровень: все ключевые изъяны плюс скрытые (бэкап, graceful shutdown), expand-contract, dual-write, canary/Argo с автооткатом, конкретные команды. Пропустил семантику NOT NULL DEFAULT 'pending' (нужен backfill status_v2), и вкрался китайский фрагмент 'dual-write保证了'."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Образцовый разбор: expand-contract с dual-write, RollingUpdate+PDB+graceful shutdown, порча данных от NOT NULL DEFAULT, thundering herd от FLUSHALL, необратимость отката, автотриггеры отката с конкретными PromQL, батчевый бэкфилл через CHECK NOT VALID/VALIDATE. Предельно конкретно и практически исполнимо, с таблицей откатов и поэтапным флаг-роллаутом."
   }
  },
  "winner": "gpt-5.6-sol-low",

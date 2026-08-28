@@ -204,6 +204,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Корректный один повтор check_health с явным упоминанием фолбэка на откат при повторной ошибке, аргументы валидны, ничего не выдумано."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 9,
+   "comment": "Идеальный следующий шаг: ровно один повтор check_health после GATEWAY_TIMEOUT согласно правилам, опираясь на реальный Observation. Строгий ReAct-формат, валидный JSON; рассуждение корректное, но краткое."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Корректно применяет правило одного повтора после GATEWAY_TIMEOUT, повторяя тот же check_health; не выдумывает Observation, останавливается ровно на одном шаге. Идеальный ReAct-формат, валидный JSON."
   }
  },
  "winner": "qwen3.8-27b",

@@ -204,8 +204,22 @@
    "format": 9,
    "russian": 10,
    "comment": "Полный Thought+Final Answer, верные числа и вывод (churn Enterprise, остатка на downgrade нет). Добавлен ценный нюанс: SMB лидирует по числу отмен, но дёшево (~130 MRR), Enterprise концентрирует денежные потери (~5000/подписку)."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 8,
+   "russian": 10,
+   "comment": "Корректный Final Answer: 74000, чистый churn (сумма отмен = падению, значит даунгрейда нет), виновник Enterprise (60000, 81%). Опора на реальные Observation, верное условие остановки. Формат — сразу Final Answer без Thought, но это допустимо."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректная остановка с Final Answer: падение 74000 полностью объяснено churn, вклад даунгрейда=0, виновник Enterprise 60000 (81%). Опора на реальные Observation, аргумент про совпадение сумм безупречен."
   }
  },
- "winner": "deepseek-flash-vl",
+ "winner": "qwen3.8-max",
  "notes": "Почти все модели верно распознали достаточность данных и дали правильный вывод (churn, Enterprise). nemotron-omni выдумал Observation (correctness 0), kimi сделал лишний запрос вместо остановки."
 }

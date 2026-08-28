@@ -204,8 +204,22 @@
    "format": 9,
    "russian": 8,
    "comment": "Очень сильный практичный план: единый transform-lib для bulk и CDC, Debezium→Kinesis с DMS как зарезервированный fallback (с бюджетом), exactly-once через чекпойнт в одной транзакции, сверка с готовым SQL для ОБОИХ диалектов (BIT_XOR половин MD5), обоснованный отказ от dual-write, 3-уровневый rollback с защитой от петли, поминутный cutover. Минус — мелкие опечатки и склеенные слова (areverse, innn_enc, буферистики)."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Очень полный и исполнимый план: все 6 требований покрыты конкретикой — CDC через binlog+GTID с идемпотентностью, md5-чексуммы по партициям, обоснованное сравнение DMS/pgloader/Python, reverse-CDC rollback, runbook и DDL. Минусы мелкие: утёкшая китайская фраза \"令牌 bucket\" и опечатка applied_gtail."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Практически эталонный план: все 6 требований покрыты конкретикой — фазы с привязкой к неделям, задачи с ролями/чел-днями/зависимостями, 10 рисков, сравнение DMS/pgloader/asyncio, детальная механика CDC dual-write с идемпотентным upsert, метод сверки (SHA-256 + XOR по партициям), 3-оконный rollback, KPI, бюджет ≤$15k и учёт ёмкости команды. Исполнимо без уточнений."
   }
  },
- "winner": "gpt-5.5-medium",
+ "winner": "qwen3.8-max",
  "notes": "Плотная группа топовых планов (GPT-5.5/5.6, deepseek, kimi, 35b-a3b) — все практически исполнимы; sol-medium выигрывает за счёт максимальной строгости (canonical checksum с защитой от коллизий XOR, ingress-триггеры для PII, оговорки о поведении DMS). nemotron-super — провал из-за срыва в постороннее содержимое."
 }

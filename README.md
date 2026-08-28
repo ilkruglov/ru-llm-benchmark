@@ -4,7 +4,7 @@
 юридический комплаенс, корпоративные финансы, BI и данные, ВЭД и логистика, стройка, нефтегаз,
 промышленность, банки.
 
-* **Текст** — 181 задача, 27 моделей, 21 категория
+* **Текст** — 181 задача, 29 моделей, 21 категория
 * **Зрение** — 303 задачи, 24 модели, 17 способностей на 8 отраслей
 
 Отчёты с разбором каждой задачи:
@@ -19,20 +19,21 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | GPT-5.6 Sol (medium) | 9.16 | | 15 | DeepSeek v4-flash-0731 | 8.56 |
-| 2 | **GPT-5.6 Luna (xhigh)** | **9.13** | | 16 | GLM-5.2 | 8.50 |
-| 3 | **GLM-5.3-Flash** | **9.03** | | 17 | GPT-5.6 Luna (low) | 8.46 |
-| 4 | GPT-5.6 Sol (low) | 8.99 | | 18 | MiniMax-M3 | 8.39 |
-| 5 | DeepSeek v4-pro-new | 8.96 | | 19 | Kimi K2.6 | 8.33 |
-| 6 | GPT-5.6 Luna (high) | 8.94 | | 20 | **Qwen3.8-27B (medium)** | **8.30** |
-| 7 | GPT-5.5 (medium) | 8.93 | | 21 | Qwen3.6-27B-FP8 | 8.16 |
-| 8 | GPT-5.6 Terra (high) | 8.86 | | 22 | Gemma-4-31B | 8.00 |
-| 9 | GPT-5.5 (low) | 8.83 | | 23 | Qwen3.6-35B-A3B-FP8 | 7.85 |
-| 10 | GPT-5.6 Terra (medium) | 8.83 | | 24 | gpt-oss-120b | 7.34 |
-| 11 | **DeepSeek v4-Flash Vision (exp)** | **8.80** | | 25 | DiffusionGemma | 6.08 |
-| 12 | **Qwen3.8-Flash** | **8.74** | | 26 | Nemotron-3-Nano-Omni-30B | 4.57 |
-| 13 | GPT-5.6 Terra (low) | 8.69 | | 27 | Nemotron-3-Super-120B | 4.36 |
-| 14 | GPT-5.6 Luna (medium) | 8.63 | | | | |
+| 1 | **Qwen3.8-Max (medium)** | **9.41** | | 16 | **Qwen3.8-27B (nd/low)** | **8.58** |
+| 2 | GPT-5.6 Sol (medium) | 9.16 | | 17 | DeepSeek v4-flash-0731 | 8.56 |
+| 3 | **GPT-5.6 Luna (xhigh)** | **9.13** | | 18 | GLM-5.2 | 8.50 |
+| 4 | **GLM-5.3-Flash** | **9.03** | | 19 | GPT-5.6 Luna (low) | 8.46 |
+| 5 | GPT-5.6 Sol (low) | 8.99 | | 20 | MiniMax-M3 | 8.39 |
+| 6 | DeepSeek v4-pro-new | 8.96 | | 21 | Kimi K2.6 | 8.33 |
+| 7 | GPT-5.6 Luna (high) | 8.94 | | 22 | **Qwen3.8-27B (medium)** | **8.30** |
+| 8 | GPT-5.5 (medium) | 8.93 | | 23 | Qwen3.6-27B-FP8 | 8.16 |
+| 9 | GPT-5.6 Terra (high) | 8.86 | | 24 | Gemma-4-31B | 8.00 |
+| 10 | GPT-5.5 (low) | 8.83 | | 25 | Qwen3.6-35B-A3B-FP8 | 7.85 |
+| 11 | GPT-5.6 Terra (medium) | 8.83 | | 26 | gpt-oss-120b | 7.34 |
+| 12 | **DeepSeek v4-Flash Vision (exp)** | **8.80** | | 27 | DiffusionGemma | 6.08 |
+| 13 | **Qwen3.8-Flash** | **8.74** | | 28 | Nemotron-3-Nano-Omni-30B | 4.57 |
+| 14 | GPT-5.6 Terra (low) | 8.69 | | 29 | Nemotron-3-Super-120B | 4.36 |
+| 15 | GPT-5.6 Luna (medium) | 8.63 | | | | |
 
 ### Зрение
 

@@ -204,8 +204,22 @@
    "format": 10,
    "russian": 9,
    "comment": "Точный и полный ответ по всем 5 пунктам с верными ссылками, отмечает отсутствие схемы тела refund; лёгкий англицизм entirely в русском тексте."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все пункты строго из chunks, корректные citations, галлюцинаций нет. Глубокое рассуждение: объяснено почему PKCE не подходит, кэширование токена, обработка 401/429/5xx; аккуратные attribution-маркеры и отличный русский."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Всё строго из chunks с точными per-statement citations, без галлюцинаций; глубокие нюансы: 2FA для sensitive:write, кэширование токена из-за лимита /token, корректное разграничение refresh_token как части Auth Code+PKCE (не Client Credentials), обработка 5xx и /status. Отличный русский."
   }
  },
- "winner": "deepseek-flash-vl",
+ "winner": "qwen3.8-max",
  "notes": "Все модели верно определили Client Credentials/sensitive:write/60min. Победитель — sol-low за строгое заземление и честность о неуказанном в chunks. Слабейший — nemotron-omni (ошибка про refresh_token)."
 }

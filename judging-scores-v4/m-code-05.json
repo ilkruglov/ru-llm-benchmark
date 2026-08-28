@@ -204,8 +204,22 @@
    "format": 9,
    "russian": 9,
    "comment": "Корректный один SELECT с важным наблюдением, что фильтр по окну нельзя ставить до MIN(signup); чистый count(DISTINCT), generate_series+COALESCE для нулей, target<=cur_month по примеру. Сильное обоснование индексов (range-колонка первой, partial, BRIN) и LEFT JOIN vs EXISTS."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 6,
+   "reasoning": 7,
+   "format": 7,
+   "russian": 7,
+   "comment": "Запрос корректен, один SELECT, правильно закрывает п.4 (generate_series+LEFT JOIN, active_users=0) и п.6, но полностью игнорирует обязательную UTC-усечку (нет AT TIME ZONE 'UTC') и не кастит в NUMERIC(5,4). Пояснения по индексам и LEFT JOIN сильные; портит текст протёкший китайский '额外'."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 10,
+   "format": 9,
+   "russian": 10,
+   "comment": "Полностью корректный запрос: типы timestamp/timestamptz согласованы, offset-арифметика верна, а условие сетки cohort_month+offset<=cur_month точно воспроизводит пример из ТЗ (включая текущий месяц). Исключительно глубокое обоснование выбора GROUP BY vs window, индексов с порядком полей, партиционирования и LEFT JOIN vs EXISTS (вплоть до semi-join)."
   }
  },
- "winner": "qwen3.8-flash",
+ "winner": "qwen3.8-max",
  "notes": "Большинство GPT-5.6 и oss-моделей дали корректные, идиоматичные запросы; gpt-oss-120b выигрывает глубиной пояснения при корректном ядре. Провалы: diffusion-gemma (баг offset), nemotron-omni (нет фильтра когорты), nemotron-super (ответ на английском)."
 }

@@ -204,6 +204,20 @@
    "format": 10,
    "russian": 9,
    "comment": "Идеальный spec, точная последовательность, ровно один мутирующий вызов. Глубокое рассуждение: явно исключены лишние ключи size_mb/signed, проверен диапазон canary_percent и различие signed vs require_signed_image."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальная последовательность: два read-вызова, затем ровно один submit_deployment. Все поля собраны верно (image, replicas=6, canary 10%, timeout=5, metadata агрегирован), JSON валиден, есть таблица источников и подтверждение signed=true."
+  },
+  "qwen3.8-max": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Идеальный DeploymentSpec: верная последовательность двух read-вызовов и один submit, все поля корректны (image склеен верно, replicas=6, canary 10, timeout 5, signed=true). JSON валиден, дано полное пояснение источника каждого поля."
   }
  },
  "winner": "gpt-oss-120b",

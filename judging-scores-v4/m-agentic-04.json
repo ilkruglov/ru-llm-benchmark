@@ -204,6 +204,20 @@
    "format": 8,
    "russian": 7,
    "comment": "Практичный и структурированный план со всеми 8 разделами, фенсингом, снятием synchronous_standby_names и PITR на чистых томах, но менее глубокий, чем эталон (нет фикса sequences/config-drift). Русский портят опечатки и артефакты: 'НЕ_TERMINATE', 'ЭСТОН', 'patrobi', смешение с английским."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Очень конкретный, исполнимый runbook: triage-команды, decision tree с явными ветвями, execution/validation/communication/post-mortem проработаны детально. Минусы: раздел Prevention (5 улучшений) обрезан на полуслове, пара техничных неточностей (standby.signal vs recovery.signal, вымышленные ключи patroni) и артефакты в тексте (иероглифы 内部, Дowntime)."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Практически исполнимый runbook топ-уровня: явное decision tree без 'зависит', snapshots-first и fencing против split-brain, ветка etcd-кворума, PITR с recovery_target_time, квантование потери данных для async, валидация и артефакты. Мелкие плейсхолдеры (даты/vol-id) не мешают исполнению."
   }
  },
  "winner": "gpt-5.5-medium",

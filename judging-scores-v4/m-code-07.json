@@ -204,6 +204,20 @@
    "format": 7,
    "russian": 7,
    "comment": "Аккуратная типизация createStore работает, но createSelector реально не компилируется (S=unknown, параметры combiner unknown), хотя раздел прямо озаглавлен 'полностью type-check'ится' — ложное заявление; объяснения concepts качественные."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 1,
+   "reasoning": 4,
+   "format": 6,
+   "russian": 7,
+   "comment": "Store-часть (setState/select/subscribe/type guard) типизирована верно, но центральное требование #4 не работает: при tsc --strict S выводится как object/unknown, combiner получает age/counter типа unknown, а result: number падает (+ ошибка 'lastInputs possibly null'). Модель при этом ложно заявляет, что всё проходит tsc --strict без ошибок."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректное решение: single generic createStore, setState с Partial<S>|updater и type guard, select с <R>, variadic tuple inference через [...Selectors, combiner] с маппингом SelectorResults, subscribe возвращает () => void, any не используется (unknown обоснован). Мелкий блемиш — лишний eslint-disable no-explicit-any в шапке."
   }
  },
  "winner": "glm-5.2",

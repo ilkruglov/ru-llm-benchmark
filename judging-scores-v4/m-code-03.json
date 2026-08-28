@@ -204,8 +204,22 @@
    "format": 4,
    "russian": 4,
    "comment": "Архитектура (возврат ошибок из ядра + respondErr, apiError, map-валидация, slog) в целом здравая, но код не компилируется: используется context.Context без импорта \"context\". Хуже того, весь текстовый разбор галлюцинирован — описывает несуществующие функции (resolveIdentity, stripBOM, XOR-подпись, finalize), не совпадающие с реальным кодом, с искажённым мешаным русским."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все 6 требований выполнены: writeJSON/writeError, typed context key, sentinel errors + httpStatusFor mapping, map-валидация, slog только на 500, метод вынесен на роутер с разбором chi/Go 1.22. Код идиоматичный, есть тест. Минус: прозаическое пояснение противоречит коду (говорит что оставил if r.Method, хотя в хендлере его нет)."
+  },
+  "qwen3.8-max": {
+   "correctness": 9,
+   "reasoning": 10,
+   "format": 10,
+   "russian": 10,
+   "comment": "Закрыты все 6 требований идиоматичным корректным Go (helpers, typed ctxKey со String(), sentinel+apiError и mapAPIError, map-lookup статусов, chi-роутер, slog). Исключительная глубина: таблица эквивалентности, edge-cases (OPTIONS, JSON-тело 405, миграция ключа, text-body у stdlib mux), восстановленный оригинал. Лёгкая избыточность двойной системы ошибок — единственная придирка."
   }
  },
- "winner": "kimi-k2.6",
+ "winner": "qwen3.8-max",
  "notes": "Лидеры (sol-medium, terra-medium, gpt-5.5-medium, kimi-k2.6) дали компилируемый рефактор со всеми шестью требованиями, сохранением статусов/сообщений и разбором нюансов роутера и middleware. Основные провалы — невалидный Go (отсутствующие/лишние импорты, необъявленные переменные) и выдуманный пакет go.uber.org/slog у nemotron-omni."
 }
