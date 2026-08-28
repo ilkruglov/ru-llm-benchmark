@@ -169,6 +169,13 @@
    "format": 9,
    "russian": 10,
    "comment": "Все четыре пункта верны: ŠKODA KODIAQ, белый кроссовер/SUV, SKODA-AUTO.RU, SIMPLY CLEVER. Ответ точный, структурированный, с подтверждением деталей."
+  },
+  "qwen3.8-27b-nd": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре пункта абсолютно верны: ŠKODA KODIAQ, белый кроссовер/SUV, SKODA-AUTO.RU, SIMPLY CLEVER. Чёткая структура, отличный русский, верно опознан логотип-крылатая стрела."
   }
  },
  "winner": "35b-a3b",

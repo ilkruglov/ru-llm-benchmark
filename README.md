@@ -5,7 +5,7 @@
 промышленность, банки.
 
 * **Текст** — 181 задача, 29 моделей, 21 категория
-* **Зрение** — 303 задачи, 24 модели, 17 способностей на 8 отраслей
+* **Зрение** — 303 задачи, 25 моделей, 17 способностей на 8 отраслей
 
 Отчёты с разбором каждой задачи:
 [текстовый](https://ilkruglov.github.io/ru-llm-benchmark/text-benchmark.html) ·
@@ -39,19 +39,19 @@
 
 | # | Модель | Балл | | # | Модель | Балл |
 |---:|---|---:|---|---:|---|---:|
-| 1 | **Qwen3.8-Max (xhigh)** | **9.23** | | 13 | Qwen3.6-27B-FP8 | 8.77 |
-| 2 | **Qwen3.8-Flash** | **9.06** | | 14 | GPT-5.6 Terra (high) | 8.75 |
-| 3 | Kimi K2.6 | 9.01 | | 15 | GPT-5.6 Terra (low) | 8.73 |
-| 4 | GPT-5.6 Sol (medium) | 8.99 | | 16 | GPT-5.6 Luna (high) | 8.72 |
-| 5 | **GPT-5.6 Luna (xhigh)** | **8.95** | | 17 | GPT-5.6 Luna (medium) | 8.69 |
-| 6 | GPT-5.5 (medium) | 8.95 | | 18 | GPT-5.6 Luna (low) | 8.57 |
-| 7 | GPT-5.6 Sol (low) | 8.94 | | 19 | **DeepSeek v4-Flash Vision (exp)** | **8.49** |
-| 8 | **Qwen3.8-27B (high)** | **8.91** | | 20 | Gemma-4-31B | 8.46 |
-| 9 | GPT-5.5 (low) | 8.89 | | 21 | DiffusionGemma | 8.20 |
-| 10 | GPT-5.6 Terra (medium) | 8.86 | | 22 | MiniMax-M3 | 8.10 |
-| 11 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 23 | Llama-4-Scout-17B | 7.53 |
-| 12 | **GLM-5.3-Flash** | **8.78** | | 24 | Nemotron-3-Nano-Omni-30B | 6.80 |
-| 12 | Qwen3.6-27B-FP8 | 8.77 | | | | |
+| 1 | **Qwen3.8-Max (xhigh)** | **9.23** | | 14 | Qwen3.6-27B-FP8 | 8.77 |
+| 2 | **Qwen3.8-Flash** | **9.06** | | 15 | GPT-5.6 Terra (high) | 8.75 |
+| 3 | Kimi K2.6 | 9.01 | | 16 | GPT-5.6 Terra (low) | 8.73 |
+| 4 | GPT-5.6 Sol (medium) | 8.99 | | 17 | GPT-5.6 Luna (high) | 8.72 |
+| 5 | **GPT-5.6 Luna (xhigh)** | **8.95** | | 18 | GPT-5.6 Luna (medium) | 8.69 |
+| 6 | GPT-5.5 (medium) | 8.95 | | 19 | GPT-5.6 Luna (low) | 8.57 |
+| 7 | GPT-5.6 Sol (low) | 8.94 | | 20 | **DeepSeek v4-Flash Vision (exp)** | **8.49** |
+| 8 | **Qwen3.8-27B (nd/low)** | **8.92** | | 21 | Gemma-4-31B | 8.46 |
+| 9 | **Qwen3.8-27B (high)** | **8.91** | | 22 | DiffusionGemma | 8.20 |
+| 10 | GPT-5.5 (low) | 8.89 | | 23 | MiniMax-M3 | 8.10 |
+| 11 | GPT-5.6 Terra (medium) | 8.86 | | 24 | Llama-4-Scout-17B | 7.53 |
+| 12 | Qwen3.6-35B-A3B-FP8 | 8.84 | | 25 | Nemotron-3-Nano-Omni-30B | 6.80 |
+| 13 | **GLM-5.3-Flash** | **8.78** | | | | |
 
 ## Как считалось
 
