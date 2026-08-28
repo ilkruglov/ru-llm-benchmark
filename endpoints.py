@@ -91,6 +91,14 @@ def get_endpoints():
             "reasoning_field": "reasoning_content",
         },
         {
+            "tag": "empirio-max",
+            "url": "https://api.empiriolabs.ai/v1",
+            "key": os.environ.get("EMPIRIOLABS_API_KEY", ""),
+            "model": "qwen3-8-max",   # Qwen3.8-Max (top 3.8 tier)
+            "type": "empirio",
+            "reasoning_field": "reasoning_content",
+        },
+        {
             "tag": "zai-glm53",
             "url": "https://api.z.ai/api/paas/v4",   # Zhipu z.ai international, OpenAI-compatible
             "key": os.environ.get("ZAI_API_KEY", ""),

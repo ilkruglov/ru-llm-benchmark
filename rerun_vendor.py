@@ -47,6 +47,7 @@ TEXT_CFG = {
     "qwen3.8-27b-nd": {"ep": "_nd_qwen38", "nd_model": "qwen3.8-27b", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "reasoning": {"enabled": True, "effort": "high"}},  # Qwen3.8-27B on neuraldeep (fixed endpoint now serves 3.8), reasoning effort high (qwen3.8 has no xhigh; high is the top). 1-req host: SLOW (~4-6min/task), run low-concurrency.
     "glm-5.3": {"ep": "zai-glm53", "temperature": 1.0, "top_p": 0.95, "thinking_zai": True, "reasoning_effort": "max"},  # z.ai vendor rec: temp 1.0 / top_p 0.95 (tune only one), reasoning_effort default max
     "glm-5.3-flash": {"ep": "zai-glm53-flash", "temperature": 1.0, "top_p": 0.95, "thinking_zai": True, "reasoning_effort": "max"},  # same z.ai vendor params, flash variant
+    "qwen3.8-max": {"ep": "empirio-max", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True, "reasoning_effort": "medium", "dummy_tool": True},  # Qwen3.8-Max on EmpirioLabs. Qwen precise preset; medium (same as rest of qwen3.8 text). Streamed.
 }
 
 # Passing a tools schema — even one the model never invokes — curbs qwen3.8-27b's cyclic
@@ -78,6 +79,7 @@ VL_CFG = {
     "deepseek-flash-vl": {"ep": "deepseek-flash-vl", "reasoning_effort": "high"},  # DeepSeek V4-Flash vision (exp head); same vendor knob as text deepseek (reasoning_effort high, no temp override)
     "qwen3.8-flash": {"ep": "empirio-flash", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True, "reasoning_effort": "high"},  # Qwen3.8-Flash VL (vision → high). Qwen precise preset. Streamed.
     "glm-5.3-flash": {"ep": "zai-glm53-flash", "temperature": 1.0, "top_p": 0.95, "thinking_zai": True, "reasoning_effort": "max"},  # GLM-5.3-Flash VL (vision, max like text). z.ai vendor sampling.
+    "qwen3.8-max": {"ep": "empirio-max", "temperature": 0.6, "top_p": 0.95, "top_k": 20, "min_p": 0.0, "presence_penalty": 0.0, "thinking": True, "reasoning_effort": "xhigh"},  # Qwen3.8-Max VL at xhigh (vision tasks don't spiral like code). Qwen precise preset.
 }
 
 
