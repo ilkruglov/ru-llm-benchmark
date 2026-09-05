@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Все оси классификации точны (KASKO/complaint/threatening/critical/P0), все 7 vip_indicators обоснованы без ложных срабатываний. Действия конкретны и полны; лёгкий минус формату за обёртку в ```json вместо чистого JSON."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 9,
+   "comment": "Все оси верны и все 7 vip_indicators без ложных срабатываний; required_actions глубокие и точные. Единственная неточность — emotional_state 'angry' вместо более точного 'threatening' при явных угрозах ЦБ/суд/СМИ и ультиматуме; JSON валиден, но обёрнут в ```json вопреки требованию строгого JSON."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 8,
+   "comment": "Все классификационные поля совпадают с сильным консенсусом (KASKO/complaint/threatening/critical/P0, все 7 vip-индикаторов без ложных срабатываний). Действия конкретны и по делу, но пара фраз в required_actions грамматически смазаны ('отдел качества неустойки', 'Урегулировать доп.сутки')."
   }
  },
  "winner": "gpt-oss-120b",

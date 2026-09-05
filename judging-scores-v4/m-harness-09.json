@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Точный клик по buy-B (Wilfa Svart новая), явно исключены Uniform и б/у; строгий формат Thought/Action/Action Input, валидный JSON, ровно один шаг."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Правильный следующий шаг: клик по buy-B (новая Svart, не Uniform и не б/у), опора на реальный element_id из DOM. Формат Thought/Action/Action Input строгий, аргументы валидны, одно действие за ход."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верный единственный шаг: клик по buy-B (реальный id новой Wilfa Svart за 6490₽), чётко исключены Uniform и б/у. Строгий формат Thought/Action/Action Input, валидный JSON."
   }
  },
  "winner": "glm-5.2",

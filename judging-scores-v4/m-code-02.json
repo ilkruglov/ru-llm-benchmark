@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Образцовое покрытие: FakeClock через monkeypatch (time.monotonic/sleep), параметризованные фикстуры и negative-cases, все требуемые сценарии, pytest.approx, slow-маркер; логика acquire с timeout проверена и работает. Отличное обоснование выбора monkeypatch вместо freezegun и подбора точных в float границ."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 8,
+   "comment": "Полное покрытие: monkeypatch time.monotonic/sleep, все 27 тестов корректны — сложные time-based кейсы (timeout=0.2, insufficient/sufficient, refill 0.1) проверены и проходят точно. Минусы: fixture param_limiter создана с params=, но нигде не используется (мёртвый код), а верхняя граница в thread-safety тесте задана приблизительно."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 1,
+   "reasoning": 5,
+   "format": 3,
+   "russian": 6,
+   "comment": "Дизайн верный (FakeClock через monkeypatch, params-фикстуры, параметризация негативов, approx, slow-маркер, все требования покрыты), но файл не компилируется: в test_refill_capped_at_capacity вставлена битая строка на кириллице -> IndentationError, весь suite не собирается; плюс запутанный timeout=0 тест с мёртвым кодом."
   }
  },
  "winner": "qwen3.8-max",

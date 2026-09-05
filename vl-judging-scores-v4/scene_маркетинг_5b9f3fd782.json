@@ -176,6 +176,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Все четыре пункта абсолютно верны: ŠKODA KODIAQ, белый кроссовер/SUV, SKODA-AUTO.RU, SIMPLY CLEVER. Чёткая структура, отличный русский, верно опознан логотип-крылатая стрела."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Все четыре пункта верны: бренд Škoda, модель Kodiaq, белый/серебристый SUV, сайт SKODA-AUTO.RU, слоган SIMPLY CLEVER. Чёткий структурированный ответ на грамотном русском."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Все четыре пункта верны: ŠKODA KODIAQ, белый/серебристый SUV, SKODA-AUTO.RU, SIMPLY CLEVER. Ответ точный, чёткий и хорошо структурированный."
   }
  },
  "winner": "35b-a3b",

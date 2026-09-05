@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Полный исполнимый модуль и 16 тестов, покрывающих все требования; продуманы refill-семантика, отсутствие data race (sleep вне замка), fail-fast, EPSILON. Честный раздел Notes. Мелкие компромиссы (polling вместо Condition, запрет 0 токенов) осознанно оговорены."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 7,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Отличный план с разбором тонких мест (refill с последнего обращения, отпускание лока перед sleep), чистый production-модуль и честный раздел Notes. Но собственный тест test_consume_waits_and_succeeds использует capacity=0 (ведро не держит токенов), поэтому consume возвращает False и висит 2с — pytest НЕ проходит полностью, что нарушает явное требование исполнимости."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 5,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Модуль production-качества: потокобезопасен, monotonic, все методы/edge-cases и метрики на месте, чистый импорт. Но файл тестов не парсится (SyntaxError: walrus после keyword-аргумента в test_invalid_constructor_args), поэтому pytest не собирает сюиту — ключевое требование 'проходит полностью' нарушено. План и Notes глубокие, но есть подпорченные фрагменты текста."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

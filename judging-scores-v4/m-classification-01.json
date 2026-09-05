@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Все 7 корректных интентов извлечены без ложных срабатываний и пропусков; primary_intent=fraud_report и urgency=critical обоснованны. Валидный чистый JSON без обёрток, грамотный русский; обоснование верное, но менее детальное, чем у лучших ответов."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Извлечены все 7 применимых интентов без ложных срабатываний; primary_intent card_block и urgency critical соответствуют консенсусу. Обоснование грамотное, но короче лучших ответов; JSON валиден, обёрнут в code fence."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Все 7 интентов извлечены верно без false positives, primary_intent и urgency совпадают с консенсусом. Чистый валидный JSON без обёртки, грамотное и связное обоснование."
   }
  },
  "winner": "deepseek-flash-vl",

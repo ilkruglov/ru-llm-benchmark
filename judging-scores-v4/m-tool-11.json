@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Полностью верная map-reduce-логика: параллельный батч из 5 get_service_health, get_recent_deploys(since_minutes=60) только для нездоровых, ровно один aggregate_incident_report со списками, условный page_oncall при critical/high, ничего не выдумано. Очень подробно, со сценариями A/B/C и валидными JSON-блоками; уровень топовых ответов."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полностью корректная map-reduce-логика: 5 параллельных health, deploys только для нездоровых, ровно один aggregate, условный page_oncall при critical/high, ничего не выдумано. Отличная структура с диаграммами, псевдокодом, таблицей гарантий и сценариями."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 5,
+   "russian": 6,
+   "comment": "Логика map-reduce по сути верна: параллельные health, условные deploys только для нездоровых, один aggregate со списками, условный page по critical/high. Но ответ заметно подпорчен: пропущенные/склеенные слова и сломанные code-fence блоки снижают читаемость и строгость формата."
   }
  },
  "winner": "27b-v2",

@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Верный Final Answer: дубль SMS из-за прямого вызова (charge.py:86) и хука notify_on_charge на событие charge.succeeded (hooks.py). Опирается на реальные Observation, корректно называет строку 14 в hooks.py, не приписывает причину retry. Рассуждение чуть короче лучших ответов."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректный Final Answer: точно указаны файл, функция и строка, корневая причина — двойной путь уведомления (прямой send_sms на 86 и событие charge.succeeded -> notify_on_charge в hooks.py). Опора на реальные Observation, корректное условие остановки; retry верно указан как контекст релиза, а не причина."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 3,
+   "reasoning": 5,
+   "format": 9,
+   "russian": 9,
+   "comment": "В Thought верно назвал оба пути SMS (прямой вызов и подписчик на charge.succeeded), но данных уже хватало для Final Answer — вместо вывода корневой причины сделал лишний grep def retry, то есть поздняя остановка. Формат ReAct и аргументы безупречны."
   }
  },
  "winner": "gpt-5.5-medium",

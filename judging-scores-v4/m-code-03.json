@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Закрыты все 6 требований идиоматичным корректным Go (helpers, typed ctxKey со String(), sentinel+apiError и mapAPIError, map-lookup статусов, chi-роутер, slog). Исключительная глубина: таблица эквивалентности, edge-cases (OPTIONS, JSON-тело 405, миграция ключа, text-body у stdlib mux), восстановленный оригинал. Лёгкая избыточность двойной системы ошибок — единственная придирка."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 1,
+   "reasoning": 8,
+   "format": 6,
+   "russian": 9,
+   "comment": "Дизайн отличный и покрывает все 6 требований (writeJSON/writeError, typed ctxKey, sentinel-ошибки + errToHTTP, map-валидация, метод на роутере, slog), но строка `var userIDKey ctxKey{}` — синтаксическая ошибка Go, код не компилируется, поэтому correctness 0-1."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 4,
+   "reasoning": 6,
+   "format": 5,
+   "russian": 5,
+   "comment": "Хендлер, helpers, APIError, slog и валидация через map - корректны, идиоматичны и покрывают все 6 требований без выдуманных API. Но функция Routes() не компилируется: пропущен r := chi.NewRouter() и вставлен обрывок русского текста как Go-стейтмент; плюс несколько испорченных фрагментов прозы (тогодлера, удаутер) - код в целом не собирается."
   }
  },
  "winner": "qwen3.8-max",

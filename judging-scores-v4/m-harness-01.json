@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Точно локализовал баг на строке 21 и сделал минимальную однозначную правку (return 0.0) только для ветки reverse charge, не затронув строку 22. Формат Thought/Action/Action Input идеален, JSON валиден, один Action."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Точно локализует баг на строке 21, отмечает идентичность с else-веткой, делает минимальную однозначную правку с контекстом if-строки (return 0.0). Верный ReAct-формат и валидный JSON."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 10,
+   "russian": 10,
+   "comment": "Верно локализован баг на строке 21, минимальная точечная правка reverse charge на return 0.0 с уникальным контекстом old-строки; один Action, формат безупречный. Рассуждение корректное, но лаконичное."
   }
  },
  "winner": "deepseek-flash",

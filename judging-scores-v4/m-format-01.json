@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 9,
    "comment": "Валидный JSON без обёрток, все обязательные поля и типы верны: ровно 3 line_items, корректные SKU/order_id, utm ровно с тремя ключами, currency согласован, скидка line_item ссылается на существующий SKU. Числа внутренне непротиворечивы (subtotal, VAT-inclusive grand_total), осмысленные русские значения."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 7,
+   "reasoning": 5,
+   "format": 0,
+   "russian": 8,
+   "comment": "Данные внутренне согласованы (subtotal, скидки, tax и grand_total сходятся, SKU/order_id/utm по схеме), но в конце лишняя закрывающая скобка — json.loads падает с 'Extra data', то есть JSON невалиден → format 0. Мелко: 0% НДС на дорогую электронику неправдоподобен, хотя формально допустим."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 3,
+   "reasoning": 3,
+   "format": 0,
+   "russian": 6,
+   "comment": "JSON невалиден: во втором line_item поле name повреждено (\"name\":онный мастер\"), json.loads падает — по правилу format=0. Остальные значения и арифметика (subtotal 16188) в основном согласованы, но битое поле обесценивает ответ."
   }
  },
  "winner": "gpt-oss-120b",

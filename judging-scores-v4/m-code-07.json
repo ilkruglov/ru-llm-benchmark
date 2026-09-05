@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Полностью корректное решение: single generic createStore, setState с Partial<S>|updater и type guard, select с <R>, variadic tuple inference через [...Selectors, combiner] с маппингом SelectorResults, subscribe возвращает () => void, any не используется (unknown обоснован). Мелкий блемиш — лишний eslint-disable no-explicit-any в шапке."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 3,
+   "reasoning": 5,
+   "format": 8,
+   "russian": 8,
+   "comment": "Часть про store (setState/select/subscribe, сужение typeof, отсутствие any) корректна и чиста. Но ключевой createSelector не выводит S: при компиляции S=unknown, combiner получает (age: unknown, counter: unknown), под --strict вызов и result:number падают с ошибками, под --noImplicitAny проходит лишь вхолостую. Утверждение в ответе, что аргументы становятся number, ложно — главное требование (variadic tuple inference) не выполнено."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 1,
+   "reasoning": 1,
+   "format": 1,
+   "russian": 1,
+   "comment": "Код полностью нерабочий: обрывается метод select, посреди кода вклиниваются мусорные русские фрагменты ('обобщслияние', 'лочное равенство'), тип SelectorResults искажён, используется необъявленная переменная curr вместо inputs, combiner недописан. Не компилируется, объяснения также испорчены."
   }
  },
  "winner": "glm-5.2",

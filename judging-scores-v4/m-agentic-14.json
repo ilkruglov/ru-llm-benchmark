@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 9,
    "comment": "Топ-уровень: crypto-shredding + tombstones + расчёт Time Travel/Fail-safe (1+7<30), фриз День 0-2, бэксфилл с fallback, распараллеливание по стримам, фасад для дашбордов. Мелкие опечатки (ингеция), но практическая исполнимость высокая."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 8,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 9,
+   "comment": "Полный, практически исполнимый план: покрывает а-д, реалистичные шаги с параллельным прогоном, откатом и decommission. Слабое место — юридически шаткий тезис, что детерминированный хеш email после удаления vault становится обезличенным (реально это псевдонимизация, salt глобальный), но есть fallback-DELETE и оговорки."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 4,
+   "comment": "Технически очень сильный и исполнимый ре-планнинг: crypto-shredding под immutable S3/бэкапы, Time Travel/Failsafe 1+7<30, HMAC user_token, compatibility-слой для dbt, dual-run миграция, freeze/rollback день 1-2 — все пункты (а)-(д) закрыты реалистично. Сильно портит русский: множество обрывков и искажённых слов ('оно отсека', 'geo_h3_rняются', 'immutable-к идея', 'физическиесты', 'разре MARTS'), что снижает читаемость и структуру."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

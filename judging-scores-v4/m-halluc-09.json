@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Технически безупречный разбор без единой выдумки: xmin/xmax/ctid, CLOG, снапшоты, VACUUM/wraparound, PREPARE/COMMIT PREPARED, max_prepared_transactions=0, координаторы (Atomikos, Citus, postgres_fdw) — всё точно. Глубоко связывает механизмы (prepared-транзакция держит горизонт xmin -> bloat) и чётко разводит 2PC/2PL/prepared statements."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 6,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Очень детальный и хорошо структурированный ответ, MVCC/2PC/2PL/prepared statements разложены верно. Но есть фактические промахи: выдуманное сообщение об ошибке PREPARE TRANSACTION и невозможный HINT SET max_prepared_transactions, тип xmin/xmax указан как oid вместо xid, сомнительные координаторы (Kafka/CockroachDB); неуверенность нигде не отмечена."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 6,
+   "russian": 6,
+   "comment": "Факты по MVCC и 2PC точны, ничего не выдумано — задача на знаемые вещи, отвечено верно. Но множественные повреждённые/оборванные фрагменты текста ('в еще SSI', 'логивеческая распределенписать', 'разойтись в комми базами') портят читаемость, ясность структуры и русский."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

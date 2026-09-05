@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Единственный корректный вызов create_policy с точным соответствием схеме: все нормализации (телефон, даты, usage, term_months, franchise=0, options, promo_code=null) верны. Обоснование краткое, но покрывает все поля; чуть менее детально, чем табличные ответы."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Единственный вызов create_policy с полностью корректным payload: правильные enum, нормализованные телефон/даты/срок, дефолты franchise_rub=0 и promo_code=null, опции [GLASS, GAP] без выдумок. Понятная таблица нормализаций; JSON внутри валиден."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 6,
+   "format": 9,
+   "russian": 7,
+   "comment": "Вызов create_policy и весь payload корректны, все поля нормализованы верно (телефон, даты, PERSONAL, 12 мес., franchise 0, options [GLASS,GAP], promo null). Однако блок обоснования подпорчен: бросок про франшизу оборван ('Франшизу брать;'), слово 'стёкол' искажено ('тёкол'), что снижает качество рассуждения."
   }
  },
  "winner": "gpt-oss-120b",

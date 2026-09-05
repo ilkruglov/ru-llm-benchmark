@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Найдены все проблемы (await под inner-гардом, recv под гардом, unwrap/отравленный in-flight), корректный компилируемый single-flight на одном Mutex с try_recv для смерти лидера. Честно отмечено, что в исходнике ветка recv недостижима и это сериализация, а не AB-BA deadlock; отличный разбор Mutex vs RwLock."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 1,
+   "reasoning": 9,
+   "format": 7,
+   "russian": 9,
+   "comment": "Анализ отличный и честный (lock-held-across-await, мёртвый broadcast, утечка in-flight, отсутствие инверсии lock-order, re-check race, single-flight сохранён), но приведённый код НЕ компилируется: Role::Waiter(rx) требует mut rx для rx.recv() (E0596). После добавления одного mut код собирается и корректно работает за ~108мс, однако по правилу 'код не работает -> correctness 0-1'."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 0,
+   "reasoning": 7,
+   "format": 5,
+   "russian": 6,
+   "comment": "Анализ проблем отличный (await под inner-lock, lost wakeup у broadcast, hold-and-wait, RwLock для read-heavy, std vs tokio Mutex), но фикс использует несуществующий метод tokio::sync::OnceCell::wait() — код НЕ компилируется, а это ядро single-flight (waiter-ветка). Ложный API => correctness 0. Плюс местами текст побит/оборван (прелочь, сдея, длячно)."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

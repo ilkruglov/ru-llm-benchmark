@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Точный следующий шаг: get_commit_diff на e7c1a9, опираясь на реальные Observation (b3f0d2 passed, e7c1a9 failed). Идеальный ReAct-формат, не перезапускает джоб без доказательства флака; рассуждение верное, но лаконичное."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Верный следующий шаг — get_commit_diff по упавшему коммиту e7c1a9, рассуждение опирается на реальные Observation (b3f0d2 проходил, e7c1a9 упал), без галлюцинации Observation и без преждевременного Final Answer. Чистый ReAct-формат, валидный JSON."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 7,
+   "reasoning": 3,
+   "format": 8,
+   "russian": 4,
+   "comment": "Следующий шаг верный — get_commit_diff по e7c1a9 с валидным JSON, без галлюцинаций и без преждевременной остановки. Но Thought искажён и почти бессвязен ('успеш'), не опирается на сравнение прогонов b3f0d2/e7c1a9, рассуждение минимально."
   }
  },
  "winner": "deepseek-flash-0731",

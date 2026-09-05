@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 9,
    "comment": "Well-formed XML, все namespace/префиксы и обязательные поля на месте, декларация, порядок и типы соблюдены; арифметика полностью согласована (LineTotal=Qty*Price, сумма=Subtotal, VAT 20%, GrandTotal). Никакого лишнего текста."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 9,
+   "reasoning": 5,
+   "format": 0,
+   "russian": 9,
+   "comment": "Данные безупречны: арифметика сходится (571600+114320=685920), ИНН/КПП верной длины, порядок и namespace'ы корректны. Но перед XML-декларацией стоят две пустые строки, из-за чего документ не well-formed (декларация не в начале) — по строгому правилу формата это format 0."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 7,
+   "reasoning": 6,
+   "format": 3,
+   "russian": 9,
+   "comment": "XML well-formed, все namespaces/атрибуты/INN-KPP верны, арифметика идеально сходится (Subtotal 30164.50 + VAT 6032.90 = GrandTotal 36197.40). Но у LineItem index=3 пустой обязательный <inv:Description></inv:Description> — прямое нарушение жёсткого правила 7 (запрет пустых элементов) и отсутствие текста в required-поле, что резко роняет format."
   }
  },
  "winner": "minimax-m3",

@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Образцовый разбор: expand-contract с dual-write, RollingUpdate+PDB+graceful shutdown, порча данных от NOT NULL DEFAULT, thundering herd от FLUSHALL, необратимость отката, автотриггеры отката с конкретными PromQL, батчевый бэкфилл через CHECK NOT VALID/VALIDATE. Предельно конкретно и практически исполнимо, с таблицей откатов и поэтапным флаг-роллаутом."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 9,
+   "comment": "Топовый ответ: покрыты все 6 изъянов плюс 3 дополнительных (graceful shutdown, probes, backup), expand-migrate-contract, dual-write с fallback, canary+RollingUpdate, автоматические gates с Prometheus-запросами, безопасный откат без потери данных и полный поэтапный план с длительностями. Мелочи: batch-SQL показан без реального батчинга, дубль redis-cli строки, опечатка 'Дowntime'."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 6,
+   "comment": "Разбирает все шесть изъянов с реальными механизмами (ACCESS EXCLUSIVE, thundering herd, split-brain, идемпотентность/двойные списания) и даёт исполнимый expand-contract план с dual-write, PDB/probes, версионированным кэшем, откатом только кодом и авто-гейтами Prometheus. Уровень топовых ответов, но текст испорчен несколькими битыми фрагментами (логаут..., отби, Получирый, удалил в ша нет), что снижает русский."
   }
  },
  "winner": "gpt-5.6-sol-low",

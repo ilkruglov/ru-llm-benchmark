@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Корректный следующий шаг: issue_refund с верными charge_id/amount/reason_code, все три условия политики проверены по реальным Observation, Observation не выдуман. Чистый формат Thought/Action/Action Input."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Корректный следующий шаг: issue_refund с ch_77a2, 990, auto_renew_unused. Все три условия политики проверены по реальным Observation, формат Thought/Action/Action Input безупречен."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальный следующий шаг: корректно сверил все три условия политики по реальным Observation, вызвал issue_refund с правильным charge_id ch_77a2, суммой 990 и reason_code auto_renew_unused, не выдумав Observation и не перепрыгнув к отмене."
   }
  },
  "winner": "gpt-oss-120b",

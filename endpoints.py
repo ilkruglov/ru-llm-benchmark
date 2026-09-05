@@ -99,6 +99,14 @@ def get_endpoints():
             "reasoning_field": "reasoning_content",
         },
         {
+            "tag": "nvfp4-qwen38",
+            "url": os.environ.get("NVFP4_URL", ""),   # self-hosted Qwen3.8-27B in NVFP4 quant (URL from env)
+            "key": os.environ.get("NVFP4_API_KEY", ""),
+            "model": "qwen3.8-27b",
+            "type": "deepseek",   # generic OpenAI path (base + /chat/completions)
+            "reasoning_field": "reasoning",
+        },
+        {
             "tag": "zai-glm53",
             "url": "https://api.z.ai/api/paas/v4",   # Zhipu z.ai international, OpenAI-compatible
             "key": os.environ.get("ZAI_API_KEY", ""),
@@ -161,6 +169,14 @@ def get_endpoints():
             "model": "zai-org/GLM-5.2",
             "type": "deepinfra",
             "reasoning_field": "reasoning_content",
+        },
+        {
+            "tag": "openrouter-muse-spark-13c",
+            "url": "https://openrouter.ai/api/v1",   # OpenRouter, OpenAI-compatible
+            "key": os.environ.get("OPENROUTER_API_KEY", ""),
+            "model": "meta/muse-spark-1.3-contributor",   # Meta: Muse Spark 1.3 Contributor, 1M ctx, multimodal
+            "type": "deepseek",   # generic OpenAI path (base + /chat/completions)
+            "reasoning_field": "reasoning",
         },
         {
             "tag": "empirio-qwen38",

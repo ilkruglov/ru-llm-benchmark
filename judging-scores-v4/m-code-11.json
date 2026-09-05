@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Найдены все 3 утечки с точными механизмами (bound method __self__, class-dict с self и уникальными ключами, безлимитный _history), рабочий fix на WeakMethod+deque+LRU без выдуманных API. Полностью закрыты все 6 разделов, включая живую диагностику (gdb-инжект, manhole, SIGUSR1) и regression test; не отмечен лишь квадратичный ре-диспатч на старых воркеров."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 5,
+   "reasoning": 8,
+   "format": 7,
+   "russian": 9,
+   "comment": "Все 3 leak-а найдены верно с корректным разбором механизма и GC, диагностика/мониторинг сильные и без выдуманных API. Но fix #3 использует weakref.ref на bound method вместо WeakMethod — обёртка умирает сразу, handlers перестают вызываться; плюс двойной __init__ в Worker и незаимпортированный weakref в тесте."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 6,
+   "reasoning": 9,
+   "format": 5,
+   "russian": 6,
+   "comment": "Все 3 утечки найдены верно (bound-method подписки, unbounded _history, class-level _results_cache с self), корректное объяснение reachable vs GC-циклы, полное покрытие всех 6 пунктов без выдуманных API. Но текст местами испорчен (garbled фразы), а в 'исправленном' коде синтаксическая ошибка в _cache_result — flagship-фикс дословно не запускается."
   }
  },
  "winner": "gpt-5.6-luna-xhigh",

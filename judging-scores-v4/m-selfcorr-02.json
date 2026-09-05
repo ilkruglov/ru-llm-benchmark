@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Точно найден race condition/TOCTOU, объяснена причина пропуска рецензентом и даны корректные исправления (FOR UPDATE на строку стола + EXCLUDE-констрейнт), включая тонкость про недостаточность блокировки пустого overlap-запроса. Валидные вторичные замечания без выдумок."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 8,
+   "comment": "Точно найдена главная пропущенная ошибка — race condition (TOCTOU) при check-then-act, объяснена причина пропуска рецензентом и даны корректные исправления (FOR UPDATE, exclusion constraint, идемпотентность). Небольшой минус: артефакты вроде латинско-кириллического 'идempotency'."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 7,
+   "comment": "Точно найден TOCTOU race condition (двойное бронирование), объяснена причина пропуска рецензентом и дано корректное исправление (advisory lock/FOR UPDATE + EXCLUDE-констрейнт, concurrency-тест). Русский снижен из-за нескольких искажённых фрагментов ('инстан, багае', 'любой об', 'READ COMMITTED запроса')."
   }
  },
  "winner": "glm-5.3-flash",

@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 7,
    "comment": "Валидный YAML 1.2, ровно 7 ключей в нужном порядке, все типы и enum корректны; features ровно 5 с true/false, nodes ровно 3, password_env по регэкспу. Без якорей, комментариев и обёрток — эталонное следование схеме."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 8,
+   "reasoning": 7,
+   "format": 8,
+   "russian": 5,
+   "comment": "Валидный YAML 1.2, все required-поля и типы корректны, один документ без якорей/комментариев/multiline. Нарушение: теги order-management и payment-integration в kebab-case, а не snake_case (требовалось snake_case)."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 7,
+   "comment": "Валидный YAML 1.2, все 7 верхних ключей в правильном порядке, все типы и enum корректны; features ровно 5 (true/false есть), nodes ровно 3, tls.enabled=true с указанными путями, password_env по формату. Нарушений жёстких правил нет."
   }
  },
  "winner": "gpt-oss-120b",

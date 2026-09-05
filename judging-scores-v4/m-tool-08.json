@@ -218,8 +218,22 @@
    "format": 10,
    "russian": 9,
    "comment": "Идеальный DeploymentSpec: верная последовательность двух read-вызовов и один submit, все поля корректны (image склеен верно, replicas=6, canary 10, timeout 5, signed=true). JSON валиден, дано полное пояснение источника каждого поля."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 10,
+   "comment": "Идеальная последовательность: два read-вызова, затем ровно один submit_deployment. Spec полностью соответствует схеме (image склеен верно, replicas=6 из default, canary 10%, timeout 5, metadata агрегирован). Подробная таблица источников полей и подтверждение signed=true."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 10,
+   "reasoning": 9,
+   "format": 10,
+   "russian": 10,
+   "comment": "Идеальная последовательность: два read-вызова и ровно один submit_deployment. Все поля собраны верно (image из repo:tag, replicas=6, canary 10%, timeout=5, metadata агрегирована), пояснения по источникам полные, подтверждено signed=true."
   }
  },
- "winner": "gpt-oss-120b",
+ "winner": "muse-spark-1.3-contributor",
  "notes": "Большинство моделей выдали идентичный корректный spec; deepseek-pro/kimi/gpt-oss/nemotron-omni — образцовые. Ряд gpt-5.5/5.6 отказались делать вызовы (штраф по correctness), а nemotron-super сломал JSON."
 }

@@ -218,6 +218,20 @@
    "format": 10,
    "russian": 10,
    "comment": "Корректно применяет правило одного повтора после GATEWAY_TIMEOUT, повторяя тот же check_health; не выдумывает Observation, останавливается ровно на одном шаге. Идеальный ReAct-формат, валидный JSON."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно делает ровно один повтор check_health на временный GATEWAY_TIMEOUT, не выдумывает Observation, строгий одноблочный ReAct-формат с валидным JSON. Эталонное поведение, совпадает с топ-калибровкой."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 9,
+   "russian": 10,
+   "comment": "Корректно распознаёт временный GATEWAY_TIMEOUT и делает ровно один допустимый повтор того же check_health с валидным deploy_id — точно по правилам. Формат строгий, рассуждение краткое но верное."
   }
  },
  "winner": "qwen3.8-27b",

@@ -218,6 +218,20 @@
    "format": 9,
    "russian": 10,
    "comment": "Корректная эталонная реализация Vyukov MPMC с бенчмарком, -race стресс-тестом и глубоким разбором ABA/memory ordering/false sharing; мелкие минусы: unsafe-арена ограничивает T (запрет указателей) и reflect.TypeFor требует Go 1.22, а go.mod заявляет 1.21."
+  },
+  "qwen3.8-27b-nvfp4": {
+   "correctness": 9,
+   "reasoning": 9,
+   "format": 9,
+   "russian": 9,
+   "comment": "Корректная реализация Vyukov bounded MPMC: seqs с padding, int64-diff, правильная init и порядок CAS/store, тесты и бенчмарки проходят -race без выдуманных API. Единственная неточность — очередь называют wait-free, хотя это lock-free (retry-loop), но этого требовал сам промпт."
+  },
+  "muse-spark-1.3-contributor": {
+   "correctness": 9,
+   "reasoning": 8,
+   "format": 8,
+   "russian": 7,
+   "comment": "Каноничный Vyukov bounded MPMC реализован корректно: верные seq-переходы (pos+1, pos+cap), diff через int64, real atomic-типы, power-of-2 mask, padding против false sharing, отсутствие аллокаций, полноценные stress/no-alloc тесты и требуемый BenchmarkEnqueueDequeue (1/4/16). Рассуждение сильное (vs channel/MS/lock-based, ABA, честно про lock-free vs wait-free, memory ordering=SeqCst в Go), но несколько фраз на русском оборваны/побиты посреди слова, что снижает format/russian."
   }
  },
  "winner": "kimi-k2.6",
